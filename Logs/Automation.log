@@ -1,0 +1,49 @@
+18:54:16.385 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Base class started...
+18:54:20.450 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Chrome driver selected
+18:54:21.473 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Login page started
+18:54:23.752 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Driver shutdown
+18:59:22.537 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Base class started...
+18:59:25.257 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Chrome driver selected
+18:59:26.160 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Login page started
+18:59:26.348 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Maximize the window
+18:59:27.776 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Driver shutdown
+19:03:33.203 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Base class started...
+19:03:35.762 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Chrome driver selected
+19:03:36.773 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Login page started
+19:03:37.030 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Maximize the window
+19:03:38.523 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Driver shutdown
+19:05:01.155 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Base class started...
+19:05:03.343 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Chrome driver selected
+19:05:04.327 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Login page started
+19:05:04.509 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Maximize the window
+19:05:05.806 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Driver shutdown
+19:05:45.142 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Base class started...
+19:05:47.465 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Chrome driver selected
+19:05:48.372 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Login page started
+19:05:48.524 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Maximize the window
+19:05:49.901 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Driver shutdown
+19:11:43.004 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Base class started...
+19:11:45.343 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Chrome driver selected
+19:11:46.281 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Login page started
+19:11:46.435 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Maximize the window
+19:11:47.894 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Driver shutdown
+19:21:01.146 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Base class started...
+19:21:03.411 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Chrome driver selected
+19:21:04.391 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Login page started
+19:21:04.533 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Maximize the window
+19:21:05.894 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Driver shutdown
+19:26:04.001 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Base class started...
+19:26:06.290 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Chrome driver selected
+19:26:07.246 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Login page started
+19:26:07.385 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Maximize the window
+19:26:08.830 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Driver shutdown
+19:26:59.506 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Base class started...
+19:27:01.955 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Chrome driver selected
+19:27:02.924 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Login page started
+19:27:03.085 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Maximize the window
+19:27:04.270 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Driver shutdown
+19:31:45.247 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Base class started...
+19:31:47.410 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Chrome driver selected
+19:31:48.226 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Login page started
+19:31:48.358 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Maximize the window
+19:31:49.582 [main] INFO  com.p360.testCases.TC_LoginAndLogout - Driver shutdown
