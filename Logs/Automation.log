@@ -1,140 +1,129 @@
-18:08:47.602 [main] INFO  com.p360.pageObject.PO_MembershipPage - Is displayed: true
-18:08:47.618 [main] INFO  com.p360.pageObject.PO_MembershipPage - Is enabled: true
-18:08:47.638 [main] INFO  com.p360.pageObject.PO_MembershipPage - Is is waited for or not clickable: [[ChromeDriver: chrome on windows (6412338ef870d4da872b79dc61a0e988)] -> xpath: //label[contains(text(),'Select a reason')]]
-18:08:50.947 [main] INFO  com.p360.testCases.TC_Membership - Driver shutdown
-18:12:45.256 [main] INFO  com.p360.testCases.TC_Membership - Base class started...
-18:12:47.475 [main] INFO  com.p360.testCases.TC_Membership - Chrome driver selected
-18:12:48.279 [main] INFO  com.p360.testCases.TC_Membership - Login page started
-18:12:48.417 [main] INFO  com.p360.testCases.TC_Membership - Maximize the window
-18:12:48.499 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-18:12:48.763 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
-18:12:53.909 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-18:12:54.559 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-18:12:54.886 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-18:13:00.830 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-18:13:03.958 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-18:13:06.102 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
-18:13:08.115 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method called: pasueMembership
-18:13:08.860 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause member ship button
-18:13:10.470 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the dropdown reason while puase membership
-18:13:10.982 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectReason
-18:13:11.047 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - List options: Medical Reasons
-18:13:11.077 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - List options: Travel
-18:13:11.094 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - matched list value: Travel
-18:13:11.151 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Click on the element
-18:13:12.151 [main] INFO  com.p360.pageObject.PO_MembershipPage - Pause membership reason selected
-18:13:12.262 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause membership start date icon
-18:13:12.777 [main] INFO  com.p360.projectUtility.DatePicker - Enter inside date picker methods
-18:13:12.778 [main] INFO  com.p360.projectUtility.DatePicker - User given year: 2023 Month: September Date: 10
-18:13:13.328 [main] INFO  com.p360.projectUtility.DatePicker - September 2023
-18:13:13.328 [main] INFO  com.p360.projectUtility.DatePicker - Displayed month name: September
-18:13:13.328 [main] INFO  com.p360.projectUtility.DatePicker - selected month name is: September
-18:13:15.060 [main] INFO  com.p360.projectUtility.DatePicker - Selected date: 10
-18:13:16.172 [main] INFO  com.p360.pageObject.PO_MembershipPage - Entered Pause membership start date
-18:13:17.315 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause membership end date icon
-18:13:17.817 [main] INFO  com.p360.projectUtility.DatePicker - Enter inside date picker methods
-18:13:17.817 [main] INFO  com.p360.projectUtility.DatePicker - User given year: 2023 Month: September Date: 25
-18:13:18.366 [main] INFO  com.p360.projectUtility.DatePicker - September 2023
-18:13:18.367 [main] INFO  com.p360.projectUtility.DatePicker - Displayed month name: September
-18:13:18.367 [main] INFO  com.p360.projectUtility.DatePicker - selected month name is: September
-18:13:20.313 [main] INFO  com.p360.projectUtility.DatePicker - Selected date: 25
-18:13:21.436 [main] INFO  com.p360.pageObject.PO_MembershipPage - Entered pause membership end date
-18:13:22.549 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause my membership
-18:13:22.852 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method call done: pasueMembership
-18:13:24.803 [main] INFO  com.p360.testCases.TC_Membership - Driver shutdown
-18:17:24.913 [main] INFO  com.p360.testCases.TC_Membership - Base class started...
-18:17:27.401 [main] INFO  com.p360.testCases.TC_Membership - Chrome driver selected
-18:17:28.598 [main] INFO  com.p360.testCases.TC_Membership - Login page started
-18:17:28.769 [main] INFO  com.p360.testCases.TC_Membership - Maximize the window
-18:17:28.958 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-18:17:29.036 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
-18:17:34.509 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-18:17:35.081 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-18:17:35.338 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-18:17:43.124 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-18:17:46.250 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-18:17:48.365 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
-18:17:50.391 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method called: pasueMembership
-18:17:51.101 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause member ship button
-18:17:52.658 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the dropdown reason while puase membership
-18:17:53.176 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectReason
-18:17:53.238 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - List options: Medical Reasons
-18:17:53.272 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - List options: Travel
-18:17:53.293 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - matched list value: Travel
-18:17:53.361 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Click on the element
-18:17:54.374 [main] INFO  com.p360.pageObject.PO_MembershipPage - Pause membership reason selected
-18:17:54.550 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause membership start date icon
-18:17:55.065 [main] INFO  com.p360.projectUtility.DatePicker - Enter inside date picker methods
-18:17:55.066 [main] INFO  com.p360.projectUtility.DatePicker - User given year: 2023 Month: September Date: 10
-18:17:55.646 [main] INFO  com.p360.projectUtility.DatePicker - September 2023
-18:17:55.647 [main] INFO  com.p360.projectUtility.DatePicker - Displayed month name: September
-18:17:55.647 [main] INFO  com.p360.projectUtility.DatePicker - selected month name is: September
-18:17:57.506 [main] INFO  com.p360.projectUtility.DatePicker - Selected date: 10
-18:17:58.658 [main] INFO  com.p360.pageObject.PO_MembershipPage - Entered Pause membership start date
-18:17:59.805 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause membership end date icon
-18:18:00.307 [main] INFO  com.p360.projectUtility.DatePicker - Enter inside date picker methods
-18:18:00.307 [main] INFO  com.p360.projectUtility.DatePicker - User given year: 2023 Month: September Date: 25
-18:18:00.888 [main] INFO  com.p360.projectUtility.DatePicker - September 2023
-18:18:00.888 [main] INFO  com.p360.projectUtility.DatePicker - Displayed month name: September
-18:18:00.888 [main] INFO  com.p360.projectUtility.DatePicker - selected month name is: September
-18:18:02.830 [main] INFO  com.p360.projectUtility.DatePicker - Selected date: 25
-18:18:03.935 [main] INFO  com.p360.pageObject.PO_MembershipPage - Entered pause membership end date
-18:18:05.062 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause my membership
-18:18:05.474 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the confirm button
-18:18:05.788 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method call done: pasueMembership
-18:18:07.720 [main] INFO  com.p360.testCases.TC_Membership - Driver shutdown
-18:21:06.367 [main] INFO  com.p360.testCases.TC_Membership - Base class started...
-18:21:08.734 [main] INFO  com.p360.testCases.TC_Membership - Chrome driver selected
-18:21:09.819 [main] INFO  com.p360.testCases.TC_Membership - Login page started
-18:21:10.050 [main] INFO  com.p360.testCases.TC_Membership - Maximize the window
-18:21:10.205 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-18:21:10.299 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
-18:21:15.031 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-18:21:15.636 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-18:21:15.949 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-18:21:21.869 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-18:21:24.983 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-18:21:27.148 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
-18:21:29.165 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method called: pasueMembership
-18:21:42.807 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-18:21:43.416 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-18:21:48.001 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-18:21:48.631 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-18:21:49.424 [main] INFO  com.p360.testCases.TC_Membership - Driver shutdown
-19:14:26.469 [main] INFO  com.p360.testCases.TC_Membership - Base class started...
-19:14:30.063 [main] INFO  com.p360.testCases.TC_Membership - Chrome driver selected
-19:14:30.919 [main] INFO  com.p360.testCases.TC_Membership - Login page started
-19:14:31.048 [main] INFO  com.p360.testCases.TC_Membership - Maximize the window
-19:14:31.198 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-19:14:31.359 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
-19:14:36.416 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-19:14:37.020 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-19:14:37.320 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-19:14:42.932 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-19:14:46.051 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-19:14:48.179 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
-19:14:50.189 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method called: changeMembership
-19:14:50.832 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the manage membership button
-19:14:51.810 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the category field to open the list
-19:14:52.314 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectCategory
-19:14:52.384 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - List options: All
-19:14:52.410 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - matched list value: All
-19:14:52.488 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Click on the element
-19:14:54.132 [main] INFO  com.p360.pageObject.PO_MembershipPage - Selected radio button: Custom Date
-19:14:55.643 [main] INFO  com.p360.pageObject.PO_MembershipPage - Start filling custom date
-19:14:55.761 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the custome date selector icon
-19:14:56.269 [main] INFO  com.p360.projectUtility.DatePicker - Enter inside date picker methods
-19:14:56.270 [main] INFO  com.p360.projectUtility.DatePicker - User given year: 2023 Month: September Date: 15
-19:14:56.853 [main] INFO  com.p360.projectUtility.DatePicker - September 2023
-19:14:56.853 [main] INFO  com.p360.projectUtility.DatePicker - Displayed month name: September
-19:14:56.853 [main] INFO  com.p360.projectUtility.DatePicker - selected month name is: September
-19:14:58.722 [main] INFO  com.p360.projectUtility.DatePicker - Selected date: 15
-19:14:59.829 [main] INFO  com.p360.pageObject.PO_MembershipPage - Custom date, month and year entered
-19:15:00.339 [main] INFO  com.p360.pageObject.PO_MembershipPage - Custom date radio button selected and membership date entered
-19:15:00.339 [main] INFO  com.p360.pageObject.PO_MembershipPage - SelectPackage methods called
-19:15:00.379 [main] INFO  com.p360.pageObject.PO_MembershipPage - List option not matched and given name is: Alaska
-19:15:00.379 [main] INFO  com.p360.pageObject.PO_MembershipPage - List option not matched and given name is: Alaska
-19:15:00.379 [main] INFO  com.p360.pageObject.PO_MembershipPage - List option not matched and given name is: Alaska
-19:15:01.480 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the Change membership button
-19:15:01.994 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method call done: changeMembership 
-19:15:03.715 [main] INFO  com.p360.testCases.TC_Membership - Driver shutdown
+21:56:55.254 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 400
+21:56:55.265 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 401
+21:56:55.273 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 402
+21:56:55.282 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 403
+21:56:55.290 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 404
+21:56:55.299 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 405
+21:56:55.307 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 406
+21:56:55.315 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 407
+21:56:55.322 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 408
+21:56:55.330 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 409
+21:56:55.340 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 410
+21:56:55.349 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 411
+21:56:55.357 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 412
+21:56:55.365 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 413
+21:56:55.372 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 414
+21:56:55.380 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 415
+21:56:55.389 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 416
+21:56:55.398 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 417
+21:56:55.406 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 418
+21:56:55.414 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 419
+21:56:55.422 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 420
+21:56:55.430 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 421
+21:56:55.439 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 422
+21:56:55.447 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 423
+21:56:55.459 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 424
+21:56:55.468 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 425
+21:56:55.476 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 426
+21:56:55.484 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 427
+21:56:55.492 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 428
+21:56:55.500 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 429
+21:56:55.509 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 430
+21:56:55.518 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 431
+21:56:55.526 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 432
+21:56:55.534 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 433
+21:56:55.541 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 434
+21:56:55.549 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 435
+21:56:55.557 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 436
+21:56:55.567 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 437
+21:56:55.575 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 438
+21:56:55.582 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 439
+21:56:55.589 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 440
+21:56:55.597 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 441
+21:56:55.604 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 442
+21:56:55.611 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 443
+21:56:55.619 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 444
+21:56:55.628 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 445
+21:56:55.636 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 446
+21:56:55.644 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 447
+21:56:55.652 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 448
+21:56:55.659 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 449
+21:56:55.667 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 450
+21:56:55.674 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 451
+21:56:55.683 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 452
+21:56:55.691 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 453
+21:56:55.700 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 454
+21:56:55.708 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 455
+21:56:55.717 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 456
+21:56:55.725 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 457
+21:56:55.733 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 458
+21:56:55.741 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 459
+21:56:55.749 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 460
+21:56:55.757 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 461
+21:56:55.765 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 462
+21:56:55.773 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 463
+21:56:55.780 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 464
+21:56:55.788 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 465
+21:56:55.797 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 466
+21:56:55.805 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 467
+21:56:55.814 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 468
+21:56:55.821 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 469
+21:56:55.829 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 470
+21:56:55.837 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 471
+21:56:55.844 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 472
+21:56:55.852 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 473
+21:56:55.860 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 474
+21:56:55.869 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 475
+21:56:55.876 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 476
+21:56:55.884 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 477
+21:56:55.908 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 478
+21:56:55.918 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 479
+21:56:55.927 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 480
+21:56:55.936 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 481
+21:56:55.944 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 482
+21:56:55.952 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 483
+21:56:55.959 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 484
+21:56:55.968 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 485
+21:56:55.976 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 486
+21:56:55.984 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 487
+21:56:55.992 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 488
+21:56:55.999 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 489
+21:56:56.007 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 490
+21:56:56.015 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 491
+21:56:56.022 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 492
+21:56:56.031 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 493
+21:56:56.039 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 494
+21:56:56.048 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 495
+21:56:56.055 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 496
+21:56:56.063 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 497
+21:56:56.072 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 498
+21:56:56.080 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 499
+21:56:56.090 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 500
+21:56:56.099 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role='alert']"}
+  (Session info: chrome=116.0.5845.141)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a3c79266f9a7df181193e234901094bc, findElement {using=xpath, value=//div[@role='alert']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63625}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63625/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a3c79266f9a7df181193e234901094bc
+21:56:58.099 [main] INFO  com.p360.pageObject.PO_MembershipPage - Alert Message Content is: No active subscription found matching the user
+21:56:58.141 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Cancel button Exception: no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()="Cancel"]"}
+  (Session info: chrome=116.0.5845.141)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a3c79266f9a7df181193e234901094bc, findElement {using=xpath, value=//span[normalize-space()="Cancel"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63625}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63625/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a3c79266f9a7df181193e234901094bc
+21:56:58.141 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method call done: pasueMembership
+21:57:01.313 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+21:57:03.459 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
+21:57:05.473 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method called: resumeMembership
+21:57:18.922 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+21:57:19.557 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
+21:57:24.840 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
+21:57:25.473 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
+21:57:25.891 [main] INFO  com.p360.testCases.TC_Membership - Driver shutdown

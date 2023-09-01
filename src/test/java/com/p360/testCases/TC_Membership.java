@@ -22,7 +22,7 @@ public class TC_Membership extends BaseClass{
 	public ReUseAbleElement ruae;
 	
 	String categoryName = "All";
-	String packageName = "Alaska";
+	String packageName = "Package2";
 	String radioButton = "Custom Date";
 	
 	//PASS THE ALL THE DATE IN THE GIVEN FORMAT
@@ -48,7 +48,7 @@ public class TC_Membership extends BaseClass{
 	}
 	
 	//TO CHECK AGREED TERMS OF MEMBERSHIP
-	//@Test(priority = 3 , dependsOnMethods = "test_Login")
+	@Test(priority = 3 , dependsOnMethods = "test_Login")
 	public void test_CheckAgreedTerms() throws InterruptedException {
 		mp = callMeBeforePerformAnyAction();
 		hp = mp.checkAgreedTerm();
@@ -56,14 +56,14 @@ public class TC_Membership extends BaseClass{
 	
 	
 	//TO PAUSE MEMBERSHIP
-	//@Test(priority = 4 ,dependsOnMethods = "test_Login")
+	@Test(priority = 4 ,dependsOnMethods = "test_Login")
 	public void test_PauseMembership() throws InterruptedException {
 		mp = callMeBeforePerformAnyAction();
 		hp = mp.pasueMembership(pauseStartDate, pauseEndDate, pauseReason);
 	}
 	
 	//TO RESUME MEMBERSHIP
-	//@Test(priority = 5 ,dependsOnMethods = "test_Login")
+	@Test(priority = 5 ,dependsOnMethods = "test_Login")
 	public void test_ResumeMembership() throws InterruptedException {
 		mp = callMeBeforePerformAnyAction();
 		hp = mp.resumeMembership();

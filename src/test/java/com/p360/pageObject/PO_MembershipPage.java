@@ -46,6 +46,8 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	String alertMsgPauseMembershipMoreThenOneTimeInAQuarter = "Memberships can only be paused once in a quarter";
 	String alertMsgPauseMembership = "Your membership has been paused successfully";
 	String alertMsgSelectMemberhsipPackage = "Please select membership package.";
+	String alertMsgChangeMembership = "Membership Package Changed.";
+	String alertMsgNoActiveSubscription = "No active subscription found matching the user";
 	
 	//=========START========MEMBERSHIP PAGE OBJECTS=============//
 	@FindBy(xpath = "//span[normalize-space()='Manage Membership']")
@@ -153,18 +155,8 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	//TO SELECT THE PACKAGE
 	public void selectPackage(String packageName) throws InterruptedException{	
 		logger.info("SelectPackage methods called");
-		
-		for(WebElement ele : listPackageName) {
-			if(ele.equals(packageName)) {
-				Thread.sleep(500);
-				action.moveToElement(ele).click().build().perform();
-				logger.info("Matched list option: "+ele);
-			}else {
-				logger.info("List option not matched and given name is: "+packageName);
-			}
-		}
+		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listPackageName,packageName);
 		Thread.sleep(1000);
-
 	}
 	
 	//TO CLICK ON THE CHANGE MEMBERSHIP BUTTON
@@ -301,6 +293,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 		logger.info("Clicked on the pause membership end date icon");
 		Thread.sleep(500);
 	}
+
 	//=========START========ACTION METHODS FOR MEMBERSHIP PAGE OBJECTS=============//
 	
 	
@@ -322,8 +315,17 @@ public class PO_MembershipPage extends ReUseAbleElement{
 			logger.info("Selected radio button is not Custom Date");
 		}
 		selectPackage(packageName);
-		//ruae.clickOnCheckBox_RU();
+		ruae.clickOnCheckBox_RU();
 		clickOnBtnChangeMembership();
+		if(snakeAlertMessagesDisplayedContent_RU().equals(alertMsgChangeMembership)) {
+			logger.info("===>>> Membership Changed Successfully");
+		} else if(snakeAlertMessagesDisplayedContent_RU().equals(alertMsgSelectMemberhsipPackage)) {
+			logger.info("===>>> Membership package not selected");
+			ruae.clickOnCancelButton_RU();
+		}else {
+			logger.info("Alert Message Content is: "+snakeAlertMessagesDisplayedContent_RU());
+			ruae.clickOnCancelButton_RU();
+		}
 		logger.info("Method call done: changeMembership ");
 		return new PO_HomePage(driver);
 	}
@@ -350,14 +352,19 @@ public class PO_MembershipPage extends ReUseAbleElement{
 			logger.info("===>>> Membership Paused Successfully");
 		} else if(snakeAlertMessagesDisplayedContent_RU().equals(alertMsgPauseMembershipMoreThenOneTimeInAQuarter)) {
 			logger.info("===>>> Membership not paused");
+			ruae.clickOnCancelButton_RU();
+		}else if(snakeAlertMessagesDisplayedContent_RU().equals(alertMsgNoActiveSubscription)) {
+			logger.info("===>>> Membership not paused");
+			ruae.clickOnCancelButton_RU();
 		}else {
 			logger.info("Alert Message Content is: "+snakeAlertMessagesDisplayedContent_RU());
+			ruae.clickOnCancelButton_RU();
 		}
 		logger.info("Method call done: pasueMembership");
 		return new PO_HomePage(driver);	
 	}
 	
-	//TO PAUSE THE MEMBERSHIP
+	//TO RERSUME THE MEMBERSHIP
 	public PO_HomePage resumeMembership() throws InterruptedException {
 		logger.info("Method called: resumeMembership");
 		clickOnResumeMembership();
@@ -367,6 +374,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 			logger.info("===>>> Membership Resumed Successfully");
 		}else {
 			logger.info("Alert Message Content is: "+snakeAlertMessagesDisplayedContent_RU());
+			ruae.clickOnCancelButton_RU();
 		}
 		logger.info("Method call done: pasueMembership");
 		return new PO_HomePage(driver);	

@@ -88,6 +88,12 @@ public class PO_HomePage extends ReUseAbleElement{
 	@FindBy(xpath = "//input[@name='holderName']")
 	@CacheLookup
 	WebElement textCardHolderName;
+	
+	@FindBy(xpath = "//div[@class='w-full p-5']")
+	@CacheLookup
+	public WebElement btnNextClasses;
+	
+
 	//=========END========HOME PAGE OBJECTS=============//
 	
 	
@@ -165,6 +171,17 @@ public class PO_HomePage extends ReUseAbleElement{
 		logger.info("Entered card name");
 		Thread.sleep(500);
 	}
+	
+	
+	public void clickOnNextClasses() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(btnNextClasses));
+		Thread.sleep(500);
+		btnNextClasses.click();
+		logger.info("Clicked on the next classes");
+		Thread.sleep(1000);
+		driver.navigate().back();
+		Thread.sleep(2000);
+	}
 	//=========END========ACTION METHODS FOR HOME PAGE OBJECTS=============//
 	
 		
@@ -228,6 +245,7 @@ public class PO_HomePage extends ReUseAbleElement{
 		Thread.sleep(4000);
 		clickOnChangeButton();
 		clickOnCancelButton_RU();
+		clickOnNextClasses();
 		logger.info("...HOME PAGE ELEMENT TESTING DONE...");
 	}
 	

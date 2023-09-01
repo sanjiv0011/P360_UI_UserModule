@@ -587,7 +587,7 @@ public class ReUseAbleElement {
 	  			int t = 1;
 	  			String exception = null;
 	  			boolean flag = false;
-	  			while(t <= 500)
+	  			while(t <= 750)
 	  			{
 	  				logger.info("Checking alert after every 100 miliseconds durations: "+t);
 	  				try {
@@ -597,7 +597,7 @@ public class ReUseAbleElement {
 		  						logger.info("Alert message is displayed: "+flag);
 		  			  			alertMessageContent_RU = alertSnakeMessage.getText();
 		  					}else {
-		  						Thread.sleep(100);
+		  						Thread.sleep(150);
 		  						t++;
 		  					}
 	  				}catch(Exception e) {
