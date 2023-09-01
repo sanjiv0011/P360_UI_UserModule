@@ -19,9 +19,9 @@ public class TC_LoginAndLogout extends TC_Login{
 	
 	//TO LOGIN
 	@Test(priority = 1)
-	public void test_Login(String eamil, String password) throws InterruptedException {
+	public void test_Login() throws InterruptedException {
 		lp = new PO_LoginPage(driver);
-		hp = lp.Login(eamil,password);
+		hp = lp.Login(email,password);
 	}
 	
 	//TO LOGOUT

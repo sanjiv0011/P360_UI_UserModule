@@ -9,9 +9,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -25,6 +25,7 @@ public class PO_LoginPage extends ReUseAbleElement {
 	public JavascriptExecutor jsExecutor;
 	public ReUseAbleElement ruae;
 	public WebDriverWait wait;
+	public Actions action;
 	
 	public  PO_LoginPage(WebDriver driver)
 	{   super(driver);
@@ -32,6 +33,7 @@ public class PO_LoginPage extends ReUseAbleElement {
 	    jsExecutor  = (JavascriptExecutor)driver;
 		ruae = new ReUseAbleElement(driver);
 		wait = new WebDriverWait (driver, Duration.ofSeconds(30));
+		action = new Actions(driver);
 	}
 
 	// to find page elements
@@ -55,7 +57,7 @@ public class PO_LoginPage extends ReUseAbleElement {
 	public void clickBtnSignIn() throws InterruptedException {
 		btnLogin.click();
 		logger.info("clicke on Sign In button");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 	}
 	
 	//TO SET THE USERNAME/EMAIL AND WAIT TILL IS IS NOT APPERS MAX WAIT TIME(30 SECONDS)
@@ -96,6 +98,7 @@ public class PO_LoginPage extends ReUseAbleElement {
 		
 		try {
 			wait.until(ExpectedConditions.textToBePresentInElementLocated(By.tagName("body"), "Dashboard"));
+			Thread.sleep(500);
 			if(driver.getPageSource().contains("Welcome")) {
 				Assert.assertTrue(true);
 				logger.info("...LOGIN DONE...");

@@ -91,7 +91,7 @@ public class BaseClass {
 		logger.info("Maximize the window");
 		//Thread.sleep(5000);
 		
-		System.out.println("Email: "+email+" and Password: "+password);
+		System.out.println("Login user Email: "+email+" and Password: "+password);
 		
 	}
 	

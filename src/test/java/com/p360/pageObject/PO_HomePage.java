@@ -1,12 +1,15 @@
 package com.p360.pageObject;
 
 import java.time.Duration;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -25,21 +28,20 @@ public class PO_HomePage extends ReUseAbleElement{
 	public ReUseAbleElement ruae;
 	public WebDriverWait wait;
 	public PO_LoginPage lp;
+	public Actions action;
 	//HOMEPAGE CONSTRUCTOR CREATION
 	public PO_HomePage(WebDriver driver) {	
 		super(driver);
 	    this.driver = driver;
 	    jsExecutor  = (JavascriptExecutor)driver;
 		ruae = new ReUseAbleElement(driver);
-		wait = new WebDriverWait (driver, Duration.ofSeconds(10));
+		wait = new WebDriverWait (driver, Duration.ofSeconds(15));
 		lp = new PO_LoginPage(driver);
+		action = new Actions(driver);
 
 	}
 	
 	//=========START========HOME PAGE OBJECTS=============//
-	@FindBy(xpath = "//span[normalize-space()='Dashboard']")
-	@CacheLookup
-	WebElement menuDashBoard;
 	
 	@FindBy(xpath = "//span[normalize-space()='Membership']")
 	@CacheLookup
@@ -78,82 +80,90 @@ public class PO_HomePage extends ReUseAbleElement{
 	@FindBy(xpath = "//div[@class='ml-2']")
 	@CacheLookup
 	WebElement btnLogout;
+	
+	@FindBy(xpath = "//span[normalize-space()='Change']")
+	@CacheLookup
+	WebElement btnChange;
+	
+	@FindBy(xpath = "//input[@name='holderName']")
+	@CacheLookup
+	WebElement textCardHolderName;
 	//=========END========HOME PAGE OBJECTS=============//
 	
 	
 	//=========START========ACTION METHODS FOR HOME PAGE OBJECTS=============//
-	public void clickMenuDashBoard() throws InterruptedException
-	{
-		menuDashBoard.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the Menu Dashboard");
-		
-	}
 	
-	public void clickMenuMembership() throws InterruptedException
-	{
+	public void clickMenuMembership() throws InterruptedException {
 		menuMembership.click();
 		Thread.sleep(2000);
 		logger.info("Clicked on the Menu membership");
 	}
 	
-	public void clickMenuMyClasses() throws InterruptedException
-	{
+	public void clickMenuMyClasses() throws InterruptedException {
 		menuMyClasses.click();
 		Thread.sleep(2000);
 		logger.info("Clicked on the Menu my classes");
 	}
 	
-	public boolean verifyDashboard() throws InterruptedException
-	{
+	public boolean verifyDashboard() throws InterruptedException {
 		boolean bol = textDashboard.isDisplayed();
 		Thread.sleep(2000);
 		logger.info("Checked is Dashboard displayed: "+bol);
-		return bol;
-		
-		
+		return bol;	
 	}
 	
-	public void clickManageMyMembership() throws InterruptedException
-	{
+	public void clickManageMyMembership() throws InterruptedException {
 		linkManageMyMembership.click();
 		Thread.sleep(2000);
 		logger.info("Clicked on the Manage my membership ");
 	}
 	
-	public void clickNextClass() throws InterruptedException
-	{
+	public void clickNextClass() throws InterruptedException {
 		linkNextClass.click();
 		Thread.sleep(2000);
 		logger.info("Clicked on the Next class ");
 	}
 	
-	public void clickAppStore() throws InterruptedException
-	{
+	public void clickAppStore() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(linkAppStore));
+		Thread.sleep(500);
 		linkAppStore.click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		logger.info("Clicked on the Appstore ");
 	}
 	
-	public void clickGooglePlayStore() throws InterruptedException
-	{
+	public void clickGooglePlayStore() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(linkGooglePlayStore));
+		Thread.sleep(500);
 		linkGooglePlayStore.click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		logger.info("Clicked on the Google playstore ");
 	}
 	
-	public void clickOnUserNameButton() throws InterruptedException
-	{
+	public void clickOnUserNameButton() throws InterruptedException {
 		btnUserName.click();
-		Thread.sleep(300);
+		Thread.sleep(500);
 		logger.info("Clicked on the User name text ");
 	}
 	
-	public void clickOnLogoutButton() throws InterruptedException
-	{
-		btnLogout.click();
+	public void clickOnLogoutButton() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(btnLogout));
 		Thread.sleep(300);
+		btnLogout.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on the Logout button ");
+	}
+	
+	public void clickOnChangeButton() throws InterruptedException {
+		btnChange.click();
+		logger.info("Clicked on the button card change");
+		Thread.sleep(2000);
+	}
+	
+	public void setCardHoldName(String cardName) throws InterruptedException {
+		textCardHolderName.sendKeys(cardName);
+		logger.info("Entered card name");
+		Thread.sleep(500);
 	}
 	//=========END========ACTION METHODS FOR HOME PAGE OBJECTS=============//
 	
@@ -161,13 +171,14 @@ public class PO_HomePage extends ReUseAbleElement{
 	// TO LOGOUT
 	public PO_LoginPage Logout() throws InterruptedException
 	{	
-		clickMenuDashBoard();
+		ruae.clickMenuDashBoard_RU();
 		clickOnUserNameButton();
 		clickOnLogoutButton();
 		
 		try {
 			wait.until(ExpectedConditions.elementToBeClickable(lp.btnLogin));
-			if(driver.getPageSource().equals("Performance360")){
+			Thread.sleep(500);
+			if(driver.getPageSource().contains("Performance360")){
 				Assert.assertTrue(true);
 				logger.info("... LOGOUT DONE ...");
 			}else{
@@ -178,6 +189,59 @@ public class PO_HomePage extends ReUseAbleElement{
 			logger.info("Logout Exception: "+e.getMessage());
 		}
 		return new PO_LoginPage(driver);
+	}
+	
+	//TO CHECK THE HOME PAGE ELEMENT
+	public void checkClickActionOnHomePageElement() throws InterruptedException {
+		ruae.clickMenuDashBoard_RU();
+		clickMenuMembership();
+		clickMenuMyClasses();
+		ruae.clickMenuDashBoard_RU();
+		verifyDashboard();
+		clickManageMyMembership();
+		driver.navigate().back();
+		
+		//TO HANDELS NEW TAB OR WINDOWS
+		Set<String> handles = driver.getWindowHandles();
+		// it takes care of tab iterations
+		Iterator itr  = handles.iterator();	
+		String parenttab = (String) itr.next(); // it is on parent tab
+		
+		clickAppStore(); //ON THIS ACTION CREATE NEW TAB
+		//jsExecutor.executeScript("window.scrollBy(0, 300);");
+		//action.scrollByAmount(0, 300).build().perform();
+		Thread.sleep(2000);
+		//jsExecutor.executeScript("window.scrollBy(0, -300);");
+		//action.scrollByAmount(0, -300).build().perform();
+		Thread.sleep(2000);
+		driver.switchTo().window(parenttab);
+		Thread.sleep(2000);
+		clickGooglePlayStore();
+		Thread.sleep(2000);
+		//jsExecutor.executeScript("window.scrollBy(0, 300);");
+		action.scrollByAmount(0, 300).build().perform();
+		Thread.sleep(2000);
+		//jsExecutor.executeScript("window.scrollBy(0, -300);");
+		action.scrollByAmount(0, -300).build().perform();
+		Thread.sleep(2000);
+		driver.switchTo().window(parenttab);
+		Thread.sleep(4000);
+		clickOnChangeButton();
+		clickOnCancelButton_RU();
+		logger.info("...HOME PAGE ELEMENT TESTING DONE...");
+	}
+	
+	//TO CHENGE THE CARD DETAILS
+	public void changeCardDetails(String cardHolderName,String cardNumber,String expirayAndCode,String zipCode) throws InterruptedException
+	{
+		wait.until(ExpectedConditions.elementToBeClickable(btnChange));
+		clickOnChangeButton();
+		setCardHoldName(cardHolderName);
+		logger.info("Waiting to enter the card number, expiray , code and zip code manualy");
+		Thread.sleep(15000);
+		ruae.clickOnBtnSave_1_RU();
+		wait.until(ExpectedConditions.elementToBeClickable(btnChange));
+		Thread.sleep(10000);
 	}
 	
 }

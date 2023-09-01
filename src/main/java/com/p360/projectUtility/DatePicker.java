@@ -35,10 +35,10 @@ public class DatePicker{
 	public static String selectDate = "//div[@role='row']//button";
 	public static String elementCurrentMonthYearDisplayed  = "(//div[contains(@class,'MuiPickersFadeTransitionGroup-root')])[1]";
 	
-	
+
 	// WAY 3
 	//======================= this is used when month and year are in the grid format==================//
-			public static void DatePicker_GenericMethod_WithoutDropDown(WebDriver driver, String yourDate, int x) throws InterruptedException
+			public static void DatePicker_GenericMethod_WhenYearAndDateListPresent(WebDriver driver, String yourDate, int x) throws InterruptedException
 			{	logger.info("Enter inside date picker methods");
 					
 			    // my date setting
@@ -163,104 +163,8 @@ public class DatePicker{
 		        }
 		    	Thread.sleep(1000);
 			}
-}
 			
-/*	
-    // WAY 1
-	//======================= this is used when month and year are in the grid format==================//
-	public static void DatePicker_GenericMethod_WithoutDropDown(WebDriver driver, String path_YearDateToggelBtn, String selectMonth ,String iconNextMonth, String iconPreviousMonth, String path_dateGrid, String path_yearGrid, String yourDate ) throws InterruptedException
-	{	logger.info("Enter inside date picker methods");
-			
-	    // my date setting
-        String myDate[] = yourDate.split(" ");
-        String year = myDate[2];
-        String month = myDate[1];
-        String date = myDate[0];
-        logger.info("User given year: " + year+" Month: "+month+" Date: "+date);
 
-        // to click on the toggle button for year and date selection
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(path_YearDateToggelBtn)).click();
-        logger.info("Clicked on the toggle button for date and year selection");
-        Thread.sleep(1000);
-
-        // to match and pick year
-        List<WebElement> yearGrid = driver.findElements(By.xpath(path_yearGrid));
-        boolean flag = false;
-        for (WebElement yearElement : yearGrid) {
-            String yr = yearElement.getText();
-            if (yr.equals(year)) {
-                Thread.sleep(500);
-                logger.info("Selected year: " + yr);
-                yearElement.click();
-                Thread.sleep(500);
-                flag = true;
-                break;
-            }
-        }
-        if (flag != true) {
-        	logger.info("Year not selected");
-        }
-
-        // to match month find already present month "path_currentMonthYearDisplayed"
-        Thread.sleep(500);
-        String monthyear = driver.findElement(By.xpath(selectMonth)).getText();
-        logger.info(monthyear);
-        String arr[] = monthyear.split(" ");
-        String mon = arr[0];
-        logger.info("Displayed month name: " + mon);
-        String monthArray[] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-
-        int displayedMonth = 0;
-        int inputMonth = 0;
-        for (int i = 1; i < monthArray.length; i++) {
-            if (mon.equalsIgnoreCase(monthArray[i])) {
-                displayedMonth = i;
-            }
-            if (month.equalsIgnoreCase(monthArray[i])) {
-                inputMonth = i;
-            }
-        }
-        while (displayedMonth > inputMonth) {
-            displayedMonth = displayedMonth - 1;
-            driver.findElement(By.xpath(iconPreviousMonth)).click();
-            Thread.sleep(1000);
-        }
-        while (displayedMonth < inputMonth) {
-            displayedMonth = displayedMonth + 1;
-            driver.findElement(By.xpath(iconNextMonth)).click();
-            Thread.sleep(1000);
-            
-        }
-        if (displayedMonth == inputMonth) {
-            logger.info("Month is selected and name is: " + monthArray[inputMonth]);
-        } else {
-            logger.info("Month not selected");
-        }
-
-        // Date picker "path_date"
-        List<WebElement> allDates = driver.findElements(By.xpath(path_dateGrid));
-        Thread.sleep(1000);
-        boolean flag2 = false;
-        for (WebElement dateElement : allDates) {
-            String dt = dateElement.getText();
-            if (dt.equals(date)) {
-                Thread.sleep(500);
-                flag2 = true;
-                logger.info("Selected date: " + dt);
-                dateElement.click();
-                Thread.sleep(1000);
-                break;
-            }
-        }
-        if (flag2 != true) {
-        	logger.info("Date not selected");
-        }
-    }
-	
-
-*/	
-	
 	
 /*
 	//WAY 2
@@ -390,4 +294,134 @@ public class DatePicker{
 //		
 //		
 //	}
-	
+
+		// WAY 1
+		//SELECT THE DATE WHEN DATE IS IN GRID FORMAT ONLY AND MONTH YEAR IN BETWEEN NEXT AND PRIVIOUS BUTTON
+		public static void DatePicker_GenericMethod_WhenDateGridOnlyPresent(WebDriver driver, String yourDate ) throws InterruptedException
+		{	logger.info("Enter inside date picker methods");
+				
+			String monthYear_address = "//div[contains(@class,'MuiPickersCalendarHeader-transitionContainer')]";
+			String previousButton_address = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiPickersCalendarHeader-iconButton'])[1]";
+			String nextButton_address = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiPickersCalendarHeader-iconButton'])[2]";
+			String dateList_address = "//div[@role='presentation']";
+			
+		    // my date setting
+	        String myDate[] = yourDate.split(" ");
+	        String year = myDate[2];
+	        String month = myDate[1];
+	        String date = myDate[0];
+	        logger.info("User given year: " + year+" Month: "+month+" Date: "+date);
+
+	        // to match month find already present month "path_currentMonthYearDisplayed"
+	        Thread.sleep(500);
+	        String monthyear = driver.findElement(By.xpath(monthYear_address)).getText();
+	        logger.info(monthyear);
+	        String arr[] = monthyear.split(" ");
+	        String yr = arr[1];
+	        String mon = arr[0];
+	        logger.info("Displayed month name: " + mon);
+	        String monthArray[] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+
+	       
+	        //TO SELECT THE YEAR
+        	while(Integer.parseInt(year)>Integer.parseInt(yr)) {
+        		driver.findElement(By.xpath(nextButton_address)).click();
+        		Thread.sleep(500);
+        	}
+        	while(Integer.parseInt(year)<Integer.parseInt(yr)) {
+        		driver.findElement(By.xpath(previousButton_address)).click();
+        		Thread.sleep(500);	        	
+        	}
+        	
+        	//TO SELECT THE MONTH
+        	int displayedMonth = 0;
+	        int inputMonth = 0;
+	        for (int i = 1; i < monthArray.length; i++) {
+	        	if (mon.equalsIgnoreCase(monthArray[i])) {
+	                displayedMonth = i; //IT WILL SELECT THE DISPLAYED MONTH POSITION
+	            }
+	            if (month.equalsIgnoreCase(monthArray[i])) {
+	                inputMonth = i;	// IT WILL GIVE THE GIVEN MONTH POSITION
+	            }
+	        }
+	        while (displayedMonth > inputMonth) {
+	            displayedMonth = displayedMonth - 1;
+	            driver.findElement(By.xpath(previousButton_address)).click();
+	            Thread.sleep(1000);
+	        }
+	        while (displayedMonth < inputMonth) {
+	            displayedMonth = displayedMonth + 1;
+	            driver.findElement(By.xpath(nextButton_address)).click();
+	            Thread.sleep(1000);
+	            
+	        }
+	        if (displayedMonth == inputMonth) {
+	            logger.info("selected month name is: " + monthArray[inputMonth]);
+	        } else {
+	            logger.info("Month not selected");
+	        }
+
+	        //TO SELECT DATE
+	        List<WebElement> allDates = driver.findElements(By.xpath(dateList_address));
+	        Thread.sleep(1000);
+	        boolean flag2 = false;
+	        for (WebElement dateElement : allDates) {
+	            String dt = dateElement.getText();
+	            if (dt.equals(date)) {
+	                Thread.sleep(500);
+	                flag2 = true;
+	                logger.info("Selected date: " + dt);
+	                dateElement.click();
+	                Thread.sleep(1000);
+	                break;
+	            }
+	        }
+	        if (flag2 != true) {
+	        	logger.info("Date not selected");
+	        }
+	    }
+		
+		
+		
+		//WAY 5
+		//TO SELECT THE DATE BY DIRECT SENDING DATA IN THE TEXT BOX
+  		public void setDateByDirectSendingDateVauleInTheTextBox(WebDriver driver,String leaveEndDate, int y) throws InterruptedException {
+  			//TO SELECT DATE FIRST DATE WITHOUT USING DATE PICKER 
+	  		String firstDateHolder_RU = "(//span[contains(@class,'MuiIconButton-label')])[3]";
+	  		//TO SELECT DATE SECONDS DATE WITHOUT USING DATE PICKER 
+	  		String SecondsDateHolder_RU = "(//span[contains(@class,'MuiIconButton-label')])[4]";
+	  		String thirdDateHolder_RU = "(//input[contains(@placeholder,'MM/DD/YYYY')])[3]";
+	  		WebElement dateHolder = null;
+  			if(y == 1) {
+  				dateHolder = driver.findElement(By.xpath(firstDateHolder_RU));
+  			}else if(y == 2){
+  				dateHolder = driver.findElement(By.xpath(SecondsDateHolder_RU));
+  			}else if(y == 3) {
+  				dateHolder = driver.findElement(By.xpath(thirdDateHolder_RU));
+  			}
+  			
+  			dateHolder.sendKeys(Keys.CONTROL,"a");
+  			dateHolder.sendKeys(Keys.DELETE);
+  			String[] date = leaveEndDate.split("[\\s\\-\\.]");
+  			String dt = date[0];
+  			String mt = date[1];
+  			String yr = date[2];
+  			System.out.println("Input date: "+dt+" month: "+mt+" year: "+yr);
+  			int x = 0;
+  			String[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+  			for(String mon : months)
+  			{	x++;
+  				if(mon.equals(mt)){
+  					break;
+  				}
+  			}
+  			String xAsString = String.valueOf(x);
+  			dateHolder.sendKeys(xAsString);
+  			Thread.sleep(300);
+  			dateHolder.sendKeys(dt);
+  			Thread.sleep(300);
+  			dateHolder.sendKeys(yr);
+  			Thread.sleep(300);
+
+  		}
+}

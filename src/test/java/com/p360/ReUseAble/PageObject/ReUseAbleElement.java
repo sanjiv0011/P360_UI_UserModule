@@ -40,6 +40,15 @@ public class ReUseAbleElement {
 	
 	
 	//========START=======Actions Elements===========TO USE ANY ONE OF THIS FIRST SEARCH IT SO THAT IT COMES AT TOP=========//
+		@FindBy(xpath = "//span[normalize-space()='Dashboard']")
+		@CacheLookup
+		public WebElement menuDashBoard_RU;
+		public void clickMenuDashBoard_RU() throws InterruptedException {
+			menuDashBoard_RU.click();
+			Thread.sleep(3000);
+			logger.info("Clicked on the Menu Dashboard");
+			
+		}
 		//SEARCH BOX
 		@FindBy(xpath = "//input[@placeholder='Search…']")
 		@CacheLookup
@@ -249,6 +258,16 @@ public class ReUseAbleElement {
 		   Thread.sleep(1000);
 		}
 		
+		//CHECK BOX
+		@FindBy(xpath = "//input[@type='checkbox']")
+		@CacheLookup
+		WebElement checkBox_RU;
+		public void clickOnCheckBox_RU() throws InterruptedException{
+			checkBox_RU.click();
+			Thread.sleep(400);
+		   logger.info("Clicked on the Checkbox");
+		}
+
 		//CREATE BUTTON
 	    @FindBy(xpath = "//p[normalize-space()=\"Create\"]")
 		@CacheLookup
@@ -259,16 +278,15 @@ public class ReUseAbleElement {
 		}
 
 		//BUTTON CANCEL
-		@FindBy(xpath = "//p[normalize-space()=\"Cancel\"]")
+		@FindBy(xpath = "//span[normalize-space()=\"Cancel\"]")
 		@CacheLookup
 		public WebElement btnCancel_RU;
 		public void clickOnCancelButton_RU() throws InterruptedException {
 			try {
 				if(btnCancel_RU.isDisplayed()) {
 						btnCancel_RU.click();
-				}else if(iconUserProfileImage_1_RU.isDisplayed()){
-					clickOnUserProfileIcon_1_RU();
-				}else {
+						logger.info("Clicked on the cancel button");
+				} else {
 					logger.info("Cancel button and HomeIcon button both not found");
 				}
 					
@@ -430,7 +448,7 @@ public class ReUseAbleElement {
   		}
 	   	
   		//SAVE BUTTON 1
-  		@FindBy(xpath = "(//p[normalize-space()='Save'])[1]")
+  		@FindBy(xpath = "(//span[normalize-space()='Save'])[1]")
   		@CacheLookup
   		public WebElement btnSave_1_RU;
   		public void clickOnBtnSave_1_RU() throws InterruptedException {
@@ -439,6 +457,20 @@ public class ReUseAbleElement {
   			Thread.sleep(300);
   		}
   		
+  		//TO GET OPTIONS LIST
+  		@FindBy(xpath = "//ul[@role='listbox']//li")
+  		@CacheLookup
+  		public List <WebElement>  listOption_RU;
+  		
+  		//CONFIRM BUTTON ADDRESS AND ACTION METHODS
+  		@FindBy(xpath = "//span[normalize-space()='Confirm']")
+  		@CacheLookup
+  		public WebElement  btnConfirm_RU;
+  		public void clickOnBtnConfirm_RU() throws InterruptedException{
+  			btnConfirm_RU.click();
+  			logger.info("Clicked on the confirm button");
+  			Thread.sleep(300);
+  		}
 	  //===========END=======FOR THE BUTTON YES, NO, SAVE CHANGES, CROSS BUTTON, SAVE & GO TO HOME, DORPDOWN ICON AND DELETE==================//
 	//========START=======Actions Elements=========TO USER ANY ONE OF THIS FIRST SEARCH IT SO THAT IT COMES AT TOP===========//
 	    
@@ -542,46 +574,7 @@ public class ReUseAbleElement {
 	  	  //==========END==========TIME SELECTION PAGE OBJECTS AND ITS ACTION METHODS=====USE THIS METHODS IF AND ONLY IF TIME PICKRE FAILED TO PICK THE TIME======//
   		
 	  		
-	  		//TO SELECT THE DATE WITHOUT USING DATE PICKER METHODS
-	  		public void setDateWithoutUsingDatePicker_RU(String leaveEndDate, int y) throws InterruptedException {
-	  			//TO SELECT DATE FIRST DATE WITHOUT USING DATE PICKER 
-		  		String firstDateHolder_RU = "(//input[contains(@placeholder,'MM/DD/YYYY')])[1]";
-		  		//TO SELECT DATE SECONDS DATE WITHOUT USING DATE PICKER 
-		  		String SecondsDateHolder_RU = "(//input[contains(@placeholder,'MM/DD/YYYY')])[2]";
-		  		String thirdDateHolder_RU = "(//input[contains(@placeholder,'MM/DD/YYYY')])[3]";
-		  		WebElement dateHolder = null;
-	  			if(y == 1) {
-	  				dateHolder = driver.findElement(By.xpath(firstDateHolder_RU));
-	  			}else if(y == 2){
-	  				dateHolder = driver.findElement(By.xpath(SecondsDateHolder_RU));
-	  			}else if(y == 3) {
-	  				dateHolder = driver.findElement(By.xpath(thirdDateHolder_RU));
-	  			}
-	  			
-	  			dateHolder.sendKeys(Keys.CONTROL,"a");
-	  			dateHolder.sendKeys(Keys.DELETE);
-	  			String[] date = leaveEndDate.split("[\\s\\-\\.]");
-	  			String dt = date[0];
-	  			String mt = date[1];
-	  			String yr = date[2];
-	  			System.out.println("Input date: "+dt+" month: "+mt+" year: "+yr);
-	  			int x = 0;
-	  			String[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-	  			for(String mon : months)
-	  			{	x++;
-	  				if(mon.equals(mt)){
-	  					break;
-	  				}
-	  			}
-	  			String xAsString = String.valueOf(x);
-	  			dateHolder.sendKeys(xAsString);
-	  			Thread.sleep(300);
-	  			dateHolder.sendKeys(dt);
-	  			Thread.sleep(300);
-	  			dateHolder.sendKeys(yr);
-	  			Thread.sleep(300);
-	  			logger.info("Entered second one date");	
-	  		}
+	  	
   
 	
 	  		

@@ -18,8 +18,7 @@ public class TC_Login extends BaseClass {
 
 	//TO LOGIN
 	@Test(priority = 1)
-	public void test_Login(String email,String password) throws InterruptedException {
-		logger.info("Method called: test_Login");
+	public void test_Login() throws InterruptedException {
 		lp = new PO_LoginPage(driver);
 		lp.Login(email,password);
 	}

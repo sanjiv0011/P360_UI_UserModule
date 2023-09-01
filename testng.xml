@@ -12,10 +12,13 @@
 		    <parameter name="browser" value="chrome"></parameter>
 		    
 		    <classes>
-			
-		      <class name="com.p360.testCases.TC_LoginAndLogout"/>
+			  
+		     <!-- <class name="com.p360.testCases.TC_Home"/>-->
 		     
+		      <class name="com.p360.testCases.TC_Membership"/>
 		     
 		    </classes>
+		    
 	    </test> <!-- Test -->
+	    
 </suite> <!-- Suite -->
