@@ -1,4 +1,4 @@
-package com.p360.User.pageObject;
+package com.p360.pageObject;
 
 import java.time.Duration;
 
@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import com.p360.Main.pageObject.PO_Main_HomePage;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 
 public class PO_LoginPage extends ReUseAbleElement {
@@ -26,6 +27,7 @@ public class PO_LoginPage extends ReUseAbleElement {
 	public ReUseAbleElement ruae;
 	public WebDriverWait wait;
 	public Actions action;
+	public PO_Main_HomePage mhp;
 	
 	public  PO_LoginPage(WebDriver driver)
 	{   super(driver);
@@ -52,6 +54,10 @@ public class PO_LoginPage extends ReUseAbleElement {
 	@FindBy(xpath = "//button[contains(text(),'Sign in')]")
 	@CacheLookup
 	WebElement btnsubmit;
+	
+	@FindBy(xpath = "(//div[contains(@class,\"MuiList-root\")][contains(.,'Dashboard')])[2]")
+	@CacheLookup
+	WebElement tabDashboard;
 	
 	//TO CLICK ON THE LOGIN BUTTON
 	public void clickBtnSignIn() throws InterruptedException {
@@ -100,10 +106,10 @@ public class PO_LoginPage extends ReUseAbleElement {
 			wait.until(ExpectedConditions.textToBePresentInElementLocated(By.tagName("body"), "Dashboard"));
 			Thread.sleep(500);
 			if(driver.getPageSource().contains("Welcome")) {
-				//Assert.assertTrue(true);
+				Assert.assertTrue(true);
 				logger.info("...LOGIN DONE...");
 			} else {
-				//Assert.assertTrue(false);
+				Assert.assertTrue(false);
 				logger.info("!!!LOGIN FAILED!!!");
 			}
 		}catch(Exception e) {
@@ -111,6 +117,31 @@ public class PO_LoginPage extends ReUseAbleElement {
 		}
 		
 		return new PO_HomePage(driver);
+	}
+	
+	//TO SUPER ADMIN LOGIN
+	public PO_Main_HomePage AdminLogin(String email,String password) throws InterruptedException {
+		logger.info("Method called Login");
+		clickBtnSignIn();
+		setUserName(email);
+		setTextpassword(password);
+		clickBtnsubmit();
+		
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(tabDashboard));
+			Thread.sleep(500);
+			if(driver.getPageSource().contains("This Week")) {
+				Assert.assertTrue(true);
+				logger.info("...LOGIN DONE...");
+			} else {
+				Assert.assertTrue(false);
+				logger.info("!!!LOGIN FAILED!!!");
+			}
+		}catch(Exception e) {
+			logger.info("Login exception message: "+e.getMessage());
+		}
+		
+		return new PO_Main_HomePage(driver);
 	}
 	
 }

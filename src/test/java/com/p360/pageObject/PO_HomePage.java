@@ -1,4 +1,4 @@
-package com.p360.User.pageObject;
+package com.p360.pageObject;
 
 import java.time.Duration;
 import java.util.Iterator;

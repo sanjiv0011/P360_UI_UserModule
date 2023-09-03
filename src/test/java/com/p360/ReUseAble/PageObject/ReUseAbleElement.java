@@ -40,6 +40,21 @@ public class ReUseAbleElement {
 	
 	
 	//========START=======Actions Elements===========TO USE ANY ONE OF THIS FIRST SEARCH IT SO THAT IT COMES AT TOP=========//
+	
+		//CONTINUE BUTTON P360
+		@FindBy(xpath = "(//span[normalize-space()='Continue'])[1]")
+		@CacheLookup
+		public WebElement btnContinue_RU;
+		public void clickONBtnContinue_RU() throws InterruptedException {
+			btnContinue_RU.click();
+			Thread.sleep(1000);
+			logger.info("Clicked on the Continue button");
+			
+		}
+	
+	
+	
+	
 		@FindBy(xpath = "//span[normalize-space()='Dashboard']")
 		@CacheLookup
 		public WebElement menuDashBoard_RU;
@@ -49,8 +64,8 @@ public class ReUseAbleElement {
 			logger.info("Clicked on the Menu Dashboard");
 			
 		}
-		//SEARCH BOX
-		@FindBy(xpath = "//input[@placeholder='Search…']")
+		//SEARCH BOX P360
+		@FindBy(xpath = "//input[@placeholder='Search here...']")
 		@CacheLookup
 		public  WebElement searchBox_RU;
 		public void searchBox_RU(String SearchKey) throws InterruptedException
@@ -204,7 +219,18 @@ public class ReUseAbleElement {
 	    
 	    //===========START=======FOR THE BUTTON YES, NO, SAVE CHANGES, CROSS BUTTON, SAVE & GO TO HOME, AND DELETE, PROFILE ICON, EYE ICON===================//
 	    
-	  
+	    
+		// DATE ICON 1, P360
+	    @FindBy(xpath = "(//button[contains(@aria-label,\"Choose date\")])[1]")
+		@CacheLookup
+		public WebElement iconDate_1_RU;
+		public void clickOnDateIcon_1_RU() throws InterruptedException{
+			iconDate_1_RU.click();
+		   logger.info("Clicked on the date icon 1");
+		   Thread.sleep(1000);
+		}
+	    		
+	    		
 	    
 	    //TO CLICK ON THE USER PROFILE ICON FOR ICON UPLOAD
 	    // PROFILE ICON 1
@@ -258,26 +284,38 @@ public class ReUseAbleElement {
 		   Thread.sleep(1000);
 		}
 		
-		//CHECK BOX
+		//CHECK BOX 1,P360
 		@FindBy(xpath = "//input[@type='checkbox']")
 		@CacheLookup
-		WebElement checkBox_RU;
-		public void clickOnCheckBox_RU() throws InterruptedException{
-			checkBox_RU.click();
+		WebElement checkBox_1_RU;
+		public void clickOnCheckBox_1_RU() throws InterruptedException{
+			checkBox_1_RU.click();
 			Thread.sleep(400);
-		   logger.info("Clicked on the Checkbox");
+		   logger.info("Clicked on the Checkbox 1");
 		}
-
-		//CREATE BUTTON
-	    @FindBy(xpath = "//p[normalize-space()=\"Create\"]")
+		
+		//CHECK BOX 2 ,P360
+		@FindBy(xpath = "(//input[@type='checkbox'])[1]")
 		@CacheLookup
-		public WebElement btnCreate_RU;
-		public void clickOnCreateButton_RU() throws InterruptedException{
-			btnCreate_RU.click();
-		   logger.info("Clicked on the Create button");
+		WebElement checkBox_2_RU;
+		public void clickOnCheckBox_2_RU() throws InterruptedException{
+			checkBox_2_RU.click();
+			Thread.sleep(400);
+		   logger.info("Clicked on the Checkbox 2");
 		}
 
-		//BUTTON CANCEL
+		//BUTTON ADD MEMBER, P360
+		@FindBy(xpath = "//span[normalize-space()='Add Member']")
+  		@CacheLookup
+  		public WebElement btnAddMember_RU;
+  		public void clickOnAddMember_RU() throws InterruptedException {
+  			btnAddMember_RU.click();
+  			logger.info("Clicked on the button add member");
+  			Thread.sleep(1000);
+  		}
+		  		
+
+		//BUTTON CANCEL P360
 		@FindBy(xpath = "//span[normalize-space()=\"Cancel\"]")
 		@CacheLookup
 		public WebElement btnCancel_RU;
@@ -388,7 +426,32 @@ public class ReUseAbleElement {
 		}
 	 
 	    
-	    //DROPDOWN ADDRESS 1
+	    		
+		
+  		//DROPDOWN BOX ADDRESS 1, P360
+  		@FindBy(xpath = "(//div[@role='button'])[1]")
+  		@CacheLookup
+  		public WebElement dropdownBoxAddress_1_RU;
+  		public void clickOnDropdownBoxAddress_1_RU() throws InterruptedException {
+  			dropdownBoxAddress_1_RU.click();
+  			logger.info("Clicked on the dropdown box address 1 to open drop list");
+  			Thread.sleep(1000);
+  		}
+  		
+  		
+  		//DROPDOWN BOX ADDRESS 2,  P360
+  		@FindBy(xpath = "(//div[@role='button'])[1]")
+  		@CacheLookup
+  		public WebElement dropdownBoxAddress_2_RU;
+  		public void clickOnDropdownBoxAddress_2_RU() throws InterruptedException {
+  			dropdownBoxAddress_2_RU.click();
+  			logger.info("Clicked on the dropdown box address 2 to open drop list");
+  			Thread.sleep(1000);
+  		}
+  		
+  		
+	   
+	    //DROPDOWN ICON P360
   		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[1]")
   		@CacheLookup
   		public WebElement iconDropdown_1_RU;
@@ -398,6 +461,7 @@ public class ReUseAbleElement {
   			Thread.sleep(1000);
   		}
   		
+
   		//DROPDOWN ADDRESS 2
   		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[2]")
   		@CacheLookup
@@ -438,7 +502,8 @@ public class ReUseAbleElement {
   			Thread.sleep(300);
   		}
   		
-  		//TO GET OPTIONS LIST
+  
+  		//DROPDWON LIST P360
   		@FindBy(xpath = "//ul[@role='listbox']//li")
   		@CacheLookup
   		public List <WebElement>  listOption_RU;
@@ -480,16 +545,7 @@ public class ReUseAbleElement {
 	        Thread.sleep(300);
 	    }
 	    
-	    //USER ICON DROPDOWN BUTTON
-	    @FindBy(xpath="//*[@data-testid='ExpandMoreIcon']")
-	    @CacheLookup
-	    public WebElement iconDropdownLoggedUser_RU;
-	    public void clickOnDropdownIconLoggedUser_RU() throws InterruptedException {
-	    	wait.until(ExpectedConditions.elementToBeClickable(iconDropdownLoggedUser_RU));
-	    	iconDropdownLoggedUser_RU.click();
-	        logger.info("Clicked on the dropdown icon of the already logged in user");
-	        Thread.sleep(300);
-	    }
+	
   //===========END======ACTIVATE AND DEACTIVATE ONLY FOR USER PAGE OBJECT AND ITE ACTION METHODS===========//	
 	    
  

@@ -7,15 +7,15 @@
   <test thread-count="5" name="P360_UI_USER_MODULE(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.p360.Main.testCases.TC_Main_Home">
+      <class name="com.p360.Main.testCases.TC_Main_Users">
         <methods>
-          <include name="test_MainHomePageTabTesting"/>
           <include name="teardown"/>
           <include name="setup"/>
           <include name="test_Logout"/>
           <include name="test_Login"/>
+          <include name="test_Main_AddMember"/>
         </methods>
-      </class> <!-- com.p360.Main.testCases.TC_Main_Home -->
+      </class> <!-- com.p360.Main.testCases.TC_Main_Users -->
     </classes>
   </test> <!-- P360_UI_USER_MODULE(failed) -->
 </suite> <!-- Failed suite [Suite] -->

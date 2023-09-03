@@ -1,9 +1,6 @@
-package com.p360.Main.PageObject;
+package com.p360.Main.pageObject;
 
 import java.time.Duration;
-import java.util.Iterator;
-import java.util.Set;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
@@ -12,13 +9,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
-import com.p360.User.pageObject.PO_HomePage;
-import com.p360.User.pageObject.PO_LoginPage;
+import com.p360.pageObject.PO_HomePage;
+import com.p360.pageObject.PO_LoginPage;
 
 
 public class PO_Main_HomePage extends ReUseAbleElement{
@@ -203,12 +197,10 @@ public class PO_Main_HomePage extends ReUseAbleElement{
 	
 	//MAIN HOME PAGE TABE TESTING
 	public PO_HomePage mainHomePageTesting() throws InterruptedException {
-		
-		clickOnTabUsers();
-		clickOntabPackages();
-		clickOntabLocations();
 		clickOntabDashboard();
-		clickOntabThisWeek();
+		clickOntabLocations();
+		clickOntabPackages();
+		clickOnTabUsers();
 		clickOntabTrials();
 		clickOntabClasses();
 		clickOntabCoaches();
@@ -219,6 +211,7 @@ public class PO_Main_HomePage extends ReUseAbleElement{
 		clickOntabDocuments();
 		clickOntabUserLabels();
 		clickOntabLinks();
+		clickOntabThisWeek();
 		
 		return new PO_HomePage(driver);
 		

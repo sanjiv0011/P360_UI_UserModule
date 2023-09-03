@@ -3,8 +3,8 @@ package com.p360.testCases;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
-import com.p360.User.pageObject.PO_HomePage;
-import com.p360.User.pageObject.PO_LoginPage;
+import com.p360.pageObject.PO_HomePage;
+import com.p360.pageObject.PO_LoginPage;
 
 public class TC_Home extends BaseClass{
 	//HOME PAGE CONSTRUCTOR
@@ -13,8 +13,8 @@ public class TC_Home extends BaseClass{
 	}
 	
 	//CONSTRUCTOR DECLARATION
-	public PO_LoginPage lp;
 	public PO_HomePage hp;
+	public PO_LoginPage lp;
 	public Faker faker  = new Faker();
 	
 	String cardHolderName = faker.name().fullName();

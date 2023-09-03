@@ -3,9 +3,9 @@ package com.p360.Main.testCases;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
-import com.p360.Main.PageObject.PO_Main_HomePage;
-import com.p360.User.pageObject.PO_HomePage;
-import com.p360.User.pageObject.PO_LoginPage;
+import com.p360.Main.pageObject.PO_Main_HomePage;
+import com.p360.pageObject.PO_HomePage;
+import com.p360.pageObject.PO_LoginPage;
 import com.p360.testCases.BaseClass;
 
 public class TC_Main_Home extends BaseClass{
@@ -25,13 +25,13 @@ public class TC_Main_Home extends BaseClass{
 	@Test(priority = 1)
 	public void test_Login() throws InterruptedException {
 		lp = new PO_LoginPage(driver);
-		hp = lp.Login(email,password);
+		mhp = lp.AdminLogin(email,password);
 	}
 
 	//TO MAIN HOME PAGE TAB TESTING
 	@Test(priority = 3)
-	public void test_MainHomePageTabTesting() throws InterruptedException {
-		mhp.mainHomePageTesting();
+	public void test_Main_HomePageTabTesting() throws InterruptedException {
+		hp = mhp.mainHomePageTesting();
 	}
 	
 	//TO LOGOUT

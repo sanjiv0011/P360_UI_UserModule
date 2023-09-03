@@ -1,4 +1,4 @@
-package com.p360.User.pageObject;
+package com.p360.pageObject;
 
 import java.time.Duration;
 import java.util.List;
@@ -202,7 +202,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	
 	//TO SELECT THE CHECK BOX
 	public void clickOnCheckBoxAgreePricingOption() throws InterruptedException {
-		ruae.clickOnCheckBox_RU();
+		ruae.clickOnCheckBox_1_RU();
 	}
 	
 	//TO CLICK BUTTON AGREED TERMS
@@ -315,7 +315,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 			logger.info("Selected radio button is not Custom Date");
 		}
 		selectPackage(packageName);
-		ruae.clickOnCheckBox_RU();
+		ruae.clickOnCheckBox_1_RU();
 		clickOnBtnChangeMembership();
 		if(snakeAlertMessagesDisplayedContent_RU().equals(alertMsgChangeMembership)) {
 			logger.info("===>>> Membership Changed Successfully");

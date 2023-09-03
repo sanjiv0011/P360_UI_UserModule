@@ -23,7 +23,8 @@ public class Generic_Method_ToSelect_Boostrape_Dropdown
     	logger.info("Enter inside method selectOptionFromDropdown and caller methods name: "+callerMethodName);
     	boolean flag = false;
     	for(WebElement element : options)
-    	{	logger.info("List options: "+element.getText());
+    	{	//logger.info("List options: "+element.getText());
+    	
     		if(element.getText().equals(value) || (element.getText()).trim().contains(value))
     		{  	logger.info("matched list value: "+element.getText());	
     			try {
@@ -38,6 +39,36 @@ public class Generic_Method_ToSelect_Boostrape_Dropdown
     			}
     			flag = true;
     			break;
+    		}
+    		else if(callerMethodName.equals("selectMonthAndDate"))
+    		{
+
+    			String[] text = element.getText().split("\\n");
+				String format = "";
+				for(String st : text) {
+					//logger.info(st);
+					format = format+st+" ";
+				}
+				logger.info(format);
+    			String formatText = text[0]+" "+text[1]+" "+text[2];
+    			
+    			if(formatText.trim().equals(value))
+    			{
+        			logger.info("Formated matched list value: "+formatText);	
+        			try {
+        				if(element.isEnabled()) {
+            				element.click();
+            				logger.info("Click on the element");
+            			}else {
+            				logger.info("Element is not enabled");
+            			}
+        			}catch(Exception e) {
+        				logger.info("Exception While selectiong list from the dropdown: "+e.getMessage());
+        			}
+        			flag = true;
+        			break;
+        		}
+    		 
     		}
     	}
     

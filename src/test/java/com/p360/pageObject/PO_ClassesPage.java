@@ -1,10 +1,11 @@
-package com.p360.User.pageObject;
+package com.p360.pageObject;
 
 import java.time.Duration;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,7 +35,7 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		    this.driver = driver;
 		    jsExecutor  = (JavascriptExecutor)driver;
 			ruae = new ReUseAbleElement(driver);
-			wait = new WebDriverWait (driver, Duration.ofSeconds(45));
+			wait = new WebDriverWait (driver, Duration.ofSeconds(30));
 			lp = new PO_LoginPage(driver);
 			action = new Actions(driver);
 		}
@@ -115,25 +116,73 @@ public class PO_ClassesPage extends ReUseAbleElement{
 			Thread.sleep(1000);
 		}
 		
+		//TEXT NO CLASSSES TO THE CURRENT FILTER
+		@FindBy(xpath = "//div[contains(text(),'No Classes Matches Current Filter')]")
+		@CacheLookup
+		public WebElement textNoClassesMatchedToTheCurrentFilter;
+		public boolean textNoClassesMatchedToTheCurrentFilter() throws InterruptedException {
+			boolean flag = false;
+			try {
+				Thread.sleep(2000);
+				if(textNoClassesMatchedToTheCurrentFilter.isDisplayed()) {
+					flag =  true;
+					logger.info("Is No classes matched with the applied filters"+flag);
+				}else {
+					logger.info("Classes present with current applied filter");
+				}
+			
+			}catch(Exception e) {
+				logger.info(e.getMessage());
+			}
+			return flag;
+		}
+		
 		//TO SELLECT THE MONTH AND DATE
 		@FindBy(xpath = "//div[@class='slick-slide slick-active']")
 		@CacheLookup
 		public List <WebElement> listMonthDate;
-		public void selectMonthAndDate(String monthAndDate) throws InterruptedException {
-		
+		public void selectMonthAndDate(String monthAndDate) throws InterruptedException {			
+			//List <WebElement> listCorrectDate = driver.findElements(By.xpath("//div[@class='slick-slide slick-active']"));
+			boolean flag = false;
+			while(true) {
+				for(WebElement element : listMonthDate)
+				{	
+					String[] text = element.getText().split("\\n");
+					String formatText = "";
+					for(String st : text) {
+						//logger.info(st);
+						formatText = formatText+st+" ";
+						
+					}
+					logger.info(formatText);
+	    			//String formatText = text[0]+" "+text[1]+" "+text[2];
+	    			
+    				if(formatText.equals(monthAndDate)){
+    					flag = true;
+    					element.click();
+            			break;
+            		}
+    				clickOnMonthAndDateNextButton();
+    			}
+    			if(flag) {
+    				break;
+    			}
+			
+			}
+			
+			//Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listMonthDate,monthAndDate);
+			Thread.sleep(1000);
 		}
 		
 		//MONTH DATE NEXT BUTTON
 		@FindBy(xpath = "(//div[contains(@class,'slick-arrow')])[2]")
 		@CacheLookup
-		public WebElement btnNext;
+		public WebElement btnNext;// = driver.findElement(By.xpath("(//div[contains(@class,'slick-arrow')])[2]"));
 		public void clickOnMonthAndDateNextButton() throws InterruptedException {
-			Thread.sleep(1000);
-			wait.until(ExpectedConditions.elementToBeClickable(btnNext));
-			
+			Thread.sleep(2000);
+			//WebElement btnNext = driver.findElement(By.xpath("(//div[contains(@class,'slick-arrow')])[2]"));
 			btnNext.click();
 			logger.info("Clicked on the next button");
-			Thread.sleep(2000);
 		}
 		
 		//MONTH DATE BACK BUTTON
@@ -180,9 +229,7 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		@CacheLookup
 		public WebElement textSelectPreferedRegion;
 		public boolean isPreferedRegionPresetnt() throws InterruptedException {
-			Thread.sleep(1000);
-			wait.until(ExpectedConditions.invisibilityOfAllElements(textSelectPreferedRegion));
-			
+			Thread.sleep(3000);
 			boolean flag = textSelectPreferedRegion.isDisplayed();
 			logger.info("Preferd region is diplayed: "+flag);
 			Thread.sleep(2000);
@@ -193,10 +240,8 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		@FindBy(xpath = "//div[text()='Please choose your preferred location:']")
 		@CacheLookup
 		public WebElement textSelectPreferedLocation;
-		public boolean isPreferedLocationPresetnt() throws InterruptedException {
-			Thread.sleep(1000);
-			wait.until(ExpectedConditions.invisibilityOfAllElements(textSelectPreferedLocation));
-			
+		public boolean isPreferedLocationPresent() throws InterruptedException {
+			Thread.sleep(3000);
 			boolean flag = textSelectPreferedLocation.isDisplayed();
 			logger.info("Preferd location is diplayed: "+flag);
 			Thread.sleep(2000);
@@ -208,8 +253,8 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		@CacheLookup
 		public List <WebElement> listRegion;
 		public void selectRegion(String regionName) throws InterruptedException {
-			wait.until(ExpectedConditions.invisibilityOfAllElements(listRegion));
-			
+			//wait.until(ExpectedConditions.invisibilityOfAllElements(listRegion));
+			Thread.sleep(2000);
 			Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listRegion,regionName);
 			Thread.sleep(1000);
 		}
@@ -219,8 +264,8 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		@CacheLookup
 		public List <WebElement> listLocation;
 		public void selectLocation(String locationName) throws InterruptedException {
-			Thread.sleep(1000);
-			wait.until(ExpectedConditions.invisibilityOfAllElements(listLocation));
+			Thread.sleep(2000);
+			//wait.until(ExpectedConditions.invisibilityOfAllElements(listLocation));
 			
 			Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listLocation,locationName);
 			Thread.sleep(1000);
@@ -230,20 +275,35 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		
 		//TO SELECT THE CLASS
 		public PO_HomePage registerClass(String time,String monthAndDate,String locationName,String regionName,String instructorName) throws InterruptedException {
+			
 			clickOnBtnRegisterForClass();
 			clickOnBtnChangeLocation();
-			jsExecutor.executeScript("window.scrollBy(0, 300);");
+			//jsExecutor.executeScript("window.scrollBy(0, 300);"); //HORIZONTAL SCROLL BY 300PIXEL
 			Thread.sleep(1000);
-			action.scrollByAmount(0, 300).build().perform();
+			//action.scrollByAmount(0, 300).build().perform();
+			isPreferedLocationPresent();
+			jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);"); //TO SCROLL TILL END
+			logger.info("Location Page scroll down");
 			Thread.sleep(2000);
 			ruae.clickOnBtnBack_1_RU();
 			isPreferedRegionPresetnt();
+			jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);"); //TO SCROLL TILL END
+			logger.info("Region page scroll down");
 			selectRegion(regionName);
+			Thread.sleep(1000);
+			//isPreferedLocationPresent();
+			action.scrollByAmount(0, 300).build().perform();
+			logger.info("Location page scroll down");
 			selectLocation(locationName);
-			clickOnBtnInstructor();
+			Thread.sleep(1000);
 			selectinstructor(instructorName);
 			selectMonthAndDate(monthAndDate);
+			if(textNoClassesMatchedToTheCurrentFilter()) {
+				clickOnBtnGoToDashBoard();
+				return new PO_HomePage(driver);
+			}
 			selectClassOnSpecificTime(time);
+			clickOnBtnGoToDashBoard();
 			return new PO_HomePage(driver);
 		}
 		

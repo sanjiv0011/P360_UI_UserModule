@@ -4,10 +4,10 @@ import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
-import com.p360.User.pageObject.PO_ClassesPage;
-import com.p360.User.pageObject.PO_HomePage;
-import com.p360.User.pageObject.PO_LoginPage;
-import com.p360.User.pageObject.PO_MembershipPage;
+import com.p360.pageObject.PO_ClassesPage;
+import com.p360.pageObject.PO_HomePage;
+import com.p360.pageObject.PO_LoginPage;
+
 
 public class TC_Classes extends BaseClass{
 	//HOME PAGE CONSTRUCTOR
@@ -24,10 +24,10 @@ public class TC_Classes extends BaseClass{
 	
 	//PASS THE ALL THE DATE IN THE GIVEN FORMAT
 	String time = "12:10 AM";	//PASS VALUES IN THIS FORMAT ONLY
-	String monthDate = "SEP 05";	//PASS VALUES IN THIS FORMAT ONLY
+	String monthDate = "SEP 04 MON";	//PASS VALUES IN THIS FORMAT ONLY
 	String location = "GAME ON";
 	String region = "UNITED KINGDOM";
-	String instructorName = "Brain Lara";
+	String instructorName = "Brian Lara";
 	
 	
 	

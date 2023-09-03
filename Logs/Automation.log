@@ -1,344 +1,180 @@
-21:56:55.254 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 400
-21:56:55.265 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 401
-21:56:55.273 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 402
-21:56:55.282 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 403
-21:56:55.290 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 404
-21:56:55.299 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 405
-21:56:55.307 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 406
-21:56:55.315 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 407
-21:56:55.322 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 408
-21:56:55.330 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 409
-21:56:55.340 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 410
-21:56:55.349 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 411
-21:56:55.357 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 412
-21:56:55.365 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 413
-21:56:55.372 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 414
-21:56:55.380 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 415
-21:56:55.389 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 416
-21:56:55.398 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 417
-21:56:55.406 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 418
-21:56:55.414 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 419
-21:56:55.422 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 420
-21:56:55.430 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 421
-21:56:55.439 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 422
-21:56:55.447 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 423
-21:56:55.459 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 424
-21:56:55.468 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 425
-21:56:55.476 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 426
-21:56:55.484 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 427
-21:56:55.492 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 428
-21:56:55.500 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 429
-21:56:55.509 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 430
-21:56:55.518 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 431
-21:56:55.526 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 432
-21:56:55.534 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 433
-21:56:55.541 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 434
-21:56:55.549 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 435
-21:56:55.557 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 436
-21:56:55.567 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 437
-21:56:55.575 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 438
-21:56:55.582 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 439
-21:56:55.589 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 440
-21:56:55.597 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 441
-21:56:55.604 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 442
-21:56:55.611 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 443
-21:56:55.619 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 444
-21:56:55.628 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 445
-21:56:55.636 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 446
-21:56:55.644 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 447
-21:56:55.652 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 448
-21:56:55.659 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 449
-21:56:55.667 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 450
-21:56:55.674 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 451
-21:56:55.683 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 452
-21:56:55.691 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 453
-21:56:55.700 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 454
-21:56:55.708 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 455
-21:56:55.717 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 456
-21:56:55.725 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 457
-21:56:55.733 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 458
-21:56:55.741 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 459
-21:56:55.749 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 460
-21:56:55.757 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 461
-21:56:55.765 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 462
-21:56:55.773 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 463
-21:56:55.780 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 464
-21:56:55.788 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 465
-21:56:55.797 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 466
-21:56:55.805 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 467
-21:56:55.814 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 468
-21:56:55.821 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 469
-21:56:55.829 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 470
-21:56:55.837 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 471
-21:56:55.844 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 472
-21:56:55.852 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 473
-21:56:55.860 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 474
-21:56:55.869 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 475
-21:56:55.876 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 476
-21:56:55.884 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 477
-21:56:55.908 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 478
-21:56:55.918 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 479
-21:56:55.927 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 480
-21:56:55.936 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 481
-21:56:55.944 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 482
-21:56:55.952 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 483
-21:56:55.959 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 484
-21:56:55.968 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 485
-21:56:55.976 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 486
-21:56:55.984 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 487
-21:56:55.992 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 488
-21:56:55.999 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 489
-21:56:56.007 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 490
-21:56:56.015 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 491
-21:56:56.022 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 492
-21:56:56.031 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 493
-21:56:56.039 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 494
-21:56:56.048 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 495
-21:56:56.055 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 496
-21:56:56.063 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 497
-21:56:56.072 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 498
-21:56:56.080 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 499
-21:56:56.090 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 500
-21:56:56.099 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role='alert']"}
-  (Session info: chrome=116.0.5845.141)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a3c79266f9a7df181193e234901094bc, findElement {using=xpath, value=//div[@role='alert']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63625}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63625/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a3c79266f9a7df181193e234901094bc
-21:56:58.099 [main] INFO  com.p360.pageObject.PO_MembershipPage - Alert Message Content is: No active subscription found matching the user
-21:56:58.141 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Cancel button Exception: no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()="Cancel"]"}
-  (Session info: chrome=116.0.5845.141)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a3c79266f9a7df181193e234901094bc, findElement {using=xpath, value=//span[normalize-space()="Cancel"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63625}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63625/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a3c79266f9a7df181193e234901094bc
-21:56:58.141 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method call done: pasueMembership
-21:57:01.313 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-21:57:03.459 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
-21:57:05.473 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method called: resumeMembership
-21:57:18.922 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-21:57:19.557 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-21:57:24.840 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-21:57:25.473 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-21:57:25.891 [main] INFO  com.p360.testCases.TC_Membership - Driver shutdown
-13:34:31.479 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-13:34:38.028 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-13:34:59.887 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-13:35:00.055 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-13:35:00.162 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-13:35:00.259 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
-13:35:06.255 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-13:35:06.964 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-13:35:07.299 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-13:35:14.500 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-13:35:17.684 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-13:35:19.809 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-13:35:25.296 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-13:35:25.920 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-13:35:33.182 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-13:35:33.842 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-13:35:34.380 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
-13:36:43.486 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-13:36:46.099 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-13:36:57.209 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-13:36:57.388 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-13:36:57.442 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-13:36:57.542 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
-13:37:02.354 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-13:37:02.902 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-13:37:03.165 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-13:37:09.325 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-13:37:12.462 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-13:37:14.593 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-13:37:16.680 [main] INFO  com.p360.pageObject.PO_ClassesPage - Checking is no class found text present: true
-13:37:17.047 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button register for the class
-13:37:18.664 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
-13:44:55.441 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-13:44:57.969 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-13:45:30.712 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-13:45:30.956 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-13:45:31.005 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-13:45:31.209 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
-13:45:37.030 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-13:45:37.594 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-13:45:37.874 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-13:45:45.453 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-13:45:48.606 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-13:45:50.670 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-13:45:56.240 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-13:45:56.814 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-13:46:02.335 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-13:46:02.891 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-13:46:03.470 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
-13:48:47.016 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-13:48:49.457 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-13:49:12.044 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-13:49:12.182 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-13:49:12.233 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-13:49:12.329 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
-13:49:17.218 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-13:49:17.791 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-13:49:18.089 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-13:49:24.996 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
-13:49:40.934 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-13:49:43.398 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-13:50:02.145 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-13:50:02.300 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-13:50:02.354 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-13:50:02.462 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
-13:50:08.186 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-13:50:08.860 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-13:50:09.253 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-13:50:16.975 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-13:50:20.121 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-13:50:22.189 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-13:50:28.045 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-13:50:28.696 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-13:50:44.509 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-13:50:45.121 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-13:50:45.679 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
-13:51:49.100 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-13:51:51.639 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-13:52:01.691 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-13:52:01.833 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-13:52:01.887 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-13:52:01.967 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
-13:52:08.958 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-13:52:09.615 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-13:52:09.940 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-13:52:18.540 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
-13:53:12.150 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-13:53:14.580 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-13:53:34.023 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-13:53:34.168 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-13:53:34.226 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-13:53:34.332 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
-13:53:39.671 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-13:53:40.363 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-13:53:40.735 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-13:53:49.619 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-13:53:52.746 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-13:53:54.830 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-13:54:05.339 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-13:54:05.911 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-13:54:14.441 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-13:54:15.027 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-13:54:15.437 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
-13:56:15.878 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-13:56:18.623 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-13:56:31.546 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-13:56:31.746 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-13:56:31.789 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-13:56:31.873 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
-13:56:37.071 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-13:56:37.625 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-13:56:37.881 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-13:56:44.159 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-13:56:47.318 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-13:56:49.450 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-13:57:45.379 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-13:57:46.035 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-13:57:51.555 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-13:57:52.168 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-13:57:52.572 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
-13:58:51.369 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-13:58:53.744 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-13:59:01.158 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-13:59:01.303 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-13:59:01.350 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-13:59:01.445 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
-13:59:07.073 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-13:59:07.722 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-13:59:08.044 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-13:59:15.310 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-13:59:18.429 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-13:59:20.527 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-13:59:37.901 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button register for the class
-13:59:44.260 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button Change locations
-13:59:44.645 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the back button
-13:59:45.955 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
-14:03:50.505 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-14:03:52.830 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-14:04:02.315 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-14:04:02.460 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-14:04:02.520 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-14:04:02.607 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
-14:04:08.816 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-14:04:09.498 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-14:04:09.811 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-14:04:18.204 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
-14:04:48.513 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-14:04:50.858 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-14:05:00.046 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-14:05:00.176 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-14:05:00.231 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-14:05:00.329 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
-14:05:06.213 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-14:05:06.815 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-14:05:07.104 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-14:05:13.939 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-14:05:17.070 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-14:05:19.252 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-14:05:23.376 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button register for the class
-14:05:28.252 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button Change locations
-14:05:31.025 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
-14:09:22.318 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-14:09:24.580 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-14:09:54.855 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-14:09:55.002 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-14:09:55.059 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-14:09:55.164 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
-14:10:02.166 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-14:10:02.767 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-14:10:03.033 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-14:10:10.725 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-14:10:13.845 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-14:10:15.947 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-14:10:27.994 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button register for the class
-14:11:18.079 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
-15:00:53.001 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Base class started...
-15:00:58.600 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Chrome driver selected
-15:02:00.952 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Base class started...
-15:02:03.449 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Chrome driver selected
-15:02:52.726 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Login page started
-15:02:52.862 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Maximize the window
-15:02:52.959 [main] INFO  com.p360.User.pageObject.PO_LoginPage - Method called Login
-15:02:53.053 [main] INFO  com.p360.User.pageObject.PO_LoginPage - clicke on Sign In button
-15:02:58.957 [main] INFO  com.p360.User.pageObject.PO_LoginPage - Enteterd email
-15:02:59.578 [main] INFO  com.p360.User.pageObject.PO_LoginPage - Entered password
-15:02:59.851 [main] INFO  com.p360.User.pageObject.PO_LoginPage - clicke on login submit button
-15:03:30.227 [main] INFO  com.p360.User.pageObject.PO_LoginPage - Login exception message: Expected condition failed: waiting for text ('Dashboard') to be present in element found by By.tagName: body (tried for 30 second(s) with 500 milliseconds interval)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61091}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61091/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ab5d76b46b86d572d9836139fab4b4ef
-15:03:31.503 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Driver shutdown
-15:06:57.626 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Base class started...
-15:06:59.977 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Chrome driver selected
-15:07:14.695 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Login page started
-15:07:14.845 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Maximize the window
-15:07:14.906 [main] INFO  com.p360.User.pageObject.PO_LoginPage - Method called Login
-15:07:15.026 [main] INFO  com.p360.User.pageObject.PO_LoginPage - clicke on Sign In button
-15:07:21.523 [main] INFO  com.p360.User.pageObject.PO_LoginPage - Enteterd email
-15:07:22.150 [main] INFO  com.p360.User.pageObject.PO_LoginPage - Entered password
-15:07:22.454 [main] INFO  com.p360.User.pageObject.PO_LoginPage - clicke on login submit button
-15:07:30.408 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Driver shutdown
-15:09:45.714 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Base class started...
-15:09:48.123 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Chrome driver selected
-15:10:18.808 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Login page started
-15:10:18.950 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Maximize the window
-15:10:19.023 [main] INFO  com.p360.User.pageObject.PO_LoginPage - Method called Login
-15:10:19.128 [main] INFO  com.p360.User.pageObject.PO_LoginPage - clicke on Sign In button
-15:10:24.989 [main] INFO  com.p360.User.pageObject.PO_LoginPage - Enteterd email
-15:10:25.581 [main] INFO  com.p360.User.pageObject.PO_LoginPage - Entered password
-15:10:25.907 [main] INFO  com.p360.User.pageObject.PO_LoginPage - clicke on login submit button
-15:10:33.172 [main] INFO  com.p360.User.pageObject.PO_LoginPage - !!!LOGIN FAILED!!!
-15:10:36.546 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-15:10:37.148 [main] INFO  com.p360.User.pageObject.PO_HomePage - Clicked on the User name text 
+16:19:14.156 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+16:19:17.276 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+16:19:19.441 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
+16:19:23.621 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button register for the class
+16:19:27.814 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button Change locations
+16:19:33.906 [main] INFO  com.p360.pageObject.PO_ClassesPage - Preferd location is diplayed: true
+16:19:35.928 [main] INFO  com.p360.pageObject.PO_ClassesPage - Location Page scroll down
+16:19:38.119 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the back button
+16:19:41.519 [main] INFO  com.p360.pageObject.PO_ClassesPage - Preferd region is diplayed: true
+16:19:43.561 [main] INFO  com.p360.pageObject.PO_ClassesPage - Region page scroll down
+16:19:45.574 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectRegion
+16:19:46.405 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - matched list value: UNITED KINGDOM
+16:19:46.489 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Click on the element
+16:19:48.784 [main] INFO  com.p360.pageObject.PO_ClassesPage - Location page scroll down
+16:19:50.799 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectLocation
+16:19:51.353 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - matched list value: GAME ON
+16:19:51.656 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Click on the element
+16:19:55.082 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the dropdown instructor
+16:19:57.097 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectinstructor
+16:19:57.180 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - matched list value: Brian Lara
+16:19:57.279 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Click on the element
+16:19:58.352 [main] INFO  com.p360.pageObject.PO_ClassesPage - SEP 02 SAT 
+16:20:00.578 [main] INFO  com.p360.pageObject.PO_ClassesPage - SEP 03 SUN 
+16:20:02.614 [main] INFO  com.p360.pageObject.PO_ClassesPage - Next button not click able
+16:20:02.640 [main] INFO  com.p360.pageObject.PO_ClassesPage -  
+16:20:04.688 [main] INFO  com.p360.pageObject.PO_ClassesPage - Next button not click able
+16:20:04.714 [main] INFO  com.p360.pageObject.PO_ClassesPage -  
+16:20:06.745 [main] INFO  com.p360.pageObject.PO_ClassesPage - Next button not click able
+16:20:06.786 [main] INFO  com.p360.pageObject.PO_ClassesPage -  
+16:20:08.793 [main] INFO  com.p360.pageObject.PO_ClassesPage - Next button not click able
+16:20:08.809 [main] INFO  com.p360.pageObject.PO_ClassesPage -  
+16:20:10.836 [main] INFO  com.p360.pageObject.PO_ClassesPage - Next button not click able
+16:20:10.860 [main] INFO  com.p360.pageObject.PO_ClassesPage -  
+16:20:12.909 [main] INFO  com.p360.pageObject.PO_ClassesPage - Next button not click able
+16:20:12.937 [main] INFO  com.p360.pageObject.PO_ClassesPage -  
+16:20:14.957 [main] INFO  com.p360.pageObject.PO_ClassesPage - Next button not click able
+16:20:14.990 [main] INFO  com.p360.pageObject.PO_ClassesPage -  
+16:20:17.022 [main] INFO  com.p360.pageObject.PO_ClassesPage - Next button not click able
+16:20:17.066 [main] INFO  com.p360.pageObject.PO_ClassesPage -  
+16:20:19.118 [main] INFO  com.p360.pageObject.PO_ClassesPage - Next button not click able
+16:20:19.148 [main] INFO  com.p360.pageObject.PO_ClassesPage -  
+16:20:21.174 [main] INFO  com.p360.pageObject.PO_ClassesPage - Next button not click able
+16:20:21.217 [main] INFO  com.p360.pageObject.PO_ClassesPage -  
+16:20:23.260 [main] INFO  com.p360.pageObject.PO_ClassesPage - Next button not click able
+16:20:23.304 [main] INFO  com.p360.pageObject.PO_ClassesPage -  
+16:20:25.347 [main] INFO  com.p360.pageObject.PO_ClassesPage - Next button not click able
+16:20:25.379 [main] INFO  com.p360.pageObject.PO_ClassesPage -  
+16:20:27.391 [main] INFO  com.p360.pageObject.PO_ClassesPage - Next button not click able
+16:20:27.413 [main] INFO  com.p360.pageObject.PO_ClassesPage -  
+16:20:29.446 [main] INFO  com.p360.pageObject.PO_ClassesPage - Next button not click able
+16:20:29.472 [main] INFO  com.p360.pageObject.PO_ClassesPage -  
+16:20:31.488 [main] INFO  com.p360.pageObject.PO_ClassesPage - Next button not click able
+16:20:31.500 [main] INFO  com.p360.pageObject.PO_ClassesPage -  
+16:20:33.509 [main] INFO  com.p360.pageObject.PO_ClassesPage - Next button not click able
+17:03:19.365 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Base class started...
+17:03:22.089 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Chrome driver selected
+17:03:23.179 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Login page started
+17:03:23.324 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Maximize the window
+17:03:23.457 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+17:03:23.638 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
+17:05:13.792 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Base class started...
+17:05:16.208 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Chrome driver selected
+17:05:17.017 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Login page started
+17:05:17.155 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Maximize the window
+17:05:17.291 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+17:05:17.467 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
+17:05:23.585 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+17:05:24.273 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+17:05:24.577 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+17:05:32.295 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+17:05:35.497 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOnTabUsers
+17:05:38.622 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabPackages 
+17:05:41.771 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage -  clickOntabLocations
+17:05:44.930 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+17:05:48.166 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - tabThisWeek 
+17:05:53.957 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - tabTrials 
+17:05:57.128 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabClasses 
+17:06:00.301 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - tabCoaches
+17:06:03.486 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabWorkouts 
+17:06:06.638 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabMovement 
+17:06:09.867 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabPromoCodes 
+17:06:13.028 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabPayments 
+17:06:16.160 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDocuments 
+17:06:19.269 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabUserLabels 
+17:06:22.423 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabLinks 
+17:06:23.203 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Driver shutdown
+17:06:52.645 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Base class started...
+17:06:55.433 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Chrome driver selected
+17:06:56.389 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Login page started
+17:06:56.583 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Maximize the window
+17:06:56.646 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+17:06:56.756 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
+17:07:01.583 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+17:07:02.195 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+17:07:02.520 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+17:07:10.248 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+17:07:13.455 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOnTabUsers
+17:07:16.567 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabPackages 
+17:07:19.719 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage -  clickOntabLocations
+17:07:22.906 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+17:07:26.054 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - tabThisWeek 
+17:07:32.128 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - tabTrials 
+17:07:35.286 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabClasses 
+17:07:38.480 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - tabCoaches
+17:07:41.673 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabWorkouts 
+17:07:44.851 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabMovement 
+17:07:47.982 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabPromoCodes 
+17:07:51.151 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabPayments 
+17:07:54.307 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDocuments 
+17:07:57.442 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabUserLabels 
+17:08:00.577 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabLinks 
+17:08:01.428 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Driver shutdown
+17:13:22.112 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Base class started...
+17:13:24.539 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Chrome driver selected
+17:13:25.562 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Login page started
+17:13:25.689 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Maximize the window
+17:13:25.860 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+17:13:25.953 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
+17:13:32.000 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+17:13:32.602 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+17:13:32.923 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+17:13:40.562 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+17:13:43.811 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+17:13:46.942 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage -  clickOntabLocations
+17:13:50.095 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabPackages 
+17:13:53.347 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOnTabUsers
+17:13:56.522 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - tabTrials 
+17:13:59.667 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabClasses 
+17:14:02.831 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - tabCoaches
+17:14:06.227 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabWorkouts 
+17:14:09.400 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabMovement 
+17:14:12.697 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabPromoCodes 
+17:14:16.015 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabPayments 
+17:14:19.154 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDocuments 
+17:14:22.276 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabUserLabels 
+17:14:25.395 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabLinks 
+17:14:28.536 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - tabThisWeek 
+17:14:31.719 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+17:14:32.317 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
+17:14:38.149 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
+17:14:38.751 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
+17:14:39.194 [main] INFO  com.p360.Main.testCases.TC_Main_Home - Driver shutdown
+18:57:06.508 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Base class started...
+18:57:09.470 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Chrome driver selected
+18:57:10.507 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Login page started
+18:57:10.730 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Maximize the window
+18:57:10.956 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+18:57:11.102 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
+18:57:18.565 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+18:57:19.178 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+18:57:19.498 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+18:57:27.050 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+18:57:30.429 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+18:57:33.570 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOnTabUsers
+18:57:39.748 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Driver shutdown
+19:00:21.407 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Base class started...
+19:00:24.403 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Chrome driver selected
+19:00:25.223 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Login page started
+19:00:25.362 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Maximize the window
+19:00:25.430 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+19:00:25.668 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
+19:00:31.437 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+19:00:32.017 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+19:00:32.306 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+19:00:39.876 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+19:00:43.088 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+19:00:46.224 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOnTabUsers
+19:00:52.083 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Driver shutdown
+19:02:27.849 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Base class started...
+19:02:30.199 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Chrome driver selected
+19:02:32.005 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Login page started
+19:02:32.156 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Maximize the window
+19:02:32.257 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+19:02:32.378 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on Sign In button
+19:02:37.963 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+19:02:38.557 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+19:02:38.845 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+19:02:45.163 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+19:02:48.413 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOnTabUsers
+19:02:54.124 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Driver shutdown
