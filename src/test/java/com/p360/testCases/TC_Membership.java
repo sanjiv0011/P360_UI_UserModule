@@ -4,9 +4,9 @@ import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
-import com.p360.pageObject.PO_HomePage;
-import com.p360.pageObject.PO_LoginPage;
-import com.p360.pageObject.PO_MembershipPage;
+import com.p360.User.pageObject.PO_HomePage;
+import com.p360.User.pageObject.PO_LoginPage;
+import com.p360.User.pageObject.PO_MembershipPage;
 
 public class TC_Membership extends BaseClass{
 	//HOME PAGE CONSTRUCTOR

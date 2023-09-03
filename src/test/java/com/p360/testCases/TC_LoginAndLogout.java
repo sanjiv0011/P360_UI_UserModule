@@ -2,8 +2,8 @@ package com.p360.testCases;
 
 import org.testng.annotations.Test;
 
-import com.p360.pageObject.PO_HomePage;
-import com.p360.pageObject.PO_LoginPage;
+import com.p360.User.pageObject.PO_HomePage;
+import com.p360.User.pageObject.PO_LoginPage;
 
 public class TC_LoginAndLogout extends TC_Login{
 

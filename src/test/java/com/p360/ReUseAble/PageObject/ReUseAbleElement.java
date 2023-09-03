@@ -367,45 +367,26 @@ public class ReUseAbleElement {
 			Thread.sleep(300);
 		}
 	    
-	    //SAVE AND GO TO HOME BUTTON 3
-	    @FindBy(xpath = "(//p[text()='Save & Go To Home'])[3]")
+	    //BACK BUTTON WITH SPAN TAG
+	    @FindBy(xpath = "//span[normalize-space()='Back']")
 		@CacheLookup
-		public WebElement btnSaveAndGoToHome_3_RU;
-	    public void clickOnBtnSaveAndGoToHome_3_RU() throws InterruptedException {
-	    	btnSaveAndGoToHome_3_RU.click();
-	    	logger.info("Clicked on the save and go to home button");
+		public WebElement btnBack;
+	    public void clickOnBtnBack_1_RU() throws InterruptedException {
+	    	btnBack.click();
+	    	logger.info("Clicked on the back button");
 			Thread.sleep(300);
 		}
 	    
 	    //NEXT BUTTON 1
-	    @FindBy(xpath = "(//p[normalize-space()='Next'])[1]")
+	    @FindBy(xpath = "//span[normalize-space()='Next']")
 		@CacheLookup
-		public WebElement btnNext_1_RU;
+		public WebElement btnNext_RU;
 	    public void clickOnBtnNext_1_RU() throws InterruptedException {
-	    	btnNext_1_RU.click();
+	    	btnNext_RU.click();
 	    	logger.info("Clicked on the nextbutton");
 			Thread.sleep(300);
 		}
-	    
-	    //NEXT BUTTON 2
-	    @FindBy(xpath = "(//p[normalize-space()='Next'])[2]")
-		@CacheLookup
-		public WebElement btnNext_2_RU;
-	    public void clickOnBtnNext_2_RU() throws InterruptedException {
-	    	btnNext_2_RU.click();
-	    	logger.info("Clicked on the nextbutton");
-			Thread.sleep(300);
-		}
-	    
-	    //NEXT BUTTON 3
-	    @FindBy(xpath = "(//p[normalize-space()='Next'])[3]")
-		@CacheLookup
-		public WebElement btnNext_3_RU;
-	    public void clickOnBtnNext_3_RU() throws InterruptedException {
-	    	btnNext_3_RU.click();
-	    	logger.info("Clicked on the nextbutton");
-			Thread.sleep(300);
-		}
+	 
 	    
 	    //DROPDOWN ADDRESS 1
   		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[1]")

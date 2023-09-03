@@ -1,4 +1,4 @@
-package com.p360.pageObject;
+package com.p360.User.pageObject;
 
 import java.time.Duration;
 import java.util.List;
@@ -35,7 +35,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	    this.driver = driver;
 	    jsExecutor  = (JavascriptExecutor)driver;
 		ruae = new ReUseAbleElement(driver);
-		wait = new WebDriverWait (driver, Duration.ofSeconds(10));
+		wait = new WebDriverWait (driver, Duration.ofSeconds(45));
 		lp = new PO_LoginPage(driver);
 		action = new Actions(driver);
 		

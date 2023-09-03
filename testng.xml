@@ -15,7 +15,14 @@
 			  
 		     <!-- <class name="com.p360.testCases.TC_Home"/>-->
 		     
-		      <class name="com.p360.testCases.TC_Membership"/>
+		      <!-- <class name="com.p360.testCases.TC_Membership"/>-->
+		      
+		      <!-- <class name="com.p360.testCases.TC_Classes"/>-->
+		      
+		      
+		      
+		      <!-- MAIN P360  WEBSITE TESTING-->
+		      <class name="com.p360.Main.testCases.TC_Main_Home"/>
 		     
 		    </classes>
 		    

@@ -1,14 +1,16 @@
-package com.p360.testCases;
+package com.p360.Main.testCases;
 
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
+import com.p360.Main.PageObject.PO_Main_HomePage;
 import com.p360.User.pageObject.PO_HomePage;
 import com.p360.User.pageObject.PO_LoginPage;
+import com.p360.testCases.BaseClass;
 
-public class TC_Home extends BaseClass{
+public class TC_Main_Home extends BaseClass{
 	//HOME PAGE CONSTRUCTOR
-	public TC_Home() {
+	public TC_Main_Home() {
 		super();
 	}
 	
@@ -16,11 +18,7 @@ public class TC_Home extends BaseClass{
 	public PO_LoginPage lp;
 	public PO_HomePage hp;
 	public Faker faker  = new Faker();
-	
-	String cardHolderName = faker.name().fullName();
-	String expiary = "34/45";
-	String CCVcode = "546";
-	String zipCode = "564665";
+	public PO_Main_HomePage mhp;
 	
 	
 	//TO LOGIN
@@ -29,17 +27,11 @@ public class TC_Home extends BaseClass{
 		lp = new PO_LoginPage(driver);
 		hp = lp.Login(email,password);
 	}
-	
-	//TO CHECK HOME PAGE ELEMENT
-	@Test(priority = 2, dependsOnMethods = "test_Login")
-	public void test_HomePageElement() throws InterruptedException {
-		hp.checkClickActionOnHomePageElement();
-	}
 
-	//TO CHENGE THE CARD DETAILS
+	//TO MAIN HOME PAGE TAB TESTING
 	@Test(priority = 3)
-	public void test_ChangeCardDetails() throws InterruptedException {
-		hp.changeCardDetails(cardHolderName,expiary,CCVcode,zipCode);
+	public void test_MainHomePageTabTesting() throws InterruptedException {
+		mhp.mainHomePageTesting();
 	}
 	
 	//TO LOGOUT
