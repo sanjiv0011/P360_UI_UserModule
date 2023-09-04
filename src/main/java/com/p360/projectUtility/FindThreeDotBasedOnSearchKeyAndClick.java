@@ -12,14 +12,14 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 	
 		public static final Logger logger = LogManager.getLogger(FindThreeDotBasedOnSearchKeyAndClick.class);
 		
-		public static void findThreedActionButtonAndClick(List<WebElement> listName,String btnThreeDot,WebDriver driver, String searchKey) throws InterruptedException {
+		public static int findThreedActionButtonAndClick(List<WebElement> listName,WebDriver driver, String searchKey) throws InterruptedException {
 		logger.info("findThreedActionButtonAndClick method called");
 		
 		Thread.sleep(500);
 		boolean flag = false;
-	
+		int listRowCount = 0;
 			for(WebElement element : listName)
-			{	
+			{	listRowCount++;
 				String[] text = element.getText().split("\\n");
 				String formatText = "";
 				int count = 0;
@@ -33,16 +33,17 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 						logger.info("formatText: "+formatText.trim());
 		    			
 						if(formatText.trim().equals(searchKey)){
+							String btnActionAddress = "(//div[@class='pointer'])["+listRowCount+"]";
 							flag = true;
 							Thread.sleep(300);
-							WebElement btnDot = element.findElement(By.xpath(btnThreeDot));
+							WebElement btnThreeDot = element.findElement(By.xpath(btnActionAddress));
 							logger.info("Given DateAndTime : "+searchKey);
 							logger.info("Given dateAndTime matched with the list value: "+formatText.trim());
-							btnDot.click();
-							Thread.sleep(300);
+							btnThreeDot.click();
+							logger.info("Clicked on the three dot option button");
+							Thread.sleep(200);
 		        			break;
 		        		}
-						Thread.sleep(100);
 					}
 				}
 				if(flag) {
@@ -52,7 +53,8 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 				}
 			}
 			
-		Thread.sleep(1000);
+		Thread.sleep(200);
+		return listRowCount;
 	}
 	
 }

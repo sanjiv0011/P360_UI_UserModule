@@ -148,3 +148,255 @@ Session ID: 833e60bd6194871bcc9bcf82b64b75ef
 19:14:34.958 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
 19:14:35.578 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
 19:14:36.056 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
+21:25:30.660 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
+21:25:34.015 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
+21:25:34.980 [main] INFO  com.p360.testCases.TC_Classes - Login page started
+21:25:35.227 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
+21:25:35.388 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+21:25:35.537 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+21:25:42.423 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+21:25:43.004 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+21:25:43.339 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+21:25:50.427 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+21:25:53.604 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+21:25:55.770 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
+21:25:59.801 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called
+21:26:00.390 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: Sep 7, 2023 | 06:30 PM
+21:26:00.500 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given DateAndTime not matched: Sep 6, 2023 | 10:00 PM
+21:26:00.528 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: Sep 6, 2023 | 10:00 PM
+21:26:04.252 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+21:26:04.895 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
+21:26:10.701 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
+21:26:11.274 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
+21:26:11.826 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
+21:30:14.532 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
+21:30:17.100 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
+21:30:18.078 [main] INFO  com.p360.testCases.TC_Classes - Login page started
+21:30:18.242 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
+21:30:18.419 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+21:30:18.529 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+21:30:23.004 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+21:30:23.667 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+21:30:23.960 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+21:30:30.361 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+21:30:33.509 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+21:30:35.622 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
+21:30:39.655 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called
+21:30:40.255 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: Sep 7, 2023 | 06:30 PM
+21:30:40.368 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given DateAndTime not matched: Sep 6, 2023 | 10:00 PM
+21:30:40.419 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: Sep 6, 2023 | 10:00 PM
+21:30:40.774 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given DateAndTime : Sep 6, 2023 | 10:00 PM
+21:30:40.775 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given dateAndTime matched with the list value: Sep 6, 2023 | 10:00 PM
+21:30:44.709 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
+21:34:55.869 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
+21:34:58.268 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
+21:34:59.061 [main] INFO  com.p360.testCases.TC_Classes - Login page started
+21:34:59.212 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
+21:34:59.288 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+21:34:59.531 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+21:35:05.211 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+21:35:05.805 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+21:35:06.094 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+21:35:12.962 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+21:35:16.102 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+21:35:18.222 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
+21:35:22.264 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called
+21:35:22.849 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: Sep 7, 2023 | 06:30 PM
+21:35:22.963 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given DateAndTime not matched: Sep 6, 2023 | 10:00 PM
+21:35:23.028 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: Sep 6, 2023 | 10:00 PM
+21:35:23.387 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given DateAndTime : Sep 6, 2023 | 10:00 PM
+21:35:23.387 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given dateAndTime matched with the list value: Sep 6, 2023 | 10:00 PM
+21:35:23.466 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the option button
+21:35:27.175 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
+21:42:32.893 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
+21:42:35.334 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
+21:42:37.099 [main] INFO  com.p360.testCases.TC_Classes - Login page started
+21:42:37.236 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
+21:42:37.324 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+21:42:37.434 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+21:42:44.570 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+21:42:45.205 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+21:42:45.511 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+21:42:53.080 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+21:42:56.228 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+21:42:58.357 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
+21:43:02.396 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called
+21:43:02.985 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: Sep 7, 2023 | 06:30 PM
+21:43:02.986 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given DateAndTime not matched: Sep 6, 2023 | 10:00 PM
+21:43:03.003 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: Sep 6, 2023 | 10:00 PM
+21:43:03.356 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given DateAndTime : Sep 6, 2023 | 10:00 PM
+21:43:03.356 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given dateAndTime matched with the list value: Sep 6, 2023 | 10:00 PM
+21:43:03.435 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
+21:43:06.329 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
+21:58:11.211 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
+21:58:13.771 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
+21:58:15.031 [main] INFO  com.p360.testCases.TC_Classes - Login page started
+21:58:15.162 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
+21:58:15.270 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+21:58:15.422 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+21:58:21.016 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+21:58:21.643 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+21:58:21.963 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+21:58:27.254 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+21:58:30.390 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+21:58:32.474 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
+21:58:36.499 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called
+21:58:37.120 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: Sep 7, 2023 | 06:30 PM
+21:58:37.121 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given DateAndTime not matched: Sep 6, 2023 | 10:00 PM
+21:58:37.146 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: Sep 6, 2023 | 10:00 PM
+21:58:37.494 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given DateAndTime : Sep 6, 2023 | 10:00 PM
+21:58:37.495 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given dateAndTime matched with the list value: Sep 6, 2023 | 10:00 PM
+21:58:37.559 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
+21:58:38.088 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button Cancel Class
+21:58:38.706 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+21:58:40.716 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 141
+21:58:40.716 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+21:58:41.247 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+  (Session info: chrome=116.0.5845.141)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0953072b0a0ec746c23567cdbc05e48d, findElement {using=xpath, value=//div[@role="alert"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55936}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55936/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0953072b0a0ec746c23567cdbc05e48d
+21:58:43.255 [main] INFO  com.p360.pageObject.PO_ClassesPage - ===>>> Class Canceled.
+21:58:46.499 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+21:58:47.126 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
+21:58:51.929 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
+21:58:52.494 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
+21:58:53.974 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
+22:23:23.688 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
+22:23:26.161 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
+22:23:27.224 [main] INFO  com.p360.testCases.TC_Classes - Login page started
+22:23:27.456 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
+22:23:27.558 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+22:23:27.748 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+22:23:33.825 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+22:23:34.429 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+22:23:34.770 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+22:23:41.440 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+22:23:44.628 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+22:23:46.845 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
+22:23:51.062 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button register for the class
+22:23:55.286 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button Change locations
+22:24:01.368 [main] INFO  com.p360.pageObject.PO_ClassesPage - Preferd location is diplayed: true
+22:24:03.411 [main] INFO  com.p360.pageObject.PO_ClassesPage - Location Page scroll down
+22:24:05.570 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the back button
+22:24:08.911 [main] INFO  com.p360.pageObject.PO_ClassesPage - Preferd region is diplayed: true
+22:24:10.920 [main] INFO  com.p360.pageObject.PO_ClassesPage - Region page scroll down
+22:24:12.934 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectRegion
+22:24:14.101 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Entered inside [else if block], matched list value: UNITED KINGDOM
+22:24:14.181 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Click on the element
+22:24:16.503 [main] INFO  com.p360.pageObject.PO_ClassesPage - Location page scroll down
+22:24:18.504 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectLocation
+22:24:19.311 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Entered inside [else if block], matched list value: GAME ON
+22:24:19.608 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Click on the element
+22:24:22.987 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the dropdown instructor
+22:24:24.995 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectinstructor
+22:24:25.123 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Entered inside [else if block], matched list value: Envoy Matt
+22:24:25.275 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Click on the element
+22:26:32.433 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
+22:26:35.441 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
+22:26:36.859 [main] INFO  com.p360.testCases.TC_Classes - Login page started
+22:26:37.119 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
+22:26:37.220 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+22:26:37.335 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+22:26:43.106 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+22:26:43.724 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+22:26:44.044 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+22:26:50.746 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+22:26:53.885 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+22:26:55.991 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
+22:27:00.181 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button register for the class
+22:27:04.402 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button Change locations
+22:27:10.482 [main] INFO  com.p360.pageObject.PO_ClassesPage - Preferd location is diplayed: true
+22:27:12.515 [main] INFO  com.p360.pageObject.PO_ClassesPage - Location Page scroll down
+22:27:14.709 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the back button
+22:27:18.089 [main] INFO  com.p360.pageObject.PO_ClassesPage - Preferd region is diplayed: true
+22:27:20.095 [main] INFO  com.p360.pageObject.PO_ClassesPage - Region page scroll down
+22:27:22.102 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectRegion
+22:27:22.961 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Entered inside [else if block], matched list value: SPAIN
+22:27:23.044 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Click on the element
+22:27:25.354 [main] INFO  com.p360.pageObject.PO_ClassesPage - Location page scroll down
+22:27:27.365 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectLocation
+22:27:27.466 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Given value not selected from the dropdown: GAME ON
+22:28:02.596 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
+22:45:42.003 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
+22:45:44.513 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
+22:45:45.389 [main] INFO  com.p360.testCases.TC_Classes - Login page started
+22:45:45.526 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
+22:45:45.702 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+22:45:45.867 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+22:45:52.570 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+22:45:53.193 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+22:45:53.538 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+22:46:01.086 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+22:46:04.273 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+22:46:06.406 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
+22:46:10.564 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button register for the class
+22:46:14.787 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button Change locations
+22:46:20.875 [main] INFO  com.p360.pageObject.PO_ClassesPage - Preferd location is diplayed: true
+22:46:22.888 [main] INFO  com.p360.pageObject.PO_ClassesPage - Location Page scroll down
+22:46:25.031 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the back button
+22:46:28.434 [main] INFO  com.p360.pageObject.PO_ClassesPage - Preferd region is diplayed: true
+22:46:30.459 [main] INFO  com.p360.pageObject.PO_ClassesPage - Region page scroll down
+22:46:32.476 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectRegion
+22:46:33.316 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Entered inside [else if block], matched list value: SPAIN
+22:46:33.404 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Click on the element
+22:46:35.707 [main] INFO  com.p360.pageObject.PO_ClassesPage - Location page scroll down
+22:46:37.718 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectLocation
+22:46:37.859 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Given value not selected from the dropdown: GAME ON
+22:47:12.684 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
+22:51:08.519 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
+22:51:10.891 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
+22:51:11.963 [main] INFO  com.p360.testCases.TC_Classes - Login page started
+22:51:12.143 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
+22:51:12.291 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+22:51:12.385 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+22:51:16.486 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+22:51:17.168 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+22:51:17.465 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+22:51:24.070 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+22:51:27.185 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+22:51:29.333 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
+22:51:33.532 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button register for the class
+22:51:37.720 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button Change locations
+22:51:43.815 [main] INFO  com.p360.pageObject.PO_ClassesPage - Preferd location is diplayed: true
+22:51:45.851 [main] INFO  com.p360.pageObject.PO_ClassesPage - Location Page scroll down
+22:51:48.033 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the back button
+22:51:51.419 [main] INFO  com.p360.pageObject.PO_ClassesPage - Preferd region is diplayed: true
+22:51:53.448 [main] INFO  com.p360.pageObject.PO_ClassesPage - Region page scroll down
+22:51:55.464 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectRegion
+22:51:56.330 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Entered inside [else if block], matched list value: SPAIN
+22:51:56.401 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Click on the element
+22:51:58.713 [main] INFO  com.p360.pageObject.PO_ClassesPage - Location page scroll down
+22:52:00.725 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectLocation
+22:52:00.826 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Given value not selected from the dropdown: GAME ON
+22:52:35.971 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
+23:03:02.920 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
+23:03:05.974 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
+23:03:07.190 [main] INFO  com.p360.testCases.TC_Classes - Login page started
+23:03:07.339 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
+23:03:07.458 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+23:03:07.571 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+23:03:13.376 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+23:03:13.988 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+23:03:14.269 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+23:03:20.378 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+23:03:23.508 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+23:03:25.611 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
+23:03:29.821 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button register for the class
+23:03:34.058 [main] INFO  com.p360.pageObject.PO_ClassesPage - Clicked on the Button Change locations
+23:03:40.150 [main] INFO  com.p360.pageObject.PO_ClassesPage - Preferd location is diplayed: true
+23:03:42.179 [main] INFO  com.p360.pageObject.PO_ClassesPage - Location Page scroll down
+23:03:44.343 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the back button
+23:03:47.689 [main] INFO  com.p360.pageObject.PO_ClassesPage - Preferd region is diplayed: true
+23:03:49.723 [main] INFO  com.p360.pageObject.PO_ClassesPage - Region page scroll down
+23:03:51.742 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectRegion
+23:03:52.582 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Entered inside [else if block], matched list value: SPAIN
+23:03:52.657 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Click on the element
+23:03:54.933 [main] INFO  com.p360.pageObject.PO_ClassesPage - Location page scroll down
+23:03:56.934 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Enter inside method selectOptionFromDropdown and caller methods name: selectLocation
+23:03:57.029 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown - Given value not selected from the dropdown: GAME ON
+23:04:32.008 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown

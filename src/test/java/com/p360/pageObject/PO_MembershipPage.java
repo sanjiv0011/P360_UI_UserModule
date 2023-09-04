@@ -321,10 +321,10 @@ public class PO_MembershipPage extends ReUseAbleElement{
 			logger.info("===>>> Membership Changed Successfully");
 		} else if(snakeAlertMessagesDisplayedContent_RU().equals(alertMsgSelectMemberhsipPackage)) {
 			logger.info("===>>> Membership package not selected");
-			ruae.clickOnCancelButton_RU();
+			ruae.clickOnCancelButton_1_RU();
 		}else {
 			logger.info("Alert Message Content is: "+snakeAlertMessagesDisplayedContent_RU());
-			ruae.clickOnCancelButton_RU();
+			ruae.clickOnCancelButton_1_RU();
 		}
 		logger.info("Method call done: changeMembership ");
 		return new PO_HomePage(driver);
@@ -334,7 +334,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	public PO_HomePage checkAgreedTerm() throws InterruptedException {
 		logger.info("Method called: checkAgreedTerm");
 		clickOnBtnAgreedTerm();
-		ruae.clickOnCancelButton_RU();
+		ruae.clickOnCancelButton_1_RU();
 		logger.info("Method call done: checkAgreedTerm");
 		return new PO_HomePage(driver);
 	}
@@ -352,13 +352,13 @@ public class PO_MembershipPage extends ReUseAbleElement{
 			logger.info("===>>> Membership Paused Successfully");
 		} else if(snakeAlertMessagesDisplayedContent_RU().equals(alertMsgPauseMembershipMoreThenOneTimeInAQuarter)) {
 			logger.info("===>>> Membership not paused");
-			ruae.clickOnCancelButton_RU();
+			ruae.clickOnCancelButton_1_RU();
 		}else if(snakeAlertMessagesDisplayedContent_RU().equals(alertMsgNoActiveSubscription)) {
 			logger.info("===>>> Membership not paused");
-			ruae.clickOnCancelButton_RU();
+			ruae.clickOnCancelButton_1_RU();
 		}else {
 			logger.info("Alert Message Content is: "+snakeAlertMessagesDisplayedContent_RU());
-			ruae.clickOnCancelButton_RU();
+			ruae.clickOnCancelButton_1_RU();
 		}
 		logger.info("Method call done: pasueMembership");
 		return new PO_HomePage(driver);	
@@ -374,7 +374,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 			logger.info("===>>> Membership Resumed Successfully");
 		}else {
 			logger.info("Alert Message Content is: "+snakeAlertMessagesDisplayedContent_RU());
-			ruae.clickOnCancelButton_RU();
+			ruae.clickOnCancelButton_1_RU();
 		}
 		logger.info("Method call done: pasueMembership");
 		return new PO_HomePage(driver);	

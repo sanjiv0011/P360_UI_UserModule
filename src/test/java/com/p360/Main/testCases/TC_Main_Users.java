@@ -3,7 +3,7 @@ package com.p360.Main.testCases;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
-import com.p360.Main.pageObject.PO_Main_HomePage;
+import com.p360.Main.pageObject.PO_Main_Home;
 import com.p360.Main.pageObject.PO_Main_Users;
 import com.p360.pageObject.PO_HomePage;
 import com.p360.pageObject.PO_LoginPage;
@@ -20,7 +20,7 @@ public class TC_Main_Users extends BaseClass{
 	public PO_LoginPage lp;
 	public PO_HomePage hp;
 	public Faker faker  = new Faker();
-	public PO_Main_HomePage mhp;
+	public PO_Main_Home mhp;
 	public PO_Main_Users mu;
 	
 	//VARIABLES

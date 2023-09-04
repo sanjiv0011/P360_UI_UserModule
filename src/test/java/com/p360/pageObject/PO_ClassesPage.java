@@ -313,7 +313,7 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		@FindBy(xpath = "//div[contains(@class,\"grid\")]//div")
 		@CacheLookup
 		public List <WebElement> listRegion;
-		public void selectRegion(String regionName) throws InterruptedException {
+	    public void selectRegion(String regionName) throws InterruptedException {
 			//wait.until(ExpectedConditions.invisibilityOfAllElements(listRegion));
 			Thread.sleep(2000);
 			Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listRegion,regionName);
@@ -327,7 +327,6 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		public void selectLocation(String locationName) throws InterruptedException {
 			Thread.sleep(2000);
 			//wait.until(ExpectedConditions.invisibilityOfAllElements(listLocation));
-			
 			Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listLocation,locationName);
 			Thread.sleep(1000);
 		}
@@ -379,9 +378,10 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		@FindBy(xpath = "//div[contains(@class,'p-4 flex gap-2 flex-row')]")
 		@CacheLookup
 		public List <WebElement> listMyRegisteredClass;
-		public void findMyRegisteredClass(String dateTime,WebDriver driver) throws InterruptedException {
+		public int findMyRegisteredClassAndonThreeDotOption(String dateTime,WebDriver driver) throws InterruptedException {
 			Thread.sleep(2000);
-			FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(listMyRegisteredClass, ruae.btnThreeDot_RU,driver, dateTime);
+			int listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(listMyRegisteredClass,driver, dateTime);
+			return listRowCount;
 		}
 		
 		
@@ -429,8 +429,8 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		
 		//TO CANCEL THE CLASS
 		public PO_HomePage cancelRegisteredClass(String dateAndTime,WebDriver driver) throws InterruptedException {
-			findMyRegisteredClass(dateAndTime,driver);
-			boolean flag = clickOnBtnCancelClass_RU();
+			int listRowCount = findMyRegisteredClassAndonThreeDotOption(dateAndTime,driver);
+			boolean flag = clickOnBtnCancelClass_RU(driver,listRowCount);
 			if(flag) {
 				clickOnYesButton_RU();
 				String alertMsg = snakeAlertMessagesDisplayedContent_RU();

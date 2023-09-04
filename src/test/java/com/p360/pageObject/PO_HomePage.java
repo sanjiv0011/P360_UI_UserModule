@@ -244,7 +244,7 @@ public class PO_HomePage extends ReUseAbleElement{
 		driver.switchTo().window(parenttab);
 		Thread.sleep(4000);
 		clickOnChangeButton();
-		clickOnCancelButton_RU();
+		clickOnCancelButton_1_RU();
 		clickOnNextClasses();
 		logger.info("...HOME PAGE ELEMENT TESTING DONE...");
 	}

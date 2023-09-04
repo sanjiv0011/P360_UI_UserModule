@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import com.p360.Main.pageObject.PO_Main_HomePage;
+import com.p360.Main.pageObject.PO_Main_Home;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 
 public class PO_LoginPage extends ReUseAbleElement {
@@ -27,7 +27,7 @@ public class PO_LoginPage extends ReUseAbleElement {
 	public ReUseAbleElement ruae;
 	public WebDriverWait wait;
 	public Actions action;
-	public PO_Main_HomePage mhp;
+	public PO_Main_Home mhp;
 	
 	public  PO_LoginPage(WebDriver driver)
 	{   super(driver);
@@ -120,7 +120,7 @@ public class PO_LoginPage extends ReUseAbleElement {
 	}
 	
 	//TO SUPER ADMIN LOGIN
-	public PO_Main_HomePage AdminLogin(String adminEmail,String adminPassword) throws InterruptedException {
+	public PO_Main_Home AdminLogin(String adminEmail,String adminPassword) throws InterruptedException {
 		logger.info("Method called Login");
 		clickBtnSignIn();
 		setUserName(adminEmail);
@@ -141,7 +141,7 @@ public class PO_LoginPage extends ReUseAbleElement {
 			logger.info("Login exception message: "+e.getMessage());
 		}
 		
-		return new PO_Main_HomePage(driver);
+		return new PO_Main_Home(driver);
 	}
 	
 }

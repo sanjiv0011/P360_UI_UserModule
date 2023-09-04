@@ -15,7 +15,7 @@ import com.p360.pageObject.PO_HomePage;
 import com.p360.pageObject.PO_LoginPage;
 
 
-public class PO_Main_HomePage extends ReUseAbleElement{
+public class PO_Main_Home extends ReUseAbleElement{
 	
 	//CONSTRUCTOR DECLARATION
 	public WebDriver driver;
@@ -26,7 +26,7 @@ public class PO_Main_HomePage extends ReUseAbleElement{
 	public PO_LoginPage lp;
 	public Actions action;
 	//HOMEPAGE CONSTRUCTOR CREATION
-	public PO_Main_HomePage(WebDriver driver) {	
+	public PO_Main_Home(WebDriver driver) {	
 		super(driver);
 	    this.driver = driver;
 	    jsExecutor  = (JavascriptExecutor)driver;
@@ -132,11 +132,11 @@ public class PO_Main_HomePage extends ReUseAbleElement{
 	}
 	
 	//USE THIS WEHEN WANT TO TAKE ACTION ON MAIN P360 WEBSITE, IT WILL RETURN THE MAIN_HOMEPAGE
-	public PO_Main_HomePage clickOntabDashboardReturn_Main_HomePage() throws InterruptedException {
+	public PO_Main_Home clickOntabDashboardReturn_Main_HomePage() throws InterruptedException {
 		tabDashboard.click();
 		Thread.sleep(3000);
 		logger.info("clickOntabDashboard ");
-		return new PO_Main_HomePage(driver);
+		return new PO_Main_Home(driver);
 	}
 	
 	//USE THIS WEHEN WANT TO TAKE ACTION ON MAIN P360 WEBSITE, IT WILL RETURN THE MAIN_HOMEPAGE

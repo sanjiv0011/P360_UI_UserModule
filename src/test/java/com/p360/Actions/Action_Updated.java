@@ -26,13 +26,13 @@ public class Action_Updated {
         		Assert.assertEquals(alretMsg,messageAlreadyExist,"Already Exist");
         		logger.info("===>>> "+messageAlreadyExist);
         		Thread.sleep(500);
-        		ruae.clickOnCancelButton_RU();
+        		ruae.clickOnCancelButton_1_RU();
         	}else {
 		    		logger.info("Alert message content: "+alretMsg);
 		    	}	
 		}
 		else {
-			ruae.clickOnCancelButton_RU();
+			ruae.clickOnCancelButton_1_RU();
 		}
 		return flag;
 	}

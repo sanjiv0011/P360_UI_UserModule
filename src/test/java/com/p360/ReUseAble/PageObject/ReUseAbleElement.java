@@ -114,16 +114,19 @@ public class ReUseAbleElement {
 	    }
 	    
 	   
-	    //CANCEL THE CLASS, P360
-  		@FindBy(xpath = "//div[text()='Cancel Class']")
-  		@CacheLookup
-  		public WebElement btnCancelClass_RU;
-  	    public boolean clickOnBtnCancelClass_RU() throws InterruptedException {
+//	    //CANCEL THE CLASS, P360
+//  		@FindBy(xpath = "//div[text()='Cancel Class']")
+//  		@CacheLookup
+//  		public WebElement btnCancelClass_RU;
+    	public boolean clickOnBtnCancelClass_RU(WebDriver driver, int listRowCount) throws InterruptedException {
   	    	//BEFORE CLICK ON THE THREE DOTS IT WILL CONFIRM FIST WHERE IT IS PRESENT OR NOT
+  	    	int rowCount = listRowCount;
+  	    	String cancelClass_address = "(//div[contains(text(),'Cancel Class')])["+rowCount+"]";
   	    	boolean flag = false;
   	    	try {
-  	    		if(btnCancelClass_RU.isDisplayed()) {
-  	    			btnCancelClass_RU.click();
+  	    		WebElement btnCancelClass = driver.findElement(By.xpath(cancelClass_address));
+  	    		if(btnCancelClass.isDisplayed()) {
+  	    			btnCancelClass.click();
   	    			flag = true;
   	    			logger.info("Clicked on the button Cancel Class");
   	    		}
@@ -133,9 +136,9 @@ public class ReUseAbleElement {
   	    	}
   	        Thread.sleep(500);
   	        return flag;
-  	    }
-	  
-	 
+    	}
+  
+  
 	    //===========START=======ACTIVATE AND DEACTIVATE==================//
 	    
 		//ACTIVATE Action => To use this first search list item so that it comes at first position
@@ -364,14 +367,14 @@ public class ReUseAbleElement {
 			Thread.sleep(1000);
 		}
   	  		
-		//BUTTON CANCEL P360
-		@FindBy(xpath = "//span[normalize-space()=\"Cancel\"]")
+		//BUTTON CANCEL 1,P360
+		@FindBy(xpath = "(//span[normalize-space()='Cancel'])[1]")
 		@CacheLookup
-		public WebElement btnCancel_RU;
-		public void clickOnCancelButton_RU() throws InterruptedException {
+		public WebElement btnCancel_l_RU;
+		public void clickOnCancelButton_1_RU() throws InterruptedException {
 			try {
-				if(btnCancel_RU.isDisplayed()) {
-						btnCancel_RU.click();
+				if(btnCancel_l_RU.isDisplayed()) {
+					btnCancel_l_RU.click();
 						logger.info("Clicked on the cancel button");
 				} else {
 					logger.info("Cancel button and HomeIcon button both not found");
@@ -500,7 +503,7 @@ public class ReUseAbleElement {
   		
   		
 	   
-	    //DROPDOWN ICON P360
+	    //DROPDOWN ICON 1, P360
   		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[1]")
   		@CacheLookup
   		public WebElement iconDropdown_1_RU;
@@ -508,10 +511,10 @@ public class ReUseAbleElement {
   			iconDropdown_1_RU.click();
   			logger.info("Clicked on the icon dropdown 1");
   			Thread.sleep(1000);
-  		}
+  		} 		
   		
-
-  		//DROPDOWN ADDRESS 2
+  		
+  		//DROPDOWN ADDRESS 2, P360
   		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[2]")
   		@CacheLookup
   		public WebElement iconDropdown_2_RU;
@@ -541,7 +544,7 @@ public class ReUseAbleElement {
   			Thread.sleep(1000);
   		}
 	   	
-  		//SAVE BUTTON 1
+  		//SAVE BUTTON 1, P360
   		@FindBy(xpath = "(//span[normalize-space()='Save'])[1]")
   		@CacheLookup
   		public WebElement btnSave_1_RU;

@@ -135,7 +135,7 @@ public class PO_Main_Users extends ReUseAbleElement {
   		}
   		
   		//TO ADD MEMBER
-  		public PO_Main_HomePage addMember(String firstName, String lastName, String phoneNumber, String email, String location, String packageName, String membershipName, String membershipStartDate) throws InterruptedException 
+  		public PO_Main_Home addMember(String firstName, String lastName, String phoneNumber, String email, String location, String packageName, String membershipName, String membershipStartDate) throws InterruptedException 
   		{
   			clickOnAddMember_RU();
   			setFirstName(firstName);
@@ -171,7 +171,7 @@ public class PO_Main_Users extends ReUseAbleElement {
   			}else {
   				logger.info("Alert Message displayed: "+alertMsgMemberhsipPurchagedSuccessfully);
   			}
-  			return new PO_Main_HomePage(driver);
+  			return new PO_Main_Home(driver);
   		}
   		
   		

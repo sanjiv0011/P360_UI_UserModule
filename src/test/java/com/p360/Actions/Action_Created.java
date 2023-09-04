@@ -27,16 +27,16 @@ public class Action_Created {
         	}else if(alretMsg.equals(messageAlreadyExist)){
         		Assert.assertEquals(alretMsg,messageAlreadyExist,"Already Exist");
         		logger.info("===>>> "+messageAlreadyExist);
-        		ruae.clickOnCancelButton_RU();
+        		ruae.clickOnCancelButton_1_RU();
         	}else if(alretMsg.contains("error")){
         		Assert.assertTrue(alretMsg.contains("error"),"Error");
         		logger.info("===>>> "+"Error");
-        		ruae.clickOnCancelButton_RU();
+        		ruae.clickOnCancelButton_1_RU();
         	}else {
         		logger.info("Alert message content: "+alretMsg);
         	}
     	}else {
-    		ruae.clickOnCancelButton_RU();
+    		ruae.clickOnCancelButton_1_RU();
     	}
     	return flag;
 	}

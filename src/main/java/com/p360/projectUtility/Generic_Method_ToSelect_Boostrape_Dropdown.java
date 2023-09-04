@@ -22,10 +22,10 @@ public class Generic_Method_ToSelect_Boostrape_Dropdown
     
     	logger.info("Enter inside method selectOptionFromDropdown and caller methods name: "+callerMethodName);
     	boolean flag = false;
-    	
+
     	for(WebElement element : options)
     	{	//logger.info("List options: "+element.getText());
-    	
+    		
     		if(element.getText().equals(value) || (element.getText()).trim().contains(value.trim()))
     		{  	logger.info("Entered inside [else if block], matched list value: "+element.getText());	
     			try {
@@ -112,7 +112,6 @@ public class Generic_Method_ToSelect_Boostrape_Dropdown
     		 
     		}
     	}
-    
     	if(flag == false) {
     		logger.info("Given value not selected from the dropdown: "+value);
     	}
