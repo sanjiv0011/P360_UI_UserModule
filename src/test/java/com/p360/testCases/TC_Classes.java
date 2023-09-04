@@ -23,12 +23,12 @@ public class TC_Classes extends BaseClass{
 	public ReUseAbleElement ruae;
 	
 	//PASS THE ALL THE DATE IN THE GIVEN FORMAT
-	String time = "12:10 AM";	//PASS VALUES IN THIS FORMAT ONLY
-	String monthDate = "SEP 04 MON";	//PASS VALUES IN THIS FORMAT ONLY
+	String time = "7:00 PM";	//PASS VALUES IN THIS FORMAT ONLY
+	String monthDate = "SEP 21 THU";	//PASS VALUES IN THIS FORMAT ONLY
 	String location = "GAME ON";
 	String region = "UNITED KINGDOM";
-	String instructorName = "Brian Lara";
-	
+	String instructorName = "Envoy Matt";
+	String dateAndTime = "Sep 7, 2023 | 06:30 PM";
 	
 	
 	//TO LOGIN
@@ -39,12 +39,19 @@ public class TC_Classes extends BaseClass{
 	}
 	
 	//TO REGISTER FOR A CLASS
-	@Test(priority = 2 , dependsOnMethods = "test_Login")
+	//@Test(priority = 2 , dependsOnMethods = "test_Login")
 	public void test_RegisterClass() throws InterruptedException {
 		cp = callMeBeforePerformAnyAction();
 		hp = cp.registerClass(time,monthDate,location,region,instructorName);
 	}
 		
+	//TO CANCEL REGISTERED CLASS
+	@Test(priority = 3 , dependsOnMethods = "test_Login")
+	public void test_CancelRegisteredClass() throws InterruptedException {
+		cp = callMeBeforePerformAnyAction();
+		hp = cp.cancelRegisteredClass(dateAndTime,driver);
+	}
+	
 	
 	//TO LOGOUT
 	@Test(priority = 10 , dependsOnMethods = "test_Login")	// here zero or ten ensures least priority, so that this call happens at the last.

@@ -13,6 +13,7 @@
 		    
 		    <classes>
 			  
+			   <!-- =======USER P360  WEBSITE TESTING========= -->
 		     <!-- <class name="com.p360.testCases.TC_Home"/>-->
 		     
 		      <!-- <class name="com.p360.testCases.TC_Membership"/>-->
@@ -21,7 +22,7 @@
 		      
 		      
 		      
-		      <!-- MAIN P360  WEBSITE TESTING-->
+		      <!-- =========MAIN P360  WEBSITE TESTING========== -->
 		      
 		   <!-- <class name="com.p360.Main.testCases.TC_Main_Home"/>-->
 		     

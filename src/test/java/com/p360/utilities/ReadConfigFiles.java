@@ -38,7 +38,7 @@ public class ReadConfigFiles {
 	
 	public String getUserPassword()
 	{
-		String userPasswprd = pro.getProperty("userPasswprd");
+		String userPasswprd = pro.getProperty("userPassword");
 		return userPasswprd;
 	}
 	

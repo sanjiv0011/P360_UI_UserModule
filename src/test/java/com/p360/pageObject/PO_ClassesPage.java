@@ -14,13 +14,15 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
+import com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick;
 import com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
 
 public class PO_ClassesPage extends ReUseAbleElement{
 
-	//CONSTRUCTOR DECLARATION
+		//CONSTRUCTOR DECLARATION
 		public WebDriver driver;
 		public Logger logger = LogManager.getLogger(getClass());
 		public JavascriptExecutor jsExecutor;
@@ -39,6 +41,10 @@ public class PO_ClassesPage extends ReUseAbleElement{
 			lp = new PO_LoginPage(driver);
 			action = new Actions(driver);
 		}
+		
+		//VARIABLES 
+		public String alertMsgAlreadyClassRegistered = "User registration already exists for this class";
+		public String alertMsgClassCanceled = "Class Canceled.";
 		
 		//=========START========CLASSES PAGE OBJECT AND ACTION METHODSS=============//
 		
@@ -124,63 +130,67 @@ public class PO_ClassesPage extends ReUseAbleElement{
 			boolean flag = false;
 			try {
 				Thread.sleep(2000);
-				if(textNoClassesMatchedToTheCurrentFilter.isDisplayed()) {
-					flag =  true;
-					logger.info("Is No classes matched with the applied filters"+flag);
-				}else {
-					logger.info("Classes present with current applied filter");
-				}
-			
+				flag = textNoClassesMatchedToTheCurrentFilter.isDisplayed();
 			}catch(Exception e) {
-				logger.info(e.getMessage());
+				logger.info("Exception from textNoClassesMatchedToTheCurrentFilter: "+e.getMessage());
+			}
+			
+			if(flag) {
+				logger.info("Is No classes matched with the applied filters: "+flag);
+			}else {
+				logger.info("Classes present with current applied filter");
 			}
 			return flag;
 		}
 		
-		//TO SELLECT THE MONTH AND DATE
-		@FindBy(xpath = "//div[@class='slick-slide slick-active']")
-		@CacheLookup
-		public List <WebElement> listMonthDate;
-		public void selectMonthAndDate(String monthAndDate) throws InterruptedException {			
-			//List <WebElement> listCorrectDate = driver.findElements(By.xpath("//div[@class='slick-slide slick-active']"));
+		
+//		//TO SELLECT THE MONTH AND DATE
+//		@FindBy(xpath = "//div[@class='slick-slide slick-active']")
+//		@CacheLookup
+//		public List <WebElement> listMonthDate;
+		String address_listMonthDate = "//div[@class='slick-slide slick-active slick-current' or @class='slick-slide slick-active']";	 //div[@class='slick-slide slick-active']
+		
+		public void selectMonthAndDate(String address_listMonthDate, String monthAndDate, WebDriver driver) throws InterruptedException {			
+			
 			boolean flag = false;
-			while(true) {
+			while(true) 
+			{	
+				Thread.sleep(1000);
+				List <WebElement> listMonthDate = driver.findElements(By.xpath(address_listMonthDate));
+				Thread.sleep(1000);
 				for(WebElement element : listMonthDate)
 				{	
 					String[] text = element.getText().split("\\n");
-					String formatText = "";
+					String formatText="";
 					for(String st : text) {
-						//logger.info(st);
 						formatText = formatText+st+" ";
-						
 					}
-					logger.info(formatText);
+					logger.info("formatText: "+formatText.trim());
 	    			//String formatText = text[0]+" "+text[1]+" "+text[2];
 	    			
-    				if(formatText.equals(monthAndDate)){
+    				if(formatText.trim().equals(monthAndDate)){
     					flag = true;
     					element.click();
             			break;
             		}
-    				clickOnMonthAndDateNextButton();
+    				Thread.sleep(500);
     			}
     			if(flag) {
     				break;
-    			}
-			
+    			}	
+    			clickOnMonthAndDateNextButton(driver);
 			}
 			
-			//Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listMonthDate,monthAndDate);
 			Thread.sleep(1000);
 		}
 		
-		//MONTH DATE NEXT BUTTON
-		@FindBy(xpath = "(//div[contains(@class,'slick-arrow')])[2]")
-		@CacheLookup
-		public WebElement btnNext;// = driver.findElement(By.xpath("(//div[contains(@class,'slick-arrow')])[2]"));
-		public void clickOnMonthAndDateNextButton() throws InterruptedException {
+//		//MONTH DATE NEXT BUTTON
+//		@FindBy(xpath = "(//div[contains(@class,'slick-arrow')])[2]")
+//		@CacheLookup
+//		public WebElement btnNext;// = driver.findElement(By.xpath("(//div[contains(@class,'slick-arrow')])[2]"));
+		public void clickOnMonthAndDateNextButton(WebDriver driver) throws InterruptedException {
 			Thread.sleep(2000);
-			//WebElement btnNext = driver.findElement(By.xpath("(//div[contains(@class,'slick-arrow')])[2]"));
+			WebElement btnNext = driver.findElement(By.xpath("(//div[contains(@class,'slick-arrow')])[2]"));
 			btnNext.click();
 			logger.info("Clicked on the next button");
 		}
@@ -212,15 +222,66 @@ public class PO_ClassesPage extends ReUseAbleElement{
 			return flag;
 		}
 		
+		//REGISTER BUTTON FOR THE CLASS
+		@FindBy(xpath = "//span[contains(text(),'Register')]")
+		@CacheLookup
+		public WebElement btnRegister;
+		public void clickOnBtnRegister() throws InterruptedException {
+			Thread.sleep(300);
+			try {
+				if(btnRegister.isDisplayed()) {
+					btnRegister.click();
+					logger.info("clicked on the Register button");
+				}else {
+					logger.info("clicked on the Register button not present");
+					ruae.clickOnBtnCross_RU();
+				}
+			}catch(Exception e) {
+				logger.info("Exception from the Register button: "+e.getMessage());
+			}
+			
+		}
+		
+		
 		//CLASS LIST ON SPECIFIC DATE
-		@FindBy(xpath = "//tr[contains(@class,\"MuiTableRow-root\")]")
+		@FindBy(xpath = "//tr[contains(@class,'MuiTableRow-root')]")
 		@CacheLookup
 		public List <WebElement> listClassOnSpecificTime;
 		public void selectClassOnSpecificTime(String time) throws InterruptedException {
-			Thread.sleep(1000);
-			wait.until(ExpectedConditions.invisibilityOfAllElements(listClassOnSpecificTime));
-			
-			Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listClassOnSpecificTime,time);
+			boolean flag = false;
+			while(true) 
+			{
+				for(WebElement element : listClassOnSpecificTime)
+				{	
+					logger.info("Class Time: "+element.getText());
+					
+					if(element.getText() != null && element.getText() != "") {
+						String[] text = element.getText().split("\\n");
+						String formatText = "";
+						for(String st : text) {
+							//logger.info(st);
+							formatText = formatText+st+" ";
+						}
+						logger.info("formatText: "+formatText.trim());
+		    			String formatTextTimeAndAmPm = text[0]+" "+text[1]; //	TO TAKE ONLY TIME AND AM/PM FROM THE LIST OF THE CLASS 
+		    			
+	    				if(formatTextTimeAndAmPm.trim().equals(time)){
+	    					jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);"); //TO SCROLL TILL END
+	    					Thread.sleep(1000);
+	    					flag = true;
+	    					element.click();
+	    					Thread.sleep(400);
+	            			break;
+	            		}
+	    				Thread.sleep(100);
+					}
+					
+    			}
+    			if(flag) {
+    				break;
+    			}
+    			clickOnMonthAndDateNextButton(driver);
+			}
 			Thread.sleep(1000);
 		}
 		
@@ -270,7 +331,63 @@ public class PO_ClassesPage extends ReUseAbleElement{
 			Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listLocation,locationName);
 			Thread.sleep(1000);
 		}
+		
+		
+		//THANKS YOU TEXT AFTER CLASS REGISTRATION
+		@FindBy(xpath="//div[contains(text(),'Now, Confirm Your Class Registration')]")
+		@CacheLookup
+		WebElement textThankYou;
+		public boolean isThanksYouDisplayed() throws InterruptedException {
+			boolean flag = false;
+			Thread.sleep(500);
+			try {
+				if(textThankYou.isDisplayed()) {
+					logger.info("Thanks you present after clicking on the button Regiser class");
+					flag = true;
+				}else {
+					logger.info("Thanks page not present");
+				}
+			}catch(Exception e) {
+				flag = false;
+				logger.info("Exception from isThanksYouDisplayed: "+e.getMessage());
+			}
+			return flag;
+		}
+		
+		//CONFIRM CLASS REGISTRATION
+		@FindBy(xpath="//span[normalize-space()='CONFIRM CLASS REGISTRATION']")
+		@CacheLookup
+		WebElement btnConfirmClassRegistration;
+		public void clickOnBtnConfirmClassRegistration() throws InterruptedException {
+			if(isThanksYouDisplayed()) {
+				Thread.sleep(500);
+				if(btnConfirmClassRegistration.isDisplayed()) {
+					btnConfirmClassRegistration.click();
+					logger.info("Clicked on the Confirm class registration button");
+
+				}else {
+					logger.info("Class not registered");
+				}
+			}else {
+				clickOnBtnCross_RU();
+				Thread.sleep(1000);
+			}
+			
+		}
+		
+		//LIST MY CLASSES/ ALREADY REGISTRED CLASS
+		@FindBy(xpath = "//div[contains(@class,'p-4 flex gap-2 flex-row')]")
+		@CacheLookup
+		public List <WebElement> listMyRegisteredClass;
+		public void findMyRegisteredClass(String dateTime,WebDriver driver) throws InterruptedException {
+			Thread.sleep(2000);
+			FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(listMyRegisteredClass, ruae.btnThreeDot_RU,driver, dateTime);
+		}
+		
+		
 		//=========END========CLASSES PAGE OBJECTS AND ACTION METHODS=============//
+		
+		
 		
 		
 		//TO SELECT THE CLASS
@@ -297,13 +414,34 @@ public class PO_ClassesPage extends ReUseAbleElement{
 			selectLocation(locationName);
 			Thread.sleep(1000);
 			selectinstructor(instructorName);
-			selectMonthAndDate(monthAndDate);
+			selectMonthAndDate(address_listMonthDate,monthAndDate,driver);
 			if(textNoClassesMatchedToTheCurrentFilter()) {
 				clickOnBtnGoToDashBoard();
 				return new PO_HomePage(driver);
 			}
 			selectClassOnSpecificTime(time);
+			clickOnBtnRegister();
+			clickOnBtnConfirmClassRegistration();
 			clickOnBtnGoToDashBoard();
+			return new PO_HomePage(driver);
+		}
+		
+		
+		//TO CANCEL THE CLASS
+		public PO_HomePage cancelRegisteredClass(String dateAndTime,WebDriver driver) throws InterruptedException {
+			findMyRegisteredClass(dateAndTime,driver);
+			boolean flag = clickOnBtnCancelClass_RU();
+			if(flag) {
+				clickOnYesButton_RU();
+				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
+	  			if(alertMsg.equals(alertMsgClassCanceled)) {
+	  				Assert.assertEquals(alertMsg,alertMsgClassCanceled,"Check class canceled successfully");
+	  				logger.info("===>>> "+alertMsg);
+	  			}else {
+	  				logger.info("Alert Message displayed: "+alertMsg);
+	  			}
+			}
+			
 			return new PO_HomePage(driver);
 		}
 		

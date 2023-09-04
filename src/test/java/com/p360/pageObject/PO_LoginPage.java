@@ -62,7 +62,7 @@ public class PO_LoginPage extends ReUseAbleElement {
 	//TO CLICK ON THE LOGIN BUTTON
 	public void clickBtnSignIn() throws InterruptedException {
 		btnLogin.click();
-		logger.info("clicke on Sign In button");
+		logger.info("clicked on Sign In button");
 		Thread.sleep(1000);
 	}
 	

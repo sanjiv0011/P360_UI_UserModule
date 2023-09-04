@@ -103,17 +103,17 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.p360.Main.testCases.TC_Main_Users" class="method navigator-link" hash-for-method="test_Login">test_Login</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.p360.testCases.TC_Classes" class="method navigator-link" hash-for-method="test_CancelRegisteredClass">test_CancelRegisteredClass</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.p360.Main.testCases.TC_Main_Users" class="method navigator-link" hash-for-method="test_Logout">test_Logout</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.p360.testCases.TC_Classes" class="method navigator-link" hash-for-method="test_Login">test_Login</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.p360.Main.testCases.TC_Main_Users" class="method navigator-link" hash-for-method="test_Main_AddMember">test_Main_AddMember</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.p360.testCases.TC_Classes" class="method navigator-link" hash-for-method="test_Logout">test_Logout</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -131,9 +131,16 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.p360.Main.testCases.TC_Main_Users</span>
+              <span class="class-name">com.p360.testCases.TC_Classes</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_CancelRegisteredClass">
+                  </a> <!-- test_CancelRegisteredClass -->
+                  <span class="method-name">test_CancelRegisteredClass</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="test_Login">
@@ -146,13 +153,6 @@
                   <a name="test_Logout">
                   </a> <!-- test_Logout -->
                   <span class="method-name">test_Logout</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test_Main_AddMember">
-                  </a> <!-- test_Main_AddMember -->
-                  <span class="method-name">test_Main_AddMember</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -173,7 +173,7 @@
   &lt;test thread-count=&quot;5&quot; name=&quot;P360_UI_USER_MODULE&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.p360.Main.testCases.TC_Main_Users&quot;/&gt;
+      &lt;class name=&quot;com.p360.testCases.TC_Classes&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- P360_UI_USER_MODULE --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -215,22 +215,22 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test_Main_AddMember')
-data.setCell(0, 2, 'com.p360.Main.testCases.TC_Main_Users')
-data.setCell(0, 3, 68841);
+data.setCell(0, 1, 'test_CancelRegisteredClass')
+data.setCell(0, 2, 'com.p360.testCases.TC_Classes')
+data.setCell(0, 3, 16559);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'test_Login')
-data.setCell(1, 2, 'com.p360.Main.testCases.TC_Main_Users')
-data.setCell(1, 3, 12711);
+data.setCell(1, 2, 'com.p360.testCases.TC_Classes')
+data.setCell(1, 3, 12600);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'test_Logout')
-data.setCell(2, 2, 'com.p360.Main.testCases.TC_Main_Users')
-data.setCell(2, 3, 12406);
+data.setCell(2, 2, 'com.p360.testCases.TC_Classes')
+data.setCell(2, 3, 10576);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 39 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -256,26 +256,26 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.p360.Main.testCases.TC_Main_Users</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.p360.testCases.TC_Classes</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">test_Login</span>
-                <span class="method-start">3403 ms</span>
+                <span class="method-start">3523 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">test_Main_AddMember</span>
-                <span class="method-start">16155 ms</span>
+                <span class="method-name">test_CancelRegisteredClass</span>
+                <span class="method-start">16153 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">test_Logout</span>
-                <span class="method-start">85009 ms</span>
+                <span class="method-start">32718 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">97420 ms</span>
+                <span class="method-start">43298 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

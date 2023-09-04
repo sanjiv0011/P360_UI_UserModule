@@ -100,20 +100,43 @@ public class ReUseAbleElement {
 	  		return flag;
 	  	}
 	  	
-		//ACTION BUTTON THREE DOTS
-		@FindBy(xpath = "//div[@class='pointer']//*[name()='svg']")
-		@CacheLookup
-		public WebElement btnAction_RU;
+		//ACTION BUTTON THREE DOTS, P360
+		@FindBy(xpath = "//*[name()='svg'][contains(@title,'Options')]")		////*[name()='svg'][contains(@title,'Options')]
+		@CacheLookup									////div[@class='pointer']
+		public WebElement btnOptions_RU;
+		public String btnThreeDot_RU =  "//div[@class='pointer']";
 		// Action method to click the Action button
 	    public void clickOnActionButton_RU() throws InterruptedException {
 	    	//BEFORE CLICK ON THE THREE DOTS IT WILL CONFIRM FIST WHERE IT IS PRESENT OR NOT
-    		btnAction_RU.click();
-	        logger.info("Clicked on the Three dot Action button");
+	    	btnOptions_RU.click();
+	        logger.info("Clicked on the Three dot Options button");
 	        Thread.sleep(500);
 	    }
-
-		
-	  //===========START=======ACTIVATE AND DEACTIVATE==================//
+	    
+	   
+	    //CANCEL THE CLASS, P360
+  		@FindBy(xpath = "//div[text()='Cancel Class']")
+  		@CacheLookup
+  		public WebElement btnCancelClass_RU;
+  	    public boolean clickOnBtnCancelClass_RU() throws InterruptedException {
+  	    	//BEFORE CLICK ON THE THREE DOTS IT WILL CONFIRM FIST WHERE IT IS PRESENT OR NOT
+  	    	boolean flag = false;
+  	    	try {
+  	    		if(btnCancelClass_RU.isDisplayed()) {
+  	    			btnCancelClass_RU.click();
+  	    			flag = true;
+  	    			logger.info("Clicked on the button Cancel Class");
+  	    		}
+  	    	}catch(Exception e) {
+  	    		logger.info("Is Cancel Class button displayed: "+flag);
+  	    		logger.info("Exception from clickOnBtnCancelClass_RU: "+e.getMessage());
+  	    	}
+  	        Thread.sleep(500);
+  	        return flag;
+  	    }
+	  
+	 
+	    //===========START=======ACTIVATE AND DEACTIVATE==================//
 	    
 		//ACTIVATE Action => To use this first search list item so that it comes at first position
 		@FindBy(xpath = "(//div[contains(text(),'Acti')])[1]")
@@ -359,24 +382,24 @@ public class ReUseAbleElement {
 			}
 		}
 	    
-		// Yes button before confirm the action
-		@FindBy(xpath = "//p[normalize-space()='Yes']")
+		// Yes button before confirm the action, P360
+		@FindBy(xpath = "//span[normalize-space()='Yes']")
 		@CacheLookup
-		public WebElement btnYes;
+		public WebElement btnYes_RU;
 		 // Action method to click the Yes button
 	    public void clickOnYesButton_RU() throws InterruptedException {
-	        btnYes.click();
+	    	btnYes_RU.click();
 	        logger.info("Clicked on the Yes button");
 	        Thread.sleep(300);
 	    }
 		
-		// No button before confirm the action
+		// No button before confirm the action, P360
 		@FindBy(xpath = "//p[normalize-space()='No']")
 		@CacheLookup
-		public WebElement btnNo;
+		public WebElement btnNo_RU;
 		// Action method to click the No button
 	    public void clickOnNoButton_RU() throws InterruptedException {
-	        btnNo.click();
+	    	btnNo_RU.click();
 	        logger.info("Clicked on the No button");
 	        Thread.sleep(300);
 	    }
@@ -401,8 +424,8 @@ public class ReUseAbleElement {
 			Thread.sleep(300);
 		}
 	    
-	    //CROSS BUTTON
-	    @FindBy(xpath = "(//*[name()='svg'][@stroke='currentColor'])[1]")
+	    //CROSS BUTTON, P360
+	    @FindBy(xpath = "//button[@title='Close']")
 		@CacheLookup
 		public WebElement btnCross;
 	    public void clickOnBtnCross_RU() throws InterruptedException {
@@ -656,11 +679,11 @@ public class ReUseAbleElement {
 	  			boolean flag = false;
 	  			while(t <= 1500)
 	  			{
-	  				logger.info("Checking alert after every 100 miliseconds durations: "+t);
 	  				try {
 	  					alertSnakeMessage = driver.findElement(By.xpath(alertAddress_RU));
 	  					flag = alertSnakeMessage.isDisplayed();
 		  					if(flag) {
+		  						logger.info("Checking alert after every 100 miliseconds durations: "+t);
 		  						logger.info("Alert message is displayed: "+flag);
 		  			  			alertMessageContent_RU = alertSnakeMessage.getText();
 		  					}else {
@@ -676,8 +699,11 @@ public class ReUseAbleElement {
 	  					Thread.sleep(500);
 	  					break;
 	  				}
+	  				if(t == 1499 || t==1500 ) {
+	  					logger.info("Checking alert after every 150 miliseconds durations: "+t);
+	  				}
 	  			}
-	  			
+	  		
 	  		logger.info("Alert not cought exception: "+exception);
 	  		Thread.sleep(2000);
 	  		return alertMessageContent_RU;
