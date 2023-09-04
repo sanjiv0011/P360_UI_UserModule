@@ -31,8 +31,10 @@ public class BaseClass {
 	public String baseUrl = rcf.getApplicationUrl();
 	
 	//WHILE COMMENTING THIS TWO LINE ENSURES FIRST, THIS TWO PARAMETER PASS THROUGH DATA PROVIDES METHODS FOR THAT WHERE IT USING PASS THERE @DATAPROVIDER NAME
-	public String email = rcf.getEmail();
-	public String password = rcf.getPassword();
+	public String userEmail = rcf.getUserEmail();
+	public String userPassword = rcf.getUserPassword();
+	public String adminEmail = rcf.getAdminEmail();
+	public String adminPassword = rcf.getAdminPassword();
 	
 	
 	//FAKER LIBRARY TO GENERATE RADOM DATA FOR THE TEST 
@@ -91,7 +93,7 @@ public class BaseClass {
 		logger.info("Maximize the window");
 		//Thread.sleep(5000);
 		
-		System.out.println("Login user Email: "+email+" and Password: "+password);
+		System.out.println("Login user Email: "+userEmail+" and Password: "+userPassword);
 		
 	}
 	

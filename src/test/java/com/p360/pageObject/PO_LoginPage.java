@@ -95,11 +95,11 @@ public class PO_LoginPage extends ReUseAbleElement {
 	}
 	
 	//TO LOGIN
-	public PO_HomePage Login(String email,String password) throws InterruptedException {
+	public PO_HomePage Login(String userEmail,String userPassword) throws InterruptedException {
 		logger.info("Method called Login");
 		clickBtnSignIn();
-		setUserName(email);
-		setTextpassword(password);
+		setUserName(userEmail);
+		setTextpassword(userPassword);
 		clickBtnsubmit();
 		
 		try {
@@ -120,11 +120,11 @@ public class PO_LoginPage extends ReUseAbleElement {
 	}
 	
 	//TO SUPER ADMIN LOGIN
-	public PO_Main_HomePage AdminLogin(String email,String password) throws InterruptedException {
+	public PO_Main_HomePage AdminLogin(String adminEmail,String adminPassword) throws InterruptedException {
 		logger.info("Method called Login");
 		clickBtnSignIn();
-		setUserName(email);
-		setTextpassword(password);
+		setUserName(adminEmail);
+		setTextpassword(adminPassword);
 		clickBtnsubmit();
 		
 		try {

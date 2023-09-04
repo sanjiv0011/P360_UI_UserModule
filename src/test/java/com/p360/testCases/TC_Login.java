@@ -20,7 +20,7 @@ public class TC_Login extends BaseClass {
 	@Test(priority = 1)
 	public void test_Login() throws InterruptedException {
 		lp = new PO_LoginPage(driver);
-		lp.Login(email,password);
+		lp.Login(userEmail,userPassword);
 	}
 	
 }

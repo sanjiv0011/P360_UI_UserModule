@@ -52,7 +52,14 @@ public class ReUseAbleElement {
 			
 		}
 	
-	
+		//CONTINUE BUTTON P360 , TO AVOID THE STALE ELEMENT REFERENCE
+		public String btnContinueAvoidStaleElementReference_RU ="(//span[normalize-space()='Continue'])[1]";
+		public void clickONBtnContinueAvoidStaleElemenetRefernce_RU(WebDriver driver) throws InterruptedException {
+			driver.findElement(By.xpath(btnContinueAvoidStaleElementReference_RU)).click();
+			Thread.sleep(1000);
+			logger.info("Clicked on the Continue button");
+			
+		}
 	
 	
 		@FindBy(xpath = "//span[normalize-space()='Dashboard']")
@@ -285,7 +292,7 @@ public class ReUseAbleElement {
 		}
 		
 		//CHECK BOX 1,P360
-		@FindBy(xpath = "//input[@type='checkbox']")
+		@FindBy(xpath = "(//input[@type='checkbox'])[1]")
 		@CacheLookup
 		WebElement checkBox_1_RU;
 		public void clickOnCheckBox_1_RU() throws InterruptedException{
@@ -295,7 +302,7 @@ public class ReUseAbleElement {
 		}
 		
 		//CHECK BOX 2 ,P360
-		@FindBy(xpath = "(//input[@type='checkbox'])[1]")
+		@FindBy(xpath = "(//input[@type='checkbox'])[2]")
 		@CacheLookup
 		WebElement checkBox_2_RU;
 		public void clickOnCheckBox_2_RU() throws InterruptedException{
@@ -309,12 +316,31 @@ public class ReUseAbleElement {
   		@CacheLookup
   		public WebElement btnAddMember_RU;
   		public void clickOnAddMember_RU() throws InterruptedException {
+  			boolean flag = false;
+  			try {
+  				wait.until(ExpectedConditions.elementToBeClickable(btnAddMember_RU));
+  			}catch(Exception e) {}
+  			flag = btnAddMember_RU.isDisplayed();
   			btnAddMember_RU.click();
-  			logger.info("Clicked on the button add member");
+  			logger.info("Is Displeyed and Clicked on the button add member: "+flag);
   			Thread.sleep(1000);
   		}
 		  		
-
+  		//BUTTON ADD MEMBER, P360 , AVOID STALE ELEMENT REFERENCE
+		String btnAddMemberAvoidStaleElementReference_RU = "(//span[normalize-space()='Add Member'])[1]";
+		public void clickOnAddMemberAvoidStaleElementReference_1_RU(WebDriver driver) throws InterruptedException {
+			boolean flag = false;
+			WebElement ele =null;
+			try {
+				ele = driver.findElement(By.xpath(btnAddMemberAvoidStaleElementReference_RU));
+			}catch(Exception e) {}
+			flag = ele.isDisplayed();
+			//logger.info("Is Displeyed: "+flag);
+			ele.click();
+			logger.info("Clicked on the button add member");
+			Thread.sleep(1000);
+		}
+  	  		
 		//BUTTON CANCEL P360
 		@FindBy(xpath = "//span[normalize-space()=\"Cancel\"]")
 		@CacheLookup
@@ -440,7 +466,7 @@ public class ReUseAbleElement {
   		
   		
   		//DROPDOWN BOX ADDRESS 2,  P360
-  		@FindBy(xpath = "(//div[@role='button'])[1]")
+  		@FindBy(xpath = "(//div[@role='button'])[2]")
   		@CacheLookup
   		public WebElement dropdownBoxAddress_2_RU;
   		public void clickOnDropdownBoxAddress_2_RU() throws InterruptedException {
@@ -507,6 +533,10 @@ public class ReUseAbleElement {
   		@FindBy(xpath = "//ul[@role='listbox']//li")
   		@CacheLookup
   		public List <WebElement>  listOption_RU;
+  		
+  		//BELOW LINE IS USED TO AVOID THE STALE ELEMENT REFERENCE
+  		public String listOptionAvoidStaleElementReference_RU = "//ul[@role='listbox']//li";
+  	
   		
   		//CONFIRM BUTTON ADDRESS AND ACTION METHODS
   		@FindBy(xpath = "//span[normalize-space()='Confirm']")
@@ -616,7 +646,7 @@ public class ReUseAbleElement {
 	
 	  		
 	  	//ALARTS ADDRESS AND ACTIONS METHODS
-	  	public String alertAddress_RU = "//div[@role='alert']";
+	  	public String alertAddress_RU = "//div[@role=\"alert\"]";
 	  	String alertMessageContent_RU;
 	  	public String snakeAlertMessagesDisplayedContent_RU() throws InterruptedException {
 	  			//logger.info("Alert - Try");
@@ -624,7 +654,7 @@ public class ReUseAbleElement {
 	  			int t = 1;
 	  			String exception = null;
 	  			boolean flag = false;
-	  			while(t <= 750)
+	  			while(t <= 1500)
 	  			{
 	  				logger.info("Checking alert after every 100 miliseconds durations: "+t);
 	  				try {

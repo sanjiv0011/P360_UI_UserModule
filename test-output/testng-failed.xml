@@ -11,8 +11,6 @@
         <methods>
           <include name="teardown"/>
           <include name="setup"/>
-          <include name="test_Logout"/>
-          <include name="test_Login"/>
           <include name="test_Main_AddMember"/>
         </methods>
       </class> <!-- com.p360.Main.testCases.TC_Main_Users -->

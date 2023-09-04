@@ -25,7 +25,7 @@ public class TC_Main_Home extends BaseClass{
 	@Test(priority = 1)
 	public void test_Login() throws InterruptedException {
 		lp = new PO_LoginPage(driver);
-		mhp = lp.AdminLogin(email,password);
+		mhp = lp.AdminLogin(adminEmail,adminPassword);
 	}
 
 	//TO MAIN HOME PAGE TAB TESTING

@@ -27,7 +27,7 @@ public class TC_Home extends BaseClass{
 	@Test(priority = 1)
 	public void test_Login() throws InterruptedException {
 		lp = new PO_LoginPage(driver);
-		hp = lp.Login(email,password);
+		hp = lp.Login(userEmail,userPassword);
 	}
 	
 	//TO CHECK HOME PAGE ELEMENT

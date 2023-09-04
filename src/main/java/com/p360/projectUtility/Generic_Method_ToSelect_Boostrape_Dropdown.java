@@ -22,11 +22,12 @@ public class Generic_Method_ToSelect_Boostrape_Dropdown
     
     	logger.info("Enter inside method selectOptionFromDropdown and caller methods name: "+callerMethodName);
     	boolean flag = false;
+    	
     	for(WebElement element : options)
     	{	//logger.info("List options: "+element.getText());
     	
-    		if(element.getText().equals(value) || (element.getText()).trim().contains(value))
-    		{  	logger.info("matched list value: "+element.getText());	
+    		if(element.getText().equals(value) || (element.getText()).trim().contains(value.trim()))
+    		{  	logger.info("Entered inside [else if block], matched list value: "+element.getText());	
     			try {
     				if(element.isEnabled()) {
         				element.click();
@@ -40,21 +41,61 @@ public class Generic_Method_ToSelect_Boostrape_Dropdown
     			flag = true;
     			break;
     		}
+    		else if(element.getText().replaceAll("[\\(\\)_]", "").contains(value.replaceAll("[\\(\\)_]", "")))
+    		{  	logger.info("Entered inside [else if block], matched list value: "+element.getText());	
+				try {
+					if(element.isEnabled()) {
+	    				element.click();
+	    				logger.info("Click on the element");
+	    			}else {
+	    				logger.info("Element is not enabled");
+	    			}
+				}catch(Exception e) {
+					logger.info("Exception While selectiong list from the dropdown: "+e.getMessage());
+				}
+				flag = true;
+				break;
+    		}
     		else if(callerMethodName.equals("selectMonthAndDate"))
     		{
-
+    			logger.info("Entered inside [else if block] selectMonthAndDate ");
     			String[] text = element.getText().split("\\n");
 				String format = "";
 				for(String st : text) {
 					//logger.info(st);
 					format = format+st+" ";
 				}
-				logger.info(format);
+				//logger.info(format);
     			String formatText = text[0]+" "+text[1]+" "+text[2];
     			
-    			if(formatText.trim().equals(value))
+    			if(formatText.trim().contains(value.trim()))
     			{
-        			logger.info("Formated matched list value: "+formatText);	
+        			logger.info("Formated(selectMonthAndDate) matched list value: "+formatText);	
+        			try {
+        				if(element.isEnabled()) {
+            				element.click();
+            				logger.info("Click on the element");
+            			}else {
+            				logger.info("Element is not enabled");
+            			}
+        			}catch(Exception e) {
+        				logger.info("Exception While selectiong list from the dropdown: "+e.getMessage());
+        			}
+        			flag = true;
+        			break;
+        		}
+    		 
+    		}
+    		else if(callerMethodName.equals("selectMembershipPackage"))
+    		{
+    			logger.info("Entered inside [else if block] selectMembershipPackage ");
+    			String[] text = element.getText().split("\\(");
+    			String formatText = text[0];
+    			logger.info(formatText);
+    			
+    			if(formatText.contains(value))
+    			{
+        			logger.info("Formated(selectMembershipPackage) matched list value: "+formatText);	
         			try {
         				if(element.isEnabled()) {
             				element.click();

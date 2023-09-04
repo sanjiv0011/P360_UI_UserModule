@@ -300,10 +300,10 @@ public class DatePicker{
 		public static void DatePicker_GenericMethod_WhenDateGridOnlyPresent(WebDriver driver, String yourDate ) throws InterruptedException
 		{	logger.info("Enter inside date picker methods");
 				
-			String monthYear_address = "//div[contains(@class,'MuiPickersCalendarHeader-transitionContainer')]";
+			String monthYear_address = "(//div[@id='mui-1-grid-label'])[1]";
 			String previousButton_address = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiPickersCalendarHeader-iconButton'])[1]";
 			String nextButton_address = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiPickersCalendarHeader-iconButton'])[2]";
-			String dateList_address = "//div[@role='presentation']";
+			String dateList_address = "//div[@role='row']//button[@role='gridcell']";
 			
 		    // my date setting
 	        String myDate[] = yourDate.split(" ");

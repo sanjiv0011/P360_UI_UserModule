@@ -30,16 +30,16 @@ public class ReadConfigFiles {
 		return url;
 	}
 	
-	public String getEmail()
+	public String getUserEmail()
 	{
-		String email = pro.getProperty("email");
-		return email;
+		String userEmail = pro.getProperty("userEmail");
+		return userEmail;
 	}
 	
-	public String getPassword()
+	public String getUserPassword()
 	{
-		String pwd = pro.getProperty("password");
-		return pwd;
+		String userPasswprd = pro.getProperty("userPasswprd");
+		return userPasswprd;
 	}
 	
 	public String getChromePath()
@@ -59,4 +59,16 @@ public class ReadConfigFiles {
 		String msedgepath = pro.getProperty("msedgepath");
 		return msedgepath;
 	}	
+	
+	public String getAdminEmail()
+	{
+		String adminEmail = pro.getProperty("adminEmail");
+		return adminEmail;
+	}
+	
+	public String getAdminPassword()
+	{
+		String adminPassword = pro.getProperty("adminPassword");
+		return adminPassword;
+	}
 }

@@ -39,11 +39,11 @@ public class PO_Main_HomePage extends ReUseAbleElement{
 	
 	//=========START========HOME PAGE OBJECTS=============//
 	
-	@FindBy(xpath = "//div[contains(@class,\"MuiList-root\")][contains(.,'Users')]")
+	@FindBy(xpath = "(//div[contains(@class, \"MuiList-root\")])[7]")
 	@CacheLookup
 	WebElement tabUsers;
 	
-	@FindBy(xpath = "//div[contains(@class,\"MuiList-root\")][contains(.,'Packages')]")
+	@FindBy(xpath = "(//div[contains(@class, \"MuiList-root\")])[6]")
 	@CacheLookup
 	WebElement tabPackages;
 	
@@ -124,13 +124,28 @@ public class PO_Main_HomePage extends ReUseAbleElement{
 		logger.info(" clickOntabLocations");
 	}
 	
-	
+	//NORMAL USE
 	public void clickOntabDashboard() throws InterruptedException {
 		tabDashboard.click();
 		Thread.sleep(3000);
 		logger.info("clickOntabDashboard ");
 	}
 	
+	//USE THIS WEHEN WANT TO TAKE ACTION ON MAIN P360 WEBSITE, IT WILL RETURN THE MAIN_HOMEPAGE
+	public PO_Main_HomePage clickOntabDashboardReturn_Main_HomePage() throws InterruptedException {
+		tabDashboard.click();
+		Thread.sleep(3000);
+		logger.info("clickOntabDashboard ");
+		return new PO_Main_HomePage(driver);
+	}
+	
+	//USE THIS WEHEN WANT TO TAKE ACTION ON MAIN P360 WEBSITE, IT WILL RETURN THE MAIN_HOMEPAGE
+	public PO_HomePage clickOntabDashboardReturn_HomePage() throws InterruptedException {
+		tabDashboard.click();
+		Thread.sleep(3000);
+		logger.info("clickOntabDashboard ");
+		return new PO_HomePage(driver);
+	}
 	
 	public void clickOntabThisWeek() throws InterruptedException {
 		tabThisWeek.click();
@@ -197,7 +212,7 @@ public class PO_Main_HomePage extends ReUseAbleElement{
 	
 	//MAIN HOME PAGE TABE TESTING
 	public PO_HomePage mainHomePageTesting() throws InterruptedException {
-		clickOntabDashboard();
+		
 		clickOntabLocations();
 		clickOntabPackages();
 		clickOnTabUsers();
@@ -208,11 +223,11 @@ public class PO_Main_HomePage extends ReUseAbleElement{
 		clickOntabMovement();
 		clickOntabPromoCodes();
 		clickOntabPayments();
-		clickOntabDocuments();
 		clickOntabUserLabels();
+		clickOntabDocuments();
 		clickOntabLinks();
 		clickOntabThisWeek();
-		
+		clickOntabDashboard();
 		return new PO_HomePage(driver);
 		
 	}

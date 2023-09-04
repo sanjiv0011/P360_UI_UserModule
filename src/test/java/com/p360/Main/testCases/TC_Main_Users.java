@@ -26,11 +26,11 @@ public class TC_Main_Users extends BaseClass{
 	//VARIABLES
 	String firstName = faker.name().firstName();
 	String lastName = faker.name().lastName();
-	String phoneNumber = faker.phoneNumber().cellPhone();
+	String phoneNumber = "1234567890";
 	String emailAdd = faker.internet().emailAddress();
 	String location = "WESTWOOD";
 	String packageName = "westwood Categories (westwood)";
-	String membershipName = "westwood package One Time";
+	String membershipName = "westwood packages One Time";
 	String membershipStartDate = "12 September 2023";
 	
 	
@@ -38,7 +38,7 @@ public class TC_Main_Users extends BaseClass{
 	@Test(priority = 1)
 	public void test_Login() throws InterruptedException {
 		lp = new PO_LoginPage(driver);
-		mhp = lp.AdminLogin(email,password);
+		mhp = lp.AdminLogin(adminEmail,adminPassword);
 	}
 
 	//TO MAIN HOME PAGE TAB TESTING
@@ -51,6 +51,7 @@ public class TC_Main_Users extends BaseClass{
 	//TO LOGOUT
 	@Test(priority = 10 , dependsOnMethods = "test_Login")	// here zero or ten ensures least priority, so that this call happens at the last.
 	public void test_Logout() throws InterruptedException {	
+		hp = mhp.clickOntabDashboardReturn_HomePage();
 		hp.Logout();
 	}
 	
