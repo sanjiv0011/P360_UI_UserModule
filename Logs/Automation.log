@@ -1,200 +1,226 @@
-19:48:10.131 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-19:48:12.647 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-19:48:14.738 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-19:48:15.309 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
-09:32:22.473 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-09:32:25.896 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-09:32:27.536 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-09:32:27.846 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-09:32:27.984 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-09:32:28.143 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
-09:32:34.448 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-09:32:35.084 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-09:32:35.352 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-09:32:41.442 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-09:32:45.289 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-09:32:47.391 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-09:32:53.758 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findMyRegisteredClassAndonThreeDotOption
-09:32:53.759 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
-09:32:54.358 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given DateAndTime not matched: Sep 9, 2023 | 02:00 AM
-09:32:54.738 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given dateAndTime matched with the list value: Sep 9, 2023 | 02:00 AM
-09:32:54.823 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
-09:32:55.352 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button Cancel Class
-09:32:55.972 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-09:32:57.524 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 118
-09:32:57.525 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-09:32:57.536 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Class Canceled.
-09:32:58.040 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+18:43:05.358 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
+18:43:05.609 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
+18:43:05.609 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - userId: b1dc115c-53a0-432f-8212-a8e37242fb8e for the given userEmail: susandavis@yopmail.com
+18:43:05.609 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - Query string: SELECT * FROM public.user_subscription_pause_details WHERE user_id = 'b1dc115c-53a0-432f-8212-a8e37242fb8e' ORDER BY updated_at DESC
+18:43:05.609 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
+18:43:07.728 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
+18:43:07.964 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
+18:43:08.043 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - From database, Pause start date: 2023-09-14 18:30:00, Pause end date: 2023-09-30 18:29:59
+18:43:08.043 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - User given, Pause start date: 2023-09-15 18:30:00, Pause end date: 2023-09-30 18:29:59 UTC format
+18:43:08.043 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - Pause membership created Id from database: 52d97708-5dec-4709-a96f-7197536e19ff
+18:43:11.423 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+18:43:13.561 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
+18:43:15.574 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method called: resumeMembership
+18:43:17.227 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the resume member ship button
+18:43:19.351 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the resume my membership
+18:43:27.859 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the confirm button
+18:43:29.322 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 113
+18:43:29.322 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+18:43:29.355 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Your membership has been resumed successfully
+18:43:29.869 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
   (Session info: chrome=116.0.5845.141)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ab5bdceb5600cb44e4a9c32b614e6301, findElement {using=xpath, value=//div[@role="alert"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61689}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61689/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ab5bdceb5600cb44e4a9c32b614e6301
-09:33:00.059 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - test_DBT_RegisterAndCacleClass method called and Caller method name: cancelRegisteredClass
-09:33:02.066 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - User given email: susandavis@yopmail.com
-09:33:02.067 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - Qurry string: SELECT * FROM public.user WHERE email_address = 'susandavis@yopmail.com' ORDER BY updated_at
-09:33:02.096 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
-09:33:04.533 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
-09:33:04.814 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
-09:33:04.815 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - userId: b1dc115c-53a0-432f-8212-a8e37242fb8e
-09:33:04.815 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - Qurry string: SELECT * FROM public.class_registrations WHERE user_id = 'b1dc115c-53a0-432f-8212-a8e37242fb8e' ORDER BY updated_at DESC
-09:33:04.816 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
-09:33:06.988 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
-09:33:07.231 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
-09:33:10.600 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-09:33:11.244 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-09:33:13.722 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-09:33:16.022 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-09:33:16.599 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
-09:44:17.692 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-09:44:20.123 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-09:44:21.207 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-09:44:21.423 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-09:44:21.553 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-09:44:21.649 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
-09:44:27.267 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-09:44:27.803 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-09:44:28.106 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-09:44:36.175 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-09:44:39.895 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-09:44:42.004 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-09:44:48.483 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findMyRegisteredClassAndonThreeDotOption
-09:44:48.484 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
-09:44:49.080 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given DateAndTime not matched: Sep 9, 2023 | 02:00 AM
-09:44:49.454 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given dateAndTime matched with the list value: Sep 9, 2023 | 02:00 AM
-09:44:49.541 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
-09:44:50.135 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button Cancel Class
-09:44:50.769 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-09:44:52.369 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 129
-09:44:52.369 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-09:44:52.392 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Class Canceled.
-09:44:52.893 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+Command: [1cb4f7ac2792e98030de2c70bd47e909, findElement {using=xpath, value=//div[@role="alert"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52336}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52336/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1cb4f7ac2792e98030de2c70bd47e909
+18:43:31.871 [main] INFO  com.p360.pageObject.PO_MembershipPage - ===>>> Membership Resumed Successfully
+18:43:33.877 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - test_DBT_RegisterAndCacleClass method called and Caller method name: test_DBT_ResumeMembership
+18:43:33.877 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - User given userEmailAddress: susandavis@yopmail.com
+18:43:33.877 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - Query string: SELECT * FROM public.user WHERE email_address = 'susandavis@yopmail.com' ORDER BY updated_at
+18:43:33.877 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
+18:43:36.050 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
+18:43:36.301 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
+18:43:36.301 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - userId: b1dc115c-53a0-432f-8212-a8e37242fb8e for the given userEmail: susandavis@yopmail.com
+18:43:36.301 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - Query string: SELECT * FROM public.user_subscription_pause_details WHERE user_id = 'b1dc115c-53a0-432f-8212-a8e37242fb8e' ORDER BY updated_at DESC
+18:43:36.301 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
+18:43:38.426 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
+18:43:38.662 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
+18:43:38.662 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - DataBase Resumed Status: true
+18:43:38.662 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - ===>>> DataBase testing DONE
+18:43:38.662 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method call done: pasueMembership
+18:43:41.822 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+18:43:42.442 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
+18:43:46.862 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
+18:43:47.458 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
+18:43:48.036 [main] INFO  com.p360.testCases.TC_Membership - Driver shutdown
+18:47:27.827 [main] INFO  com.p360.testCases.TC_Membership - Base class started...
+18:47:29.966 [main] INFO  com.p360.testCases.TC_Membership - Chrome driver selected
+18:47:31.442 [main] INFO  com.p360.testCases.TC_Membership - Login page started
+18:47:31.588 [main] INFO  com.p360.testCases.TC_Membership - Maximize the window
+18:47:31.711 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+18:47:31.837 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+18:47:37.610 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+18:47:38.232 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+18:47:38.544 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+18:47:50.385 [main] INFO  com.p360.pageObject.PO_LoginPage - Login exception message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=116.0.5845.141)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6357ce859c153788662659f27b833db4, findElement {using=tag name, value=body}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52680}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52680/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6357ce859c153788662659f27b833db4
+18:48:43.788 [main] INFO  com.p360.testCases.TC_Membership - Base class started...
+18:48:45.659 [main] INFO  com.p360.testCases.TC_Membership - Chrome driver selected
+18:48:48.149 [main] INFO  com.p360.testCases.TC_Membership - Login page started
+18:48:48.310 [main] INFO  com.p360.testCases.TC_Membership - Maximize the window
+18:48:48.449 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+18:48:48.549 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+18:48:54.683 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+18:48:55.301 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+18:48:55.699 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+18:49:01.618 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+18:49:05.434 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+18:49:07.538 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
+18:49:09.558 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method called: pasueMembership
+18:49:10.670 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause member ship button
+18:49:12.205 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the dropdown reason while puase membership
+18:49:12.718 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectReason
+18:49:12.807 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: Travel
+18:49:13.451 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+18:49:14.452 [main] INFO  com.p360.pageObject.PO_MembershipPage - Pause membership reason selected
+18:49:14.587 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause membership start date icon
+18:49:15.091 [main] INFO  com.p360.projectUtility.DatePicker - Enter inside method DatePicker class and caller methods name: setPauseMembershipStartDate
+18:49:15.092 [main] INFO  com.p360.projectUtility.DatePicker - User given year: 2023 Month: September Date: 15
+18:49:15.619 [main] INFO  com.p360.projectUtility.DatePicker - September 2023
+18:49:15.619 [main] INFO  com.p360.projectUtility.DatePicker - Displayed month name: September and year is: 2023
+18:49:15.619 [main] INFO  com.p360.projectUtility.DatePicker - selected month name is: September
+18:49:17.443 [main] INFO  com.p360.projectUtility.DatePicker - Selected date: 15
+18:49:19.666 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause membership end date icon
+18:49:20.194 [main] INFO  com.p360.projectUtility.DatePicker - Enter inside method DatePicker class and caller methods name: setPauseMembershipEndDate
+18:49:20.194 [main] INFO  com.p360.projectUtility.DatePicker - User given year: 2023 Month: September Date: 30
+18:49:20.759 [main] INFO  com.p360.projectUtility.DatePicker - September 2023
+18:49:20.759 [main] INFO  com.p360.projectUtility.DatePicker - Displayed month name: September and year is: 2023
+18:49:20.759 [main] INFO  com.p360.projectUtility.DatePicker - selected month name is: September
+18:49:22.709 [main] INFO  com.p360.projectUtility.DatePicker - Selected date: 30
+18:49:24.898 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause my membership
+18:49:25.819 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the confirm button
+18:49:27.748 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 159
+18:49:27.748 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+18:49:27.780 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Pause Membership Successfully
+18:49:28.298 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
   (Session info: chrome=116.0.5845.141)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7a37707dfd3185fbf91f6ea9779ebcce, findElement {using=xpath, value=//div[@role="alert"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62934}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62934/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7a37707dfd3185fbf91f6ea9779ebcce
-09:44:54.895 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - test_DBT_RegisterAndCacleClass method called and Caller method name: cancelRegisteredClass
-09:44:56.908 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - User given email: susandavis@yopmail.com
-09:44:56.908 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - Qurry string: SELECT * FROM public.user WHERE email_address = 'susandavis@yopmail.com' ORDER BY updated_at
-09:44:56.909 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
-09:44:59.582 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
-09:44:59.858 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
-09:44:59.859 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - userId: b1dc115c-53a0-432f-8212-a8e37242fb8e
-09:44:59.860 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - Qurry string: SELECT * FROM public.class_registrations WHERE user_id = 'b1dc115c-53a0-432f-8212-a8e37242fb8e' ORDER BY updated_at DESC
-09:44:59.860 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
-09:45:01.993 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
-09:45:02.234 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
-09:45:02.240 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - ===>>> DataBase date time: 2023-09-09 02:00:00 matched with the requested date time: 2023-09-09 02:00:00 and Database is_canceled status: false
-09:45:05.387 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-09:45:06.048 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-09:45:08.550 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-09:45:11.345 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-09:45:11.929 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
-09:58:06.941 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-09:58:09.302 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-09:58:10.813 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-09:58:10.950 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-09:58:11.076 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-09:58:11.219 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
-09:58:17.102 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-09:58:17.692 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-09:58:18.008 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-09:58:25.332 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-09:58:29.137 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-09:58:31.245 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-09:58:37.614 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findMyRegisteredClassAndonThreeDotOption
-09:58:37.615 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
-09:58:38.205 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given DateAndTime not matched: Sep 11, 2023 | 01:01 AM
-09:58:38.536 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given dateAndTime matched with the list value: Sep 11, 2023 | 01:01 AM
-09:58:38.578 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
-09:58:39.076 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button Cancel Class
-09:58:39.661 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-09:58:41.194 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 122
-09:58:41.194 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-09:58:41.217 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Class Canceled.
-09:58:41.726 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+Command: [3f5ca5ae00c06353b6a7164d10f2d5e5, findElement {using=xpath, value=//div[@role="alert"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52772}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52772/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3f5ca5ae00c06353b6a7164d10f2d5e5
+18:49:30.309 [main] INFO  com.p360.pageObject.PO_MembershipPage - ===>>> Membership Paused Successfully
+18:49:32.319 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - test_DBT_RegisterAndCacleClass method called and Caller method name: test_DBT_PauseMembership
+18:49:32.319 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - User given userEmailAddress: susandavis@yopmail.com
+18:49:32.319 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - Query string: SELECT * FROM public.user WHERE email_address = 'susandavis@yopmail.com' ORDER BY updated_at
+18:49:32.319 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
+18:49:34.755 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
+18:49:35.038 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
+18:49:35.038 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - userId: b1dc115c-53a0-432f-8212-a8e37242fb8e for the given userEmail: susandavis@yopmail.com
+18:49:35.038 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - Query string: SELECT * FROM public.user_subscription_pause_details WHERE user_id = 'b1dc115c-53a0-432f-8212-a8e37242fb8e' ORDER BY updated_at DESC
+18:49:35.038 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
+18:49:37.140 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
+18:49:37.361 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
+18:49:37.376 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - From database, Pause start date: 2023-09-14 18:30:00, Pause end date: 2023-09-30 18:29:59
+18:49:37.376 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - User given, Pause start date: 2023-09-14 18:30:00, Pause end date: 2023-09-30 18:29:59 UTC format
+18:49:37.376 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - Pause membership created Id from database: 71c02b4f-89a2-4330-a695-5698a7dd26b9
+18:49:37.376 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - ===>>> DataBase testing DONE
+18:49:37.376 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method call done: pasueMembership
+18:49:40.581 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+18:49:42.689 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
+18:49:44.703 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method called: resumeMembership
+18:49:46.379 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the resume member ship button
+18:49:54.637 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the resume my membership
+18:49:55.548 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the confirm button
+18:49:57.008 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 113
+18:49:57.008 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+18:49:57.023 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Your membership has been resumed successfully
+18:49:57.541 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
   (Session info: chrome=116.0.5845.141)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0e62358af041fad2973863b5d01689ae, findElement {using=xpath, value=//div[@role="alert"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64451}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64451/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0e62358af041fad2973863b5d01689ae
-09:58:43.740 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - test_DBT_RegisterAndCacleClass method called and Caller method name: cancelRegisteredClass
-09:58:45.747 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - User given email: susandavis@yopmail.com
-09:58:45.748 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - Qurry string: SELECT * FROM public.user WHERE email_address = 'susandavis@yopmail.com' ORDER BY updated_at
-09:58:45.751 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
-09:58:48.271 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
-09:58:48.545 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
-09:58:48.546 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - userId: b1dc115c-53a0-432f-8212-a8e37242fb8e
-09:58:48.546 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - Qurry string: SELECT * FROM public.class_registrations WHERE user_id = 'b1dc115c-53a0-432f-8212-a8e37242fb8e' ORDER BY updated_at DESC
-09:58:48.546 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
-09:58:50.649 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
-09:58:50.888 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
-09:58:50.895 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - ===>>> DataBase date time: 2023-09-11 01:01:00 matched with the requested date time: 2023-09-11 01:01:00 and Database is_canceled status: false
-09:58:54.020 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-09:58:54.601 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-09:58:57.114 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-09:58:59.554 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-09:59:00.014 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
-10:16:15.419 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-10:16:17.987 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-10:16:19.182 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-10:17:22.394 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-10:17:25.899 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-10:17:26.462 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-10:23:36.436 [main] INFO  com.p360.testCases.TC_Classes - Base class started...
-10:23:38.871 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-10:23:39.794 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-10:23:40.051 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-10:23:40.243 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-10:23:40.384 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
-10:23:45.397 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-10:23:45.940 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-10:23:46.241 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-10:23:52.592 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-10:23:56.569 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-10:23:58.715 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-10:24:05.166 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findMyRegisteredClassAndonThreeDotOption
-10:24:05.167 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
-10:24:06.117 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given dateAndTime matched with the list value: Sep 16, 2023 | 02:00 AM
-10:24:06.190 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
-10:24:06.725 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button Cancel Class
-10:24:07.300 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-10:24:09.275 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 170
-10:24:09.276 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-10:24:09.298 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Class Canceled.
-10:24:09.814 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+Command: [3f5ca5ae00c06353b6a7164d10f2d5e5, findElement {using=xpath, value=//div[@role="alert"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52772}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52772/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3f5ca5ae00c06353b6a7164d10f2d5e5
+18:49:59.557 [main] INFO  com.p360.pageObject.PO_MembershipPage - ===>>> Membership Resumed Successfully
+18:50:01.565 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - test_DBT_RegisterAndCacleClass method called and Caller method name: test_DBT_ResumeMembership
+18:50:01.565 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - User given userEmailAddress: susandavis@yopmail.com
+18:50:01.565 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - Query string: SELECT * FROM public.user WHERE email_address = 'susandavis@yopmail.com' ORDER BY updated_at
+18:50:01.565 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
+18:50:03.668 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
+18:50:03.903 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
+18:50:03.903 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - userId: b1dc115c-53a0-432f-8212-a8e37242fb8e for the given userEmail: susandavis@yopmail.com
+18:50:03.904 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - Query string: SELECT * FROM public.user_subscription_pause_details WHERE user_id = 'b1dc115c-53a0-432f-8212-a8e37242fb8e' ORDER BY updated_at DESC
+18:50:03.904 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
+18:50:06.086 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
+18:50:06.322 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
+18:50:06.322 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - DataBase Resumed Status: true
+18:50:06.322 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - ===>>> DataBase testing DONE
+18:50:06.322 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method call done: pasueMembership
+18:50:09.579 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+18:50:10.211 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
+18:50:15.137 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
+18:50:15.718 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
+18:50:16.011 [main] INFO  com.p360.testCases.TC_Membership - Driver shutdown
+19:03:30.935 [main] INFO  com.p360.testCases.TC_Membership - Base class started...
+19:03:33.142 [main] INFO  com.p360.testCases.TC_Membership - Chrome driver selected
+19:03:34.743 [main] INFO  com.p360.testCases.TC_Membership - Login page started
+19:03:34.874 [main] INFO  com.p360.testCases.TC_Membership - Maximize the window
+19:03:35.070 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+19:03:35.216 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+19:03:41.125 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+19:03:41.680 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+19:03:41.939 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+19:03:48.219 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+19:03:52.062 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+19:03:54.169 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
+19:03:56.174 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method called: changeMembership
+19:03:56.920 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the manage membership button
+19:04:11.222 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the category field to open the list
+19:04:11.733 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectCategory
+19:04:11.825 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: All
+19:04:12.446 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+19:04:14.066 [main] INFO  com.p360.pageObject.PO_MembershipPage - Selected radio button: Custom Date
+19:04:15.585 [main] INFO  com.p360.pageObject.PO_MembershipPage - Start filling custom date
+19:04:15.711 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the custome date selector icon
+19:04:16.227 [main] INFO  com.p360.projectUtility.DatePicker - Enter inside method DatePicker class and caller methods name: setNewSubsriptionDate
+19:04:16.227 [main] INFO  com.p360.projectUtility.DatePicker - User given year: 2023 Month: September Date: 8
+19:04:16.793 [main] INFO  com.p360.projectUtility.DatePicker - September 2023
+19:04:16.793 [main] INFO  com.p360.projectUtility.DatePicker - Displayed month name: September and year is: 2023
+19:04:16.793 [main] INFO  com.p360.projectUtility.DatePicker - selected month name is: September
+19:04:18.508 [main] INFO  com.p360.projectUtility.DatePicker - Selected date: 8
+19:04:19.621 [main] INFO  com.p360.pageObject.PO_MembershipPage - Custom date, month and year entered
+19:04:20.124 [main] INFO  com.p360.pageObject.PO_MembershipPage - Custom date radio button selected and membership date entered
+19:04:20.124 [main] INFO  com.p360.pageObject.PO_MembershipPage - SelectPackage methods called
+19:04:20.124 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectPackage
+19:04:20.304 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: Westwood Packages One Time
+19:04:20.928 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+19:04:22.427 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox 1
+19:04:22.594 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the Change membership button
+19:04:23.386 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 21
+19:04:23.386 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+19:04:23.395 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Validation Error Occurred. Errors: Cannot switch the User's Membership. Please check if the User is active and has a valid membership.
+19:04:23.910 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
   (Session info: chrome=116.0.5845.141)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7fe7d2d557dd46663e3f78bf6c743c72, findElement {using=xpath, value=//div[@role="alert"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51009}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51009/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7fe7d2d557dd46663e3f78bf6c743c72
-10:24:11.828 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - test_DBT_RegisterAndCacleClass method called and Caller method name: cancelRegisteredClass
-10:24:13.835 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - User given email: susandavis@yopmail.com
-10:24:13.836 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - Qurry string: SELECT * FROM public.user WHERE email_address = 'susandavis@yopmail.com' ORDER BY updated_at
-10:24:13.840 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
-10:24:16.463 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
-10:24:16.734 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
-10:24:16.734 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - userId: b1dc115c-53a0-432f-8212-a8e37242fb8e
-10:24:16.738 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - Qurry string: SELECT * FROM public.class_registrations WHERE user_id = 'b1dc115c-53a0-432f-8212-a8e37242fb8e' ORDER BY updated_at DESC
-10:24:16.738 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
-10:24:18.850 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
-10:24:19.090 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
-10:24:19.090 [main] INFO  com.p360.DataBaseTesting.DBT_User_Classes - ===>>> DataBase date time: 2023-09-16 02:00:00 matched with the requested date time: 2023-09-16 02:00:00 and Database is_canceled status: true
-10:24:22.232 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-10:24:22.830 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-10:24:25.275 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-10:24:27.877 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-10:24:28.321 [main] INFO  com.p360.testCases.TC_Classes - Driver shutdown
+Command: [d8f391a1f5405971388634acdb8913e1, findElement {using=xpath, value=//div[@role="alert"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53357}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53357/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d8f391a1f5405971388634acdb8913e1
+19:04:27.085 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Cancel button Exception: element click intercepted: Element <span class="MuiButton-label">...</span> is not clickable at point (608, 844). Other element would receive the click: <div class="jss120 jss111 jss114 jss112" aria-describedby="notistack-snackbar" role="alert" style="transform: none; transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;">...</div>
+  (Session info: chrome=116.0.5845.141)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d8f391a1f5405971388634acdb8913e1, clickElement {id=18383F357454B47D1F0AB79D6E1124BE_element_420}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53357}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53357/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (d8f391a1f5405971388634acdb8913e1)] -> xpath: (//span[normalize-space()='Cancel'])[1]]
+Session ID: d8f391a1f5405971388634acdb8913e1
+19:04:27.085 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method call done: changeMembership 
+19:04:37.240 [main] INFO  com.p360.testCases.TC_Membership - Driver shutdown

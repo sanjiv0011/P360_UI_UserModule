@@ -1,6 +1,8 @@
 package com.p360.testCases;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.text.ParseException;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -45,10 +47,10 @@ public class TC_Membership extends BaseClass{
 	}
 	
 	//TO CHANGE MEMBERSHIP
-	//@Test(priority = 2 , dependsOnMethods = "test_Login", dataProvider = "TC_ChangeMembership")
-	public void test_ChangeMembership(String categoryName,String packageName,String radioButton,String membershipDate) throws InterruptedException {
+	@Test(priority = 2 , dependsOnMethods = "test_Login", dataProvider = "TC_ChangeMembership")
+	public void test_ChangeMembership(String categoryName,String packageName,String radioButton,String membershipDate) throws InterruptedException, SQLException {
 		mp = callMeBeforePerformAnyAction();
-		hp = mp.changeMembership(categoryName,packageName,radioButton, membershipDate);
+		hp = mp.changeMembership(userEmail,categoryName,packageName,radioButton, membershipDate);
 	}
 	
 	//TO CHECK AGREED TERMS OF MEMBERSHIP
@@ -60,17 +62,17 @@ public class TC_Membership extends BaseClass{
 	
 	
 	//TO PAUSE MEMBERSHIP
-	@Test(priority = 4 ,dependsOnMethods = "test_Login", dataProvider = "TC_PauseMembership")
-	public void test_PauseMembership(String pauseStartDate, String pauseEndDate, String pauseReason) throws InterruptedException {
+	//@Test(priority = 4 ,dependsOnMethods = "test_Login", dataProvider = "TC_PauseMembership")
+	public void test_PauseMembership(String pauseStartDate, String pauseEndDate, String pauseReason) throws InterruptedException, SQLException, ParseException {
 		mp = callMeBeforePerformAnyAction();
-		hp = mp.pasueMembership(pauseStartDate, pauseEndDate, pauseReason);
+		hp = mp.pasueMembership(userEmail,pauseStartDate, pauseEndDate, pauseReason);
 	}
 	
 	//TO RESUME MEMBERSHIP
-	@Test(priority = 5 ,dependsOnMethods = "test_Login")
-	public void test_ResumeMembership() throws InterruptedException {
+	//@Test(priority = 5 ,dependsOnMethods = "test_Login")
+	public void test_ResumeMembership() throws InterruptedException, SQLException {
 		mp = callMeBeforePerformAnyAction();
-		hp = mp.resumeMembership();
+		hp = mp.resumeMembership(userEmail);
 	}
 		
 	

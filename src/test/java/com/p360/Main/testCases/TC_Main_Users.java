@@ -30,8 +30,8 @@ public class TC_Main_Users extends BaseClass{
 	String emailAdd = faker.internet().emailAddress();
 	String location = "WESTWOOD";
 	String packageName = "westwood Categories (westwood)";
-	String membershipName = "westwood packages One Time";
-	String membershipStartDate = "12 September 2023";
+	String membershipName = "WESTWOOD_PACKAGE_02";
+	String membershipStartDate = "8 September 2023";
 	
 	
 	//TO LOGIN

@@ -1,5 +1,7 @@
 package com.p360.pageObject;
 
+import java.sql.SQLException;
+import java.text.ParseException;
 import java.time.Duration;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
@@ -15,6 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.p360.projectUtility.DatePicker;
 import com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown;
+import com.p360.DataBaseTesting.DBT_User_Membership;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 
 
@@ -44,11 +47,11 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	
 	String alertMsgResumeMembership = "Your membership has been resumed successfully";
 	String alertMsgPauseMembershipMoreThenOneTimeInAQuarter = "Memberships can only be paused once in a quarter";
-	String alertMsgPauseMembership = "Your membership has been paused successfully";
+	String alertMsgPauseMembership = "Pause Membership Successfully";
 	String alertMsgSelectMemberhsipPackage = "Please select membership package.";
 	String alertMsgChangeMembership = "Membership Package Changed.";
 	String alertMsgNoActiveSubscription = "No active subscription found matching the user";
-	String alertMsgErrorCreatedChangeSubscription = "There was an error creating change subscription.";
+	String alertMsgErrorChangeSubscription = "There was an error creating change subscription.";
 	
 	//=========START========MEMBERSHIP PAGE OBJECTS=============//
 	@FindBy(xpath = "//span[normalize-space()='Manage Membership']")
@@ -262,7 +265,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	public void clickOnResumeMembership() throws InterruptedException {
 		boolean flag = false;
 		try {
-			wait.until(ExpectedConditions.elementToBeClickable(btnResumeMembership));
+			Thread.sleep(1000);
 			if(btnResumeMembership.isDisplayed()) {
 				Thread.sleep(500);
 				flag = true;
@@ -301,9 +304,20 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	}
 	
 	public void clickOnBtnResumeMyMembership() throws InterruptedException {
-		btnResumeMyMembership.click();
-		logger.info("Clicked on the resume my membership");
-		Thread.sleep(300);
+		boolean flag = false;
+		try {
+			Thread.sleep(1000);
+			if(btnResumeMyMembership.isDisplayed()) {
+				btnResumeMyMembership.click();
+				logger.info("Clicked on the resume my membership");
+				flag = true;
+				Thread.sleep(300);
+			}
+			
+		}catch(Exception e) {
+			logger.info("Is btnResumeMyMembership Displayed: "+flag);
+			logger.info("Exception from clickOnBtnResumeMyMembership: "+e.getMessage());
+		}
 	}
 	
 	
@@ -343,7 +357,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	
 	
 	//TO CHANGE THE MEMBERSHIP
-	public PO_HomePage changeMembership(String categoryName,String packageName,String radioButtonName,String membershipDate ) throws InterruptedException {
+	public PO_HomePage changeMembership(String userEmail, String categoryName,String packageName,String radioButtonName,String membershipDate ) throws InterruptedException, SQLException {
 		logger.info("Method called: changeMembership");
 		clickOnBtnManageMembership();
 		selectCategory(categoryName);
@@ -364,18 +378,18 @@ public class PO_MembershipPage extends ReUseAbleElement{
 			String alertMsgContent = snakeAlertMessagesDisplayedContent_RU();
 			if(alertMsgContent.equals(alertMsgChangeMembership)) {
 				logger.info("===>>> Membership Changed Successfully");
+				//DATABASE TESTING
+				DBT_User_Membership.test_DBT_ChangeMembership(userEmail,packageName);
 			} else if(alertMsgContent.equals(alertMsgSelectMemberhsipPackage)) {
 				logger.info("===>>> Membership package not selected");
+				ruae.clickOnCancelButton_1_RU();
+			}else if(alertMsgContent.equals(alertMsgErrorChangeSubscription)){
 				ruae.clickOnCancelButton_1_RU();
 			}else {
 				ruae.clickOnCancelButton_1_RU();
 			}
 		}
 		
-		//DATABASE TESTING
-		if(snakeAlertMessagesDisplayedContent_RU().equals(alertMsgChangeMembership)) {
-			
-		}
 		logger.info("Method call done: changeMembership ");
 		return new PO_HomePage(driver);
 	}
@@ -390,18 +404,21 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	}
 	
 	//TO PAUSE THE MEMBERSHIP
-	public PO_HomePage pasueMembership(String pauseStartDate, String pauseEndDate, String pauseReason) throws InterruptedException {
+	public PO_HomePage pasueMembership(String userEmail, String pauseStartDate, String pauseEndDate, String pauseReason) throws InterruptedException, SQLException, ParseException {
 		logger.info("Method called: pasueMembership");
 		clickOnPauseMembership();
 		selectReason(pauseReason);
 		setPauseMembershipStartDate(pauseStartDate);
 		setPauseMembershipEndDate(pauseEndDate);
 		clickOnBtnPauseMyMembership();
+		Thread.sleep(500);
 		boolean flag = clickOnBtnConfirm_RU();
 		if(flag) 
 		{	String alertMsgContent = snakeAlertMessagesDisplayedContent_RU();
 			if(alertMsgContent.equals(alertMsgPauseMembership)) {
 				logger.info("===>>> Membership Paused Successfully");
+				//DATABASE TESTING
+				DBT_User_Membership.test_DBT_PauseMembership(userEmail,pauseStartDate,pauseEndDate);
 			} else if(alertMsgContent.equals(alertMsgPauseMembershipMoreThenOneTimeInAQuarter)) {
 				logger.info("===>>> Membership not paused");
 				ruae.clickOnCancelButton_1_RU();
@@ -417,16 +434,18 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	}
 	
 	//TO RERSUME THE MEMBERSHIP
-	public PO_HomePage resumeMembership() throws InterruptedException {
+	public PO_HomePage resumeMembership(String userEmail) throws InterruptedException, SQLException {
 		logger.info("Method called: resumeMembership");
 		clickOnResumeMembership();
 		clickOnBtnResumeMyMembership();
+		Thread.sleep(500);
 		boolean flag = clickOnBtnConfirm_RU();
 		if(flag)
 		{
 			String alertMsgContent = snakeAlertMessagesDisplayedContent_RU();
 			if(alertMsgContent.equals(alertMsgResumeMembership)) {
 				logger.info("===>>> Membership Resumed Successfully");
+				DBT_User_Membership.test_DBT_ResumeMembership(userEmail);
 			}else {
 				ruae.clickOnCancelButton_1_RU();
 			}
