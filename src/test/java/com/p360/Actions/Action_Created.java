@@ -18,7 +18,7 @@ public class Action_Created {
 		ruae = new ReUseAbleElement(driver);
 		boolean flag = false;
 		//CHECK THE CREATE CONFIRMATIONS MESSAGES
-    	if(!ruae.isRequiredMessageDisplayed_RU()){
+    	if(!ruae.isRequiredOrInvalidMessageDisplayed_RU()){
     		String alretMsg = ruae.snakeAlertMessagesDisplayedContent_RU();
     		if(alretMsg.equals(messageCreated)) {
         		Assert.assertEquals(alretMsg, messageCreated, "CREATED successfully");

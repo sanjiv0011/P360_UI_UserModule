@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.testng.annotations.DataProvider;
 
 import com.p360.utilities.ReadDataFromExcelFile;
 
@@ -29,7 +28,7 @@ public class DataProviders {
 			logger.info(e.getCause());
 		}
 		
-		int rownum = rdfef.getRowCount("Sheet1");
+		int rownum = rdfef.getRowCount("Sheet1");	//edfef = read data from excel file
 		int colcount = rdfef.getCellCount("Sheet1", 1);
 		
 		String UserData[][] = new String[rownum][colcount];

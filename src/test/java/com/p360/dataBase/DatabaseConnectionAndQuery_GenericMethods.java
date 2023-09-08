@@ -30,9 +30,9 @@ public static ResultSet dataBaseCollectionAndQuerry(String querry) throws SQLExc
 		try{
 			//Step1
 			// Step 1: Define database URL, username, and password
-            String url = "jdbc:postgresql://localhost:5432/hrms"; // Note the correct URL format
-            String username = "postgres";
-            String password = "Qwer4321!";
+            String url = "jdbc:postgresql://htdevpgsql.postgres.database.azure.com:5432/p360dev"; // Note the correct URL format
+            String username = "htadmin";
+            String password = "gaMcsqyARA3";
 			con = DriverManager.getConnection(url,username,password);
 			
 			// check connection is done or not

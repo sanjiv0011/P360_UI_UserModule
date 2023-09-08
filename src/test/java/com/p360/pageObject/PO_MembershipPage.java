@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.p360.projectUtility.DatePicker;
-import com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
+import com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 
 
@@ -35,7 +35,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	    this.driver = driver;
 	    jsExecutor  = (JavascriptExecutor)driver;
 		ruae = new ReUseAbleElement(driver);
-		wait = new WebDriverWait (driver, Duration.ofSeconds(45));
+		wait = new WebDriverWait (driver, Duration.ofSeconds(20));
 		lp = new PO_LoginPage(driver);
 		action = new Actions(driver);
 		
@@ -48,6 +48,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	String alertMsgSelectMemberhsipPackage = "Please select membership package.";
 	String alertMsgChangeMembership = "Membership Package Changed.";
 	String alertMsgNoActiveSubscription = "No active subscription found matching the user";
+	String alertMsgErrorCreatedChangeSubscription = "There was an error creating change subscription.";
 	
 	//=========START========MEMBERSHIP PAGE OBJECTS=============//
 	@FindBy(xpath = "//span[normalize-space()='Manage Membership']")
@@ -59,10 +60,11 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	public WebElement btnDrpSelctCategory;
 	
 	
-	// it is give the list of category present under this dropdown
-	@FindBy(xpath = "//div[@class='text-red text-base capitalize']")
-	@CacheLookup
-	public List <WebElement> listPackageName;
+//	// it is give the list of category present under this dropdown
+//	@FindBy(xpath = "//div[@class='text-red text-base capitalize']")
+//	@CacheLookup
+//	public List <WebElement> listPackageName;
+	public String listPackageName = "//div[@class='text-red text-base capitalize']";
 			
 	@FindBy(xpath = "//span[contains(text(), 'Change Membership')]")
 	@CacheLookup
@@ -148,22 +150,33 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	//TO SELECT THE CATEGORY THE FROM THE LIST
 	public void selectCategory(String categoryName) throws InterruptedException{	
 		clickOnDrpCategory();
-		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(ruae.listOption_RU,categoryName);
+		Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,ruae.listOptionAddress_RU,categoryName);
 		Thread.sleep(1000);
 	}
 	
 	//TO SELECT THE PACKAGE
 	public void selectPackage(String packageName) throws InterruptedException{	
 		logger.info("SelectPackage methods called");
-		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listPackageName,packageName);
+		Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,listPackageName,packageName);
 		Thread.sleep(1000);
 	}
 	
 	//TO CLICK ON THE CHANGE MEMBERSHIP BUTTON
-	public void clickOnBtnChangeMembership() throws InterruptedException {
-		btnChangeMembership.click();
-		logger.info("Clicked on the Change membership button");
-		Thread.sleep(500);
+	public boolean clickOnBtnChangeMembership() throws InterruptedException {
+		boolean flag = false;
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(btnChangeMembership));
+			if(btnChangeMembership.isDisplayed()) {
+				btnChangeMembership.click();
+				flag = true;
+				logger.info("Clicked on the Change membership button");
+				Thread.sleep(500);
+			}
+		}catch(Exception e) {
+			logger.info("Is btnChangeMembership displayed: "+flag);
+			logger.info("Exceptoin from clickOnBtnChangeMembership: "+e.getMessage());
+		}
+		return flag;
 	}
 	
 	//TO SELECT THE RADIO BUTTON
@@ -202,34 +215,65 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	
 	//TO SELECT THE CHECK BOX
 	public void clickOnCheckBoxAgreePricingOption() throws InterruptedException {
-		ruae.clickOnCheckBox_1_RU();
+		try {
+			ruae.clickOnCheckBox_1_RU();
+		}catch(Exception e) {
+			logger.info("Exception from clickOnCheckBoxAgreePricingOption: "+e.getMessage());
+		}
 	}
 	
 	//TO CLICK BUTTON AGREED TERMS
 	public void clickOnBtnAgreedTerm() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(btnAgreeTerm));
-		Thread.sleep(500);
-		btnAgreeTerm.click();
-		logger.info("Clicked on the agreed terms");
-		Thread.sleep(2000);
+		boolean flag = false;
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(btnAgreeTerm));
+			if(btnAgreeTerm.isDisplayed()) {
+				flag = true;
+				Thread.sleep(5000);
+				btnAgreeTerm.click();
+				logger.info("Clicked on the agreed terms");
+				Thread.sleep(2000);
+			}
+		}catch(Exception e) {
+			logger.info("Is btnAgreeTerm Displayed: "+flag);
+			logger.info("Exception From clickOnBtnAgreedTerm :"+e.getMessage());
+		}
 	}
 	
 	//TO CLICK ON PAUSE MEMBERSHIP BUTTON
 	public void clickOnPauseMembership() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(btnPauseMembership));
-		Thread.sleep(500);
-		btnPauseMembership.click();
-		logger.info("Clicked on the pause member ship button");
-		Thread.sleep(1000);
+		boolean flag = false;
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(btnPauseMembership));
+			if(btnPauseMembership.isDisplayed()) {
+				Thread.sleep(500);
+				flag = true;
+				btnPauseMembership.click();
+				logger.info("Clicked on the pause member ship button");
+				Thread.sleep(1000);
+			}
+		}catch(Exception e) {
+			logger.info("Is btnPauseMembership Displayed: "+flag);
+			logger.info("Exception From clickOnPauseMembership :"+e.getMessage());
+		}
 	}
 	
-	//TO CLICK ON PAUSE MEMBERSHIP BUTTON
+	//TO CLICK ON RESUME MEMBERSHIP BUTTON
 	public void clickOnResumeMembership() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(btnResumeMembership));
-		Thread.sleep(500);
-		btnPauseMembership.click();
-		logger.info("Clicked on the pause member ship button");
-		Thread.sleep(1000);
+		boolean flag = false;
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(btnResumeMembership));
+			if(btnResumeMembership.isDisplayed()) {
+				Thread.sleep(500);
+				flag = true;
+				btnResumeMembership.click();
+				logger.info("Clicked on the resume member ship button");
+				Thread.sleep(1000);
+			}
+		}catch(Exception e) {
+			logger.info("Is btnResumeMembership Displayed: "+flag);
+			logger.info("Exception From clickOnResumeMembership :"+e.getMessage());
+		}
 	}
 	
 	//TO CLICK ON DROPDWON BUTTON SELECT REASON
@@ -244,7 +288,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	
 	public void selectReason(String reason) throws InterruptedException {
 		clickOnDrpReason();
-		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(ruae.listOption_RU,reason);
+		Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,ruae.listOptionAddress_RU,reason);
 		Thread.sleep(1000);
 		logger.info("Pause membership reason selected");
 	}
@@ -267,7 +311,6 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	public void setPauseMembershipStartDate(String startDate) throws InterruptedException {
 		clickOnIconStartDatePauseMembership();
 		DatePicker.DatePicker_GenericMethod_WhenDateGridOnlyPresent(driver,startDate);
-		logger.info("Entered Pause membership start date");
 	    Thread.sleep(1000);
 	}
 	
@@ -276,7 +319,6 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	public void setPauseMembershipEndDate(String endDate) throws InterruptedException {
 		clickOnIconEndDatePauseMembership();
 		DatePicker.DatePicker_GenericMethod_WhenDateGridOnlyPresent(driver,endDate);
-		logger.info("Entered pause membership end date");
 	    Thread.sleep(1000);
 	}
 	
@@ -315,16 +357,24 @@ public class PO_MembershipPage extends ReUseAbleElement{
 			logger.info("Selected radio button is not Custom Date");
 		}
 		selectPackage(packageName);
-		ruae.clickOnCheckBox_1_RU();
-		clickOnBtnChangeMembership();
+		clickOnCheckBoxAgreePricingOption();
+		boolean flag = clickOnBtnChangeMembership();
+		if(flag) 
+		{
+			String alertMsgContent = snakeAlertMessagesDisplayedContent_RU();
+			if(alertMsgContent.equals(alertMsgChangeMembership)) {
+				logger.info("===>>> Membership Changed Successfully");
+			} else if(alertMsgContent.equals(alertMsgSelectMemberhsipPackage)) {
+				logger.info("===>>> Membership package not selected");
+				ruae.clickOnCancelButton_1_RU();
+			}else {
+				ruae.clickOnCancelButton_1_RU();
+			}
+		}
+		
+		//DATABASE TESTING
 		if(snakeAlertMessagesDisplayedContent_RU().equals(alertMsgChangeMembership)) {
-			logger.info("===>>> Membership Changed Successfully");
-		} else if(snakeAlertMessagesDisplayedContent_RU().equals(alertMsgSelectMemberhsipPackage)) {
-			logger.info("===>>> Membership package not selected");
-			ruae.clickOnCancelButton_1_RU();
-		}else {
-			logger.info("Alert Message Content is: "+snakeAlertMessagesDisplayedContent_RU());
-			ruae.clickOnCancelButton_1_RU();
+			
 		}
 		logger.info("Method call done: changeMembership ");
 		return new PO_HomePage(driver);
@@ -347,18 +397,20 @@ public class PO_MembershipPage extends ReUseAbleElement{
 		setPauseMembershipStartDate(pauseStartDate);
 		setPauseMembershipEndDate(pauseEndDate);
 		clickOnBtnPauseMyMembership();
-		clickOnBtnConfirm_RU();
-		if(snakeAlertMessagesDisplayedContent_RU().equals(alertMsgPauseMembership)) {
-			logger.info("===>>> Membership Paused Successfully");
-		} else if(snakeAlertMessagesDisplayedContent_RU().equals(alertMsgPauseMembershipMoreThenOneTimeInAQuarter)) {
-			logger.info("===>>> Membership not paused");
-			ruae.clickOnCancelButton_1_RU();
-		}else if(snakeAlertMessagesDisplayedContent_RU().equals(alertMsgNoActiveSubscription)) {
-			logger.info("===>>> Membership not paused");
-			ruae.clickOnCancelButton_1_RU();
-		}else {
-			logger.info("Alert Message Content is: "+snakeAlertMessagesDisplayedContent_RU());
-			ruae.clickOnCancelButton_1_RU();
+		boolean flag = clickOnBtnConfirm_RU();
+		if(flag) 
+		{	String alertMsgContent = snakeAlertMessagesDisplayedContent_RU();
+			if(alertMsgContent.equals(alertMsgPauseMembership)) {
+				logger.info("===>>> Membership Paused Successfully");
+			} else if(alertMsgContent.equals(alertMsgPauseMembershipMoreThenOneTimeInAQuarter)) {
+				logger.info("===>>> Membership not paused");
+				ruae.clickOnCancelButton_1_RU();
+			}else if(alertMsgContent.equals(alertMsgNoActiveSubscription)) {
+				logger.info("===>>> Membership not paused");
+				ruae.clickOnCancelButton_1_RU();
+			}else {
+				ruae.clickOnCancelButton_1_RU();
+			}
 		}
 		logger.info("Method call done: pasueMembership");
 		return new PO_HomePage(driver);	
@@ -369,12 +421,15 @@ public class PO_MembershipPage extends ReUseAbleElement{
 		logger.info("Method called: resumeMembership");
 		clickOnResumeMembership();
 		clickOnBtnResumeMyMembership();
-		clickOnBtnConfirm_RU();
-		if(snakeAlertMessagesDisplayedContent_RU().equals(alertMsgResumeMembership)) {
-			logger.info("===>>> Membership Resumed Successfully");
-		}else {
-			logger.info("Alert Message Content is: "+snakeAlertMessagesDisplayedContent_RU());
-			ruae.clickOnCancelButton_1_RU();
+		boolean flag = clickOnBtnConfirm_RU();
+		if(flag)
+		{
+			String alertMsgContent = snakeAlertMessagesDisplayedContent_RU();
+			if(alertMsgContent.equals(alertMsgResumeMembership)) {
+				logger.info("===>>> Membership Resumed Successfully");
+			}else {
+				ruae.clickOnCancelButton_1_RU();
+			}
 		}
 		logger.info("Method call done: pasueMembership");
 		return new PO_HomePage(driver);	

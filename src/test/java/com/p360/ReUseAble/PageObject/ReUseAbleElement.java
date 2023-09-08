@@ -45,11 +45,17 @@ public class ReUseAbleElement {
 		@FindBy(xpath = "(//span[normalize-space()='Continue'])[1]")
 		@CacheLookup
 		public WebElement btnContinue_RU;
-		public void clickONBtnContinue_RU() throws InterruptedException {
-			btnContinue_RU.click();
-			Thread.sleep(1000);
-			logger.info("Clicked on the Continue button");
-			
+		public boolean clickONBtnContinue_RU() throws InterruptedException {
+			boolean flag = false;
+			try {
+				btnContinue_RU.click();
+				Thread.sleep(1000);
+				flag = true;
+				logger.info("Clicked on the Continue button");
+			}catch(Exception e) {
+				logger.info("Exceptino from clickONBtnContinue_RU: "+e.getMessage());
+			}
+			return flag;
 		}
 	
 		//CONTINUE BUTTON P360 , TO AVOID THE STALE ELEMENT REFERENCE
@@ -263,7 +269,27 @@ public class ReUseAbleElement {
 		   Thread.sleep(1000);
 		}
 	    		
-	    		
+		// CHANGE DATE ICON 1, P360
+	    @FindBy(xpath = "(//button[contains(@aria-label,\"change date\")])[1]")
+		@CacheLookup
+		public WebElement iconChangeDate_1_RU;
+		public void clickOnChangeDateIcon_1_RU() throws InterruptedException{
+			iconChangeDate_1_RU.click();
+		   logger.info("Clicked on the iconChangeDate_1_RU");
+		   Thread.sleep(1000);
+		}
+		
+		//CHANGE DATE ICON 2, P360
+	    @FindBy(xpath = "(//button[contains(@aria-label,\"change date\")])[2]")
+		@CacheLookup
+		public WebElement iconChangeDate_2_RU;
+		public void clickOnChangeDateIcon_2_RU() throws InterruptedException{
+			iconChangeDate_2_RU.click();
+		   logger.info("Clicked on iconChangeDate_2_RU");
+		   Thread.sleep(1000);
+		}
+		
+				
 	    
 	    //TO CLICK ON THE USER PROFILE ICON FOR ICON UPLOAD
 	    // PROFILE ICON 1
@@ -321,10 +347,17 @@ public class ReUseAbleElement {
 		@FindBy(xpath = "(//input[@type='checkbox'])[1]")
 		@CacheLookup
 		WebElement checkBox_1_RU;
-		public void clickOnCheckBox_1_RU() throws InterruptedException{
-			checkBox_1_RU.click();
-			Thread.sleep(400);
-		   logger.info("Clicked on the Checkbox 1");
+		public boolean clickOnCheckBox_1_RU() throws InterruptedException{
+			boolean flag = false;
+			try {
+				checkBox_1_RU.click();
+				Thread.sleep(400);
+				flag = true;
+			   logger.info("Clicked on the Checkbox 1");
+			}catch(Exception e) {
+				logger.info("Exception from clickOnCheckBox_1_RU : "+e.getMessage());
+			}
+			return flag;
 		}
 		
 		//CHECK BOX 2 ,P360
@@ -427,14 +460,53 @@ public class ReUseAbleElement {
 			Thread.sleep(300);
 		}
 	    
+	    //SAVE AND CLOSE BUTTON 1, P360	
+	    @FindBy(xpath = "(//span[normalize-space()='Save & Close'])[1]")
+		@CacheLookup
+		public WebElement btnSaveAndClose_1_RU;
+	    public boolean clickOnBtnSaveAndClose_1_RU() throws InterruptedException {
+	    	boolean flag  = false;
+	    	try {
+	    		btnSaveAndClose_1_RU.click();
+				logger.info("Clicked on the save and close button-1");
+				flag = true;
+				Thread.sleep(300);
+	    	}catch(Exception e) {
+	    		logger.info("Exception from clickOnBtnSaveAndClose_1_RU: "+e.getMessage());
+	    	}
+	    	return flag;
+		}
+	    
+	    //SAVE AND CLOSE BUTTON 2, P360	
+	    @FindBy(xpath = "(//span[normalize-space()='Save & Close'])[2]")
+		@CacheLookup
+		public WebElement btnSaveAndClose_2_RU;
+	    public boolean clickOnBtnSaveAndClose_2_RU() throws InterruptedException {
+	    	boolean flag  = false;
+	    	try {
+	    		btnSaveAndClose_2_RU.click();
+				logger.info("Clicked on the save and close button-2");
+				flag  = true;
+				Thread.sleep(300);
+	    	}catch(Exception e) {
+	    		logger.info("Exception from clickOnBtnSaveAndClose_2_RU: "+e.getMessage());
+	    	}
+	    	return flag;
+		}
+	    
+	    
 	    //CROSS BUTTON, P360
 	    @FindBy(xpath = "//button[@title='Close']")
 		@CacheLookup
 		public WebElement btnCross;
 	    public void clickOnBtnCross_RU() throws InterruptedException {
-	    	btnCross.click();
-	    	logger.info("Clicked on the cross button icon");
-			Thread.sleep(300);
+	    	try {
+	    		btnCross.click();
+		    	logger.info("Clicked on the cross button icon");
+				Thread.sleep(300);
+	    	}catch(Exception e) {
+	    		logger.info("Exception from clickOnBtnCross_RU: "+e.getMessage());
+	    	}
 		}
 	    
 	    //SAVE AND GO TO HOME BUTTON 1
@@ -457,13 +529,13 @@ public class ReUseAbleElement {
 			Thread.sleep(300);
 		}
 	    
-	    //BACK BUTTON WITH SPAN TAG
+	    //BACK BUTTON WITH SPAN TAG, P360
 	    @FindBy(xpath = "//span[normalize-space()='Back']")
 		@CacheLookup
-		public WebElement btnBack;
+		public WebElement btnBack_1_RU;
 	    public void clickOnBtnBack_1_RU() throws InterruptedException {
-	    	btnBack.click();
-	    	logger.info("Clicked on the back button");
+	    	btnBack_1_RU.click();
+	    	logger.info("Clicked on the back button 1");
 			Thread.sleep(300);
 		}
 	    
@@ -471,10 +543,17 @@ public class ReUseAbleElement {
 	    @FindBy(xpath = "//span[normalize-space()='Next']")
 		@CacheLookup
 		public WebElement btnNext_RU;
-	    public void clickOnBtnNext_1_RU() throws InterruptedException {
-	    	btnNext_RU.click();
-	    	logger.info("Clicked on the nextbutton");
-			Thread.sleep(300);
+	    public boolean clickOnBtnNext_1_RU() throws InterruptedException {
+	    	boolean  flag = false;
+	    	try {
+	    		btnNext_RU.click();
+	    		flag = true;
+		    	logger.info("Clicked on the nextbutton");
+				Thread.sleep(300);
+	    	}catch(Exception e) {
+	    		logger.info("Excepton from : "+e.getMessage());
+	    	}
+			return flag;
 		}
 	 
 	    
@@ -520,7 +599,7 @@ public class ReUseAbleElement {
   		public WebElement iconDropdown_2_RU;
   		public void clickOnDropdown_2_RU() throws InterruptedException {
   			iconDropdown_2_RU.click();
-  			logger.info("Clicked on the icon dropdown 1");
+  			logger.info("Clicked on the icon dropdown 2");
   			Thread.sleep(1000);
   		}
   		
@@ -548,10 +627,17 @@ public class ReUseAbleElement {
   		@FindBy(xpath = "(//span[normalize-space()='Save'])[1]")
   		@CacheLookup
   		public WebElement btnSave_1_RU;
-  		public void clickOnBtnSave_1_RU() throws InterruptedException {
-  			btnSave_1_RU.click();
-  			logger.info("Clicked on the button save");
-  			Thread.sleep(300);
+  		public boolean clickOnBtnSave_1_RU() throws InterruptedException {
+  			boolean flag = false;
+  			try {
+  				btnSave_1_RU.click();
+  	  			logger.info("Clicked on the button save");
+  	  			flag = true;
+  	  			Thread.sleep(300);
+  			}catch(Exception e) {
+  				logger.info("Exception from clickOnBtnSave_1_RU: "+e.getMessage());
+  			}
+  			return flag;
   		}
   		
   
@@ -559,19 +645,27 @@ public class ReUseAbleElement {
   		@FindBy(xpath = "//ul[@role='listbox']//li")
   		@CacheLookup
   		public List <WebElement>  listOption_RU;
-  		
   		//BELOW LINE IS USED TO AVOID THE STALE ELEMENT REFERENCE
-  		public String listOptionAvoidStaleElementReference_RU = "//ul[@role='listbox']//li";
+  		public String listOptionAddress_RU = "//ul[@role='listbox']//li";
   	
   		
   		//CONFIRM BUTTON ADDRESS AND ACTION METHODS
   		@FindBy(xpath = "//span[normalize-space()='Confirm']")
   		@CacheLookup
   		public WebElement  btnConfirm_RU;
-  		public void clickOnBtnConfirm_RU() throws InterruptedException{
-  			btnConfirm_RU.click();
-  			logger.info("Clicked on the confirm button");
-  			Thread.sleep(300);
+  		public boolean clickOnBtnConfirm_RU() throws InterruptedException{
+  			boolean flag = false;
+  			try {
+  				if(btnConfirm_RU.isDisplayed()) {
+  					btnConfirm_RU.click();
+  					flag = true;
+  	  	  			logger.info("Clicked on the confirm button");
+  	  	  			Thread.sleep(300);
+  				}
+  			}catch(Exception e) {
+  				logger.info("Is btnConfirm_RU Displyed: "+flag);
+  			}
+  			return flag;
   		}
 	  //===========END=======FOR THE BUTTON YES, NO, SAVE CHANGES, CROSS BUTTON, SAVE & GO TO HOME, DORPDOWN ICON AND DELETE==================//
 	//========START=======Actions Elements=========TO USER ANY ONE OF THIS FIRST SEARCH IT SO THAT IT COMES AT TOP===========//
@@ -626,20 +720,20 @@ public class ReUseAbleElement {
 	  			return startTimeMsg.isDisplayed();
 	  		}
 	  		
-	  		//TO SET END TIME WITHOUT USING END TIME PICKER
-	  		public void setEndTimeWithoutUsingTimePicker_RU(WebDriver driver, String hours, String minutes, String AmPm) throws InterruptedException
+	  		//TO SET TIME WITHOUT USING END TIME PICKER
+	  		public void setTimeWithoutUsingTimePicker_RU(WebDriver driver, String hours, String minutes, String AmPm) throws InterruptedException
 	  		{
-	  			WebElement endTimePlaceHolder = driver.findElement(By.xpath(textTimePlaceHolder_2_RU));
-	  			endTimePlaceHolder.sendKeys(Keys.CONTROL, "a");      // Select all text
-	  			endTimePlaceHolder.sendKeys(Keys.CONTROL, "DELETE"); // Delete selected text
+	  			WebElement timePlaceHolder = driver.findElement(By.xpath("(//input[@name='time'])[1]"));
+	  			timePlaceHolder.sendKeys(Keys.CONTROL, "a");      // Select all text
+	  			timePlaceHolder.sendKeys(Keys.CONTROL, "DELETE"); // Delete selected text
 
 	  			logger.info("hours: "+hours);
-	  			endTimePlaceHolder.sendKeys(hours);
+	  			timePlaceHolder.sendKeys(hours);
 	  			Thread.sleep(300);
-	  			endTimePlaceHolder.sendKeys(minutes);
+	  			timePlaceHolder.sendKeys(minutes);
 	  			logger.info("minutes: "+minutes);
 	  			Thread.sleep(300);
-	  			endTimePlaceHolder.sendKeys(AmPm);
+	  			timePlaceHolder.sendKeys(AmPm);
 	  			logger.info("AmPm: "+AmPm);
 	  			Thread.sleep(300);
 	  			logger.info("Entered end time");
@@ -666,9 +760,7 @@ public class ReUseAbleElement {
 
 	  	  //==========END==========TIME SELECTION PAGE OBJECTS AND ITS ACTION METHODS=====USE THIS METHODS IF AND ONLY IF TIME PICKRE FAILED TO PICK THE TIME======//
   		
-	  		
-	  	
-  
+	  
 	
 	  		
 	  	//ALARTS ADDRESS AND ACTIONS METHODS
@@ -677,33 +769,29 @@ public class ReUseAbleElement {
 	  	public String snakeAlertMessagesDisplayedContent_RU() throws InterruptedException {
 	  			//logger.info("Alert - Try");
 	  			WebElement alertSnakeMessage = null;
-	  			int t = 1;
+	  			int alertLoopCount = 0;
 	  			String exception = null;
 	  			boolean flag = false;
-	  			while(t <= 1500)
-	  			{
+	  			while(alertLoopCount <= 1500)
+	  			{	alertLoopCount++;
 	  				try {
 	  					alertSnakeMessage = driver.findElement(By.xpath(alertAddress_RU));
 	  					flag = alertSnakeMessage.isDisplayed();
 		  					if(flag) {
-		  						logger.info("Checking alert after every 100 miliseconds durations: "+t);
+		  						logger.info("Checking alert on intervel of 150 milliSeconds and loop count is: "+alertLoopCount);
 		  						logger.info("Alert message is displayed: "+flag);
 		  			  			alertMessageContent_RU = alertSnakeMessage.getText();
+		  			  			logger.info("===>>> Alert Message Content: "+alertMessageContent_RU);
 		  					}else {
 		  						Thread.sleep(150);
-		  						t++;
 		  					}
 	  				}catch(Exception e) {
 	  					exception = e.getMessage();
-	  					t++;
 	  				}
 	  				
 	  				if(flag) {
 	  					Thread.sleep(500);
 	  					break;
-	  				}
-	  				if(t == 1499 || t==1500 ) {
-	  					logger.info("Checking alert after every 150 miliseconds durations: "+t);
 	  				}
 	  			}
 	  		
@@ -713,24 +801,36 @@ public class ReUseAbleElement {
 	  	}
 	  	
 	  	//REQUIRED FIELD MESSAGES
-	  	public String requiredMessage_RU = "//p[contains(@class,'MuiFormHelperText-contained')]";
-	  	String requiredMessageContent_RU;
-	  	public boolean isRequiredMessageDisplayed_RU() {
+	  	public String requiredOrInvalidMessage_RU = "//p[contains(normalize-space(), 'provide valid')] | //p[contains(normalize-space(), 'required')]";
+	  	public boolean isRequiredOrInvalidMessageDisplayed_RU() {
 	  		boolean flag = false;
 	  		try {
-	  			WebElement requiredMessage = driver.findElement(By.xpath(requiredMessage_RU));
-	  			if(requiredMessage.isDisplayed()) {
-	  				flag = true;
-	  				Thread.sleep(500);
-	  				logger.info("Required message is present: "+requiredMessage.isDisplayed());
-	  			}	
+	  			List<WebElement> requiredMessage = driver.findElements(By.xpath(requiredOrInvalidMessage_RU));
+	  			for(WebElement ele : requiredMessage ) {
+	  				if(ele.isDisplayed()) {
+		  				flag = true;
+		  				Thread.sleep(500);
+		  				logger.info("===>>>Is Required/Invalid/Provide Valid Message Displayed: "+ele.isDisplayed()+" And Content: "+ele.getText());
+		  			}
+	  			}
 	  		}catch(Exception e) {
-	  			logger.info("Required Exception: "+e.getMessage());
+	  			logger.info("Exception from isRequiredMessageDisplayed_RU: "+e.getMessage());
 	  		}
 	  		return flag;
 	  	}
 	  	
 	 	
-	  
+
+  		//TEXT FIELD DESCRITPION,P360
+  		@FindBy(xpath = "//div[@class='ql-editor ql-blank']//p")
+  		@CacheLookup
+  		public WebElement textArea_RU;
+  		public void setDescription_RU(String description) throws InterruptedException {
+  			textArea_RU.sendKeys(Keys.CONTROL,"a");
+  			textArea_RU.sendKeys(Keys.DELETE);
+  			textArea_RU.sendKeys(description);;
+  			logger.info("Entered the  textArea: "+description);
+  			Thread.sleep(300);
+  		}
 }
 

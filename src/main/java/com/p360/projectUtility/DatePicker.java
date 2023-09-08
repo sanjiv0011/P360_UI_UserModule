@@ -1,5 +1,6 @@
 package com.p360.projectUtility;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -8,14 +9,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DatePicker{
 	
 	public static final Logger logger = LogManager.getLogger(DatePicker.class);
-	
+	public static Actions action;
+	public static WebDriverWait wait;
 	
 	//DATE PLACE HOLDER ADDRESS THIS IS USED CLEAR ALREADY PRESENT DATE
 	public static String textDatePlaceHolder_1_RU = "(//input[@placeholder='MM/DD/YYYY'])[1]";
@@ -39,9 +43,14 @@ public class DatePicker{
 	// WAY 3
 	//======================= this is used when month and year are in the grid format==================//
 			public static void DatePicker_GenericMethod_WhenYearAndDateListPresent(WebDriver driver, String yourDate, int x) throws InterruptedException
-			{	logger.info("Enter inside date picker methods");
-					
-			    // my date setting
+			{	
+		    	StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+		    	String callerMethodName = stackTraceElements[2].getMethodName();
+		    	action = new Actions(driver);
+		    	wait = new WebDriverWait (driver, Duration.ofSeconds(10));
+		    	logger.info("Enter inside method DatePicker class and caller methods name: "+callerMethodName);	
+			    
+		    	// my date setting
 		        String myDate[] = yourDate.split("[\\s\\-\\.]");
 		        String year = myDate[2];
 		        String month = myDate[1];
@@ -150,12 +159,18 @@ public class DatePicker{
 		        for (WebElement dateElement : allDates) {
 		            String dt = dateElement.getText();
 		            if (dt.equals(date)) {
-		                Thread.sleep(500);
-		                flag2 = true;
-		                logger.info("Selected date: " + dt);
-		                dateElement.click();
-		                Thread.sleep(1000);
-		                break;
+		                try {
+		                	Thread.sleep(500);
+			                flag2 = true;
+			                logger.info("Selected date: " + dt);
+			                if(dateElement.isEnabled()) {
+			                	dateElement.click();
+			                }
+			                Thread.sleep(1000);
+			                break;
+		                }catch(Exception e) {
+		                	logger.info("Exception from DatePicker_GenericMethod_WhenYearAndDateListPresent: "+e.getMessage());
+		                }
 		            }
 		        }
 		        if (flag2 != true) {
@@ -298,12 +313,17 @@ public class DatePicker{
 		// WAY 1
 		//SELECT THE DATE WHEN DATE IS IN GRID FORMAT ONLY AND MONTH YEAR IN BETWEEN NEXT AND PRIVIOUS BUTTON
 		public static void DatePicker_GenericMethod_WhenDateGridOnlyPresent(WebDriver driver, String yourDate ) throws InterruptedException
-		{	logger.info("Enter inside date picker methods");
-				
-			String monthYear_address = "(//div[@id='mui-1-grid-label'])[1]";
+		{	
+			StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+	    	String callerMethodName = stackTraceElements[2].getMethodName();
+	    	action = new Actions(driver);
+	    	wait = new WebDriverWait (driver, Duration.ofSeconds(10));
+	    	logger.info("Enter inside method DatePicker class and caller methods name: "+callerMethodName);	
+			
+	    	String monthYear_address = "//div[contains(@class,'MuiPickersCalendarHeader-transitionContainer')]";
 			String previousButton_address = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiPickersCalendarHeader-iconButton'])[1]";
 			String nextButton_address = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiPickersCalendarHeader-iconButton'])[2]";
-			String dateList_address = "//div[@role='row']//button[@role='gridcell']";
+			String dateList_address = "//div[@class='MuiPickersCalendar-week']//div[@role='presentation']";
 			
 		    // my date setting
 	        String myDate[] = yourDate.split(" ");
@@ -319,7 +339,7 @@ public class DatePicker{
 	        String arr[] = monthyear.split(" ");
 	        String yr = arr[1];
 	        String mon = arr[0];
-	        logger.info("Displayed month name: " + mon);
+	        logger.info("Displayed month name: " + mon+" and year is: "+ yr);
 	        String monthArray[] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
 	       
@@ -367,13 +387,23 @@ public class DatePicker{
 	        boolean flag2 = false;
 	        for (WebElement dateElement : allDates) {
 	            String dt = dateElement.getText();
-	            if (dt.equals(date)) {
-	                Thread.sleep(500);
-	                flag2 = true;
-	                logger.info("Selected date: " + dt);
-	                dateElement.click();
-	                Thread.sleep(1000);
-	                break;
+	            if (dt.equals(date)) 
+	            {
+	                try {
+	                	if(dateElement.isEnabled()) {
+	                		wait.until(ExpectedConditions.elementToBeClickable(dateElement));
+	                		Thread.sleep(500);
+	    	                flag2 = true;
+	    	                logger.info("Selected date: " + dt);
+	    	                dateElement.click();
+	    	                Thread.sleep(1000);
+	    	                break;
+	                	}else {
+	                		logger.info("Is element is enabled: "+flag2);
+	                	}
+	                }catch(Exception e) {
+	                	logger.info("Excepton from DatePicker_GenericMethod_WhenDateGridOnlyPresent: "+e.getMessage());
+	                }
 	            }
 	        }
 	        if (flag2 != true) {
@@ -385,11 +415,18 @@ public class DatePicker{
 		
 		//WAY 5
 		//TO SELECT THE DATE BY DIRECT SENDING DATA IN THE TEXT BOX
-  		public void setDateByDirectSendingDateVauleInTheTextBox(WebDriver driver,String leaveEndDate, int y) throws InterruptedException {
+  		public static void setDateByDirectSendingDateVauleInTheTextBox(WebDriver driver,String leaveEndDate, int y) throws InterruptedException {
   			//TO SELECT DATE FIRST DATE WITHOUT USING DATE PICKER 
-	  		String firstDateHolder_RU = "(//span[contains(@class,'MuiIconButton-label')])[3]";
+  			StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+	    	String callerMethodName = stackTraceElements[2].getMethodName();
+	    	action = new Actions(driver);
+	    	wait = new WebDriverWait (driver, Duration.ofSeconds(10));
+	    	logger.info("Enter inside method DatePicker class and caller methods name: "+callerMethodName);	
+			
+	    	
+	  		String firstDateHolder_RU = "(//input[contains(@class,'MuiInput-inputMarginDense')])[1]";
 	  		//TO SELECT DATE SECONDS DATE WITHOUT USING DATE PICKER 
-	  		String SecondsDateHolder_RU = "(//span[contains(@class,'MuiIconButton-label')])[4]";
+	  		String SecondsDateHolder_RU = "(//input[contains(@class,'MuiInput-inputMarginDense')])[2]";
 	  		String thirdDateHolder_RU = "(//input[contains(@placeholder,'MM/DD/YYYY')])[3]";
 	  		WebElement dateHolder = null;
   			if(y == 1) {
@@ -415,7 +452,13 @@ public class DatePicker{
   					break;
   				}
   			}
-  			String xAsString = String.valueOf(x);
+  			String z = null;
+  			if(x<10) {
+  				z = "0"+x;
+  			}else {
+  				z = String.valueOf(x);
+  			}
+  			String xAsString = String.valueOf(z);
   			dateHolder.sendKeys(xAsString);
   			Thread.sleep(300);
   			dateHolder.sendKeys(dt);

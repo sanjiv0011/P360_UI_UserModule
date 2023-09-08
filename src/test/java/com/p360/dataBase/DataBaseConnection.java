@@ -16,9 +16,9 @@ public class DataBaseConnection {
 
         try {
             // Step 1: Define database URL, username, and password
-            String url = "jdbc:postgresql://localhost:5432/hrms"; // Note the correct URL format
-            String username = "postgres";
-            String password = "Qwer4321!";
+            String url = "jdbc:postgresql://htdevpgsql.postgres.database.azure.com:5432/p360dev"; // Note the correct URL format
+            String username = "htadmin";
+            String password = "gaMcsqyARA3";
             
             // Step 2: Establish database connection
             con = DriverManager.getConnection(url, username, password);
@@ -33,18 +33,18 @@ public class DataBaseConnection {
             stm = con.createStatement();
             
             // Step 4: Execute a query
-            String s = "SELECT * FROM public.users";
+            String s = "SELECT * FROM public.class_registrations ORDER BY updated_at DESC LIMIT 10";
             
-            
+          
             // Step4
  			ResultSet rs = stm.executeQuery(s);
  			// You can process the ResultSet here if needed
  			while(rs.next())
  			{
  				//System.out.println(rs);
- 				String user_name = rs.getString("user_name");
- 				String email= rs.getString("email_address");
- 				System.out.println("User name: "+user_name+" Password: "+" Email: "+email);
+ 				boolean canceledStatus = rs.getBoolean("is_canceled");
+ 				System.out.println("canceledStatus:= "+canceledStatus);
+ 				
  			}
  			
         } catch(Exception e){

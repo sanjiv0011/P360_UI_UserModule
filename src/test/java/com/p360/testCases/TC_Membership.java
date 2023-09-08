@@ -1,9 +1,13 @@
 package com.p360.testCases;
 
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
+import com.p360.dataProviders.from_readDataFromExcelFile.DataProviders;
 import com.p360.pageObject.PO_HomePage;
 import com.p360.pageObject.PO_LoginPage;
 import com.p360.pageObject.PO_MembershipPage;
@@ -41,14 +45,14 @@ public class TC_Membership extends BaseClass{
 	}
 	
 	//TO CHANGE MEMBERSHIP
-	@Test(priority = 2 , dependsOnMethods = "test_Login")
-	public void test_ChangeMembership() throws InterruptedException {
+	//@Test(priority = 2 , dependsOnMethods = "test_Login", dataProvider = "TC_ChangeMembership")
+	public void test_ChangeMembership(String categoryName,String packageName,String radioButton,String membershipDate) throws InterruptedException {
 		mp = callMeBeforePerformAnyAction();
 		hp = mp.changeMembership(categoryName,packageName,radioButton, membershipDate);
 	}
 	
 	//TO CHECK AGREED TERMS OF MEMBERSHIP
-	@Test(priority = 3 , dependsOnMethods = "test_Login")
+	//@Test(priority = 3 , dependsOnMethods = "test_Login")
 	public void test_CheckAgreedTerms() throws InterruptedException {
 		mp = callMeBeforePerformAnyAction();
 		hp = mp.checkAgreedTerm();
@@ -56,8 +60,8 @@ public class TC_Membership extends BaseClass{
 	
 	
 	//TO PAUSE MEMBERSHIP
-	@Test(priority = 4 ,dependsOnMethods = "test_Login")
-	public void test_PauseMembership() throws InterruptedException {
+	@Test(priority = 4 ,dependsOnMethods = "test_Login", dataProvider = "TC_PauseMembership")
+	public void test_PauseMembership(String pauseStartDate, String pauseEndDate, String pauseReason) throws InterruptedException {
 		mp = callMeBeforePerformAnyAction();
 		hp = mp.pasueMembership(pauseStartDate, pauseEndDate, pauseReason);
 	}
@@ -85,5 +89,27 @@ public class TC_Membership extends BaseClass{
 		//TO MEMBERSHIP PAGE OBJECTS
 		return new PO_MembershipPage(driver);	
 	}
+	
+	//EXCEL FILE NAME ONLY(EXCEL FILE MUST PRESENT ONLY EXCELDATA FOLDER THEN ONLY IT IS ACCESS IT)
+  	public final String fileNameOnly_ChangeMembership = "TC_ChangeMembership";
+  	//CONSTRUCTOR DECLARATIONS TO ACCESS THE DATA PROVIDER METHODs
+  	public DataProviders dp_ChangeMembership =  new DataProviders();
+  	//DATA PROVIDER
+  	@DataProvider(name = fileNameOnly_ChangeMembership)
+  	public String[][] dataProvider_ChangeMemebership() throws IOException {
+  		String data[][] = DataProviders.dataProviderGetDataFromExcelFile(fileNameOnly_ChangeMembership);
+  		return data;
+  	}
+  	
+  //EXCEL FILE NAME ONLY(EXCEL FILE MUST PRESENT ONLY EXCELDATA FOLDER THEN ONLY IT IS ACCESS IT)
+  	public final String fileNameOnly_PauseMembership = "TC_PauseMembership";
+  	//CONSTRUCTOR DECLARATIONS TO ACCESS THE DATA PROVIDER METHODs
+  	public DataProviders dp_PauseMembership =  new DataProviders();
+  	//DATA PROVIDER
+  	@DataProvider(name = fileNameOnly_PauseMembership)
+  	public String[][] dataProvider_PauseMembership() throws IOException {
+  		String data[][] = DataProviders.dataProviderGetDataFromExcelFile(fileNameOnly_PauseMembership);
+  		return data;
+  	}
 	
 }

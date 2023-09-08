@@ -11,8 +11,8 @@
         <methods>
           <include name="test_Logout"/>
           <include name="teardown"/>
+          <include name="test_CancelRegisteredClass"/>
           <include name="setup"/>
-          <include name="test_RegisterClass"/>
           <include name="test_Login"/>
         </methods>
       </class> <!-- com.p360.testCases.TC_Classes -->

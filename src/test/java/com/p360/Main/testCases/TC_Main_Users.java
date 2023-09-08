@@ -3,8 +3,8 @@ package com.p360.Main.testCases;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
-import com.p360.Main.pageObject.PO_Main_Home;
-import com.p360.Main.pageObject.PO_Main_Users;
+import com.p360.Main.pageObject.PO_Main_HomePage;
+import com.p360.Main.pageObject.PO_Main_UsersPage;
 import com.p360.pageObject.PO_HomePage;
 import com.p360.pageObject.PO_LoginPage;
 import com.p360.pageObject.PO_MembershipPage;
@@ -20,8 +20,8 @@ public class TC_Main_Users extends BaseClass{
 	public PO_LoginPage lp;
 	public PO_HomePage hp;
 	public Faker faker  = new Faker();
-	public PO_Main_Home mhp;
-	public PO_Main_Users mu;
+	public PO_Main_HomePage mhp;
+	public PO_Main_UsersPage mu;
 	
 	//VARIABLES
 	String firstName = faker.name().firstName();
@@ -56,13 +56,13 @@ public class TC_Main_Users extends BaseClass{
 	}
 	
 	//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
-	public PO_Main_Users callMeBeforePerformAnyAction() throws InterruptedException {
+	public PO_Main_UsersPage callMeBeforePerformAnyAction() throws InterruptedException {
 		//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE FIRST
 		mhp.clickOntabDashboard();
 		mhp.clickOnTabUsers();
 		Thread.sleep(5000);
 		//TO MEMBERSHIP PAGE OBJECTS
-		return new PO_Main_Users(driver);	
+		return new PO_Main_UsersPage(driver);	
 	}
 	
 }

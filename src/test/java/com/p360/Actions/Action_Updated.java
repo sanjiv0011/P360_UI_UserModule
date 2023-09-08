@@ -16,7 +16,7 @@ public class Action_Updated {
 	{
 		boolean flag = false;
 		ruae = new ReUseAbleElement(driver);
-		if(!ruae.isRequiredMessageDisplayed_RU()) {
+		if(!ruae.isRequiredOrInvalidMessageDisplayed_RU()) {
 			String alretMsg = ruae.snakeAlertMessagesDisplayedContent_RU();
 			if(alretMsg.equals(messageUpdate)) {
 	    		Assert.assertEquals(messageUpdate, alretMsg, "UPDATED successfully");

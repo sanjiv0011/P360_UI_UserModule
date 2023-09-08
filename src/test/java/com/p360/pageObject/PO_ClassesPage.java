@@ -1,5 +1,6 @@
 package com.p360.pageObject;
 
+import java.sql.SQLException;
 import java.time.Duration;
 import java.util.List;
 
@@ -16,9 +17,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import com.p360.DataBaseTesting.DBT_User_Classes;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 import com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick;
-import com.p360.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
+import com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown;
 
 public class PO_ClassesPage extends ReUseAbleElement{
 
@@ -30,6 +32,7 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		public WebDriverWait wait;
 		public PO_LoginPage lp;
 		public Actions action;
+		public PO_HomePage hp;
 		
 		//HOMEPAGE CONSTRUCTOR CREATION
 		public PO_ClassesPage(WebDriver driver) {	
@@ -40,11 +43,15 @@ public class PO_ClassesPage extends ReUseAbleElement{
 			wait = new WebDriverWait (driver, Duration.ofSeconds(30));
 			lp = new PO_LoginPage(driver);
 			action = new Actions(driver);
+			hp = new PO_HomePage(driver);
 		}
 		
+		//IN THIS VARAIBLES VALUES ASSGINED FROM THE DATA BASE TESTING ONCE DATABASE TESTING COMPLETED(WHILE CLASS REGISTRATIN), IT WILL BE REUSE TO CANCEL THE SAME REGISTRED CLASS
+		public String dateTimePresentInRegisteredClassList;
 		//VARIABLES 
 		public String alertMsgAlreadyClassRegistered = "User registration already exists for this class";
 		public String alertMsgClassCanceled = "Class Canceled.";
+		public String alertMsgNoCreditAvailabe = "No credits available to make this purchase";
 		
 		//=========START========CLASSES PAGE OBJECT AND ACTION METHODSS=============//
 		
@@ -80,7 +87,10 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		@CacheLookup
 		public WebElement btnGoToDashBoard;
 		public void clickOnBtnGoToDashBoard() throws InterruptedException {
-			Thread.sleep(1000);
+			Thread.sleep(5000);
+			try {
+				wait.until(ExpectedConditions.elementToBeClickable(btnGoToDashBoard));
+			}catch(Exception e) {}
 			wait.until(ExpectedConditions.elementToBeClickable(btnGoToDashBoard));
 			btnGoToDashBoard.click();
 			logger.info("Clicked on the Button Go to dashboard");
@@ -112,13 +122,14 @@ public class PO_ClassesPage extends ReUseAbleElement{
 			Thread.sleep(2000);
 		}
 		
-		//LIST INSTRUCTOR
-		@FindBy(xpath = "//ul[@role='listbox']//li")
-		@CacheLookup
-		public List <WebElement> listInstructor;
+//		//LIST INSTRUCTOR
+//		@FindBy(xpath = "//ul[@role='listbox']//li")
+//		@CacheLookup
+//		public List <WebElement> listInstructor;
+		public String listInstructor = "//ul[@role='listbox']//li";
 		public void selectinstructor(String instructorName) throws InterruptedException {
 			clickOnBtnInstructor();
-			Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listInstructor,instructorName);
+			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,listInstructor,instructorName);
 			Thread.sleep(1000);
 		}
 		
@@ -165,12 +176,13 @@ public class PO_ClassesPage extends ReUseAbleElement{
 					for(String st : text) {
 						formatText = formatText+st+" ";
 					}
-					logger.info("formatText: "+formatText.trim());
+					//logger.info("formatText: "+formatText.trim());
 	    			//String formatText = text[0]+" "+text[1]+" "+text[2];
 	    			
     				if(formatText.trim().equals(monthAndDate)){
     					flag = true;
     					element.click();
+    					logger.info("===>>> Month and Date Macthced: "+formatText.trim());
             			break;
             		}
     				Thread.sleep(500);
@@ -243,47 +255,53 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		}
 		
 		
-		//CLASS LIST ON SPECIFIC DATE
-		@FindBy(xpath = "//tr[contains(@class,'MuiTableRow-root')]")
-		@CacheLookup
-		public List <WebElement> listClassOnSpecificTime;
-		public void selectClassOnSpecificTime(String time) throws InterruptedException {
+//		//CLASS LIST ON SPECIFIC DATE
+//		@FindBy(xpath = "//tr[contains(@class,'MuiTableRow-root')]")
+//		@CacheLookup
+//		public List <WebElement> listClassOnSpecificTime;
+		public String listClassOnSpecificTime_address = "//tr[contains(@class,'MuiTableRow-root')]"; //TO AVOID STALE ELEMENT REFERENCE
+		public void selectClassOnSpecificTime(WebDriver driver,String time) throws InterruptedException
+		{
+			List<WebElement> listClassOnSpecificTime = driver.findElements(By.xpath(listClassOnSpecificTime_address));
+				
 			boolean flag = false;
-			while(true) 
-			{
-				for(WebElement element : listClassOnSpecificTime)
-				{	
-					logger.info("Class Time: "+element.getText());
-					
-					if(element.getText() != null && element.getText() != "") {
-						String[] text = element.getText().split("\\n");
-						String formatText = "";
-						for(String st : text) {
-							//logger.info(st);
-							formatText = formatText+st+" ";
-						}
-						logger.info("formatText: "+formatText.trim());
-		    			String formatTextTimeAndAmPm = text[0]+" "+text[1]; //	TO TAKE ONLY TIME AND AM/PM FROM THE LIST OF THE CLASS 
-		    			
-	    				if(formatTextTimeAndAmPm.trim().equals(time)){
-	    					jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);"); //TO SCROLL TILL END
-	    					Thread.sleep(1000);
-	    					flag = true;
-	    					element.click();
-	    					Thread.sleep(400);
-	            			break;
-	            		}
-	    				Thread.sleep(100);
-					}
-					
-    			}
-    			if(flag) {
-    				break;
-    			}
-    			clickOnMonthAndDateNextButton(driver);
+			
+			for(WebElement element : listClassOnSpecificTime)
+			{	
+				//logger.info("Class Time: "+element.getText());
+				String[] text1 = element.getText().split("\\n");
+				
+				if(element.getText() != null && element.getText() != "") 
+				{
+	//						String[] text = element.getText().split("\\n");
+	//						String formatText = "";
+	//						for(String st : text) {
+	//							//logger.info(st);
+	//							formatText = formatText+st+" ";
+	//						}
+	//						logger.info("formatText: "+formatText.trim());
+	//		    			String formatTextTimeAndAmPm = text[0]+" "+text[1]; //	TO TAKE ONLY TIME AND AM/PM FROM THE LIST OF THE CLASS 
+					String formatText1 = text1[0]+" "+text1[1];
+					//logger.info("Available class timing: "+formatText1);
+					if(formatText1.trim().equals(time))
+					{
+						jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);"); //TO SCROLL TILL END
+						Thread.sleep(1000);
+						flag = true;
+						//driver.findElement(By.partialLinkText(formatTextTime)).click();
+						element.click();
+						logger.info("Class Time Matched: "+formatText1.trim());
+						Thread.sleep(400);
+	        			break;
+	        		}
+					Thread.sleep(100);
+				}
 			}
-			Thread.sleep(1000);
+			if(flag == false) {
+				logger.info("Given class timing not matched the available date: "+time);
+			}
 		}
+			
 		
 		//TEXT PREFERED REGION
 		@FindBy(xpath = "//div[text()='Please choose your preferred region:']")
@@ -309,25 +327,29 @@ public class PO_ClassesPage extends ReUseAbleElement{
 			return flag;
 		}
 		
-		//TO SELECT REGION
-		@FindBy(xpath = "//div[contains(@class,\"grid\")]//div")
-		@CacheLookup
-		public List <WebElement> listRegion;
+//		//TO SELECT REGION
+//		@FindBy(xpath = "//div[contains(@class,\"grid\")]//div")
+//		@CacheLookup
+//		public List <WebElement> listRegion;
+		public String listRegion = "//div[contains(@class,\"grid\")]//div";
+		
 	    public void selectRegion(String regionName) throws InterruptedException {
 			//wait.until(ExpectedConditions.invisibilityOfAllElements(listRegion));
 			Thread.sleep(2000);
-			Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listRegion,regionName);
+			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,listRegion,regionName);
 			Thread.sleep(1000);
 		}
 		
-		//LIST LOCATION
-		@FindBy(xpath = "//div[contains(@class,\"grid\")]//div")
-		@CacheLookup
-		public List <WebElement> listLocation;
+//		//LIST LOCATION
+//		@FindBy(xpath = "//div[contains(@class,\"grid\")]//div")
+//		@CacheLookup
+//		public List <WebElement> listLocation;
+	    
+	    public String listLocation = "//div[contains(@class,\"grid\")]//div";
 		public void selectLocation(String locationName) throws InterruptedException {
 			Thread.sleep(2000);
 			//wait.until(ExpectedConditions.invisibilityOfAllElements(listLocation));
-			Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listLocation,locationName);
+			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,listLocation,locationName);
 			Thread.sleep(1000);
 		}
 		
@@ -357,20 +379,27 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		@FindBy(xpath="//span[normalize-space()='CONFIRM CLASS REGISTRATION']")
 		@CacheLookup
 		WebElement btnConfirmClassRegistration;
-		public void clickOnBtnConfirmClassRegistration() throws InterruptedException {
+		public boolean  clickOnBtnConfirmClassRegistration() throws InterruptedException {
+			boolean flag = false;
 			if(isThanksYouDisplayed()) {
 				Thread.sleep(500);
-				if(btnConfirmClassRegistration.isDisplayed()) {
-					btnConfirmClassRegistration.click();
-					logger.info("Clicked on the Confirm class registration button");
-
-				}else {
-					logger.info("Class not registered");
-				}
+				try {
+						if(btnConfirmClassRegistration.isDisplayed()) {
+							btnConfirmClassRegistration.click();
+							flag = true;
+							logger.info("Clicked on the Confirm class registration button");
+	
+						}else {
+							logger.info("Class not registered");
+						}
+					}catch(Exception e){
+						logger.info("Exception from clickOnBtnConfirmClassRegistration: "+e.getMessage());
+					}
 			}else {
 				clickOnBtnCross_RU();
 				Thread.sleep(1000);
 			}
+			return flag;
 			
 		}
 		
@@ -378,9 +407,9 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		@FindBy(xpath = "//div[contains(@class,'p-4 flex gap-2 flex-row')]")
 		@CacheLookup
 		public List <WebElement> listMyRegisteredClass;
-		public int findMyRegisteredClassAndonThreeDotOption(String dateTime,WebDriver driver) throws InterruptedException {
+		public int findMyRegisteredClassAndonThreeDotOption(String dateTime,WebDriver driver,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException {
 			Thread.sleep(2000);
-			int listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(listMyRegisteredClass,driver, dateTime);
+			int listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(listMyRegisteredClass,driver, dateTime,searchKeyColumnIndex,wantToClickOnThreeDot);
 			return listRowCount;
 		}
 		
@@ -388,10 +417,8 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		//=========END========CLASSES PAGE OBJECTS AND ACTION METHODS=============//
 		
 		
-		
-		
-		//TO SELECT THE CLASS
-		public PO_HomePage registerClass(String time,String monthAndDate,String locationName,String regionName,String instructorName) throws InterruptedException {
+		//TO REGISTER THE CLASS
+		public PO_HomePage registerClass(String time,String monthAndDate,String locationName,String regionName,String instructorName,String userEmailAddress) throws InterruptedException, SQLException {
 			
 			clickOnBtnRegisterForClass();
 			clickOnBtnChangeLocation();
@@ -419,26 +446,42 @@ public class PO_ClassesPage extends ReUseAbleElement{
 				clickOnBtnGoToDashBoard();
 				return new PO_HomePage(driver);
 			}
-			selectClassOnSpecificTime(time);
+			selectClassOnSpecificTime(driver,time);
+			jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);"); //TO SCROLL TILL END
 			clickOnBtnRegister();
-			clickOnBtnConfirmClassRegistration();
+			Boolean flag = clickOnBtnConfirmClassRegistration();
+			if(flag) {
+				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
+				if(alertMsg != null && alertMsg.equals(alertMsgNoCreditAvailabe)) {
+					logger.info("===>>> Class not registered");
+					Assert.assertEquals(alertMsg,alertMsgNoCreditAvailabe,"Check Credit availabe or not");
+				}else 
+				{
+					dateTimePresentInRegisteredClassList = DBT_User_Classes.test_DBT_RegisterClass(time,monthAndDate,userEmailAddress);
+					hp.clickMenuMyClasses();
+					int listRowCount = findMyRegisteredClassAndonThreeDotOption(dateTimePresentInRegisteredClassList,driver,4,false);
+					if(listRowCount != 0) {
+						logger.info("===>>> Class registered successfully");
+					}
+					return new PO_HomePage(driver);
+				}
+				
+			}
 			clickOnBtnGoToDashBoard();
 			return new PO_HomePage(driver);
 		}
 		
 		
 		//TO CANCEL THE CLASS
-		public PO_HomePage cancelRegisteredClass(String dateAndTime,WebDriver driver) throws InterruptedException {
-			int listRowCount = findMyRegisteredClassAndonThreeDotOption(dateAndTime,driver);
+		public PO_HomePage cancelRegisteredClass(String dateAndTime,WebDriver driver,String userEmailAddress) throws InterruptedException, SQLException {
+			int listRowCount = findMyRegisteredClassAndonThreeDotOption(dateAndTime,driver,4,true);
 			boolean flag = clickOnBtnCancelClass_RU(driver,listRowCount);
 			if(flag) {
 				clickOnYesButton_RU();
 				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
 	  			if(alertMsg.equals(alertMsgClassCanceled)) {
 	  				Assert.assertEquals(alertMsg,alertMsgClassCanceled,"Check class canceled successfully");
-	  				logger.info("===>>> "+alertMsg);
-	  			}else {
-	  				logger.info("Alert Message displayed: "+alertMsg);
+	  				 DBT_User_Classes.test_DBT_CancelRegisteredClass(dateAndTime,userEmailAddress);
 	  			}
 			}
 			
