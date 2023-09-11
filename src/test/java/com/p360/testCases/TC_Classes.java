@@ -45,7 +45,7 @@ public class TC_Classes extends BaseClass{
 	}
 	
 	//TO REGISTER FOR A CLASS
-	//@Test(priority = 2 , dependsOnMethods = "test_Login", dataProvider = fileNameOnly_Registration)
+	@Test(priority = 2 , dependsOnMethods = "test_Login", dataProvider = fileNameOnly_Registration)
 	public void test_RegisterClass(String time, String monthDate, String location, String region, String instructorName) throws InterruptedException, SQLException {
 		cp = callMeBeforePerformAnyAction();
 		hp = cp.registerClass(time,monthDate,location,region,instructorName,userEmailAddress);

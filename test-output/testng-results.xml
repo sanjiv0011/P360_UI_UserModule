@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-11T12:47:30 IST" name="Suite" finished-at="2023-09-11T12:49:11 IST" duration-ms="100733">
+  <suite started-at="2023-09-11T13:01:07 IST" name="Suite" finished-at="2023-09-11T13:02:52 IST" duration-ms="104949">
     <groups>
     </groups>
-    <test started-at="2023-09-11T12:47:30 IST" name="P360_UI_USER_MODULE" finished-at="2023-09-11T12:49:11 IST" duration-ms="100733">
+    <test started-at="2023-09-11T13:01:07 IST" name="P360_UI_USER_MODULE" finished-at="2023-09-11T13:02:52 IST" duration-ms="104949">
       <class name="com.p360.testCases.TC_Home">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.p360.testCases.TC_Home@332bcab0]" started-at="2023-09-11T12:47:31 IST" name="setup" finished-at="2023-09-11T12:47:35 IST" duration-ms="4568" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.p360.testCases.TC_Home@332bcab0]" started-at="2023-09-11T13:01:07 IST" name="setup" finished-at="2023-09-11T13:01:11 IST" duration-ms="3969" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,23 +18,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="test_Login()[pri:1, instance:com.p360.testCases.TC_Home@332bcab0]" started-at="2023-09-11T12:47:35 IST" name="test_Login" finished-at="2023-09-11T12:47:47 IST" duration-ms="11766" status="PASS">
+        <test-method signature="test_Login()[pri:1, instance:com.p360.testCases.TC_Home@332bcab0]" started-at="2023-09-11T13:01:11 IST" name="test_Login" finished-at="2023-09-11T13:01:23 IST" duration-ms="11876" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_Login -->
-        <test-method signature="test_HomePageElement()[pri:2, instance:com.p360.testCases.TC_Home@332bcab0]" started-at="2023-09-11T12:47:47 IST" name="test_HomePageElement" finished-at="2023-09-11T12:48:25 IST" depends-on-methods="com.p360.testCases.TC_Home.test_Login" duration-ms="38383" status="PASS">
+        <test-method signature="test_HomePageElement()[pri:2, instance:com.p360.testCases.TC_Home@332bcab0]" started-at="2023-09-11T13:01:23 IST" name="test_HomePageElement" finished-at="2023-09-11T13:02:05 IST" depends-on-methods="com.p360.testCases.TC_Home.test_Login" duration-ms="42331" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_HomePageElement -->
-        <test-method signature="test_ChangeCardDetails()[pri:3, instance:com.p360.testCases.TC_Home@332bcab0]" started-at="2023-09-11T12:48:25 IST" name="test_ChangeCardDetails" finished-at="2023-09-11T12:49:01 IST" duration-ms="35781" status="PASS">
+        <test-method signature="test_ChangeCardDetails()[pri:3, instance:com.p360.testCases.TC_Home@332bcab0]" started-at="2023-09-11T13:02:05 IST" name="test_ChangeCardDetails" finished-at="2023-09-11T13:02:41 IST" duration-ms="35757" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_ChangeCardDetails -->
-        <test-method signature="test_Logout()[pri:10, instance:com.p360.testCases.TC_Home@332bcab0]" started-at="2023-09-11T12:49:01 IST" name="test_Logout" finished-at="2023-09-11T12:49:11 IST" depends-on-methods="com.p360.testCases.TC_Home.test_Login" duration-ms="9320" status="PASS">
+        <test-method signature="test_Logout()[pri:10, instance:com.p360.testCases.TC_Home@332bcab0]" started-at="2023-09-11T13:02:41 IST" name="test_Logout" finished-at="2023-09-11T13:02:51 IST" depends-on-methods="com.p360.testCases.TC_Home.test_Login" duration-ms="10201" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_Logout -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.p360.testCases.TC_Home@332bcab0]" started-at="2023-09-11T12:49:11 IST" name="teardown" finished-at="2023-09-11T12:49:11 IST" duration-ms="494" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.p360.testCases.TC_Home@332bcab0]" started-at="2023-09-11T13:02:51 IST" name="teardown" finished-at="2023-09-11T13:02:52 IST" duration-ms="504" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+
 import com.p360.DataBaseTesting.DBT_User_Membership;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 
@@ -30,6 +31,7 @@ public class PO_HomePage extends ReUseAbleElement{
 	public WebDriverWait wait;
 	public PO_LoginPage lp;
 	public Actions action;
+	
 	//HOMEPAGE CONSTRUCTOR CREATION
 	public PO_HomePage(WebDriver driver) {	
 		super(driver);
@@ -257,6 +259,11 @@ public class PO_HomePage extends ReUseAbleElement{
 		
 		clickAppStore(); //ON THIS ACTION CREATE NEW TAB
 		Thread.sleep(2000);
+		jsExecutor.executeScript("window.scrollBy(0, 300);");
+		Thread.sleep(2000);
+		jsExecutor.executeScript("window.scrollBy(0, -300);");
+		Thread.sleep(2000);
+
 		driver.switchTo().window(parenttab);
 		Thread.sleep(2000);
 		
