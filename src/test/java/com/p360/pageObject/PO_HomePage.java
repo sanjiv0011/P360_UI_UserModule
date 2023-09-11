@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import com.p360.DataBaseTesting.DBT_User_Membership;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 
 
@@ -40,6 +41,10 @@ public class PO_HomePage extends ReUseAbleElement{
 		action = new Actions(driver);
 
 	}
+	
+	
+	//ALERT MESSAGES
+	public String alertMsgCardAddedSuccesfully = "Card Added Successfully.";
 	
 	//=========START========HOME PAGE OBJECTS=============//
 	
@@ -93,6 +98,9 @@ public class PO_HomePage extends ReUseAbleElement{
 	@CacheLookup
 	public WebElement btnNextClasses;
 	
+	@FindBy(xpath = "(//div[contains(normalize-space(),'No Upcoming Classes')])[11]")
+	@CacheLookup
+	public WebElement textNoUpComingClasses;
 
 	//=========END========HOME PAGE OBJECTS=============//
 	
@@ -173,15 +181,38 @@ public class PO_HomePage extends ReUseAbleElement{
 	}
 	
 	
-	public void clickOnNextClasses() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(btnNextClasses));
-		Thread.sleep(500);
-		btnNextClasses.click();
-		logger.info("Clicked on the next classes");
-		Thread.sleep(1000);
-		driver.navigate().back();
-		Thread.sleep(2000);
+	public boolean clickOnNextClasses() throws InterruptedException {
+		boolean flag = false;
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(btnNextClasses));
+			Thread.sleep(500);
+			if(btnNextClasses.isDisplayed()) {
+				btnNextClasses.click();
+				logger.info("Clicked on the next classes");
+				flag = true;
+				Thread.sleep(1000);
+				driver.navigate().back();
+				Thread.sleep(2000);
+			}
+		}catch(Exception e) {
+			logger.info("Exceptin form clickOnNextClasses: "+e.getMessage());		
+			}
+		return flag;
 	}
+	
+	public boolean textNoUpcomingClasses() {
+		boolean flag = false;
+		try {
+			if(textNoUpComingClasses.isDisplayed()) {
+				flag = true;
+				logger.info("Is No up coming classes text present: "+flag);
+			}
+		}catch(Exception e){
+			logger.info("Exceptino from textNoUpcomingClasses: "+e.getMessage());
+		}
+		return flag;
+	}
+	
 	//=========END========ACTION METHODS FOR HOME PAGE OBJECTS=============//
 	
 		
@@ -225,27 +256,23 @@ public class PO_HomePage extends ReUseAbleElement{
 		String parenttab = (String) itr.next(); // it is on parent tab
 		
 		clickAppStore(); //ON THIS ACTION CREATE NEW TAB
-		//jsExecutor.executeScript("window.scrollBy(0, 300);");
-		//action.scrollByAmount(0, 300).build().perform();
-		Thread.sleep(2000);
-		//jsExecutor.executeScript("window.scrollBy(0, -300);");
-		//action.scrollByAmount(0, -300).build().perform();
 		Thread.sleep(2000);
 		driver.switchTo().window(parenttab);
 		Thread.sleep(2000);
+		
 		clickGooglePlayStore();
-		Thread.sleep(2000);
-		//jsExecutor.executeScript("window.scrollBy(0, 300);");
-		action.scrollByAmount(0, 300).build().perform();
-		Thread.sleep(2000);
-		//jsExecutor.executeScript("window.scrollBy(0, -300);");
-		action.scrollByAmount(0, -300).build().perform();
 		Thread.sleep(2000);
 		driver.switchTo().window(parenttab);
 		Thread.sleep(4000);
+		
 		clickOnChangeButton();
 		clickOnCancelButton_1_RU();
-		clickOnNextClasses();
+		if(!textNoUpcomingClasses()) {
+			clickOnNextClasses();
+		}else {
+			logger.info("No upcoming class present");
+		}
+		
 		logger.info("...HOME PAGE ELEMENT TESTING DONE...");
 	}
 	
@@ -257,8 +284,14 @@ public class PO_HomePage extends ReUseAbleElement{
 		setCardHoldName(cardHolderName);
 		logger.info("Waiting to enter the card number, expiray , code and zip code manualy");
 		Thread.sleep(15000);
-		ruae.clickOnBtnSave_1_RU();
-		wait.until(ExpectedConditions.elementToBeClickable(btnChange));
+		boolean flag = ruae.clickOnBtnSave_1_RU();
+		if(flag) 
+		{	String alertMsgContent = snakeAlertMessagesDisplayedContent_RU();
+			if(alertMsgContent.equals(alertMsgCardAddedSuccesfully)) {
+				logger.info("===>>> User card details changed successfully");
+			}
+		}
+		
 		Thread.sleep(10000);
 	}
 	

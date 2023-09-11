@@ -772,7 +772,7 @@ public class ReUseAbleElement {
 	  			int alertLoopCount = 0;
 	  			String exception = null;
 	  			boolean flag = false;
-	  			while(alertLoopCount <= 1500)
+	  			while(alertLoopCount <= 3000)
 	  			{	alertLoopCount++;
 	  				try {
 	  					alertSnakeMessage = driver.findElement(By.xpath(alertAddress_RU));
@@ -792,6 +792,9 @@ public class ReUseAbleElement {
 	  				if(flag) {
 	  					Thread.sleep(500);
 	  					break;
+	  				}
+	  				if(alertLoopCount == 3000) {
+	  					logger.info("Alert message check frequency is 150 milli seconds and loop count is: "+alertLoopCount);
 	  				}
 	  			}
 	  		

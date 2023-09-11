@@ -9,36 +9,13 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">P360_UI_USER_MODULE</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">66,541</td><td></td><td></td></tr>
+<tr><td><a href="#t0">P360_UI_USER_MODULE</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">100,733</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">P360_UI_USER_MODULE &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.p360.testCases.TC_Membership</td><td><a href="#m0">test_Logout</a></td><td rowspan="1">1694180067117</td><td rowspan="1">1069</td></tr><tr><th colspan="4">P360_UI_USER_MODULE &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.p360.testCases.TC_Membership</td><td><a href="#m1">test_ChangeMembership</a></td><td rowspan="1">1694180028970</td><td rowspan="1">38131</td></tr><tr class="passedeven"><td><a href="#m2">test_Login</a></td><td rowspan="1">1694180014900</td><td rowspan="1">13325</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">P360_UI_USER_MODULE &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">com.p360.testCases.TC_Home</td><td><a href="#m0">test_ChangeCardDetails</a></td><td rowspan="1">1694416705974</td><td rowspan="1">35781</td></tr><tr class="passedeven"><td><a href="#m1">test_HomePageElement</a></td><td rowspan="1">1694416667587</td><td rowspan="1">38383</td></tr><tr class="passedeven"><td><a href="#m2">test_Login</a></td><td rowspan="1">1694416655802</td><td rowspan="1">11766</td></tr><tr class="passedeven"><td><a href="#m3">test_Logout</a></td><td rowspan="1">1694416741763</td><td rowspan="1">9320</td></tr></tbody>
 </table>
-<h2>P360_UI_USER_MODULE</h2><h3 id="m0">com.p360.testCases.TC_Membership#test_Logout</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;jss28 Cmt-nav-text&quot;&gt;...&lt;/span&gt; is not clickable at point (146, 140). Other element would receive the click: &lt;div class=&quot;MuiBackdrop-root&quot; aria-hidden=&quot;true&quot; style=&quot;opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;&quot;&gt;&lt;/div&gt;
-  (Session info: chrome=116.0.5845.141)
-Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d8f391a1f5405971388634acdb8913e1, clickElement {id=18383F357454B47D1F0AB79D6E1124BE_element_57}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53357}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53357/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (d8f391a1f5405971388634acdb8913e1)] -&gt; xpath: //span[normalize-space()=&apos;Dashboard&apos;]]
-Session ID: d8f391a1f5405971388634acdb8913e1
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy35.click(Unknown Source)
-	at com.p360.ReUseAble.PageObject.ReUseAbleElement.clickMenuDashBoard_RU(ReUseAbleElement.java:75)
-	at com.p360.pageObject.PO_HomePage.Logout(PO_HomePage.java:191)
-	at com.p360.testCases.TC_Membership.test_Logout(TC_Membership.java:82)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.p360.testCases.TC_Membership#test_ChangeMembership</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr><tr class="param stripe"><td>All</td><td>Westwood Packages One Time</td><td>Custom Date</td><td>8 September 2023</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.p360.testCases.TC_Membership#test_Login</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>P360_UI_USER_MODULE</h2><h3 id="m0">com.p360.testCases.TC_Home#test_ChangeCardDetails</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.p360.testCases.TC_Home#test_HomePageElement</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.p360.testCases.TC_Home#test_Login</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.p360.testCases.TC_Home#test_Logout</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

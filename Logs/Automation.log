@@ -224,3 +224,108 @@ Element: [[ChromeDriver: chrome on windows (d8f391a1f5405971388634acdb8913e1)] -
 Session ID: d8f391a1f5405971388634acdb8913e1
 19:04:27.085 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method call done: changeMembership 
 19:04:37.240 [main] INFO  com.p360.testCases.TC_Membership - Driver shutdown
+12:37:56.383 [main] INFO  com.p360.testCases.TC_Membership - Base class started...
+12:38:00.185 [main] INFO  com.p360.testCases.TC_Membership - Chrome driver selected
+12:38:02.159 [main] INFO  com.p360.testCases.TC_Membership - Login page started
+12:38:02.305 [main] INFO  com.p360.testCases.TC_Membership - Maximize the window
+12:38:02.520 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+12:38:02.662 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+12:38:07.004 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+12:38:07.647 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+12:38:07.967 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+12:38:14.436 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+12:38:18.428 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+12:38:20.534 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
+12:38:22.536 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method called: changeMembership
+12:38:23.273 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the manage membership button
+12:38:24.264 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the category field to open the list
+12:38:24.770 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectCategory
+12:38:24.843 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: All
+12:38:25.456 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+12:38:28.933 [main] INFO  com.p360.testCases.TC_Membership - Driver shutdown
+12:39:22.484 [main] INFO  com.p360.testCases.TC_Home - Base class started...
+12:39:37.970 [main] INFO  com.p360.testCases.TC_Home - Chrome driver selected
+12:39:38.943 [main] INFO  com.p360.testCases.TC_Home - Login page started
+12:39:39.173 [main] INFO  com.p360.testCases.TC_Home - Maximize the window
+12:39:39.449 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+12:39:39.530 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+12:39:44.464 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+12:39:45.027 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+12:39:45.341 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+12:39:50.437 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+12:39:53.555 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+12:39:55.709 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
+12:39:57.809 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
+12:40:01.004 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+12:40:03.079 [main] INFO  com.p360.pageObject.PO_HomePage - Checked is Dashboard displayed: true
+12:40:05.178 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Manage my membership 
+12:40:16.578 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Appstore 
+12:40:25.398 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Google playstore 
+12:40:31.645 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the button card change
+12:40:33.742 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the cancel button
+12:40:33.782 [main] INFO  com.p360.pageObject.PO_HomePage - Is No up coming classes text present: true
+12:40:33.782 [main] INFO  com.p360.pageObject.PO_HomePage - No upcoming class present
+12:40:33.783 [main] INFO  com.p360.pageObject.PO_HomePage - ...HOME PAGE ELEMENT TESTING DONE...
+12:40:33.941 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the button card change
+12:40:36.155 [main] INFO  com.p360.pageObject.PO_HomePage - Entered card name
+12:40:36.671 [main] INFO  com.p360.pageObject.PO_HomePage - Waiting to enter the card number, expiray , code and zip code manualy
+12:40:51.785 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
+12:41:13.884 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+  (Session info: chrome=116.0.5845.180)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ebefee72cd26e03fd9c15895228a690e, findElement {using=xpath, value=//div[@role="alert"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.180, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51773}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51773/devtoo..., se:cdpVersion: 116.0.5845.180, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ebefee72cd26e03fd9c15895228a690e
+12:41:19.145 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+12:41:19.791 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
+12:41:24.202 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
+12:41:24.791 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
+12:41:25.418 [main] INFO  com.p360.testCases.TC_Home - Driver shutdown
+12:47:31.217 [main] INFO  com.p360.testCases.TC_Home - Base class started...
+12:47:33.518 [main] INFO  com.p360.testCases.TC_Home - Chrome driver selected
+12:47:35.601 [main] INFO  com.p360.testCases.TC_Home - Login page started
+12:47:35.756 [main] INFO  com.p360.testCases.TC_Home - Maximize the window
+12:47:35.898 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+12:47:36.014 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+12:47:41.539 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+12:47:42.169 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+12:47:42.468 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+12:47:47.562 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+12:47:50.717 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+12:47:52.825 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
+12:47:54.980 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
+12:47:58.179 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+12:48:00.265 [main] INFO  com.p360.pageObject.PO_HomePage - Checked is Dashboard displayed: true
+12:48:02.421 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Manage my membership 
+12:48:08.807 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Appstore 
+12:48:17.604 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Google playstore 
+12:48:23.820 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the button card change
+12:48:25.932 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the cancel button
+12:48:25.969 [main] INFO  com.p360.pageObject.PO_HomePage - Is No up coming classes text present: true
+12:48:25.970 [main] INFO  com.p360.pageObject.PO_HomePage - No upcoming class present
+12:48:25.970 [main] INFO  com.p360.pageObject.PO_HomePage - ...HOME PAGE ELEMENT TESTING DONE...
+12:48:26.137 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the button card change
+12:48:28.345 [main] INFO  com.p360.pageObject.PO_HomePage - Entered card name
+12:48:28.859 [main] INFO  com.p360.pageObject.PO_HomePage - Waiting to enter the card number, expiray , code and zip code manualy
+12:48:43.988 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
+12:48:49.212 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 539
+12:48:49.213 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+12:48:49.234 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Card Added Successfully.
+12:48:49.740 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+  (Session info: chrome=116.0.5845.180)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [be5b9659217c1c758d01c319b2b195a5, findElement {using=xpath, value=//div[@role="alert"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.180, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52155}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52155/devtoo..., se:cdpVersion: 116.0.5845.180, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: be5b9659217c1c758d01c319b2b195a5
+12:48:51.747 [main] INFO  com.p360.pageObject.PO_HomePage - ===>>> User card details changed successfully
+12:49:04.863 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+12:49:05.508 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
+12:49:10.476 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
+12:49:11.079 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
+12:49:11.580 [main] INFO  com.p360.testCases.TC_Home - Driver shutdown
