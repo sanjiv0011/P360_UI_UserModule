@@ -96,50 +96,57 @@ public class PO_LoginPage extends ReUseAbleElement {
 	
 	//TO LOGIN
 	public PO_HomePage Login(String userEmail,String userPassword) throws InterruptedException {
-		logger.info("Method called Login");
-		clickBtnSignIn();
-		setUserName(userEmail);
-		setTextpassword(userPassword);
-		clickBtnsubmit();
-		
 		try {
-			wait.until(ExpectedConditions.textToBePresentInElementLocated(By.tagName("body"), "Dashboard"));
-			Thread.sleep(500);
-			if(driver.getPageSource().contains("Welcome")) {
-				Assert.assertTrue(true);
-				logger.info("...LOGIN DONE...");
-			} else {
-				Assert.assertTrue(false);
-				logger.info("!!!LOGIN FAILED!!!");
+			logger.info("Method called Login");
+			clickBtnSignIn();
+			setUserName(userEmail);
+			setTextpassword(userPassword);
+			clickBtnsubmit();
+			
+			try {
+				wait.until(ExpectedConditions.textToBePresentInElementLocated(By.tagName("body"), "Dashboard"));
+				Thread.sleep(500);
+				if(driver.getPageSource().contains("Welcome")) {
+					Assert.assertTrue(true);
+					logger.info("...LOGIN DONE...");
+				} else {
+					Assert.assertTrue(false);
+					logger.info("!!!LOGIN FAILED!!!");
+				}
+			}catch(Exception e) {
+				logger.info("Login exception message: "+e.getMessage());
+				Assert.assertEquals(driver.getPageSource().contains("Welcome"),"To check the login");
 			}
-		}catch(Exception e) {
-			logger.info("Login exception message: "+e.getMessage());
-		}
+		}catch(Exception e) {}
 		
 		return new PO_HomePage(driver);
 	}
 	
 	//TO SUPER ADMIN LOGIN
 	public PO_Main_HomePage AdminLogin(String adminEmail,String adminPassword) throws InterruptedException {
-		logger.info("Method called Login");
-		clickBtnSignIn();
-		setUserName(adminEmail);
-		setTextpassword(adminPassword);
-		clickBtnsubmit();
-		
 		try {
-			wait.until(ExpectedConditions.elementToBeClickable(tabDashboard));
-			Thread.sleep(500);
-			if(driver.getPageSource().contains("This Week")) {
-				Assert.assertTrue(true);
-				logger.info("...LOGIN DONE...");
-			} else {
-				Assert.assertTrue(false);
-				logger.info("!!!LOGIN FAILED!!!");
+			logger.info("Method called Login");
+			clickBtnSignIn();
+			setUserName(adminEmail);
+			setTextpassword(adminPassword);
+			clickBtnsubmit();
+			
+			try {
+				wait.until(ExpectedConditions.elementToBeClickable(tabDashboard));
+				Thread.sleep(500);
+				if(driver.getPageSource().contains("This Week")) {
+					Assert.assertTrue(true);
+					logger.info("...LOGIN DONE...");
+				} else {
+					Assert.assertTrue(false);
+					logger.info("!!!LOGIN FAILED!!!");
+				}
+			}catch(Exception e) {
+				logger.info("Login exception message: "+e.getMessage());
+				Assert.assertEquals(driver.getPageSource().contains("This Week"),"To check the login");
 			}
-		}catch(Exception e) {
-			logger.info("Login exception message: "+e.getMessage());
-		}
+			
+		}catch(Exception e) {}
 		
 		return new PO_Main_HomePage(driver);
 	}

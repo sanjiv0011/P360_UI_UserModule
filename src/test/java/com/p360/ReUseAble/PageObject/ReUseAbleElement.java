@@ -498,10 +498,10 @@ public class ReUseAbleElement {
 	    //CROSS BUTTON, P360
 	    @FindBy(xpath = "//button[@title='Close']")
 		@CacheLookup
-		public WebElement btnCross;
+		public WebElement btnCross_RU;
 	    public void clickOnBtnCross_RU() throws InterruptedException {
 	    	try {
-	    		btnCross.click();
+	    		btnCross_RU.click();
 		    	logger.info("Clicked on the cross button icon");
 				Thread.sleep(300);
 	    	}catch(Exception e) {
@@ -772,7 +772,7 @@ public class ReUseAbleElement {
 	  			int alertLoopCount = 0;
 	  			String exception = null;
 	  			boolean flag = false;
-	  			while(alertLoopCount <= 3000)
+	  			while(alertLoopCount <= 2500)
 	  			{	alertLoopCount++;
 	  				try {
 	  					alertSnakeMessage = driver.findElement(By.xpath(alertAddress_RU));
@@ -793,7 +793,7 @@ public class ReUseAbleElement {
 	  					Thread.sleep(500);
 	  					break;
 	  				}
-	  				if(alertLoopCount == 3000) {
+	  				if(alertLoopCount == 2500) {
 	  					logger.info("Alert message check frequency is 150 milli seconds and loop count is: "+alertLoopCount);
 	  				}
 	  			}

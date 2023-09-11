@@ -221,11 +221,10 @@ public class PO_HomePage extends ReUseAbleElement{
 	// TO LOGOUT
 	public PO_LoginPage Logout() throws InterruptedException
 	{	
-		ruae.clickMenuDashBoard_RU();
-		clickOnUserNameButton();
-		clickOnLogoutButton();
-		
 		try {
+			ruae.clickMenuDashBoard_RU();
+			clickOnUserNameButton();
+			clickOnLogoutButton();
 			wait.until(ExpectedConditions.elementToBeClickable(lp.btnLogin));
 			Thread.sleep(500);
 			if(driver.getPageSource().contains("Performance360")){
@@ -237,69 +236,84 @@ public class PO_HomePage extends ReUseAbleElement{
 			}
 		}catch(Exception e) {
 			logger.info("Logout Exception: "+e.getMessage());
+			Assert.assertTrue(false,"After logout it lookin for [Performance360] text");
 		}
 		return new PO_LoginPage(driver);
 	}
 	
 	//TO CHECK THE HOME PAGE ELEMENT
 	public void checkClickActionOnHomePageElement() throws InterruptedException {
-		ruae.clickMenuDashBoard_RU();
-		clickMenuMembership();
-		clickMenuMyClasses();
-		ruae.clickMenuDashBoard_RU();
-		verifyDashboard();
-		clickManageMyMembership();
-		driver.navigate().back();
-		
-		//TO HANDELS NEW TAB OR WINDOWS
-		Set<String> handles = driver.getWindowHandles();
-		// it takes care of tab iterations
-		Iterator itr  = handles.iterator();	
-		String parenttab = (String) itr.next(); // it is on parent tab
-		
-		clickAppStore(); //ON THIS ACTION CREATE NEW TAB
-		Thread.sleep(2000);
-		jsExecutor.executeScript("window.scrollBy(0, 300);");
-		Thread.sleep(2000);
-		jsExecutor.executeScript("window.scrollBy(0, -300);");
-		Thread.sleep(2000);
-
-		driver.switchTo().window(parenttab);
-		Thread.sleep(2000);
-		
-		clickGooglePlayStore();
-		Thread.sleep(2000);
-		driver.switchTo().window(parenttab);
-		Thread.sleep(4000);
-		
-		clickOnChangeButton();
-		clickOnCancelButton_1_RU();
-		if(!textNoUpcomingClasses()) {
-			clickOnNextClasses();
-		}else {
-			logger.info("No upcoming class present");
-		}
-		
-		logger.info("...HOME PAGE ELEMENT TESTING DONE...");
+		try {
+			ruae.clickMenuDashBoard_RU();
+			clickMenuMembership();
+			clickMenuMyClasses();
+			ruae.clickMenuDashBoard_RU();
+			verifyDashboard();
+			clickManageMyMembership();
+			driver.navigate().back();
+			
+			//TO HANDELS NEW TAB OR WINDOWS
+			Set<String> handles = driver.getWindowHandles();
+			// it takes care of tab iterations
+			Iterator itr  = handles.iterator();	
+			String parenttab = (String) itr.next(); // it is on parent tab
+			
+			clickAppStore(); //ON THIS ACTION CREATE NEW TAB
+			Thread.sleep(2000);
+			jsExecutor.executeScript("window.scrollBy(0, 300);");
+			Thread.sleep(2000);
+			jsExecutor.executeScript("window.scrollBy(0, -300);");
+			Thread.sleep(2000);
+	
+			driver.switchTo().window(parenttab);
+			Thread.sleep(2000);
+			
+			clickGooglePlayStore();
+			Thread.sleep(2000);
+			driver.switchTo().window(parenttab);
+			Thread.sleep(4000);
+			
+			clickOnChangeButton();
+			clickOnCancelButton_1_RU();
+			if(!textNoUpcomingClasses()) {
+				clickOnNextClasses();
+			}else {
+				logger.info("No upcoming class present");
+			}
+			
+			logger.info("...HOME PAGE ELEMENT TESTING DONE...");
+		}catch(Exception e) {}
 	}
 	
 	//TO CHENGE THE CARD DETAILS
 	public void changeCardDetails(String cardHolderName,String cardNumber,String expirayAndCode,String zipCode) throws InterruptedException
 	{
-		wait.until(ExpectedConditions.elementToBeClickable(btnChange));
-		clickOnChangeButton();
-		setCardHoldName(cardHolderName);
-		logger.info("Waiting to enter the card number, expiray , code and zip code manualy");
-		Thread.sleep(15000);
-		boolean flag = ruae.clickOnBtnSave_1_RU();
-		if(flag) 
-		{	String alertMsgContent = snakeAlertMessagesDisplayedContent_RU();
-			if(alertMsgContent.equals(alertMsgCardAddedSuccesfully)) {
-				logger.info("===>>> User card details changed successfully");
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(btnChange));
+			clickOnChangeButton();
+			setCardHoldName(cardHolderName);
+			logger.info("Waiting to enter the card number, expiray , code and zip code manualy");
+			Thread.sleep(15000);
+			String alertMsgContent=null;
+			boolean flag = ruae.clickOnBtnSave_1_RU();
+			if(flag) 
+			{	alertMsgContent = snakeAlertMessagesDisplayedContent_RU();
+				if(alertMsgContent != null && alertMsgContent.equals(alertMsgCardAddedSuccesfully)) {
+					logger.info("===>>> User card details changed successfully");
+					Assert.assertEquals(alertMsgContent,alertMsgCardAddedSuccesfully ,"To check  card details changed or not");
+				}else {
+					driver.navigate().back();
+					Assert.assertTrue(false,"To check  card details changed or not");
+				}
+			}else{
+				Assert.assertTrue(false,"To check  card details changed or not");
+				clickOnCancelButton_1_RU();
 			}
+		}catch(Exception e) {
+			Assert.assertTrue(false,"changeCardDetails");
+			logger.info("Exceptin from changeCardDetails: "+e.getMessage());
 		}
 		
-		Thread.sleep(10000);
 	}
 	
 }

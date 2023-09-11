@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class FindThreeDotBasedOnSearchKeyAndClick {
 	
@@ -59,16 +60,22 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 							String btnActionAddress = "(//div[@class='pointer'])["+listRowCount+"]";
 							flag = true;
 							Thread.sleep(300);
-							WebElement btnThreeDot = element.findElement(By.xpath(btnActionAddress));
-							//logger.info("Given DateAndTime : "+searchKey);
-							logger.info("Given dateAndTime matched with the list value: "+formatText.trim());
-							if(wantToClickOnThreeDot) {
-								btnThreeDot.click();
-								logger.info("Clicked on the three dot option button");
-							}else {
-								logger.info("Text present at given column index: "+formatText.trim());
+							try {
+								WebElement btnThreeDot = element.findElement(By.xpath(btnActionAddress));
+								//logger.info("Given DateAndTime : "+searchKey);
+								logger.info("Given dateAndTime matched with the list value: "+formatText.trim());
+								if(wantToClickOnThreeDot) {
+									btnThreeDot.click();
+									logger.info("Clicked on the three dot option button");
+								}else {
+									logger.info("Text present at given column index: "+formatText.trim());
+								}
+								Thread.sleep(200);
+							}catch(Exception e) {
+								logger.info("Exception from FindThreeDotBasedOnSearchKeyAndClick: "+e.getMessage());
+								Assert.assertTrue(false,"Three dot Action button not present");
+								return -1;
 							}
-							Thread.sleep(200);
 		        			break;
 		        		}
 					}

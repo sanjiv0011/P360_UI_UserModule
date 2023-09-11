@@ -24,13 +24,13 @@ public class TC_Main_Users extends BaseClass{
 	public PO_Main_UsersPage mu;
 	
 	//VARIABLES
-	String firstName = faker.name().firstName();
+	String firstName = "OTPUser";
 	String lastName = faker.name().lastName();
 	String phoneNumber = "1234567890";
 	String emailAdd = faker.internet().emailAddress();
 	String location = "WESTWOOD";
 	String packageName = "westwood Categories (westwood)";
-	String membershipName = "WESTWOOD_PACKAGE_02";
+	String membershipName = "Westwood Packages One Time";
 	String membershipStartDate = "8 September 2023";
 	
 	

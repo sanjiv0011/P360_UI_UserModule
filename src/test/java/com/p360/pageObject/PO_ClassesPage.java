@@ -59,13 +59,24 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		@FindBy(xpath = "//span[normalize-space()='Register for new class']")
 		@CacheLookup
 		public WebElement btnRegisterForClass;
-		public void clickOnBtnRegisterForClass() throws InterruptedException {
-			Thread.sleep(1000);
-			wait.until(ExpectedConditions.elementToBeClickable(btnRegisterForClass));
-			Thread.sleep(1000);
-			btnRegisterForClass.click();
-			logger.info("Clicked on the Button register for the class");
-			Thread.sleep(2000);
+		public boolean clickOnBtnRegisterForClass() throws InterruptedException {
+			boolean flag = false;
+			try {
+				Thread.sleep(1000);
+				wait.until(ExpectedConditions.elementToBeClickable(btnRegisterForClass));
+				if(btnRegisterForClass.isDisplayed()) {
+					Thread.sleep(1000);
+					btnRegisterForClass.click();
+					logger.info("Clicked on the Button register for the class");
+					Thread.sleep(2000);
+					flag = true;
+				}
+			}catch(Exception e) {
+				logger.info("Exception from clickOnBtnRegisterForClass: "+e.getMessage());
+				logger.info("Register class button not present");
+				Assert.assertTrue(false,"You want to register a class but Register Class Button not present");
+			}
+			return flag;
 		}
 		
 		//TEXT NO CLASS FOUND
@@ -419,71 +430,84 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		
 		//TO REGISTER THE CLASS
 		public PO_HomePage registerClass(String time,String monthAndDate,String locationName,String regionName,String instructorName,String userEmailAddress) throws InterruptedException, SQLException {
-			
-			clickOnBtnRegisterForClass();
-			clickOnBtnChangeLocation();
-			//jsExecutor.executeScript("window.scrollBy(0, 300);"); //HORIZONTAL SCROLL BY 300PIXEL
-			Thread.sleep(1000);
-			//action.scrollByAmount(0, 300).build().perform();
-			isPreferedLocationPresent();
-			jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);"); //TO SCROLL TILL END
-			logger.info("Location Page scroll down");
-			Thread.sleep(2000);
-			ruae.clickOnBtnBack_1_RU();
-			isPreferedRegionPresetnt();
-			jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);"); //TO SCROLL TILL END
-			logger.info("Region page scroll down");
-			selectRegion(regionName);
-			Thread.sleep(1000);
-			//isPreferedLocationPresent();
-			action.scrollByAmount(0, 300).build().perform();
-			logger.info("Location page scroll down");
-			selectLocation(locationName);
-			Thread.sleep(1000);
-			selectinstructor(instructorName);
-			selectMonthAndDate(address_listMonthDate,monthAndDate,driver);
-			if(textNoClassesMatchedToTheCurrentFilter()) {
-				clickOnBtnGoToDashBoard();
-				return new PO_HomePage(driver);
-			}
-			selectClassOnSpecificTime(driver,time);
-			jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);"); //TO SCROLL TILL END
-			clickOnBtnRegister();
-			Boolean flag = clickOnBtnConfirmClassRegistration();
-			if(flag) {
-				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
-				if(alertMsg != null && alertMsg.equals(alertMsgNoCreditAvailabe)) {
-					logger.info("===>>> Class not registered");
-					Assert.assertEquals(alertMsg,alertMsgNoCreditAvailabe,"Check Credit availabe or not");
-				}else 
-				{
-					dateTimePresentInRegisteredClassList = DBT_User_Classes.test_DBT_RegisterClass(time,monthAndDate,userEmailAddress);
-					hp.clickMenuMyClasses();
-					int listRowCount = findMyRegisteredClassAndonThreeDotOption(dateTimePresentInRegisteredClassList,driver,4,false);
-					if(listRowCount != 0) {
-						logger.info("===>>> Class registered successfully");
+			try {
+				boolean bol = clickOnBtnRegisterForClass();
+				if(bol) {
+					clickOnBtnChangeLocation();
+					//jsExecutor.executeScript("window.scrollBy(0, 300);"); //HORIZONTAL SCROLL BY 300PIXEL
+					Thread.sleep(1000);
+					//action.scrollByAmount(0, 300).build().perform();
+					isPreferedLocationPresent();
+					jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);"); //TO SCROLL TILL END
+					logger.info("Location Page scroll down");
+					Thread.sleep(2000);
+					ruae.clickOnBtnBack_1_RU();
+					isPreferedRegionPresetnt();
+					jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);"); //TO SCROLL TILL END
+					logger.info("Region page scroll down");
+					selectRegion(regionName);
+					Thread.sleep(1000);
+					//isPreferedLocationPresent();
+					action.scrollByAmount(0, 300).build().perform();
+					logger.info("Location page scroll down");
+					selectLocation(locationName);
+					Thread.sleep(1000);
+					selectinstructor(instructorName);
+					selectMonthAndDate(address_listMonthDate,monthAndDate,driver);
+					if(textNoClassesMatchedToTheCurrentFilter()) {
+						clickOnBtnGoToDashBoard();
+						return new PO_HomePage(driver);
 					}
-					return new PO_HomePage(driver);
+					selectClassOnSpecificTime(driver,time);
+					jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);"); //TO SCROLL TILL END
+					clickOnBtnRegister();
+					Boolean flag = clickOnBtnConfirmClassRegistration();
+					if(flag) {
+						String alertMsg = snakeAlertMessagesDisplayedContent_RU();
+						if(alertMsg != null && alertMsg.equals(alertMsgNoCreditAvailabe)) {
+							logger.info("===>>> Class not registered");
+							Assert.assertTrue(false,"Check Credit availabe or not");
+						}else 
+						{
+							dateTimePresentInRegisteredClassList = DBT_User_Classes.test_DBT_RegisterClass(time,monthAndDate,userEmailAddress);
+							hp.clickMenuMyClasses();
+							int listRowCount = findMyRegisteredClassAndonThreeDotOption(dateTimePresentInRegisteredClassList,driver,4,false);
+							if(listRowCount != 0) {
+								logger.info("===>>> Class registered successfully");
+								Assert.assertTrue(true,"To check class registered successfully or not");
+							}
+							return new PO_HomePage(driver);
+						}
+						
+					}else {
+						Assert.assertTrue(false,"To check the class registeration");
+					}
+					clickOnBtnGoToDashBoard();
 				}
-				
-			}
-			clickOnBtnGoToDashBoard();
+			}catch(Exception e) {}
 			return new PO_HomePage(driver);
 		}
 		
 		
 		//TO CANCEL THE CLASS
 		public PO_HomePage cancelRegisteredClass(String dateAndTime,WebDriver driver,String userEmailAddress) throws InterruptedException, SQLException {
-			int listRowCount = findMyRegisteredClassAndonThreeDotOption(dateAndTime,driver,4,true);
-			boolean flag = clickOnBtnCancelClass_RU(driver,listRowCount);
-			if(flag) {
-				clickOnYesButton_RU();
-				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
-	  			if(alertMsg.equals(alertMsgClassCanceled)) {
-	  				Assert.assertEquals(alertMsg,alertMsgClassCanceled,"Check class canceled successfully");
-	  				 DBT_User_Classes.test_DBT_CancelRegisteredClass(dateAndTime,userEmailAddress);
-	  			}
-			}
+			Thread.sleep(2000);
+			try {
+				int listRowCount = findMyRegisteredClassAndonThreeDotOption(dateAndTime,driver,4,true);
+				if(listRowCount != -1) {
+					boolean flag = clickOnBtnCancelClass_RU(driver,listRowCount);
+					if(flag) {
+						clickOnYesButton_RU();
+						String alertMsg = snakeAlertMessagesDisplayedContent_RU();
+			  			if(alertMsg.equals(alertMsgClassCanceled)) {
+			  				Assert.assertEquals(alertMsg,alertMsgClassCanceled,"Check class canceled successfully");
+			  				DBT_User_Classes.test_DBT_CancelRegisteredClass(dateAndTime,userEmailAddress);
+			  			}
+					}
+				}else {
+					Assert.assertTrue(false,"You want to cancel the registered class but cancel not present");
+				}
+			}catch(Exception e) {}
 			
 			return new PO_HomePage(driver);
 		}

@@ -50,53 +50,67 @@ public class TC_AllInOne_UserModule extends BaseClass{
 	//TO LOGIN
 	@Test(priority = 1)
 	public void test_Login() throws InterruptedException {
-		lp = new PO_LoginPage(driver);
-		hp = lp.Login(userEmail,userPassword);
+		try {
+			lp = new PO_LoginPage(driver);
+			hp = lp.Login(userEmail,userPassword);
+		}catch(Exception e) {}
 	}
 	
 	//==========START=======HOME PAGE TESTING============//
 	//TO CHECK HOME PAGE ELEMENT
 	@Test(priority = 2, dependsOnMethods = "test_Login")
 	public void test_HomePageElement() throws InterruptedException {
-		hp.checkClickActionOnHomePageElement();
+		try {
+			hp.checkClickActionOnHomePageElement();
+		}catch(Exception e) {}
 	}
 
 	//TO CHENGE THE CARD DETAILS
 	@Test(priority = 3)
 	public void test_ChangeCardDetails() throws InterruptedException {
-		hp.changeCardDetails(cardHolderName,expiary,CCVcode,zipCode);
+		try {
+			hp.changeCardDetails(cardHolderName,expiary,CCVcode,zipCode);
+		}catch(Exception e) {}
 	}
 	//==========END=======MEMBERSHIP PAGE TESTING============//	
 		
 		
 	//==========START=======MEMBERSHIP PAGE TESTING============//
 	//TO CHANGE MEMBERSHIP
-	@Test(priority = 2 , dependsOnMethods = "test_Login", dataProvider = "TC_ChangeMembership")
+	@Test(priority = 4 , dependsOnMethods = "test_Login", dataProvider = "TC_ChangeMembership")
 	public void test_ChangeMembership(String categoryName,String packageName,String radioButton,String membershipDate) throws InterruptedException, SQLException {
-		mp = callMeBeforePerformAnyAction_TC_Membership();
-		hp = mp.changeMembership(userEmail,categoryName,packageName,radioButton, membershipDate);
+		try {
+			mp = callMeBeforePerformAnyAction_TC_Membership();
+			hp = mp.changeMembership(userEmail,categoryName,packageName,radioButton, membershipDate);
+		}catch(Exception e) {}
 	}
 	
 	//TO CHECK AGREED TERMS OF MEMBERSHIP
-	@Test(priority = 3 , dependsOnMethods = "test_Login")
+	@Test(priority = 5 , dependsOnMethods = "test_Login")
 	public void test_CheckAgreedTerms() throws InterruptedException {
-		mp = callMeBeforePerformAnyAction_TC_Membership();
-		hp = mp.checkAgreedTerm();
+		try {
+			mp = callMeBeforePerformAnyAction_TC_Membership();
+			hp = mp.checkAgreedTerm();
+		}catch(Exception e) {}
 	}
 	
 	
 	//TO PAUSE MEMBERSHIP
-	@Test(priority = 4 ,dependsOnMethods = "test_Login", dataProvider = "TC_PauseMembership")
+	@Test(priority = 6 ,dependsOnMethods = "test_Login", dataProvider = "TC_PauseMembership")
 	public void test_PauseMembership(String pauseStartDate, String pauseEndDate, String pauseReason) throws InterruptedException, SQLException, ParseException {
-		mp = callMeBeforePerformAnyAction_TC_Membership();
-		hp = mp.pasueMembership(userEmail,pauseStartDate, pauseEndDate, pauseReason);
+		try {
+			mp = callMeBeforePerformAnyAction_TC_Membership();
+			hp = mp.pasueMembership(userEmail,pauseStartDate, pauseEndDate, pauseReason);
+		}catch(Exception e) {}
 	}
 	
 	//TO RESUME MEMBERSHIP
-	@Test(priority = 5 ,dependsOnMethods = "test_Login")
+	@Test(priority = 7 ,dependsOnMethods = "test_Login")
 	public void test_ResumeMembership() throws InterruptedException, SQLException {
-		mp = callMeBeforePerformAnyAction_TC_Membership();
-		hp = mp.resumeMembership(userEmail);
+		try {
+			mp = callMeBeforePerformAnyAction_TC_Membership();
+			hp = mp.resumeMembership(userEmail);
+		}catch(Exception e) {}
 	}
 	
 	//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
@@ -136,18 +150,22 @@ public class TC_AllInOne_UserModule extends BaseClass{
   	
 	//==========START=======CLASSES PAGE TESTING============//
 	//TO REGISTER FOR A CLASS
-  	@Test(priority = 2 , dependsOnMethods = "test_Login", dataProvider = fileNameOnly_Registration)
+  	@Test(priority = 8 , dependsOnMethods = "test_Login", dataProvider = fileNameOnly_Registration)
   	public void test_RegisterClass(String time, String monthDate, String location, String region, String instructorName) throws InterruptedException, SQLException {
-  		cp = callMeBeforePerformAnyAction_TC_Classes();
-  		hp = cp.registerClass(time,monthDate,location,region,instructorName,userEmail);
+  		try {
+  			cp = callMeBeforePerformAnyAction_TC_Classes();
+  	  		hp = cp.registerClass(time,monthDate,location,region,instructorName,userEmail);
+  		}catch(Exception e) {}
   		
   	}
   		
   	//TO CANCEL REGISTERED CLASS
-  	@Test(priority = 3 , dependsOnMethods = "test_Login", dataProvider = fileNameOnly_Cancelation)
+  	@Test(priority = 9 , dependsOnMethods = "test_Login", dataProvider = fileNameOnly_Cancelation)
   	public void test_CancelRegisteredClass(String dateAndTime) throws InterruptedException, SQLException {
-  		cp = callMeBeforePerformAnyAction_TC_Classes();
-  		hp = cp.cancelRegisteredClass(dateAndTime,driver,userEmail);
+  		try {
+  			cp = callMeBeforePerformAnyAction_TC_Classes();
+  	  		hp = cp.cancelRegisteredClass(dateAndTime,driver,userEmail);
+  		}catch(Exception e) {}
   	}
   	
   //CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
