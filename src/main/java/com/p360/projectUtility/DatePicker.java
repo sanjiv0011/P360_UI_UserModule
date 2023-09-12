@@ -344,6 +344,8 @@ public class DatePicker{
 				String nextButton_address = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiPickersCalendarHeader-iconButton'])[2]";
 				String dateList_address = "//div[@class='MuiPickersCalendar-week']//div[@role='presentation']";
 				
+				
+				
 			    //User given date setting
 		        String myDate[] = yourDate.split(" ");
 		        String year = myDate[2];
@@ -379,7 +381,7 @@ public class DatePicker{
 		        	}
 	        	}
 	        	
-	        	//TO SELECT THE MONTH
+	        	//TO FIND OUT USER GIVEN MONTH POSITION THE MONTH
 	        	int displayedMonth = 0;
 		        int inputMonth = 0;
 		        for (int i = 0; i < monthArray.length; i++) {
@@ -393,24 +395,63 @@ public class DatePicker{
 		            }
 		        }
 		        
+		        //TO SELECT THE CORRECT MONTH 
+		        boolean monthconfirmation = false;
+		        boolean monthconfirmationByLoop = false;
 		        if (displayedMonth == inputMonth) {
 		            logger.info("selected month name is: " + monthArray[inputMonth-1]);
-		        } else {
-		        	
-		        	 while (displayedMonth > inputMonth) {
-				            driver.findElement(By.xpath(previousButton_address)).click();
-				            logger.info("clicked on the monthYear next button");
-				            displayedMonth = displayedMonth - 1;
-				            Thread.sleep(1000);
-				        }
-				        while (displayedMonth < inputMonth) {
-				            driver.findElement(By.xpath(nextButton_address)).click();
-				            displayedMonth = displayedMonth + 1;
-				            logger.info("clicked on the monthYear previous button");
-				            Thread.sleep(1000);
-				            
-				        }
-		            logger.info("Month not selected");
+		            monthconfirmation = true;
+		        } 
+		        else 
+		        {
+		        	WebElement btnPrevious = null;
+		        	WebElement btnNext = null;
+			        	 while (displayedMonth > inputMonth)
+			        	 {
+			       		 		try {
+			        		 		btnPrevious = driver.findElement(By.xpath("(//span[@class='MuiIconButton-label'])[5]"));
+			        		 		if(btnPrevious.isEnabled()) {
+			        		 			action.moveToElement(btnPrevious).build().perform();
+					                    Thread.sleep(1000);
+					                    btnPrevious.click();
+					             
+					        		 	Thread.sleep(500);
+					        		 	logger.info("clicked on the monthYear Privious button");
+							            displayedMonth = displayedMonth - 1;
+			        		 		}
+			        		 	}catch(Exception e) {
+			        		 		logger.info("User given month is not select-able: "+month);
+			        		 		logger.info("Exception Month Selection : "+e.getMessage());
+			        		 		break;
+			        		 	}
+			       		 		
+			                   
+					        }
+					        while (displayedMonth < inputMonth)
+					        {
+					            try {
+					        		btnNext = driver.findElement(By.xpath("(//span[@class='MuiIconButton-label'])[6]"));
+				                    if(btnNext.isEnabled()) {
+				                    	action.moveToElement(btnNext).build().perform();
+					                    Thread.sleep(1000);
+					                    btnNext.click();
+					                    Thread.sleep(500);
+							            displayedMonth = displayedMonth + 1;
+							            logger.info("clicked on the monthYear Next button");
+				                    }
+					        	}catch(Exception e) {
+					        		logger.info("User given month is not select-able: "+month);
+					        		logger.info("Exception Month Selection: "+e.getMessage());
+					        		break;
+					        	}
+					        }
+		            
+		        }
+		        if (!monthconfirmation && displayedMonth == inputMonth ) {
+		            logger.info("selected month name is: " + monthArray[inputMonth-1]);
+		        }else if(displayedMonth != inputMonth) {
+		        	logger.info("Month not selected");
+		        	Assert.assertTrue(false,"User given month is not select-able: ");
 		        }
 		       
 		        
@@ -436,12 +477,19 @@ public class DatePicker{
 		                    };
 		                 
 		                    // Perform the mouseover actions and capture cursor behavior
+		                    String dateCssColorBefore = dateElement.getAttribute("background-color");
+		                    System.out.println("dateCssColor :"+dateCssColorBefore);
 		                    action.moveToElement(dateElement).build().perform();
-		                    Thread.sleep(500);
+		                    Thread.sleep(1000);
+		                    String dateCssColorAfter = dateElement.getAttribute("background-color");
+		                    System.out.println("dateCssColor :"+dateCssColorAfter);
+		                    Thread.sleep(1000);
 		                    hoverOverElement(driver, dateElement);
 		                    Thread.sleep(500);
 		                    captureMouseBehavior.accept(dateElement);
 		                    dateCssValue = dateElement.getCssValue(dt).split("-");
+		                    logger.info("dateCssValue: "+dateCssValue[0]);
+		                    
 		                    try {
 			                    if(dateCssValue[0].equals("animation")) {
 			                    	logger.info("User given date is not clickable: "+dt);

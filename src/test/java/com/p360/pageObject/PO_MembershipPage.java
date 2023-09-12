@@ -5,6 +5,7 @@ import java.time.Duration;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -340,35 +341,49 @@ public class PO_MembershipPage extends ReUseAbleElement{
 			}
 			
 		}catch(Exception e) {
-			Assert.assertEquals(true,flag,"Is clickOnBtnResumeMyMembership Displayed");
 			logger.info("Exception from clickOnBtnResumeMyMembership: "+e.getMessage());
+			Assert.assertEquals(true,flag,"Is clickOnBtnResumeMyMembership Displayed");
 		}
 	}
 	
 	
 	//TO SELECT THE PUASE MEMBESHIP START DATE
-	public void setPauseMembershipStartDate(String startDate) throws Throwable {
+	public void setPauseMembershipStartDate(String startDate) throws InterruptedException {
+		boolean flag = false;
 		try {
 			clickOnIconStartDatePauseMembership();
 			DatePicker.DatePicker_GenericMethod_WhenDateGridOnlyPresent(driver,startDate);
+			flag = true;
 		    Thread.sleep(1000);
-		}catch(Exception e) {
-			Assert.assertTrue(false,"To check pause membership start date");
+		   
+		}catch(Throwable e) {
 			logger.info("Exception from setPauseMembershipStartDate: "+e.getMessage());
-		}	
+			Assert.assertTrue(false,"To check pause membership start date");
+		}
+		if(!flag) {
+			clickOnBtnCross_RU();
+			Thread.sleep(500);
+			clickOnBtnCross_RU();
+	    }
 	}
 	
 	
 	//TO SELECT THE PUASE MEMBESHIP END DATE
-	public void setPauseMembershipEndDate(String endDate) throws Throwable {
+	public void setPauseMembershipEndDate(String endDate) throws InterruptedException {
+		boolean flag = false;
 		try {
 			clickOnIconEndDatePauseMembership();
 			DatePicker.DatePicker_GenericMethod_WhenDateGridOnlyPresent(driver,endDate);
+			flag = true;
 		    Thread.sleep(1000);
-		}catch(Exception e) {
-			Assert.assertTrue(false,"To check pause membership end date");
+		}catch(Throwable e) {
 			logger.info("Exeception from setPauseMembershipEndDate: "+e.getMessage());
+			Assert.assertTrue(false,"To check pause membership end date");
 		}
+		if(!flag) {
+			clickOnBtnCross_RU();
+			clickOnBtnCross_RU();
+	    }
 	}
 	
 	//TO CLICK ON THE PAUSE MEMBERSHIP START DATE
@@ -473,6 +488,8 @@ public class PO_MembershipPage extends ReUseAbleElement{
 					ruae.clickOnCancelButton_1_RU();
 				}
 				Assert.assertEquals(alertMsgContent,alertMsgPauseMembership,"To check the pause membership");
+			}else {
+				Assert.assertTrue(flag,"Pause membership confirm button");
 			}
 		}catch(Exception e) {
 			logger.info("Exception from pasueMembership: "+e.getMessage());

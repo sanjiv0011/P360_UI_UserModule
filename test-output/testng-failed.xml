@@ -13,6 +13,7 @@
           <include name="setup"/>
           <include name="test_Logout"/>
           <include name="test_Login"/>
+          <include name="test_PauseMembership" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.p360.testCases.TC_Membership -->
     </classes>
