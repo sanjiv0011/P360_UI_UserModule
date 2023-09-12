@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-12T01:21:56 IST" name="Suite" finished-at="2023-09-12T01:22:40 IST" duration-ms="44418">
+  <suite started-at="2023-09-12T12:43:17 IST" name="Suite" finished-at="2023-09-12T12:44:03 IST" duration-ms="46505">
     <groups>
     </groups>
-    <test started-at="2023-09-12T01:21:56 IST" name="P360_UI_USER_MODULE" finished-at="2023-09-12T01:22:40 IST" duration-ms="44418">
+    <test started-at="2023-09-12T12:43:17 IST" name="P360_UI_USER_MODULE" finished-at="2023-09-12T12:44:03 IST" duration-ms="46505">
       <class name="com.p360.testCases.TC_Membership">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.p360.testCases.TC_Membership@60f7cc1d]" started-at="2023-09-12T01:21:56 IST" name="setup" finished-at="2023-09-12T01:22:01 IST" duration-ms="4393" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.p360.testCases.TC_Membership@60f7cc1d]" started-at="2023-09-12T12:43:17 IST" name="setup" finished-at="2023-09-12T12:43:21 IST" duration-ms="4180" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="test_Login()[pri:1, instance:com.p360.testCases.TC_Membership@60f7cc1d]" started-at="2023-09-12T01:22:01 IST" name="test_Login" finished-at="2023-09-12T01:22:12 IST" duration-ms="11537" status="PASS">
+        <test-method signature="test_Login()[pri:1, instance:com.p360.testCases.TC_Membership@60f7cc1d]" started-at="2023-09-12T12:43:21 IST" name="test_Login" finished-at="2023-09-12T12:43:33 IST" duration-ms="12171" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_Login -->
-        <test-method signature="test_PauseMembership(java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.p360.testCases.TC_Membership@60f7cc1d]" started-at="2023-09-12T01:22:13 IST" name="test_PauseMembership" data-provider="TC_PauseMembership" finished-at="2023-09-12T01:22:31 IST" depends-on-methods="com.p360.testCases.TC_Membership.test_Login" duration-ms="18243" status="FAIL">
+        <test-method signature="test_PauseMembership(java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.p360.testCases.TC_Membership@60f7cc1d]" started-at="2023-09-12T12:43:34 IST" name="test_PauseMembership" data-provider="TC_PauseMembership" finished-at="2023-09-12T12:44:01 IST" depends-on-methods="com.p360.testCases.TC_Membership.test_Login" duration-ms="27412" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[20 September 2023]]>
+                <![CDATA[25 September 2023]]>
               </value>
             </param>
             <param index="1">
@@ -40,19 +40,21 @@
               </value>
             </param>
           </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_PauseMembership -->
+        <test-method signature="test_Logout()[pri:10, instance:com.p360.testCases.TC_Membership@60f7cc1d]" started-at="2023-09-12T12:44:01 IST" name="test_Logout" finished-at="2023-09-12T12:44:02 IST" depends-on-methods="com.p360.testCases.TC_Membership.test_Login" duration-ms="1124" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Given date is not selected:  expected [true] but found [false]]]>
+              <![CDATA[After logout it lookin for [Performance360] text expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Given date is not selected:  expected [true] but found [false]
+              <![CDATA[java.lang.AssertionError: After logout it lookin for [Performance360] text expected [true] but found [false]
 at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1578)
 at org.testng.Assert.assertTrue(Assert.java:57)
-at com.p360.projectUtility.DatePicker.DatePicker_GenericMethod_WhenDateGridOnlyPresent(DatePicker.java:423)
-at com.p360.pageObject.PO_MembershipPage.setPauseMembershipStartDate(PO_MembershipPage.java:354)
-at com.p360.pageObject.PO_MembershipPage.pasueMembership(PO_MembershipPage.java:457)
-at com.p360.testCases.TC_Membership.test_PauseMembership(TC_Membership.java:75)
+at com.p360.pageObject.PO_HomePage.Logout(PO_HomePage.java:239)
+at com.p360.testCases.TC_Membership.test_Logout(TC_Membership.java:92)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -86,12 +88,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_PauseMembership -->
-        <test-method signature="test_Logout()[pri:10, instance:com.p360.testCases.TC_Membership@60f7cc1d]" started-at="2023-09-12T01:22:31 IST" name="test_Logout" finished-at="2023-09-12T01:22:40 IST" duration-ms="8585" status="PASS">
-          <reporter-output>
-          </reporter-output>
         </test-method> <!-- test_Logout -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.p360.testCases.TC_Membership@60f7cc1d]" started-at="2023-09-12T01:22:40 IST" name="teardown" finished-at="2023-09-12T01:22:40 IST" duration-ms="498" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.p360.testCases.TC_Membership@60f7cc1d]" started-at="2023-09-12T12:44:03 IST" name="teardown" finished-at="2023-09-12T12:44:03 IST" duration-ms="525" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

@@ -1,7 +1,6 @@
 package com.p360.pageObject;
 
 import java.sql.SQLException;
-import java.text.ParseException;
 import java.time.Duration;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
@@ -226,7 +225,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 		Thread.sleep(500);
 	}
 	//TO SELECT THE CUSTOME DATE
-	public void setNewSubsriptionDate(String Customdate) throws InterruptedException {
+	public void setNewSubsriptionDate(String Customdate) throws Throwable {
 		clickOnIconDateNewSubscription();
 		DatePicker.DatePicker_GenericMethod_WhenDateGridOnlyPresent(driver,Customdate);
 		logger.info("Custom date, month and year entered");
@@ -348,7 +347,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	
 	
 	//TO SELECT THE PUASE MEMBESHIP START DATE
-	public void setPauseMembershipStartDate(String startDate) throws InterruptedException {
+	public void setPauseMembershipStartDate(String startDate) throws Throwable {
 		try {
 			clickOnIconStartDatePauseMembership();
 			DatePicker.DatePicker_GenericMethod_WhenDateGridOnlyPresent(driver,startDate);
@@ -361,7 +360,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	
 	
 	//TO SELECT THE PUASE MEMBESHIP END DATE
-	public void setPauseMembershipEndDate(String endDate) throws InterruptedException {
+	public void setPauseMembershipEndDate(String endDate) throws Throwable {
 		try {
 			clickOnIconEndDatePauseMembership();
 			DatePicker.DatePicker_GenericMethod_WhenDateGridOnlyPresent(driver,endDate);
@@ -393,7 +392,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	
 	
 	//TO CHANGE THE MEMBERSHIP
-	public PO_HomePage changeMembership(String userEmail, String categoryName,String packageName,String radioButtonName,String membershipDate ) throws InterruptedException, SQLException {
+	public PO_HomePage changeMembership(String userEmail, String categoryName,String packageName,String radioButtonName,String membershipDate ) throws Throwable {
 		try {
 			logger.info("Method called: changeMembership");
 			clickOnBtnManageMembership();
@@ -449,10 +448,11 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	}
 	
 	//TO PAUSE THE MEMBERSHIP
-	public PO_HomePage pasueMembership(String userEmail, String pauseStartDate, String pauseEndDate, String pauseReason) throws InterruptedException, SQLException, ParseException {
+	public PO_HomePage pasueMembership(String userEmail, String pauseStartDate, String pauseEndDate, String pauseReason) throws Throwable {
 		try {
 			logger.info("Method called: pasueMembership");
 			clickOnPauseMembership();
+			
 			selectReason(pauseReason);
 			setPauseMembershipStartDate(pauseStartDate);
 			setPauseMembershipEndDate(pauseEndDate);

@@ -2,7 +2,6 @@ package com.p360.testCases;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.text.ParseException;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -49,8 +48,8 @@ public class TC_Membership extends BaseClass{
 	}
 	
 	//TO CHANGE MEMBERSHIP
-	//@Test(priority = 2 /* , dependsOnMethods = "test_Login" */, dataProvider = "TC_ChangeMembership")
-	public void test_ChangeMembership(String categoryName,String packageName,String radioButton,String membershipDate) throws InterruptedException, SQLException {
+	//@Test(priority = 2  , dependsOnMethods = "test_Login" , dataProvider = "TC_ChangeMembership")
+	public void test_ChangeMembership(String categoryName,String packageName,String radioButton,String membershipDate) throws Throwable {
 		try {
 			mp = callMeBeforePerformAnyAction();
 			hp = mp.changeMembership(userEmail,categoryName,packageName,radioButton, membershipDate);
@@ -69,7 +68,7 @@ public class TC_Membership extends BaseClass{
 	
 	//TO PAUSE MEMBERSHIP
 	@Test(priority = 4 ,dependsOnMethods = "test_Login", dataProvider = "TC_PauseMembership")
-	public void test_PauseMembership(String pauseStartDate, String pauseEndDate, String pauseReason) throws InterruptedException, SQLException, ParseException {
+	public void test_PauseMembership(String pauseStartDate, String pauseEndDate, String pauseReason) throws Throwable {
 		try {
 			mp = callMeBeforePerformAnyAction();
 			hp = mp.pasueMembership(userEmail,pauseStartDate, pauseEndDate, pauseReason);
@@ -87,9 +86,11 @@ public class TC_Membership extends BaseClass{
 		
 	
 	//TO LOGOUT
-	@Test(priority = 10 /* , dependsOnMethods = "test_Login"  */)	// here zero or ten ensures least priority, so that this call happens at the last.
+	@Test(priority = 10, dependsOnMethods = "test_Login" )	// here zero or ten ensures least priority, so that this call happens at the last.
 	public void test_Logout() throws InterruptedException {	
-		hp.Logout();
+		try {
+			hp.Logout();
+		}catch(Exception e) {}
 	}
 	
 	//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT

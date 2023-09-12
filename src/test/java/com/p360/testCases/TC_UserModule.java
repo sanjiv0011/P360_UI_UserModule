@@ -72,13 +72,13 @@ public class TC_UserModule extends BaseClass{
 	
 	//TO CHANGE MEMBERSHIP
 	@Test(priority = 5)
-	public void test_ChangeMembership() throws InterruptedException, SQLException {
+	public void test_ChangeMembership() throws Throwable {
 		tc_membership.test_ChangeMembership(categoryName, packageName, radioButton, membershipDate);
 	}
 		
 	//TO PAUSE MEMBERSHIP
 	@Test(priority = 6)
-	public void test_PauseMembership() throws InterruptedException, SQLException, ParseException {
+	public void test_PauseMembership() throws Throwable {
 		tc_membership.test_PauseMembership(pauseStartDate, pauseEndDate, pauseReason);
 	}
 	

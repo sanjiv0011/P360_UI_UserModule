@@ -127,7 +127,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		}
   		
   		//TO SELECT THE MEMBERSHIP START DATE
-  		public void setMembershipStartDate(String membershipStartDate) throws InterruptedException {
+  		public void setMembershipStartDate(String membershipStartDate) throws Throwable {
   			clickOnDateIcon_1_RU();
   			DatePicker.DatePicker_GenericMethod_WhenDateGridOnlyPresent(driver,membershipStartDate);
   			logger.info("Custom date, month and year entered");
@@ -135,7 +135,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		}
   		
   		//TO ADD MEMBER
-  		public PO_Main_HomePage addMember(String firstName, String lastName, String phoneNumber, String email, String location, String packageName, String membershipName, String membershipStartDate) throws InterruptedException 
+  		public PO_Main_HomePage addMember(String firstName, String lastName, String phoneNumber, String email, String location, String packageName, String membershipName, String membershipStartDate) throws Throwable 
   		{
   			clickOnAddMember_RU();
   			setFirstName(firstName);

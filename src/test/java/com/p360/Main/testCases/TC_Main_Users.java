@@ -43,7 +43,7 @@ public class TC_Main_Users extends BaseClass{
 
 	//TO MAIN HOME PAGE TAB TESTING
 	@Test(priority = 2)
-	public void test_Main_AddMember() throws InterruptedException {
+	public void test_Main_AddMember() throws Throwable {
 		mu = callMeBeforePerformAnyAction();
 		mhp = mu.addMember(firstName, lastName, phoneNumber, emailAdd, location, packageName, membershipName, membershipStartDate);
 	}
