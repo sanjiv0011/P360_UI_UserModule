@@ -392,22 +392,28 @@ public class DatePicker{
 		                logger.info("inputMonth int postition: "+inputMonth);
 		            }
 		        }
-		        while (displayedMonth > inputMonth) {
-		            driver.findElement(By.xpath(previousButton_address)).click();
-		            displayedMonth = displayedMonth - 1;
-		            Thread.sleep(1000);
-		        }
-		        while (displayedMonth < inputMonth) {
-		            driver.findElement(By.xpath(nextButton_address)).click();
-		            displayedMonth = displayedMonth + 1;
-		            Thread.sleep(1000);
-		            
-		        }
+		        
 		        if (displayedMonth == inputMonth) {
-		            logger.info("selected month name is: " + monthArray[inputMonth]);
+		            logger.info("selected month name is: " + monthArray[inputMonth-1]);
 		        } else {
+		        	
+		        	 while (displayedMonth > inputMonth) {
+				            driver.findElement(By.xpath(previousButton_address)).click();
+				            logger.info("clicked on the monthYear next button");
+				            displayedMonth = displayedMonth - 1;
+				            Thread.sleep(1000);
+				        }
+				        while (displayedMonth < inputMonth) {
+				            driver.findElement(By.xpath(nextButton_address)).click();
+				            displayedMonth = displayedMonth + 1;
+				            logger.info("clicked on the monthYear previous button");
+				            Thread.sleep(1000);
+				            
+				        }
 		            logger.info("Month not selected");
 		        }
+		       
+		        
 
 		        //TO SELECT DATE
 		        List<WebElement> allDates = driver.findElements(By.xpath(dateList_address));
