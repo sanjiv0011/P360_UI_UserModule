@@ -397,7 +397,7 @@ public class DatePicker{
 		        
 		        //TO SELECT THE CORRECT MONTH 
 		        boolean monthconfirmation = false;
-		        boolean monthconfirmationByLoop = false;
+		        
 		        if (displayedMonth == inputMonth) {
 		            logger.info("selected month name is: " + monthArray[inputMonth-1]);
 		            monthconfirmation = true;
@@ -477,24 +477,24 @@ public class DatePicker{
 		                    };
 		                 
 		                    // Perform the mouseover actions and capture cursor behavior
-		                    String dateCssColorBefore = dateElement.getAttribute("background-color");
+		                    String dateCssColorBefore = dateElement.getCssValue("Background");
 		                    System.out.println("dateCssColor :"+dateCssColorBefore);
 		                    action.moveToElement(dateElement).build().perform();
 		                    Thread.sleep(1000);
-		                    String dateCssColorAfter = dateElement.getAttribute("background-color");
+		                    String dateCssColorAfter = dateElement.getCssValue("Background");
 		                    System.out.println("dateCssColor :"+dateCssColorAfter);
 		                    Thread.sleep(1000);
 		                    hoverOverElement(driver, dateElement);
 		                    Thread.sleep(500);
 		                    captureMouseBehavior.accept(dateElement);
 		                    dateCssValue = dateElement.getCssValue(dt).split("-");
-		                    logger.info("dateCssValue: "+dateCssValue[0]);
+		                    System.out.println("dateCssValue: "+dateCssValue[0]);
 		                    
 		                    try {
 			                    if(dateCssValue[0].equals("animation")) {
 			                    	logger.info("User given date is not clickable: "+dt);
 			                    	Assert.assertTrue(false,"User given date is not clickable: "+dt+" ==>>");
-			                    }else if(dateCssValue[0].equals("background")){
+			                    }else if(dateCssValue[0].equals("background") || dateCssValue[0].equals("baseline") ){
 			                    	Thread.sleep(500);
 			                    	dateElement.click();
 			                    	flag2 = true;

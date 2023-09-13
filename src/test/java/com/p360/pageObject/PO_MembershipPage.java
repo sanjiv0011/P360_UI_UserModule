@@ -342,7 +342,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 			
 		}catch(Exception e) {
 			logger.info("Exception from clickOnBtnResumeMyMembership: "+e.getMessage());
-			Assert.assertEquals(true,flag,"Is clickOnBtnResumeMyMembership Displayed");
+			Assert.assertEquals(true,flag,"Is clickOnBtnResumeMyMembership button Displayed");
 		}
 	}
 	
@@ -519,7 +519,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 				}
 				Assert.assertEquals(alertMsgContent,alertMsgResumeMembership,"To check the resume membership");
 			}
-			Assert.assertEquals(true, flag,"To check is click on the confirm or not");
+			Assert.assertEquals(true, flag,"To check is click on the confirm button or not");
 		}catch(Exception e) {
 			logger.info("Exception from resumeMembership: "+e.getMessage());
 		}

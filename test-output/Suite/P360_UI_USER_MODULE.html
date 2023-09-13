@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>P360_UI_USER_MODULE</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>9/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Sep 12 18:44:36 IST 2023</td>
+<td>Started on:</td><td>Wed Sep 13 19:15:12 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>47 seconds (47036 ms)</td>
+<tr><td>Total time:</td><td>464 seconds (464625 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,18 +76,18 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.p360.testCases.TC_Membership.test_Logout()'><b>test_Logout</b><br>Test class: com.p360.testCases.TC_Membership</td>
-<td><div><pre>java.lang.AssertionError: After logout it lookin for [Performance360] text expected [true] but found [false]
-	at com.p360.pageObject.PO_HomePage.Logout(PO_HomePage.java:239)
-	at com.p360.testCases.TC_Membership.test_Logout(TC_Membership.java:92)
+<td title='com.p360.testCases.TC_AllInOne_UserModule.test_ChangeCardDetails()'><b>test_ChangeCardDetails</b><br>Test class: com.p360.testCases.TC_AllInOne_UserModule</td>
+<td><div><pre>java.lang.AssertionError: changeCardDetails expected [true] but found [false]
+	at com.p360.pageObject.PO_HomePage.changeCardDetails(PO_HomePage.java:313)
+	at com.p360.testCases.TC_AllInOne_UserModule.test_ChangeCardDetails(TC_AllInOne_UserModule.java:68)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2101082331", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2101082331'><pre>java.lang.AssertionError: After logout it lookin for [Performance360] text expected [true] but found [false]
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace159536229", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace159536229'><pre>java.lang.AssertionError: changeCardDetails expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
 	at org.testng.Assert.assertTrue(Assert.java:57)
-	at com.p360.pageObject.PO_HomePage.Logout(PO_HomePage.java:239)
-	at com.p360.testCases.TC_Membership.test_Logout(TC_Membership.java:92)
+	at com.p360.pageObject.PO_HomePage.changeCardDetails(PO_HomePage.java:313)
+	at com.p360.testCases.TC_AllInOne_UserModule.test_ChangeCardDetails(TC_AllInOne_UserModule.java:68)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -117,52 +117,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>1</td>
-<td>com.p360.testCases.TC_Membership@60f7cc1d</td></tr>
-<tr>
-<td title='com.p360.testCases.TC_Membership.test_PauseMembership()'><b>test_PauseMembership</b><br>Test class: com.p360.testCases.TC_Membership<br>Parameters: 25 September 2023, 30 October 2023, Travel</td>
-<td><div><pre>java.lang.AssertionError: Pause membership confirm button expected [true] but found [false]
-	at com.p360.pageObject.PO_MembershipPage.pasueMembership(PO_MembershipPage.java:492)
-	at com.p360.testCases.TC_Membership.test_PauseMembership(TC_Membership.java:74)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1425202985", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1425202985'><pre>java.lang.AssertionError: Pause membership confirm button expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at com.p360.pageObject.PO_MembershipPage.pasueMembership(PO_MembershipPage.java:492)
-	at com.p360.testCases.TC_Membership.test_PauseMembership(TC_Membership.java:74)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>27</td>
-<td>com.p360.testCases.TC_Membership@60f7cc1d</td></tr>
+<td>45</td>
+<td>com.p360.testCases.TC_AllInOne_UserModule@421def93</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -173,10 +129,50 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.p360.testCases.TC_Membership.test_Login()'><b>test_Login</b><br>Test class: com.p360.testCases.TC_Membership</td>
+<td title='com.p360.testCases.TC_AllInOne_UserModule.test_HomePageElement()'><b>test_HomePageElement</b><br>Test class: com.p360.testCases.TC_AllInOne_UserModule</td>
 <td></td>
-<td>13</td>
-<td>com.p360.testCases.TC_Membership@60f7cc1d</td></tr>
+<td>47</td>
+<td>com.p360.testCases.TC_AllInOne_UserModule@421def93</td></tr>
+<tr>
+<td title='com.p360.testCases.TC_AllInOne_UserModule.test_RegisterClass()'><b>test_RegisterClass</b><br>Test class: com.p360.testCases.TC_AllInOne_UserModule<br>Parameters: 2:00 AM, SEP 16 SAT, WESTWOOD, WESTWOOD, All</td>
+<td></td>
+<td>109</td>
+<td>com.p360.testCases.TC_AllInOne_UserModule@421def93</td></tr>
+<tr>
+<td title='com.p360.testCases.TC_AllInOne_UserModule.test_CheckAgreedTerms()'><b>test_CheckAgreedTerms</b><br>Test class: com.p360.testCases.TC_AllInOne_UserModule</td>
+<td></td>
+<td>15</td>
+<td>com.p360.testCases.TC_AllInOne_UserModule@421def93</td></tr>
+<tr>
+<td title='com.p360.testCases.TC_AllInOne_UserModule.test_ResumeMembership()'><b>test_ResumeMembership</b><br>Test class: com.p360.testCases.TC_AllInOne_UserModule</td>
+<td></td>
+<td>24</td>
+<td>com.p360.testCases.TC_AllInOne_UserModule@421def93</td></tr>
+<tr>
+<td title='com.p360.testCases.TC_AllInOne_UserModule.test_ChangeMembership()'><b>test_ChangeMembership</b><br>Test class: com.p360.testCases.TC_AllInOne_UserModule<br>Parameters: All, Dynamic Brand Strategist, The end of the current period, 15 September 2023</td>
+<td></td>
+<td>33</td>
+<td>com.p360.testCases.TC_AllInOne_UserModule@421def93</td></tr>
+<tr>
+<td title='com.p360.testCases.TC_AllInOne_UserModule.test_PauseMembership()'><b>test_PauseMembership</b><br>Test class: com.p360.testCases.TC_AllInOne_UserModule<br>Parameters: 25 September 2023, 30 October 2023, Travel</td>
+<td></td>
+<td>40</td>
+<td>com.p360.testCases.TC_AllInOne_UserModule@421def93</td></tr>
+<tr>
+<td title='com.p360.testCases.TC_AllInOne_UserModule.test_CancelRegisteredClass()'><b>test_CancelRegisteredClass</b><br>Test class: com.p360.testCases.TC_AllInOne_UserModule<br>Parameters: Sep 17, 2023 | 09:00 PM</td>
+<td></td>
+<td>101</td>
+<td>com.p360.testCases.TC_AllInOne_UserModule@421def93</td></tr>
+<tr>
+<td title='com.p360.testCases.TC_AllInOne_UserModule.test_Logout()'><b>test_Logout</b><br>Test class: com.p360.testCases.TC_AllInOne_UserModule</td>
+<td></td>
+<td>14</td>
+<td>com.p360.testCases.TC_AllInOne_UserModule@421def93</td></tr>
+<tr>
+<td title='com.p360.testCases.TC_AllInOne_UserModule.test_Login()'><b>test_Login</b><br>Test class: com.p360.testCases.TC_AllInOne_UserModule</td>
+<td></td>
+<td>16</td>
+<td>com.p360.testCases.TC_AllInOne_UserModule@421def93</td></tr>
 </table><p>
 </body>
 </html>

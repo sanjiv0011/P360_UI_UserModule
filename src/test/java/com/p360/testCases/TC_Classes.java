@@ -40,34 +40,27 @@ public class TC_Classes extends BaseClass{
 	//TO LOGIN
 	@Test(priority = 1)
 	public void test_Login() throws InterruptedException {
-		try {
 			lp = new PO_LoginPage(driver);
 			hp = lp.Login(userEmail,userPassword);
-		}catch(Exception e) {}
 	}
 	
 	//TO REGISTER FOR A CLASS
-	@Test(priority = 2 , dependsOnMethods = "test_Login", dataProvider = fileNameOnly_Registration)
+	//@Test(priority = 2 , dependsOnMethods = "test_Login", dataProvider = fileNameOnly_Registration)
 	public void test_RegisterClass(String time, String monthDate, String location, String region, String instructorName) throws InterruptedException, SQLException {
-		try {
 			cp = callMeBeforePerformAnyAction();
 			hp = cp.registerClass(time,monthDate,location,region,instructorName,userEmailAddress);
-		}catch(Exception e) {}
 	}
 		
 	//TO CANCEL REGISTERED CLASS
 	@Test(priority = 3 , dependsOnMethods = "test_Login", dataProvider = fileNameOnly_Cancelation)
 	public void test_CancelRegisteredClass(String dateAndTime) throws InterruptedException, SQLException {
-		
-		try {
 			cp = callMeBeforePerformAnyAction();
 			hp = cp.cancelRegisteredClass(dateAndTime,driver,userEmailAddress);
-		}catch(Exception e) {}
 	}
 	
 	
 	//TO LOGOUT
-	@Test(priority = 10 , dependsOnMethods = "test_Login")	// here zero or ten ensures least priority, so that this call happens at the last.
+	//@Test(priority = 10 , dependsOnMethods = "test_Login")	// here zero or ten ensures least priority, so that this call happens at the last.
 	public void test_Logout() throws InterruptedException {	
 		hp.Logout();
 	}

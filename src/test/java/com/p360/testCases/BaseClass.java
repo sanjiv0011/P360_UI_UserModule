@@ -9,9 +9,15 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
 import com.github.javafaker.Faker;
+import com.p360.pageObject.PO_HomePage;
+import com.p360.pageObject.PO_LoginPage;
 import com.p360.utilities.ReadConfigFiles;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -20,6 +26,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseClass {
 	
 	public static WebDriver driver;
+	public PO_HomePage hp;
+	public PO_LoginPage lp;
 
 	
 	//TO LOG THE MESSAGES ON THE CONSOLE AND LOG FILES BOTH
@@ -97,8 +105,7 @@ public class BaseClass {
 		
 	}
 	
-	
-	
+		
 	//TO CLOSE THE DIRVER
 	@AfterClass
 	public void teardown()
@@ -106,8 +113,7 @@ public class BaseClass {
 		driver.quit();
 		logger.info("Driver shutdown");
 	}
-	
-	
+		
 	//TO GENERATES RANDOM STRING HAVING LENGTH 6 CHARACTER
 	public String randomString(int intLength) {
 		String generatedstring = RandomStringUtils.randomAlphabetic(intLength);

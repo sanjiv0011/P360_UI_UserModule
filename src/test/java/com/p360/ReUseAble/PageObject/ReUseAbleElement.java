@@ -135,9 +135,10 @@ public class ReUseAbleElement {
   	    			btnCancelClass.click();
   	    			flag = true;
   	    			logger.info("Clicked on the button Cancel Class");
+  	    		}else {
+  	    			logger.info("Is Cancel Class button displayed: "+flag);
   	    		}
   	    	}catch(Exception e) {
-  	    		logger.info("Is Cancel Class button displayed: "+flag);
   	    		logger.info("Exception from clickOnBtnCancelClass_RU: "+e.getMessage());
   	    	}
   	        Thread.sleep(500);

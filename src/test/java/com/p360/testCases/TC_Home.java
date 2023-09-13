@@ -26,26 +26,21 @@ public class TC_Home extends BaseClass{
 	//TO LOGIN
 	@Test(priority = 1)
 	public void test_Login() throws InterruptedException {
-		try {
 			lp = new PO_LoginPage(driver);
 			hp = lp.Login(userEmail,userPassword);
-		}catch(Exception e) {}
 	}
 	
 	//TO CHECK HOME PAGE ELEMENT
-	@Test(priority = 2 , dependsOnMethods = "test_Login")
+	@Test(priority = 2)
 	public void test_HomePageElement() throws InterruptedException {
-		try {
+			hp = new PO_HomePage(driver);
 			hp.checkClickActionOnHomePageElement();
-		}catch(Exception e) {}
 	}
 
 	//TO CHENGE THE CARD DETAILS
 	@Test(priority = 3)
 	public void test_ChangeCardDetails() throws InterruptedException {
-		try {
 			hp.changeCardDetails(cardHolderName,expiary,CCVcode,zipCode);
-		}catch(Exception e) {}
 	}
 	
 	//TO LOGOUT

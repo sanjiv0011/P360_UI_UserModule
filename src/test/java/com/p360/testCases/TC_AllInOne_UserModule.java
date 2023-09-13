@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.github.javafaker.Faker;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
@@ -27,6 +28,7 @@ public class TC_AllInOne_UserModule extends BaseClass{
 	public PO_MembershipPage mp;
 	public ReUseAbleElement ruae;
 	public PO_ClassesPage cp;
+	public SoftAssert softAssert = new SoftAssert();
 	
 	//VARIABLE FOR THE MEMBERSHIP PAGE
 	String categoryName = "All";
@@ -49,67 +51,54 @@ public class TC_AllInOne_UserModule extends BaseClass{
 	//TO LOGIN
 	@Test(priority = 1)
 	public void test_Login() throws InterruptedException {
-		try {
 			lp = new PO_LoginPage(driver);
 			hp = lp.Login(userEmail,userPassword);
-		}catch(Exception e) {}
 	}
 	
 	//==========START=======HOME PAGE TESTING============//
 	//TO CHECK HOME PAGE ELEMENT
-	@Test(priority = 2, dependsOnMethods = "test_Login")
+	@Test(priority = 2)
 	public void test_HomePageElement() throws InterruptedException {
-		try {
-			hp.checkClickActionOnHomePageElement();
-		}catch(Exception e) {}
+		hp.checkClickActionOnHomePageElement();
 	}
 
 	//TO CHENGE THE CARD DETAILS
 	@Test(priority = 3)
 	public void test_ChangeCardDetails() throws InterruptedException {
-		try {
 			hp.changeCardDetails(cardHolderName,expiary,CCVcode,zipCode);
-		}catch(Exception e) {}
 	}
 	//==========END=======MEMBERSHIP PAGE TESTING============//	
 		
 		
 	//==========START=======MEMBERSHIP PAGE TESTING============//
 	//TO CHANGE MEMBERSHIP
-	@Test(priority = 4 , dependsOnMethods = "test_Login", dataProvider = "TC_ChangeMembership")
+	@Test(priority = 6, dataProvider = "TC_ChangeMembership")
 	public void test_ChangeMembership(String categoryName,String packageName,String radioButton,String membershipDate) throws Throwable {
-		try {
-			mp = callMeBeforePerformAnyAction_TC_Membership();
-			hp = mp.changeMembership(userEmail,categoryName,packageName,radioButton, membershipDate);
-		}catch(Exception e) {}
+		mp = callMeBeforePerformAnyAction_TC_Membership();
+		hp = mp.changeMembership(userEmail,categoryName,packageName,radioButton, membershipDate);
+		
 	}
 	
 	//TO CHECK AGREED TERMS OF MEMBERSHIP
-	@Test(priority = 5 , dependsOnMethods = "test_Login")
+	@Test(priority = 7)
 	public void test_CheckAgreedTerms() throws InterruptedException {
-		try {
-			mp = callMeBeforePerformAnyAction_TC_Membership();
-			hp = mp.checkAgreedTerm();
-		}catch(Exception e) {}
+		mp = callMeBeforePerformAnyAction_TC_Membership();
+		hp = mp.checkAgreedTerm();
 	}
 	
 	
 	//TO PAUSE MEMBERSHIP
-	@Test(priority = 6 ,dependsOnMethods = "test_Login", dataProvider = "TC_PauseMembership")
+	@Test(priority = 8, dataProvider = "TC_PauseMembership")
 	public void test_PauseMembership(String pauseStartDate, String pauseEndDate, String pauseReason) throws Throwable {
-		try {
-			mp = callMeBeforePerformAnyAction_TC_Membership();
-			hp = mp.pasueMembership(userEmail,pauseStartDate, pauseEndDate, pauseReason);
-		}catch(Exception e) {}
+		mp = callMeBeforePerformAnyAction_TC_Membership();
+		hp = mp.pasueMembership(userEmail,pauseStartDate, pauseEndDate, pauseReason);
 	}
 	
 	//TO RESUME MEMBERSHIP
-	@Test(priority = 7 ,dependsOnMethods = "test_Login")
+	@Test(priority = 9)
 	public void test_ResumeMembership() throws InterruptedException, SQLException {
-		try {
-			mp = callMeBeforePerformAnyAction_TC_Membership();
-			hp = mp.resumeMembership(userEmail);
-		}catch(Exception e) {}
+		mp = callMeBeforePerformAnyAction_TC_Membership();
+		hp = mp.resumeMembership(userEmail);
 	}
 	
 	//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
@@ -149,25 +138,22 @@ public class TC_AllInOne_UserModule extends BaseClass{
   	
 	//==========START=======CLASSES PAGE TESTING============//
 	//TO REGISTER FOR A CLASS
-  	@Test(priority = 8 , dependsOnMethods = "test_Login", dataProvider = fileNameOnly_Registration)
+  	@Test(priority = 4, dataProvider = fileNameOnly_Registration)
   	public void test_RegisterClass(String time, String monthDate, String location, String region, String instructorName) throws InterruptedException, SQLException {
-  		try {
   			cp = callMeBeforePerformAnyAction_TC_Classes();
   	  		hp = cp.registerClass(time,monthDate,location,region,instructorName,userEmail);
-  		}catch(Exception e) {}
   		
   	}
   		
   	//TO CANCEL REGISTERED CLASS
-  	@Test(priority = 9 , dependsOnMethods = "test_Login", dataProvider = fileNameOnly_Cancelation)
+  	@Test(priority = 5, dataProvider = fileNameOnly_Cancelation)
   	public void test_CancelRegisteredClass(String dateAndTime) throws InterruptedException, SQLException {
-  		try {
   			cp = callMeBeforePerformAnyAction_TC_Classes();
   	  		hp = cp.cancelRegisteredClass(dateAndTime,driver,userEmail);
-  		}catch(Exception e) {}
+  
   	}
   	
-  //CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
+  	//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
   	public PO_ClassesPage callMeBeforePerformAnyAction_TC_Classes() throws InterruptedException {
   		//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE FIRST
   		hp.clickMenuDashBoard_RU(); //MOVE THE DRIVER ON THE HOME PAGE
@@ -206,7 +192,7 @@ public class TC_AllInOne_UserModule extends BaseClass{
   	
   	
   	//TO LOGOUT
-  	@Test(priority = 10 , dependsOnMethods = "test_Login")	// here zero or ten ensures least priority, so that this call happens at the last.
+  	@Test(priority = 10)	// here zero or ten ensures least priority, so that this call happens at the last.
   	public void test_Logout() throws InterruptedException {	
   		hp.Logout();
   	}

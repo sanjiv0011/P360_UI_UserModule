@@ -8,17 +8,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 public class FindThreeDotBasedOnSearchKeyAndClick {
 	
 		public static final Logger logger = LogManager.getLogger(FindThreeDotBasedOnSearchKeyAndClick.class);
-		
+		public static SoftAssert softAssert = new SoftAssert();
 		public static int findThreedActionButtonAndClick(List<WebElement> listName,WebDriver driver, String searchKey,int searchKeyColumnIndex, boolean wantToClickOnThreeDot) throws InterruptedException {
 		
 			StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
 	    	String callerMethodName = stackTraceElements[2].getMethodName();
 			logger.info("findThreedActionButtonAndClick method called and Caller method name: "+callerMethodName);
 			logger.info("wantToClickOnThreeDot: "+wantToClickOnThreeDot);
+			
 		String searchKeyFormat[] = searchKey.split(" ");
 		String newSearchKey = null;
 		if (Integer.parseInt(searchKeyFormat[1].replace(",", "")) < 10) {
@@ -42,6 +44,7 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 		
 		Thread.sleep(500);
 		boolean flag = false;
+		boolean confirmationGiverDateTimeMatchedOrNot = false;
 		int listRowCount = 0;
 			for(WebElement element : listName)
 			{	listRowCount++;
@@ -52,25 +55,29 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 				{	columnIndexCount++;
 					if(columnIndexCount == searchKeyColumnIndex) 
 					{
-						formatText = st;
+						formatText = st.trim();
 						
-						//logger.info("formatText: "+formatText.trim());
+						logger.info("formatText: "+formatText);
 		    			
-						if(formatText.trim().equals(searchKey)){
+						if(formatText.equals(searchKey))
+						{
 							String btnActionAddress = "(//div[@class='pointer'])["+listRowCount+"]";
 							flag = true;
 							Thread.sleep(300);
 							try {
 								WebElement btnThreeDot = element.findElement(By.xpath(btnActionAddress));
-								//logger.info("Given DateAndTime : "+searchKey);
-								logger.info("Given dateAndTime matched with the list value: "+formatText.trim());
-								if(wantToClickOnThreeDot) {
-									btnThreeDot.click();
-									logger.info("Clicked on the three dot option button");
-								}else {
-									logger.info("Text present at given column index: "+formatText.trim());
+								if(btnThreeDot.isDisplayed()) {
+									//logger.info("Given DateAndTime : "+searchKey);
+									logger.info("Given dateAndTime matched with the list value: "+formatText);
+									confirmationGiverDateTimeMatchedOrNot =  true;
+									if(wantToClickOnThreeDot) {
+										btnThreeDot.click();
+										logger.info("Clicked on the three dot option button");
+									}else {
+										logger.info("Text present at given column index: "+formatText);
+									}
+									Thread.sleep(200);
 								}
-								Thread.sleep(200);
 							}catch(Exception e) {
 								logger.info("Exception from FindThreeDotBasedOnSearchKeyAndClick: "+e.getMessage());
 								Assert.assertTrue(false,"Three dot Action button not present");
@@ -82,9 +89,11 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 				}
 				if(flag) {
 					break;
-				}else {
-					logger.info("Given DateAndTime not matched: "+searchKey);
 				}
+			}
+			if(!confirmationGiverDateTimeMatchedOrNot) {
+				logger.info("Given DateAndTime not matched: "+searchKey);
+				Assert.assertTrue(false,"Class that you want to cancel is not present: ");
 			}
 			
 		Thread.sleep(200);

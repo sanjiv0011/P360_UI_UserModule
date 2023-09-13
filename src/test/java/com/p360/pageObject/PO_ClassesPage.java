@@ -16,6 +16,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import com.p360.DataBaseTesting.DBT_User_Classes;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
@@ -33,7 +34,6 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		public PO_LoginPage lp;
 		public Actions action;
 		public PO_HomePage hp;
-		
 		//HOMEPAGE CONSTRUCTOR CREATION
 		public PO_ClassesPage(WebDriver driver) {	
 			super(driver);
@@ -74,7 +74,6 @@ public class PO_ClassesPage extends ReUseAbleElement{
 			}catch(Exception e) {
 				logger.info("Exception from clickOnBtnRegisterForClass: "+e.getMessage());
 				logger.info("Register class button not present");
-				Assert.assertTrue(false,"You want to register a class but Register Class Button not present");
 			}
 			return flag;
 		}
@@ -84,12 +83,16 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		@CacheLookup
 		public WebElement textNoClassFound;
 		public boolean isNoClassFoundTextPresent() throws InterruptedException {
-			Thread.sleep(5000);
-			wait.until(ExpectedConditions.invisibilityOf(textNoClassFound));
-			Thread.sleep(5000);
-			boolean flag = textNoClassFound.isDisplayed();
-			logger.info("Checking is no class found text present: "+flag);
-			Thread.sleep(2000);
+			boolean flag = false;
+			try {
+				Thread.sleep(5000);
+				flag = wait.until(ExpectedConditions.textToBePresentInElement(textNoClassFound, "No Classes Found"));
+				logger.info("Checking is no class found text present: "+flag);
+				Thread.sleep(2000);
+				
+			}catch(Exception e) {
+				logger.info("Exception from isNoClassFoundTextPresent: "+e.getCause());
+			}
 			return flag;
 		}
 		
@@ -430,6 +433,7 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		
 		//TO REGISTER THE CLASS
 		public PO_HomePage registerClass(String time,String monthAndDate,String locationName,String regionName,String instructorName,String userEmailAddress) throws InterruptedException, SQLException {
+			logger.info("Method called: registerClass");
 			try {
 				boolean bol = clickOnBtnRegisterForClass();
 				if(bol) {
@@ -483,32 +487,52 @@ public class PO_ClassesPage extends ReUseAbleElement{
 						Assert.assertTrue(false,"To check the class registeration");
 					}
 					clickOnBtnGoToDashBoard();
+				}else if(!bol && (monthAndDate != null || monthAndDate != "")) {
+					Assert.assertTrue(false,"You want to register a class but Register Class Button not present");
 				}
+				
 			}catch(Exception e) {}
+
+			logger.info("Method called DONE: registerClass");
 			return new PO_HomePage(driver);
 		}
 		
 		
 		//TO CANCEL THE CLASS
 		public PO_HomePage cancelRegisteredClass(String dateAndTime,WebDriver driver,String userEmailAddress) throws InterruptedException, SQLException {
+			logger.info("Method called: cancelRegisteredClass");
 			Thread.sleep(2000);
+			
 			try {
-				int listRowCount = findMyRegisteredClassAndonThreeDotOption(dateAndTime,driver,4,true);
-				if(listRowCount != -1) {
-					boolean flag = clickOnBtnCancelClass_RU(driver,listRowCount);
-					if(flag) {
-						clickOnYesButton_RU();
-						String alertMsg = snakeAlertMessagesDisplayedContent_RU();
-			  			if(alertMsg.equals(alertMsgClassCanceled)) {
-			  				Assert.assertEquals(alertMsg,alertMsgClassCanceled,"Check class canceled successfully");
-			  				DBT_User_Classes.test_DBT_CancelRegisteredClass(dateAndTime,userEmailAddress);
-			  			}
-					}
-				}else {
-					Assert.assertTrue(false,"You want to cancel the registered class but cancel not present");
+				if(isNoClassFoundTextPresent() && dateAndTime != "" || isNoClassFoundTextPresent() && dateAndTime != null) {
+					logger.info("The class you want to cancel is not present: "+dateAndTime);
+					Assert.assertTrue(false,"The class you want to cancel is not present: ");
+					return new PO_HomePage(driver);
 				}
+				else 
+				{
+					int listRowCount = findMyRegisteredClassAndonThreeDotOption(dateAndTime,driver,4,true);
+					logger.info("listRowCount:  "+listRowCount);
+					if(listRowCount != -1) 
+					{	
+						boolean flag = clickOnBtnCancelClass_RU(driver,listRowCount);
+						if(flag) {
+							clickOnYesButton_RU();
+							String alertMsg = snakeAlertMessagesDisplayedContent_RU();
+				  			if(alertMsg.equals(alertMsgClassCanceled)) {
+				  				Assert.assertEquals(alertMsg,alertMsgClassCanceled,"Check class canceled successfully");
+				  				DBT_User_Classes.test_DBT_CancelRegisteredClass(dateAndTime,userEmailAddress);
+				  			}
+						}
+					}
+					else {
+						Assert.assertTrue(false,"You want to cancel the registered class but action button not present");
+					}
+				}
+		
 			}catch(Exception e) {}
 			
+			logger.info("Method called DONE: cancelRegisteredClass");
 			return new PO_HomePage(driver);
 		}
 		
