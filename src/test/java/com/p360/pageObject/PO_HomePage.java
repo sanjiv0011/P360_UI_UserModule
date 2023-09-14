@@ -6,6 +6,7 @@ import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,7 +39,7 @@ public class PO_HomePage extends ReUseAbleElement{
 	    this.driver = driver;
 	    jsExecutor  = (JavascriptExecutor)driver;
 		ruae = new ReUseAbleElement(driver);
-		wait = new WebDriverWait (driver, Duration.ofSeconds(45));
+		wait = new WebDriverWait (driver, Duration.ofSeconds(30));
 		lp = new PO_LoginPage(driver);
 		action = new Actions(driver);
 
@@ -88,9 +89,10 @@ public class PO_HomePage extends ReUseAbleElement{
 	@CacheLookup
 	WebElement btnLogout;
 	
-	@FindBy(xpath = "//span[normalize-space()='Change']")
-	@CacheLookup
-	WebElement btnChange;
+//	@FindBy(xpath = "//span[normalize-space()='Change']")
+//	@CacheLookup
+//	WebElement btnChange;
+	String btnChange = "//span[normalize-space()='Change']";
 	
 	@FindBy(xpath = "//input[@name='holderName']")
 	@CacheLookup
@@ -171,7 +173,7 @@ public class PO_HomePage extends ReUseAbleElement{
 	}
 	
 	public void clickOnChangeButton() throws InterruptedException {
-		btnChange.click();
+		driver.findElement(By.xpath(btnChange)).click();
 		logger.info("Clicked on the button card change");
 		Thread.sleep(2000);
 	}
@@ -289,10 +291,10 @@ public class PO_HomePage extends ReUseAbleElement{
 	public void changeCardDetails(String cardHolderName,String cardNumber,String expirayAndCode,String zipCode) throws InterruptedException
 	{
 		try {
-			wait.until(ExpectedConditions.elementToBeClickable(btnChange));
+			Thread.sleep(5000);
 			clickOnChangeButton();
 			setCardHoldName(cardHolderName);
-			logger.info("Waiting to enter the card number, expiray , code and zip code manualy");
+			logger.info("Waiting for 15 seconds to enter the card number, expiray , code and zip code manualy");
 			Thread.sleep(15000);
 			String alertMsgContent=null;
 			boolean flag = ruae.clickOnBtnSave_1_RU();
@@ -306,14 +308,15 @@ public class PO_HomePage extends ReUseAbleElement{
 					Assert.assertTrue(false,"To check  card details changed or not");
 				}
 			}else{
-				Assert.assertTrue(false,"To check  card details changed or not");
 				clickOnCancelButton_1_RU();
+				Assert.assertTrue(false,"To check  card details changed or not");
 			}
 		}catch(Exception e) {
-			Assert.assertTrue(false,"changeCardDetails");
 			logger.info("Exceptin from changeCardDetails: "+e.getMessage());
+			Assert.assertTrue(false,"changeCardDetails");
 		}
-		
+		logger.info("...CHANGE CARD DETAILS TESTING DONE...");
 	}
+
 	
 }

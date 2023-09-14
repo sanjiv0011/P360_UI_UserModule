@@ -37,42 +37,29 @@ public class TC_Classes extends BaseClass{
 	String userEmailAddress = userEmail;
 	
 	
-	//TO LOGIN
-	@Test(priority = 1)
-	public void test_Login() throws InterruptedException {
-			lp = new PO_LoginPage(driver);
-			hp = lp.Login(userEmail,userPassword);
-	}
-	
 	//TO REGISTER FOR A CLASS
-	//@Test(priority = 2 , dependsOnMethods = "test_Login", dataProvider = fileNameOnly_Registration)
+	@Test(priority = 1, dataProvider = fileNameOnly_Registration)
 	public void test_RegisterClass(String time, String monthDate, String location, String region, String instructorName) throws InterruptedException, SQLException {
-			cp = callMeBeforePerformAnyAction();
-			hp = cp.registerClass(time,monthDate,location,region,instructorName,userEmailAddress);
+		cp = callMeBeforePerformAnyAction();
+		hp = cp.registerClass(time,monthDate,location,region,instructorName,userEmailAddress);
 	}
 		
 	//TO CANCEL REGISTERED CLASS
-	@Test(priority = 3 , dependsOnMethods = "test_Login", dataProvider = fileNameOnly_Cancelation)
+	@Test(priority = 2 , dataProvider = fileNameOnly_Cancelation)
 	public void test_CancelRegisteredClass(String dateAndTime) throws InterruptedException, SQLException {
-			cp = callMeBeforePerformAnyAction();
-			hp = cp.cancelRegisteredClass(dateAndTime,driver,userEmailAddress);
+		cp = callMeBeforePerformAnyAction();
+		hp = cp.cancelRegisteredClass(dateAndTime,driver,userEmailAddress);
 	}
+
 	
-	
-	//TO LOGOUT
-	//@Test(priority = 10 , dependsOnMethods = "test_Login")	// here zero or ten ensures least priority, so that this call happens at the last.
-	public void test_Logout() throws InterruptedException {	
-		hp.Logout();
-	}
-	
-	//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
+	//CALL ME IN EVERY @TEST METHODS EXCEPT
 	public PO_ClassesPage callMeBeforePerformAnyAction() throws InterruptedException {
 		//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE FIRST
+		hp = new PO_HomePage(driver);	//LOGIN DONE FROM THE BASE CLASS THAT'S WHY IT IS NECCESARY TO CATCH THE DRIVER AND PAGE OBJECTS
 		hp.clickMenuDashBoard_RU(); //MOVE THE DRIVER ON THE HOME PAGE
 		hp.clickMenuMyClasses();	//MOVE THE DRIVER ON THE MEMBERSHIP PAGE
-		Thread.sleep(4000);
-		//TO MEMBERSHIP PAGE OBJECTS
-		return new PO_ClassesPage(driver);	
+		Thread.sleep(2000);			//DRIVER WAIT FOR 2 SECONDS
+		return new PO_ClassesPage(driver);	//TO MEMBERSHIP PAGE OBJECTS
 	}
 	
 	//=========DATA PROVIDER CONCEPT========WHILE USING THIS PROVIDES THE EXCEL FIEL VARIABLE AS AN AGRUMENT IN THE TEST_METHODS======//

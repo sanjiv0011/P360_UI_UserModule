@@ -35,72 +35,45 @@ public class TC_Membership extends BaseClass{
 	String pauseStartDate = "18 September 2023";
 	String pauseEndDate = "25 September 2023";
 	String pauseReason = "Travel"; //"Other" and "Medical Reason"
-	
-	
-	
-	//TO LOGIN
-	@Test(priority = 1)
-	public void test_Login() throws InterruptedException {
-		try {
-			lp = new PO_LoginPage(driver);
-			hp = lp.Login(userEmail,userPassword);
-		}catch(Exception e) {}
-	}
-	
+
 	//TO CHANGE MEMBERSHIP
-	//@Test(priority = 2  , dependsOnMethods = "test_Login" , dataProvider = "TC_ChangeMembership")
+	@Test(priority = 1 , dataProvider = "TC_ChangeMembership")
 	public void test_ChangeMembership(String categoryName,String packageName,String radioButton,String membershipDate) throws Throwable {
-		try {
-			mp = callMeBeforePerformAnyAction();
-			hp = mp.changeMembership(userEmail,categoryName,packageName,radioButton, membershipDate);
-		}catch(Exception e) {}
+		mp = callMeBeforePerformAnyAction();
+		hp = mp.changeMembership(userEmail,categoryName,packageName,radioButton, membershipDate);
 	}
 	
 	//TO CHECK AGREED TERMS OF MEMBERSHIP
-	//@Test(priority = 3 , dependsOnMethods = "test_Login")
+	@Test(priority = 2)
 	public void test_CheckAgreedTerms() throws InterruptedException {
-		try {
-			mp = callMeBeforePerformAnyAction();
-			hp = mp.checkAgreedTerm();
-		}catch(Exception e) {}
+		mp = callMeBeforePerformAnyAction();
+		hp = mp.checkAgreedTerm();
 	}
 	
 	
 	//TO PAUSE MEMBERSHIP
-	@Test(priority = 4 ,dependsOnMethods = "test_Login", dataProvider = "TC_PauseMembership")
+	@Test(priority = 3 , dataProvider = "TC_PauseMembership")
 	public void test_PauseMembership(String pauseStartDate, String pauseEndDate, String pauseReason) throws Throwable {
-		try {
-			mp = callMeBeforePerformAnyAction();
-			hp = mp.pasueMembership(userEmail,pauseStartDate, pauseEndDate, pauseReason);
-		}catch(Exception e) {}
+		mp = callMeBeforePerformAnyAction();
+		hp = mp.pasueMembership(userEmail,pauseStartDate, pauseEndDate, pauseReason);
 	}
 	
 	//TO RESUME MEMBERSHIP
-	//@Test(priority = 5 ,dependsOnMethods = "test_Login")
+	@Test(priority = 4 )
 	public void test_ResumeMembership() throws InterruptedException, SQLException {
-		try {
-			mp = callMeBeforePerformAnyAction();
-			hp = mp.resumeMembership(userEmail);
-		}catch(Exception e) {}
+		mp = callMeBeforePerformAnyAction();
+		hp = mp.resumeMembership(userEmail);
 	}
-		
-	
-	//TO LOGOUT
-	@Test(priority = 10, dependsOnMethods = "test_Login" )	// here zero or ten ensures least priority, so that this call happens at the last.
-	public void test_Logout() throws InterruptedException {	
-		try {
-			hp.Logout();
-		}catch(Exception e) {}
-	}
-	
-	//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
+			
+	//CALL ME IN EVERY @TEST METHODS EXCEPT
 	public PO_MembershipPage callMeBeforePerformAnyAction() throws InterruptedException {
 		//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE FIRST
+		hp = new PO_HomePage(driver);	//LOGIN DONE FROM THE BASE CLASS THAT'S WHY IT IS NECCESARY TO CATCH THE DRIVER AND PAGE OBJECTS
 		hp.clickMenuDashBoard_RU(); //MOVE THE DRIVER ON THE HOME PAGE
 		hp.clickMenuMembership();	//MOVE THE DRIVER ON THE MEMBERSHIP PAGE
-		Thread.sleep(2000);
-		//TO MEMBERSHIP PAGE OBJECTS
-		return new PO_MembershipPage(driver);	
+		Thread.sleep(2000);			//DRIVER WAIT FOR 2 SECONDS
+		return new PO_MembershipPage(driver);	//TO MEMBERSHIP PAGE OBJECTS
+		
 	}
 	
 	//EXCEL FILE NAME ONLY(EXCEL FILE MUST PRESENT ONLY EXCELDATA FOLDER THEN ONLY IT IS ACCESS IT)

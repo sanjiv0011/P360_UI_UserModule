@@ -22,31 +22,17 @@ public class TC_Home extends BaseClass{
 	String CCVcode = "546";
 	String zipCode = "564665";
 	
-	
-	//TO LOGIN
-	@Test(priority = 1)
-	public void test_Login() throws InterruptedException {
-			lp = new PO_LoginPage(driver);
-			hp = lp.Login(userEmail,userPassword);
-	}
-	
 	//TO CHECK HOME PAGE ELEMENT
-	@Test(priority = 2)
+	@Test(priority = 1)
 	public void test_HomePageElement() throws InterruptedException {
 			hp = new PO_HomePage(driver);
 			hp.checkClickActionOnHomePageElement();
 	}
 
 	//TO CHENGE THE CARD DETAILS
-	@Test(priority = 3)
+	@Test(priority = 2)
 	public void test_ChangeCardDetails() throws InterruptedException {
 			hp.changeCardDetails(cardHolderName,expiary,CCVcode,zipCode);
 	}
-	
-	//TO LOGOUT
-	@Test(priority = 10 , dependsOnMethods = "test_Login")	// here zero or ten ensures least priority, so that this call happens at the last.
-	public void test_Logout() throws InterruptedException {	
-		hp.Logout();
-	}
-	
+
 }

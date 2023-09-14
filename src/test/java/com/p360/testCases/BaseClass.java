@@ -10,14 +10,17 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 import com.p360.pageObject.PO_HomePage;
 import com.p360.pageObject.PO_LoginPage;
+import com.p360.utilities.ExtentReport;
 import com.p360.utilities.ReadConfigFiles;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -28,8 +31,6 @@ public class BaseClass {
 	public static WebDriver driver;
 	public PO_HomePage hp;
 	public PO_LoginPage lp;
-
-	
 	//TO LOG THE MESSAGES ON THE CONSOLE AND LOG FILES BOTH
 	public Logger logger = LogManager.getLogger(this.getClass());
 	
@@ -50,9 +51,10 @@ public class BaseClass {
 	
 	// to select the driver
 	@Parameters("browser")
-	@BeforeClass
-	public void setup(String br) throws InterruptedException
-	{
+	@BeforeTest
+	public void Setup(String br) throws InterruptedException
+	{ 	System.out.println("Current thread name: "+Thread.currentThread().getName());
+	
 		logger.info("Base class started...");
 		
 		if(br.equals("chrome"))
@@ -100,15 +102,27 @@ public class BaseClass {
 		driver.manage().window().maximize();
 		logger.info("Maximize the window");
 		//Thread.sleep(5000);
-		
+
 		System.out.println("Login user Email: "+userEmail+" and Password: "+userPassword);
 		
 	}
 	
+	//TO LOGIN
+	@BeforeClass()
+	public void Login() throws InterruptedException {
+		lp = new PO_LoginPage(driver);
+		hp = lp.Login(userEmail,userPassword);
+	}
+		
+	//TO LOGOUT
+	@AfterClass()	
+	public void Logout() throws InterruptedException {	
+		hp.Logout();
+	}
 		
 	//TO CLOSE THE DIRVER
-	@AfterClass
-	public void teardown()
+	@AfterTest
+	public void Teardown()
 	{
 		driver.quit();
 		logger.info("Driver shutdown");

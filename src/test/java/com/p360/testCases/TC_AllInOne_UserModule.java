@@ -46,33 +46,26 @@ public class TC_AllInOne_UserModule extends BaseClass{
 	String expiary = "34/45";
 	String CCVcode = "546";
 	String zipCode = "564665";
-	
-	
-	//TO LOGIN
-	@Test(priority = 1)
-	public void test_Login() throws InterruptedException {
-			lp = new PO_LoginPage(driver);
-			hp = lp.Login(userEmail,userPassword);
-	}
-	
+
 	//==========START=======HOME PAGE TESTING============//
 	//TO CHECK HOME PAGE ELEMENT
-	@Test(priority = 2)
+	@Test(priority = 1)
 	public void test_HomePageElement() throws InterruptedException {
+		hp = new PO_HomePage(driver);	//LOGIN DONE FROM THE BASE CLASS THAT'S WHY IT IS NECCESARY TO CATCH THE DRIVER AND PAGE OBJECTS
 		hp.checkClickActionOnHomePageElement();
 	}
 
 	//TO CHENGE THE CARD DETAILS
-	@Test(priority = 3)
+	@Test(priority = 2)
 	public void test_ChangeCardDetails() throws InterruptedException {
-			hp.changeCardDetails(cardHolderName,expiary,CCVcode,zipCode);
+		hp.changeCardDetails(cardHolderName,expiary,CCVcode,zipCode);
 	}
 	//==========END=======MEMBERSHIP PAGE TESTING============//	
 		
 		
 	//==========START=======MEMBERSHIP PAGE TESTING============//
 	//TO CHANGE MEMBERSHIP
-	@Test(priority = 6, dataProvider = "TC_ChangeMembership")
+	//@Test(priority = 5, dataProvider = "TC_ChangeMembership")
 	public void test_ChangeMembership(String categoryName,String packageName,String radioButton,String membershipDate) throws Throwable {
 		mp = callMeBeforePerformAnyAction_TC_Membership();
 		hp = mp.changeMembership(userEmail,categoryName,packageName,radioButton, membershipDate);
@@ -80,7 +73,7 @@ public class TC_AllInOne_UserModule extends BaseClass{
 	}
 	
 	//TO CHECK AGREED TERMS OF MEMBERSHIP
-	@Test(priority = 7)
+	//@Test(priority = 6)
 	public void test_CheckAgreedTerms() throws InterruptedException {
 		mp = callMeBeforePerformAnyAction_TC_Membership();
 		hp = mp.checkAgreedTerm();
@@ -88,14 +81,14 @@ public class TC_AllInOne_UserModule extends BaseClass{
 	
 	
 	//TO PAUSE MEMBERSHIP
-	@Test(priority = 8, dataProvider = "TC_PauseMembership")
+	//@Test(priority = 7, dataProvider = "TC_PauseMembership")
 	public void test_PauseMembership(String pauseStartDate, String pauseEndDate, String pauseReason) throws Throwable {
 		mp = callMeBeforePerformAnyAction_TC_Membership();
 		hp = mp.pasueMembership(userEmail,pauseStartDate, pauseEndDate, pauseReason);
 	}
 	
 	//TO RESUME MEMBERSHIP
-	@Test(priority = 9)
+	//@Test(priority = 8)
 	public void test_ResumeMembership() throws InterruptedException, SQLException {
 		mp = callMeBeforePerformAnyAction_TC_Membership();
 		hp = mp.resumeMembership(userEmail);
@@ -104,6 +97,7 @@ public class TC_AllInOne_UserModule extends BaseClass{
 	//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
 	public PO_MembershipPage callMeBeforePerformAnyAction_TC_Membership() throws InterruptedException {
 		//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE FIRST
+		hp = new PO_HomePage(driver);	//LOGIN DONE FROM THE BASE CLASS THAT'S WHY IT IS NECCESARY TO CATCH THE DRIVER AND PAGE OBJECTS
 		hp.clickMenuDashBoard_RU(); //MOVE THE DRIVER ON THE HOME PAGE
 		hp.clickMenuMembership();	//MOVE THE DRIVER ON THE MEMBERSHIP PAGE
 		Thread.sleep(2000);
@@ -138,30 +132,28 @@ public class TC_AllInOne_UserModule extends BaseClass{
   	
 	//==========START=======CLASSES PAGE TESTING============//
 	//TO REGISTER FOR A CLASS
-  	@Test(priority = 4, dataProvider = fileNameOnly_Registration)
+  	//@Test(priority = 3, dataProvider = fileNameOnly_Registration)
   	public void test_RegisterClass(String time, String monthDate, String location, String region, String instructorName) throws InterruptedException, SQLException {
-  			cp = callMeBeforePerformAnyAction_TC_Classes();
-  	  		hp = cp.registerClass(time,monthDate,location,region,instructorName,userEmail);
-  		
+		cp = callMeBeforePerformAnyAction_TC_Classes();
+  		hp = cp.registerClass(time,monthDate,location,region,instructorName,userEmail);
   	}
   		
   	//TO CANCEL REGISTERED CLASS
-  	@Test(priority = 5, dataProvider = fileNameOnly_Cancelation)
+  	//@Test(priority = 4, dataProvider = fileNameOnly_Cancelation)
   	public void test_CancelRegisteredClass(String dateAndTime) throws InterruptedException, SQLException {
-  			cp = callMeBeforePerformAnyAction_TC_Classes();
-  	  		hp = cp.cancelRegisteredClass(dateAndTime,driver,userEmail);
-  
+		cp = callMeBeforePerformAnyAction_TC_Classes();
+  		hp = cp.cancelRegisteredClass(dateAndTime,driver,userEmail);
   	}
   	
   	//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
   	public PO_ClassesPage callMeBeforePerformAnyAction_TC_Classes() throws InterruptedException {
   		//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE FIRST
+  		hp = new PO_HomePage(driver);	//LOGIN DONE FROM THE BASE CLASS THAT'S WHY IT IS NECCESARY TO CATCH THE DRIVER AND PAGE OBJECTS
   		hp.clickMenuDashBoard_RU(); //MOVE THE DRIVER ON THE HOME PAGE
   		hp.clickMenuMyClasses();	//MOVE THE DRIVER ON THE MEMBERSHIP PAGE
   		driver.navigate().refresh();
   		Thread.sleep(4000);
-  		//TO MEMBERSHIP PAGE OBJECTS
-  		return new PO_ClassesPage(driver);	
+  		return new PO_ClassesPage(driver);	//TO MEMBERSHIP PAGE OBJECTS
   	}
   	
   	//=========DATA PROVIDER CONCEPT========WHILE USING THIS PROVIDES THE EXCEL FIEL VARIABLE AS AN AGRUMENT IN THE TEST_METHODS======//
@@ -189,12 +181,5 @@ public class TC_AllInOne_UserModule extends BaseClass{
 	//======END=====DATA READING FORM THE EXCEL FILE=====IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME======//
   	
   	//==========END=======CLASSES PAGE TESTING============//
-  	
-  	
-  	//TO LOGOUT
-  	@Test(priority = 10)	// here zero or ten ensures least priority, so that this call happens at the last.
-  	public void test_Logout() throws InterruptedException {	
-  		hp.Logout();
-  	}
 	
 }
