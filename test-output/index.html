@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>D:\Sanjiv_QA\Eclipse Project\P360_UI_UserModule\P360_UI_UserModule\testng.xml</span>
+                    <span>D:\Sanjiv_QA\Eclipse Project\P360_UI_UserModule\P360_UI_UserModule\TestNG.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,36 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">8 methods, 4 failed,   4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.p360.testCases.TC_Home" class="method navigator-link" hash-for-method="test_ChangeCardDetails">test_ChangeCardDetails</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.p360.testCases.TC_Membership" class="method navigator-link" hash-for-method="test_PauseMembership(25 September 2023, 30 October 2023, Travel)">test_PauseMembership(25 September 2023, 30 October 2023, Travel)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.p360.testCases.TC_Classes" class="method navigator-link" hash-for-method="test_RegisterClass(2:00 AM, SEP 16 SAT, WESTWOOD, WESTWOOD, All)">test_RegisterClass(2:00 AM, SEP 16 SAT, WESTWOOD, WESTWOOD, All)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.p360.testCases.TC_Membership" class="method navigator-link" hash-for-method="test_ResumeMembership">test_ResumeMembership</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,12 +132,22 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.p360.testCases.TC_AllInOne_UserModule" class="method navigator-link" hash-for-method="test_ChangeCardDetails">test_ChangeCardDetails</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.p360.testCases.TC_Classes" class="method navigator-link" hash-for-method="test_CancelRegisteredClass(Sep 17, 2023 | 09:00 PM)">test_CancelRegisteredClass(Sep 17, 2023 | 09:00 PM)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.p360.testCases.TC_AllInOne_UserModule" class="method navigator-link" hash-for-method="test_HomePageElement">test_HomePageElement</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.p360.testCases.TC_Membership" class="method navigator-link" hash-for-method="test_ChangeMembership(All, Dynamic Brand Strategist, The end of the current period, 15 September 2023)">test_ChangeMembership(All, Dynamic Brand Strategist, The end of the current period, 15 September 2023)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.p360.testCases.TC_Membership" class="method navigator-link" hash-for-method="test_CheckAgreedTerms">test_CheckAgreedTerms</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.p360.testCases.TC_Home" class="method navigator-link" hash-for-method="test_HomePageElement">test_HomePageElement</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -123,10 +162,72 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.p360.testCases.TC_AllInOne_UserModule</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.p360.testCases.TC_Classes</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_RegisterClass(2:00 AM, SEP 16 SAT, WESTWOOD, WESTWOOD, All)">
+                  </a> <!-- test_RegisterClass(2:00 AM, SEP 16 SAT, WESTWOOD, WESTWOOD, All) -->
+                  <span class="method-name">test_RegisterClass</span>
+                  <span class="parameters">(2:00 AM,SEP 16 SAT,WESTWOOD,WESTWOOD,All)</span>
+                  <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
+	You want to register a class but Register Class Button not present expected [true] but found [false]
+	at com.p360.pageObject.PO_ClassesPage.registerClass(PO_ClassesPage.java:500)
+	at com.p360.testCases.TC_Classes.test_RegisterClass(TC_Classes.java:46)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.p360.testCases.TC_Membership</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_PauseMembership(25 September 2023, 30 October 2023, Travel)">
+                  </a> <!-- test_PauseMembership(25 September 2023, 30 October 2023, Travel) -->
+                  <span class="method-name">test_PauseMembership</span>
+                  <span class="parameters">(25 September 2023,30 October 2023,Travel)</span>
+                  <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
+	To check the pause membership expected [Pause Membership Successfully] but found [Memberships can only be paused once in a quarter]
+	at com.p360.pageObject.PO_MembershipPage.pasueMembership(PO_MembershipPage.java:505)
+	at com.p360.testCases.TC_Membership.test_PauseMembership(TC_Membership.java:60)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_ResumeMembership">
+                  </a> <!-- test_ResumeMembership -->
+                  <span class="method-name">test_ResumeMembership</span>
+                  <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
+	Is clickOnResumeMembership Displayed expected [false] but found [true],
+	Is clickOnBtnResumeMyMembership button Displayed expected [false] but found [true],
+	To check is click on the confirm button or not expected [false] but found [true]
+	at com.p360.pageObject.PO_MembershipPage.resumeMembership(PO_MembershipPage.java:535)
+	at com.p360.testCases.TC_Membership.test_ResumeMembership(TC_Membership.java:67)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.p360.testCases.TC_Home</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -134,8 +235,62 @@
                   <a name="test_ChangeCardDetails">
                   </a> <!-- test_ChangeCardDetails -->
                   <span class="method-name">test_ChangeCardDetails</span>
+                  <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
+	To check  card details changed or not expected [true] but found [false]
+	at com.p360.pageObject.PO_HomePage.changeCardDetails(PO_HomePage.java:323)
+	at com.p360.testCases.TC_Home.test_ChangeCardDetails(TC_Home.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.p360.testCases.TC_Classes</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_CancelRegisteredClass(Sep 17, 2023 | 09:00 PM)">
+                  </a> <!-- test_CancelRegisteredClass(Sep 17, 2023 | 09:00 PM) -->
+                  <span class="method-name">test_CancelRegisteredClass</span>
+                  <span class="parameters">(Sep 17, 2023 | 09:00 PM)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.p360.testCases.TC_Membership</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_ChangeMembership(All, Dynamic Brand Strategist, The end of the current period, 15 September 2023)">
+                  </a> <!-- test_ChangeMembership(All, Dynamic Brand Strategist, The end of the current period, 15 September 2023) -->
+                  <span class="method-name">test_ChangeMembership</span>
+                  <span class="parameters">(All,Dynamic Brand Strategist,The end of the current period,15 September 2023)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_CheckAgreedTerms">
+                  </a> <!-- test_CheckAgreedTerms -->
+                  <span class="method-name">test_CheckAgreedTerms</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.p360.testCases.TC_Home</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
                   <a name="test_HomePageElement">
@@ -148,7 +303,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\Sanjiv_QA\Eclipse Project\P360_UI_UserModule\P360_UI_UserModule\testng.xml</span>
+            <span class="header-content">D:\Sanjiv_QA\Eclipse Project\P360_UI_UserModule\P360_UI_UserModule\TestNG.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -161,7 +316,9 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;P360_UI_USER_MODULE&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.p360.testCases.TC_AllInOne_UserModule&quot;/&gt;
+      &lt;class name=&quot;com.p360.testCases.TC_Home&quot;/&gt;
+      &lt;class name=&quot;com.p360.testCases.TC_Membership&quot;/&gt;
+      &lt;class name=&quot;com.p360.testCases.TC_Classes&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- P360_UI_USER_MODULE --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -175,7 +332,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">P360_UI_USER_MODULE (1 class)</span>
+                <span class="test-name">P360_UI_USER_MODULE (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -201,20 +358,44 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(8);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test_HomePageElement')
-data.setCell(0, 2, 'com.p360.testCases.TC_AllInOne_UserModule')
-data.setCell(0, 3, 45721);
+data.setCell(0, 1, 'test_CancelRegisteredClass')
+data.setCell(0, 2, 'com.p360.testCases.TC_Classes')
+data.setCell(0, 3, 83229);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'test_ChangeCardDetails')
-data.setCell(1, 2, 'com.p360.testCases.TC_AllInOne_UserModule')
-data.setCell(1, 3, 30312);
+data.setCell(1, 1, 'test_HomePageElement')
+data.setCell(1, 2, 'com.p360.testCases.TC_Home')
+data.setCell(1, 3, 46437);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'test_ChangeCardDetails')
+data.setCell(2, 2, 'com.p360.testCases.TC_Home')
+data.setCell(2, 3, 46173);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'test_PauseMembership')
+data.setCell(3, 2, 'com.p360.testCases.TC_Membership')
+data.setCell(3, 3, 40917);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'test_RegisterClass')
+data.setCell(4, 2, 'com.p360.testCases.TC_Classes')
+data.setCell(4, 3, 38680);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'test_ChangeMembership')
+data.setCell(5, 2, 'com.p360.testCases.TC_Membership')
+data.setCell(5, 3, 32472);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'test_CheckAgreedTerms')
+data.setCell(6, 2, 'com.p360.testCases.TC_Membership')
+data.setCell(6, 3, 14695);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'test_ResumeMembership')
+data.setCell(7, 2, 'com.p360.testCases.TC_Membership')
+data.setCell(7, 3, 8960);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 5 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -229,9 +410,27 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">4 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.p360.testCases.TC_Classes</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">Teardown</span>
+                <br/>
+                <span class="ignored-method-name">Setup</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.p360.testCases.TC_Membership</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">Setup</span>
+                <br/>
+                <span class="ignored-method-name">Teardown</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -240,30 +439,87 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.p360.testCases.TC_AllInOne_UserModule</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.p360.testCases.TC_Home</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">setup(chrome)</span>
+                <span class="method-name">Setup(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
-                <span class="method-name">test_Login</span>
-                <span class="method-start">3949 ms</span>
+                <span class="method-name">Login</span>
+                <span class="method-start">3931 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">test_HomePageElement</span>
-                <span class="method-start">15568 ms</span>
+                <span class="method-start">17143 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">test_ChangeCardDetails</span>
-                <span class="method-start">61314 ms</span>
+                <span class="method-start">63600 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
-                <span class="method-name">test_Logout</span>
-                <span class="method-start">91638 ms</span>
+                <span class="method-name">Logout</span>
+                <span class="method-start">110030 ms</span>
               </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.p360.testCases.TC_Membership</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">Login</span>
+                <span class="method-start">119544 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">test_ChangeMembership(All, Dynamic Brand Strategist, The end of the current period, 15 September 2023)</span>
+                <span class="method-start">129651 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_CheckAgreedTerms</span>
+                <span class="method-start">162129 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">test_PauseMembership(25 September 2023, 30 October 2023, Travel)</span>
+                <span class="method-start">177006 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">test_ResumeMembership</span>
+                <span class="method-start">218383 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">Logout</span>
+                <span class="method-start">227520 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.p360.testCases.TC_Classes</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">Login</span>
+                <span class="method-start">237457 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">test_RegisterClass(2:00 AM, SEP 16 SAT, WESTWOOD, WESTWOOD, All)</span>
+                <span class="method-start">250976 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_CancelRegisteredClass(Sep 17, 2023 | 09:00 PM)</span>
+                <span class="method-start">289963 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">Logout</span>
+                <span class="method-start">373194 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.p360.testCases.TC_Home</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
-                <span class="method-name">teardown</span>
-                <span class="method-start">100551 ms</span>
+                <span class="method-name">Teardown</span>
+                <span class="method-start">381316 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 
@@ -12,6 +13,7 @@ public class Action_Activate {
 	
 	public static final Logger logger = LogManager.getLogger(Action_Activate.class);
 	public ReUseAbleElement ruae;
+	public static SoftAssert softAssert = new SoftAssert();
 	
 	public boolean activate(String searchKey,WebDriver driver, String message) throws InterruptedException
 	{
@@ -27,7 +29,7 @@ public class Action_Activate {
     	    	//CHECK THE ACTIVATE CONFIRMATIONS MESSAGES
     	    	String alretMsg = ruae.snakeAlertMessagesDisplayedContent_RU();
     	    	if(alretMsg.equals(message)) {
-    	    		Assert.assertEquals(alretMsg, message,"ACTIVATED successfully");
+    	    		softAssert.assertEquals(alretMsg, message,"ACTIVATED successfully");
     	    		logger.info("===>>> "+message);
     	    		flag = true;
     	    	}else {
@@ -35,6 +37,7 @@ public class Action_Activate {
     	    	}
     		}
     	}
+    	softAssert.assertAll();
     	return flag;
 	}
 	

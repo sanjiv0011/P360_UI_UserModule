@@ -10,6 +10,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
+
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 import com.p360.pageObject.PO_HomePage;
 import com.p360.pageObject.PO_LoginPage;
@@ -25,6 +27,9 @@ public class PO_Main_HomePage extends ReUseAbleElement{
 	public WebDriverWait wait;
 	public PO_LoginPage lp;
 	public Actions action;
+	public SoftAssert softAssert = new SoftAssert();
+	
+	
 	//HOMEPAGE CONSTRUCTOR CREATION
 	public PO_Main_HomePage(WebDriver driver) {	
 		super(driver);
@@ -231,6 +236,7 @@ public class PO_Main_HomePage extends ReUseAbleElement{
 		clickOntabLinks();
 		clickOntabThisWeek();
 		clickOntabDashboard();
+		softAssert.assertAll();
 		return new PO_HomePage(driver);
 		
 	}

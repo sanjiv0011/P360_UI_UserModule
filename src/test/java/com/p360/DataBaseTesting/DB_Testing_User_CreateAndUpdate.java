@@ -6,15 +6,14 @@ import java.sql.SQLException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import com.p360.dataBase.DatabaseConnectionAndQuery_GenericMethods;
 
 public class DB_Testing_User_CreateAndUpdate {
 	public WebDriver driver;
+	public SoftAssert softAssert = new SoftAssert();
 	public static final Logger logger = LogManager.getLogger(DB_Testing_User_CreateAndUpdate.class);
 		
 		//CROSS VERIFY DATABASE ONCE NEW USER CREATED
@@ -51,18 +50,17 @@ public class DB_Testing_User_CreateAndUpdate {
 						String db_userRole = resultsetUser.getString("userRoles");
 						
 						   
-						Assert.assertEquals(db_userRole, "{"+userRole+"}", "To match user role");
+						softAssert.assertEquals(db_userRole, "{"+userRole+"}", "To match user role");
 						//CROSS VERIFICATIONS(IT WILL MATCH USER INPUT DATA WITH DATABASE ENTRY)
-						Assert.assertEquals(db_userNameToCreate, userNameToCreate, "To match userNameToCreate");
-						Assert.assertEquals(db_firstName, firstName, "To match firstName");
-						Assert.assertEquals(db_lastName, lastName, "To match lastName");
-						Assert.assertEquals(db_emailAddress, emailAddress, "To match emailAddress");
+						softAssert.assertEquals(db_userNameToCreate, userNameToCreate, "To match userNameToCreate");
+						softAssert.assertEquals(db_firstName, firstName, "To match firstName");
+						softAssert.assertEquals(db_lastName, lastName, "To match lastName");
+						softAssert.assertEquals(db_emailAddress, emailAddress, "To match emailAddress");
 						logger.info("===>>> test_DB_createUser: DataBase Data Cross Verification matched");
-						
+						softAssert.assertAll();
 						break;
 				}
 			}
-
-		}
-		
+			softAssert.assertAll();
+			}
 }

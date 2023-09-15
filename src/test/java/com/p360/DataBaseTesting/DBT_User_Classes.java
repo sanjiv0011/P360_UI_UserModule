@@ -4,21 +4,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Year;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.json.JSONObject;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import com.p360.dataBase.DatabaseConnectionAndQuery_GenericMethods;
 
 public class DBT_User_Classes {
 	public WebDriver driver;
+	public static SoftAssert softAssert = new SoftAssert();
 	public static final Logger logger = LogManager.getLogger(DBT_User_Classes.class);
 		
 		//CROSS VERIFY DATABASE ONCE NEW CLIENT CREATED
@@ -29,7 +28,6 @@ public class DBT_User_Classes {
 				logger.info("test_DBT_RegisterAndCacleClass method called and Caller method name: "+callerMethodName);
 			
 				Thread.sleep(2000); //WAITNG TO AVOID DATA INCONSISTANCY PROBLEM
-				int count =0;
 				logger.info("User given email: "+userEmailAddress);
 				String querryFindUniqueUser = "SELECT * FROM public.user WHERE email_address = "+"'"+userEmailAddress+"'"+" ORDER BY updated_at";
 				logger.info("Qurry string: "+querryFindUniqueUser);
@@ -82,11 +80,12 @@ public class DBT_User_Classes {
 						
 						//CROSS VERIFICATIONS(IT WILL MATCH USER INPUT DATA WITH DATABASE ENTRY)
 						if(callerMethodName.equals("registerClass")) {
-							Assert.assertEquals(isClassCanceled, false, "To match registered class status");
+							softAssert.assertEquals(isClassCanceled, false, "To match registered class status");
 						}else if(callerMethodName.equals("cancelRegisteredClass")) {
-							Assert.assertEquals(isClassCanceled, true, "To match canceled class status");
+							softAssert.assertEquals(isClassCanceled, true, "To match canceled class status");
 						}
-						Assert.assertEquals(class_date_time, outputDate, "To class date and time of the registered class");
+						
+						softAssert.assertEquals(class_date_time, outputDate, "To class date and time of the registered class");
 						logger.info("===>>> DataBase testing DONE");
 
 				}
@@ -109,9 +108,8 @@ public class DBT_User_Classes {
 		            e.printStackTrace();
 			        }
 				    
+		       softAssert.assertAll();
 			   return outputDate2;
-			
-
 		}
 	
 		
@@ -162,12 +160,13 @@ public class DBT_User_Classes {
 						boolean isClassCanceled = resultsetCancelClass.getBoolean("is_canceled");
 						//CROSS VERIFICATIONS(IT WILL MATCH USER INPUT DATA WITH DATABASE ENTRY)
 						logger.info("===>>> DataBase date time: "+class_date_time+ " matched with the requested date time: "+outputDate+" and Database is_canceled status: "+isClassCanceled);
-						Assert.assertEquals(isClassCanceled,true, "To match canceled class status");
+						softAssert.assertEquals(isClassCanceled,true, "To match canceled class status");
 						break;
 					}
 					logger.info("===>>> DataBase testing DONE");
 
 				}
+				softAssert.assertAll();
 		}
 		
 }

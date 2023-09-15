@@ -15,6 +15,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 import com.p360.pageObject.PO_LoginPage;
@@ -31,6 +32,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 		public WebDriverWait wait;
 		public PO_LoginPage lp;
 		public Actions action;
+		public SoftAssert softAssert = new SoftAssert();
 		
 		//HOMEPAGE CONSTRUCTOR CREATION
 		public PO_Main_UsersPage(WebDriver driver) {	
@@ -166,11 +168,12 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   			Thread.sleep(1000);
   			String alertMsg = snakeAlertMessagesDisplayedContent_RU();
   			if(alertMsg.equals(alertMsgMemberhsipPurchagedSuccessfully)) {
-  				Assert.assertEquals(alertMsg,alertMsgMemberhsipPurchagedSuccessfully,"Check user added successfully");
+  				softAssert.assertEquals(alertMsg,alertMsgMemberhsipPurchagedSuccessfully,"Check user added successfully");
   				logger.info("===>>> "+alertMsg);
   			}else {
   				logger.info("Alert Message displayed: "+alertMsgMemberhsipPurchagedSuccessfully);
   			}
+  			softAssert.assertAll();
   			return new PO_Main_HomePage(driver);
   		}
   		

@@ -8,12 +8,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 
 public class MyCalendarPicker {
 	
 	//VARIABLE AND CONSTRUCTER DECLARATIONS
 	public static final Logger logger = LogManager.getLogger(MyCalendarPicker.class);
 	static Actions action;
+	public static SoftAssert softAssert = new SoftAssert();
 	
 	 public static void moveToCorrectDateInCalendarAndClickOnContentMonthView(WebDriver driver, String dateValue,String dateContent, List<WebElement> path_DateList, List<WebElement> path_DateListContent,WebElement path_showMoreBtn, List<WebElement> path_listShowMoreContent) throws InterruptedException 
 	    {		

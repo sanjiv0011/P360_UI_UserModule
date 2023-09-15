@@ -8,15 +8,11 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.CacheLookup;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import io.reactivex.rxjava3.functions.Consumer;
 
@@ -25,6 +21,7 @@ public class DatePicker{
 	public static final Logger logger = LogManager.getLogger(DatePicker.class);
 	public static Actions action;
 	public static WebDriverWait wait;
+	public static SoftAssert softAssert = new SoftAssert();
 	// Create a JavascriptExecutor instance
     public static JavascriptExecutor js;
 	
@@ -181,7 +178,7 @@ public class DatePicker{
 				                Thread.sleep(1000);
 				                break;
 			                }catch(Exception e) {
-			                	Assert.assertEquals(flag2, true,"Check date is click able or not");
+			                	softAssert.assertEquals(flag2, true,"Check date is click able or not");
 			                	logger.info("Exception from DatePicker_GenericMethod_WhenYearAndDateListPresent: "+e.getMessage());
 			                }
 			            }
@@ -191,7 +188,7 @@ public class DatePicker{
 			        }
 			    	Thread.sleep(1000);
 		    	}catch(Exception e) {
-		    		Assert.assertTrue(false,"To check the date");
+		    		softAssert.assertTrue(false,"To check the date");
 		    		logger.info("Exception from DatePicker_GenericMethod_WhenYearAndDateListPresent: "+e.getMessage());
 		    	}
 			}
@@ -367,7 +364,7 @@ public class DatePicker{
 		        //TO SELECT THE YEAR
 	        	if(Integer.parseInt(year) == Integer.parseInt(yr)) {
 	        		logger.info("Year Matched: "+year);
-	        		Assert.assertEquals(year, yr,"To match year value: ");
+	        		softAssert.assertEquals(year, yr,"To match year value: ");
 	        	}else {
 	        		while(Integer.parseInt(year)>Integer.parseInt(yr)) {
 		        		try {driver.findElement(By.xpath(nextButton_address)).click();
@@ -451,7 +448,7 @@ public class DatePicker{
 		            logger.info("selected month name is: " + monthArray[inputMonth-1]);
 		        }else if(displayedMonth != inputMonth) {
 		        	logger.info("Month not selected");
-		        	Assert.assertTrue(false,"User given month is not select-able: ");
+		        	softAssert.assertTrue(false,"User given month is not select-able: ");
 		        }
 		       
 		        
@@ -493,23 +490,23 @@ public class DatePicker{
 		                    try {
 			                    if(dateCssValue[0].equals("animation")) {
 			                    	logger.info("User given date is not clickable: "+dt);
-			                    	Assert.assertTrue(false,"User given date is not clickable: "+dt+" ==>>");
+			                    	softAssert.assertTrue(false,"User given date is not clickable: "+dt+" ==>>");
 			                    }else if(dateCssValue[0].equals("background") || dateCssValue[0].equals("baseline") ){
 			                    	Thread.sleep(500);
 			                    	dateElement.click();
 			                    	flag2 = true;
 			                    	logger.info("Clicked on the given date: "+dt);
 			                    	Thread.sleep(500);
-			                    	Assert.assertTrue(true,"User given date is clickable: "+dt+" ==>>");
+			                    	softAssert.assertTrue(true,"User given date is clickable: "+dt+" ==>>");
 			                    }
 		                	}catch(AssertionError ae) {
 			                	logger.info("AssertionError while date selection: "+ae.getMessage());
-			                	Assert.assertTrue(flag2,"AssertionError:- User given date is NOT clickable: "+dt+" ==>>");
+			                	softAssert.assertTrue(flag2,"AssertionError:- User given date is NOT clickable: "+dt+" ==>>");
 			                }
 		                    
 		                }catch(Exception  e) {
 		                	logger.info("Excepton while date selection: "+e.getMessage());
-		                	Assert.assertTrue(flag2,"Exception:- User given date is NOT clickable: "+dt+" ==>>");
+		                	softAssert.assertTrue(flag2,"Exception:- User given date is NOT clickable: "+dt+" ==>>");
 		                }
 		            }
 		        }
@@ -579,10 +576,10 @@ public class DatePicker{
   	  			dateHolder.sendKeys(yr);
   	  			Thread.sleep(300);
   			}catch(Exception e) {
-  				Assert.assertTrue(false,"To check the date");
+  				softAssert.assertTrue(false,"To check the date");
   				logger.info("Exception from setDateByDirectSendingDateVauleInTheTextBox: "+e.getMessage());
   			}
-
+  			softAssert.assertAll();
   		}
   		
   		

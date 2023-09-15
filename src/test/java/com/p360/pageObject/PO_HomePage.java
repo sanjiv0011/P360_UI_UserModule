@@ -16,7 +16,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
+import org.testng.asserts.SoftAssert;
 
 import com.p360.DataBaseTesting.DBT_User_Membership;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
@@ -32,6 +32,7 @@ public class PO_HomePage extends ReUseAbleElement{
 	public WebDriverWait wait;
 	public PO_LoginPage lp;
 	public Actions action;
+	public SoftAssert softAssert = new SoftAssert();
 	
 	//HOMEPAGE CONSTRUCTOR CREATION
 	public PO_HomePage(WebDriver driver) {	
@@ -230,17 +231,19 @@ public class PO_HomePage extends ReUseAbleElement{
 			wait.until(ExpectedConditions.elementToBeClickable(lp.btnLogin));
 			Thread.sleep(500);
 			if(driver.getPageSource().contains("Performance360")){
-				Assert.assertTrue(true);
+				softAssert.assertTrue(true);
 				logger.info("... LOGOUT DONE ...");
 			}else{
-				Assert.assertTrue(false);
+				softAssert.assertTrue(false);
 				logger.info("!!! LOGOUT FAILEED !!!");
 			}
 		}catch(Exception e) {
 			logger.info("Logout Exception: "+e.getMessage());
-			Assert.assertTrue(false,"After logout it lookin for [Performance360] text");
+			softAssert.assertTrue(false,"After logout it lookin for [Performance360] text");
 		}
+		softAssert.assertAll();
 		return new PO_LoginPage(driver);
+		
 	}
 	
 	//TO CHECK THE HOME PAGE ELEMENT
@@ -285,6 +288,7 @@ public class PO_HomePage extends ReUseAbleElement{
 			
 			logger.info("...HOME PAGE ELEMENT TESTING DONE...");
 		}catch(Exception e) {}
+		softAssert.assertAll();
 	}
 	
 	//TO CHENGE THE CARD DETAILS
@@ -302,20 +306,21 @@ public class PO_HomePage extends ReUseAbleElement{
 			{	alertMsgContent = snakeAlertMessagesDisplayedContent_RU();
 				if(alertMsgContent != null && alertMsgContent.equals(alertMsgCardAddedSuccesfully)) {
 					logger.info("===>>> User card details changed successfully");
-					Assert.assertEquals(alertMsgContent,alertMsgCardAddedSuccesfully ,"To check  card details changed or not");
+					softAssert.assertEquals(alertMsgContent,alertMsgCardAddedSuccesfully ,"To check  card details changed or not");
 				}else {
 					driver.navigate().back();
-					Assert.assertTrue(false,"To check  card details changed or not");
+					softAssert.assertTrue(false,"To check  card details changed or not");
 				}
 			}else{
 				clickOnCancelButton_1_RU();
-				Assert.assertTrue(false,"To check  card details changed or not");
+				softAssert.assertTrue(false,"To check  card details changed or not");
 			}
 		}catch(Exception e) {
 			logger.info("Exceptin from changeCardDetails: "+e.getMessage());
-			Assert.assertTrue(false,"changeCardDetails");
+			softAssert.assertTrue(false,"changeCardDetails");
 		}
 		logger.info("...CHANGE CARD DETAILS TESTING DONE...");
+		softAssert.assertAll();
 	}
 
 	

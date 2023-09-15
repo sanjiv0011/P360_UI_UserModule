@@ -15,6 +15,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 
 import com.p360.projectUtility.TimePicker;
 
@@ -26,6 +27,7 @@ public class ReUseAbleElement {
 	public static final Logger logger = LogManager.getLogger(ReUseAbleElement.class);
 	public static WebDriverWait wait,waitAlert = null;
 	protected static Actions action;
+	public SoftAssert softAssert = new SoftAssert();
 	
 	//CREATE PAGE FACTORY METHODS WITH DRIVERS
 	public ReUseAbleElement(WebDriver driver)

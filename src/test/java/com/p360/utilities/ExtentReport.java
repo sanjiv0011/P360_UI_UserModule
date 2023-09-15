@@ -8,6 +8,7 @@ import java.util.Date;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -69,11 +70,8 @@ public class ExtentReport extends BaseClass implements ITestListener {
        
     }
     
-    
-    
-
     public void onTestFailure(ITestResult result) {
-    	logger.info("onTestFailure Thread name: "+Thread.currentThread().getName());
+    	//logger.info("onTestFailure Thread name: "+Thread.currentThread().getName());
     	
         extentTest = extentReports.createTest(result.getName());
         extentTest.log(Status.FAIL,MarkupHelper.createLabel("Test Failed:- "+result.getName(), ExtentColor.RED));
@@ -84,7 +82,11 @@ public class ExtentReport extends BaseClass implements ITestListener {
         
         // to capture screen
 		try {
-			captureScreen(BaseClass.driver,result.getName());
+			if (driver != null) {
+                captureScreen(driver, result.getName());
+            } else {
+                logger.error("WebDriver is null during screenshot capture.");
+            }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -93,12 +95,10 @@ public class ExtentReport extends BaseClass implements ITestListener {
 		File f = new File(screenshot_path);
         
         
-        if(f.exists())
-        {
+        if(f.exists()){
         	extentTest.fail("Screenshot is below: "+extentTest.addScreenCaptureFromPath(screenshot_path));
         }
-        else
-        {
+        else{
         	logger.info("I am from Extent-Report onTestFailure and calling methods name is: "+result.getName());
         	extentTest.log(Status.FAIL, "Sreenshots path not found");
         }

@@ -3,20 +3,17 @@ package com.p360.DataBaseTesting;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.TimeZone;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import com.p360.dataBase.DatabaseConnectionAndQuery_GenericMethods;
 import com.p360.projectUtility.UTC_DateFormatter;
 
 public class DBT_User_Membership {
 	public WebDriver driver;
+	public static SoftAssert softAssert = new SoftAssert();
 	public static final Logger logger = LogManager.getLogger(DBT_User_Membership.class);
 		
 		
@@ -38,6 +35,7 @@ public class DBT_User_Membership {
 					logger.info("userId: "+userId+" for the given userEmail: "+userEmailAddress);
 					break;
 			}
+			softAssert.assertAll();
 			return userId;
 		}
 		
@@ -66,10 +64,11 @@ public class DBT_User_Membership {
 				while(resultsetUserMembership.next()) {	
 						userMembershipId = resultsetUserMembership.getString("id");
 						logger.info("New ctreated user membership id: "+userMembershipId);
-						Assert.assertTrue(userMembershipId != null, "To check new created user membership id is not null");
+						softAssert.assertTrue(userMembershipId != null, "To check new created user membership id is not null");
 						logger.info("===>>> DataBase testing DONE");
 						break;
 				}
+				softAssert.assertAll();
 		}
 		
 		//CROSS VERIFY DATABASE ONCE MEMBERSHIP PAUSED
@@ -94,13 +93,14 @@ public class DBT_User_Membership {
 						logger.info("Pause membership created Id from database: "+db_pauseMembeshipCreatedId);
 						
 						//ASSERTION 
-						Assert.assertEquals(input_StartDate,db_pauseStartDate, "To match pause membership start date");
-						Assert.assertEquals(input_EndDate,db_pauseEndDate, "To match pause membership end date");
-						Assert.assertTrue(db_pauseMembeshipCreatedId != null, "To check new created pause membership id is not null");
+						softAssert.assertEquals(input_StartDate,db_pauseStartDate, "To match pause membership start date");
+						softAssert.assertEquals(input_EndDate,db_pauseEndDate, "To match pause membership end date");
+						softAssert.assertTrue(db_pauseMembeshipCreatedId != null, "To check new created pause membership id is not null");
 						
 						logger.info("===>>> DataBase testing DONE");
 						break;
 				}
+				softAssert.assertAll();
 		}
 		
 		//CROSS VERIFY DATABASE ONCE MEMBERSHIP RESUMED
@@ -114,10 +114,11 @@ public class DBT_User_Membership {
 				while(resultsetResumeMembership.next()) {	
 						Boolean db_resumeStatus = resultsetResumeMembership.getBoolean("resume_processed");
 						logger.info("DataBase Resumed Status: "+db_resumeStatus);
-						Assert.assertTrue(db_resumeStatus,"To resumed status");
+						softAssert.assertTrue(db_resumeStatus,"To resumed status");
 						logger.info("===>>> DataBase testing DONE");
 						break;
 				}
+				softAssert.assertAll();
 		}
 		
 		

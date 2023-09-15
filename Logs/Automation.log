@@ -1,7 +1,91 @@
-15:26:26.770 [main] INFO  com.p360.pageObject.PO_HomePage - ===>>> User card details changed successfully
-15:26:26.797 [main] INFO  com.p360.pageObject.PO_HomePage - ...CHANGE CARD DETAILS TESTING DONE...
-15:26:29.912 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-15:26:30.528 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-15:26:35.153 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-15:26:35.718 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-15:26:36.246 [main] INFO  com.p360.testCases.TC_AllInOne_UserModule - Driver shutdown
+12:56:51.922 [main] INFO  com.p360.projectUtility.DatePicker - selected month name is: October
+12:56:57.755 [main] INFO  com.p360.projectUtility.DatePicker - Cursor Behavior over Element: auto
+12:56:58.378 [main] INFO  com.p360.projectUtility.DatePicker - Clicked on the given date: 30
+12:57:00.091 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause my membership
+12:57:00.985 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the confirm button
+12:57:02.426 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 133
+12:57:02.426 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+12:57:02.441 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Memberships can only be paused once in a quarter
+12:57:02.952 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [10d4272ab67d024d3e95756ad65fc385, findElement {using=xpath, value=//div[@role="alert"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53572}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53572/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 10d4272ab67d024d3e95756ad65fc385
+12:57:04.963 [main] INFO  com.p360.pageObject.PO_MembershipPage - ===>>> Membership not paused
+12:57:04.965 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method call done: pasueMembership
+12:57:08.641 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+12:57:10.792 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
+12:57:12.797 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method called: resumeMembership
+12:57:12.828 [main] INFO  com.p360.pageObject.PO_MembershipPage - Exception From clickOnResumeMembership :no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='Resume Membership']"}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [10d4272ab67d024d3e95756ad65fc385, findElement {using=xpath, value=//span[normalize-space()='Resume Membership']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53572}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53572/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 10d4272ab67d024d3e95756ad65fc385
+12:57:13.866 [main] INFO  com.p360.pageObject.PO_MembershipPage - Exception from clickOnBtnResumeMyMembership: no such element: Unable to locate element: {"method":"xpath","selector":"(//span[normalize-space()='Resume My Membership'])[2]"}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [10d4272ab67d024d3e95756ad65fc385, findElement {using=xpath, value=(//span[normalize-space()='Resume My Membership'])[2]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53572}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53572/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 10d4272ab67d024d3e95756ad65fc385
+12:57:14.385 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Is btnConfirm_RU Displyed: false
+12:57:14.385 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method call done: pasueMembership
+12:57:17.731 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+12:57:18.383 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
+12:57:23.870 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
+12:57:24.499 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
+12:57:24.499 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
+12:57:24.589 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+12:57:30.013 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+12:57:30.647 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+12:57:30.953 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+12:57:37.866 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+12:57:41.120 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+12:57:43.295 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
+12:57:45.308 [main] INFO  com.p360.pageObject.PO_ClassesPage - Method called: registerClass
+12:58:16.697 [main] INFO  com.p360.pageObject.PO_ClassesPage - Exception from clickOnBtnRegisterForClass: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[normalize-space()='Register for new class']' (tried for 30 second(s) with 500 milliseconds interval)
+12:58:16.698 [main] INFO  com.p360.pageObject.PO_ClassesPage - Register class button not present
+12:58:16.698 [main] INFO  com.p360.pageObject.PO_ClassesPage - Method called DONE: registerClass
+12:58:20.245 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+12:58:22.397 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
+12:58:24.411 [main] INFO  com.p360.pageObject.PO_ClassesPage - Method called: cancelRegisteredClass
+12:59:01.751 [main] INFO  com.p360.pageObject.PO_ClassesPage - Exception from isNoClassFoundTextPresent: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='No Classes Found']"}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [10d4272ab67d024d3e95756ad65fc385, findElement {using=xpath, value=//span[normalize-space()='No Classes Found']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53572}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53572/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 10d4272ab67d024d3e95756ad65fc385
+12:59:36.954 [main] INFO  com.p360.pageObject.PO_ClassesPage - Exception from isNoClassFoundTextPresent: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='No Classes Found']"}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [10d4272ab67d024d3e95756ad65fc385, findElement {using=xpath, value=//span[normalize-space()='No Classes Found']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53572}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53572/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 10d4272ab67d024d3e95756ad65fc385
+12:59:38.960 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findMyRegisteredClassAndonThreeDotOption
+12:59:38.960 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
+12:59:39.494 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: Sep 16, 2023 | 02:00 AM
+12:59:39.494 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given DateAndTime not matched: Sep 17, 2023 | 09:00 PM
+12:59:39.705 [main] INFO  com.p360.pageObject.PO_ClassesPage - listRowCount:  1
+12:59:39.731 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Is Cancel Class button displayed: false
+12:59:40.232 [main] INFO  com.p360.pageObject.PO_ClassesPage - Method called DONE: cancelRegisteredClass
+12:59:43.418 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+12:59:44.027 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
+12:59:47.771 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
+12:59:48.354 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
+12:59:49.348 [main] INFO  com.p360.testCases.TC_Home - Driver shutdown

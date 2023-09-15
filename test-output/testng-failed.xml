@@ -7,20 +7,34 @@
   </listeners>
   <test thread-count="5" name="P360_UI_USER_MODULE(failed)">
     <classes>
-      <class name="com.p360.testCases.TC_AllInOne_UserModule">
+      <class name="com.p360.testCases.TC_Classes">
         <methods>
-          <include name="test_PauseMembership" invocation-numbers="0"/>
-          <include name="test_CancelRegisteredClass" invocation-numbers="0"/>
+          <include name="Setup"/>
           <include name="test_RegisterClass" invocation-numbers="0"/>
-          <include name="teardown"/>
-          <include name="test_ResumeMembership"/>
-          <include name="test_Login"/>
-          <include name="setup"/>
-          <include name="test_ChangeCardDetails"/>
-          <include name="test_HomePageElement"/>
-          <include name="test_Logout"/>
+          <include name="Login"/>
+          <include name="Teardown"/>
+          <include name="Logout"/>
         </methods>
-      </class> <!-- com.p360.testCases.TC_AllInOne_UserModule -->
+      </class> <!-- com.p360.testCases.TC_Classes -->
+      <class name="com.p360.testCases.TC_Membership">
+        <methods>
+          <include name="test_ResumeMembership"/>
+          <include name="Setup"/>
+          <include name="Login"/>
+          <include name="Teardown"/>
+          <include name="Logout"/>
+          <include name="test_PauseMembership" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.p360.testCases.TC_Membership -->
+      <class name="com.p360.testCases.TC_Home">
+        <methods>
+          <include name="Setup"/>
+          <include name="Login"/>
+          <include name="test_ChangeCardDetails"/>
+          <include name="Teardown"/>
+          <include name="Logout"/>
+        </methods>
+      </class> <!-- com.p360.testCases.TC_Home -->
     </classes>
   </test> <!-- P360_UI_USER_MODULE(failed) -->
 </suite> <!-- Failed suite [Suite] -->

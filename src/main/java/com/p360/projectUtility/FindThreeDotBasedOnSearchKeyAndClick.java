@@ -7,7 +7,6 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 public class FindThreeDotBasedOnSearchKeyAndClick {
@@ -80,7 +79,7 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 								}
 							}catch(Exception e) {
 								logger.info("Exception from FindThreeDotBasedOnSearchKeyAndClick: "+e.getMessage());
-								Assert.assertTrue(false,"Three dot Action button not present");
+								softAssert.assertTrue(false,"Three dot Action button not present");
 								return -1;
 							}
 		        			break;
@@ -93,7 +92,7 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 			}
 			if(!confirmationGiverDateTimeMatchedOrNot) {
 				logger.info("Given DateAndTime not matched: "+searchKey);
-				Assert.assertTrue(false,"Class that you want to cancel is not present: ");
+				softAssert.assertTrue(false,"Class that you want to cancel is not present: ");
 			}
 			
 		Thread.sleep(200);

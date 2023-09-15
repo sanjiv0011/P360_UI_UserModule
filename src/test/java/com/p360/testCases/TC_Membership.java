@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.github.javafaker.Faker;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
@@ -25,6 +26,7 @@ public class TC_Membership extends BaseClass{
 	public Faker faker  = new Faker();
 	public PO_MembershipPage mp;
 	public ReUseAbleElement ruae;
+	public SoftAssert softAssert = new SoftAssert();
 	
 	String categoryName = "All";
 	String packageName = "Package2";

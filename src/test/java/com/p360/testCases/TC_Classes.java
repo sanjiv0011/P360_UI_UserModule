@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.github.javafaker.Faker;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
@@ -26,6 +27,7 @@ public class TC_Classes extends BaseClass{
 	public Faker faker  = new Faker();
 	public PO_ClassesPage cp;
 	public ReUseAbleElement ruae;
+	public SoftAssert softAssert = new SoftAssert();
 	
 	//PASS THE ALL THE DATE IN THE GIVEN FORMAT
 	String time = "7:00 PM";	//PASS VALUES IN THIS FORMAT ONLY

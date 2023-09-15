@@ -16,6 +16,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 import com.p360.pageObject.PO_LoginPage;
@@ -32,6 +33,7 @@ public class PO_Main_CoachesPage extends ReUseAbleElement {
 		public WebDriverWait wait;
 		public PO_LoginPage lp;
 		public Actions action;
+		public SoftAssert softAssert = new SoftAssert();
 		
 		//HOMEPAGE CONSTRUCTOR CREATION
 		public PO_Main_CoachesPage(WebDriver driver) {	
@@ -144,9 +146,9 @@ public class PO_Main_CoachesPage extends ReUseAbleElement {
 				Thread.sleep(100);
   				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
   				if(alertMsg.equals(alertMsgCoachInvitedSuccessfully)) {
-  					Assert.assertEquals(alertMsg, alertMsgCoachInvitedSuccessfully,"Checks Coach Invited successfully");
+  					softAssert.assertEquals(alertMsg, alertMsgCoachInvitedSuccessfully,"Checks Coach Invited successfully");
   				}else {
-  					Assert.assertTrue(false,"Coach not invited successfully");
+  					softAssert.assertTrue(false,"Coach not invited successfully");
   				}
 			}
   			

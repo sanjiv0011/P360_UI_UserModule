@@ -16,6 +16,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 import com.p360.pageObject.PO_LoginPage;
@@ -32,6 +33,7 @@ public class PO_Main_Locations extends ReUseAbleElement {
 		public WebDriverWait wait;
 		public PO_LoginPage lp;
 		public Actions action;
+		public SoftAssert softAssert = new SoftAssert();
 		
 		//HOMEPAGE CONSTRUCTOR CREATION
 		public PO_Main_Locations(WebDriver driver) {	
@@ -368,13 +370,13 @@ public class PO_Main_Locations extends ReUseAbleElement {
   			{
   				Thread.sleep(1000);
   				clickOnCancelButton_1_RU();
-  				Assert.assertTrue(false,"Required Message Displayed");
+  				softAssert.assertTrue(false,"Required Message Displayed");
   			}
   			else if(flag) 
 			{
   				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
   				if(alertMsg.equals(alertMsgRegionCreatedSuccessfully)) {
-  					Assert.assertEquals(alertMsg, alertMsgRegionCreatedSuccessfully,"Checks Regoin created successfully");
+  					softAssert.assertEquals(alertMsg, alertMsgRegionCreatedSuccessfully,"Checks Regoin created successfully");
   				}else if(alertMsg.contains("required") || alertMsg.contains("Required")){
   	  				logger.info("===>>> Region not created, some required field missing");
   	  				ruae.clickOnCancelButton_1_RU();
@@ -407,7 +409,7 @@ public class PO_Main_Locations extends ReUseAbleElement {
   			if(requiredMsg) {
   				Thread.sleep(1000);
   				clickOnCancelButton_1_RU();
-  				Assert.assertTrue(false,"Required Message Displayed");
+  				softAssert.assertTrue(false,"Required Message Displayed");
   			}
   			else if(isTextLocationSettinPresent())
   			{
@@ -425,14 +427,14 @@ public class PO_Main_Locations extends ReUseAbleElement {
 	  				{
 	  	  				Thread.sleep(1000);
 	  	  				clickOnCancelButton_1_RU();
-	  	  				Assert.assertTrue(false,"Required/Invalid Message Displayed");
+	  	  				softAssert.assertTrue(false,"Required/Invalid Message Displayed");
 	  	  			}
 	  				else
 	  	  			{
 	  	  				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
 	  	  				if(alertMsg.equals(alertMsgLocationCreatedSuccessfully))
 	  	  				{
-	  	  					Assert.assertEquals(alertMsg, alertMsgLocationCreatedSuccessfully,"Checks Location created successfully");
+	  	  					softAssert.assertEquals(alertMsg, alertMsgLocationCreatedSuccessfully,"Checks Location created successfully");
 	  	  				}
 	  	  				else if(alertMsg.contains(alertMsgValidationError))
 	  	  				{
@@ -446,7 +448,7 @@ public class PO_Main_Locations extends ReUseAbleElement {
   			else 
   			{
   				clickOnCancelButton_1_RU();
-  				Assert.assertTrue(false);
+  				softAssert.assertTrue(false);
   			}
   				
   			Thread.sleep(2000);

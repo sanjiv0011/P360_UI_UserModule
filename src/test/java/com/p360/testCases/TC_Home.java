@@ -1,6 +1,7 @@
 package com.p360.testCases;
 
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.github.javafaker.Faker;
 import com.p360.pageObject.PO_HomePage;
@@ -16,6 +17,7 @@ public class TC_Home extends BaseClass{
 	public PO_HomePage hp;
 	public PO_LoginPage lp;
 	public Faker faker  = new Faker();
+	public SoftAssert softAssert = new SoftAssert();
 	
 	String cardHolderName = faker.name().fullName();
 	String expiary = "34/45";
@@ -25,14 +27,15 @@ public class TC_Home extends BaseClass{
 	//TO CHECK HOME PAGE ELEMENT
 	@Test(priority = 1)
 	public void test_HomePageElement() throws InterruptedException {
-			hp = new PO_HomePage(driver);
-			hp.checkClickActionOnHomePageElement();
+		hp = new PO_HomePage(driver);
+		hp.checkClickActionOnHomePageElement();
 	}
 
 	//TO CHENGE THE CARD DETAILS
 	@Test(priority = 2)
 	public void test_ChangeCardDetails() throws InterruptedException {
-			hp.changeCardDetails(cardHolderName,expiary,CCVcode,zipCode);
+		hp = new PO_HomePage(driver);
+		hp.changeCardDetails(cardHolderName,expiary,CCVcode,zipCode);
 	}
 
 }

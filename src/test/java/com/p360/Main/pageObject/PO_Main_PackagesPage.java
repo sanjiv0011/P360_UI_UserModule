@@ -16,6 +16,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 import com.p360.pageObject.PO_LoginPage;
@@ -32,6 +33,7 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
 		public WebDriverWait wait;
 		public PO_LoginPage lp;
 		public Actions action;
+		public SoftAssert softAssert = new SoftAssert();
 		
 		//HOMEPAGE CONSTRUCTOR CREATION
 		public PO_Main_PackagesPage(WebDriver driver) {	
@@ -277,13 +279,13 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   			if(flag) {
   				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
   				if(alertMsg.equals(alertMsgPackageCategoryCreatedSuccessfully)) {
-  					Assert.assertEquals(alertMsg, alertMsgPackageCategoryCreatedSuccessfully,"Checks Package category created successfully");
+  					softAssert.assertEquals(alertMsg, alertMsgPackageCategoryCreatedSuccessfully,"Checks Package category created successfully");
   				}else if(alertMsg.contains("required") || alertMsg.contains("Required")){
   	  				logger.info("===>>> PackageCategory not created, some required field missing");
   	  				ruae.clickOnCancelButton_1_RU();
   	  			}
   			}
-  			
+  			softAssert.assertAll();
   			return new PO_Main_HomePage(driver);
   		}
   		
@@ -311,12 +313,13 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   			if(flag) {
   				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
   				if(alertMsg.equals(alertMsgPackageCreatedSuccessfully)) {
-  					Assert.assertEquals(alertMsg, alertMsgPackageCreatedSuccessfully,"Checks Package created successfully");
+  					softAssert.assertEquals(alertMsg, alertMsgPackageCreatedSuccessfully,"Checks Package created successfully");
   				}else if(alertMsg.contains("required") || alertMsg.contains("Required")) {
   					logger.info("===>>> Package not created, some required field missing");
   	  				ruae.clickOnCancelButton_1_RU();
   				}
   			}
+  			softAssert.assertAll();
   			return new PO_Main_HomePage(driver);
   		}
   		

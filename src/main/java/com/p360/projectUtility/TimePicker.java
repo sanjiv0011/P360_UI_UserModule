@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 
 
 public class TimePicker {
@@ -23,6 +24,7 @@ public class TimePicker {
 	//VARIABLE AND CONSTRUCTER DECLARATIONS
 	public static final Logger logger = LogManager.getLogger(TimePicker.class);
 	public static WebDriverWait wait = null;
+	public static SoftAssert softAssert = new SoftAssert();
 	static Actions action;
 	
 	//TIME PLACE HOLDER ADDRESS THIS IS USED CLEAR ALREADY PRESENT TIME

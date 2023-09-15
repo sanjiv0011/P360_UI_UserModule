@@ -15,6 +15,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import com.p360.projectUtility.DatePicker;
 import com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown;
@@ -32,6 +33,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 	public WebDriverWait wait;
 	public PO_LoginPage lp;
 	public Actions action;
+	public SoftAssert softAssert = new SoftAssert();
 	
 	//HOMEPAGE CONSTRUCTOR CREATION
 	public PO_MembershipPage(WebDriver driver) {	
@@ -178,7 +180,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 				Thread.sleep(500);
 			}
 		}catch(Exception e) {
-			Assert.assertTrue(btnChangeMembership.isDisplayed(),"Is Check resume button is present or not");
+			softAssert.assertTrue(btnChangeMembership.isDisplayed(),"Is Check resume button is present or not");
 			logger.info("Exceptoin from clickOnBtnChangeMembership: "+e.getMessage());
 		}
 		return flag;
@@ -255,9 +257,10 @@ public class PO_MembershipPage extends ReUseAbleElement{
 				Thread.sleep(2000);
 			}
 		}catch(Exception e) {
-			Assert.assertEquals(true,flag,"Is clickOnBtnAgreedTerm Displayed");
+			softAssert.assertEquals(true,flag,"Is clickOnBtnAgreedTerm Displayed");
 			logger.info("Exception From clickOnBtnAgreedTerm :"+e.getMessage());
 		}
+		softAssert.assertAll();
 	}
 	
 	//TO CLICK ON PAUSE MEMBERSHIP BUTTON
@@ -273,9 +276,10 @@ public class PO_MembershipPage extends ReUseAbleElement{
 				Thread.sleep(1000);
 			}
 		}catch(Exception e) {
-			Assert.assertEquals(true,flag,"Is btnPauseMembership Displayed");
+			softAssert.assertEquals(true,flag,"Is btnPauseMembership Displayed");
 			logger.info("Exception From clickOnPauseMembership :"+e.getMessage());
 		}
+		softAssert.assertAll();
 	}
 	
 	//TO CLICK ON RESUME MEMBERSHIP BUTTON
@@ -291,7 +295,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 				Thread.sleep(1000);
 			}
 		}catch(Exception e) {
-			Assert.assertEquals(true,flag,"Is clickOnResumeMembership Displayed");
+			softAssert.assertEquals(true,flag,"Is clickOnResumeMembership Displayed");
 			logger.info("Exception From clickOnResumeMembership :"+e.getMessage());
 		}
 	}
@@ -325,7 +329,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 			}
 			
 		}catch(Exception e) {
-			Assert.assertEquals(true,flag,"Is clickOnBtnPauseMyMembership Displayed");
+			softAssert.assertEquals(true,flag,"Is clickOnBtnPauseMyMembership Displayed");
 		}
 	}
 	
@@ -342,7 +346,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 			
 		}catch(Exception e) {
 			logger.info("Exception from clickOnBtnResumeMyMembership: "+e.getMessage());
-			Assert.assertEquals(true,flag,"Is clickOnBtnResumeMyMembership button Displayed");
+			softAssert.assertEquals(true,flag,"Is clickOnBtnResumeMyMembership button Displayed");
 		}
 	}
 	
@@ -358,7 +362,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 		   
 		}catch(Throwable e) {
 			logger.info("Exception from setPauseMembershipStartDate: "+e.getMessage());
-			Assert.assertTrue(false,"To check pause membership start date");
+			softAssert.assertTrue(false,"To check pause membership start date");
 		}
 		if(!flag) {
 			clickOnBtnCross_RU();
@@ -378,7 +382,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 		    Thread.sleep(1000);
 		}catch(Throwable e) {
 			logger.info("Exeception from setPauseMembershipEndDate: "+e.getMessage());
-			Assert.assertTrue(false,"To check pause membership end date");
+			softAssert.assertTrue(false,"To check pause membership end date");
 		}
 		if(!flag) {
 			clickOnBtnCross_RU();
@@ -438,13 +442,14 @@ public class PO_MembershipPage extends ReUseAbleElement{
 				}else {
 					ruae.clickOnCancelButton_1_RU();
 				}
-				Assert.assertEquals(alertMsgContent,alertMsgChangeMembership,"To check the membership package change");
+				softAssert.assertEquals(alertMsgContent,alertMsgChangeMembership,"To check the membership package change");
 			}
 		}catch(Exception e) {
 			logger.info("Exception from changeMembership: "+e.getMessage());
 		}
 		
 		logger.info("Method call done: changeMembership ");
+		softAssert.assertAll();
 		return new PO_HomePage(driver);
 	}
 	
@@ -459,6 +464,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 		}
 		
 		logger.info("Method call done: checkAgreedTerm");
+		softAssert.assertAll();
 		return new PO_HomePage(driver);
 	}
 	
@@ -487,15 +493,16 @@ public class PO_MembershipPage extends ReUseAbleElement{
 				}else {
 					ruae.clickOnCancelButton_1_RU();
 				}
-				Assert.assertEquals(alertMsgContent,alertMsgPauseMembership,"To check the pause membership");
+				softAssert.assertEquals(alertMsgContent,alertMsgPauseMembership,"To check the pause membership");
 			}else {
-				Assert.assertTrue(flag,"Pause membership confirm button");
+				softAssert.assertTrue(flag,"Pause membership confirm button");
 			}
 		}catch(Exception e) {
 			logger.info("Exception from pasueMembership: "+e.getMessage());
 		}
 		
 		logger.info("Method call done: pasueMembership");
+		softAssert.assertAll();
 		return new PO_HomePage(driver);	
 	}
 	
@@ -517,14 +524,15 @@ public class PO_MembershipPage extends ReUseAbleElement{
 				}else {
 					ruae.clickOnCancelButton_1_RU();
 				}
-				Assert.assertEquals(alertMsgContent,alertMsgResumeMembership,"To check the resume membership");
+				softAssert.assertEquals(alertMsgContent,alertMsgResumeMembership,"To check the resume membership");
 			}
-			Assert.assertEquals(true, flag,"To check is click on the confirm button or not");
+			softAssert.assertEquals(true, flag,"To check is click on the confirm button or not");
 		}catch(Exception e) {
 			logger.info("Exception from resumeMembership: "+e.getMessage());
 		}
 		
 		logger.info("Method call done: pasueMembership");
+		softAssert.assertAll();
 		return new PO_HomePage(driver);	
 	}
 	

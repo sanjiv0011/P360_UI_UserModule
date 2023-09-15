@@ -15,6 +15,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import com.p360.Main.pageObject.PO_Main_HomePage;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
@@ -28,6 +29,7 @@ public class PO_LoginPage extends ReUseAbleElement {
 	public WebDriverWait wait;
 	public Actions action;
 	public PO_Main_HomePage mhp;
+	public SoftAssert softAssert = new SoftAssert();
 	
 	public  PO_LoginPage(WebDriver driver)
 	{   super(driver);
@@ -107,18 +109,19 @@ public class PO_LoginPage extends ReUseAbleElement {
 				wait.until(ExpectedConditions.textToBePresentInElementLocated(By.tagName("body"), "Dashboard"));
 				Thread.sleep(500);
 				if(driver.getPageSource().contains("Welcome")) {
-					Assert.assertTrue(true);
+					softAssert.assertTrue(true);
 					logger.info("...LOGIN DONE...");
 				} else {
-					Assert.assertTrue(false);
+					softAssert.assertTrue(false);
 					logger.info("!!!LOGIN FAILED!!!");
 				}
 			}catch(Exception e) {
 				logger.info("Login exception message: "+e.getMessage());
-				Assert.assertEquals(driver.getPageSource().contains("Welcome"),"To check the login");
+				softAssert.assertEquals(driver.getPageSource().contains("Welcome"),"To check the login");
 			}
 		}catch(Exception e) {}
 		
+		softAssert.assertAll();
 		return new PO_HomePage(driver);
 	}
 	
@@ -135,7 +138,7 @@ public class PO_LoginPage extends ReUseAbleElement {
 				wait.until(ExpectedConditions.elementToBeClickable(tabDashboard));
 				Thread.sleep(500);
 				if(driver.getPageSource().contains("This Week")) {
-					Assert.assertTrue(true);
+					softAssert.assertTrue(true);
 					logger.info("...LOGIN DONE...");
 				} else {
 					Assert.assertTrue(false);
@@ -143,11 +146,11 @@ public class PO_LoginPage extends ReUseAbleElement {
 				}
 			}catch(Exception e) {
 				logger.info("Login exception message: "+e.getMessage());
-				Assert.assertEquals(driver.getPageSource().contains("This Week"),"To check the login");
+				softAssert.assertEquals(driver.getPageSource().contains("This Week"),"To check the login");
 			}
 			
 		}catch(Exception e) {}
-		
+		softAssert.assertAll();
 		return new PO_Main_HomePage(driver);
 	}
 	

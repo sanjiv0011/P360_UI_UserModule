@@ -1,13 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="4" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-14T15:24:54 IST" name="Suite" finished-at="2023-09-14T15:26:36 IST" duration-ms="101327">
+  <suite started-at="2023-09-15T12:53:26 IST" name="Suite" finished-at="2023-09-15T12:59:49 IST" duration-ms="382482">
     <groups>
     </groups>
-    <test started-at="2023-09-14T15:24:54 IST" name="P360_UI_USER_MODULE" finished-at="2023-09-14T15:26:36 IST" duration-ms="101327">
-      <class name="com.p360.testCases.TC_AllInOne_UserModule">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.p360.testCases.TC_AllInOne_UserModule@2f4b98f6]" started-at="2023-09-14T15:24:55 IST" name="setup" finished-at="2023-09-14T15:24:59 IST" duration-ms="3904" status="PASS">
+    <test started-at="2023-09-15T12:53:26 IST" name="P360_UI_USER_MODULE" finished-at="2023-09-15T12:59:49 IST" duration-ms="382482">
+      <class name="com.p360.testCases.TC_Membership">
+        <test-method is-config="true" signature="Login()[pri:0, instance:com.p360.testCases.TC_Membership@49cb1baf]" started-at="2023-09-15T12:55:26 IST" name="Login" finished-at="2023-09-15T12:55:36 IST" duration-ms="9487" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="test_ChangeMembership(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.p360.testCases.TC_Membership@49cb1baf]" started-at="2023-09-15T12:55:36 IST" name="test_ChangeMembership" data-provider="TC_ChangeMembership" finished-at="2023-09-15T12:56:09 IST" duration-ms="32472" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Dynamic Brand Strategist]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[The end of the current period]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[15 September 2023]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_ChangeMembership -->
+        <test-method signature="test_CheckAgreedTerms()[pri:2, instance:com.p360.testCases.TC_Membership@49cb1baf]" started-at="2023-09-15T12:56:09 IST" name="test_CheckAgreedTerms" finished-at="2023-09-15T12:56:23 IST" duration-ms="14695" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_CheckAgreedTerms -->
+        <test-method signature="test_PauseMembership(java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:com.p360.testCases.TC_Membership@49cb1baf]" started-at="2023-09-15T12:56:24 IST" name="test_PauseMembership" data-provider="TC_PauseMembership" finished-at="2023-09-15T12:57:04 IST" duration-ms="40917" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[25 September 2023]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[30 October 2023]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Travel]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+To check the pause membership expected [Pause Membership Successfully] but found [Memberships can only be paused once in a quarter]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+To check the pause membership expected [Pause Membership Successfully] but found [Memberships can only be paused once in a quarter]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at com.p360.pageObject.PO_MembershipPage.pasueMembership(PO_MembershipPage.java:505)
+at com.p360.testCases.TC_Membership.test_PauseMembership(TC_Membership.java:60)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_PauseMembership -->
+        <test-method signature="test_ResumeMembership()[pri:4, instance:com.p360.testCases.TC_Membership@49cb1baf]" started-at="2023-09-15T12:57:05 IST" name="test_ResumeMembership" finished-at="2023-09-15T12:57:14 IST" duration-ms="8960" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+Is clickOnResumeMembership Displayed expected [false] but found [true],
+Is clickOnBtnResumeMyMembership button Displayed expected [false] but found [true],
+To check is click on the confirm button or not expected [false] but found [true]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+Is clickOnResumeMembership Displayed expected [false] but found [true],
+Is clickOnBtnResumeMyMembership button Displayed expected [false] but found [true],
+To check is click on the confirm button or not expected [false] but found [true]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at com.p360.pageObject.PO_MembershipPage.resumeMembership(PO_MembershipPage.java:535)
+at com.p360.testCases.TC_Membership.test_ResumeMembership(TC_Membership.java:67)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_ResumeMembership -->
+        <test-method is-config="true" signature="Logout()[pri:0, instance:com.p360.testCases.TC_Membership@49cb1baf]" started-at="2023-09-15T12:57:14 IST" name="Logout" finished-at="2023-09-15T12:57:24 IST" duration-ms="9937" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Logout -->
+      </class> <!-- com.p360.testCases.TC_Membership -->
+      <class name="com.p360.testCases.TC_Home">
+        <test-method is-config="true" signature="Setup(java.lang.String)[pri:0, instance:com.p360.testCases.TC_Home@22d9bc14]" started-at="2023-09-15T12:53:27 IST" name="Setup" finished-at="2023-09-15T12:53:30 IST" duration-ms="3878" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -17,28 +172,166 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="test_Login()[pri:0, instance:com.p360.testCases.TC_AllInOne_UserModule@2f4b98f6]" started-at="2023-09-14T15:24:59 IST" name="test_Login" finished-at="2023-09-14T15:25:10 IST" duration-ms="11611" status="PASS">
+        </test-method> <!-- Setup -->
+        <test-method is-config="true" signature="Login()[pri:0, instance:com.p360.testCases.TC_Home@22d9bc14]" started-at="2023-09-15T12:53:30 IST" name="Login" finished-at="2023-09-15T12:53:44 IST" duration-ms="13190" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_Login -->
-        <test-method signature="test_HomePageElement()[pri:1, instance:com.p360.testCases.TC_AllInOne_UserModule@2f4b98f6]" started-at="2023-09-14T15:25:10 IST" name="test_HomePageElement" finished-at="2023-09-14T15:25:56 IST" duration-ms="45721" status="PASS">
+        </test-method> <!-- Login -->
+        <test-method signature="test_HomePageElement()[pri:1, instance:com.p360.testCases.TC_Home@22d9bc14]" started-at="2023-09-15T12:53:44 IST" name="test_HomePageElement" finished-at="2023-09-15T12:54:30 IST" duration-ms="46437" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_HomePageElement -->
-        <test-method signature="test_ChangeCardDetails()[pri:2, instance:com.p360.testCases.TC_AllInOne_UserModule@2f4b98f6]" started-at="2023-09-14T15:25:56 IST" name="test_ChangeCardDetails" finished-at="2023-09-14T15:26:26 IST" duration-ms="30312" status="PASS">
+        <test-method signature="test_ChangeCardDetails()[pri:2, instance:com.p360.testCases.TC_Home@22d9bc14]" started-at="2023-09-15T12:54:30 IST" name="test_ChangeCardDetails" finished-at="2023-09-15T12:55:16 IST" duration-ms="46173" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+To check  card details changed or not expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+To check  card details changed or not expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at com.p360.pageObject.PO_HomePage.changeCardDetails(PO_HomePage.java:323)
+at com.p360.testCases.TC_Home.test_ChangeCardDetails(TC_Home.java:38)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_ChangeCardDetails -->
-        <test-method is-config="true" signature="test_Logout()[pri:0, instance:com.p360.testCases.TC_AllInOne_UserModule@2f4b98f6]" started-at="2023-09-14T15:26:26 IST" name="test_Logout" finished-at="2023-09-14T15:26:35 IST" duration-ms="8912" status="PASS">
+        <test-method is-config="true" signature="Logout()[pri:0, instance:com.p360.testCases.TC_Home@22d9bc14]" started-at="2023-09-15T12:55:17 IST" name="Logout" finished-at="2023-09-15T12:55:26 IST" duration-ms="9513" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_Logout -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.p360.testCases.TC_AllInOne_UserModule@2f4b98f6]" started-at="2023-09-14T15:26:35 IST" name="teardown" finished-at="2023-09-14T15:26:36 IST" duration-ms="525" status="PASS">
+        </test-method> <!-- Logout -->
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:com.p360.testCases.TC_Home@22d9bc14]" started-at="2023-09-15T12:59:48 IST" name="Teardown" finished-at="2023-09-15T12:59:49 IST" duration-ms="991" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.p360.testCases.TC_AllInOne_UserModule -->
+        </test-method> <!-- Teardown -->
+      </class> <!-- com.p360.testCases.TC_Home -->
+      <class name="com.p360.testCases.TC_Classes">
+        <test-method is-config="true" signature="Login()[pri:0, instance:com.p360.testCases.TC_Classes@3664f108]" started-at="2023-09-15T12:57:24 IST" name="Login" finished-at="2023-09-15T12:57:37 IST" duration-ms="13368" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="test_RegisterClass(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.p360.testCases.TC_Classes@3664f108]" started-at="2023-09-15T12:57:38 IST" name="test_RegisterClass" data-provider="TC_ClassRegistration" finished-at="2023-09-15T12:58:16 IST" duration-ms="38680" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2:00 AM]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[SEP 16 SAT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[WESTWOOD]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[WESTWOOD]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+You want to register a class but Register Class Button not present expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+You want to register a class but Register Class Button not present expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at com.p360.pageObject.PO_ClassesPage.registerClass(PO_ClassesPage.java:500)
+at com.p360.testCases.TC_Classes.test_RegisterClass(TC_Classes.java:46)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_RegisterClass -->
+        <test-method signature="test_CancelRegisteredClass(java.lang.String)[pri:2, instance:com.p360.testCases.TC_Classes@3664f108]" started-at="2023-09-15T12:58:17 IST" name="test_CancelRegisteredClass" data-provider="TC_CancelRegisterClass" finished-at="2023-09-15T12:59:40 IST" duration-ms="83229" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Sep 17, 2023 | 09:00 PM]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_CancelRegisteredClass -->
+        <test-method is-config="true" signature="Logout()[pri:0, instance:com.p360.testCases.TC_Classes@3664f108]" started-at="2023-09-15T12:59:40 IST" name="Logout" finished-at="2023-09-15T12:59:48 IST" duration-ms="8122" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Logout -->
+      </class> <!-- com.p360.testCases.TC_Classes -->
     </test> <!-- P360_UI_USER_MODULE -->
   </suite> <!-- Suite -->
 </testng-results>

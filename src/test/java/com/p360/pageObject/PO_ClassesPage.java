@@ -34,6 +34,9 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		public PO_LoginPage lp;
 		public Actions action;
 		public PO_HomePage hp;
+		public SoftAssert softAssert = new SoftAssert();
+		
+		
 		//HOMEPAGE CONSTRUCTOR CREATION
 		public PO_ClassesPage(WebDriver driver) {	
 			super(driver);
@@ -470,7 +473,7 @@ public class PO_ClassesPage extends ReUseAbleElement{
 						String alertMsg = snakeAlertMessagesDisplayedContent_RU();
 						if(alertMsg != null && alertMsg.equals(alertMsgNoCreditAvailabe)) {
 							logger.info("===>>> Class not registered");
-							Assert.assertTrue(false,"Check Credit availabe or not");
+							softAssert.assertTrue(false,"Check Credit availabe or not");
 						}else 
 						{
 							dateTimePresentInRegisteredClassList = DBT_User_Classes.test_DBT_RegisterClass(time,monthAndDate,userEmailAddress);
@@ -478,22 +481,23 @@ public class PO_ClassesPage extends ReUseAbleElement{
 							int listRowCount = findMyRegisteredClassAndonThreeDotOption(dateTimePresentInRegisteredClassList,driver,4,false);
 							if(listRowCount != 0) {
 								logger.info("===>>> Class registered successfully");
-								Assert.assertTrue(true,"To check class registered successfully or not");
+								softAssert.assertTrue(true,"To check class registered successfully or not");
 							}
 							return new PO_HomePage(driver);
 						}
 						
 					}else {
-						Assert.assertTrue(false,"To check the class registeration");
+						softAssert.assertTrue(false,"To check the class registeration");
 					}
 					clickOnBtnGoToDashBoard();
 				}else if(!bol && (monthAndDate != null || monthAndDate != "")) {
-					Assert.assertTrue(false,"You want to register a class but Register Class Button not present");
+					softAssert.assertTrue(false,"You want to register a class but Register Class Button not present");
 				}
 				
 			}catch(Exception e) {}
 
 			logger.info("Method called DONE: registerClass");
+			softAssert.assertAll();
 			return new PO_HomePage(driver);
 		}
 		
@@ -506,7 +510,7 @@ public class PO_ClassesPage extends ReUseAbleElement{
 			try {
 				if(isNoClassFoundTextPresent() && dateAndTime != "" || isNoClassFoundTextPresent() && dateAndTime != null) {
 					logger.info("The class you want to cancel is not present: "+dateAndTime);
-					Assert.assertTrue(false,"The class you want to cancel is not present: ");
+					softAssert.assertTrue(false,"The class you want to cancel is not present: ");
 					return new PO_HomePage(driver);
 				}
 				else 
@@ -520,19 +524,20 @@ public class PO_ClassesPage extends ReUseAbleElement{
 							clickOnYesButton_RU();
 							String alertMsg = snakeAlertMessagesDisplayedContent_RU();
 				  			if(alertMsg.equals(alertMsgClassCanceled)) {
-				  				Assert.assertEquals(alertMsg,alertMsgClassCanceled,"Check class canceled successfully");
+				  				softAssert.assertEquals(alertMsg,alertMsgClassCanceled,"Check class canceled successfully");
 				  				DBT_User_Classes.test_DBT_CancelRegisteredClass(dateAndTime,userEmailAddress);
 				  			}
 						}
 					}
 					else {
-						Assert.assertTrue(false,"You want to cancel the registered class but action button not present");
+						softAssert.assertTrue(false,"You want to cancel the registered class but action button not present");
 					}
 				}
 		
 			}catch(Exception e) {}
 			
 			logger.info("Method called DONE: cancelRegisteredClass");
+			softAssert.assertAll();
 			return new PO_HomePage(driver);
 		}
 		
