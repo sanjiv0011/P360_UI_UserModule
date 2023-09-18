@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 
@@ -158,13 +159,13 @@ public class PO_Main_HomePage extends ReUseAbleElement{
 	public void clickOntabThisWeek() throws InterruptedException {
 		tabThisWeek.click();
 		Thread.sleep(3000);
-		logger.info("tabThisWeek ");
+		logger.info("ClickOntabThisWeek ");
 	}
 	
 	public void clickOntabTrials() throws InterruptedException {
 		tabTrials.click();
 		Thread.sleep(3000);
-		logger.info("tabTrials ");
+		logger.info("clickOntabTrials ");
 	}
 	public void clickOntabClasses() throws InterruptedException {
 		tabClasses.click();
@@ -175,7 +176,7 @@ public class PO_Main_HomePage extends ReUseAbleElement{
 	public void clickOntabCoaches() throws InterruptedException {
 		tabCoaches.click();
 		Thread.sleep(3000);
-		logger.info("tabCoaches");
+		logger.info("clickOntabCoaches");
 	}
 	
 	public void clickOntabWorkouts() throws InterruptedException {
@@ -218,9 +219,30 @@ public class PO_Main_HomePage extends ReUseAbleElement{
 		logger.info("clickOntabLinks ");
 	}
 	
+	@FindBy(xpath = "//p[@class='MuiTypography-root text-base font-semibold MuiTypography-body1']")
+	@CacheLookup
+	WebElement btnUserName;
+	public void clickOnUserNameButton() throws InterruptedException {
+		btnUserName.click();
+		Thread.sleep(500);
+		logger.info("Clicked on the User name text ");
+	}
+	
+	@FindBy(xpath = "//div[@class='ml-2']")
+	@CacheLookup
+	WebElement btnLogout;
+	public void clickOnLogoutButton() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(btnLogout));
+		Thread.sleep(300);
+		btnLogout.click();
+		Thread.sleep(2000);
+		logger.info("Clicked on the Logout button ");
+	}
+	
+	
 	//MAIN HOME PAGE TABE TESTING
 	public PO_HomePage mainHomePageTesting() throws InterruptedException {
-		
+		logger.info("Method called: mainHomePageTesting");
 		clickOntabLocations();
 		clickOntabPackages();
 		clickOnTabUsers();
@@ -237,7 +259,34 @@ public class PO_Main_HomePage extends ReUseAbleElement{
 		clickOntabThisWeek();
 		clickOntabDashboard();
 		softAssert.assertAll();
+		logger.info("...Method mainHomePageTesting call DONE...");
 		return new PO_HomePage(driver);
+	
+	}
+	
+	//TO LOGOUT
+	public PO_LoginPage AdminLogout() throws InterruptedException
+	{	logger.info("Method called: AdminLogout");
+		try {
+			ruae.clickMenuDashBoard_RU();
+			clickOnUserNameButton();
+			clickOnLogoutButton();
+			wait.until(ExpectedConditions.elementToBeClickable(lp.btnLogin));
+			Thread.sleep(500);
+			if(driver.getPageSource().contains("Performance360")){
+				softAssert.assertTrue(true);
+				logger.info("... LOGOUT DONE ...");
+			}else{
+				softAssert.assertTrue(false);
+				logger.info("!!! LOGOUT FAILEED !!!");
+			}
+		}catch(Exception e) {
+			logger.info("Logout Exception: "+e.getMessage());
+			softAssert.assertTrue(false,"After logout it lookin for [Performance360] text");
+		}
+		softAssert.assertAll();
+		return new PO_LoginPage(driver);
 		
 	}
+	
 }

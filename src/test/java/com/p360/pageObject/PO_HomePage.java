@@ -222,8 +222,8 @@ public class PO_HomePage extends ReUseAbleElement{
 	
 		
 	// TO LOGOUT
-	public PO_LoginPage Logout() throws InterruptedException
-	{	
+	public PO_LoginPage UserLogout() throws InterruptedException
+	{	logger.info("Method called: Logout");
 		try {
 			ruae.clickMenuDashBoard_RU();
 			clickOnUserNameButton();

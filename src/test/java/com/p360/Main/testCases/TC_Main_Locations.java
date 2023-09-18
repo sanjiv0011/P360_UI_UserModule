@@ -6,10 +6,8 @@ import com.github.javafaker.Faker;
 import com.p360.Main.pageObject.PO_Main_HomePage;
 import com.p360.Main.pageObject.PO_Main_Locations;
 import com.p360.Main.pageObject.PO_Main_PackagesPage;
-import com.p360.Main.pageObject.PO_Main_UsersPage;
 import com.p360.pageObject.PO_HomePage;
 import com.p360.pageObject.PO_LoginPage;
-import com.p360.pageObject.PO_MembershipPage;
 import com.p360.testCases.BaseClass;
 
 public class TC_Main_Locations extends BaseClass{
@@ -52,20 +50,9 @@ public class TC_Main_Locations extends BaseClass{
 	String p360Shares = faker.number().digits(1);
 	String wantEnableNoShow = "Yes";
 	String noShowFee = faker.number().digits(1);
-	
-	
-
-	
-	
-	//TO LOGIN
-	@Test(priority = 1)
-	public void test_Login() throws InterruptedException {
-		lp = new PO_LoginPage(driver);
-		mhp = lp.AdminLogin(adminEmail,adminPassword);
-	}
 
 	//TO ADD REGIONS
-	//@Test(priority = 2)
+	//@Test(priority = 1)
 	public void test_Main_AddRegion() throws InterruptedException {
 		mlp = callMeBeforePerformAnyAction();
 		mhp = mlp.addRegion(regionName,parentRegion,regionCode,regionDescription);
@@ -73,20 +60,10 @@ public class TC_Main_Locations extends BaseClass{
 	
 	
 	//TO ADD LOCATIONS
-	@Test(priority = 3)
+	@Test(priority = 2)
 	public void test_Main_AddLocation() throws InterruptedException {
 		mlp = callMeBeforePerformAnyAction();
 		mhp = mlp.addLocation(locationName,locationInternalName,locationRegionName,locatoinCode,locationDescription,addressLine1,addressLine2,city, postalCode,stateName,locationEmail,locationPhoneNumber,locationVitalsDescription,timeZone,p360Shares,wantEnableNoShow,noShowFee);
-	}
-		
-		
-		
-	
-	//TO LOGOUT
-	@Test(priority = 10 , dependsOnMethods = "test_Login")	// here zero or ten ensures least priority, so that this call happens at the last.
-	public void test_Logout() throws InterruptedException {	
-		hp = mhp.clickOntabDashboardReturn_HomePage();
-		hp.Logout();
 	}
 	
 	//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT

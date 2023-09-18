@@ -13,13 +13,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
+import com.p360.DataBaseTesting.DBT_User_Classes;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 import com.p360.pageObject.PO_LoginPage;
 import com.p360.projectUtility.DatePicker;
+import com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick;
 import com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown;
 
 public class PO_Main_UsersPage extends ReUseAbleElement {
@@ -50,6 +53,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 		public String alertMsgMemberhsipPurchagedSuccessfully = "Membership purchased successfully";
 		public String alertMsgYourCardNumberIncomplete = "Your card number is incomplete.";
 		public String alertMsgAcceptTermCondition = "Please accept term and conditions.";
+		public String alertMsgMembeshipChangeSuccessfully = "Pause Membership Successfully";
 		
 		//TEXT FIELD FIRST NAME
   		@FindBy(xpath = "//input[@placeholder='Enter First Name']")
@@ -87,6 +91,43 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   			Thread.sleep(300);
   		}
   		
+  		//USERS FILTERS
+  		@FindBy(xpath = "(//*[name()='svg'][@title='User Filters'])[1]")
+  		@CacheLookup
+  		public WebElement userFilters;
+  		public void iconClickOnUsersFilters() throws InterruptedException {
+  			userFilters.click();
+  			logger.info("Clicked on the field email");
+  			Thread.sleep(300);
+  		}
+  		
+  		//BUTTON CLEARS FILTERS
+  		@FindBy(xpath = "//div[normalize-space()='Clear Filter']")
+  		@CacheLookup
+  		public WebElement btnClearFilters;
+  		public void clickOnBtnClearFilters() throws InterruptedException {
+  			btnClearFilters.click();
+  			logger.info("Clicked on the btnClearFilters");
+  			Thread.sleep(300);
+  		}
+  		
+// 		//LIST RADIO BUTTON CLEARS FILTERS
+//  		@FindBy(xpath = "//div[contains(@class,'MuiFormGroup-root')]")
+//  		@CacheLookup
+  		public String  listUsreFilterRadioBtn_Address ="//div[contains(@class,'MuiFormGroup-root')]";
+  		public void clickOnRadioBtn(String userFilterName) throws InterruptedException {
+	  		/*	Active Members
+	  	  		On Hold
+	  	  		Hold Upcoming
+	  	  		Cancel Upcoming
+	  	  		Cancelled Members
+	  		*/
+  			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,listUsreFilterRadioBtn_Address,userFilterName);
+  			Thread.sleep(1000);	
+  		}
+  	
+ 
+  				
   		//TEXT FIELD PHONE NUMBER
   		@FindBy(xpath = "//input[@placeholder='Enter Phone Number']")
   		@CacheLookup
@@ -108,6 +149,22 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   			Thread.sleep(1000);
   		}
   		
+  		//TO SELECT THE REGION THE FROM THE LIST
+  		public void selectRegion(String regionName) throws InterruptedException{	
+  			clickOnDropdown_1_RU();
+  			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,listOptionAddress_RU,regionName);
+  			Thread.sleep(1000);
+  		}
+  		
+  		//TO SELECT THE LOCATION WHILE USERS SEARCHING THE FROM THE LIST
+  		public void selectLocationWhileUsersSearch(String location) throws InterruptedException{	
+  			clickOnDropdown_2_RU();
+  			//BELOW LINE IS USED TO AVOID THE STALE ELEMENT REFERENCE
+  			//List<WebElement> listOption_RU = driver.findElements(By.xpath(ruae.listOptionAvoidStaleElementReference_RU)); 
+  			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,listOptionAddress_RU,location);
+  			Thread.sleep(1000);
+  		}
+  		
   		//TO SELECT THE PACKAGE CATEGORY
   		public void selectPackageCategory(String packageName) throws InterruptedException{	
   			logger.info("SelectPackage methods called");
@@ -120,7 +177,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		
   		//TO SELECT THE PACKAGE CATEGORY
   		public void selectMembershipPackage(String membershipName) throws InterruptedException{	
-  			logger.info("SelectPackage methods called");
+  			logger.info("selectMembershipPackage methods called");
   			clickOnDropdownBoxAddress_2_RU();
   			//BELOW LINE IS USED TO AVOID THE STALE ELEMENT REFERENCE
   			//List<WebElement> listOption_RU = driver.findElements(By.xpath(ruae.listOptionAvoidStaleElementReference_RU)); 
@@ -136,6 +193,97 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		    Thread.sleep(500);
   		}
   		
+  		
+  		//TO SELECT THE ACTION MENU ITEMS
+  		public void selectThreeDotActionMenuItem(String menuItemName) throws InterruptedException{	
+  			logger.info("methods called: selectActionMenuItem");
+  			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,listActionMenuItem_RU,menuItemName);
+  			Thread.sleep(1000);
+  		}
+  	
+  		
+		public int findUsersAndClickOnThreeDotOption(String searchKey,WebDriver driver,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException {
+			Thread.sleep(2000);
+			int listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(ruae.listData_RU,driver, searchKey, searchKeyColumnIndex,wantToClickOnThreeDot);
+			return listRowCount;
+		}
+  		
+		//TO SELECT THE PUASE MEMBESHIP START DATE
+		public void setPauseMembershipStartDate(String pauseStartDate) throws InterruptedException {
+			boolean flag = false;
+			try {
+				clickOnChangeDateIcon_1_RU();
+				DatePicker.DatePicker_GenericMethod_WhenDateGridOnlyPresent(driver,pauseStartDate);
+				flag = true;
+			    Thread.sleep(1000);
+			   
+			}catch(Throwable e) {
+				logger.info("Exception from setPauseMembershipStartDate: "+e.getMessage());
+				softAssert.assertTrue(false,"To check pause membership start date");
+			}
+			if(!flag) {
+				clickOnBtnCross_RU();
+				Thread.sleep(500);
+				clickOnBtnCross_RU();
+		    }
+		}
+		
+		//TO SELECT THE PAUSE MEMBERSHIP END DATE
+		public void setPauseMembershipEndDate(String pauseEndDate) throws InterruptedException {
+			boolean flag = false;
+			try {
+				clickOnChangeDateIcon_2_RU();
+				DatePicker.DatePicker_GenericMethod_WhenDateGridOnlyPresent(driver,pauseEndDate);
+				flag = true;
+			    Thread.sleep(1000);
+			}catch(Throwable e) {
+				logger.info("Exeception from setPauseMembershipEndDate: "+e.getMessage());
+				softAssert.assertTrue(false,"To check pause membership end date");
+			}
+			if(!flag) {
+				clickOnBtnCross_RU();
+				clickOnBtnCross_RU();
+		    }
+		}
+		
+		@FindBy(xpath = "//label[contains(text(),'Select a reason')]")
+		@CacheLookup
+		public WebElement btnDrpSelectReason;
+		
+		//TO CLICK ON DROPDWON BUTTON SELECT MEMBERSHIP PAUSE REASON
+		public void clickOnDrpReason() throws InterruptedException {
+			wait.until(ExpectedConditions.visibilityOf(btnDrpSelectReason));
+			Thread.sleep(300);
+			//btnDrpSelectReason.click();
+			action.click(btnDrpSelectReason).build().perform();
+			logger.info("Clicked on the dropdown reason while puase membership");
+			Thread.sleep(500);
+		}
+		
+		//TO SELECT THE PAUSE MEMBERSHIP REASON
+		public void selectReason(String reason) throws InterruptedException {
+			clickOnDrpReason();
+			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,ruae.listOptionAddress_RU,reason);
+			Thread.sleep(1000);
+			logger.info("Pause membership reason selected");
+		}
+		
+		
+		@FindBy(xpath = "//span[normalize-space()='Pause Membership']")
+		@CacheLookup
+		public WebElement btnPauseMembership;
+		public boolean clickOnPauseMembership() {
+			boolean flag = false;
+			if(btnPauseMembership.isDisplayed()) {
+				btnPauseMembership.click();
+				flag = true;
+				logger.info("Clicked on the: btnPauseMembership");
+			}else {
+				logger.info("Pause membership button not displayed");
+			}
+			return flag;
+		}
+		
   		//TO ADD MEMBER
   		public PO_Main_HomePage addMember(String firstName, String lastName, String phoneNumber, String email, String location, String packageName, String membershipName, String membershipStartDate) throws Throwable 
   		{
@@ -177,5 +325,41 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   			return new PO_Main_HomePage(driver);
   		}
   		
+  		
+  		//TO FIND SPECIFIC USERS ANY CLICK ON IT
+  		public void findUsersAndViewUsersDetails(String searchKeyuserNameOrEmail,String regionName,String locationName,int searchKeyColumnIndex, boolean wantToClickOnUser,int listActionIndex) throws InterruptedException
+  		{
+  			selectRegion(regionName);
+  			selectLocationWhileUsersSearch(locationName);
+  			searchBox_RU(searchKeyuserNameOrEmail);
+  			int listRowCount = findUsersAndClickOnThreeDotOption(searchKeyuserNameOrEmail,driver,searchKeyColumnIndex,wantToClickOnUser);
+  			logger.info("listRowCount:  "+listRowCount);
+  			if(listRowCount != -1) {	
+  				clickOnAnyActionBtnPresentUnderThreeDotOption_RU(driver,listActionIndex);
+  				Thread.sleep(3000);
+			}else {
+				softAssert.assertTrue(false,"User you to search is not present");
+			}
+  			softAssert.assertAll();
+  			//NOTE: NOT TAKING RETURN TYPE IN THIS, SO THAT IT WILL STAY ON THE USERS DETAILS PAGE
+  		}
+  		
+  		//TO PAUSE MEMBERSHIP
+  		public PO_Main_HomePage pauseMembership(String pauseStartDate, String pauseEndDate, String pauseReason) throws InterruptedException {
+  			selectThreeDotActionMenuItem("Pause Membership");
+  			setPauseMembershipStartDate(pauseStartDate);
+  			setPauseMembershipEndDate(pauseEndDate);
+  			selectReason(pauseReason);
+  			boolean flag = clickOnPauseMembership();
+  			if(flag) {
+  				String alertContent = snakeAlertMessagesDisplayedContent_RU();
+  				if(alertContent.equalsIgnoreCase(alertMsgMembeshipChangeSuccessfully)) {
+  					logger.info("===>>> "+alertMsgMembeshipChangeSuccessfully);
+  				}else {
+  					logger.info("===>>> "+alertContent);
+  				}
+  			}
+  			return new PO_Main_HomePage(driver);
+  		}
   		
 }

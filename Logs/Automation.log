@@ -1,374 +1,280 @@
-16:56:40.133 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the next classes
-16:56:43.233 [main] INFO  com.p360.pageObject.PO_HomePage - ...HOME PAGE ELEMENT TESTING DONE...
-16:56:48.497 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the button card change
-16:56:50.708 [main] INFO  com.p360.pageObject.PO_HomePage - Entered card name
-16:56:51.221 [main] INFO  com.p360.pageObject.PO_HomePage - Waiting for 15 seconds to enter the card number, expiray , code and zip code manualy
-16:57:06.345 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
-16:57:25.107 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message check frequency is 150 milli seconds and loop count is: 2500
-16:57:25.116 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+16:47:18.090 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+16:47:19.178 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 2
+16:47:20.187 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectLocationWhileUsersSearch
+16:47:20.188 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: WESTWOOD
+16:47:20.248 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+16:47:21.022 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+16:47:22.487 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: OTPUser Reichel
+16:47:28.510 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findUsersAndClickOnThreeDotOption
+16:47:28.511 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
+16:47:28.748 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
+16:47:31.895 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+16:47:32.459 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the User name text 
+16:47:37.266 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the Logout button 
+16:47:37.880 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - ... LOGOUT DONE ...
+16:47:38.207 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Driver shutdown
+16:52:24.123 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Base class started...
+16:52:26.350 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Chrome driver selected
+16:52:27.394 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Login page started
+16:52:27.576 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Maximize the window
+16:52:27.737 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Login user Email: anup@hypertrends.com  and Password: Tester123!
+16:52:27.737 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login: AdminLogin
+16:52:27.841 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+16:52:32.806 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+16:52:33.379 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+16:52:33.672 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+16:52:40.822 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+16:52:44.054 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+16:52:47.363 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOnTabUsers
+16:52:52.474 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
+16:52:53.493 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectRegion
+16:52:53.493 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: WESTWOOD
+16:52:55.079 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+16:52:55.774 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+16:52:56.858 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 2
+16:52:57.868 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectLocationWhileUsersSearch
+16:52:57.869 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: WESTWOOD
+16:52:57.949 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+16:52:58.622 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+16:53:00.040 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: OTPUser Reichel
+16:53:06.060 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findUsersAndClickOnThreeDotOption
+16:53:06.060 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
+16:53:06.649 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: OTPUSER REICHEL
+16:53:06.649 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given DateAndTime not matched: OTPUser Reichel
+16:53:06.871 [main] INFO  com.p360.Main.pageObject.PO_Main_UsersPage - listRowCount:  1
+16:53:06.917 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from clickOnBtnCancelClass_RU: invalid selector: Unable to locate an element with the xpath expression ((//div[contains(@class,'ml-2 font-RobotoMedium')])[1] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '((//div[contains(@class,'ml-2 font-RobotoMedium')])[1]' is not a valid XPath expression.
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [056df5784929d6dd483202d1ae6cc9de, findElement {using=xpath, value=((//div[contains(@class,'ml-2 font-RobotoMedium')])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51009}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51009/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 056df5784929d6dd483202d1ae6cc9de
+16:53:07.468 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
+16:53:10.607 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+16:53:11.187 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the User name text 
+16:53:15.681 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the Logout button 
+16:53:16.240 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - ... LOGOUT DONE ...
+16:53:16.592 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Driver shutdown
+17:07:28.431 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Base class started...
+17:07:32.182 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Chrome driver selected
+17:07:33.515 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Login page started
+17:07:33.734 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Maximize the window
+17:07:33.816 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Login user Email: anup@hypertrends.com  and Password: Tester123!
+17:07:33.817 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login: AdminLogin
+17:07:33.935 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+17:07:39.562 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+17:07:40.140 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+17:07:40.462 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+17:07:46.689 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+17:07:49.919 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+17:07:53.135 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOnTabUsers
+17:07:58.248 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
+17:07:59.259 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectRegion
+17:07:59.259 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: WESTWOOD
+17:08:00.777 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+17:08:01.440 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+17:08:02.607 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 2
+17:08:03.622 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectLocationWhileUsersSearch
+17:08:03.622 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: WESTWOOD
+17:08:03.686 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+17:08:04.312 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+17:08:05.721 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: OTPUSER REICHEL
+17:08:11.746 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findUsersAndClickOnThreeDotOption
+17:08:11.746 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
+17:08:12.328 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: OTPUSER REICHEL
+17:08:12.699 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given dateAndTime matched with the list value: OTPUSER REICHEL
+17:08:12.757 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
+17:08:13.189 [main] INFO  com.p360.Main.pageObject.PO_Main_UsersPage - listRowCount:  1
+17:08:13.239 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from clickOnBtnCancelClass_RU: invalid selector: Unable to locate an element with the xpath expression ((//div[contains(@class,'ml-2 font-RobotoMedium')])[1] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '((//div[contains(@class,'ml-2 font-RobotoMedium')])[1]' is not a valid XPath expression.
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [db622ee4d4dbe802eb1f1a6a8ec82788, findElement {using=xpath, value=((//div[contains(@class,'ml-2 font-RobotoMedium')])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51843}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51843/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: db622ee4d4dbe802eb1f1a6a8ec82788
+17:08:13.804 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
+17:08:14.935 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Logout Exception: element click intercepted: Element <span class="jss28 Cmt-nav-text">...</span> is not clickable at point (146, 185). Other element would receive the click: <div aria-hidden="true" style="z-index: -1; position: fixed; inset: 0px; background-color: transparent; -webkit-tap-highlight-color: transparent;"></div>
+  (Session info: chrome=116.0.5845.188)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [db622ee4d4dbe802eb1f1a6a8ec82788, clickElement {id=51B2AF34CE9552E0F0A32E33A55DD774_element_825}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51843}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51843/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (db622ee4d4dbe802eb1f1a6a8ec82788)] -> xpath: //span[normalize-space()='Dashboard']]
+Session ID: db622ee4d4dbe802eb1f1a6a8ec82788
+17:08:15.470 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Driver shutdown
+17:29:40.696 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Base class started...
+17:29:43.591 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Chrome driver selected
+17:29:45.354 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Login page started
+17:29:45.533 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Maximize the window
+17:29:45.637 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Login user Email: anup@hypertrends.com  and Password: Tester123!
+17:29:45.637 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login: AdminLogin
+17:29:45.769 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+17:29:51.780 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+17:29:52.350 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+17:29:52.615 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+17:30:00.221 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+17:30:03.375 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+17:30:06.580 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOnTabUsers
+17:30:11.657 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
+17:30:12.708 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectRegion
+17:30:12.708 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: WESTWOOD
+17:30:14.368 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+17:30:15.079 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+17:30:16.168 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 2
+17:30:17.186 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectLocationWhileUsersSearch
+17:30:17.186 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: WESTWOOD
+17:30:17.254 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+17:30:17.912 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+17:30:19.305 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: OTPUSER REICHEL
+17:30:25.315 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findUsersAndClickOnThreeDotOption
+17:30:25.315 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
+17:30:25.862 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: OTPUSER REICHEL
+17:30:26.203 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given value matched with the list value: OTPUSER REICHEL
+17:30:26.247 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
+17:30:26.657 [main] INFO  com.p360.Main.pageObject.PO_Main_UsersPage - listRowCount:  1
+17:30:26.792 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button: 
+17:30:27.335 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
+17:30:30.502 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+17:30:31.327 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the User name text 
+17:30:37.002 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the Logout button 
+17:30:37.803 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - ... LOGOUT DONE ...
+17:30:38.772 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Driver shutdown
+17:32:25.057 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Base class started...
+17:32:28.047 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Chrome driver selected
+17:32:28.923 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Login page started
+17:32:29.061 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Maximize the window
+17:32:29.223 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Login user Email: anup@hypertrends.com  and Password: Tester123!
+17:32:29.223 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login: AdminLogin
+17:32:29.385 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+17:32:35.016 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+17:32:35.652 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+17:32:35.950 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+17:32:41.682 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+17:32:44.887 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+17:32:48.076 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOnTabUsers
+17:32:53.185 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
+17:32:54.208 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectRegion
+17:32:54.208 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: WESTWOOD
+17:32:55.711 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+17:32:56.428 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+17:32:57.540 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 2
+17:32:58.562 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectLocationWhileUsersSearch
+17:32:58.562 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: WESTWOOD
+17:32:58.621 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+17:32:59.349 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+17:33:00.764 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: OTPUSER REICHEL
+17:33:06.781 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findUsersAndClickOnThreeDotOption
+17:33:06.781 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
+17:33:07.363 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: OTPUSER REICHEL
+17:33:07.707 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given value matched with the list value: OTPUSER REICHEL
+17:33:07.783 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
+17:33:08.207 [main] INFO  com.p360.Main.pageObject.PO_Main_UsersPage - listRowCount:  1
+17:33:08.243 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button: Details
+17:33:11.887 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
+17:33:15.060 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+17:33:15.630 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the User name text 
+17:33:20.748 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the Logout button 
+17:33:21.330 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - ... LOGOUT DONE ...
+17:33:21.869 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Driver shutdown
+18:32:23.559 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Base class started...
+18:32:26.444 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Chrome driver selected
+18:32:27.727 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Login page started
+18:32:27.870 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Maximize the window
+18:32:27.965 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Login user Email: anup@hypertrends.com  and Password: Tester123!
+18:32:27.965 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login: AdminLogin
+18:32:28.093 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+18:32:34.629 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+18:32:35.227 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+18:32:35.526 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+18:32:40.623 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+18:32:43.778 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+18:32:47.018 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOnTabUsers
+18:32:52.147 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
+18:32:54.485 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectRegion
+18:32:54.485 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: WESTWOOD
+18:32:56.101 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+18:32:56.859 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+18:32:57.939 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 2
+18:32:58.950 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectLocationWhileUsersSearch
+18:32:58.950 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: WESTWOOD
+18:32:59.021 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+18:32:59.728 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+18:33:01.137 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: OTPUSER REICHEL
+18:33:07.160 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findUsersAndClickOnThreeDotOption
+18:33:07.160 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
+18:33:07.725 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: OTPUSER REICHEL
+18:33:08.116 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given value matched with the list value: OTPUSER REICHEL
+18:33:08.192 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
+18:33:08.603 [main] INFO  com.p360.Main.pageObject.PO_Main_UsersPage - listRowCount:  1
+18:33:08.681 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button: Details
+18:33:12.282 [main] INFO  com.p360.Main.pageObject.PO_Main_UsersPage - methods called: selectActionMenuItem
+18:33:12.283 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectThreeDotActionMenuItem
+18:33:12.283 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: Pause Membership
+18:33:14.944 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Given value not selected from the dropdown: Pause Membership
+18:33:16.003 [main] INFO  com.p360.Main.pageObject.PO_Main_UsersPage - Exception from setPauseMembershipStartDate: no such element: Unable to locate element: {"method":"xpath","selector":"(//button[contains(@aria-label,"change date")])[1]"}
   (Session info: chrome=116.0.5845.188)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [70eb413f84b3d60f32db43048bf6a758, findElement {using=xpath, value=//div[@role="alert"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57230}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57230/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 70eb413f84b3d60f32db43048bf6a758
-16:57:27.216 [main] INFO  com.p360.pageObject.PO_HomePage - ...CHANGE CARD DETAILS TESTING DONE...
-16:57:30.563 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-16:57:31.132 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-16:57:35.310 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-16:57:35.923 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-16:57:36.254 [main] INFO  com.p360.testCases.TC_Home - ...DRIVER SHUTDOWN...
-16:57:36.256 [main] INFO  com.p360.testCases.TC_Membership - ...SETUP METHOD STARTED...
-16:57:37.747 [main] INFO  com.p360.testCases.TC_Classes - ...SETUP METHOD STARTED...
-17:00:21.726 [main] INFO  com.p360.testCases.TC_Home - ...SETUP METHOD STARTED...
-17:00:24.340 [main] INFO  com.p360.testCases.TC_Home - Chrome driver selected
-17:00:25.381 [main] INFO  com.p360.testCases.TC_Home - Login page started
-17:00:25.745 [main] INFO  com.p360.testCases.TC_Home - Maximize the window
-17:00:25.745 [main] INFO  com.p360.testCases.TC_Home - Login user Email: susandavis5@yopmail.com and Password: GqOxiqcyjAk98@%
-17:00:25.877 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-17:00:26.002 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
-17:00:31.922 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-17:00:32.510 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-17:00:32.810 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-17:00:40.971 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-17:00:44.159 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-17:00:46.293 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
-17:00:48.430 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-17:00:51.596 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-17:00:53.669 [main] INFO  com.p360.pageObject.PO_HomePage - Checked is Dashboard displayed: true
-17:00:55.797 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Manage my membership 
-17:01:01.817 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Appstore 
-17:01:14.651 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Google playstore 
-17:01:20.874 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the button card change
-17:01:23.020 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the cancel button
-17:01:23.053 [main] INFO  com.p360.pageObject.PO_HomePage - Exceptino from textNoUpcomingClasses: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(normalize-space(),'No Upcoming Classes')])[11]"}
+Command: [311808fb1ba96794b23bb02224cd173e, findElement {using=xpath, value=(//button[contains(@aria-label,"change date")])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57870}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57870/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 311808fb1ba96794b23bb02224cd173e
+18:33:16.019 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from clickOnBtnCross_RU: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@title='Close']"}
   (Session info: chrome=116.0.5845.188)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [95548cf7ddfd5eb7d2e2c6e1d70e4961, findElement {using=xpath, value=(//div[contains(normalize-space(),'No Upcoming Classes')])[11]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57346}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57346/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 95548cf7ddfd5eb7d2e2c6e1d70e4961
-17:01:23.776 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the next classes
-17:01:26.868 [main] INFO  com.p360.pageObject.PO_HomePage - ...HOME PAGE ELEMENT TESTING DONE...
-17:01:32.121 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the button card change
-17:01:34.343 [main] INFO  com.p360.pageObject.PO_HomePage - Entered card name
-17:01:34.846 [main] INFO  com.p360.pageObject.PO_HomePage - Waiting for 15 seconds to enter the card number, expiray , code and zip code manualy
-17:01:49.977 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
-17:01:55.337 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 510
-17:01:55.338 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-17:01:55.367 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Card Added Successfully.
-17:01:55.879 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+Command: [311808fb1ba96794b23bb02224cd173e, findElement {using=xpath, value=//button[@title='Close']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57870}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57870/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 311808fb1ba96794b23bb02224cd173e
+18:33:16.570 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from clickOnBtnCross_RU: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@title='Close']"}
   (Session info: chrome=116.0.5845.188)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [95548cf7ddfd5eb7d2e2c6e1d70e4961, findElement {using=xpath, value=//div[@role="alert"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57346}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57346/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 95548cf7ddfd5eb7d2e2c6e1d70e4961
-17:01:57.894 [main] INFO  com.p360.pageObject.PO_HomePage - ===>>> User card details changed successfully
-17:01:57.894 [main] INFO  com.p360.pageObject.PO_HomePage - ...CHANGE CARD DETAILS TESTING DONE...
-17:02:01.026 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-17:02:01.648 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-17:02:06.817 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-17:02:07.414 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-17:02:07.923 [main] INFO  com.p360.testCases.TC_Home - ...DRIVER SHUTDOWN...
-17:02:07.924 [main] INFO  com.p360.testCases.TC_Membership - ...SETUP METHOD STARTED...
-17:02:09.109 [main] INFO  com.p360.testCases.TC_Classes - ...SETUP METHOD STARTED...
-17:02:48.286 [main] INFO  com.p360.testCases.TC_Home - ...SETUP METHOD STARTED...
-17:02:50.377 [main] INFO  com.p360.testCases.TC_Home - Chrome driver selected
-17:02:51.976 [main] INFO  com.p360.testCases.TC_Home - Login page started
-17:02:52.265 [main] INFO  com.p360.testCases.TC_Home - Maximize the window
-17:02:52.267 [main] INFO  com.p360.testCases.TC_Home - Login user Email: susandavis5@yopmail.com and Password: GqOxiqcyjAk98@%
-17:02:52.408 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-17:02:52.631 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
-17:02:57.906 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-17:02:58.512 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-17:02:58.791 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-17:03:03.926 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-17:03:07.085 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-17:03:09.234 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
-17:03:11.331 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-17:03:14.521 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-17:03:16.642 [main] INFO  com.p360.pageObject.PO_HomePage - Checked is Dashboard displayed: true
-17:03:18.744 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Manage my membership 
-17:03:25.177 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Appstore 
-17:03:38.017 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Google playstore 
-17:03:44.830 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the button card change
-17:03:47.004 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the cancel button
-17:03:47.068 [main] INFO  com.p360.pageObject.PO_HomePage - Exceptino from textNoUpcomingClasses: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(normalize-space(),'No Upcoming Classes')])[11]"}
+Command: [311808fb1ba96794b23bb02224cd173e, findElement {using=xpath, value=//button[@title='Close']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57870}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57870/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 311808fb1ba96794b23bb02224cd173e
+18:33:16.585 [main] INFO  com.p360.Main.pageObject.PO_Main_UsersPage - Exeception from setPauseMembershipEndDate: no such element: Unable to locate element: {"method":"xpath","selector":"(//button[contains(@aria-label,"change date")])[2]"}
   (Session info: chrome=116.0.5845.188)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [063c9fed7fab3b0bd7ae12b6dd329ca6, findElement {using=xpath, value=(//div[contains(normalize-space(),'No Upcoming Classes')])[11]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57458}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57458/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 063c9fed7fab3b0bd7ae12b6dd329ca6
-17:03:47.978 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the next classes
-17:03:51.091 [main] INFO  com.p360.pageObject.PO_HomePage - ...HOME PAGE ELEMENT TESTING DONE...
-17:03:56.331 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the button card change
-17:03:58.526 [main] INFO  com.p360.pageObject.PO_HomePage - Entered card name
-17:03:59.037 [main] INFO  com.p360.pageObject.PO_HomePage - Waiting for 15 seconds to enter the card number, expiray , code and zip code manualy
-17:04:14.162 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
-17:04:19.022 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 494
-17:04:19.022 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-17:04:19.062 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Card Added Successfully.
-17:04:19.573 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+Command: [311808fb1ba96794b23bb02224cd173e, findElement {using=xpath, value=(//button[contains(@aria-label,"change date")])[2]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57870}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57870/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 311808fb1ba96794b23bb02224cd173e
+18:33:16.601 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from clickOnBtnCross_RU: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@title='Close']"}
   (Session info: chrome=116.0.5845.188)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [063c9fed7fab3b0bd7ae12b6dd329ca6, findElement {using=xpath, value=//div[@role="alert"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57458}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57458/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 063c9fed7fab3b0bd7ae12b6dd329ca6
-17:04:21.587 [main] INFO  com.p360.pageObject.PO_HomePage - ===>>> User card details changed successfully
-17:04:21.587 [main] INFO  com.p360.pageObject.PO_HomePage - ...CHANGE CARD DETAILS TESTING DONE...
-17:04:24.673 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-17:04:25.275 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-17:04:30.266 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-17:04:30.880 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-17:04:31.147 [main] INFO  com.p360.testCases.TC_Home - ...DRIVER SHUTDOWN...
-17:04:31.150 [main] INFO  com.p360.testCases.TC_Membership - ...SETUP METHOD STARTED...
-17:04:32.165 [main] INFO  com.p360.testCases.TC_Classes - ...SETUP METHOD STARTED...
-17:08:55.138 [main] INFO  com.p360.testCases.TC_Home - ...SETUP METHOD STARTED...
-17:08:57.397 [main] INFO  com.p360.testCases.TC_Home - Chrome driver selected
-17:08:58.408 [main] INFO  com.p360.testCases.TC_Home - Login page started
-17:08:58.741 [main] INFO  com.p360.testCases.TC_Home - Maximize the window
-17:08:58.741 [main] INFO  com.p360.testCases.TC_Home - Login user Email: susandavis5@yopmail.com and Password: GqOxiqcyjAk98@%
-17:08:58.832 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-17:08:59.021 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
-17:09:16.079 [main] INFO  com.p360.testCases.TC_Home - ...SETUP METHOD STARTED...
-17:09:17.952 [main] INFO  com.p360.testCases.TC_Home - Chrome driver selected
-17:09:19.041 [main] INFO  com.p360.testCases.TC_Home - Login page started
-17:09:19.180 [main] INFO  com.p360.testCases.TC_Home - Maximize the window
-17:09:19.180 [main] INFO  com.p360.testCases.TC_Home - Login user Email: susandavis5@yopmail.com and Password: GqOxiqcyjAk98@%
-17:09:19.271 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-17:09:19.398 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
-17:09:24.959 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-17:09:25.631 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-17:09:25.928 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-17:09:31.871 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-17:09:37.009 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the button card change
-17:09:39.185 [main] INFO  com.p360.pageObject.PO_HomePage - Entered card name
-17:09:39.688 [main] INFO  com.p360.pageObject.PO_HomePage - Waiting for 15 seconds to enter the card number, expiray , code and zip code manualy
-17:09:54.828 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
-17:09:59.810 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 358
-17:09:59.810 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-17:09:59.819 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Card Added Successfully.
-17:10:00.332 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+Command: [311808fb1ba96794b23bb02224cd173e, findElement {using=xpath, value=//button[@title='Close']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57870}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57870/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 311808fb1ba96794b23bb02224cd173e
+18:33:16.616 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from clickOnBtnCross_RU: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@title='Close']"}
   (Session info: chrome=116.0.5845.188)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8bce0a0fd48125dfdef5abeafb5a9b1c, findElement {using=xpath, value=//div[@role="alert"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57602}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57602/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8bce0a0fd48125dfdef5abeafb5a9b1c
-17:10:02.334 [main] INFO  com.p360.pageObject.PO_HomePage - ===>>> User card details changed successfully
-17:10:02.335 [main] INFO  com.p360.pageObject.PO_HomePage - ...CHANGE CARD DETAILS TESTING DONE...
-17:10:05.605 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-17:10:06.190 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-17:10:10.904 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-17:10:11.496 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-17:10:11.818 [main] INFO  com.p360.testCases.TC_Home - ...DRIVER SHUTDOWN...
-17:10:11.821 [main] INFO  com.p360.testCases.TC_Membership - ...SETUP METHOD STARTED...
-17:10:12.840 [main] INFO  com.p360.testCases.TC_Membership - Chrome driver selected
-17:10:15.243 [main] INFO  com.p360.testCases.TC_Membership - Login page started
-17:10:15.369 [main] INFO  com.p360.testCases.TC_Membership - Maximize the window
-17:10:15.370 [main] INFO  com.p360.testCases.TC_Membership - Login user Email: susandavis5@yopmail.com and Password: GqOxiqcyjAk98@%
-17:10:15.376 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-17:10:15.482 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
-17:10:20.204 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-17:10:20.829 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-17:10:21.139 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-17:10:27.041 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-17:10:30.893 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-17:10:33.016 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
-17:10:35.022 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method called: changeMembership
-17:10:35.643 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the manage membership button
-17:10:36.547 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the category field to open the list
-17:10:37.059 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectCategory
-17:10:37.127 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: All
-17:10:37.699 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
-17:10:39.334 [main] INFO  com.p360.pageObject.PO_MembershipPage - Selected radio button: The end of the current period
-17:10:40.855 [main] INFO  com.p360.pageObject.PO_MembershipPage - Selected radio button is not Custom Date
-17:10:40.855 [main] INFO  com.p360.pageObject.PO_MembershipPage - SelectPackage methods called
-17:10:40.855 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectPackage
-17:10:40.925 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: Dynamic Brand Strategist
-17:10:41.546 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
-17:10:43.076 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox 1
-17:10:43.172 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the Change membership button
-17:10:45.428 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 188
-17:10:45.428 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-17:10:45.446 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Membership Package Changed.
-17:10:45.961 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
-  (Session info: chrome=116.0.5845.188)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [79c47b3d3b5e9a6e6b681b19acc2dfa5, findElement {using=xpath, value=//div[@role="alert"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57663}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57663/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 79c47b3d3b5e9a6e6b681b19acc2dfa5
-17:10:47.977 [main] INFO  com.p360.pageObject.PO_MembershipPage - ===>>> Membership Changed Successfully
-17:10:49.990 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - test_DBT_RegisterAndCacleClass method called and Caller method name: test_DBT_ChangeMembership
-17:10:49.990 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - User given userEmailAddress: susandavis5@yopmail.com
-17:10:49.990 [main] INFO  com.p360.DataBaseTesting.DBT_User_Membership - Query string: SELECT * FROM public.user WHERE email_address = 'susandavis5@yopmail.com' ORDER BY updated_at
-17:10:49.990 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
-17:11:00.137 [main] INFO  com.p360.pageObject.PO_MembershipPage - Exception from changeMembership: Cannot invoke "java.sql.ResultSet.next()" because "resultsetFindUniqueUser" is null
-17:11:00.137 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method call done: changeMembership 
-17:11:03.344 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-17:11:05.459 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
-17:11:07.472 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method called: checkAgreedTerm
-17:11:12.661 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the agreed terms
-17:11:14.738 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the cancel button
-17:11:14.739 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method call done: checkAgreedTerm
-17:11:18.164 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-17:11:20.290 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
-17:11:22.301 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method called: pasueMembership
-17:11:23.011 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause member ship button
-17:11:24.554 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the dropdown reason while puase membership
-17:11:25.064 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectReason
-17:11:25.166 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: Travel
-17:11:25.738 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
-17:11:26.742 [main] INFO  com.p360.pageObject.PO_MembershipPage - Pause membership reason selected
-17:11:26.921 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause membership start date icon
-17:11:27.436 [main] INFO  com.p360.projectUtility.DatePicker - Enter inside method DatePicker class and caller methods name: setPauseMembershipStartDate
-17:11:27.437 [main] INFO  com.p360.projectUtility.DatePicker - User given year: 2023 Month: September Date: 25
-17:11:27.986 [main] INFO  com.p360.projectUtility.DatePicker - Displayed month name: September and year is: 2023
-17:11:27.987 [main] INFO  com.p360.projectUtility.DatePicker - Year Matched: 2023
-17:11:27.987 [main] INFO  com.p360.projectUtility.DatePicker - displayedMonth int postition: 9
-17:11:27.987 [main] INFO  com.p360.projectUtility.DatePicker - inputMonth int postition: 9
-17:11:27.987 [main] INFO  com.p360.projectUtility.DatePicker - selected month name is: September
-17:11:33.022 [main] INFO  com.p360.projectUtility.DatePicker - Cursor Behavior over Element: auto
-17:11:33.631 [main] INFO  com.p360.projectUtility.DatePicker - Clicked on the given date: 25
-17:11:34.155 [main] INFO  com.p360.projectUtility.DatePicker - Exception from DatePicker_GenericMethod_WhenDateGridOnlyPresent: stale element reference: stale element not found
-  (Session info: chrome=116.0.5845.188)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [79c47b3d3b5e9a6e6b681b19acc2dfa5, getElementText {id=549B0207B4F0B1F7C7B554FD195DB570_element_818}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57663}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57663/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (79c47b3d3b5e9a6e6b681b19acc2dfa5)] -> xpath: //div[@class='MuiPickersCalendar-week']//div[@role='presentation']]
-Session ID: 79c47b3d3b5e9a6e6b681b19acc2dfa5
-17:11:35.291 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause membership end date icon
-17:11:35.798 [main] INFO  com.p360.projectUtility.DatePicker - Enter inside method DatePicker class and caller methods name: setPauseMembershipEndDate
-17:11:35.798 [main] INFO  com.p360.projectUtility.DatePicker - User given year: 2023 Month: October Date: 30
-17:11:36.322 [main] INFO  com.p360.projectUtility.DatePicker - Displayed month name: October and year is: 2023
-17:11:36.322 [main] INFO  com.p360.projectUtility.DatePicker - Year Matched: 2023
-17:11:36.322 [main] INFO  com.p360.projectUtility.DatePicker - displayedMonth int postition: 10
-17:11:36.322 [main] INFO  com.p360.projectUtility.DatePicker - inputMonth int postition: 10
-17:11:36.322 [main] INFO  com.p360.projectUtility.DatePicker - selected month name is: October
-17:11:41.348 [main] INFO  com.p360.projectUtility.DatePicker - Cursor Behavior over Element: auto
-17:11:41.953 [main] INFO  com.p360.projectUtility.DatePicker - Clicked on the given date: 30
-17:11:42.474 [main] INFO  com.p360.projectUtility.DatePicker - Exception from DatePicker_GenericMethod_WhenDateGridOnlyPresent: stale element reference: stale element not found
-  (Session info: chrome=116.0.5845.188)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [79c47b3d3b5e9a6e6b681b19acc2dfa5, getElementText {id=549B0207B4F0B1F7C7B554FD195DB570_element_1088}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57663}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57663/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (79c47b3d3b5e9a6e6b681b19acc2dfa5)] -> xpath: //div[@class='MuiPickersCalendar-week']//div[@role='presentation']]
-Session ID: 79c47b3d3b5e9a6e6b681b19acc2dfa5
-17:11:43.562 [main] INFO  com.p360.pageObject.PO_MembershipPage - Clicked on the pause my membership
-17:11:44.506 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the confirm button
-17:11:45.403 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 59
-17:11:45.403 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-17:11:45.413 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Memberships can only be paused once in a quarter
-17:11:45.922 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
-  (Session info: chrome=116.0.5845.188)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [79c47b3d3b5e9a6e6b681b19acc2dfa5, findElement {using=xpath, value=//div[@role="alert"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57663}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57663/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 79c47b3d3b5e9a6e6b681b19acc2dfa5
-17:11:47.924 [main] INFO  com.p360.pageObject.PO_MembershipPage - ===>>> Membership not paused
-17:11:47.947 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method call done: pasueMembership
-17:11:51.357 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-17:11:53.496 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu membership
-17:11:55.515 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method called: resumeMembership
-17:11:55.568 [main] INFO  com.p360.pageObject.PO_MembershipPage - Exception From clickOnResumeMembership :no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='Resume Membership']"}
-  (Session info: chrome=116.0.5845.188)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [79c47b3d3b5e9a6e6b681b19acc2dfa5, findElement {using=xpath, value=//span[normalize-space()='Resume Membership']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57663}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57663/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 79c47b3d3b5e9a6e6b681b19acc2dfa5
-17:11:56.618 [main] INFO  com.p360.pageObject.PO_MembershipPage - Exception from clickOnBtnResumeMyMembership: no such element: Unable to locate element: {"method":"xpath","selector":"(//span[normalize-space()='Resume My Membership'])[2]"}
-  (Session info: chrome=116.0.5845.188)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [79c47b3d3b5e9a6e6b681b19acc2dfa5, findElement {using=xpath, value=(//span[normalize-space()='Resume My Membership'])[2]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57663}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57663/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 79c47b3d3b5e9a6e6b681b19acc2dfa5
-17:11:57.151 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Is btnConfirm_RU Displyed: false
-17:11:57.152 [main] INFO  com.p360.pageObject.PO_MembershipPage - Method call done: pasueMembership
-17:12:00.495 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-17:12:01.107 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-17:12:06.389 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-17:12:06.981 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-17:12:07.179 [main] INFO  com.p360.testCases.TC_Membership - ...DRIVER SHUTDOWN...
-17:12:07.180 [main] INFO  com.p360.testCases.TC_Classes - ...SETUP METHOD STARTED...
-17:12:08.114 [main] INFO  com.p360.testCases.TC_Classes - Chrome driver selected
-17:12:08.872 [main] INFO  com.p360.testCases.TC_Classes - Login page started
-17:12:09.030 [main] INFO  com.p360.testCases.TC_Classes - Maximize the window
-17:12:09.031 [main] INFO  com.p360.testCases.TC_Classes - Login user Email: susandavis5@yopmail.com and Password: GqOxiqcyjAk98@%
-17:12:09.032 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login
-17:12:09.247 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
-17:12:14.623 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-17:12:15.265 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-17:12:15.575 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-17:12:21.637 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-17:12:24.869 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-17:12:26.992 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-17:12:29.000 [main] INFO  com.p360.pageObject.PO_ClassesPage - Method called: registerClass
-17:13:00.488 [main] INFO  com.p360.pageObject.PO_ClassesPage - Exception from clickOnBtnRegisterForClass: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[normalize-space()='Register for new class']' (tried for 30 second(s) with 500 milliseconds interval)
-17:13:00.488 [main] INFO  com.p360.pageObject.PO_ClassesPage - Register class button not present
-17:13:00.488 [main] INFO  com.p360.pageObject.PO_ClassesPage - Method called DONE: registerClass
-17:13:03.846 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-17:13:05.967 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Menu my classes
-17:13:07.980 [main] INFO  com.p360.pageObject.PO_ClassesPage - Method called: cancelRegisteredClass
-17:13:45.412 [main] INFO  com.p360.pageObject.PO_ClassesPage - Exception from isNoClassFoundTextPresent: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='No Classes Found']"}
-  (Session info: chrome=116.0.5845.188)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [709b57a1466aa9136e51b1ec6a26d3b0, findElement {using=xpath, value=//span[normalize-space()='No Classes Found']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57727}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57727/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 709b57a1466aa9136e51b1ec6a26d3b0
-17:14:20.457 [main] INFO  com.p360.pageObject.PO_ClassesPage - Exception from isNoClassFoundTextPresent: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='No Classes Found']"}
-  (Session info: chrome=116.0.5845.188)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [709b57a1466aa9136e51b1ec6a26d3b0, findElement {using=xpath, value=//span[normalize-space()='No Classes Found']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57727}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57727/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 709b57a1466aa9136e51b1ec6a26d3b0
-17:14:22.468 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findMyRegisteredClassAndonThreeDotOption
-17:14:22.468 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
-17:14:22.994 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: Sep 16, 2023 | 02:00 AM
-17:14:22.994 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given DateAndTime not matched: Sep 17, 2023 | 09:00 PM
-17:14:23.208 [main] INFO  com.p360.pageObject.PO_ClassesPage - listRowCount:  1
-17:14:23.238 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Is Cancel Class button displayed: false
-17:14:23.744 [main] INFO  com.p360.pageObject.PO_ClassesPage - Method called DONE: cancelRegisteredClass
-17:14:26.973 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-17:14:27.590 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the User name text 
-17:14:32.625 [main] INFO  com.p360.pageObject.PO_HomePage - Clicked on the Logout button 
-17:14:33.222 [main] INFO  com.p360.pageObject.PO_HomePage - ... LOGOUT DONE ...
-17:14:33.530 [main] INFO  com.p360.testCases.TC_Classes - ...DRIVER SHUTDOWN...
+Command: [311808fb1ba96794b23bb02224cd173e, findElement {using=xpath, value=//button[@title='Close']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57870}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57870/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 311808fb1ba96794b23bb02224cd173e
+18:34:02.344 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
+18:34:05.521 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+18:34:06.099 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the User name text 
+18:34:11.366 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the Logout button 
+18:34:11.934 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - ... LOGOUT DONE ...
+18:34:12.463 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Driver shutdown

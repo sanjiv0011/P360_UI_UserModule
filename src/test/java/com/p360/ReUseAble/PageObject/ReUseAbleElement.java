@@ -90,6 +90,8 @@ public class ReUseAbleElement {
 			Thread.sleep(4000);
 		}
 	
+	
+		
 		//SEARCH KEY NOT FOUND
 	  	public String searchKeyMessage_RU = "//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]";
 	  	String searchKeyMessageNotFound_RU;
@@ -121,6 +123,37 @@ public class ReUseAbleElement {
 	        Thread.sleep(500);
 	    }
 	    
+	    //THREE DOT ACTION BUTTON ADDRESSES
+		@FindBy(xpath = "(//div[@class='pointer'])[1]")		////*[name()='svg'][contains(@title,'Options')]
+		@CacheLookup									////div[@class='pointer']
+		public WebElement btnThreeDot_1_RU;
+	    public void clickOnActionButton_1_RU() throws InterruptedException {
+	    	//BEFORE CLICK ON THE THREE DOTS IT WILL CONFIRM FIST WHERE IT IS PRESENT OR NOT
+	    	btnThreeDot_1_RU.click();
+	        logger.info("Clicked on thebtnThreeDot_1_RU");
+	        Thread.sleep(500);
+	    }
+	    @FindBy(xpath = "(//div[@class='pointer'])[2]")		////*[name()='svg'][contains(@title,'Options')]
+		@CacheLookup									////div[@class='pointer']
+		public WebElement btnThreeDot_2_RU;
+	    public void clickOnActionButton_2_RU() throws InterruptedException {
+	    	//BEFORE CLICK ON THE THREE DOTS IT WILL CONFIRM FIST WHERE IT IS PRESENT OR NOT
+	    	btnThreeDot_1_RU.click();
+	        logger.info("Clicked on thebtnThreeDot_2_RU");
+	        Thread.sleep(500);
+	    }
+	    @FindBy(xpath = "(//div[@class='pointer'])[3]")		////*[name()='svg'][contains(@title,'Options')]
+		@CacheLookup									////div[@class='pointer']
+		public WebElement btnThreeDot_3_RU;
+	    public void clickOnActionButton_3_RU() throws InterruptedException {
+	    	//BEFORE CLICK ON THE THREE DOTS IT WILL CONFIRM FIST WHERE IT IS PRESENT OR NOT
+	    	btnThreeDot_1_RU.click();
+	        logger.info("Clicked on thebtnThreeDot_3_RU");
+	        Thread.sleep(500);
+	    }
+	    
+	    
+	    
 	   
 //	    //CANCEL THE CLASS, P360
 //  		@FindBy(xpath = "//div[text()='Cancel Class']")
@@ -147,6 +180,28 @@ public class ReUseAbleElement {
   	        return flag;
     	}
   
+    	//TO CLICK ON ANY OPTION PRESENT UNDER THE THREE DOT ACTION BUTTON
+    	public boolean clickOnAnyActionBtnPresentUnderThreeDotOption_RU(WebDriver driver, int listRowCount) throws InterruptedException {
+  	    	//BEFORE CLICK ON THE THREE DOTS IT WILL CONFIRM FIST WHERE IT IS PRESENT OR NOT
+  	    	int rowCount = listRowCount;
+  	    	String actionAddress = "(//div[contains(@class,'ml-2 font-RobotoMedium')])["+rowCount+"]";
+  	    	boolean flag = false;
+  	    	try {
+  	    		WebElement btnAction = driver.findElement(By.xpath(actionAddress));
+  	    		if(btnAction.isDisplayed()) {
+  	    			logger.info("Clicked on the button: "+btnAction.getText());
+  	    			flag = true;
+  	    			btnAction.click();
+  	    		}else {
+  	    			logger.info("Is Action button displayed: "+flag);
+  	    		}
+  	    	}catch(Exception e) {
+  	    		logger.info("Exception from clickOnAnyActionBtnPresentUnderThreeDotOption_RU: "+e.getMessage());
+  	    	}
+  	        Thread.sleep(500);
+  	        return flag;
+    	}
+    
   
 	    //===========START=======ACTIVATE AND DEACTIVATE==================//
 	    
@@ -838,5 +893,76 @@ public class ReUseAbleElement {
   			logger.info("Entered the  textArea: "+description);
   			Thread.sleep(300);
   		}
+  		
+  		//FIELD/DROPDOWN FIELD BOX ADDRESS AND ACTION METHODS:- 1, P360
+  		@FindBy(xpath = "(//div[contains(@class,'MuiInputBase-formControl')])[1]")
+  		@CacheLookup
+  		public WebElement fieldOrDropdownBox_1_RU;
+  		public void clickOnDropdownBox_1_RU() throws InterruptedException {
+  			try {
+  				wait.until(ExpectedConditions.elementToBeClickable(fieldOrDropdownBox_1_RU));
+  				fieldOrDropdownBox_1_RU.click();
+  				Thread.sleep(500);
+  				logger.info("Clicked on the region dropdown box field");
+  			}catch(Exception e) {
+  				softAssert.assertTrue(false, "Element not Region not clickable");
+  			}
+  		}
+  		
+  		//FIELD/DROPDOWN FIELD BOX ADDRESS AND ACTION METHODS:- 2, P360
+  		@FindBy(xpath = "(//div[contains(@class,'MuiInputBase-formControl')])[2]")
+  		@CacheLookup
+  		public WebElement fieldOrDropdownBox_2_RU;
+  		public void setFieldOrDropdownBox_2_RU(String value) throws InterruptedException {
+  			fieldOrDropdownBox_2_RU.sendKeys(Keys.CONTROL,"a");
+  			fieldOrDropdownBox_2_RU.sendKeys(Keys.DELETE);
+  			fieldOrDropdownBox_2_RU.sendKeys(value);;
+  			logger.info("Entered the value in the fieldBox- 2: "+value);
+  			Thread.sleep(300);
+  		}
+  		
+  		//FIELD/DROPDOWN FIELD BOX ADDRESS AND ACTION METHODS:- 3, P360
+  		@FindBy(xpath = "(//div[contains(@class,'MuiInputBase-formControl')])[3]")
+  		@CacheLookup
+  		public WebElement fieldOrDropdownBox_3_RU;
+  		public void setFieldOrDropdownBox_3_RU(String value) throws InterruptedException {
+  			fieldOrDropdownBox_3_RU.sendKeys(Keys.CONTROL,"a");
+  			fieldOrDropdownBox_3_RU.sendKeys(Keys.DELETE);
+  			fieldOrDropdownBox_3_RU.sendKeys(value);;
+  			logger.info("Entered the value in the fieldBox- 3: "+value);
+  			Thread.sleep(300);
+  		}
+  		
+  		public String listActionMenuItem_RU = "//li[@role=\"menuitem\"]";
+  
+  		
+  		//FIELD/DROPDOWN FIELD BOX ADDRESS AND ACTION METHODS:- 4, P360
+  		@FindBy(xpath = "(//div[contains(@class,'MuiInputBase-formControl')])[4]")
+  		@CacheLookup
+  		public WebElement fieldOrDropdownBox_4_RU;
+  		public void setFieldOrDropdownBox_4_RU(String value) throws InterruptedException {
+  			fieldOrDropdownBox_4_RU.sendKeys(Keys.CONTROL,"a");
+  			fieldOrDropdownBox_4_RU.sendKeys(Keys.DELETE);
+  			fieldOrDropdownBox_4_RU.sendKeys(value);;
+  			logger.info("Entered the value in the fieldBox- 4: "+value);
+  			Thread.sleep(300);
+  		}
+  		
+  		//FIELD/DROPDOWN FIELD BOX ADDRESS AND ACTION METHODS:- 5, P360
+  		@FindBy(xpath = "(//div[contains(@class,'MuiInputBase-formControl')])[5]")
+  		@CacheLookup
+  		public WebElement fieldOrDropdownBox_5_RU;
+  		public void setFieldOrDropdownBox_5_RU(String value) throws InterruptedException {
+  			fieldOrDropdownBox_5_RU.sendKeys(Keys.CONTROL,"a");
+  			fieldOrDropdownBox_5_RU.sendKeys(Keys.DELETE);
+  			fieldOrDropdownBox_5_RU.sendKeys(value);;
+  			logger.info("Entered the value in the fieldBox- 5: "+value);
+  			Thread.sleep(300);
+  		}
+  		
+  		//SELECT SPECIFIC DATA FROM THE LIST AND CLICK ON THE THREE DOT ACTION BUTTON PURPOSE
+		@FindBy(xpath = "//div[contains(@class,'p-4 flex gap-2 flex-row')]")
+		@CacheLookup
+		public List <WebElement> listData_RU;
 }
 

@@ -9,33 +9,48 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">P360_UI_USER_MODULE</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num">317,715</td><td></td><td></td></tr>
+<tr><td><a href="#t0">P360_UI_USER_MODULE</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">109,157</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">P360_UI_USER_MODULE &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.p360.testCases.TC_Classes</td><td><a href="#m0">test_RegisterClass</a></td><td rowspan="1">1694778141790</td><td rowspan="1">38698</td></tr><tr class="failedodd"><td rowspan="2">com.p360.testCases.TC_Membership</td><td><a href="#m1">test_PauseMembership</a></td><td rowspan="1">1694778075029</td><td rowspan="1">32919</td></tr><tr class="failedodd"><td><a href="#m2">test_ResumeMembership</a></td><td rowspan="1">1694778108151</td><td rowspan="1">9002</td></tr><tr><th colspan="4">P360_UI_USER_MODULE &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.p360.testCases.TC_Classes</td><td><a href="#m3">test_CancelRegisteredClass</a></td><td rowspan="1">1694778180680</td><td rowspan="1">83071</td></tr><tr class="passedodd"><td rowspan="1">com.p360.testCases.TC_Home</td><td><a href="#m4">test_ChangeCardDetails</a></td><td rowspan="1">1694777971885</td><td rowspan="1">30450</td></tr><tr class="passedeven"><td rowspan="2">com.p360.testCases.TC_Membership</td><td><a href="#m5">test_ChangeMembership</a></td><td rowspan="1">1694778027801</td><td rowspan="1">32346</td></tr><tr class="passedeven"><td><a href="#m6">test_CheckAgreedTerms</a></td><td rowspan="1">1694778060147</td><td rowspan="1">14594</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">P360_UI_USER_MODULE &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.p360.Main.testCases.TC_Main_Users</td><td><a href="#m0">test_Main_PauseMembership</a></td><td rowspan="1">1695042192280</td><td rowspan="1">49859</td></tr><tr><th colspan="4">P360_UI_USER_MODULE &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.p360.Main.testCases.TC_Main_Users</td><td><a href="#m1">test_Main_SearchAndViewUsersDetails</a></td><td rowspan="1">1695042160638</td><td rowspan="1">31608</td></tr></tbody>
 </table>
-<h2>P360_UI_USER_MODULE</h2><h3 id="m0">com.p360.testCases.TC_Classes#test_RegisterClass</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>2:00 AM</td><td>SEP 16 SAT</td><td>WESTWOOD</td><td>WESTWOOD</td><td>All</td></tr><tr><th colspan="5">Exception</th></tr><tr><td colspan="5"><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
-	You want to register a class but Register Class Button not present expected [true] but found [false]
-	at com.p360.pageObject.PO_ClassesPage.registerClass(PO_ClassesPage.java:500)
-	at com.p360.testCases.TC_Classes.test_RegisterClass(TC_Classes.java:46)
+<h2>P360_UI_USER_MODULE</h2><h3 id="m0">com.p360.Main.testCases.TC_Main_Users#test_Main_PauseMembership</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //label[contains(text(),&apos;Select a reason&apos;)]&apos; (tried for 45 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.p360.Main.pageObject.PO_Main_UsersPage.clickOnDrpReason(PO_Main_UsersPage.java:255)
+	at com.p360.Main.pageObject.PO_Main_UsersPage.selectReason(PO_Main_UsersPage.java:265)
+	at com.p360.Main.pageObject.PO_Main_UsersPage.pauseMembership(PO_Main_UsersPage.java:352)
+	at com.p360.Main.testCases.TC_Main_Users.test_Main_PauseMembership(TC_Main_Users.java:65)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.p360.testCases.TC_Membership#test_PauseMembership</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>25 September 2023</td><td>30 October 2023</td><td>Travel</td></tr><tr><th colspan="3">Exception</th></tr><tr><td colspan="3"><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
-	To check the pause membership expected [Pause Membership Successfully] but found [Memberships can only be paused once in a quarter]
-	at com.p360.pageObject.PO_MembershipPage.pasueMembership(PO_MembershipPage.java:505)
-	at com.p360.testCases.TC_Membership.test_PauseMembership(TC_Membership.java:60)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.p360.testCases.TC_Membership#test_ResumeMembership</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
-	Is clickOnResumeMembership Displayed expected [false] but found [true],
-	Is clickOnBtnResumeMyMembership button Displayed expected [false] but found [true],
-	To check is click on the confirm button or not expected [false] but found [true]
-	at com.p360.pageObject.PO_MembershipPage.resumeMembership(PO_MembershipPage.java:535)
-	at com.p360.testCases.TC_Membership.test_ResumeMembership(TC_Membership.java:67)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.p360.testCases.TC_Classes#test_CancelRegisteredClass</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Sep 17, 2023 | 09:00 PM</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.p360.testCases.TC_Home#test_ChangeCardDetails</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.p360.testCases.TC_Membership#test_ChangeMembership</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr><tr class="param stripe"><td>All</td><td>Dynamic Brand Strategist</td><td>The end of the current period</td><td>15 September 2023</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">com.p360.testCases.TC_Membership#test_CheckAgreedTerms</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//label[contains(text(),&apos;Select a reason&apos;)]&quot;}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [311808fb1ba96794b23bb02224cd173e, findElement {using=xpath, value=//label[contains(text(),&apos;Select a reason&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57870}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57870/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 311808fb1ba96794b23bb02224cd173e
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy36.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+	... 32 more
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.p360.Main.testCases.TC_Main_Users#test_Main_SearchAndViewUsersDetails</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

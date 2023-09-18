@@ -1,31 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+<suite thread-count="1" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <parameter name="browser" value="chrome"/>
+  <parameter name="loginUserType" value="admin"/>
   <listeners>
     <listener class-name="com.p360.utilities.ExtentReport"/>
   </listeners>
-  <test thread-count="5" name="P360_UI_USER_MODULE(failed)">
+  <test thread-count="1" name="P360_UI_USER_MODULE(failed)">
     <classes>
-      <class name="com.p360.testCases.TC_Classes">
+      <class name="com.p360.Main.testCases.TC_Main_Users">
         <methods>
           <include name="Setup"/>
-          <include name="test_RegisterClass" invocation-numbers="0"/>
+          <include name="test_Main_PauseMembership"/>
           <include name="Login"/>
           <include name="Teardown"/>
+          <include name="test_Main_SearchAndViewUsersDetails"/>
           <include name="Logout"/>
         </methods>
-      </class> <!-- com.p360.testCases.TC_Classes -->
-      <class name="com.p360.testCases.TC_Membership">
-        <methods>
-          <include name="test_ResumeMembership"/>
-          <include name="Setup"/>
-          <include name="Login"/>
-          <include name="Teardown"/>
-          <include name="Logout"/>
-          <include name="test_PauseMembership" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- com.p360.testCases.TC_Membership -->
+      </class> <!-- com.p360.Main.testCases.TC_Main_Users -->
     </classes>
   </test> <!-- P360_UI_USER_MODULE(failed) -->
 </suite> <!-- Failed suite [Suite] -->

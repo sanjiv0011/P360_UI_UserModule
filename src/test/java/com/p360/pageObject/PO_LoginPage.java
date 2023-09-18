@@ -96,10 +96,10 @@ public class PO_LoginPage extends ReUseAbleElement {
 		Thread.sleep(200);
 	}
 	
-	//TO LOGIN
+	//FOR USER LOGIN
 	public PO_HomePage Login(String userEmail,String userPassword) throws InterruptedException {
 		try {
-			logger.info("Method called Login");
+			logger.info("Method called Login: Login");
 			clickBtnSignIn();
 			setUserName(userEmail);
 			setTextpassword(userPassword);
@@ -125,10 +125,10 @@ public class PO_LoginPage extends ReUseAbleElement {
 		return new PO_HomePage(driver);
 	}
 	
-	//TO SUPER ADMIN LOGIN
+	//FOR ADMIN LOGIN
 	public PO_Main_HomePage AdminLogin(String adminEmail,String adminPassword) throws InterruptedException {
 		try {
-			logger.info("Method called Login");
+			logger.info("Method called Login: AdminLogin");
 			clickBtnSignIn();
 			setUserName(adminEmail);
 			setTextpassword(adminPassword);

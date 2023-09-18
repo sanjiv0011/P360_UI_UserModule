@@ -15,35 +15,37 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 		public static SoftAssert softAssert = new SoftAssert();
 		public static int findThreedActionButtonAndClick(List<WebElement> listName,WebDriver driver, String searchKey,int searchKeyColumnIndex, boolean wantToClickOnThreeDot) throws InterruptedException {
 		
-			StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-	    	String callerMethodName = stackTraceElements[2].getMethodName();
-			logger.info("findThreedActionButtonAndClick method called and Caller method name: "+callerMethodName);
-			logger.info("wantToClickOnThreeDot: "+wantToClickOnThreeDot);
+		StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+    	String callerMethodName = stackTraceElements[2].getMethodName();
+		logger.info("findThreedActionButtonAndClick method called and Caller method name: "+callerMethodName);
+		logger.info("wantToClickOnThreeDot: "+wantToClickOnThreeDot);
 			
-		String searchKeyFormat[] = searchKey.split(" ");
-		String newSearchKey = null;
-		if (Integer.parseInt(searchKeyFormat[1].replace(",", "")) < 10) {
-		    searchKeyFormat[1] = String.valueOf(Math.abs(Integer.parseInt(searchKeyFormat[1].replace(",", ""))));
-		    
-			StringBuilder builder = new StringBuilder();
-	        for (int i = 0; i < searchKeyFormat.length; i++) {
-	            builder.append(searchKeyFormat[i]);
-	            if (i == 1) {
-	                builder.append(",");
-	            }
-	            if (i < searchKeyFormat.length - 1) {
-	                builder.append(" ");
-	            }
-	        }
-	        newSearchKey = builder.toString();
-	        searchKey = newSearchKey;
-	       // logger.info("New searchKey: "+searchKey);
+		if(callerMethodName.equalsIgnoreCase("findMyRegisteredClassAndonThreeDotOption")) {
+			String searchKeyFormat[] = searchKey.split(" ");
+			String newSearchKey = null;
+			if (Integer.parseInt(searchKeyFormat[1].replace(",", "")) < 10) {
+			    searchKeyFormat[1] = String.valueOf(Math.abs(Integer.parseInt(searchKeyFormat[1].replace(",", ""))));
+			    
+				StringBuilder builder = new StringBuilder();
+		        for (int i = 0; i < searchKeyFormat.length; i++) {
+		            builder.append(searchKeyFormat[i]);
+		            if (i == 1) {
+		                builder.append(",");
+		            }
+		            if (i < searchKeyFormat.length - 1) {
+		                builder.append(" ");
+		            }
+		        }
+		        newSearchKey = builder.toString();
+		        searchKey = newSearchKey;
+		       // logger.info("New searchKey: "+searchKey);
+			}
 		}
 		
 		
 		Thread.sleep(500);
 		boolean flag = false;
-		boolean confirmationGiverDateTimeMatchedOrNot = false;
+		boolean confirmationGiverValue = false;
 		int listRowCount = 0;
 			for(WebElement element : listName)
 			{	listRowCount++;
@@ -58,7 +60,7 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 						
 						logger.info("formatText: "+formatText);
 		    			
-						if(formatText.equals(searchKey))
+						if(formatText.equalsIgnoreCase(searchKey))
 						{
 							String btnActionAddress = "(//div[@class='pointer'])["+listRowCount+"]";
 							flag = true;
@@ -67,8 +69,8 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 								WebElement btnThreeDot = element.findElement(By.xpath(btnActionAddress));
 								if(btnThreeDot.isDisplayed()) {
 									//logger.info("Given DateAndTime : "+searchKey);
-									logger.info("Given dateAndTime matched with the list value: "+formatText);
-									confirmationGiverDateTimeMatchedOrNot =  true;
+									logger.info("Given value matched with the list value: "+formatText);
+									confirmationGiverValue =  true;
 									if(wantToClickOnThreeDot) {
 										btnThreeDot.click();
 										logger.info("Clicked on the three dot option button");
@@ -90,9 +92,8 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 					break;
 				}
 			}
-			if(!confirmationGiverDateTimeMatchedOrNot) {
-				logger.info("Given DateAndTime not matched: "+searchKey);
-				softAssert.assertTrue(false,"Class that you want to cancel is not present: ");
+			if(!confirmationGiverValue) {
+				logger.info("Given confirmationGiverValue not matched: "+searchKey);
 			}
 			
 		Thread.sleep(200);

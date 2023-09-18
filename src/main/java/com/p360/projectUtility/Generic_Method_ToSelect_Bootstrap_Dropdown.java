@@ -18,11 +18,13 @@ public class Generic_Method_ToSelect_Bootstrap_Dropdown
 
 	public static void selectOptionFromDropdown(WebDriver driver, String listAddress, String value)
 	{
+		
 		StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
 		String callerMethodName = stackTraceElements[2].getMethodName();
 		action = new Actions(driver);
 		logger.info("Enter inside method selectOptionFromDropdown and caller method's name: " + callerMethodName);
 		boolean flag = false;
+		logger.info("Value that user want to select from the dropdown list: "+value);
 		List<WebElement> options = driver.findElements(By.xpath(listAddress));
 
 		for (WebElement element : options)
@@ -127,8 +129,8 @@ public class Generic_Method_ToSelect_Bootstrap_Dropdown
 			{
 				logger.info("Entered inside [else if block] selectMembershipPackage");
 				String[] text = element.getText().split("\\(");
-				String formatText = text[0];
-				logger.info(formatText);
+				String formatText = text[0].trim();
+				logger.info("formatText: "+formatText);
 				try
 				{
 					if (formatText.equalsIgnoreCase(value) || formatText.contains(value))

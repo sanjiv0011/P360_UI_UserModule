@@ -420,13 +420,10 @@ public class PO_ClassesPage extends ReUseAbleElement{
 			
 		}
 		
-		//LIST MY CLASSES/ ALREADY REGISTRED CLASS
-		@FindBy(xpath = "//div[contains(@class,'p-4 flex gap-2 flex-row')]")
-		@CacheLookup
-		public List <WebElement> listMyRegisteredClass;
+		//TO FIND SPECIFIC CLASS AND CLICK ON THE THREE DOTS ACTION BUTTON
 		public int findMyRegisteredClassAndonThreeDotOption(String dateTime,WebDriver driver,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException {
 			Thread.sleep(2000);
-			int listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(listMyRegisteredClass,driver, dateTime,searchKeyColumnIndex,wantToClickOnThreeDot);
+			int listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(ruae.listData_RU,driver, dateTime,searchKeyColumnIndex,wantToClickOnThreeDot);
 			return listRowCount;
 		}
 		

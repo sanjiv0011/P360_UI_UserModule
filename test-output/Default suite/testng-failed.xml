@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.p360.testCases.TC_Home">
+      <class name="com.p360.Main.testCases.TC_Main_Home">
         <methods>
-          <include name="teardown"/>
-          <include name="setup"/>
-          <include name="test_Login"/>
+          <include name="test_Main_HomePageTabTesting"/>
+          <include name="Setup"/>
+          <include name="Login"/>
+          <include name="Teardown"/>
+          <include name="test_Logout"/>
         </methods>
-      </class> <!-- com.p360.testCases.TC_Home -->
+      </class> <!-- com.p360.Main.testCases.TC_Main_Home -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

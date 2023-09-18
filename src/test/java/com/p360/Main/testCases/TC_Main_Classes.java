@@ -5,12 +5,9 @@ import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
 import com.p360.Main.pageObject.PO_Main_ClassesPage;
 import com.p360.Main.pageObject.PO_Main_HomePage;
-import com.p360.Main.pageObject.PO_Main_Locations;
 import com.p360.Main.pageObject.PO_Main_PackagesPage;
-import com.p360.Main.pageObject.PO_Main_UsersPage;
 import com.p360.pageObject.PO_HomePage;
 import com.p360.pageObject.PO_LoginPage;
-import com.p360.pageObject.PO_MembershipPage;
 import com.p360.testCases.BaseClass;
 
 public class TC_Main_Classes extends BaseClass{
@@ -42,25 +39,11 @@ public class TC_Main_Classes extends BaseClass{
 	String minutes = "30";
 	String AmPm = "AM";
 	
-	//TO LOGIN
-	@Test(priority = 1)
-	public void test_Login() throws InterruptedException {
-		lp = new PO_LoginPage(driver);
-		mhp = lp.AdminLogin(adminEmail,adminPassword);
-	}
-
 	//TO ADD CLASS
 	@Test(priority = 2)
 	public void test_Main_AddClass() throws InterruptedException {
 		mcp = callMeBeforePerformAnyAction();
 		mhp = mcp.addClass(className,classLocation, caochName, classCapacity,cancelationCutOffTime, waitListSpot, description, classStartDate,classEndDate,dayName,hours,minutes,AmPm);
-	}
-	
-	//TO LOGOUT
-	@Test(priority = 10 , dependsOnMethods = "test_Login")	// here zero or ten ensures least priority, so that this call happens at the last.
-	public void test_Logout() throws InterruptedException {	
-		hp = mhp.clickOntabDashboardReturn_HomePage();
-		hp.Logout();
 	}
 	
 	//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT

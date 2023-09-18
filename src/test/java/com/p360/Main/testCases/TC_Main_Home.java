@@ -18,26 +18,13 @@ public class TC_Main_Home extends BaseClass{
 	public PO_LoginPage lp;
 	public PO_HomePage hp;
 	public Faker faker  = new Faker();
-	public PO_Main_HomePage mhp;
+	public PO_Main_HomePage m_hp;
 	
-	
-	//TO LOGIN
-	@Test(priority = 1)
-	public void test_Login() throws InterruptedException {
-		lp = new PO_LoginPage(driver);
-		mhp = lp.AdminLogin(adminEmail,adminPassword);
-	}
-
 	//TO MAIN HOME PAGE TAB TESTING
-	@Test(priority = 3)
+	@Test(priority = 1)
 	public void test_Main_HomePageTabTesting() throws InterruptedException {
-		hp = mhp.mainHomePageTesting();
+		m_hp = new PO_Main_HomePage(driver);
+		hp = m_hp.mainHomePageTesting();
+		logger.info(hp);
 	}
-	
-	//TO LOGOUT
-	@Test(priority = 10 , dependsOnMethods = "test_Login")	// here zero or ten ensures least priority, so that this call happens at the last.
-	public void test_Logout() throws InterruptedException {	
-		hp.Logout();
-	}
-	
 }
