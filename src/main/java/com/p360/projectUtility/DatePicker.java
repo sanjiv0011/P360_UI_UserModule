@@ -491,7 +491,7 @@ public class DatePicker{
 			                    if(dateCssValue[0].equals("animation")) {
 			                    	logger.info("User given date is not clickable: "+dt);
 			                    	softAssert.assertTrue(false,"User given date is not clickable: "+dt+" ==>>");
-			                    }else if(dateCssValue[0].equals("background") || dateCssValue[0].equals("baseline") ){
+			                    }else if(dateCssValue[0].equals("background") || dateCssValue[0].equals("baseline") || dateCssValue[0].equals("backface")){
 			                    	Thread.sleep(500);
 			                    	dateElement.click();
 			                    	flag2 = true;

@@ -33,7 +33,7 @@ public class TC_Main_Users extends BaseClass{
 	String membershipStartDate = "20 September 2023";
 	
 	//TO SEARCH USER AND VIEW DETAILS
-	String searchKeyuserNameOrEmail = "OTPUSER REICHEL";
+	String searchKeyuserNameOrEmail = "SUSAN5 DAVIS5";
 	String regionName = "WESTWOOD";
 	boolean wantToClickOnUser = true;
 	int listActionIndex = 1;

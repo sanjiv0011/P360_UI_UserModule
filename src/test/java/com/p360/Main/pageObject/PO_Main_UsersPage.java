@@ -252,12 +252,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 		
 		//TO CLICK ON DROPDWON BUTTON SELECT MEMBERSHIP PAUSE REASON
 		public void clickOnDrpReason() throws InterruptedException {
-			wait.until(ExpectedConditions.visibilityOf(btnDrpSelectReason));
-			Thread.sleep(300);
-			//btnDrpSelectReason.click();
-			action.click(btnDrpSelectReason).build().perform();
-			logger.info("Clicked on the dropdown reason while puase membership");
-			Thread.sleep(500);
+			clickOnDropdownBoxAddress_1_RU();
 		}
 		
 		//TO SELECT THE PAUSE MEMBERSHIP REASON
@@ -268,7 +263,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 			logger.info("Pause membership reason selected");
 		}
 		
-		
+		//TO CLICK ON PAUSE MEMBERSHIP BUTTON
 		@FindBy(xpath = "//span[normalize-space()='Pause Membership']")
 		@CacheLookup
 		public WebElement btnPauseMembership;
@@ -283,6 +278,26 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 			}
 			return flag;
 		}
+		
+		//TO CLICK ON PAUSE MEMBERSHIP BUTTON
+		public String textElementMembership = "//span[normalize-space()='Membership']";
+		public boolean isDisplayedElementMembership() {
+			boolean flag = false;
+			try {
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(textElementMembership)));
+			WebElement elementMembership = 	driver.findElement(By.xpath(textElementMembership));
+				if(elementMembership.isDisplayed()) {
+					flag = true;
+					logger.info("Is Membership present: "+flag);
+				}else {
+					logger.info("Pause membership button not displayed");
+				}
+			}catch(Exception e) {
+				
+			}
+			return flag;
+		}
+		
 		
   		//TO ADD MEMBER
   		public PO_Main_HomePage addMember(String firstName, String lastName, String phoneNumber, String email, String location, String packageName, String membershipName, String membershipStartDate) throws Throwable 
@@ -346,19 +361,25 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		
   		//TO PAUSE MEMBERSHIP
   		public PO_Main_HomePage pauseMembership(String pauseStartDate, String pauseEndDate, String pauseReason) throws InterruptedException {
-  			selectThreeDotActionMenuItem("Pause Membership");
-  			setPauseMembershipStartDate(pauseStartDate);
-  			setPauseMembershipEndDate(pauseEndDate);
-  			selectReason(pauseReason);
-  			boolean flag = clickOnPauseMembership();
-  			if(flag) {
-  				String alertContent = snakeAlertMessagesDisplayedContent_RU();
-  				if(alertContent.equalsIgnoreCase(alertMsgMembeshipChangeSuccessfully)) {
-  					logger.info("===>>> "+alertMsgMembeshipChangeSuccessfully);
-  				}else {
-  					logger.info("===>>> "+alertContent);
-  				}
+  			
+  			if(isDisplayedElementMembership()) {
+  				Thread.sleep(1000);
+  				clickOnActionButton_1_RU();
+  	  			selectThreeDotActionMenuItem("Pause Membership");
+  	  			setPauseMembershipStartDate(pauseStartDate);
+  	  			setPauseMembershipEndDate(pauseEndDate);
+  	  			selectReason(pauseReason);
+  	  			boolean flag = clickOnPauseMembership();
+  	  			if(flag) {
+  	  				String alertContent = snakeAlertMessagesDisplayedContent_RU();
+  	  				if(alertContent.equalsIgnoreCase(alertMsgMembeshipChangeSuccessfully)) {
+  	  					logger.info("===>>> "+alertMsgMembeshipChangeSuccessfully);
+  	  				}else {
+  	  					logger.info("===>>> "+alertContent);
+  	  				}
+  	  			}
   			}
+  			softAssert.assertAll();	
   			return new PO_Main_HomePage(driver);
   		}
   		
