@@ -1,8 +1,6 @@
 package com.p360.Main.pageObject;
 
 import java.time.Duration;
-import java.util.List;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -15,10 +13,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
-import com.p360.DataBaseTesting.DBT_User_Classes;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 import com.p360.pageObject.PO_LoginPage;
 import com.p360.projectUtility.DatePicker;
@@ -53,7 +49,10 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 		public String alertMsgMemberhsipPurchagedSuccessfully = "Membership purchased successfully";
 		public String alertMsgYourCardNumberIncomplete = "Your card number is incomplete.";
 		public String alertMsgAcceptTermCondition = "Please accept term and conditions.";
-		public String alertMsgMembeshipChangeSuccessfully = "Pause Membership Successfully";
+		public String alertMsgMembeshipChangeSuccessfully = "Membership paused successfully";
+		public String alertMsgMembershipResumedSuccessfully = "Mermbership Resumed.";
+		public String alertMsgUserEmailAlreadyExist = "User with given email already exists.";
+		public String alertMsgUserEmailChanged = "Email is updated successfully.";
 		
 		//TEXT FIELD FIRST NAME
   		@FindBy(xpath = "//input[@placeholder='Enter First Name']")
@@ -196,9 +195,14 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		
   		//TO SELECT THE ACTION MENU ITEMS
   		public void selectThreeDotActionMenuItem(String menuItemName) throws InterruptedException{	
-  			logger.info("methods called: selectActionMenuItem");
-  			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,listActionMenuItem_RU,menuItemName);
-  			Thread.sleep(1000);
+  			try {
+  				logger.info("methods called: selectActionMenuItem");
+  	  			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,listActionMenuItem_RU,menuItemName);
+  	  			Thread.sleep(1000);
+  			}catch(Exception e) {
+  				softAssert.assertTrue(false, "Action button you want to select is not present");
+  				logger.info("Exception from selectThreeDotActionMenuItem: "+e.getCause());  
+  			}
   		}
   	
   		
@@ -298,6 +302,35 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 			return flag;
 		}
 		
+		//TEXT FIELD NEW EMAIL
+  		@FindBy(xpath = "//input[contains(@placeholder,'Enter Your Email')]")
+  		@CacheLookup
+  		public WebElement filedNewEmail;
+  		public void setNewEmail(String newEmail) throws InterruptedException {
+  			filedNewEmail.sendKeys(Keys.CONTROL,"a");
+  			filedNewEmail.sendKeys(Keys.DELETE);
+  			filedNewEmail.sendKeys(newEmail);;
+  			logger.info("Clicked on the field new email");
+  			Thread.sleep(300);
+  		}
+  		
+  		//TEXT FIELD CONFIRM NEW EMAIL
+  		@FindBy(xpath = "//input[@placeholder='Confirm Email']")
+  		@CacheLookup
+  		public WebElement filedConfirmNewEmail;
+  		public void setConfirmNewEmail(String confirmNewEmail) throws InterruptedException {
+  			filedConfirmNewEmail.sendKeys(Keys.CONTROL,"a");
+  			filedConfirmNewEmail.sendKeys(Keys.DELETE);
+  			filedConfirmNewEmail.sendKeys(confirmNewEmail);;
+  			logger.info("Clicked on the confirm new email");
+  			Thread.sleep(300);
+  		}
+  		
+		
+		
+		
+		
+		
 		
   		//TO ADD MEMBER
   		public PO_Main_HomePage addMember(String firstName, String lastName, String phoneNumber, String email, String location, String packageName, String membershipName, String membershipStartDate) throws Throwable 
@@ -361,7 +394,6 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		
   		//TO PAUSE MEMBERSHIP
   		public PO_Main_HomePage pauseMembership(String pauseStartDate, String pauseEndDate, String pauseReason) throws InterruptedException {
-  			
   			if(isDisplayedElementMembership()) {
   				Thread.sleep(1000);
   				clickOnActionButton_1_RU();
@@ -377,10 +409,72 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   	  				}else {
   	  					logger.info("===>>> "+alertContent);
   	  				}
+  	  			softAssert.assertEquals(alertContent, alertMsgMembeshipChangeSuccessfully,"To check membership paused or not");
   	  			}
   			}
   			softAssert.assertAll();	
   			return new PO_Main_HomePage(driver);
   		}
+  		
+  		//TO PAUSE MEMBERSHIP
+  		public PO_Main_HomePage resumeMembership() throws InterruptedException {
+  			if(isDisplayedElementMembership()) {
+  				Thread.sleep(1000);
+  				clickOnActionButton_1_RU();
+  	  			selectThreeDotActionMenuItem("Resume Membership");
+  	  			boolean flag = clickOnYesButton_RU();
+  	  			if(flag) {
+  	  				String alertContent = snakeAlertMessagesDisplayedContent_RU();
+  	  				if(alertContent.equalsIgnoreCase(alertMsgMembershipResumedSuccessfully)) {
+  	  					logger.info("===>>> "+alertMsgMembershipResumedSuccessfully);
+  	  				}else {
+  	  					logger.info("===>>> "+alertContent);
+  	  				}
+  	  				softAssert.assertEquals(alertContent, alertMsgMembershipResumedSuccessfully,"To check membership resume or  not");
+  	  			}
+  			}
+  			softAssert.assertAll();	
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//AGREED TERM
+  		public PO_Main_HomePage checkAgreedTerm() throws InterruptedException {
+  			if(isDisplayedElementMembership()) {
+  				Thread.sleep(1000);
+  				clickOnActionButton_1_RU();
+  	  			selectThreeDotActionMenuItem("Agreed Terms");
+  	  			jsExecutor.executeScript("window.scrollBy(0, 200);");
+  	  			clickOnCancelButton_1_RU();
+  			}
+  			softAssert.assertAll();	
+  			Thread.sleep(1000);
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//TO CHANGE EMAIL
+  		public PO_Main_HomePage changeEmail(String newEmail,String confirmNewEmail) throws InterruptedException {
+  			if(isDisplayedElementMembership()) {
+  				Thread.sleep(1000);
+  				clickOnActionButton_1_RU();
+  	  			selectThreeDotActionMenuItem("Change Email");
+	  	  		setNewEmail(newEmail);
+	  	  		setConfirmNewEmail(confirmNewEmail);
+	  	  		clickOnBtnSave_1_RU();
+	  	  		String alertContent = snakeAlertMessagesDisplayedContent_RU();
+				if(alertContent.equalsIgnoreCase(alertMsgUserEmailChanged)) {
+					logger.info("===>>> "+alertMsgUserEmailChanged);
+				}else {
+					logger.info("===>>> "+alertContent);
+					clickOnCancelButton_1_RU();
+					Thread.sleep(500);
+				}
+				softAssert.assertEquals(alertContent, alertMsgUserEmailChanged,"To check email change or not");
+			
+  			}
+  			softAssert.assertAll();	
+  			Thread.sleep(1000);
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
   		
 }

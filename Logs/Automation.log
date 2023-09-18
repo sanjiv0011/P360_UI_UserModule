@@ -1,7 +1,33 @@
-19:32:12.669 [main] INFO  com.p360.Main.pageObject.PO_Main_UsersPage - ===>>> Membership paused successfully
-19:32:12.707 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
-19:32:15.875 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-19:32:16.503 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the User name text 
-19:32:21.424 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the Logout button 
-19:32:22.024 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - ... LOGOUT DONE ...
-19:32:22.481 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Driver shutdown
+00:05:22.196 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: Change Email
+00:05:22.812 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+00:05:24.020 [main] INFO  com.p360.Main.pageObject.PO_Main_UsersPage - Clicked on the field new email
+00:05:24.544 [main] INFO  com.p360.Main.pageObject.PO_Main_UsersPage - Clicked on the confirm new email
+00:05:24.966 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
+00:05:26.354 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 98
+00:05:26.355 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+00:05:26.401 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Email is updated successfully.
+00:05:26.913 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f8721a42f5b5d8113e0a81081e776bea, findElement {using=xpath, value=//div[@role="alert"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53004}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53004/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f8721a42f5b5d8113e0a81081e776bea
+00:05:28.920 [main] INFO  com.p360.Main.pageObject.PO_Main_UsersPage - ===>>> Email is updated successfully.
+00:05:28.960 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Cancel button Exception: no such element: Unable to locate element: {"method":"xpath","selector":"(//span[normalize-space()='Cancel'])[1]"}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f8721a42f5b5d8113e0a81081e776bea, findElement {using=xpath, value=(//span[normalize-space()='Cancel'])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53004}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53004/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f8721a42f5b5d8113e0a81081e776bea
+00:05:29.684 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
+00:05:32.881 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+00:05:33.461 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the User name text 
+00:05:38.930 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the Logout button 
+00:05:39.487 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - ... LOGOUT DONE ...
+00:05:39.967 [main] INFO  com.p360.Main.testCases.TC_Main_Users - Driver shutdown

@@ -11,10 +11,9 @@
       <class name="com.p360.Main.testCases.TC_Main_Users">
         <methods>
           <include name="Setup"/>
-          <include name="test_Main_PauseMembership"/>
           <include name="Login"/>
           <include name="Teardown"/>
-          <include name="test_Main_SearchAndViewUsersDetails"/>
+          <include name="test_Main_ChangeEmail"/>
           <include name="Logout"/>
         </methods>
       </class> <!-- com.p360.Main.testCases.TC_Main_Users -->

@@ -44,6 +44,10 @@ public class TC_Main_Users extends BaseClass{
 	String pauseEndDate = "30 September 2023";
 	String pauseReason = "Travel";
 	
+	//TO CHANGE EMAIL
+	String confirmNewEmail = "susandavis6@yopmail.com";
+	String newEmail = "susandavis6@yopmail.com";
+	
 
 	//TO ADD MEMBER
 	//@Test(priority = 1)
@@ -52,19 +56,43 @@ public class TC_Main_Users extends BaseClass{
 		m_hp = m_up.addMember(firstName, lastName, phoneNumber, emailAdd, location, packageName, membershipName, membershipStartDate);
 	}
 	
-	//TO FIND ANY SPECIFIC USERS FROM THE LIST AND CLICK ON THE VIEW DETAILS ACTION BUTTON
-	@Test(priority = 2)
-	public void test_Main_SearchAndViewUsersDetails() throws Throwable {
-		m_up = callMeBeforePerformAnyAction();
-		m_up.findUsersAndViewUsersDetails(searchKeyuserNameOrEmail,regionName,location,searcKeyColumnIndex, wantToClickOnUser,listActionIndex);
-	}
+	
 	
 	//TO PAUSE THE USERS MEMBERSHIP
-	@Test(priority = 3, dependsOnMethods = "test_Main_SearchAndViewUsersDetails")
+	//@Test(priority = 3)
 	public void test_Main_PauseMembership() throws Throwable {
+		searchAndViewUsersDetails();
 		m_hp = m_up.pauseMembership(pauseStartDate, pauseEndDate, pauseReason);
 	}
 	
+	
+	//TO PAUSE THE USERS MEMBERSHIP
+	//@Test(priority = 4)
+	public void test_Main_ResumeMembership() throws Throwable {
+		searchAndViewUsersDetails();
+		m_hp = m_up.resumeMembership();
+	}
+	
+	//TO VIEW AGREED TERMS AND CONDITIONS
+	@Test(priority = 5)
+	public void test_Main_ViewAgreedConditions() throws Throwable {
+		searchAndViewUsersDetails();
+		m_up.checkAgreedTerm();
+	}
+	
+	//TO CHANGE EMAIL
+	@Test(priority = 6)
+	public void test_Main_ChangeEmail() throws Throwable {
+		searchAndViewUsersDetails();
+		m_up.changeEmail(newEmail,confirmNewEmail);
+	}
+		
+		
+	//TO FIND ANY SPECIFIC USERS FROM THE LIST AND CLICK ON THE VIEW DETAILS ACTION BUTTON
+	public void searchAndViewUsersDetails() throws Throwable {
+		m_up = callMeBeforePerformAnyAction();
+		m_up.findUsersAndViewUsersDetails(searchKeyuserNameOrEmail,regionName,location,searcKeyColumnIndex, wantToClickOnUser,listActionIndex);
+	}	
 	
 	//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
 	public PO_Main_UsersPage callMeBeforePerformAnyAction() throws InterruptedException {
@@ -76,5 +104,6 @@ public class TC_Main_Users extends BaseClass{
 		//TO USERS PAGE OBJECTS
 		return new PO_Main_UsersPage(driver);	
 	}
+	
 	
 }

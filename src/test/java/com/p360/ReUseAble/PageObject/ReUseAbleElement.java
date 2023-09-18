@@ -481,10 +481,16 @@ public class ReUseAbleElement {
 		@CacheLookup
 		public WebElement btnYes_RU;
 		 // Action method to click the Yes button
-	    public void clickOnYesButton_RU() throws InterruptedException {
-	    	btnYes_RU.click();
-	        logger.info("Clicked on the Yes button");
-	        Thread.sleep(300);
+	    public boolean clickOnYesButton_RU() throws InterruptedException {
+	    	boolean flag = false;
+	    	if(btnYes_RU.isDisplayed()) {
+	    		btnYes_RU.click();
+		        logger.info("Clicked on the Yes button");
+		        flag = true;
+	    	}else {
+	    		logger.info("Yes button not present");
+	    	}
+	        return flag;
 	    }
 		
 		// No button before confirm the action, P360

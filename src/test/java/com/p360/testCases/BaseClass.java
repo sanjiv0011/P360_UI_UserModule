@@ -106,20 +106,7 @@ public class BaseClass {
 		//Thread.sleep(5000);
 		
 	}
-	
-//	//TO LOGIN
-//	@BeforeClass()
-//	public void Login() throws InterruptedException {
-//		lp = new PO_LoginPage(driver);
-//		hp = lp.Login(userEmail,userPassword);
-//	}
-//		
-//	//TO LOGOUT
-//	@AfterClass()	
-//	public void Logout() throws InterruptedException {	
-//		hp.Logout();
-//	}
-		
+			
 	
 	//TO LOGIN
 	@Parameters("loginUserType")
