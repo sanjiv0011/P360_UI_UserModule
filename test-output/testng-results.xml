@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-19T00:03:59 IST" name="Suite" finished-at="2023-09-19T00:05:39 IST" duration-ms="100459">
+  <suite started-at="2023-09-19T19:26:41 IST" name="Suite" finished-at="2023-09-19T19:27:36 IST" duration-ms="55349">
     <groups>
     </groups>
-    <test started-at="2023-09-19T00:03:59 IST" name="P360_UI_USER_MODULE" finished-at="2023-09-19T00:05:39 IST" duration-ms="100459">
+    <test started-at="2023-09-19T19:26:41 IST" name="P360_UI_USER_MODULE" finished-at="2023-09-19T19:27:36 IST" duration-ms="55349">
       <class name="com.p360.Main.testCases.TC_Main_Users">
-        <test-method is-config="true" signature="Setup(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_Users@500051c5]" started-at="2023-09-19T00:03:59 IST" name="Setup" finished-at="2023-09-19T00:04:02 IST" duration-ms="3020" status="PASS">
+        <test-method is-config="true" signature="Setup(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_Users@4017fe2c]" started-at="2023-09-19T19:26:41 IST" name="Setup" finished-at="2023-09-19T19:26:45 IST" duration-ms="3852" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method is-config="true" signature="Login(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_Users@500051c5]" started-at="2023-09-19T00:04:02 IST" name="Login" finished-at="2023-09-19T00:04:15 IST" duration-ms="12628" status="PASS">
+        <test-method is-config="true" signature="Login(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_Users@4017fe2c]" started-at="2023-09-19T19:26:45 IST" name="Login" finished-at="2023-09-19T19:27:00 IST" duration-ms="15514" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,35 +29,41 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="test_Main_ViewAgreedConditions()[pri:5, instance:com.p360.Main.testCases.TC_Main_Users@500051c5]" started-at="2023-09-19T00:04:15 IST" name="test_Main_ViewAgreedConditions" finished-at="2023-09-19T00:04:50 IST" duration-ms="34781" status="PASS">
+        <test-method signature="test_Main_UnlockUserAccount()[pri:8, instance:com.p360.Main.testCases.TC_Main_Users@4017fe2c]" started-at="2023-09-19T19:27:00 IST" name="test_Main_UnlockUserAccount" finished-at="2023-09-19T19:27:35 IST" duration-ms="34266" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_Main_ViewAgreedConditions -->
-        <test-method signature="test_Main_ChangeEmail()[pri:6, instance:com.p360.Main.testCases.TC_Main_Users@500051c5]" started-at="2023-09-19T00:04:50 IST" name="test_Main_ChangeEmail" finished-at="2023-09-19T00:05:29 IST" duration-ms="39255" status="FAIL">
+        </test-method> <!-- test_Main_UnlockUserAccount -->
+        <test-method is-config="true" signature="Logout(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_Users@4017fe2c]" started-at="2023-09-19T19:27:35 IST" name="Logout" finished-at="2023-09-19T19:27:36 IST" duration-ms="1073" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+          </params>
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[The following asserts failed:
-To check email change or not expected [User with given email already exists.] but found [Email is updated successfully.]]]>
+After logout it lookin for [Performance360] text expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: The following asserts failed:
-To check email change or not expected [User with given email already exists.] but found [Email is updated successfully.]
+After logout it lookin for [Performance360] text expected [true] but found [false]
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-at com.p360.Main.pageObject.PO_Main_UsersPage.changeEmail(PO_Main_UsersPage.java:473)
-at com.p360.Main.testCases.TC_Main_Users.test_Main_ChangeEmail(TC_Main_Users.java:87)
+at com.p360.Main.pageObject.PO_Main_HomePage.AdminLogout(PO_Main_HomePage.java:287)
+at com.p360.testCases.BaseClass.Logout(BaseClass.java:131)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassConfigurations(TestMethodWorker.java:229)
+at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:215)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:131)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 at org.testng.TestRunner.privateRun(TestRunner.java:848)
 at org.testng.TestRunner.run(TestRunner.java:621)
@@ -79,19 +85,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_Main_ChangeEmail -->
-        <test-method is-config="true" signature="Logout(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_Users@500051c5]" started-at="2023-09-19T00:05:29 IST" name="Logout" finished-at="2023-09-19T00:05:39 IST" duration-ms="9804" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
         </test-method> <!-- Logout -->
-        <test-method is-config="true" signature="Teardown()[pri:0, instance:com.p360.Main.testCases.TC_Main_Users@500051c5]" started-at="2023-09-19T00:05:39 IST" name="Teardown" finished-at="2023-09-19T00:05:39 IST" duration-ms="479" status="PASS">
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:com.p360.Main.testCases.TC_Main_Users@4017fe2c]" started-at="2023-09-19T19:27:36 IST" name="Teardown" finished-at="2023-09-19T19:27:36 IST" duration-ms="395" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Teardown -->

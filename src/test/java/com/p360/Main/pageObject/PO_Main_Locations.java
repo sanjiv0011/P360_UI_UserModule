@@ -121,7 +121,7 @@ public class PO_Main_Locations extends ReUseAbleElement {
   		
   		//TO SELECT THE PARENT REGION
   		public void selectParentRegion(String parentRegion) throws InterruptedException {
-  			ruae.clickOnDropdown_1_RU();
+  			ruae.clickOnDropdown_1_RU(driver);
   			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,ruae.listOptionAddress_RU,parentRegion);
   			logger.info("Parent Region: "+parentRegion);
   			Thread.sleep(500);
@@ -174,7 +174,7 @@ public class PO_Main_Locations extends ReUseAbleElement {
 
   		//TO SELECT THE LOCATIONS REGIONS 
   		public void selectLocationRegion(String locationRegionName) throws InterruptedException {
-  			ruae.clickOnDropdown_1_RU();
+  			ruae.clickOnDropdown_1_RU(driver);
   			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,ruae.listOptionAddress_RU,locationRegionName);
   			Thread.sleep(500);
   		}

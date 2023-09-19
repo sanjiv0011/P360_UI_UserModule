@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.asserts.SoftAssert;
 
 public class Generic_Method_ToSelect_Bootstrap_Dropdown 
 {	
@@ -15,8 +16,9 @@ public class Generic_Method_ToSelect_Bootstrap_Dropdown
 	public static final Logger logger = LogManager.getLogger(Generic_Method_ToSelect_Bootstrap_Dropdown.class);
 	public static Actions action;
 	public static final String closeTheCurrentListPopup_address = "(//div[contains(@class,'Cmt-header')])[1]";
-
-	public static void selectOptionFromDropdown(WebDriver driver, String listAddress, String value)
+	public static SoftAssert softAssert = new SoftAssert();
+	
+	public static boolean selectOptionFromDropdown(WebDriver driver, String listAddress, String value)
 	{
 		
 		StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
@@ -26,9 +28,12 @@ public class Generic_Method_ToSelect_Bootstrap_Dropdown
 		boolean flag = false;
 		logger.info("Value that user want to select from the dropdown list: "+value);
 		List<WebElement> options = driver.findElements(By.xpath(listAddress));
-
+	try 
+	{
+		
 		for (WebElement element : options)
-		{
+		{	//REMOVE THE COMMENT, TO CHECK LSIT OPTIONS
+			//logger.info("List options: "+element.getText());
 			if (element.getText().equalsIgnoreCase(value) || element.getText().trim().contains(value.trim()))
 			{
 				logger.info("Entered inside [if block], matched list value: " + element.getText());
@@ -54,6 +59,7 @@ public class Generic_Method_ToSelect_Bootstrap_Dropdown
 				catch (Exception e)
 				{
 					logger.info("Exception While selecting list from the dropdown: " + e.getMessage());
+				
 				}
 				flag = true;
 				break;
@@ -162,10 +168,18 @@ public class Generic_Method_ToSelect_Bootstrap_Dropdown
 					logger.info("Exception While selecting list from the dropdown: " + e.getMessage());
 				}
 			}
+			
 		}
-		if (!flag)
-		{
+		if (!flag){
 			logger.info("Given value not selected from the dropdown: " + value);
+			
 		}
+		
+	}catch(Exception e) {
+		logger.info("Exceptino from : "+e.getMessage());
+		softAssert.assertEquals(true,flag,"Given value not in the dropdown list : "+value);
+	}
+		
+		return flag;
 	}
 }

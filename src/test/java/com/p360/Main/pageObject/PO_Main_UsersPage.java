@@ -1,6 +1,8 @@
 package com.p360.Main.pageObject;
 
 import java.time.Duration;
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -53,6 +55,18 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 		public String alertMsgMembershipResumedSuccessfully = "Mermbership Resumed.";
 		public String alertMsgUserEmailAlreadyExist = "User with given email already exists.";
 		public String alertMsgUserEmailChanged = "Email is updated successfully.";
+		public String alertMsgUserLabelAdded = "User label Added.";
+		public String alertMsgUserLabelAlreadyAdded = "User Label is already exists. Please use another Label";
+		public String alertMsgUserLabelAssignToUser = "User labels assigned to user.";
+		public String alertMsgUserAccountSuspended = "User Account Suspended.";
+		public String alertMsgUserAccountUnlocked = "Unlocked user Account.";
+		public String alertMsgMembershipPackageChanged = "Membership package changed successfully.";
+		public String alertMsgCancelSubscriptionError = "There was an error getting the Execute Cancel Subscription for the criteria provided.";
+		public String alertMsgCanceledSuccessfully = "Membership Canceled.";
+		public String alertMsgCreditUpdated = "Credits updated.";
+		public String alertMsgInvoiceSent = "Invoice sent.";
+		
+		
 		
 		//TEXT FIELD FIRST NAME
   		@FindBy(xpath = "//input[@placeholder='Enter First Name']")
@@ -141,7 +155,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 		
   		//TO SELECT THE LOCATION THE FROM THE LIST
   		public void selectLocation(String location) throws InterruptedException{	
-  			clickOnDropdown_1_RU();
+  			clickOnDropdown_1_RU(driver);
   			//BELOW LINE IS USED TO AVOID THE STALE ELEMENT REFERENCE
   			//List<WebElement> listOption_RU = driver.findElements(By.xpath(ruae.listOptionAvoidStaleElementReference_RU)); 
   			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,listOptionAddress_RU,location);
@@ -150,7 +164,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		
   		//TO SELECT THE REGION THE FROM THE LIST
   		public void selectRegion(String regionName) throws InterruptedException{	
-  			clickOnDropdown_1_RU();
+  			clickOnDropdown_1_RU(driver);
   			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,listOptionAddress_RU,regionName);
   			Thread.sleep(1000);
   		}
@@ -192,17 +206,36 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		    Thread.sleep(500);
   		}
   		
+  		//TO SELECT THE CREDIT START DATE
+  		public void setCreditStartDate(String creditStartDate) throws Throwable {
+  			clickOnChangeDateIcon_1_RU();
+  			DatePicker.DatePicker_GenericMethod_WhenDateGridOnlyPresent(driver,creditStartDate);
+  			logger.info("Custom date, month and year entered");
+  		    Thread.sleep(500);
+  		}
+  		
+  		//TO SELECT THE CREDIT END DATE
+  		public void setCreditEndDate(String creditEndDate) throws Throwable {
+  			clickOnChangeDateIcon_2_RU();
+  			DatePicker.DatePicker_GenericMethod_WhenDateGridOnlyPresent(driver,creditEndDate);
+  			logger.info("Custom date, month and year entered");
+  		    Thread.sleep(500);
+  		}
+  		
   		
   		//TO SELECT THE ACTION MENU ITEMS
-  		public void selectThreeDotActionMenuItem(String menuItemName) throws InterruptedException{	
+  		public boolean selectThreeDotActionMenuItem(String menuItemName) throws InterruptedException{	
+  			boolean flag = false;
   			try {
   				logger.info("methods called: selectActionMenuItem");
-  	  			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,listActionMenuItem_RU,menuItemName);
+  	  			flag = Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,listActionMenuItem_RU,menuItemName);
   	  			Thread.sleep(1000);
+  	  			
   			}catch(Exception e) {
-  				softAssert.assertTrue(false, "Action button you want to select is not present");
   				logger.info("Exception from selectThreeDotActionMenuItem: "+e.getCause());  
+  				softAssert.assertTrue(flag, "Action button you want to select is not present");
   			}
+  			return flag;
   		}
   	
   		
@@ -308,8 +341,10 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		public WebElement filedNewEmail;
   		public void setNewEmail(String newEmail) throws InterruptedException {
   			filedNewEmail.sendKeys(Keys.CONTROL,"a");
+  			Thread.sleep(100);
   			filedNewEmail.sendKeys(Keys.DELETE);
-  			filedNewEmail.sendKeys(newEmail);;
+  			Thread.sleep(100);
+  			filedNewEmail.sendKeys(newEmail);
   			logger.info("Clicked on the field new email");
   			Thread.sleep(300);
   		}
@@ -320,16 +355,290 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		public WebElement filedConfirmNewEmail;
   		public void setConfirmNewEmail(String confirmNewEmail) throws InterruptedException {
   			filedConfirmNewEmail.sendKeys(Keys.CONTROL,"a");
+  			Thread.sleep(100);
   			filedConfirmNewEmail.sendKeys(Keys.DELETE);
-  			filedConfirmNewEmail.sendKeys(confirmNewEmail);;
+  			Thread.sleep(100);
+  			filedConfirmNewEmail.sendKeys(confirmNewEmail);
   			logger.info("Clicked on the confirm new email");
   			Thread.sleep(300);
   		}
   		
+  		//TEXT FIELD USER LABEL
+  		@FindBy(xpath = "//input[@placeholder='Enter User Label']")
+  		@CacheLookup
+  		public WebElement filedUserLabel;
+  		public void setUserLabel(String userLabel) throws InterruptedException {
+  			filedUserLabel.sendKeys(Keys.CONTROL,"a");
+  			Thread.sleep(100);
+  			filedUserLabel.sendKeys(Keys.DELETE);
+  			Thread.sleep(100);
+  			filedUserLabel.sendKeys(userLabel);;
+  			logger.info("Clicked on the filedUserLabel");
+  			Thread.sleep(300);
+  		}
+		
+  		//ADD BUTTON
+  		@FindBy(xpath = "(//span[normalize-space()='Add'])[1]")
+  		@CacheLookup
+  		public WebElement btnAdd;
+  		public boolean clickOnBtnAdd() throws InterruptedException {
+  			boolean flag = false;
+  			if(btnAdd.isDisplayed()) {
+  				btnAdd.click();
+  				flag = true;
+  	  			logger.info("Clicked on the btnAdd");
+  			}
+  			return flag;
+  		}
+  		
+//  		//ADD BUTTON
+//  		@FindBy(xpath = "//div[@class='w-full']//div")
+//  		@CacheLookup
+// 		public List<WebElement> listUserLabel;
+//  		public String listUserLabelCheckBox = "//input[@type='checkbox']";
+  		public String listUserLabels = "//div[@class='w-full']//div";
+  		public void selectUserLabel(String userLabel) throws InterruptedException {
+  			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,listUserLabels,userLabel);
+			Thread.sleep(1000);
+  		}
+  		
+		//RADIO BUTTON
+		@FindBy(xpath = "//input[@type='radio']")
+		@CacheLookup
+		WebElement btnRadio;
+		public void clickOnRadioButton() throws InterruptedException {
+			btnRadio.click();
+			logger.info("Clicked on the radio button");
+			Thread.sleep(500);
+		}
+  		
+		//DESCRIPTION CANCEL MEMBERSIHP REGION
+  		@FindBy(xpath = "//textarea[contains(@placeholder,'Enter Cancellation Reason')]")
+  		@CacheLookup
+  		public WebElement descriptionCancelMembershipReason;
+  		public void setDescriptionCancelMembershipReason(String descriptionCancelMemebershipReason) throws InterruptedException {
+  			descriptionCancelMembershipReason.sendKeys(Keys.CONTROL,"a");
+  			Thread.sleep(100);
+  			descriptionCancelMembershipReason.sendKeys(Keys.DELETE);
+  			Thread.sleep(100);
+  			descriptionCancelMembershipReason.sendKeys(descriptionCancelMemebershipReason);;
+  			logger.info("Clicked on the descriptionCancelMembershipReason");
+  			Thread.sleep(300);
+  		}
+		
+  		//TO SELECT THE MEMBERSHIP START DATE
+  		public void setCancelMembershipCustomDate(String CancelmembershipCustomDate) throws Throwable {
+  			clickOnChangeDateIcon_1_RU();
+  			DatePicker.DatePicker_GenericMethod_WhenDateGridOnlyPresent(driver,CancelmembershipCustomDate);
+  			logger.info("Custom date, month and year entered");
+  		    Thread.sleep(500);
+  		}
+  		
+  		//RADIO BUTTON
+		@FindBy(xpath = "//span[@class='MuiButton-label'][normalize-space()='Cancel Membership']")
+		@CacheLookup
+		WebElement btnCancelMembershipFinal;
+		public boolean clickOnBtnCancelMembershipFinal() throws InterruptedException {
+			boolean flag = false;
+			if(btnCancelMembershipFinal.isDisplayed()) {
+				btnCancelMembershipFinal.click();
+				flag = true;
+				logger.info("Clicked on the radio button");
+				Thread.sleep(500);
+			}
+			return flag;
+		}
+  		
+		//RADIO BUTTON
+		@FindBy(xpath = "//span[normalize-space()='Renew Membership']")
+		@CacheLookup
+		WebElement btnRenewMembership;
+		public boolean clickOnBtnRenewMembership() throws InterruptedException {
+			boolean flag = false;
+			if(btnRenewMembership.isDisplayed()) {
+				btnRenewMembership.click();
+				flag = true;
+				logger.info("Clicked on the button renew membership");
+				Thread.sleep(500);
+			}
+			return flag;
+		}
+		
+		//RADIO BUTTON END OF BILLING CYCLE
+		@FindBy(xpath = "//span[normalize-space()='Cancel at End of Billing Cycle']")
+		@CacheLookup
+		WebElement radiOnBtnEndOfBillingCycle;
+		public boolean clickOnRadioBtnEndOfBillingCycle() throws InterruptedException {
+			boolean flag = false;
+			try {
+				if(radiOnBtnEndOfBillingCycle.isDisplayed()) {
+					action.moveToElement(radioBtnCancelCustomDate).build().perform();
+					radiOnBtnEndOfBillingCycle.click();
+					flag = true;
+					logger.info("Clicked on the button radiOnBtnEndOfBillingCycle");
+					Thread.sleep(500);
+				}
+			}catch(Exception e) {
+				logger.info("Exception from clickOnRadioBtnCancelCustomDate: "+e.getMessage());
+				softAssert.assertEquals(flag,true,"radiOnBtnEndOfBillingCycle not found");
+			}
+			return flag;
+		}
+		
+		//RADIO BUTTON SELECT CANCEL CUSTOME DATE
+		@FindBy(xpath = "//span[normalize-space()='Cancel at a Custom Date']")
+		@CacheLookup
+		WebElement radioBtnCancelCustomDate;
+		public boolean clickOnRadioBtnCancelCustomDate() throws InterruptedException {
+			boolean flag = false;
+			try {
+				if(radioBtnCancelCustomDate.isDisplayed()) {
+					action.moveToElement(radioBtnCancelCustomDate).build().perform();
+					radioBtnCancelCustomDate.click();
+					flag = true;
+					logger.info("Clicked on the button renew membership");
+					Thread.sleep(500);
+				}
+			}catch(Exception e) {
+				logger.info("Exception from clickOnRadioBtnCancelCustomDate: "+e.getMessage());
+				softAssert.assertEquals(flag,true,"radioBtnCancelCustomDate not found");
+			}
+			return flag;
+		}
+			
+		//TO SELECT THE CHECKBOX AGREE PRICING
+		@FindBy(xpath = "//input[@id='agreeToPricing']")
+		@CacheLookup
+		WebElement checkboxAgreePricing;
+		public void checkCheckboxAgreePricing() throws InterruptedException {
+			if(checkboxAgreePricing.isSelected()) {
+				logger.info("Agree pricing checkbox already selected");
+			}else {
+				checkboxAgreePricing.click();
+				logger.info("Agree pricing checkbox selected");
+				Thread.sleep(500);
+			}
+		}
+		
+		//TO SELECT THE CHECKBOX AGREE PRICING
+		@FindBy(xpath = "(//input[@id='agreeCheckbox'])[1]")
+		@CacheLookup
+		WebElement checkboxAgreeCondition;
+		public void checkCheckboxAgreeCondition() throws InterruptedException {
+			if(checkboxAgreeCondition.isSelected()) {
+				logger.info("Agree pricing checkbox already selected");
+			}else {
+				checkboxAgreeCondition.click();
+				logger.info("Agree pricing checkbox selected");
+				Thread.sleep(500);
+			}
+		}
+  
+		//CLASS HISOTRY LIST
+		@FindBy(xpath = "(//div[contains(@class,'grid grid-cols-1 gap-2')])[1]//div[contains(@class,'flex-row')]")
+		@CacheLookup
+		WebElement listClassHistory;
+		public void selectClassHistory() throws InterruptedException {
+			
+		}
+				
+		//PAYMENT HISOTRY LIST
+		@FindBy(xpath = "(//div[contains(@class,'grid grid-cols-1 gap-2')])[2]//div[contains(@class,'flex-row')]")
+		@CacheLookup
+		public List<WebElement> listPaymentHistory;
+		public String listPaymentHistory_address = "(//div[contains(@class,'grid grid-cols-1 gap-2')])[2]//div[contains(@class,'flex-row')]";
+		public boolean findHistoryAndClickOnThreeDotOption(String searchKey,WebDriver driver,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException {
+			int listRowCount = 0;
+			boolean flag = false;
+			try {
+				Thread.sleep(2000);
+				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(listPaymentHistory,driver, searchKey, searchKeyColumnIndex,wantToClickOnThreeDot);
+				String sendInvoice_Address = "(//div[contains(text(),'Send Invoice')])["+listRowCount+"]";
+				Thread.sleep(500);
+				WebElement sendInvoice = driver.findElement(By.xpath(sendInvoice_Address));
+				action.moveToElement(sendInvoice).build().perform();
+				Thread.sleep(300);
+				sendInvoice.click();
+				flag  = true;
+				logger.info("Clicked no the send invoice button");
+			}catch(Exception e) {
+				logger.info("Exception from findHistoryAndClickOnThreeDotOption: "+e.getMessage());
+				softAssert.assertTrue(flag,"findHistoryAndClickOnThreeDotOption");
+			}
+			return flag;
+		}
+		
+		//MEMBERS CREDIT HISOTRY LIST
+		@FindBy(xpath = "(//div[contains(@class,'grid grid-cols-1 gap-2')])[3]//div[contains(@class,'flex-row')]")
+		@CacheLookup
+		public List <WebElement> listMemberCreditHistory;
+		public String listMemberCreditHistory_address = "(//div[contains(@class,'grid grid-cols-1 gap-2')])[3]//div[contains(@class,'flex-row')]";
+		public int findMemberCreditAndClickOnThreeDotOption(String searchKey,WebDriver driver,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException {
+			boolean flag = false;
+			int listRowCount =0;
+			try {
+				Thread.sleep(2000);
+				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(listMemberCreditHistory,driver, searchKey, searchKeyColumnIndex,wantToClickOnThreeDot);
+				String changeMembeshipCredit_Address = "(//div[contains(@class,'ml-2 font-RobotoMedium')][normalize-space()='Change'])["+listRowCount+"]";
+				Thread.sleep(500);
+				driver.findElement(By.xpath(changeMembeshipCredit_Address)).click();
+				flag = true;
+				logger.info("Clicked no the change button");
+			}catch(Exception e) {
+				logger.info("Exceptin from findMemberCreditAndClickOnThreeDotOption: "+e.getMessage());
+				softAssert.assertTrue(flag,"findMemberCreditAndClickOnThreeDotOption");
+			}
+			return listRowCount;
+		}
+		
+		
+		//TEXT FIELD TOTAL CREDITS
+  		@FindBy(xpath = "//input[contains(@placeholder,'Enter Available Credits')]")
+  		@CacheLookup
+  		public WebElement fieldTotalCredit;
+  		public void setTotalCredit(String totalCredit) throws InterruptedException {
+  			fieldTotalCredit.sendKeys(Keys.CONTROL,"a");
+  			Thread.sleep(100);
+  			fieldTotalCredit.sendKeys(Keys.DELETE);
+  			Thread.sleep(100);
+  			fieldTotalCredit.sendKeys(totalCredit);;
+  			logger.info("Clicked on the fieldTotalCredit");
+  			Thread.sleep(300);
+  		}
+		
+  		//TEXT FIELD USED CREDITS
+  		@FindBy(xpath = "//input[@placeholder='Enter Used Credits']")
+  		@CacheLookup
+  		public WebElement fieldUsedCredit;
+  		public void setUsedCredit(String usedCredit) throws InterruptedException {
+  			fieldUsedCredit.sendKeys(Keys.CONTROL,"a");
+  			Thread.sleep(100);
+  			fieldUsedCredit.sendKeys(Keys.DELETE);
+  			Thread.sleep(100);
+  			fieldUsedCredit.sendKeys(usedCredit);;
+  			logger.info("Clicked on the fieldUsedCredit");
+  			Thread.sleep(300);
+  		}
+  		
+  		//TEXT AREA ADD COMMENTS
+		@FindBy(xpath = "//textarea[@placeholder='Add comments here']")
+		@CacheLookup
+		public WebElement textAreaAddComment;
+		public void setComment(String comment) throws InterruptedException {
+			textAreaAddComment.sendKeys(Keys.CONTROL,"a");
+			Thread.sleep(100);
+			textAreaAddComment.sendKeys(Keys.DELETE);
+			Thread.sleep(100);
+			textAreaAddComment.sendKeys(comment);;
+			logger.info("Clicked on the textAreaAddComment");
+			Thread.sleep(300);
+		}
+  		
 		
 		
 		
-		
+  		
+  		//===================ACTIONS========================//	
 		
 		
   		//TO ADD MEMBER
@@ -397,7 +706,8 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   			if(isDisplayedElementMembership()) {
   				Thread.sleep(1000);
   				clickOnActionButton_1_RU();
-  	  			selectThreeDotActionMenuItem("Pause Membership");
+  	  			boolean bol = selectThreeDotActionMenuItem("Pause Membership");
+  	  			if(bol) {
   	  			setPauseMembershipStartDate(pauseStartDate);
   	  			setPauseMembershipEndDate(pauseEndDate);
   	  			selectReason(pauseReason);
@@ -411,17 +721,19 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   	  				}
   	  			softAssert.assertEquals(alertContent, alertMsgMembeshipChangeSuccessfully,"To check membership paused or not");
   	  			}
+  	  			}
   			}
   			softAssert.assertAll();	
   			return new PO_Main_HomePage(driver);
   		}
   		
-  		//TO PAUSE MEMBERSHIP
+  		//TO RESUME MEMBERSHIP
   		public PO_Main_HomePage resumeMembership() throws InterruptedException {
   			if(isDisplayedElementMembership()) {
   				Thread.sleep(1000);
   				clickOnActionButton_1_RU();
-  	  			selectThreeDotActionMenuItem("Resume Membership");
+  	  			boolean bol = selectThreeDotActionMenuItem("Resume Membership");
+  	  			if(bol) {
   	  			boolean flag = clickOnYesButton_RU();
   	  			if(flag) {
   	  				String alertContent = snakeAlertMessagesDisplayedContent_RU();
@@ -431,6 +743,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   	  					logger.info("===>>> "+alertContent);
   	  				}
   	  				softAssert.assertEquals(alertContent, alertMsgMembershipResumedSuccessfully,"To check membership resume or  not");
+  	  				}
   	  			}
   			}
   			softAssert.assertAll();	
@@ -442,9 +755,11 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   			if(isDisplayedElementMembership()) {
   				Thread.sleep(1000);
   				clickOnActionButton_1_RU();
-  	  			selectThreeDotActionMenuItem("Agreed Terms");
-  	  			jsExecutor.executeScript("window.scrollBy(0, 200);");
-  	  			clickOnCancelButton_1_RU();
+  	  			boolean bol = selectThreeDotActionMenuItem("Agreed Terms");
+  	  			if(bol) {
+	  	  			jsExecutor.executeScript("window.scrollBy(0, 200);");
+	  	  			clickOnCancelButton_1_RU();
+  	  			}
   			}
   			softAssert.assertAll();	
   			Thread.sleep(1000);
@@ -456,24 +771,313 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   			if(isDisplayedElementMembership()) {
   				Thread.sleep(1000);
   				clickOnActionButton_1_RU();
-  	  			selectThreeDotActionMenuItem("Change Email");
-	  	  		setNewEmail(newEmail);
-	  	  		setConfirmNewEmail(confirmNewEmail);
-	  	  		clickOnBtnSave_1_RU();
-	  	  		String alertContent = snakeAlertMessagesDisplayedContent_RU();
-				if(alertContent.equalsIgnoreCase(alertMsgUserEmailChanged)) {
-					logger.info("===>>> "+alertMsgUserEmailChanged);
-				}else {
-					logger.info("===>>> "+alertContent);
-					clickOnCancelButton_1_RU();
-					Thread.sleep(500);
-				}
-				softAssert.assertEquals(alertContent, alertMsgUserEmailChanged,"To check email change or not");
+  	  			boolean bol = selectThreeDotActionMenuItem("Change Email");
+	  	  		if(bol) {
+		  	  		setNewEmail(newEmail);
+		  	  		setConfirmNewEmail(confirmNewEmail);
+		  	  		clickOnBtnSave_1_RU();
+		  	  		String alertContent = snakeAlertMessagesDisplayedContent_RU();
+					if(alertContent.equalsIgnoreCase(alertMsgUserEmailChanged)) {
+						logger.info("===>>> "+alertMsgUserEmailChanged);
+					}else {
+						logger.info("===>>> "+alertContent);
+						clickOnCancelButton_1_RU();
+						Thread.sleep(500);
+					}
+					softAssert.assertEquals(alertContent, alertMsgUserEmailChanged,"To check email change or not");
 			
+	  	  		}
   			}
   			softAssert.assertAll();	
   			Thread.sleep(1000);
   			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//TO CREATE AND ASSIGN USER LABELS
+  		public PO_Main_HomePage userLabelAssignment(String userLabel) throws InterruptedException {
+  			if(isDisplayedElementMembership()) {
+  				Thread.sleep(1000);
+  				clickOnActionButton_1_RU();
+  	  			boolean bol = selectThreeDotActionMenuItem("Assign Labels");
+  	  			if(bol) {
+	  	  			WebElement userLabelFram = driver.findElement(By.xpath("//div[@class='w-full']"));
+	  	  			Thread.sleep(1000);
+	  	  			action.moveToElement(userLabelFram).build().perform();
+	  	  			Thread.sleep(1000);
+	  	  			jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+	  	  			Thread.sleep(2000);
+	  	  			selectUserLabel(userLabel);
+	  	  			Thread.sleep(1000);
+	  	  			clickOnBtnSave_1_RU();
+		  	  		String alertContent = snakeAlertMessagesDisplayedContent_RU();
+					if(alertContent.equalsIgnoreCase(alertMsgUserLabelAssignToUser)) {
+						logger.info("===>>> "+alertMsgUserLabelAssignToUser);
+					}else {
+						clickOnCancelButton_1_RU();
+						logger.info("===>>> "+alertContent);
+						softAssert.assertTrue(false,"User label not assigned to the users");
+						Thread.sleep(500);
+					}
+  	  			}
+  	  		}
+  	  		
+  			softAssert.assertAll();	
+  			Thread.sleep(1000);
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//TO CREATE USER LABELS
+  		public PO_Main_HomePage createUserLabel(String newUserLabelName) throws InterruptedException {
+  			if(isDisplayedElementMembership()) {
+  				Thread.sleep(1000);
+  				clickOnActionButton_1_RU();
+  	  			boolean bol = selectThreeDotActionMenuItem("Assign Labels");
+  				if(bol) {
+  					setUserLabel(newUserLabelName);
+  	  				boolean flag = clickOnBtnAdd();
+  	  				if(flag) {
+  	  					String alertContent = snakeAlertMessagesDisplayedContent_RU();
+  	  					if(alertContent.equalsIgnoreCase(alertMsgUserLabelAdded)) {
+  	  						logger.info("===>>> "+alertMsgUserLabelAdded);
+  	  					}else if(alertContent.equalsIgnoreCase(alertMsgUserLabelAlreadyAdded)) {
+  	  						clickOnCancelButton_1_RU();
+  	  						softAssert.assertTrue(false,"User label already exist");
+  	  					}else {
+  	  						logger.info("===>>> "+alertContent);
+  	  						clickOnCancelButton_1_RU();
+  	  						softAssert.assertTrue(false,"User label not added");
+  	  						Thread.sleep(500);
+  	  					}
+  	  				}
+  				}
+  	  
+  			}
+  			softAssert.assertAll();	
+  			Thread.sleep(1000);
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//TO SUSPENDS ACCOUNT
+  		public PO_Main_HomePage suspendsAccount() throws InterruptedException {
+  			if(isDisplayedElementMembership()) {
+  				Thread.sleep(1000);
+  				clickOnActionButton_1_RU();
+  	  			
+  	  			boolean bol = selectThreeDotActionMenuItem("Suspend Account");
+  	  			if(bol) {
+	  	  			if(clickOnYesButton_RU()) {
+	  	  				String alertContent = snakeAlertMessagesDisplayedContent_RU();
+						if(alertContent.equalsIgnoreCase(alertMsgUserAccountSuspended)) {
+							logger.info("===>>> "+alertMsgUserAccountSuspended);
+						}else {
+							clickOnCancelButton_1_RU();
+							softAssert.assertTrue(false,"User account not suspended");
+						}
+	  	  			}
+  	  			}
+  	  			
+  			}
+  			softAssert.assertAll();	
+  			Thread.sleep(1000);
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//TO UNLOCK ACCOUNT
+  		public PO_Main_HomePage unlockUserAccount() throws InterruptedException {
+  			if(isDisplayedElementMembership()) {
+  				Thread.sleep(1000);
+  				clickOnActionButton_1_RU();
+  	  			
+  	  			boolean bol = selectThreeDotActionMenuItem("Unlock Account");
+  	  			
+  	  			if(bol) {
+	  	  			if(clickOnYesButton_RU()) {
+	  	  				String alertContent = snakeAlertMessagesDisplayedContent_RU();
+						if(alertContent.equalsIgnoreCase(alertMsgUserAccountUnlocked)) {
+							logger.info("===>>> "+alertMsgUserAccountUnlocked);
+						}else {
+							clickOnCancelButton_1_RU();
+							softAssert.assertTrue(false,"User account not Unlocked");
+						}
+	  	  			}
+  	  			}
+  			}
+  			softAssert.assertAll();	
+  			Thread.sleep(1000);
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//TO CHANGE MEMBERSHIP
+  		public PO_Main_HomePage changeMembership(String packageName, String membershipName) throws InterruptedException {
+  			if(isDisplayedElementMembership()) {
+  				Thread.sleep(1000);
+  				clickOnActionButton_1_RU();
+  	  			
+  	  			boolean bol = selectThreeDotActionMenuItem("Change Membership Package");
+  	  			
+  	  			if(bol) {
+	  	  			selectPackageCategory(packageName);
+	  	  			selectMembershipPackage(membershipName);
+	  	  			clickOnCheckBox_1_RU();
+	  	  			clickOnRadioButton();
+	  	  			boolean flag = clickOnBtnSave_1_RU();
+	  				if(flag) {
+	  					String alertContent = snakeAlertMessagesDisplayedContent_RU();
+	  					if(alertContent.equalsIgnoreCase(alertMsgMembershipPackageChanged)) {
+	  						logger.info("===>>> "+alertMsgMembershipPackageChanged);
+	  					}else {
+	  						clickOnCancelButton_1_RU();
+	  						logger.info("===>>> "+alertContent);
+	  						softAssert.assertTrue(false,"User membership not change");
+	  					}
+	  				}
+  	  			
+  	  			}
+  			}
+  			softAssert.assertAll();	
+  			Thread.sleep(1000);
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//TO CANCEL MEMBERSHIP
+  		public PO_Main_HomePage cancelMembership(String CancelmembershipCustomDate, String description, boolean wantToSelectCustomDate) throws Throwable {
+  			if(isDisplayedElementMembership()) {
+  				Thread.sleep(1000);
+  				clickOnActionButton_1_RU();
+  	  			
+  	  			boolean bol = selectThreeDotActionMenuItem("Cancel Membership");
+  	  			if(bol) {
+	  	  			if(wantToSelectCustomDate) {
+	  	  				clickOnRadioBtnCancelCustomDate();
+	  	  				setCancelMembershipCustomDate(CancelmembershipCustomDate);
+	  	  			}else {
+	  	  				clickOnRadioBtnEndOfBillingCycle();
+	  	  			}
+	  	  			setDescriptionCancelMembershipReason(description);
+	  	  			
+	  	  			clickOnBtnSave_1_RU();
+	  	  			boolean flag = clickOnBtnCancelMembershipFinal();
+	  				if(flag) {
+	  					String alertContent = snakeAlertMessagesDisplayedContent_RU();
+	  					if(alertContent.equalsIgnoreCase(alertMsgCanceledSuccessfully)) {
+	  						logger.info("===>>> "+alertMsgCanceledSuccessfully);
+	  					}else {
+	  						Thread.sleep(500);
+	  						clickOnCancelButton_2_RU();
+	  						logger.info("===>>> "+alertContent);
+	  						Thread.sleep(300);
+	  						softAssert.assertTrue(false,"Membership not Canceled");
+	  					}
+	  				}
+  	  			}
+  	  			
+  	  			
+  			}
+  			softAssert.assertAll();	
+  			Thread.sleep(1000);
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//RENEW MEMBERSHIP
+  		public PO_Main_HomePage renewMembership(String location, String packageName, String membershipName,String membershipStartDate) throws Throwable 
+  		{
+  			if(isDisplayedElementMembership()) {
+  				Thread.sleep(1000);
+  				clickOnActionButton_1_RU();
+  	  			
+  	  			boolean bol = selectThreeDotActionMenuItem("Renew Membership");
+  	  			if(bol) {
+
+  		  	  		selectLocation(location);
+  		  			Thread.sleep(300);
+  		  			selectPackageCategory(packageName);
+  		  			Thread.sleep(300);
+  		  			selectMembershipPackage(membershipName);
+  		  			setMembershipStartDate(membershipStartDate);
+  		  			clickOnCheckBox_1_RU();
+  		  			clickONBtnContinue_RU();
+  		  			checkCheckboxAgreePricing();
+  		  			clickOnRadioButton_1_RU();
+  		  			checkCheckboxAgreeCondition();
+  		  			
+  	  	  			boolean flag = clickOnBtnRenewMembership();
+  	  				if(flag) {
+  	  					String alertContent = snakeAlertMessagesDisplayedContent_RU();
+  	  					if(alertContent.equalsIgnoreCase(alertMsgMemberhsipPurchagedSuccessfully)) {
+  	  						logger.info("===>>> "+alertMsgMemberhsipPurchagedSuccessfully);
+  	  					}else {
+  	  						Thread.sleep(500);
+  	  						clickOnCancelButton_2_RU();
+  	  						logger.info("===>>> "+alertContent);
+  	  						Thread.sleep(300);
+  	  						softAssert.assertTrue(false,"Membership not renew");
+  	  					}
+  	  				}
+  	  			}
+  	  			
+  			}
+  			softAssert.assertAll();	
+  			Thread.sleep(1000);
+  			return new PO_Main_HomePage(driver);
+  			
+  		}
+  		
+  		//CHANGE MEMBERS CREDIT
+  		public PO_Main_HomePage changeMemberCredit(String creditStartDate, String creditEndDate, String totalCredit,String usedCredit, String comment,String searchKey, int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws Throwable 
+  		{
+  			jsExecutor.executeScript("window.scrollBy(0, 400);");
+  			Thread.sleep(2000);
+  			
+			findMemberCreditAndClickOnThreeDotOption(searchKey,driver,searchKeyColumnIndex,wantToClickOnThreeDot);
+  			setTotalCredit(totalCredit);
+  			setUsedCredit(usedCredit);
+  			setComment(comment);
+  			setCreditStartDate(creditStartDate);
+  			setCreditEndDate(creditEndDate);
+  			
+  			boolean flag = clickOnBtnSaveChangesSpan_RU();
+			if(flag) {
+				String alertContent = snakeAlertMessagesDisplayedContent_RU();
+				if(alertContent.equalsIgnoreCase(alertMsgCreditUpdated)) {
+					logger.info("===>>> "+alertMsgCreditUpdated);
+				}else {
+					Thread.sleep(500);
+					clickOnCancelButton_1_RU();
+					logger.info("===>>> "+alertContent);
+					Thread.sleep(300);
+					softAssert.assertTrue(false,"Members credit not change");
+				}
+			}
+  			softAssert.assertAll();	
+  			Thread.sleep(1000);
+  			return new PO_Main_HomePage(driver);
+  			
+  		}
+  		
+  		
+  		//SEND INVOICE
+  		public PO_Main_HomePage sendInvoice(String searchKey, int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws Throwable 
+  		{
+  			jsExecutor.executeScript("window.scrollBy(0, 400);");
+  			Thread.sleep(2000);
+  			boolean flag = false;
+  			flag = findHistoryAndClickOnThreeDotOption(searchKey,driver,searchKeyColumnIndex,wantToClickOnThreeDot);
+  			
+			if(flag) {
+				String alertContent = snakeAlertMessagesDisplayedContent_RU();
+				if(alertContent.equalsIgnoreCase(alertMsgInvoiceSent)) {
+					logger.info("===>>> "+alertMsgInvoiceSent);
+				}else {
+					Thread.sleep(500);
+					logger.info("===>>> "+alertContent);
+					Thread.sleep(300);
+					softAssert.assertTrue(false,"Invoice not sent");
+				}
+			}
+  			softAssert.assertAll();	
+  			Thread.sleep(1000);
+  			return new PO_Main_HomePage(driver);
+  			
   		}
   		
   		

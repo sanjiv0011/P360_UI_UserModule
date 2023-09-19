@@ -13,13 +13,16 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 	
 		public static final Logger logger = LogManager.getLogger(FindThreeDotBasedOnSearchKeyAndClick.class);
 		public static SoftAssert softAssert = new SoftAssert();
-		public static int findThreedActionButtonAndClick(List<WebElement> listName,WebDriver driver, String searchKey,int searchKeyColumnIndex, boolean wantToClickOnThreeDot) throws InterruptedException {
+		public static int findThreedActionButtonAndClick(List<WebElement> listName, WebDriver driver, String searchKey,int searchKeyColumnIndex, boolean wantToClickOnThreeDot) throws InterruptedException {
 		
 		StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
     	String callerMethodName = stackTraceElements[2].getMethodName();
 		logger.info("findThreedActionButtonAndClick method called and Caller method name: "+callerMethodName);
 		logger.info("wantToClickOnThreeDot: "+wantToClickOnThreeDot);
-			
+		String MemberCreditpointer_address = "((//div[contains(@class,'grid grid-cols-1 gap-2')])[3]//div[contains(@class,'flex-row')]//*[@class='pointer'])";
+		String PaymentHistorypointer_address = "((//div[contains(@class,'grid grid-cols-1 gap-2')])[2]//div[contains(@class,'flex-row')]//*[@class='pointer'])";
+		
+		
 		if(callerMethodName.equalsIgnoreCase("findMyRegisteredClassAndonThreeDotOption")) {
 			String searchKeyFormat[] = searchKey.split(" ");
 			String newSearchKey = null;
@@ -48,7 +51,8 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 		boolean confirmationGiverValue = false;
 		int listRowCount = 0;
 			for(WebElement element : listName)
-			{	listRowCount++;
+			{	
+				listRowCount++;
 				String[] text = element.getText().split("\\n");
 				String formatText = "";
 				int columnIndexCount = 0;
@@ -62,7 +66,15 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 		    			
 						if(formatText.equalsIgnoreCase(searchKey))
 						{
-							String btnActionAddress = "(//div[@class='pointer'])["+listRowCount+"]";
+							String btnActionAddress = null;
+							if(callerMethodName.equals("findMemberCreditAndClickOnThreeDotOption")){
+								btnActionAddress = MemberCreditpointer_address+"["+listRowCount+"]";
+							}else if(callerMethodName.equals("findHistoryAndClickOnThreeDotOption")) {
+								btnActionAddress = PaymentHistorypointer_address+"["+listRowCount+"]";
+							}else {
+								btnActionAddress = "(//div[@class='pointer'])["+listRowCount+"]";
+							}
+							logger.info("Three dot actoin button address: "+btnActionAddress);
 							flag = true;
 							Thread.sleep(300);
 							try {
@@ -94,6 +106,7 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 			}
 			if(!confirmationGiverValue) {
 				logger.info("Given confirmationGiverValue not matched: "+searchKey);
+				softAssert.assertTrue(false,"Given confirmationGiverValue not matched");
 			}
 			
 		Thread.sleep(200);

@@ -232,7 +232,7 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   		
   		//TO SELECT THE PACKAGE LOCATIONS
   		public void selectPackageLocation(String packageLocation) throws InterruptedException {
-  			ruae.clickOnDropdown_1_RU();
+  			ruae.clickOnDropdown_1_RU(driver);
   			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,ruae.listOptionAddress_RU,packageLocation);
   			logger.info("Package location: "+packageLocation);
   			Thread.sleep(500);

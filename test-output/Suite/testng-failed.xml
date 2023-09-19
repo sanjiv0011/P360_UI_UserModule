@@ -10,10 +10,10 @@
     <classes>
       <class name="com.p360.Main.testCases.TC_Main_Users">
         <methods>
+          <include name="test_Main_UnlockUserAccount"/>
           <include name="Setup"/>
           <include name="Login"/>
           <include name="Teardown"/>
-          <include name="test_Main_ChangeEmail"/>
           <include name="Logout"/>
         </methods>
       </class> <!-- com.p360.Main.testCases.TC_Main_Users -->

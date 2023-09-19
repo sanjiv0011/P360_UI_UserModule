@@ -466,9 +466,9 @@ public class ReUseAbleElement {
 			try {
 				if(btnCancel_l_RU.isDisplayed()) {
 					btnCancel_l_RU.click();
-						logger.info("Clicked on the cancel button");
+						logger.info("Clicked on the cancel button 1");
 				} else {
-					logger.info("Cancel button and HomeIcon button both not found");
+					logger.info("Cancel button and HomeIcon button both not found 1");
 				}
 					
 			}catch(Exception e) {
@@ -476,6 +476,25 @@ public class ReUseAbleElement {
 			}
 		}
 	    
+		//BUTTON CANCEL 2,P360
+		@FindBy(xpath = "(//span[normalize-space()='Cancel'])[2]")
+		@CacheLookup
+		public WebElement btnCancel_2_RU;
+		public void clickOnCancelButton_2_RU() throws InterruptedException {
+			try {
+				if(btnCancel_2_RU.isDisplayed()) {
+					btnCancel_2_RU.click();
+						logger.info("Clicked on the cancel button 2");
+				} else {
+					logger.info("Cancel button and HomeIcon button both not found 2");
+				}
+					
+			}catch(Exception e) {
+				logger.info("Cancel button Exception: "+e.getMessage());
+			}
+		}
+				
+				
 		// Yes button before confirm the action, P360
 		@FindBy(xpath = "//span[normalize-space()='Yes']")
 		@CacheLookup
@@ -514,15 +533,49 @@ public class ReUseAbleElement {
 	    	Thread.sleep(300);
 	    }
 	    
-	    //SAVE CHANGES BUTTON
+	    //SAVE CHANGES BUTTON(PARAGRAPH TAB)
 	    @FindBy(xpath = "//p[normalize-space()='Save Changes']")
 		@CacheLookup
-		public WebElement btnSaveChanges_RU;
-	    public void clickOnBtnSaveChanges_RU() throws InterruptedException {
-	    	btnSaveChanges_RU.click();
-			logger.info("Clicked on the save changes button");
-			Thread.sleep(300);
+		public WebElement btnSaveChangesPara_RU;
+	    public boolean clickOnBtnSaveChangesPara_RU() throws InterruptedException {
+	    	boolean flag = false;
+	    	if(btnSaveChangesPara_RU.isDisplayed()) {
+	    		btnSaveChangesPara_RU.click();
+	    		flag = true;
+				logger.info("Clicked on the save changes(Para Tab) button");
+				Thread.sleep(300);
+	    	}
+			return flag;
 		}
+	    
+	    //SAVE CHANGES BUTTON(SPAN TAB), P360
+	    @FindBy(xpath = "//span[normalize-space()='Save Changes']")
+		@CacheLookup
+		public WebElement btnSaveChangesSpan_RU;
+	    public boolean clickOnBtnSaveChangesSpan_RU() throws InterruptedException {
+	    	boolean flag = false;
+	    	if(btnSaveChangesSpan_RU.isDisplayed()) {
+	    		btnSaveChangesSpan_RU.click();
+	    		flag = true;
+				logger.info("Clicked on the save changes(Span Tab) button");
+				Thread.sleep(300);
+	    	}
+			return flag;
+		}
+	  
+	    //LOGO P360
+	    @FindBy(xpath = "(//img[@alt='P360'])[1]")
+		@CacheLookup
+		public WebElement logoP360;
+	    public void clickOnP360Logo() throws InterruptedException {
+    		logoP360.click();
+			logger.info("Clicked on the P360 logo");
+			Thread.sleep(1000);
+	    	
+		}
+	    
+	    
+	    
 	    
 	    //SAVE AND CLOSE BUTTON 1, P360	
 	    @FindBy(xpath = "(//span[normalize-space()='Save & Close'])[1]")
@@ -646,46 +699,78 @@ public class ReUseAbleElement {
   		
   		
 	   
-	    //DROPDOWN ICON 1, P360
-  		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[1]")
-  		@CacheLookup
-  		public WebElement iconDropdown_1_RU;
-  		public void clickOnDropdown_1_RU() throws InterruptedException {
-  			iconDropdown_1_RU.click();
-  			logger.info("Clicked on the icon dropdown 1");
-  			Thread.sleep(1000);
+//	    //DROPDOWN ICON 1, P360
+//  		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[1]")
+//  		@CacheLookup
+//  		public WebElement iconDropdown_1_RU;
+  		public String iconDropdown_1_RU_Address = "(//button[@title='Open']//*[name()='svg'])[1]";
+  		public void clickOnDropdown_1_RU(WebDriver driver) throws InterruptedException {
+  			try {
+  				WebElement iconDropdown_1_RU = driver.findElement(By.xpath(iconDropdown_1_RU_Address));
+  	  			iconDropdown_1_RU.click();
+  	  			logger.info("Clicked on the icon dropdown 1");
+  	  			Thread.sleep(1000);
+  			}catch(Exception e) {
+  				logger.info("Exceptin from clickOnDropdown_1_RU: "+e.getMessage());
+  				
+  			}
   		} 		
   		
   		
-  		//DROPDOWN ADDRESS 2, P360
-  		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[2]")
-  		@CacheLookup
-  		public WebElement iconDropdown_2_RU;
+  		
+//  		//DROPDOWN ADDRESS 2, P360
+//  		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[2]")
+//  		@CacheLookup
+//  		public WebElement iconDropdown_2_RU;
+  		public String iconDropdown_2_RU_Address = "(//button[@title='Open']//*[name()='svg'])[2]";
   		public void clickOnDropdown_2_RU() throws InterruptedException {
-  			iconDropdown_2_RU.click();
-  			logger.info("Clicked on the icon dropdown 2");
-  			Thread.sleep(1000);
+  			try {
+  				WebElement iconDropdown_2_RU = driver.findElement(By.xpath(iconDropdown_2_RU_Address));
+  	  			iconDropdown_2_RU.click();
+  	  			logger.info("Clicked on the icon dropdown 2");
+  	  			Thread.sleep(1000);
+  			}catch(Exception e) {
+  				logger.info("Exceptin from clickOnDropdown_2_RU: "+e.getMessage());
+  				
+  			}
   		}
   		
-  		//DROPDOWN ADDRESS 3
-  		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[3]")
-  		@CacheLookup
-  		public WebElement iconDropdown_3_RU;
+  		
+//  		//DROPDOWN ADDRESS 3, P360
+//  		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[3]")
+//  		@CacheLookup
+//  		public WebElement iconDropdown_3_RU;
+  		public String iconDropdown_3_RU_Address = "(//button[@title='Open']//*[name()='svg'])[3]";
   		public void clickOnDropdown_3_RU() throws InterruptedException {
-  			iconDropdown_3_RU.click();
-  			logger.info("Clicked on the icon dropdown 3 ");
-  			Thread.sleep(1000);
+  			try {
+  				WebElement iconDropdown_3_RU = driver.findElement(By.xpath(iconDropdown_3_RU_Address));
+  	  			iconDropdown_3_RU.click();
+  	  			logger.info("Clicked on the icon dropdown 3");
+  	  			Thread.sleep(1000);
+  			}catch(Exception e) {
+  				logger.info("Exceptin from clickOnDropdown_3_RU: "+e.getMessage());
+  				
+  			}
   		}
   		
-  		//DROPDOWN ADDRESS 4
-  		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[4]")
-  		@CacheLookup
-  		public WebElement iconDropdown_4_RU;
+  		
+//  		//DROPDOWN ADDRESS 4,P360
+//  		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[4]")
+//  		@CacheLookup
+//  		public WebElement iconDropdown_4_RU;
+  		public String iconDropdown_4_RU_Address = "(//button[@title='Open']//*[name()='svg'])[4]";
   		public void clickOnDropdown_4_RU() throws InterruptedException {
-  			iconDropdown_4_RU.click();
-  			logger.info("Clicked on the icon dropdown 4");
-  			Thread.sleep(1000);
+  			try {
+  				WebElement iconDropdown_4_RU = driver.findElement(By.xpath(iconDropdown_4_RU_Address));
+  	  			iconDropdown_4_RU.click();
+  	  			logger.info("Clicked on the icon dropdown 4");
+  	  			Thread.sleep(1000);
+  			}catch(Exception e) {
+  				logger.info("Exceptin from clickOnDropdown_4_RU: "+e.getMessage());
+  				
+  			}
   		}
+  		
 	   	
   		//SAVE BUTTON 1, P360
   		@FindBy(xpath = "(//span[normalize-space()='Save'])[1]")
@@ -970,5 +1055,25 @@ public class ReUseAbleElement {
 		@FindBy(xpath = "//div[contains(@class,'p-4 flex gap-2 flex-row')]")
 		@CacheLookup
 		public List <WebElement> listData_RU;
+		
+		//RADIO BUTTON-1,P360
+		@FindBy(xpath = "(//input[@type='radio'])[1]")
+		@CacheLookup
+		WebElement btnRadio_1_RU;
+		public void clickOnRadioButton_1_RU() throws InterruptedException {
+			btnRadio_1_RU.click();
+			logger.info("Clicked on the radio button -1");
+			Thread.sleep(500);
+		}
+		
+		//RADIO BUTTON-2,P360
+		@FindBy(xpath = "(//input[@type='radio'])[2]")
+		@CacheLookup
+		WebElement btnRadio_2_RU;
+		public void clickOnRadioButton_2_RU() throws InterruptedException {
+			btnRadio_2_RU.click();
+			logger.info("Clicked on the radio button -2");
+			Thread.sleep(500);
+		}
 }
 
