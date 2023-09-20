@@ -1,106 +1,301 @@
-18:25:48.329 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage -  clickOntabLocations
-18:25:53.839 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: WESTWOOD
-18:25:57.899 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - Exception from isTextNoRegionMachesCurrentFilter: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='No Regions Matches Current Filter']"}
+23:07:31.671 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Login user Email: anup@hypertrends.com  and Password: Tester123!
+23:07:31.678 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login: AdminLogin
+23:07:31.761 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+23:07:35.725 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+23:07:36.279 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+23:07:36.590 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+23:07:43.537 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+23:07:46.701 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+23:07:49.799 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabPackages 
+23:07:57.526 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: WESTWOOD_PACKAGE_02
+23:08:01.607 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown box address 1 to open drop list
+23:08:02.621 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectPackageStatus
+23:08:02.621 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: ALL
+23:08:02.695 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: ALL
+23:08:03.338 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+23:08:03.338 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package status Name: ALL
+23:08:03.960 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
+23:08:04.965 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectPackageLocation
+23:08:04.966 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: Westwood
+23:08:07.968 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+23:08:08.562 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+23:08:08.562 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package location: Westwood
+23:08:09.090 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Exception from isTextNoPackageMachesCurrentFilter: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='No packages Matches Current Filter']"}
   (Session info: chrome=116.0.5845.188)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [fe19ea784c8e6eca484c4a968fd08043, findElement {using=xpath, value=//span[.='No Regions Matches Current Filter']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53280}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53280/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: fe19ea784c8e6eca484c4a968fd08043
-18:25:57.900 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - Region Matched to the Current Fiter
-18:25:59.916 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findRegionFromRowListAndClickOnThreeDot
-18:25:59.916 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
-18:26:00.504 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: WESTWOOD
-18:26:00.504 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Three dot actoin button address: ((//div[contains(@class,'w-full flex flex-col')])[3]//div[contains(@class,'p-2 flex gap-2 flex-row')]//*[@class='pointer'])[1]
-18:26:00.913 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given value matched with the list value: WESTWOOD
-18:26:00.983 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
-18:26:01.902 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - btnChange_address:- (//span[contains(text(),'Change')])[1]
-18:26:01.969 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - Clicked on Change action button present under three dot
-18:26:04.990 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - addRegion methods is called to update the region
-18:26:38.654 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
-18:26:39.724 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Logout Exception: element click intercepted: Element <span class="jss28 Cmt-nav-text">...</span> is not clickable at point (146, 185). Other element would receive the click: <div aria-hidden="true" style="z-index: -1; position: fixed; inset: 0px; background-color: transparent; -webkit-tap-highlight-color: transparent;"></div>
-  (Session info: chrome=116.0.5845.188)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [fe19ea784c8e6eca484c4a968fd08043, clickElement {id=A48FC12AA3A9312718D60C89B4770CDB_element_374}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53280}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53280/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (fe19ea784c8e6eca484c4a968fd08043)] -> xpath: //span[normalize-space()='Dashboard']]
-Session ID: fe19ea784c8e6eca484c4a968fd08043
-18:26:40.068 [main] INFO  com.p360.Main.testCases.TC_Main_Locations - Driver shutdown
-18:32:00.011 [main] INFO  com.p360.Main.testCases.TC_Main_Locations - Base class started...
-18:32:01.980 [main] INFO  com.p360.Main.testCases.TC_Main_Locations - Chrome driver selected
-18:32:02.731 [main] INFO  com.p360.Main.testCases.TC_Main_Locations - Login page started
-18:32:02.859 [main] INFO  com.p360.Main.testCases.TC_Main_Locations - Maximize the window
-18:32:02.992 [main] INFO  com.p360.Main.testCases.TC_Main_Locations - Login user Email: anup@hypertrends.com  and Password: Tester123!
-18:32:02.992 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login: AdminLogin
-18:32:03.088 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
-18:32:09.406 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-18:32:10.060 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-18:32:10.368 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-18:32:16.700 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-18:32:19.890 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
-18:32:22.978 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage -  clickOntabLocations
-18:32:28.521 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: WESTWOOD
-18:32:32.580 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - Exception from isTextNoRegionMachesCurrentFilter: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='No Regions Matches Current Filter']"}
+Command: [7540604015dca373942c0a6b1f759707, findElement {using=xpath, value=//span[.='No packages Matches Current Filter']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63679}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63679/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7540604015dca373942c0a6b1f759707
+23:08:09.090 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package Matched to the Current Fiter
+23:08:11.102 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findPackageFromRowListAndClickOnThreeDot
+23:08:11.103 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
+23:08:11.657 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: WESTWOOD_PACKAGE_02
+23:08:11.657 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Three dot actoin button address: (//div[@class='pointer'])[1]
+23:08:11.987 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given value matched with the list value: WESTWOOD_PACKAGE_02
+23:08:12.030 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
+23:08:13.441 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package matched list count: 1
+23:08:15.557 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Deactivated button
+23:08:15.938 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+23:08:17.793 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 204
+23:08:17.794 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+23:08:17.806 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Status changed to Inactive successfully
+23:08:18.309 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
   (Session info: chrome=116.0.5845.188)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7f92735b9d9f1585bd1471de890eac01, findElement {using=xpath, value=//span[.='No Regions Matches Current Filter']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53595}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53595/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7f92735b9d9f1585bd1471de890eac01
-18:32:32.581 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - Region Matched to the Current Fiter
-18:32:34.602 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findRegionFromRowListAndClickOnThreeDot
-18:32:34.603 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
-18:32:35.213 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: WESTWOOD
-18:32:35.213 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Three dot actoin button address: ((//div[contains(@class,'w-full flex flex-col')])[3]//div[contains(@class,'p-2 flex gap-2 flex-row')]//*[@class='pointer'])[1]
-18:32:35.586 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given value matched with the list value: WESTWOOD
-18:32:35.662 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
-18:32:36.582 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - rowListCount: 1
-18:32:36.583 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - btnChange_address:- (//span[contains(text(),'Change')])[1]
-18:32:36.652 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - rowListCount: 2
-18:32:36.652 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - btnChange_address:- (//span[contains(text(),'Change')])[2]
-18:32:36.681 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - rowListCount: 3
-18:32:36.681 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - btnChange_address:- (//span[contains(text(),'Change')])[3]
-18:32:36.704 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - rowListCount: 4
-18:32:36.704 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - btnChange_address:- (//span[contains(text(),'Change')])[4]
-18:32:36.726 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - rowListCount: 5
-18:32:36.727 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - btnChange_address:- (//span[contains(text(),'Change')])[5]
-18:32:36.749 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - rowListCount: 6
-18:32:36.749 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - btnChange_address:- (//span[contains(text(),'Change')])[6]
-18:32:36.790 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - Is change button displayed: true
-18:32:36.798 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - Is change button enabled: true
-18:32:37.352 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - Clicked on Change action button present under three dot
-18:32:40.372 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - addRegion methods is called to update the region
-18:32:43.638 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - Entered the fieldRegionName: WESTWOOD
-18:32:44.028 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
-18:32:45.039 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectParentRegion
-18:32:45.039 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: WESTWOOD
-18:32:46.567 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
-18:32:47.181 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
-18:32:47.182 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - Parent Region: WESTWOOD
-18:32:47.924 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - Entered the fieldRegionCode: 130
-18:32:49.564 [main] INFO  com.p360.Main.pageObject.PO_Main_Locations - Entered the  filedRegionDescription: Corrupti ut ut et ea ab earum. Ducimus rerum quas cupiditate consequatur consectetur facilis dolor. Laudantium deserunt ab. Non aut nesciunt facere sit assumenda voluptatem modi.
-18:32:49.961 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the nextbutton
-18:32:51.627 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 127
-18:32:51.627 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-18:32:51.645 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Region Updated Successfully
-18:32:52.154 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+Command: [7540604015dca373942c0a6b1f759707, findElement {using=xpath, value=//div[@role="alert"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63679}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63679/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7540604015dca373942c0a6b1f759707
+23:08:20.320 [main] INFO  com.p360.Actions.Action_Deactivate - ===>>> Status changed to Inactive successfully
+23:08:23.537 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+23:08:26.696 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabPackages 
+23:08:34.431 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: WESTWOOD_PACKAGE_02
+23:08:38.550 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown box address 1 to open drop list
+23:08:39.553 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectPackageStatus
+23:08:39.553 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: ALL
+23:08:39.620 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: ALL
+23:08:40.270 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+23:08:40.270 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package status Name: ALL
+23:08:40.857 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
+23:08:41.864 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectPackageLocation
+23:08:41.864 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: Westwood
+23:08:44.561 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+23:08:45.204 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+23:08:45.205 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package location: Westwood
+23:08:45.739 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Exception from isTextNoPackageMachesCurrentFilter: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='No packages Matches Current Filter']"}
   (Session info: chrome=116.0.5845.188)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7f92735b9d9f1585bd1471de890eac01, findElement {using=xpath, value=//div[@role="alert"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53595}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53595/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7f92735b9d9f1585bd1471de890eac01
-18:32:54.193 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
-18:32:57.343 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
-18:32:57.971 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the User name text 
-18:33:03.134 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the Logout button 
-18:33:03.717 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - ... LOGOUT DONE ...
-18:33:04.155 [main] INFO  com.p360.Main.testCases.TC_Main_Locations - Driver shutdown
+Command: [7540604015dca373942c0a6b1f759707, findElement {using=xpath, value=//span[.='No packages Matches Current Filter']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63679}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63679/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7540604015dca373942c0a6b1f759707
+23:08:45.740 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package Matched to the Current Fiter
+23:08:47.749 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findPackageFromRowListAndClickOnThreeDot
+23:08:47.750 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
+23:08:48.330 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: WESTWOOD_PACKAGE_02
+23:08:48.330 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Three dot actoin button address: (//div[@class='pointer'])[1]
+23:08:48.710 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given value matched with the list value: WESTWOOD_PACKAGE_02
+23:08:48.759 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
+23:08:50.175 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package matched list count: 1
+23:08:52.296 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Activate button
+23:08:52.702 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+23:08:54.002 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 145
+23:08:54.002 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+23:08:54.022 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Status changed to Active successfully
+23:08:54.538 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7540604015dca373942c0a6b1f759707, findElement {using=xpath, value=//div[@role="alert"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63679}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63679/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7540604015dca373942c0a6b1f759707
+23:08:56.551 [main] INFO  com.p360.Actions.Action_Activate - ===>>> Status changed to Active successfully
+23:08:59.735 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+23:09:02.868 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabPackages 
+23:09:10.581 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: WESTWOOD_PACKAGE_02
+23:09:14.676 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown box address 1 to open drop list
+23:09:15.684 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectPackageStatus
+23:09:15.684 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: ALL
+23:09:15.712 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: ALL
+23:09:16.291 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+23:09:16.292 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package status Name: ALL
+23:09:16.863 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
+23:09:17.878 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectPackageLocation
+23:09:17.879 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: Westwood
+23:09:20.520 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+23:09:21.096 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+23:09:21.097 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package location: Westwood
+23:09:21.639 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Exception from isTextNoPackageMachesCurrentFilter: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='No packages Matches Current Filter']"}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7540604015dca373942c0a6b1f759707, findElement {using=xpath, value=//span[.='No packages Matches Current Filter']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63679}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63679/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7540604015dca373942c0a6b1f759707
+23:09:21.639 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package Matched to the Current Fiter
+23:09:23.650 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findPackageFromRowListAndClickOnThreeDot
+23:09:23.650 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
+23:09:24.182 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: WESTWOOD_PACKAGE_02
+23:09:24.182 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Three dot actoin button address: (//div[@class='pointer'])[1]
+23:09:24.513 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given value matched with the list value: WESTWOOD_PACKAGE_02
+23:09:24.560 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
+23:09:25.993 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package matched list count: 1
+23:09:28.065 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Archive button
+23:09:28.443 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+23:09:29.508 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 116
+23:09:29.509 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+23:09:29.529 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Archived successfully
+23:09:30.035 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7540604015dca373942c0a6b1f759707, findElement {using=xpath, value=//div[@role="alert"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63679}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63679/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7540604015dca373942c0a6b1f759707
+23:09:32.046 [main] INFO  com.p360.Actions.Action_Archive - ===>>> Archived successfully
+23:09:35.218 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+23:09:38.387 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabPackages 
+23:09:46.085 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: WESTWOOD_PACKAGE_02
+23:09:50.194 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown box address 1 to open drop list
+23:09:51.197 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectPackageStatus
+23:09:51.197 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: ALL
+23:09:51.252 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: ALL
+23:09:51.842 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+23:09:51.842 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package status Name: ALL
+23:09:52.430 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
+23:09:53.437 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectPackageLocation
+23:09:53.438 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: Westwood
+23:09:56.152 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+23:09:56.743 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+23:09:56.744 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package location: Westwood
+23:09:57.287 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Exception from isTextNoPackageMachesCurrentFilter: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='No packages Matches Current Filter']"}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7540604015dca373942c0a6b1f759707, findElement {using=xpath, value=//span[.='No packages Matches Current Filter']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63679}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63679/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7540604015dca373942c0a6b1f759707
+23:09:57.287 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package Matched to the Current Fiter
+23:09:59.289 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findPackageFromRowListAndClickOnThreeDot
+23:09:59.290 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
+23:09:59.874 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: WESTWOOD_PACKAGE_02
+23:09:59.874 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Three dot actoin button address: (//div[@class='pointer'])[1]
+23:10:00.239 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given value matched with the list value: WESTWOOD_PACKAGE_02
+23:10:00.286 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
+23:10:01.706 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package matched list count: 1
+23:10:03.822 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Restore button
+23:10:04.193 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+23:10:05.244 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 110
+23:10:05.244 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+23:10:05.269 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Restored successfully
+23:10:05.783 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7540604015dca373942c0a6b1f759707, findElement {using=xpath, value=//div[@role="alert"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63679}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63679/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7540604015dca373942c0a6b1f759707
+23:10:07.792 [main] INFO  com.p360.Actions.Action_Restore - ===>>> Restored successfully
+23:10:07.810 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
+23:10:10.970 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+23:10:11.579 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the User name text 
+23:10:16.934 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the Logout button 
+23:10:17.537 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - ... LOGOUT DONE ...
+23:10:17.991 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Driver shutdown
+23:24:18.621 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Base class started...
+23:24:20.711 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Chrome driver selected
+23:24:21.521 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Login page started
+23:24:21.648 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Maximize the window
+23:24:21.827 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Login user Email: anup@hypertrends.com  and Password: Tester123!
+23:24:21.827 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login: AdminLogin
+23:24:21.913 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+23:24:27.215 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+23:24:27.797 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+23:24:28.111 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+23:24:34.805 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+23:24:37.954 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+23:24:41.058 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabPackages 
+23:24:48.777 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: WESTWOOD_PACKAGE_02
+23:24:52.889 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown box address 1 to open drop list
+23:24:53.896 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectPackageStatus
+23:24:53.897 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: ALL
+23:24:53.978 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: ALL
+23:24:54.632 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+23:24:54.632 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package status Name: ALL
+23:24:55.274 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
+23:24:56.286 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectPackageLocation
+23:24:56.287 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: Westwood
+23:24:59.207 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+23:24:59.783 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+23:24:59.784 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package location: Westwood
+23:25:00.323 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Exception from isTextNoPackageMachesCurrentFilter: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='No packages Matches Current Filter']"}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bfff8d7d1ce0d0447016386d8e49d756, findElement {using=xpath, value=//span[.='No packages Matches Current Filter']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64375}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64375/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bfff8d7d1ce0d0447016386d8e49d756
+23:25:00.323 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package Matched to the Current Fiter
+23:25:02.333 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findPackageFromRowListAndClickOnThreeDot
+23:25:02.334 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
+23:25:02.913 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: WESTWOOD_PACKAGE_02
+23:25:02.913 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Three dot actoin button address: (//div[@class='pointer'])[1]
+23:25:03.293 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given value matched with the list value: WESTWOOD_PACKAGE_02
+23:25:03.341 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
+23:25:04.764 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package matched list count: 1
+23:25:07.677 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Clicked on the Report button
+23:25:07.706 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
+23:25:11.026 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+23:25:11.609 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the User name text 
+23:25:15.810 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the Logout button 
+23:25:16.426 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - ... LOGOUT DONE ...
+23:25:16.880 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Driver shutdown
+23:26:24.148 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Base class started...
+23:26:26.314 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Chrome driver selected
+23:26:27.165 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Login page started
+23:26:27.304 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Maximize the window
+23:26:27.392 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Login user Email: anup@hypertrends.com  and Password: Tester123!
+23:26:27.392 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login: AdminLogin
+23:26:27.517 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+23:26:32.351 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+23:26:32.898 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+23:26:33.237 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+23:26:39.804 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+23:26:42.958 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+23:26:46.070 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabPackages 
+23:26:53.798 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: WESTWOOD_PACKAGE_02
+23:26:57.882 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown box address 1 to open drop list
+23:26:58.894 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectPackageStatus
+23:26:58.895 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: ALL
+23:26:58.962 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: ALL
+23:26:59.588 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+23:26:59.588 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package status Name: ALL
+23:27:00.173 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
+23:27:01.189 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectPackageLocation
+23:27:01.189 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: Westwood
+23:27:04.148 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
+23:27:04.803 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+23:27:04.803 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package location: Westwood
+23:27:05.340 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Exception from isTextNoPackageMachesCurrentFilter: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='No packages Matches Current Filter']"}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0739381a791807e82c5bc090d893ba00, findElement {using=xpath, value=//span[.='No packages Matches Current Filter']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64524}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64524/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0739381a791807e82c5bc090d893ba00
+23:27:05.341 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package Matched to the Current Fiter
+23:27:07.351 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findPackageFromRowListAndClickOnThreeDot
+23:27:07.352 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
+23:27:07.924 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: WESTWOOD_PACKAGE_02
+23:27:07.925 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Three dot actoin button address: (//div[@class='pointer'])[1]
+23:27:08.306 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given value matched with the list value: WESTWOOD_PACKAGE_02
+23:27:08.355 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
+23:27:09.779 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package matched list count: 1
+23:27:12.694 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Clicked on the Report button
+23:27:15.750 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
+23:27:18.902 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+23:27:19.514 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the User name text 
+23:27:25.521 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the Logout button 
+23:27:26.121 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - ... LOGOUT DONE ...
+23:27:26.672 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Driver shutdown

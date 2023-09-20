@@ -8,15 +8,18 @@
   </listeners>
   <test thread-count="1" name="P360_UI_USER_MODULE(failed)">
     <classes>
-      <class name="com.p360.Main.testCases.TC_Main_Locations">
+      <class name="com.p360.Main.testCases.TC_Main_Packages">
         <methods>
           <include name="Setup"/>
+          <include name="test_Main_DeActivatePackage"/>
           <include name="Login"/>
+          <include name="test_Main_ArchivePackage"/>
           <include name="Teardown"/>
+          <include name="test_Main_RestorePackage"/>
           <include name="Logout"/>
-          <include name="test_Main_UpdateRegion"/>
+          <include name="test_Main_ActivatePackage"/>
         </methods>
-      </class> <!-- com.p360.Main.testCases.TC_Main_Locations -->
+      </class> <!-- com.p360.Main.testCases.TC_Main_Packages -->
     </classes>
   </test> <!-- P360_UI_USER_MODULE(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -12,32 +12,32 @@ import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 public class Action_Activate {
 	
 	public static final Logger logger = LogManager.getLogger(Action_Activate.class);
-	public ReUseAbleElement ruae;
+	public static ReUseAbleElement ruae;
 	public static SoftAssert softAssert = new SoftAssert();
 	
-	public boolean activate(String searchKey,WebDriver driver, String message) throws InterruptedException
+	public static boolean activate(WebDriver driver, String message) throws InterruptedException
 	{
 		boolean flag = false;
 		ruae = new ReUseAbleElement(driver);
-		ruae.searchBox_RU(searchKey);
-    	if(!ruae.isSearchKeysNotFound_RU()){
-    		if(ruae.isAlreadyInActiveDisplayed_RU()) {
-    			ruae.clickOnActionButton_RU();
-    			ruae.clickOnActivateAction_RU();
-    			ruae.clickOnYesButton_RU();
-    	    	
-    	    	//CHECK THE ACTIVATE CONFIRMATIONS MESSAGES
-    	    	String alretMsg = ruae.snakeAlertMessagesDisplayedContent_RU();
-    	    	if(alretMsg.equals(message)) {
-    	    		softAssert.assertEquals(alretMsg, message,"ACTIVATED successfully");
-    	    		logger.info("===>>> "+message);
-    	    		flag = true;
-    	    	}else {
-    	    		logger.info("Alert message content: "+alretMsg);
-    	    	}
-    		}
-    	}
-    	softAssert.assertAll();
+		try {
+			ruae.clickOnActivateAction_RU();
+			ruae.clickOnYesButton_RU();
+	    	
+	    	//CHECK THE ACTIVATE CONFIRMATIONS MESSAGES
+	    	String alretMsg = ruae.snakeAlertMessagesDisplayedContent_RU();
+	    	if(alretMsg.equals(message)) {
+	    		logger.info("===>>> "+message);
+	    		flag = true;
+	    	}else {
+	    		logger.info("Alert message content: "+alretMsg);
+	    	}
+	    	softAssert.assertEquals(alretMsg, message,"ACTIVATED successfully");
+	    	
+		}catch(Exception e) {
+			logger.info("Exception from Action_Activate: "+e.getMessage());
+			softAssert.assertTrue(false,"You want Activate, but Activate button not present");
+		}
+		softAssert.assertAll();
     	return flag;
 	}
 	

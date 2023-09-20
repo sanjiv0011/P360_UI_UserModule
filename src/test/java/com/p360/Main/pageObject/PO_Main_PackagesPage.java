@@ -18,9 +18,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
+import com.p360.Actions.Action_Activate;
+import com.p360.Actions.Action_Archive;
+import com.p360.Actions.Action_Deactivate;
+import com.p360.Actions.Action_Restore;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 import com.p360.pageObject.PO_LoginPage;
 import com.p360.projectUtility.DatePicker;
+import com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick;
 import com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown;
 
 public class PO_Main_PackagesPage extends ReUseAbleElement {
@@ -55,6 +60,10 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
 		public String alertMsgPackageRegularPriceIsRequired = "Package regular Price is required";
 		public String alertMsgTotalClassIsRequired = "Total Classes is required";
 		public String alertMsgPackageCreatedSuccessfully = "Package created successfully";
+		public String alertMsgPackageActivated = "Status changed to Active successfully";
+		public String alertMsgPackageDeActivated = "Status changed to Inactive successfully";
+		public String alertMsgPackageArchived = "Archived successfully";
+		public String alertMsgPackageRestored = "Restored successfully";
 		
 		//TEXT FIELD FIRST NAME
   		@FindBy(xpath = "//input[@placeholder='Enter First Name']")
@@ -255,8 +264,74 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   			Thread.sleep(500);
   		}
   		
-  	
+  		//TO CHECK SEARCH PACKAGE IS PRESENT OR NOT
+  		@FindBy(xpath = "//span[.='No packages Matches Current Filter']")
+  		@CacheLookup
+  		WebElement textNoPackageMatchesCurrentFiter;
+  		public boolean isTextNoPackageMachesCurrentFilter() {
+  			boolean flag = false;
+  			try {
+  				if(textNoPackageMatchesCurrentFiter.isDisplayed()) {
+  					logger.info("No Package matched to applied filter");
+  					softAssert.assertTrue(false,"No Package Matches to the applied Current Fiter");
+  					flag = true;
+  	  			}
+  			}catch(Exception e) {
+  				logger.info("Exception from isTextNoPackageMachesCurrentFilter: "+e.getMessage());
+  				logger.info("Package Matched to the Current Fiter");
+  				softAssert.assertTrue(true,"Package Matches to the applied Current Fiter");
+  				flag = false;
+  			}
+  			return flag;
+  		}
   		
+  		
+  		//PACKAGE ROW LIST ADDRESS AND ACTION METHODS
+  		@FindBy(xpath = "(//div[contains(@class,'w-full flex flex-col')])[2]//div[contains(@class,'p-4 flex gap-2 flex-row')]")
+  		@CacheLookup
+  		public List <WebElement> packageRowList;
+  		public String packageRowList_address = "(//div[contains(@class,'w-full flex flex-col')])[2]//div[contains(@class,'p-4 flex gap-2 flex-row')]";
+  		public int findPackageFromRowListAndClickOnThreeDot(String packageTitle, int searchKeyColumnIndex, boolean wantToClickOnThreeDot) throws InterruptedException {
+  			int listRowCount = 0; 
+			try {
+				Thread.sleep(2000);
+				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(packageRowList,driver, packageTitle, searchKeyColumnIndex,wantToClickOnThreeDot);
+			}catch(Exception e) {
+				logger.info("Exception from findPackageFromRowListAndClickOnThreeDot: "+e.getMessage());
+				softAssert.assertTrue(false,"not click on the three dot action button");
+			}
+			return listRowCount;
+  		}
+  		
+  		//TO SELECT THE PACKAGE STATUS
+  		public void selectPackageStatus(String packageStatus) throws InterruptedException {
+  			ruae.clickOnDropdownBoxAddress_1_RU();
+  			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,ruae.listOptionAddress_RU,packageStatus);
+  			logger.info("Package status Name: "+packageStatus);
+  			Thread.sleep(500);
+  		}
+  		
+  		@FindBy(xpath = "//div[contains(text(),'Report')]")
+  		@CacheLookup
+  		WebElement btnPackageReport;
+  		public void clickOnBtnReport_Package() throws InterruptedException
+  		{
+  			if(btnPackageReport.isDisplayed() && btnPackageReport.isEnabled())
+  			{
+  				action.moveToElement(btnPackageReport).build().perform();
+  				Thread.sleep(500);
+  				action.moveToElement(btnPackageReport).click().build().perform();
+  				logger.info("Clicked on the Report button");
+  			}
+  			else {
+  				logger.info("Report action button not present");
+  				softAssert.assertTrue(false,"Report action button not present");
+  			}
+  			Thread.sleep(3000);
+  		}
+  	
+  	
+//======START=============ACTION METHODS============//		
   		
   		//TO ADD PACKAGE CATEGORY
   		public PO_Main_HomePage addPackageCategory(String packageCategoryTitle,String packageCategoryInternalTitle,String packageCategoryDescription,String categoryLocation,String wantToMarkCategoryHidden) throws InterruptedException
@@ -323,4 +398,63 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   			return new PO_Main_HomePage(driver);
   		}
   		
+  		//FIND PACKAGE AND CLICK ON THREE DOT BUTTON
+  		public void findPackageAndClickOnThreeDot(String packageTitle,int searchKeyColumnIndex,boolean wantToClickOnThreeDot,String packageLocation,String packageStatus) throws InterruptedException
+  		{
+  			jsExecutor.executeScript("window.scrollBy(0, 100);");
+  			Thread.sleep(2000);
+  			searchBox_1_RU(packageTitle);
+  			selectPackageStatus(packageStatus);
+  			selectPackageLocation(packageLocation);
+  			boolean flag = isTextNoPackageMachesCurrentFilter();
+  			if(!flag) {
+  				int packageRowListCount = findPackageFromRowListAndClickOnThreeDot(packageTitle,searchKeyColumnIndex,wantToClickOnThreeDot);
+  	  			Thread.sleep(1000);
+  	  			logger.info("Package matched list count: "+packageRowListCount);
+  			}else {
+  				clickOnP360Logo_RU();
+  			}
+  			Thread.sleep(2000);
+  			softAssert.assertAll();
+  		}
+  		
+  		//TO ACTIVATE THE PACKAGE
+  		public PO_Main_HomePage activatePackage() throws InterruptedException
+  		{
+  			Action_Activate.activate(driver, alertMsgPackageActivated);
+  			softAssert.assertAll();
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//TO DEACTIVATE THE PACKAGE
+  		public PO_Main_HomePage deActivatePackage() throws InterruptedException
+  		{
+  			Action_Deactivate.deactivate(driver, alertMsgPackageDeActivated);
+  			softAssert.assertAll();
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//TO ARCHIVE THE PACKAGE
+  		public PO_Main_HomePage archivePackage() throws InterruptedException
+  		{
+  			Action_Archive.archive(driver, alertMsgPackageArchived);
+  			softAssert.assertAll();
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//TO RESTORE THE PACKAGE
+  		public PO_Main_HomePage restorePackage() throws InterruptedException
+  		{
+  			Action_Restore.restore(driver, alertMsgPackageRestored);
+  			softAssert.assertAll();
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//TO VIEW THE PACKAGE REPORTS
+  		public PO_Main_HomePage viewPackageReport() throws InterruptedException
+  		{
+  			clickOnBtnReport_Package();
+  			softAssert.assertAll();
+  			return new PO_Main_HomePage(driver);
+  		}
 }

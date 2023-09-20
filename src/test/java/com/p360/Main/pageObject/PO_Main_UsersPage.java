@@ -688,7 +688,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		{
   			selectRegion(regionName);
   			selectLocationWhileUsersSearch(locationName);
-  			searchBox_RU(searchKeyuserNameOrEmail);
+  			searchBox_1_RU(searchKeyuserNameOrEmail);
   			int listRowCount = findUsersAndClickOnThreeDotOption(searchKeyuserNameOrEmail,driver,searchKeyColumnIndex,wantToClickOnUser);
   			logger.info("listRowCount:  "+listRowCount);
   			if(listRowCount != -1) {	

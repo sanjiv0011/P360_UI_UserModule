@@ -19,7 +19,7 @@ public class Action_Delete {
 	{
 		boolean flag = false;
 		ruae = new ReUseAbleElement(driver);
-		ruae.searchBox_RU(searchKey);
+		ruae.searchBox_1_RU(searchKey);
     	if(!ruae.isSearchKeysNotFound_RU()){
     			ruae.clickOnActionButton_RU();
     			ruae.clickOnBtnDelete_RU();;

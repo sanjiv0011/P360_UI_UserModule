@@ -642,7 +642,7 @@ public class PO_Main_Locations extends ReUseAbleElement {
   		public void findLocatoinAndViewDetails(String locationName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException
   		{
   			jsExecutor.executeScript("window.scrollBy(0, 100);");
-  			searchBox_RU(locationName);
+  			searchBox_1_RU(locationName);
   			boolean flag = isTextNoLocationMachesCurrentFilter();
   			if(!flag) {
   				int locationRowListCount = findLocationFromRowListAndClickOnThreeDot(locationName,searchKeyColumnIndex,wantToClickOnThreeDot);
@@ -677,7 +677,7 @@ public class PO_Main_Locations extends ReUseAbleElement {
   		public boolean findAndUpdateLocation(String locationName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException
   		{
   			jsExecutor.executeScript("window.scrollBy(0, 100);");
-  			searchBox_RU(locationName);
+  			searchBox_1_RU(locationName);
   			boolean isClickOnChangeBtn = false;
   			boolean flag = isTextNoLocationMachesCurrentFilter();
   			if(!flag) {

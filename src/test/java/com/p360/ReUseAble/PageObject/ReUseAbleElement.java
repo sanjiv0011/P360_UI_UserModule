@@ -83,10 +83,10 @@ public class ReUseAbleElement {
 		//SEARCH BOX - 1, P360
 		@FindBy(xpath= "//input[@placeholder='Search here...']")
 		@CacheLookup
-		public  WebElement searchBox_RU;
-		public void searchBox_RU(String SearchKey) throws InterruptedException
+		public  WebElement searchBox_1_RU;
+		public void searchBox_1_RU(String SearchKey) throws InterruptedException
 		{	Thread.sleep(200);
-			searchBox_RU.sendKeys(SearchKey,Keys.ENTER);
+			searchBox_1_RU.sendKeys(SearchKey,Keys.ENTER);
 			logger.info("Searched the search keys in the search box: "+SearchKey);
 			Thread.sleep(4000);
 		}
@@ -218,22 +218,20 @@ public class ReUseAbleElement {
   
 	    //===========START=======ACTIVATE AND DEACTIVATE==================//
 	    
-		//ACTIVATE Action => To use this first search list item so that it comes at first position
-		@FindBy(xpath = "(//div[contains(text(),'Acti')])[1]")
+		//ACTIVATE Action P360 => To use this first search list item so that it comes at first position
+		@FindBy(xpath = "//span[contains(text(),'Activate')]")
 		@CacheLookup
 		public WebElement actionActivate;
-		// Action method to click the Archive action
 	    public void clickOnActivateAction_RU() throws InterruptedException {
 	        actionActivate.click();
 	        logger.info("Clicked on the Action_Activate button");
 	        Thread.sleep(300);
 	    }
 		
-		//DEACTIVATE Action => To use this first search list item so that it comes at first position
-		@FindBy(xpath = "(//div[contains(text(),'Deacti')])[1]")
+		//DEACTIVATE Action P360 => To use this first search list item so that it comes at first position
+		@FindBy(xpath = "//span[contains(text(),'Deactivate')]")
 		@CacheLookup
 		public WebElement actionDeactivate;
-		 // Action method to click the Restore action
 	    public void clickOnDeactivateAction_RU() throws InterruptedException {
 	        actionDeactivate.click();
 	        logger.info("Clicked on the Action_Deactivated button");
@@ -273,8 +271,8 @@ public class ReUseAbleElement {
 	 	    
 	    //===========START=======ARCHIVE AND RESTORE==================//
 	    
-	    //Archive Action => To use this first search list item so that it comes at first position
-  		@FindBy(xpath = "(//div[contains(text(),'Archive')])[1]")
+	    //Archive Action, P360 => To use this first search list item so that it comes at first position
+  		@FindBy(xpath = "//span[contains(text(),'Archive')]")
   		@CacheLookup
   		public WebElement actionArchive;
   		// Action method to click the Archive action
@@ -284,8 +282,8 @@ public class ReUseAbleElement {
   	        Thread.sleep(300);
   	    }
   		
-  		//Restore Action => To use this first search list item so that it comes at first position
-  		@FindBy(xpath = "(//div[contains(text(),'Restore')])[1]")
+  		//Restore Action, P360 => To use this first search list item so that it comes at first position
+  		@FindBy(xpath = "//span[contains(text(),'Restore')]")
   		@CacheLookup
   		public WebElement actionRestore;
   		 // Action method to click the Restore action
