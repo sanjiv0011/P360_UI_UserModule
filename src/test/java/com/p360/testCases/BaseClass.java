@@ -143,16 +143,19 @@ public class BaseClass {
 	}
 		
 	//TO GENERATES RANDOM STRING HAVING LENGTH 6 CHARACTER
-	public String randomString(int intLength) {
+	public static String randomString(int intLength) {
 		String generatedstring = RandomStringUtils.randomAlphabetic(intLength);
 		return generatedstring;
 	}
 	
 	
 	//TO GENERATES RANDOM STRING NUMBER WITH MIN AND MAX AS PER USER DATA
-	public String randomStringNumber(int max, int min) {
+	public static String randomStringNumber( int min, int max) {
 		String rdmStringNumber = RandomStringUtils.randomNumeric(min, max);
 		return rdmStringNumber;
 	}
 	
+	public static void main(String[] args) {
+		System.out.println(randomStringNumber(5,6));
+	}
 }

@@ -638,7 +638,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 		
 		
   		
-  		//===================ACTIONS========================//	
+//=======START============ACTIONS METHODS========================//	
 		
 		
   		//TO ADD MEMBER
@@ -683,7 +683,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		}
   		
   		
-  		//TO FIND SPECIFIC USERS ANY CLICK ON IT
+  		//TO FIND SPECIFIC USERS AND CLICK ON IT
   		public void findUsersAndViewUsersDetails(String searchKeyuserNameOrEmail,String regionName,String locationName,int searchKeyColumnIndex, boolean wantToClickOnUser,int listActionIndex) throws InterruptedException
   		{
   			selectRegion(regionName);
@@ -695,7 +695,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   				clickOnAnyActionBtnPresentUnderThreeDotOption_RU(driver,listActionIndex);
   				Thread.sleep(3000);
 			}else {
-				softAssert.assertTrue(false,"User you to search is not present");
+				softAssert.assertTrue(false,"User you want to search is not present");
 			}
   			softAssert.assertAll();
   			//NOTE: NOT TAKING RETURN TYPE IN THIS, SO THAT IT WILL STAY ON THE USERS DETAILS PAGE
@@ -708,20 +708,24 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   				clickOnActionButton_1_RU();
   	  			boolean bol = selectThreeDotActionMenuItem("Pause Membership");
   	  			if(bol) {
-  	  			setPauseMembershipStartDate(pauseStartDate);
-  	  			setPauseMembershipEndDate(pauseEndDate);
-  	  			selectReason(pauseReason);
-  	  			boolean flag = clickOnPauseMembership();
-  	  			if(flag) {
-  	  				String alertContent = snakeAlertMessagesDisplayedContent_RU();
-  	  				if(alertContent.equalsIgnoreCase(alertMsgMembeshipChangeSuccessfully)) {
-  	  					logger.info("===>>> "+alertMsgMembeshipChangeSuccessfully);
-  	  				}else {
-  	  					logger.info("===>>> "+alertContent);
-  	  				}
-  	  			softAssert.assertEquals(alertContent, alertMsgMembeshipChangeSuccessfully,"To check membership paused or not");
-  	  			}
-  	  			}
+	  	  			setPauseMembershipStartDate(pauseStartDate);
+	  	  			setPauseMembershipEndDate(pauseEndDate);
+	  	  			selectReason(pauseReason);
+	  	  			boolean flag = clickOnPauseMembership();
+	  	  			if(flag) {
+	  	  				String alertContent = snakeAlertMessagesDisplayedContent_RU();
+	  	  				if(alertContent.equalsIgnoreCase(alertMsgMembeshipChangeSuccessfully)) {
+	  	  					logger.info("===>>> "+alertMsgMembeshipChangeSuccessfully);
+	  	  				}else {
+	  	  					logger.info("===>>> "+alertContent);
+	  	  				}
+	  	  			softAssert.assertEquals(alertContent, alertMsgMembeshipChangeSuccessfully,"To check membership paused or not");
+	  	  			}
+  	  			}else {
+  	  				softAssert.assertTrue(false,"You want to pause membership but this action button not present");
+  	  				clickOnP360Logo_RU();
+	  			}
+  	  			
   			}
   			softAssert.assertAll();	
   			return new PO_Main_HomePage(driver);
@@ -734,8 +738,8 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   				clickOnActionButton_1_RU();
   	  			boolean bol = selectThreeDotActionMenuItem("Resume Membership");
   	  			if(bol) {
-  	  			boolean flag = clickOnYesButton_RU();
-  	  			if(flag) {
+	  	  			boolean flag = clickOnYesButton_RU();
+	  	  			if(flag) {
   	  				String alertContent = snakeAlertMessagesDisplayedContent_RU();
   	  				if(alertContent.equalsIgnoreCase(alertMsgMembershipResumedSuccessfully)) {
   	  					logger.info("===>>> "+alertMsgMembershipResumedSuccessfully);
@@ -744,6 +748,10 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   	  				}
   	  				softAssert.assertEquals(alertContent, alertMsgMembershipResumedSuccessfully,"To check membership resume or  not");
   	  				}
+  	  			}else {
+  	  				softAssert.assertTrue(false,"You want to resume membership but this action button not present");
+  	  				clickOnP360Logo_RU();
+	  				
   	  			}
   			}
   			softAssert.assertAll();	
@@ -759,6 +767,9 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   	  			if(bol) {
 	  	  			jsExecutor.executeScript("window.scrollBy(0, 200);");
 	  	  			clickOnCancelButton_1_RU();
+  	  			}else {
+  	  				softAssert.assertTrue(false,"You want to check agreement but this action button not present");
+	  				clickOnP360Logo_RU();
   	  			}
   			}
   			softAssert.assertAll();	
@@ -786,6 +797,9 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 					}
 					softAssert.assertEquals(alertContent, alertMsgUserEmailChanged,"To check email change or not");
 			
+	  	  		}else {
+		  	  		softAssert.assertTrue(false,"You want to change email but this action button not present");
+	  	  			clickOnP360Logo_RU();
 	  	  		}
   			}
   			softAssert.assertAll();	
@@ -818,6 +832,9 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 						softAssert.assertTrue(false,"User label not assigned to the users");
 						Thread.sleep(500);
 					}
+  	  			}else {
+  	  				softAssert.assertTrue(false,"You want to assign labels but this action button not present");
+  	  				clickOnP360Logo_RU();
   	  			}
   	  		}
   	  		
@@ -849,6 +866,9 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   	  						Thread.sleep(500);
   	  					}
   	  				}
+  				}else {
+  	  				softAssert.assertTrue(false,"You want to user label but this action button not present");
+  	  				clickOnP360Logo_RU();
   				}
   	  
   			}
@@ -874,6 +894,9 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 							softAssert.assertTrue(false,"User account not suspended");
 						}
 	  	  			}
+  	  			}else {
+  	  				softAssert.assertTrue(false,"You want to suspend user account but this action button not present");
+  	  				clickOnP360Logo_RU();
   	  			}
   	  			
   			}
@@ -900,6 +923,9 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 							softAssert.assertTrue(false,"User account not Unlocked");
 						}
 	  	  			}
+  	  			}else {
+  	  				softAssert.assertTrue(false,"You want to unlock user account but this action button not present");
+  	  				clickOnP360Logo_RU();
   	  			}
   			}
   			softAssert.assertAll();	
@@ -932,6 +958,9 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 	  					}
 	  				}
   	  			
+  	  			}else {
+  	  				softAssert.assertTrue(false,"You want to change membership but this action button not present");
+  	  				clickOnP360Logo_RU();
   	  			}
   			}
   			softAssert.assertAll();	
@@ -969,6 +998,9 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 	  						softAssert.assertTrue(false,"Membership not Canceled");
 	  					}
 	  				}
+  	  			}else {
+  	  				softAssert.assertTrue(false,"You want to cancel membership but this action button not present");
+  	  				clickOnP360Logo_RU();
   	  			}
   	  			
   	  			
@@ -1013,6 +1045,9 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   	  						softAssert.assertTrue(false,"Membership not renew");
   	  					}
   	  				}
+  	  			}else {
+  	  				softAssert.assertTrue(false,"You want to renew membership but this action button not present");
+  	  				clickOnP360Logo_RU();
   	  			}
   	  			
   			}

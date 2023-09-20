@@ -19,8 +19,14 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
     	String callerMethodName = stackTraceElements[2].getMethodName();
 		logger.info("findThreedActionButtonAndClick method called and Caller method name: "+callerMethodName);
 		logger.info("wantToClickOnThreeDot: "+wantToClickOnThreeDot);
+		
+		
+		//POINTER ADDRESSES
 		String MemberCreditpointer_address = "((//div[contains(@class,'grid grid-cols-1 gap-2')])[3]//div[contains(@class,'flex-row')]//*[@class='pointer'])";
 		String PaymentHistorypointer_address = "((//div[contains(@class,'grid grid-cols-1 gap-2')])[2]//div[contains(@class,'flex-row')]//*[@class='pointer'])";
+		String locatinListPointer_address  = "((//div[contains(@class,'w-full flex flex-col')])[2]//div[contains(@class,'p-2 flex gap-2 flex-row')]//*[@class='pointer'])";
+		String regionListPointer_address = "((//div[contains(@class,'w-full flex flex-col')])[3]//div[contains(@class,'p-2 flex gap-2 flex-row')]//*[@class='pointer'])";
+		
 		
 		
 		if(callerMethodName.equalsIgnoreCase("findMyRegisteredClassAndonThreeDotOption")) {
@@ -71,9 +77,14 @@ public class FindThreeDotBasedOnSearchKeyAndClick {
 								btnActionAddress = MemberCreditpointer_address+"["+listRowCount+"]";
 							}else if(callerMethodName.equals("findHistoryAndClickOnThreeDotOption")) {
 								btnActionAddress = PaymentHistorypointer_address+"["+listRowCount+"]";
+							}else if(callerMethodName.equals("findLocationFromRowListAndClickOnThreeDot")) {
+								btnActionAddress = locatinListPointer_address+"["+listRowCount+"]";
+							}else if(callerMethodName.equals("findRegionFromRowListAndClickOnThreeDot")) {
+								btnActionAddress = regionListPointer_address+"["+listRowCount+"]";
 							}else {
 								btnActionAddress = "(//div[@class='pointer'])["+listRowCount+"]";
 							}
+							
 							logger.info("Three dot actoin button address: "+btnActionAddress);
 							flag = true;
 							Thread.sleep(300);

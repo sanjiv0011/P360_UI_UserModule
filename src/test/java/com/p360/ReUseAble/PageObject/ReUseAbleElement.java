@@ -79,8 +79,9 @@ public class ReUseAbleElement {
 			logger.info("Clicked on the Menu Dashboard");
 			
 		}
-		//SEARCH BOX P360
-		@FindBy(xpath = "//input[@placeholder='Search here...']")
+		
+		//SEARCH BOX - 1, P360
+		@FindBy(xpath= "//input[@placeholder='Search here...']")
 		@CacheLookup
 		public  WebElement searchBox_RU;
 		public void searchBox_RU(String SearchKey) throws InterruptedException
@@ -89,7 +90,19 @@ public class ReUseAbleElement {
 			logger.info("Searched the search keys in the search box: "+SearchKey);
 			Thread.sleep(4000);
 		}
-	
+		
+		//SEARCH BOX- 2, P360
+		@FindBy(xpath = "(//input[@placeholder='Search here...'])[2]")
+		@CacheLookup
+		public  WebElement searchBox_2_RU;
+		public void searchBox_2_RU(String SearchKey) throws InterruptedException
+		{	Thread.sleep(200);
+			searchBox_2_RU.sendKeys(SearchKey,Keys.ENTER);
+			logger.info("Searched the search keys in the search box: "+SearchKey);
+			Thread.sleep(4000);
+		}
+				
+		
 	
 		
 		//SEARCH KEY NOT FOUND
@@ -566,16 +579,14 @@ public class ReUseAbleElement {
 	    //LOGO P360
 	    @FindBy(xpath = "(//img[@alt='P360'])[1]")
 		@CacheLookup
-		public WebElement logoP360;
-	    public void clickOnP360Logo() throws InterruptedException {
-    		logoP360.click();
+		public WebElement logoP360_RU;
+	    public void clickOnP360Logo_RU() throws InterruptedException {
+	    	action.moveToElement(logoP360_RU).build().perform();
+	    	Thread.sleep(500);
+	    	action.moveToElement(logoP360_RU).doubleClick().build().perform();
 			logger.info("Clicked on the P360 logo");
 			Thread.sleep(1000);
-	    	
 		}
-	    
-	    
-	    
 	    
 	    //SAVE AND CLOSE BUTTON 1, P360	
 	    @FindBy(xpath = "(//span[normalize-space()='Save & Close'])[1]")
@@ -673,6 +684,24 @@ public class ReUseAbleElement {
 			return flag;
 		}
 	 
+	    //UPDATE BUTTON, P360
+	    @FindBy(xpath = "//span[normalize-space()='Update']")
+		@CacheLookup
+		public WebElement btnUpdate_1_RU;
+	    public boolean clickOnBtnUpdate_1_RU() throws InterruptedException {
+	    	boolean  flag = false;
+	    	try {
+	    		btnUpdate_1_RU.click();
+	    		flag = true;
+		    	logger.info("Clicked on the nextbutton");
+				Thread.sleep(300);
+	    	}catch(Exception e) {
+	    		logger.info("Excepton from : "+e.getMessage());
+	    	}
+			return flag;
+		}
+	    
+	  
 	    
 	    		
 		
@@ -921,7 +950,7 @@ public class ReUseAbleElement {
 	  			int alertLoopCount = 0;
 	  			String exception = null;
 	  			boolean flag = false;
-	  			while(alertLoopCount <= 2500)
+	  			while(alertLoopCount <= 5000)
 	  			{	alertLoopCount++;
 	  				try {
 	  					alertSnakeMessage = driver.findElement(By.xpath(alertAddress_RU));

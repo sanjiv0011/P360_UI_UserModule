@@ -21,6 +21,7 @@ import org.testng.asserts.SoftAssert;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 import com.p360.pageObject.PO_LoginPage;
 import com.p360.projectUtility.DatePicker;
+import com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick;
 import com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown;
 
 public class PO_Main_Locations extends ReUseAbleElement {
@@ -51,8 +52,8 @@ public class PO_Main_Locations extends ReUseAbleElement {
 		public String alertMsgRegionCreatedSuccessfully = "Region Created Successfully";
 		public String alertMsgLocationCreatedSuccessfully = "Package name is required";
 		public String alertMsgValidationError = "Validation Error Occurred. Errors:";
-//		public String alertMsgPackageDescriptionIsRequired = "Package Description is required";
-//		public String alertMsgPackageRegularPriceIsRequired = "Package regular Price is required";
+		public String alertMsgLocationUpdatedSuccessfully = "Location Updated Successfully";
+		public String alertMsgRegionUpdatedSuccessfully = "Region Updated Successfully";
 //		public String alertMsgTotalClassIsRequired = "Total Classes is required";
 //		public String alertMsgPackageCreatedSuccessfully = "Package created successfully";
 		
@@ -179,8 +180,8 @@ public class PO_Main_Locations extends ReUseAbleElement {
   			Thread.sleep(500);
   		}
   		
-  		//TEXT FIELD LOCATION DESCRIPTION, AND LOCATION VITALS
-  		@FindBy(xpath = "(//div[@class='ql-editor ql-blank'])[1]")
+  		//TEXT FIELD LOCATION DESCRIPTION
+  		@FindBy(xpath = "//div[contains(@class,'ql-container')]//p")
   		@CacheLookup
   		public WebElement fieldDescirption;
   		public void setDescrition(String description) throws InterruptedException {
@@ -280,6 +281,151 @@ public class PO_Main_Locations extends ReUseAbleElement {
   			logger.info("Entered the fieldLocatoinPhoneNumber: "+locationPhoneNumber);
   			Thread.sleep(300);
   		}
+  		
+  		//LOCATIONS ROW LIST ADDRESS AND ACTION METHDS
+  		@FindBy(xpath = "(//div[contains(@class,'w-full flex flex-col')])[2]//div[contains(@class,'p-2 flex gap-2 flex-row')]")
+  		@CacheLookup
+  		public List <WebElement> locationRowList;
+  		public String locationRowList_address = "(//div[contains(@class,'w-full flex flex-col')])[2]//div[contains(@class,'p-2 flex gap-2 flex-row')]";
+  		public int findLocationFromRowListAndClickOnThreeDot(String locationName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException {
+  			int listRowCount = 0;
+			try {
+				Thread.sleep(2000);
+				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(locationRowList,driver, locationName, searchKeyColumnIndex,wantToClickOnThreeDot);
+			}catch(Exception e) {
+				logger.info("Exception from findLocationFromRowListAndClickOnThreeDot: "+e.getMessage());
+				softAssert.assertTrue(false,"not click on the three dot action button");
+			}
+			return listRowCount;
+  		}
+  		
+  				
+  		//REGIONS ROW LIST ADDRESS AND ACTION METHODS
+  		@FindBy(xpath = "(//div[contains(@class,'w-full flex flex-col')])[3]//div[contains(@class,'p-2 flex gap-2 flex-row')]")
+  		@CacheLookup
+  		public List <WebElement> regionRowList;
+  		public String regionRowList_address = "(//div[contains(@class,'w-full flex flex-col')])[2]//div[contains(@class,'p-2 flex gap-2 flex-row')]";
+  		public int findRegionFromRowListAndClickOnThreeDot(String regionName, int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException {
+  			int listRowCount = 0;
+			try {
+				Thread.sleep(2000);
+				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(regionRowList,driver, regionName, searchKeyColumnIndex,wantToClickOnThreeDot);
+			}catch(Exception e) {
+				logger.info("Exception from findRegionFromRowListAndClickOnThreeDot: "+e.getMessage());
+				softAssert.assertTrue(false,"not click on the three dot action button");
+			}
+			return listRowCount;
+  		}		
+  		
+			
+  		//TO CLICK ON LOCAITON/REGION DETAILS BUTTON FROM THE LOCATION LIST
+  		public boolean clickOnThreeDotActionBtnDetails(int rowListCount) throws InterruptedException {
+  			boolean flag = false;
+  			Thread.sleep(500);
+  			while(true)
+  			{
+  				String btnDetails_address = "(//span[contains(text(),'Details')])["+rowListCount+"]";
+  	  			//logger.info("btnDetails_address:- "+btnDetails_address);
+  	  			WebElement btnDetails = driver.findElement(By.xpath(btnDetails_address));
+  	  			
+  	  			if(btnDetails.isDisplayed() && btnDetails.isEnabled())
+  	  			{
+  	  				logger.info("Is change button displayed and enabled: "+btnDetails.isDisplayed());
+  	  				logger.info("btnDetails_address:- "+btnDetails_address);
+  	  				action.moveToElement(btnDetails).build().perform();
+  	  				logger.info("rowListCount: "+rowListCount);
+  	  	  			Thread.sleep(300);
+  	  	  			jsExecutor.executeScript("arguments[0].click();", btnDetails);
+  	  	  			//action.moveToElement(btnDetails).click().build().perform();
+  		  	  		logger.info("Clicked on the Details action button present under three dots");
+  		  			flag  = true;
+  		  			Thread.sleep(1000);
+  		  			break;
+  	  			}else {
+  	  				rowListCount++;
+  	  			}
+  			}
+  			
+  			
+  			return flag;
+  			
+  		}
+  		
+  		//TO CLICK ON REGION DETAILS BUTTON FROM THE REGION LIST
+  		public boolean clickOnThreeDotActionBtnChange(int rowListCount) throws InterruptedException {
+  			boolean flag = false;
+  			Thread.sleep(500);
+  			
+			while(true){
+				//logger.info("rowListCount: "+rowListCount);
+				String btnChange_address = "(//span[contains(text(),'Change')])["+rowListCount+"]";
+				//logger.info("btnChange_address:- "+btnChange_address);
+	  			WebElement btnChange = driver.findElement(By.xpath(btnChange_address));
+	  			
+				if(btnChange.isDisplayed() && btnChange.isEnabled()) {
+					logger.info("Is change button displayed and enabled: "+btnChange.isDisplayed());
+					logger.info("btnChange_address:- "+btnChange_address);
+					logger.info("rowListCount: "+rowListCount);
+					action.moveToElement(btnChange).build().perform();
+	  	  			Thread.sleep(300);
+	  	  			jsExecutor.executeScript("arguments[0].click();", btnChange);
+	  	  			//action.moveToElement(btnChange).click().build().perform();
+		  	  		logger.info("Clicked on Change action button present under three dot");
+		  			flag  = true;
+		  			Thread.sleep(1000);
+		  			break;
+				}else {
+					rowListCount++;
+				}
+			}
+  			
+  			
+  			return flag;
+  			
+  		}
+  		
+  		//TO CHECK SEARCH LOCAITN IS PRESENT OR NOT
+  		@FindBy(xpath = "//span[.='No Locations Matches Current Filter']")
+  		@CacheLookup
+  		WebElement textNoLocationMatchesCurrentFiter;
+  		public boolean isTextNoLocationMachesCurrentFilter() {
+  			boolean flag = false;
+  			try {
+  				if(textNoLocationMatchesCurrentFiter.isDisplayed()) {
+  					logger.info("No locations matched to applied filter");
+  					softAssert.assertTrue(false,"No Location Matched to the Current Fiter");
+  	  				flag = true;
+  	  			}
+  			}catch(Exception e) {
+  				logger.info("Exception from isTextNoLocationMachesCurrentFilter: "+e.getMessage());
+  				logger.info("Location Matched to the Current Fiter");
+  				softAssert.assertTrue(true,"Location Matched to the Current Fiter");
+  				flag = false;
+  			}
+  			return flag;
+  		}
+
+  		//TO CHECK SEARCH REGION IS PRESENT OR NOT
+  		@FindBy(xpath = "//span[.='No Regions Matches Current Filter']")
+  		@CacheLookup
+  		WebElement textNoRegionMatchesCurrentFiter;
+  		public boolean isTextNoRegionMachesCurrentFilter() {
+  			boolean flag = false;
+  			try {
+  				if(textNoRegionMatchesCurrentFiter.isDisplayed()) {
+  					logger.info("No regions matched to applied filter");
+  					softAssert.assertTrue(false,"No Region Matches to the applied Current Fiter");
+  					flag = true;
+  	  			}
+  			}catch(Exception e) {
+  				logger.info("Exception from isTextNoRegionMachesCurrentFilter: "+e.getMessage());
+  				logger.info("Region Matched to the Current Fiter");
+  				softAssert.assertTrue(true,"Region Matches to the applied Current Fiter");
+  				flag = false;
+  			}
+  			return flag;
+  		}
+  				
   		//======END======PAGE OBJECT FOR ADD LOCATIONS AND ACTOIN METHODS==========//
   		
   		
@@ -326,7 +472,7 @@ public class PO_Main_Locations extends ReUseAbleElement {
   		}
   		
   		//TEXT FIELD LOCATION VITLES DECRIPTOINS
-  		@FindBy(xpath = "//div[@class='ql-editor ql-blank']//p")
+  		@FindBy(xpath = "//div[contains(@class,'ql-container')]//p")
   		@CacheLookup
   		public WebElement fieldLocatoinVitlesDescriptions;
   		public void setLocationVitlesDescriptoin(String locationVitalsDescription) throws InterruptedException {
@@ -351,20 +497,36 @@ public class PO_Main_Locations extends ReUseAbleElement {
   			Thread.sleep(300);
   		}
   		
-  		//======START======PAGE OBJECT FOR LOCATION SETTING AND ACTOIN METHODS==========//
+//======START======PAGE OBJECT FOR LOCATION SETTING AND ACTOIN METHODS==========//
   				
   				
-  				
-  		//TO ADD REGIONS
-  		public PO_Main_HomePage addRegion(String regionName,String parentRegion,String regionCode,String regionDescription) throws InterruptedException
+//=======START============ACTIONS METHODS========================//	
+  		
+  		//TO ADD AND UPDATES REGIONS 
+  		public PO_Main_HomePage addAndUpdateRegion(String regionName,String parentRegion,String regionCode,String regionDescription) throws InterruptedException
   		{
-  			clickOnBtnAddRegions();
+  			StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
+  			String callerMethodName = stackTraceElement[2].getMethodName();
+  			
+  			if(callerMethodName.equals("test_Main_UpdateRegion")) {
+  				logger.info("addRegion methods is called to update the region");
+  			}else {
+  				clickOnBtnAddRegions();
+  			}
+  			
   			Thread.sleep(3000);
   			setRegionName(regionName);
   			selectParentRegion(parentRegion);
   			setRegionCode(regionCode);
   			setRegionDescription(regionDescription);
-  			boolean flag = clickOnBtnSaveAndClose_1_RU();
+  			
+  			boolean flag = false; 
+				if(callerMethodName.equals("test_Main_UpdateRegion")) {
+					flag = clickOnBtnUpdate_1_RU();
+	  			}else {
+	  				flag = clickOnBtnSaveAndClose_1_RU();
+	  			}
+				
   			boolean requiredMsg = isRequiredOrInvalidMessageDisplayed_RU();
   			if(requiredMsg) 
   			{
@@ -377,20 +539,33 @@ public class PO_Main_Locations extends ReUseAbleElement {
   				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
   				if(alertMsg.equals(alertMsgRegionCreatedSuccessfully)) {
   					softAssert.assertEquals(alertMsg, alertMsgRegionCreatedSuccessfully,"Checks Regoin created successfully");
-  				}else if(alertMsg.contains("required") || alertMsg.contains("Required")){
+  				}else if(alertMsg.equals(alertMsgRegionUpdatedSuccessfully)){
+  					softAssert.assertEquals(alertMsg, alertMsgRegionUpdatedSuccessfully,"Checks Regoin updated successfully");
+  	  			}else if(alertMsg.contains("required") || alertMsg.contains("Required")){
   	  				logger.info("===>>> Region not created, some required field missing");
+  	  				softAssert.assertTrue(false, "Neither region created nor updated");
   	  				ruae.clickOnCancelButton_1_RU();
+  	  				
   	  			}
   			}
   			
+  			softAssert.assertAll();
   			return new PO_Main_HomePage(driver);
   		}
   		
   		
   		//TO ADD LOCATIONS
-  		public PO_Main_HomePage addLocation(String locationName,String locationInternalName,String locationRegionName,String locatoinCode, String locationDescription,String addressLine1,String addressLine2, String city,String postalCode,String stateName,String locationEmail,String locationPhoneNumber,String locationVitalsDescription,String timeZone,String p360Shares,String wantEnableNoShow, String noShowFee) throws InterruptedException
+  		public PO_Main_HomePage addAndUpdateLocation(String locationName,String locationInternalName,String locationRegionName,String locatoinCode, String locationDescription,String addressLine1,String addressLine2, String city,String postalCode,String stateName,String locationEmail,String locationPhoneNumber,String locationVitalsDescription,String timeZone,String p360Shares,String wantEnableNoShow, String noShowFee) throws InterruptedException
   		{
-  			clickOnBtnAddLocations();
+  			StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
+  			String callerMethodName = stackTraceElement[2].getMethodName();
+  			
+  			if(callerMethodName.equals("test_Main_UpdateLocatoin")) {
+  				logger.info("addLocation methods is called to update the location");
+  			}else {
+  				clickOnBtnAddLocations();
+  			}
+  			
   			Thread.sleep(3000);
   			setLocationName(locationName);
   			setLocatonInternalName(locationInternalName);
@@ -405,6 +580,7 @@ public class PO_Main_Locations extends ReUseAbleElement {
   			setLocationEmail(locationEmail);
   			setLocationPhoneNumber(locationPhoneNumber);
   			clickONBtnContinue_RU();
+  			
   			boolean requiredMsg = isRequiredOrInvalidMessageDisplayed_RU();
   			if(requiredMsg) {
   				Thread.sleep(1000);
@@ -420,7 +596,14 @@ public class PO_Main_Locations extends ReUseAbleElement {
   				if(wantEnableNoShow.equalsIgnoreCase("Yes")) {
   					clickOnCheckBox_1_RU();
   				}
-  				boolean flag = clickOnBtnSaveAndClose_1_RU();
+  				
+  				boolean flag = false; 
+  				if(callerMethodName.equals("test_Main_UpdateLocatoin")) {
+  					flag = clickOnBtnUpdate_1_RU();
+  	  			}else {
+  	  				flag = clickOnBtnSaveAndClose_1_RU();
+  	  			}
+  				
   				if(flag) 
   				{	boolean requiredMsg2 = isRequiredOrInvalidMessageDisplayed_RU();
 	  				if(requiredMsg2) 
@@ -432,12 +615,11 @@ public class PO_Main_Locations extends ReUseAbleElement {
 	  				else
 	  	  			{
 	  	  				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
-	  	  				if(alertMsg.equals(alertMsgLocationCreatedSuccessfully))
-	  	  				{
+	  	  				if(alertMsg.equals(alertMsgLocationCreatedSuccessfully)){
 	  	  					softAssert.assertEquals(alertMsg, alertMsgLocationCreatedSuccessfully,"Checks Location created successfully");
-	  	  				}
-	  	  				else if(alertMsg.contains(alertMsgValidationError))
-	  	  				{
+	  	  				}else if(alertMsg.contains(alertMsgLocationUpdatedSuccessfully)) {
+	  	  					softAssert.assertEquals(alertMsg, alertMsgLocationUpdatedSuccessfully,"Checks Location updated successfully");
+	  	  				}else if(alertMsg.contains(alertMsgValidationError)) {
 	  	  					ruae.clickOnCancelButton_1_RU();
 	  	  				}
   	  				}
@@ -445,15 +627,88 @@ public class PO_Main_Locations extends ReUseAbleElement {
 	  			}
   				
   			}
-  			else 
-  			{
+  			else {
   				clickOnCancelButton_1_RU();
   				softAssert.assertTrue(false);
   			}
   				
+  			softAssert.assertAll();
   			Thread.sleep(2000);
   			return new PO_Main_HomePage(driver);
   			
   		}
+  		
+  		//FIND LOACTION FROM THE LIST AND VIEW DETAILS
+  		public void findLocatoinAndViewDetails(String locationName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException
+  		{
+  			jsExecutor.executeScript("window.scrollBy(0, 100);");
+  			searchBox_RU(locationName);
+  			boolean flag = isTextNoLocationMachesCurrentFilter();
+  			if(!flag) {
+  				int locationRowListCount = findLocationFromRowListAndClickOnThreeDot(locationName,searchKeyColumnIndex,wantToClickOnThreeDot);
+  	  			clickOnThreeDotActionBtnDetails(locationRowListCount);
+  			}else {
+  				clickOnP360Logo_RU();
+  			}
+  			Thread.sleep(2000);
+  			softAssert.assertAll();
+  		}
+  		
+  		//FIND REGIONS FROM THE LIST AND VIEW DETAILS
+  		public void findRegionAndViewDetails(String regionName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException
+  		{
+  			jsExecutor.executeScript("window.scrollBy(0, 300);");
+  			Thread.sleep(2000);
+  			searchBox_2_RU(regionName);
+  			boolean flag = isTextNoRegionMachesCurrentFilter();
+  			if(!flag) {
+  				int regionRowListCount = findRegionFromRowListAndClickOnThreeDot(regionName,searchKeyColumnIndex,wantToClickOnThreeDot);
+  	  			clickOnThreeDotActionBtnDetails(regionRowListCount);
+  	  			Thread.sleep(2000);
+  			}else {
+  				clickOnP360Logo_RU();
+  			}
+  			ruae.clickOnBtnCross_RU();
+  			Thread.sleep(2000);
+  			softAssert.assertAll();
+  		}
+  		
+  		//FIND THE LOCATOIN FROM THE LIST AND UPDATE IT
+  		public boolean findAndUpdateLocation(String locationName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException
+  		{
+  			jsExecutor.executeScript("window.scrollBy(0, 100);");
+  			searchBox_RU(locationName);
+  			boolean isClickOnChangeBtn = false;
+  			boolean flag = isTextNoLocationMachesCurrentFilter();
+  			if(!flag) {
+  				int locationRowListCount = findLocationFromRowListAndClickOnThreeDot(locationName,searchKeyColumnIndex,wantToClickOnThreeDot);
+  				isClickOnChangeBtn = clickOnThreeDotActionBtnChange(locationRowListCount);
+  			}else {
+  				clickOnP360Logo_RU();
+  			}
+  			Thread.sleep(2000);
+  			softAssert.assertAll();
+  			return isClickOnChangeBtn;
+  		}
+  		
+  		
+  		//FIND THE REGION FROM THE LIST AND UPDATE IT
+  		public boolean findAndUpdateRegion(String regionName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException
+  		{
+  			jsExecutor.executeScript("window.scrollBy(0, 300);");
+  			searchBox_2_RU(regionName);
+  			boolean isClickOnChangeBtn = false;
+  			boolean flag = isTextNoRegionMachesCurrentFilter();
+  			if(!flag) {
+  				int locationRowListCount = findRegionFromRowListAndClickOnThreeDot(regionName,searchKeyColumnIndex,wantToClickOnThreeDot);
+  				isClickOnChangeBtn = clickOnThreeDotActionBtnChange(locationRowListCount);
+  			}else {
+  				clickOnP360Logo_RU();
+  			}
+  			Thread.sleep(2000);
+  			softAssert.assertAll();
+  			return isClickOnChangeBtn;
+  		}
+  		
   		
 }
