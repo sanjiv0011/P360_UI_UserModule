@@ -74,6 +74,7 @@ public class TC_Main_Users extends BaseClass{
 	String searchKeyPaymentHistory = "Sep 13, 2023";
 	int searchKeyColumnIndexPaymentHistory = 3;
 	boolean wantToClickOnThreeDotPaymentHistory = true;
+	boolean wantToclickOnFindSearckKey = false;
 	
 	
 	
@@ -172,7 +173,7 @@ public class TC_Main_Users extends BaseClass{
 	//@Test(priority = 13)
 	public void test_Main_ChangeMemberCredit() throws Throwable {
 		searchAndViewUsersDetails();
-		m_up.changeMemberCredit(creditStartDate, creditEndDate, totalCredit,usedCredit, comment,searchKey, searchKeyColumnIndexMemberCredit,wantToClickOnThreeDot);
+		m_up.changeMemberCredit(creditStartDate, creditEndDate, totalCredit,usedCredit, comment,searchKey, searchKeyColumnIndexMemberCredit,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
 	}
 	
 	
@@ -180,7 +181,7 @@ public class TC_Main_Users extends BaseClass{
 	//@Test(priority = 14)
 	public void test_Main_SendInvoice() throws Throwable {
 		searchAndViewUsersDetails();
-		m_up.sendInvoice(searchKeyPaymentHistory, searchKeyColumnIndexPaymentHistory,wantToClickOnThreeDotPaymentHistory);
+		m_up.sendInvoice(searchKeyPaymentHistory, searchKeyColumnIndexPaymentHistory,wantToClickOnThreeDotPaymentHistory,wantToclickOnFindSearckKey);
 	}
 		
 		
@@ -189,7 +190,7 @@ public class TC_Main_Users extends BaseClass{
 	//TO FIND ANY SPECIFIC USERS FROM THE LIST AND CLICK ON THE VIEW DETAILS ACTION BUTTON
 	public void searchAndViewUsersDetails() throws Throwable {
 		m_up = callMeBeforePerformAnyAction();
-		m_up.findUsersAndViewUsersDetails(searchKeyuserNameOrEmail,regionName,location,searchKeyColumnIndex, wantToClickOnUser,listActionIndex);
+		m_up.findUsersAndViewUsersDetails(searchKeyuserNameOrEmail,regionName,location,searchKeyColumnIndex, wantToClickOnUser,listActionIndex,wantToclickOnFindSearckKey);
 	}	
 	
 	//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT

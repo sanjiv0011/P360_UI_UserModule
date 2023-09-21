@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,7 +103,22 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.p360.Main.testCases.TC_Main_Packages" class="method navigator-link" hash-for-method="test_Main_ViewPackageReport">test_Main_ViewPackageReport</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.p360.Main.testCases.TC_Main_Packages" class="method navigator-link" hash-for-method="test_Main_ActivatePackageCategory">test_Main_ActivatePackageCategory</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.p360.Main.testCases.TC_Main_Packages" class="method navigator-link" hash-for-method="test_Main_ArchivePackageCategory">test_Main_ArchivePackageCategory</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.p360.Main.testCases.TC_Main_Packages" class="method navigator-link" hash-for-method="test_Main_DeActivatePackageCategory">test_Main_DeActivatePackageCategory</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.p360.Main.testCases.TC_Main_Packages" class="method navigator-link" hash-for-method="test_Main_RestorePackageCategory">test_Main_RestorePackageCategory</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -126,9 +141,30 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test_Main_ViewPackageReport">
-                  </a> <!-- test_Main_ViewPackageReport -->
-                  <span class="method-name">test_Main_ViewPackageReport</span>
+                  <a name="test_Main_ActivatePackageCategory">
+                  </a> <!-- test_Main_ActivatePackageCategory -->
+                  <span class="method-name">test_Main_ActivatePackageCategory</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_Main_ArchivePackageCategory">
+                  </a> <!-- test_Main_ArchivePackageCategory -->
+                  <span class="method-name">test_Main_ArchivePackageCategory</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_Main_DeActivatePackageCategory">
+                  </a> <!-- test_Main_DeActivatePackageCategory -->
+                  <span class="method-name">test_Main_DeActivatePackageCategory</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_Main_RestorePackageCategory">
+                  </a> <!-- test_Main_RestorePackageCategory -->
+                  <span class="method-name">test_Main_RestorePackageCategory</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -190,16 +226,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test_Main_ViewPackageReport')
+data.setCell(0, 1, 'test_Main_DeActivatePackageCategory')
 data.setCell(0, 2, 'com.p360.Main.testCases.TC_Main_Packages')
-data.setCell(0, 3, 35882);
+data.setCell(0, 3, 38100);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'test_Main_ActivatePackageCategory')
+data.setCell(1, 2, 'com.p360.Main.testCases.TC_Main_Packages')
+data.setCell(1, 3, 37428);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'test_Main_ArchivePackageCategory')
+data.setCell(2, 2, 'com.p360.Main.testCases.TC_Main_Packages')
+data.setCell(2, 3, 37303);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'test_Main_RestorePackageCategory')
+data.setCell(3, 2, 'com.p360.Main.testCases.TC_Main_Packages')
+data.setCell(3, 3, 36947);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 35 seconds</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -232,19 +280,31 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">Login(admin)</span>
-                <span class="method-start">3198 ms</span>
+                <span class="method-start">4628 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">test_Main_ViewPackageReport</span>
-                <span class="method-start">15708 ms</span>
+                <span class="method-name">test_Main_DeActivatePackageCategory</span>
+                <span class="method-start">16804 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_Main_ActivatePackageCategory</span>
+                <span class="method-start">54936 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_Main_ArchivePackageCategory</span>
+                <span class="method-start">92370 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_Main_RestorePackageCategory</span>
+                <span class="method-start">129679 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">Logout(admin)</span>
-                <span class="method-start">51628 ms</span>
+                <span class="method-start">166645 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-test after">
                 <span class="method-name">Teardown</span>
-                <span class="method-start">62007 ms</span>
+                <span class="method-start">176054 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -56,12 +56,8 @@ public class TC_Main_Locations extends BaseClass{
 	String searchKeyRegionName = "WESTWOOD";
 	int searchKeyColumnIndex = 1;
 	boolean wantToClickOnThreeDot = true;
+	boolean wantToclickOnFindSearckKey = false;
 
-	
-	
-	
-	
-	
 	
 	
 	
@@ -85,14 +81,14 @@ public class TC_Main_Locations extends BaseClass{
 	//@Test(priority = 3)
 	public void test_Main_SearchAndViewLocationDetails() throws Throwable {
 		m_lp = callMeBeforePerformAnyAction();
-		m_lp.findLocatoinAndViewDetails(searchKeyLocationName,searchKeyColumnIndex,wantToClickOnThreeDot);
+		m_lp.findLocatoinAndViewDetails(searchKeyLocationName,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
 	}
 	
 	//TO FIND ANY SPECIFIC LOCATIONS FROM THE LIST UPDATE IT
 	//@Test(priority = 4)
 	public void test_Main_UpdateLocatoin() throws Throwable {
 		m_lp = callMeBeforePerformAnyAction();
-		boolean bol = m_lp.findAndUpdateLocation(searchKeyLocationName,searchKeyColumnIndex,wantToClickOnThreeDot);
+		boolean bol = m_lp.findAndUpdateLocation(searchKeyLocationName,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
 		if(bol) {
 			m_hp = m_lp.addAndUpdateLocation(locationName,locationInternalName,locationRegionName,locatoinCode,locationDescription,addressLine1,addressLine2,city, postalCode,stateName,locationEmail,locationPhoneNumber,locationVitalsDescription,timeZone,p360Shares,wantEnableNoShow,noShowFee);
 		}else {
@@ -105,7 +101,7 @@ public class TC_Main_Locations extends BaseClass{
 	//@Test(priority = 5)
 	public void test_Main_SearchAndViewRegionDetails() throws Throwable {
 		m_lp = callMeBeforePerformAnyAction();
-		m_lp.findRegionAndViewDetails(searchKeyRegionName,searchKeyColumnIndex,wantToClickOnThreeDot);
+		m_lp.findRegionAndViewDetails(searchKeyRegionName,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
 	}
 		
 	
@@ -113,7 +109,7 @@ public class TC_Main_Locations extends BaseClass{
 	@Test(priority = 6)
 	public void test_Main_UpdateRegion() throws Throwable {
 		m_lp = callMeBeforePerformAnyAction();
-		boolean bol = m_lp.findAndUpdateRegion(searchKeyRegionName,searchKeyColumnIndex,wantToClickOnThreeDot);
+		boolean bol = m_lp.findAndUpdateRegion(searchKeyRegionName,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
 		if(bol) {
 			m_hp = m_lp.addAndUpdateRegion(regionName,parentRegion,regionCode,regionDescription);
 		}else {

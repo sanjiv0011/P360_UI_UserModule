@@ -81,11 +81,13 @@ public class ReUseAbleElement {
 		}
 		
 		//SEARCH BOX - 1, P360
-		@FindBy(xpath= "//input[@placeholder='Search here...']")
-		@CacheLookup
-		public  WebElement searchBox_1_RU;
-		public void searchBox_1_RU(String SearchKey) throws InterruptedException
+//		@FindBy(xpath= "//input[@placeholder='Search here...']")
+//		@CacheLookup
+//		public  WebElement searchBox_1_RU;
+		public String searchBox_1_RU_address = "//input[@placeholder='Search here...']";
+		public void searchBox_1_RU(WebDriver driver,String SearchKey) throws InterruptedException
 		{	Thread.sleep(200);
+			WebElement searchBox_1_RU = driver.findElement(By.xpath(searchBox_1_RU_address));
 			searchBox_1_RU.sendKeys(SearchKey,Keys.ENTER);
 			logger.info("Searched the search keys in the search box: "+SearchKey);
 			Thread.sleep(4000);
@@ -101,6 +103,22 @@ public class ReUseAbleElement {
 			logger.info("Searched the search keys in the search box: "+SearchKey);
 			Thread.sleep(4000);
 		}
+		
+		
+		//SEARCH KEYWORDS BOX- 1, P360
+		@FindBy(xpath = "(//input[@placeholder='Search Keywords'])[1]")
+		@CacheLookup
+		public  WebElement searchKeyWordsBox_1_RU;
+		public String searchKeyWordsBox_1_RU_address =  "(//input[@placeholder='Search Keywords'])[1]";
+		public void searchKeyWordsBox_1_RU(WebDriver driver,String SearchKey) throws InterruptedException
+		{	Thread.sleep(200);
+			WebElement searchKeyWordsBox_1_RU = driver.findElement(By.xpath(searchKeyWordsBox_1_RU_address));
+			//searchKeyWordsBox_1_RU.sendKeys(SearchKey,Keys.ENTER);
+			searchKeyWordsBox_1_RU.sendKeys(SearchKey,Keys.ENTER);
+			logger.info("Searched the search keys in the search box-1 : "+SearchKey);
+			Thread.sleep(4000);
+		}
+				
 				
 		
 	
@@ -708,7 +726,10 @@ public class ReUseAbleElement {
   		@CacheLookup
   		public WebElement dropdownBoxAddress_1_RU;
   		public void clickOnDropdownBoxAddress_1_RU() throws InterruptedException {
-  			dropdownBoxAddress_1_RU.click();
+  			action.moveToElement(dropdownBoxAddress_1_RU).build().perform();
+  			Thread.sleep(500);
+  			action.moveToElement(dropdownBoxAddress_1_RU).click().build().perform();
+  			//dropdownBoxAddress_1_RU.click();
   			logger.info("Clicked on the dropdown box address 1 to open drop list");
   			Thread.sleep(1000);
   		}
@@ -719,7 +740,10 @@ public class ReUseAbleElement {
   		@CacheLookup
   		public WebElement dropdownBoxAddress_2_RU;
   		public void clickOnDropdownBoxAddress_2_RU() throws InterruptedException {
-  			dropdownBoxAddress_2_RU.click();
+  			action.moveToElement(dropdownBoxAddress_2_RU).build().perform();
+  			Thread.sleep(500);
+  			action.moveToElement(dropdownBoxAddress_2_RU).click().build().perform();
+  			//dropdownBoxAddress_2_RU.click();
   			logger.info("Clicked on the dropdown box address 2 to open drop list");
   			Thread.sleep(1000);
   		}

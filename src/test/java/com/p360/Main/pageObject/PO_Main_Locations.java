@@ -18,6 +18,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
+import com.p360.Actions.Action_Change;
+import com.p360.Actions.Action_Details;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 import com.p360.pageObject.PO_LoginPage;
 import com.p360.projectUtility.DatePicker;
@@ -287,11 +289,11 @@ public class PO_Main_Locations extends ReUseAbleElement {
   		@CacheLookup
   		public List <WebElement> locationRowList;
   		public String locationRowList_address = "(//div[contains(@class,'w-full flex flex-col')])[2]//div[contains(@class,'p-2 flex gap-2 flex-row')]";
-  		public int findLocationFromRowListAndClickOnThreeDot(String locationName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException {
+  		public int findLocationFromRowListAndClickOnThreeDot(String locationName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot,boolean wantToclickOnFindSearckKey) throws InterruptedException {
   			int listRowCount = 0;
 			try {
 				Thread.sleep(2000);
-				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(locationRowList,driver, locationName, searchKeyColumnIndex,wantToClickOnThreeDot);
+				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(locationRowList,driver, locationName, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
 			}catch(Exception e) {
 				logger.info("Exception from findLocationFromRowListAndClickOnThreeDot: "+e.getMessage());
 				softAssert.assertTrue(false,"not click on the three dot action button");
@@ -305,11 +307,11 @@ public class PO_Main_Locations extends ReUseAbleElement {
   		@CacheLookup
   		public List <WebElement> regionRowList;
   		public String regionRowList_address = "(//div[contains(@class,'w-full flex flex-col')])[2]//div[contains(@class,'p-2 flex gap-2 flex-row')]";
-  		public int findRegionFromRowListAndClickOnThreeDot(String regionName, int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException {
+  		public int findRegionFromRowListAndClickOnThreeDot(String regionName, int searchKeyColumnIndex,boolean wantToClickOnThreeDot,boolean wantToclickOnFindSearckKey) throws InterruptedException {
   			int listRowCount = 0;
 			try {
 				Thread.sleep(2000);
-				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(regionRowList,driver, regionName, searchKeyColumnIndex,wantToClickOnThreeDot);
+				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(regionRowList,driver, regionName, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
 			}catch(Exception e) {
 				logger.info("Exception from findRegionFromRowListAndClickOnThreeDot: "+e.getMessage());
 				softAssert.assertTrue(false,"not click on the three dot action button");
@@ -317,72 +319,9 @@ public class PO_Main_Locations extends ReUseAbleElement {
 			return listRowCount;
   		}		
   		
-			
-  		//TO CLICK ON LOCAITON/REGION DETAILS BUTTON FROM THE LOCATION LIST
-  		public boolean clickOnThreeDotActionBtnDetails(int rowListCount) throws InterruptedException {
-  			boolean flag = false;
-  			Thread.sleep(500);
-  			while(true)
-  			{
-  				String btnDetails_address = "(//span[contains(text(),'Details')])["+rowListCount+"]";
-  	  			//logger.info("btnDetails_address:- "+btnDetails_address);
-  	  			WebElement btnDetails = driver.findElement(By.xpath(btnDetails_address));
-  	  			
-  	  			if(btnDetails.isDisplayed() && btnDetails.isEnabled())
-  	  			{
-  	  				logger.info("Is change button displayed and enabled: "+btnDetails.isDisplayed());
-  	  				logger.info("btnDetails_address:- "+btnDetails_address);
-  	  				action.moveToElement(btnDetails).build().perform();
-  	  				logger.info("rowListCount: "+rowListCount);
-  	  	  			Thread.sleep(300);
-  	  	  			jsExecutor.executeScript("arguments[0].click();", btnDetails);
-  	  	  			//action.moveToElement(btnDetails).click().build().perform();
-  		  	  		logger.info("Clicked on the Details action button present under three dots");
-  		  			flag  = true;
-  		  			Thread.sleep(1000);
-  		  			break;
-  	  			}else {
-  	  				rowListCount++;
-  	  			}
-  			}
-  			
-  			
-  			return flag;
-  			
-  		}
+	
   		
-  		//TO CLICK ON REGION DETAILS BUTTON FROM THE REGION LIST
-  		public boolean clickOnThreeDotActionBtnChange(int rowListCount) throws InterruptedException {
-  			boolean flag = false;
-  			Thread.sleep(500);
-  			
-			while(true){
-				//logger.info("rowListCount: "+rowListCount);
-				String btnChange_address = "(//span[contains(text(),'Change')])["+rowListCount+"]";
-				//logger.info("btnChange_address:- "+btnChange_address);
-	  			WebElement btnChange = driver.findElement(By.xpath(btnChange_address));
-	  			
-				if(btnChange.isDisplayed() && btnChange.isEnabled()) {
-					logger.info("Is change button displayed and enabled: "+btnChange.isDisplayed());
-					logger.info("btnChange_address:- "+btnChange_address);
-					logger.info("rowListCount: "+rowListCount);
-					action.moveToElement(btnChange).build().perform();
-	  	  			Thread.sleep(300);
-	  	  			jsExecutor.executeScript("arguments[0].click();", btnChange);
-	  	  			//action.moveToElement(btnChange).click().build().perform();
-		  	  		logger.info("Clicked on Change action button present under three dot");
-		  			flag  = true;
-		  			Thread.sleep(1000);
-		  			break;
-				}else {
-					rowListCount++;
-				}
-			}
-  			
-  			
-  			return flag;
-  			
-  		}
+  		
   		
   		//TO CHECK SEARCH LOCAITN IS PRESENT OR NOT
   		@FindBy(xpath = "//span[.='No Locations Matches Current Filter']")
@@ -639,14 +578,14 @@ public class PO_Main_Locations extends ReUseAbleElement {
   		}
   		
   		//FIND LOACTION FROM THE LIST AND VIEW DETAILS
-  		public void findLocatoinAndViewDetails(String locationName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException
+  		public void findLocatoinAndViewDetails(String locationName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot, boolean wantToclickOnFindSearckKey) throws InterruptedException
   		{
   			jsExecutor.executeScript("window.scrollBy(0, 100);");
-  			searchBox_1_RU(locationName);
+  			searchBox_1_RU(driver,locationName);
   			boolean flag = isTextNoLocationMachesCurrentFilter();
   			if(!flag) {
-  				int locationRowListCount = findLocationFromRowListAndClickOnThreeDot(locationName,searchKeyColumnIndex,wantToClickOnThreeDot);
-  	  			clickOnThreeDotActionBtnDetails(locationRowListCount);
+  				findLocationFromRowListAndClickOnThreeDot(locationName,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
+  				Action_Details.clickOnThreeDotActionBtnDetails(driver);
   			}else {
   				clickOnP360Logo_RU();
   			}
@@ -655,15 +594,15 @@ public class PO_Main_Locations extends ReUseAbleElement {
   		}
   		
   		//FIND REGIONS FROM THE LIST AND VIEW DETAILS
-  		public void findRegionAndViewDetails(String regionName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException
+  		public void findRegionAndViewDetails(String regionName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot,boolean wantToclickOnFindSearckKey) throws InterruptedException
   		{
   			jsExecutor.executeScript("window.scrollBy(0, 300);");
   			Thread.sleep(2000);
   			searchBox_2_RU(regionName);
   			boolean flag = isTextNoRegionMachesCurrentFilter();
   			if(!flag) {
-  				int regionRowListCount = findRegionFromRowListAndClickOnThreeDot(regionName,searchKeyColumnIndex,wantToClickOnThreeDot);
-  	  			clickOnThreeDotActionBtnDetails(regionRowListCount);
+  				findRegionFromRowListAndClickOnThreeDot(regionName,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
+  				Action_Details.clickOnThreeDotActionBtnDetails(driver);
   	  			Thread.sleep(2000);
   			}else {
   				clickOnP360Logo_RU();
@@ -674,15 +613,15 @@ public class PO_Main_Locations extends ReUseAbleElement {
   		}
   		
   		//FIND THE LOCATOIN FROM THE LIST AND UPDATE IT
-  		public boolean findAndUpdateLocation(String locationName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException
+  		public boolean findAndUpdateLocation(String locationName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot,boolean wantToclickOnFindSearckKey) throws InterruptedException
   		{
   			jsExecutor.executeScript("window.scrollBy(0, 100);");
-  			searchBox_1_RU(locationName);
+  			searchBox_1_RU(driver,locationName);
   			boolean isClickOnChangeBtn = false;
   			boolean flag = isTextNoLocationMachesCurrentFilter();
   			if(!flag) {
-  				int locationRowListCount = findLocationFromRowListAndClickOnThreeDot(locationName,searchKeyColumnIndex,wantToClickOnThreeDot);
-  				isClickOnChangeBtn = clickOnThreeDotActionBtnChange(locationRowListCount);
+  				findLocationFromRowListAndClickOnThreeDot(locationName,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
+  				isClickOnChangeBtn = Action_Change.clickOnThreeDotActionBtnChange(driver);
   			}else {
   				clickOnP360Logo_RU();
   			}
@@ -693,15 +632,15 @@ public class PO_Main_Locations extends ReUseAbleElement {
   		
   		
   		//FIND THE REGION FROM THE LIST AND UPDATE IT
-  		public boolean findAndUpdateRegion(String regionName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException
+  		public boolean findAndUpdateRegion(String regionName,int searchKeyColumnIndex,boolean wantToClickOnThreeDot, boolean wantToclickOnFindSearckKey) throws InterruptedException
   		{
   			jsExecutor.executeScript("window.scrollBy(0, 300);");
   			searchBox_2_RU(regionName);
   			boolean isClickOnChangeBtn = false;
   			boolean flag = isTextNoRegionMachesCurrentFilter();
   			if(!flag) {
-  				int locationRowListCount = findRegionFromRowListAndClickOnThreeDot(regionName,searchKeyColumnIndex,wantToClickOnThreeDot);
-  				isClickOnChangeBtn = clickOnThreeDotActionBtnChange(locationRowListCount);
+  				findRegionFromRowListAndClickOnThreeDot(regionName,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
+  				isClickOnChangeBtn = Action_Change.clickOnThreeDotActionBtnChange(driver);
   			}else {
   				clickOnP360Logo_RU();
   			}

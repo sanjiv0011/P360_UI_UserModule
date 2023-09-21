@@ -20,6 +20,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.p360.Actions.Action_Activate;
 import com.p360.Actions.Action_Archive;
+import com.p360.Actions.Action_Change;
 import com.p360.Actions.Action_Deactivate;
 import com.p360.Actions.Action_Restore;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
@@ -60,10 +61,19 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
 		public String alertMsgPackageRegularPriceIsRequired = "Package regular Price is required";
 		public String alertMsgTotalClassIsRequired = "Total Classes is required";
 		public String alertMsgPackageCreatedSuccessfully = "Package created successfully";
+		public String alertMsgPackageUpdatedSuccessfully = "Package updated successfully";
 		public String alertMsgPackageActivated = "Status changed to Active successfully";
 		public String alertMsgPackageDeActivated = "Status changed to Inactive successfully";
 		public String alertMsgPackageArchived = "Archived successfully";
 		public String alertMsgPackageRestored = "Restored successfully";
+		
+		public String alertMsgPackageCategoryActivated = "Status changed to Active successfully";
+		public String alertMsgPackageCategoryDeActivated = "Status changed to Inactive successfully";
+		public String alertMsgPackageCategoryArchived = "Archived successfully";
+		public String alertMsgPackageCategoryRestored = "Restored successfully";
+		
+		
+		
 		
 		//TEXT FIELD FIRST NAME
   		@FindBy(xpath = "//input[@placeholder='Enter First Name']")
@@ -78,13 +88,13 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   		}
 		
   		//BUTTON ADD PACKAGES
-  		@FindBy(xpath = "//span[normalize-space()='Add Regions']")
+  		@FindBy(xpath = "//span[normalize-space()='Add Package']")
   		@CacheLookup
-  		public WebElement btnRegions;
+  		public WebElement btnAddPackage;
   		public void clickOnBtnAddPackages() throws InterruptedException {
-  			btnRegions.click();
+  			btnAddPackage.click();
   			logger.info("Clicked on the btn btnAddPackages");
-  			Thread.sleep(1000);
+  			Thread.sleep(2000);
   		}
   		
   		//BUTTON PACKAGES CATEGORY
@@ -219,8 +229,8 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   			Thread.sleep(300);
   		}
   		
-  		//TEXT FIELD DESCLAIMERS
-  		@FindBy(xpath = "//div[@class='ql-editor ql-blank']")
+  		//TEXT FIELD DESCLAIMERS(DESCRIPTIONS)
+  		@FindBy(xpath = "//div[@class='ql-container ql-snow']//p")
   		@CacheLookup
   		public WebElement fieldDisclaimers;
   		public void setDesclaimers(String desclaimers) throws InterruptedException {
@@ -250,7 +260,16 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   		
   		//TO SELECT THE CATEGORY
   		public void selectPackageCategory(String packageCategory) throws InterruptedException {
-  			ruae.clickOnDropdownBoxAddress_1_RU();
+  			StackTraceElement stackTraceElement[] = Thread.currentThread().getStackTrace();
+  			String callerMethodName = stackTraceElement[2].getMethodName();
+  			if(callerMethodName.equals("addAndUpdatePackage")) {
+  				Thread.sleep(1000);
+  	  			driver.findElement(By.xpath("//div[@id='mui-component-select-PackageCategory']")).click();
+  	  			
+  			}else {
+  				ruae.clickOnDropdownBoxAddress_1_RU();
+  			}
+  			
   			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,ruae.listOptionAddress_RU,packageCategory);
   			logger.info("Package category Name: "+packageCategory);
   			Thread.sleep(500);
@@ -285,23 +304,63 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   			return flag;
   		}
   		
+  		//TO CHECK SEARCH PACKAGE CATEGORY IS PRESENT OR NOT
+  		@FindBy(xpath = "//span[.='No categories Matches Current Filter']")
+  		@CacheLookup
+  		WebElement textNoPackageCategoryMatchesCurrentFiter;
+  		public boolean isTextNoPackageCategoryMachesCurrentFilter() {
+  			boolean flag = false;
+  			try {
+  				if(textNoPackageCategoryMatchesCurrentFiter.isDisplayed()) {
+  					logger.info("No Package Category matched to applied filter");
+  					softAssert.assertTrue(false,"No Package  Category Matches to the applied Current Fiter");
+  					flag = true;
+  	  			}
+  			}catch(Exception e) {
+  				logger.info("Exception from textNoPackageCategoryMatchesCurrentFiter: "+e.getMessage());
+  				logger.info("Package Category Matched to the Current Fiter");
+  				softAssert.assertTrue(true,"Package Category Matches to the applied Current Fiter");
+  				flag = false;
+  			}
+  			return flag;
+  		}
+  		
+  		
   		
   		//PACKAGE ROW LIST ADDRESS AND ACTION METHODS
   		@FindBy(xpath = "(//div[contains(@class,'w-full flex flex-col')])[2]//div[contains(@class,'p-4 flex gap-2 flex-row')]")
   		@CacheLookup
   		public List <WebElement> packageRowList;
   		public String packageRowList_address = "(//div[contains(@class,'w-full flex flex-col')])[2]//div[contains(@class,'p-4 flex gap-2 flex-row')]";
-  		public int findPackageFromRowListAndClickOnThreeDot(String packageTitle, int searchKeyColumnIndex, boolean wantToClickOnThreeDot) throws InterruptedException {
+  		public int findPackageFromRowListAndClickOnThreeDot(String packageTitle, int searchKeyColumnIndex, boolean wantToClickOnThreeDot, boolean wantToclickOnFindSearckKey) throws InterruptedException {
   			int listRowCount = 0; 
 			try {
 				Thread.sleep(2000);
-				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(packageRowList,driver, packageTitle, searchKeyColumnIndex,wantToClickOnThreeDot);
+				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(packageRowList,driver, packageTitle, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
 			}catch(Exception e) {
 				logger.info("Exception from findPackageFromRowListAndClickOnThreeDot: "+e.getMessage());
 				softAssert.assertTrue(false,"not click on the three dot action button");
 			}
 			return listRowCount;
   		}
+  		
+  		//PACKAGE CATEGORY ROW LIST ADDRESS AND ACTION METHODS
+  		@FindBy(xpath = "(//div[contains(@class,'w-full flex flex-col')])[2]//div[contains(@class,'p-4 flex gap-2 flex-row')]")
+  		@CacheLookup
+  		public List <WebElement> packageCategoryRowList;
+  		public String packageCategoryRowList_address = "(//div[contains(@class,'w-full flex flex-col')])[2]//div[contains(@class,'p-4 flex gap-2 flex-row')]";
+  		public int findPackageCategoryFromRowListAndClickOnThreeDot(String packageCategoryTitle, int searchKeyColumnIndex, boolean wantToClickOnThreeDot, boolean wantToclickOnFindSearckKey) throws InterruptedException {
+  			int listRowCount = 0; 
+			try {
+				Thread.sleep(2000);
+				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(packageCategoryRowList,driver, packageCategoryTitle, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
+			}catch(Exception e) {
+				logger.info("Exception from findPackageCategoryFromRowListAndClickOnThreeDot: "+e.getMessage());
+				softAssert.assertTrue(false,"not click on the three dot action button");
+			}
+			return listRowCount;
+  		}
+  		
   		
   		//TO SELECT THE PACKAGE STATUS
   		public void selectPackageStatus(String packageStatus) throws InterruptedException {
@@ -329,14 +388,94 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   			}
   			Thread.sleep(3000);
   		}
+  		
   	
+  		//TO FIND AND VIEW PACKAGE BUYERS USERS
+  		@FindBy(xpath = "(//div[contains(@class,'w-full flex flex-col')])[4]//div[contains(@class,'p-4 flex gap-2 flex-row')]")
+  		@CacheLookup
+  		List <WebElement> listPackageBuyersUsers;
+  		public String listPackageBuyersUsers_address = "(//div[contains(@class,'w-full flex flex-col')])[4]//div[contains(@class,'p-4 flex gap-2 flex-row')]";
+  		public int findPackageBuyersUserFromList(String packageBuyersEmail, int packageBuyerssearchKeyColumnIndex, boolean packageBuyerswantToClickOnThreeDot, boolean packageBuyerswantToclickOnFindSearckKey) throws InterruptedException {
+  			int listRowCount = 0; 
+			try {
+				Thread.sleep(2000);
+				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(listPackageBuyersUsers,driver, packageBuyersEmail, packageBuyerssearchKeyColumnIndex,packageBuyerswantToClickOnThreeDot, packageBuyerswantToclickOnFindSearckKey);
+				logger.info("Package buyers user matched");
+			}catch(Exception e) {
+				logger.info("Exception from findPackageBuyersUserFromList: "+e.getMessage());
+				softAssert.assertTrue(false,"Not found package buyers users");
+			}
+			return listRowCount;
+  		}
+  		
+  		//TEXT NO PACKAGE BUYERS FOUND FOR THIS PACKAGE
+  		@FindBy(xpath = "//span[.='No Users Found for this Package']")
+  		@CacheLookup
+  		WebElement textNoPackageBuyersFoundForThisPackage;
+  		public boolean isNoPackageBuyersFoundForThisPackagePresent() throws InterruptedException
+  		{
+  			boolean flag = false;
+  			try {
+  				if(textNoPackageBuyersFoundForThisPackage.isDisplayed()) {
+  					logger.info("No Package buyeres found for the fiven package");
+  					softAssert.assertTrue(false,"No Package buyeres found for the fiven package");
+  					flag = true;
+  	  			}
+  			}catch(Exception e) {
+  				logger.info("Exception from isNoPackageBuyersFoundForThisPackagePresent: "+e.getMessage());
+  				logger.info("Package Buyers Matched to the Current Fiter");
+  				softAssert.assertTrue(true,"Package Buyers Matches to the applied Current Fiter");
+  				flag = false;
+  			}
+  			return flag;
+  		}
   	
+  				
+  		//TEXT MEMBERSHIP INSIGHT PRESENT
+  		@FindBy(xpath = "//span[normalize-space()='Membership Insights']")
+  		@CacheLookup
+  		WebElement textMembershipInsightPresent;
+  		public boolean isTextMembershipInsightPresent() throws InterruptedException
+  		{
+  			boolean flag = false;
+  			try {
+  					wait.until(ExpectedConditions.visibilityOf(textMembershipInsightPresent));
+  				if(textMembershipInsightPresent.isDisplayed()) {
+  					logger.info("isTextMembershipInsightPresent"+textMembershipInsightPresent.isDisplayed());
+  					softAssert.assertTrue(true,"MembershipInsightPresent");
+  					flag = true;
+  					Thread.sleep(2000);
+  	  			}
+  			}catch(Exception e) {
+  				logger.info("Exception from isTextMembershipInsightPresent: "+e.getMessage());
+  				logger.info("Membership Insight Not Present");
+  				softAssert.assertTrue(false,"Membership Insight Not Present");
+  				flag = false;
+  			}
+  			
+  			return flag;
+  		}
+  		
+  		
+  		
+  			
+  				
 //======START=============ACTION METHODS============//		
   		
   		//TO ADD PACKAGE CATEGORY
-  		public PO_Main_HomePage addPackageCategory(String packageCategoryTitle,String packageCategoryInternalTitle,String packageCategoryDescription,String categoryLocation,String wantToMarkCategoryHidden) throws InterruptedException
+  		public PO_Main_HomePage addAndUpdatePackageCategory(String packageCategoryTitle,String packageCategoryInternalTitle,String packageCategoryDescription,String categoryLocation,String wantToMarkCategoryHidden) throws InterruptedException
   		{
-  			clickOnBtnPackagesCategory();
+  			StackTraceElement stackTraceElement[] = Thread.currentThread().getStackTrace();
+  			String callerMethodName = stackTraceElement[2].getMethodName();
+  			
+  			if(callerMethodName.equals("test_Main_UpdatePackageCategory")) {
+  				Action_Change.clickOnThreeDotActionBtnChange(driver);
+  			}else {
+  				clickOnBtnPackagesCategory();
+  			}
+
+			logger.info("Methods called addAndUpdatePackageCategory and caller method name: "+callerMethodName);
+			
   			Thread.sleep(3000);
   			clickOnBtnAddCategory();
   			Thread.sleep(3000);
@@ -366,8 +505,19 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   		
   		
   		//TO ADD PACKAGE
-  		public PO_Main_HomePage addPackage(String packageName,String packageLocation,String packageCategory,String packgeDescription,String wantToInternalUseOnly,String chargeInterval,String totalClasses,String miniumDurationInMonth,String regularPrice,String packagedisclaimers ) throws InterruptedException {
-  			clickOnBtnAddPackages();
+  		public PO_Main_HomePage addAndUpdatePackage(String packageName,String packageLocation,String packageCategory,String packgeDescription,String wantToInternalUseOnly,String chargeInterval,String totalClasses,String miniumDurationInMonth,String regularPrice,String packagedisclaimers ) throws InterruptedException 
+  		{
+  			
+  			StackTraceElement stackTraceElement[] = Thread.currentThread().getStackTrace();
+  			String callerMethodName = stackTraceElement[2].getMethodName();
+  			
+  			if(callerMethodName.equals("test_Main_UpdatePackage")) {
+  				Action_Change.clickOnThreeDotActionBtnChange(driver);
+  			}else {
+  				clickOnBtnAddPackages();
+  			}
+
+			logger.info("Methods called addAndUpdatePackage and caller method name: "+callerMethodName);
   			Thread.sleep(3000);
   			setPackageTitile(packageName);
   			selectPackageLocation(packageLocation);
@@ -382,33 +532,45 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   			selectChargeInterval(chargeInterval);
   			setTotalClasses(totalClasses);
   			setMinimumDuration(miniumDurationInMonth);
-  			setRegularPrice(regularPrice);
+  			
+  			if(callerMethodName.equals("test_Main_UpdatePackage")) {
+  				logger.info("While update regular price field not present");
+  			}else {
+  				setRegularPrice(regularPrice);
+  			}
+  			
+  			
+  			
   			setDesclaimers(packagedisclaimers);
   			boolean flag = ruae.clickOnBtnSave_1_RU();
   			if(flag) {
   				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
   				if(alertMsg.equals(alertMsgPackageCreatedSuccessfully)) {
   					softAssert.assertEquals(alertMsg, alertMsgPackageCreatedSuccessfully,"Checks Package created successfully");
+  				}else if(alertMsg.equals(alertMsgPackageUpdatedSuccessfully)) {
+  					softAssert.assertEquals(alertMsg, alertMsgPackageUpdatedSuccessfully,"Checks Package updated successfully");
   				}else if(alertMsg.contains("required") || alertMsg.contains("Required")) {
   					logger.info("===>>> Package not created, some required field missing");
   	  				ruae.clickOnCancelButton_1_RU();
+  	  				softAssert.assertTrue(false,"Package neigher created nor updated");
   				}
+  				
   			}
   			softAssert.assertAll();
   			return new PO_Main_HomePage(driver);
   		}
   		
   		//FIND PACKAGE AND CLICK ON THREE DOT BUTTON
-  		public void findPackageAndClickOnThreeDot(String packageTitle,int searchKeyColumnIndex,boolean wantToClickOnThreeDot,String packageLocation,String packageStatus) throws InterruptedException
+  		public void findPackageAndClickOnThreeDot(String packageTitle,int searchKeyColumnIndex,boolean wantToClickOnThreeDot,String packageLocation,String packageStatus, boolean wantToclickOnFindSearckKey) throws InterruptedException
   		{
   			jsExecutor.executeScript("window.scrollBy(0, 100);");
   			Thread.sleep(2000);
-  			searchBox_1_RU(packageTitle);
+  			searchBox_1_RU(driver,packageTitle);
   			selectPackageStatus(packageStatus);
   			selectPackageLocation(packageLocation);
   			boolean flag = isTextNoPackageMachesCurrentFilter();
   			if(!flag) {
-  				int packageRowListCount = findPackageFromRowListAndClickOnThreeDot(packageTitle,searchKeyColumnIndex,wantToClickOnThreeDot);
+  				int packageRowListCount = findPackageFromRowListAndClickOnThreeDot(packageTitle,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
   	  			Thread.sleep(1000);
   	  			logger.info("Package matched list count: "+packageRowListCount);
   			}else {
@@ -417,6 +579,62 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   			Thread.sleep(2000);
   			softAssert.assertAll();
   		}
+  		
+  		
+  		//FIND PACAKGE CATEGORY AND CLICK ON THE THREE DOT ACTION BUTTON
+  		public void findPackageCategoryAndClickOnThreeDot(String packageCategoryTitle,int searchKeyColumnIndex,boolean wantToClickOnThreeDot,String packageLocation, boolean wantToclickOnFindSearckKey) throws InterruptedException
+  		{
+  			Thread.sleep(2000);
+  			clickOnBtnPackagesCategory();
+  			Thread.sleep(3000);
+  			selectPackageLocation(packageLocation);
+  			searchKeyWordsBox_1_RU(driver,packageCategoryTitle);
+  			
+  			boolean flag = isTextNoPackageCategoryMachesCurrentFilter();
+  			if(!flag) {
+  				int packageCategoryRowListCount = findPackageCategoryFromRowListAndClickOnThreeDot(packageCategoryTitle,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
+  	  			Thread.sleep(1000);
+  	  			logger.info("Package category matched list count: "+packageCategoryRowListCount);
+  			}else {
+  				clickOnP360Logo_RU();
+  			}
+  			Thread.sleep(2000);
+  			softAssert.assertAll();
+  		}
+  		
+  		//TO ACTIVATE THE PACKAGE CATEGORY
+  		public PO_Main_HomePage activatePackageCategory() throws InterruptedException
+  		{
+  			Action_Activate.activate(driver, alertMsgPackageCategoryActivated);
+  			softAssert.assertAll();
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//TO DEACTIVATE THE PACKAGE CATEGORY
+  		public PO_Main_HomePage deActivatePackageCategory() throws InterruptedException
+  		{
+  			Action_Deactivate.deactivate(driver, alertMsgPackageCategoryDeActivated);
+  			softAssert.assertAll();
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//TO ARCHIVE THE PACKAGE CATEGORY
+  		public PO_Main_HomePage archivePackageCategory() throws InterruptedException
+  		{
+  			Action_Archive.archive(driver, alertMsgPackageCategoryArchived);
+  			softAssert.assertAll();
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//TO RESTORE THE PACKAGE CATEGORY
+  		public PO_Main_HomePage restorePackageCategory() throws InterruptedException
+  		{
+  			Action_Restore.restore(driver, alertMsgPackageCategoryRestored);
+  			softAssert.assertAll();
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		
   		
   		//TO ACTIVATE THE PACKAGE
   		public PO_Main_HomePage activatePackage() throws InterruptedException
@@ -451,9 +669,31 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   		}
   		
   		//TO VIEW THE PACKAGE REPORTS
-  		public PO_Main_HomePage viewPackageReport() throws InterruptedException
+  		public void viewPackageReport() throws InterruptedException
   		{
   			clickOnBtnReport_Package();
+  			softAssert.assertAll();
+  		}
+  		
+  		//FIND PACKAGE BUYRES USERS LIST AND CHECK THE USERS DETAILS
+  		public PO_Main_HomePage findPackageBuyersUserListAndViewUsersDetails(String packageBuyersEmail,int packageBuyersSearchKeyColumnIndex,boolean packageBuyersWantToClickOnThreeDot,boolean packageBuyerswantToclickOnFindSearckKey) throws InterruptedException
+  		{
+  			searchBox_1_RU(driver,packageBuyersEmail);
+  			int rowLisCount = 0;
+  			boolean isPackageBuyersFound = isNoPackageBuyersFoundForThisPackagePresent();
+  			if(!isPackageBuyersFound) {
+  				try {
+  	  				rowLisCount = findPackageBuyersUserFromList(packageBuyersEmail, packageBuyersSearchKeyColumnIndex, packageBuyersWantToClickOnThreeDot, packageBuyerswantToclickOnFindSearckKey);
+  	  	  		}catch(Exception e) {
+  	  	  			logger.info("Excetion from findPackageBuyersUserListAndViewUsersDetails: "+e.getMessage());
+  	  	  		}
+  			}else {
+  				clickOnP360Logo_RU();
+  			}
+  			
+  			logger.info("rowLisCount: "+rowLisCount);
+  			isTextMembershipInsightPresent();
+  			Thread.sleep(2000);
   			softAssert.assertAll();
   			return new PO_Main_HomePage(driver);
   		}

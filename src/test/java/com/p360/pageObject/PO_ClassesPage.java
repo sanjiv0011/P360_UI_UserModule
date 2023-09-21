@@ -421,9 +421,9 @@ public class PO_ClassesPage extends ReUseAbleElement{
 		}
 		
 		//TO FIND SPECIFIC CLASS AND CLICK ON THE THREE DOTS ACTION BUTTON
-		public int findMyRegisteredClassAndonThreeDotOption(String dateTime,WebDriver driver,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException {
+		public int findMyRegisteredClassAndonThreeDotOption(String dateTime,WebDriver driver,int searchKeyColumnIndex,boolean wantToClickOnThreeDot, boolean wantToclickOnFindSearckKey) throws InterruptedException {
 			Thread.sleep(2000);
-			int listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(ruae.listData_RU,driver, dateTime,searchKeyColumnIndex,wantToClickOnThreeDot);
+			int listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(ruae.listData_RU,driver, dateTime,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
 			return listRowCount;
 		}
 		
@@ -475,7 +475,7 @@ public class PO_ClassesPage extends ReUseAbleElement{
 						{
 							dateTimePresentInRegisteredClassList = DBT_User_Classes.test_DBT_RegisterClass(time,monthAndDate,userEmailAddress);
 							hp.clickMenuMyClasses();
-							int listRowCount = findMyRegisteredClassAndonThreeDotOption(dateTimePresentInRegisteredClassList,driver,4,false);
+							int listRowCount = findMyRegisteredClassAndonThreeDotOption(dateTimePresentInRegisteredClassList,driver,4,false,false);
 							if(listRowCount != 0) {
 								logger.info("===>>> Class registered successfully");
 								softAssert.assertTrue(true,"To check class registered successfully or not");
@@ -512,7 +512,7 @@ public class PO_ClassesPage extends ReUseAbleElement{
 				}
 				else 
 				{
-					int listRowCount = findMyRegisteredClassAndonThreeDotOption(dateAndTime,driver,4,true);
+					int listRowCount = findMyRegisteredClassAndonThreeDotOption(dateAndTime,driver,4,true,false);
 					logger.info("listRowCount:  "+listRowCount);
 					if(listRowCount != -1) 
 					{	

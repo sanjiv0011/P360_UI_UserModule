@@ -239,9 +239,9 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		}
   	
   		
-		public int findUsersAndClickOnThreeDotOption(String searchKey,WebDriver driver,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException {
+		public int findUsersAndClickOnThreeDotOption(String searchKey,WebDriver driver,int searchKeyColumnIndex,boolean wantToClickOnThreeDot, boolean wantToclickOnFindSearckKey) throws InterruptedException {
 			Thread.sleep(2000);
-			int listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(ruae.listData_RU,driver, searchKey, searchKeyColumnIndex,wantToClickOnThreeDot);
+			int listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(ruae.listData_RU,driver, searchKey, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
 			return listRowCount;
 		}
   		
@@ -547,12 +547,12 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 		@CacheLookup
 		public List<WebElement> listPaymentHistory;
 		public String listPaymentHistory_address = "(//div[contains(@class,'grid grid-cols-1 gap-2')])[2]//div[contains(@class,'flex-row')]";
-		public boolean findHistoryAndClickOnThreeDotOption(String searchKey,WebDriver driver,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException {
+		public boolean findHistoryAndClickOnThreeDotOption(String searchKey,WebDriver driver,int searchKeyColumnIndex,boolean wantToClickOnThreeDot,boolean wantToclickOnFindSearckKey) throws InterruptedException {
 			int listRowCount = 0;
 			boolean flag = false;
 			try {
 				Thread.sleep(2000);
-				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(listPaymentHistory,driver, searchKey, searchKeyColumnIndex,wantToClickOnThreeDot);
+				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(listPaymentHistory,driver, searchKey, searchKeyColumnIndex,wantToClickOnThreeDot, wantToclickOnFindSearckKey);
 				String sendInvoice_Address = "(//div[contains(text(),'Send Invoice')])["+listRowCount+"]";
 				Thread.sleep(500);
 				WebElement sendInvoice = driver.findElement(By.xpath(sendInvoice_Address));
@@ -573,12 +573,12 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
 		@CacheLookup
 		public List <WebElement> listMemberCreditHistory;
 		public String listMemberCreditHistory_address = "(//div[contains(@class,'grid grid-cols-1 gap-2')])[3]//div[contains(@class,'flex-row')]";
-		public int findMemberCreditAndClickOnThreeDotOption(String searchKey,WebDriver driver,int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws InterruptedException {
+		public int findMemberCreditAndClickOnThreeDotOption(String searchKey,WebDriver driver,int searchKeyColumnIndex,boolean wantToClickOnThreeDot, boolean wantToclickOnFindSearckKey) throws InterruptedException {
 			boolean flag = false;
 			int listRowCount =0;
 			try {
 				Thread.sleep(2000);
-				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(listMemberCreditHistory,driver, searchKey, searchKeyColumnIndex,wantToClickOnThreeDot);
+				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(listMemberCreditHistory,driver, searchKey, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
 				String changeMembeshipCredit_Address = "(//div[contains(@class,'ml-2 font-RobotoMedium')][normalize-space()='Change'])["+listRowCount+"]";
 				Thread.sleep(500);
 				driver.findElement(By.xpath(changeMembeshipCredit_Address)).click();
@@ -684,12 +684,12 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		
   		
   		//TO FIND SPECIFIC USERS AND CLICK ON IT
-  		public void findUsersAndViewUsersDetails(String searchKeyuserNameOrEmail,String regionName,String locationName,int searchKeyColumnIndex, boolean wantToClickOnUser,int listActionIndex) throws InterruptedException
+  		public void findUsersAndViewUsersDetails(String searchKeyuserNameOrEmail,String regionName,String locationName,int searchKeyColumnIndex, boolean wantToClickOnUser,int listActionIndex,boolean wantToclickOnFindSearckKey) throws InterruptedException
   		{
   			selectRegion(regionName);
   			selectLocationWhileUsersSearch(locationName);
-  			searchBox_1_RU(searchKeyuserNameOrEmail);
-  			int listRowCount = findUsersAndClickOnThreeDotOption(searchKeyuserNameOrEmail,driver,searchKeyColumnIndex,wantToClickOnUser);
+  			searchBox_1_RU(driver,searchKeyuserNameOrEmail);
+  			int listRowCount = findUsersAndClickOnThreeDotOption(searchKeyuserNameOrEmail,driver,searchKeyColumnIndex,wantToClickOnUser,wantToclickOnFindSearckKey);
   			logger.info("listRowCount:  "+listRowCount);
   			if(listRowCount != -1) {	
   				clickOnAnyActionBtnPresentUnderThreeDotOption_RU(driver,listActionIndex);
@@ -1058,12 +1058,12 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		}
   		
   		//CHANGE MEMBERS CREDIT
-  		public PO_Main_HomePage changeMemberCredit(String creditStartDate, String creditEndDate, String totalCredit,String usedCredit, String comment,String searchKey, int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws Throwable 
+  		public PO_Main_HomePage changeMemberCredit(String creditStartDate, String creditEndDate, String totalCredit,String usedCredit, String comment,String searchKey, int searchKeyColumnIndex,boolean wantToClickOnThreeDot,boolean wantToclickOnFindSearckKey) throws Throwable 
   		{
   			jsExecutor.executeScript("window.scrollBy(0, 400);");
   			Thread.sleep(2000);
   			
-			findMemberCreditAndClickOnThreeDotOption(searchKey,driver,searchKeyColumnIndex,wantToClickOnThreeDot);
+			findMemberCreditAndClickOnThreeDotOption(searchKey,driver,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
   			setTotalCredit(totalCredit);
   			setUsedCredit(usedCredit);
   			setComment(comment);
@@ -1091,12 +1091,12 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   		
   		
   		//SEND INVOICE
-  		public PO_Main_HomePage sendInvoice(String searchKey, int searchKeyColumnIndex,boolean wantToClickOnThreeDot) throws Throwable 
+  		public PO_Main_HomePage sendInvoice(String searchKey, int searchKeyColumnIndex,boolean wantToClickOnThreeDot,boolean wantToclickOnFindSearckKey) throws Throwable 
   		{
   			jsExecutor.executeScript("window.scrollBy(0, 400);");
   			Thread.sleep(2000);
   			boolean flag = false;
-  			flag = findHistoryAndClickOnThreeDotOption(searchKey,driver,searchKeyColumnIndex,wantToClickOnThreeDot);
+  			flag = findHistoryAndClickOnThreeDotOption(searchKey,driver,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
   			
 			if(flag) {
 				String alertContent = snakeAlertMessagesDisplayedContent_RU();
