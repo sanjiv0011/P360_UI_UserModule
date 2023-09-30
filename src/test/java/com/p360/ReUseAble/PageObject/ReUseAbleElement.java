@@ -119,9 +119,6 @@ public class ReUseAbleElement {
 			Thread.sleep(4000);
 		}
 				
-				
-		
-	
 		
 		//SEARCH KEY NOT FOUND
 	  	public String searchKeyMessage_RU = "//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]";
@@ -227,6 +224,7 @@ public class ReUseAbleElement {
   	    			logger.info("Is Action button displayed: "+flag);
   	    		}
   	    	}catch(Exception e) {
+  	    		
   	    		logger.info("Exception from clickOnAnyActionBtnPresentUnderThreeDotOption_RU: "+e.getMessage());
   	    	}
   	        Thread.sleep(500);
@@ -237,23 +235,56 @@ public class ReUseAbleElement {
 	    //===========START=======ACTIVATE AND DEACTIVATE==================//
 	    
 		//ACTIVATE Action P360 => To use this first search list item so that it comes at first position
-		@FindBy(xpath = "//span[contains(text(),'Activate')]")
+		@FindBy(xpath = "//*[normalize-space(text()) = 'Activate']")
 		@CacheLookup
 		public WebElement actionActivate;
 	    public void clickOnActivateAction_RU() throws InterruptedException {
-	        actionActivate.click();
-	        logger.info("Clicked on the Action_Activate button");
-	        Thread.sleep(300);
+	      int count = 0;
+	    	while(true) {
+	        	try {
+		        	if(actionActivate.isDisplayed() && actionActivate.isEnabled()) {
+		        		actionActivate.click();
+				        logger.info("Clicked on the Action_Activate button");
+				        Thread.sleep(300);
+				        break;
+		        	}
+		        }catch(Exception e) {
+		        	count++;
+		        	 logger.info("count: "+count);
+		        	 logger.info("Exception from : "+e.getMessage());
+		        }
+	        	if(count>10) {
+	        		logger.info("Search Loop Count: "+count);
+	        		break;
+	        	}
+	        }
 	    }
 		
 		//DEACTIVATE Action P360 => To use this first search list item so that it comes at first position
-		@FindBy(xpath = "//span[contains(text(),'Deactivate')]")
+		@FindBy(xpath = "//*[normalize-space(text()) = 'Deactivate']")
 		@CacheLookup
 		public WebElement actionDeactivate;
 	    public void clickOnDeactivateAction_RU() throws InterruptedException {
-	        actionDeactivate.click();
-	        logger.info("Clicked on the Action_Deactivated button");
-	        Thread.sleep(300);
+	    	int count = 0;
+	    	while(true) 
+	       {
+	    	   try {
+		    	   if(actionDeactivate.isDisplayed() && actionDeactivate.isEnabled()) {
+			    	   	actionDeactivate.click();
+				        logger.info("Clicked on the Action_Deactivated button");
+				        Thread.sleep(300);
+				        break;
+			       }
+		       }catch(Exception e) {
+		    	   count++;
+		    	   logger.info("count: "+count);
+		    	   logger.info("Exception from : "+e.getMessage());
+		       }  
+	    	   if(count>10) {
+	    		   logger.info("Search Loop Count: "+count);
+	        		break;
+	        	}
+	       }
 	    }
  		
  	    //TO CHECK LABLE INACTIVE
@@ -290,25 +321,58 @@ public class ReUseAbleElement {
 	    //===========START=======ARCHIVE AND RESTORE==================//
 	    
 	    //Archive Action, P360 => To use this first search list item so that it comes at first position
-  		@FindBy(xpath = "//span[contains(text(),'Archive')]")
+  		@FindBy(xpath = "//*[normalize-space(text()) = 'Archive']")
   		@CacheLookup
   		public WebElement actionArchive;
   		// Action method to click the Archive action
   	    public void clickOnArchiveAction_RU() throws InterruptedException {
-  	        actionArchive.click();
-  	        logger.info("Clicked on the Action_Archive button");
-  	        Thread.sleep(300);
+  	      int count =  0;
+  	    	while(true) {
+  	    	   try {
+  	    		   if(actionArchive.isDisplayed() && actionArchive.isEnabled()) {
+  	    			   actionArchive.click();
+  	     	        	logger.info("Clicked on the Action_Archive button");
+  	     	        	Thread.sleep(300);
+  	     	        	break;
+  	    		   }
+  	    	   }catch(Exception e) {
+  	    			count++;
+  	    			 logger.info("count: "+count);
+  	    		 logger.info("Exception from : "+e.getMessage());
+  	    	   }
+  	    	 if(count>10) {
+  	    		 
+	    		   logger.info("Search Loop Count: "+count);
+	        		break;
+	        	}
+  	       }
   	    }
   		
   		//Restore Action, P360 => To use this first search list item so that it comes at first position
-  		@FindBy(xpath = "//span[contains(text(),'Restore')]")
+  		@FindBy(xpath = "//*[normalize-space(text()) = 'Restore']")
   		@CacheLookup
   		public WebElement actionRestore;
   		 // Action method to click the Restore action
   	    public void clickOnRestoreAction_RU() throws InterruptedException{
-  	        actionRestore.click();
-  	        logger.info("Clicked on the Action_Restore button");
-  	        Thread.sleep(300);
+  	       int count = 0;
+  	    	while(true) {
+  	    	   try {
+  	    		   if(actionRestore.isDisplayed() && actionRestore.isEnabled()) {
+  	    			 actionRestore.click();
+  	     	        logger.info("Clicked on the Action_Restore button");
+  	     	        Thread.sleep(300);
+  	    		   }
+  	    	   }catch(Exception e) {
+  	    		   count++;
+  	    		 logger.info("count: "+count);
+  	    		 logger.info("Exception from : "+e.getMessage());
+  	    	   }
+  	    	 if(count>10) {
+  	    		 
+	    		   logger.info("Search Loop Count: "+count);
+	        		break;
+	        	}
+  	       }
   	    }
 		
 	    //TO CHECK ALLREADY ARCHIVED

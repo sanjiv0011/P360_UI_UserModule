@@ -14,7 +14,12 @@ public class Action_Archive {
 	public static SoftAssert softAssert = new SoftAssert();
 	
 	public static boolean archive(WebDriver driver, String message) throws InterruptedException
-	{	boolean flag = false;
+	{	
+		StackTraceElement stackTraceElement[] = Thread.currentThread().getStackTrace();
+		String callerMethodName = stackTraceElement[2].getMethodName();
+		logger.info("Action_Archive caller method name: "+callerMethodName);
+	
+		boolean flag = false;
 		ruae = new ReUseAbleElement(driver);
 		try {
 			ruae.clickOnArchiveAction_RU();

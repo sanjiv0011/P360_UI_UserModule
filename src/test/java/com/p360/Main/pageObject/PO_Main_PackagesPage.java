@@ -26,6 +26,7 @@ import com.p360.Actions.Action_Restore;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 import com.p360.pageObject.PO_LoginPage;
 import com.p360.projectUtility.DatePicker;
+import com.p360.projectUtility.FindThreeDotAndClick;
 import com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick;
 import com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown;
 
@@ -336,7 +337,8 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   			int listRowCount = 0; 
 			try {
 				Thread.sleep(2000);
-				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(packageRowList,driver, packageTitle, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
+				listRowCount = FindThreeDotAndClick.findThreedActionButtonAndClick(packageRowList_address, packageRowList,driver, packageTitle, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
+				//listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(packageRowList,driver, packageTitle, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
 			}catch(Exception e) {
 				logger.info("Exception from findPackageFromRowListAndClickOnThreeDot: "+e.getMessage());
 				softAssert.assertTrue(false,"not click on the three dot action button");
@@ -353,7 +355,9 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   			int listRowCount = 0; 
 			try {
 				Thread.sleep(2000);
-				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(packageCategoryRowList,driver, packageCategoryTitle, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
+				//listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(packageCategoryRowList,driver, packageCategoryTitle, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
+				listRowCount = FindThreeDotAndClick.findThreedActionButtonAndClick(packageCategoryRowList_address,packageCategoryRowList,driver, packageCategoryTitle, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
+				
 			}catch(Exception e) {
 				logger.info("Exception from findPackageCategoryFromRowListAndClickOnThreeDot: "+e.getMessage());
 				softAssert.assertTrue(false,"not click on the three dot action button");
@@ -472,12 +476,12 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   				Action_Change.clickOnThreeDotActionBtnChange(driver);
   			}else {
   				clickOnBtnPackagesCategory();
+  				Thread.sleep(3000);
+  	  			clickOnBtnAddCategory();
   			}
 
 			logger.info("Methods called addAndUpdatePackageCategory and caller method name: "+callerMethodName);
 			
-  			Thread.sleep(3000);
-  			clickOnBtnAddCategory();
   			Thread.sleep(3000);
   			setPackageCategoryTitles(packageCategoryTitle);
   			setPackageCategoryInternalTitle(packageCategoryInternalTitle);

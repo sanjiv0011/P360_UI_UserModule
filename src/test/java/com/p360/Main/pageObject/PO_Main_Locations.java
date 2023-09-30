@@ -23,6 +23,7 @@ import com.p360.Actions.Action_Details;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
 import com.p360.pageObject.PO_LoginPage;
 import com.p360.projectUtility.DatePicker;
+import com.p360.projectUtility.FindThreeDotAndClick;
 import com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick;
 import com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown;
 
@@ -293,7 +294,8 @@ public class PO_Main_Locations extends ReUseAbleElement {
   			int listRowCount = 0;
 			try {
 				Thread.sleep(2000);
-				listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(locationRowList,driver, locationName, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
+				//listRowCount = FindThreeDotBasedOnSearchKeyAndClick.findThreedActionButtonAndClick(locationRowList,driver, locationName, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
+				listRowCount = FindThreeDotAndClick.findThreedActionButtonAndClick(locationRowList_address,locationRowList,driver, locationName, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
 			}catch(Exception e) {
 				logger.info("Exception from findLocationFromRowListAndClickOnThreeDot: "+e.getMessage());
 				softAssert.assertTrue(false,"not click on the three dot action button");

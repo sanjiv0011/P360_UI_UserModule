@@ -63,88 +63,88 @@ public class TC_Main_Packages extends BaseClass{
 	
 	
 	
-	//TO ADD PACKAGE CATEGORY
-	//@Test(priority = 1)
-	public void test_Main_AddPackageCategory() throws InterruptedException {
-		m_pp = callMeBeforePerformAnyAction();
-		m_hp = m_pp.addAndUpdatePackageCategory(packageCategoryTitle,packageCategoryInternalTitle,packageCategoryDescription,categoryLocation,wantToMarkCategoryHidden);
-	}
-	
-	
-	//TO ADD PACKAGE
-	//@Test(priority = 2)
-	public void test_Main_AddPackage() throws InterruptedException {
-		m_pp = callMeBeforePerformAnyAction();
-		m_hp = m_pp.addAndUpdatePackage(packageName,packageLocation,packageCategory,packgeDescription,wantToInternalUseOnly,chargeInterval,totalClasses,miniumDurationInMonth, regularPrice,packagedisclaimers);
-	}
-	
-	
-	
-	//TO UPDATE PACKAGE CATEGORY
-	//@Test(priority = 3)
-	public void test_Main_UpdatePackageCategory() throws InterruptedException {
-		test_Main_FindPackageFromListAndClickOnThreedotButton();
-		m_hp = m_pp.addAndUpdatePackageCategory(packageCategoryTitle,packageCategoryInternalTitle,packageCategoryDescription,categoryLocation,wantToMarkCategoryHidden);
-	}
-	
-	
-	//TO UPDATE PACKAGE 
-	//@Test(priority = 4)
-	public void test_Main_UpdatePackage() throws InterruptedException {
-		test_Main_FindPackageFromListAndClickOnThreedotButton();
-		m_hp = m_pp.addAndUpdatePackage(packageName,packageLocation,packageCategory,packgeDescription,wantToInternalUseOnly,chargeInterval,totalClasses,miniumDurationInMonth, regularPrice,packagedisclaimers);
-	}
-	
-	//TO DEACTIVATE PACKAGE
-	//@Test(priority = 5)
-	public void test_Main_DeActivatePackage() throws InterruptedException {
-		test_Main_FindPackageFromListAndClickOnThreedotButton();
-		m_pp.deActivatePackage();
-	}
-	
-	//TO ACTIVATE PACKAGE
-	//@Test(priority = 6)
-	public void test_Main_ActivatePackage() throws InterruptedException {
-		test_Main_FindPackageFromListAndClickOnThreedotButton();
-		m_pp.activatePackage();
-	}
+		//TO ADD PACKAGE CATEGORY
+		//@Test(priority = 1)
+		public void test_Main_AddPackageCategory() throws InterruptedException {
+			m_pp = callMeBeforePerformAnyAction();
+			m_hp = m_pp.addAndUpdatePackageCategory(packageCategoryTitle,packageCategoryInternalTitle,packageCategoryDescription,categoryLocation,wantToMarkCategoryHidden);
+		}
 		
 		
-	//TO ARCHIVE PACKAGE
-	//@Test(priority = 7)
-	public void test_Main_ArchivePackage() throws InterruptedException {
-		test_Main_FindPackageFromListAndClickOnThreedotButton();
-		m_pp.archivePackage();
-	}
-	
-	//TO RESTORE PACKAGE
-	//@Test(priority = 8)
-	public void test_Main_RestorePackage() throws InterruptedException {
-		test_Main_FindPackageFromListAndClickOnThreedotButton();
-		m_pp.restorePackage();
-	}
-	
-	
-	//TO VIEW REPORT PACKAGE
-	//@Test(priority = 9)
-	public void test_Main_ViewPackageReport() throws InterruptedException {
-		test_Main_FindPackageFromListAndClickOnThreedotButton();
-		m_pp.viewPackageReport();
-	}
-	//TO VIEW PACKAGE BUYERS USERS DETAILS
-	//@Test(priority = 10, dependsOnMethods = "test_Main_ViewPackageReport")
-	public void test_Main_ViewPackageBuyersUserDetails() throws InterruptedException {
-		m_pp.findPackageBuyersUserListAndViewUsersDetails(packageBuyersEmail,packageBuyersSearchKeyColumnIndex,packageBuyersWantToClickOnThreeDot,packageBuyersWantToclickOnFindSearckKey);
-	}
+		//TO ADD PACKAGE
+		//@Test(priority = 2)
+		public void test_Main_AddPackage() throws InterruptedException {
+			m_pp = callMeBeforePerformAnyAction();
+			m_hp = m_pp.addAndUpdatePackage(packageName,packageLocation,packageCategory,packgeDescription,wantToInternalUseOnly,chargeInterval,totalClasses,miniumDurationInMonth, regularPrice,packagedisclaimers);
+		}
 		
+		
+		
+		//TO UPDATE PACKAGE CATEGORY
+		//@Test(priority = 3)
+		public void test_Main_UpdatePackageCategory() throws InterruptedException {
+			test_Main_FindPackageCategoryFromListAndClickOnThreedotButton();
+			m_hp = m_pp.addAndUpdatePackageCategory(packageCategoryTitle,packageCategoryInternalTitle,packageCategoryDescription,categoryLocation,wantToMarkCategoryHidden);
+		}
 	
 	
-	//TO FIND PACKAGE AND CLICK ON THE THREE DOT BUTTON
-	//@Test(priority = 11)
-	public void test_Main_FindPackageFromListAndClickOnThreedotButton() throws InterruptedException {
-		m_pp = callMeBeforePerformAnyAction();
-		m_pp.findPackageAndClickOnThreeDot(packageTitle,searchKeyColumnIndex,wantToClickOnThreeDot,packageLocation,packageStatus, packageBuyersWantToclickOnFindSearckKey);
-	}
+		//TO UPDATE PACKAGE 
+		//@Test(priority = 4)
+		public void test_Main_UpdatePackage() throws InterruptedException {
+			test_Main_FindPackageFromListAndClickOnThreedotButton();
+			m_hp = m_pp.addAndUpdatePackage(packageName,packageLocation,packageCategory,packgeDescription,wantToInternalUseOnly,chargeInterval,totalClasses,miniumDurationInMonth, regularPrice,packagedisclaimers);
+		}
+		
+		//TO DEACTIVATE PACKAGE
+		//@Test(priority = 5)
+		public void test_Main_DeActivatePackage() throws InterruptedException {
+			test_Main_FindPackageFromListAndClickOnThreedotButton();
+			m_pp.deActivatePackage();
+		}
+		
+		//TO ACTIVATE PACKAGE
+		@Test(priority = 6)
+		public void test_Main_ActivatePackage() throws InterruptedException {
+			test_Main_FindPackageFromListAndClickOnThreedotButton();
+			m_pp.activatePackage();
+		}
+			
+			
+		//TO ARCHIVE PACKAGE
+		//@Test(priority = 7)
+		public void test_Main_ArchivePackage() throws InterruptedException {
+			test_Main_FindPackageFromListAndClickOnThreedotButton();
+			m_pp.archivePackage();
+		}
+	
+		//TO RESTORE PACKAGE
+		//@Test(priority = 8)
+		public void test_Main_RestorePackage() throws InterruptedException {
+			test_Main_FindPackageFromListAndClickOnThreedotButton();
+			m_pp.restorePackage();
+		}
+		
+		
+		//TO VIEW REPORT PACKAGE
+		//@Test(priority = 9)
+		public void test_Main_ViewPackageReport() throws InterruptedException {
+			test_Main_FindPackageFromListAndClickOnThreedotButton();
+			m_pp.viewPackageReport();
+		}
+		//TO VIEW PACKAGE BUYERS USERS DETAILS
+		//@Test(priority = 10, dependsOnMethods = "test_Main_ViewPackageReport")
+		public void test_Main_ViewPackageBuyersUserDetails() throws InterruptedException {
+			m_pp.findPackageBuyersUserListAndViewUsersDetails(packageBuyersEmail,packageBuyersSearchKeyColumnIndex,packageBuyersWantToClickOnThreeDot,packageBuyersWantToclickOnFindSearckKey);
+		}
+			
+	
+	
+		//TO FIND PACKAGE AND CLICK ON THE THREE DOT BUTTON
+		//@Test(priority = 11)
+		public void test_Main_FindPackageFromListAndClickOnThreedotButton() throws InterruptedException {
+			m_pp = callMeBeforePerformAnyAction();
+			m_pp.findPackageAndClickOnThreeDot(packageTitle,searchKeyColumnIndex,wantToClickOnThreeDot,packageLocation,packageStatus, packageBuyersWantToclickOnFindSearckKey);
+		}
 		
 		//TO FIND PACKAGE CATEGORY AND CLICK ON THE THREE DOT BUTTON
 		//@Test(priority = 12)
@@ -154,14 +154,14 @@ public class TC_Main_Packages extends BaseClass{
 		}
 			
 		//TO DEACTIVATE PACKAGE CATEGORY
-		@Test(priority = 13)
+		//@Test(priority = 13)
 		public void test_Main_DeActivatePackageCategory() throws InterruptedException {
 			test_Main_FindPackageCategoryFromListAndClickOnThreedotButton();
 			m_pp.deActivatePackageCategory();
 		}
 		
 		//TO ACTIVATE PACKAGE CATEGORY
-		@Test(priority = 14)
+		//@Test(priority = 14)
 		public void test_Main_ActivatePackageCategory() throws InterruptedException {
 			test_Main_FindPackageCategoryFromListAndClickOnThreedotButton();
 			m_pp.activatePackageCategory();
@@ -185,14 +185,14 @@ public class TC_Main_Packages extends BaseClass{
 		
 	
 		
-	//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
-	public PO_Main_PackagesPage callMeBeforePerformAnyAction() throws InterruptedException {
-		//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE FIRST
-		m_hp = new PO_Main_HomePage(driver);
-		m_hp.clickOntabDashboard();
-		m_hp.clickOntabPackages();
-		Thread.sleep(5000);
-		return new PO_Main_PackagesPage(driver);	
-	}
+		//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
+		public PO_Main_PackagesPage callMeBeforePerformAnyAction() throws InterruptedException {
+			//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE FIRST
+			m_hp = new PO_Main_HomePage(driver);
+			m_hp.clickOntabDashboard();
+			m_hp.clickOntabPackages();
+			Thread.sleep(5000);
+			return new PO_Main_PackagesPage(driver);	
+		}
 	
 }

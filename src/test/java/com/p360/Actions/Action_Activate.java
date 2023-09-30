@@ -17,6 +17,10 @@ public class Action_Activate {
 	
 	public static boolean activate(WebDriver driver, String message) throws InterruptedException
 	{
+		StackTraceElement stackTraceElement[] = Thread.currentThread().getStackTrace();
+		String callerMethodName = stackTraceElement[2].getMethodName();
+		logger.info("Action_Activate caller method name: "+callerMethodName);
+			
 		boolean flag = false;
 		ruae = new ReUseAbleElement(driver);
 		try {

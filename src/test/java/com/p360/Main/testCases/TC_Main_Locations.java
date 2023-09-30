@@ -78,7 +78,7 @@ public class TC_Main_Locations extends BaseClass{
 	
 	
 	//TO FIND ANY SPECIFIC LOCATIONS FROM THE LIST AND CLICK ON THE VIEW DETAILS ACTION BUTTON
-	//@Test(priority = 3)
+	@Test(priority = 3)
 	public void test_Main_SearchAndViewLocationDetails() throws Throwable {
 		m_lp = callMeBeforePerformAnyAction();
 		m_lp.findLocatoinAndViewDetails(searchKeyLocationName,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
@@ -106,7 +106,7 @@ public class TC_Main_Locations extends BaseClass{
 		
 	
 	//TO FIND AND UPDATE ANY SPECIFIC REGIONS FROM THE LIST
-	@Test(priority = 6)
+	//@Test(priority = 6)
 	public void test_Main_UpdateRegion() throws Throwable {
 		m_lp = callMeBeforePerformAnyAction();
 		boolean bol = m_lp.findAndUpdateRegion(searchKeyRegionName,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);

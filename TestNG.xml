@@ -34,6 +34,8 @@
 		    <class name="com.p360.Main.testCases.TC_Main_Packages"/>
 		    
 		    <!--<class name="com.p360.Main.testCases.TC_Main_Locations"/>-->
+		    
+		    <!--<class name="com.p360.Main.testCases.TC_Main_Trials"/>-->
 	   
 	  	 	<!--<class name="com.p360.Main.testCases.TC_Main_Classes"/>-->
 	  	 	

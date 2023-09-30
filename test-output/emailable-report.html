@@ -9,13 +9,74 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">P360_UI_USER_MODULE</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">176,839</td><td></td><td></td></tr>
+<tr><td><a href="#t0">P360_UI_USER_MODULE</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num">55,486</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">P360_UI_USER_MODULE &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">com.p360.Main.testCases.TC_Main_Packages</td><td><a href="#m0">test_Main_ActivatePackageCategory</a></td><td rowspan="1">1695301588171</td><td rowspan="1">37428</td></tr><tr class="passedeven"><td><a href="#m1">test_Main_ArchivePackageCategory</a></td><td rowspan="1">1695301625605</td><td rowspan="1">37303</td></tr><tr class="passedeven"><td><a href="#m2">test_Main_DeActivatePackageCategory</a></td><td rowspan="1">1695301550039</td><td rowspan="1">38100</td></tr><tr class="passedeven"><td><a href="#m3">test_Main_RestorePackageCategory</a></td><td rowspan="1">1695301662914</td><td rowspan="1">36947</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">P360_UI_USER_MODULE &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.p360.Main.testCases.TC_Main_Packages</td><td><a href="#m0">Logout</a></td><td rowspan="1">1696061930848</td><td rowspan="1">1060</td></tr><tr><th colspan="4">P360_UI_USER_MODULE &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">com.p360.Main.testCases.TC_Main_Packages</td><td><a href="#m1">test_Main_ActivatePackage</a></td><td rowspan="1">1696061895189</td><td rowspan="1">32901</td></tr><tr class="failedeven"><td><a href="#m2">test_Main_ArchivePackageCategory</a></td><td rowspan="1">1696061928269</td><td rowspan="1">1115</td></tr><tr class="failedeven"><td><a href="#m3">test_Main_RestorePackageCategory</a></td><td rowspan="1">1696061929593</td><td rowspan="1">1070</td></tr></tbody>
 </table>
-<h2>P360_UI_USER_MODULE</h2><h3 id="m0">com.p360.Main.testCases.TC_Main_Packages#test_Main_ActivatePackageCategory</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.p360.Main.testCases.TC_Main_Packages#test_Main_ArchivePackageCategory</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.p360.Main.testCases.TC_Main_Packages#test_Main_DeActivatePackageCategory</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.p360.Main.testCases.TC_Main_Packages#test_Main_RestorePackageCategory</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>P360_UI_USER_MODULE</h2><h3 id="m0">com.p360.Main.testCases.TC_Main_Packages#Logout</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>admin</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	After logout it lookin for [Performance360] text expected [true] but found [false]
+	at com.p360.Main.pageObject.PO_Main_HomePage.AdminLogout(PO_Main_HomePage.java:287)
+	at com.p360.testCases.BaseClass.Logout(BaseClass.java:131)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.p360.Main.testCases.TC_Main_Packages#test_Main_ActivatePackage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	You want Activate, but Activate button not present expected [true] but found [false]
+	at com.p360.Actions.Action_Activate.activate(Action_Activate.java:44)
+	at com.p360.Main.pageObject.PO_Main_PackagesPage.activatePackage(PO_Main_PackagesPage.java:646)
+	at com.p360.Main.testCases.TC_Main_Packages.test_Main_ActivatePackage(TC_Main_Packages.java:109)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.p360.Main.testCases.TC_Main_Packages#test_Main_ArchivePackageCategory</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;MuiList-root jss26 Cmt-nav-menu-item MuiList-padding&quot;&gt;...&lt;/div&gt; is not clickable at point (125, 185). Other element would receive the click: &lt;div aria-hidden=&quot;true&quot; style=&quot;z-index: -1; position: fixed; inset: 0px; background-color: transparent; -webkit-tap-highlight-color: transparent;&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=117.0.5938.132)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [54fd560ba379c72d35c8b8c0d16c6b20, clickElement {id=ECEEBE1DBFD135060A6DEB43E8B45904_element_24}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (54fd560ba379c72d35c8b8c0d16c6b20)] -&gt; xpath: (//div[contains(@class,&quot;MuiList-root&quot;)][contains(.,&apos;Dashboard&apos;)])[2]]
+Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy36.click(Unknown Source)
+	at com.p360.Main.pageObject.PO_Main_HomePage.clickOntabDashboard(PO_Main_HomePage.java:138)
+	at com.p360.Main.testCases.TC_Main_Packages.callMeBeforePerformAnyAction(TC_Main_Packages.java:192)
+	at com.p360.Main.testCases.TC_Main_Packages.test_Main_FindPackageCategoryFromListAndClickOnThreedotButton(TC_Main_Packages.java:152)
+	at com.p360.Main.testCases.TC_Main_Packages.test_Main_ArchivePackageCategory(TC_Main_Packages.java:174)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.p360.Main.testCases.TC_Main_Packages#test_Main_RestorePackageCategory</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;MuiList-root jss26 Cmt-nav-menu-item MuiList-padding&quot;&gt;...&lt;/div&gt; is not clickable at point (125, 185). Other element would receive the click: &lt;div aria-hidden=&quot;true&quot; style=&quot;z-index: -1; position: fixed; inset: 0px; background-color: transparent; -webkit-tap-highlight-color: transparent;&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=117.0.5938.132)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [54fd560ba379c72d35c8b8c0d16c6b20, clickElement {id=ECEEBE1DBFD135060A6DEB43E8B45904_element_24}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (54fd560ba379c72d35c8b8c0d16c6b20)] -&gt; xpath: (//div[contains(@class,&quot;MuiList-root&quot;)][contains(.,&apos;Dashboard&apos;)])[2]]
+Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy36.click(Unknown Source)
+	at com.p360.Main.pageObject.PO_Main_HomePage.clickOntabDashboard(PO_Main_HomePage.java:138)
+	at com.p360.Main.testCases.TC_Main_Packages.callMeBeforePerformAnyAction(TC_Main_Packages.java:192)
+	at com.p360.Main.testCases.TC_Main_Packages.test_Main_FindPackageCategoryFromListAndClickOnThreedotButton(TC_Main_Packages.java:152)
+	at com.p360.Main.testCases.TC_Main_Packages.test_Main_RestorePackageCategory(TC_Main_Packages.java:181)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

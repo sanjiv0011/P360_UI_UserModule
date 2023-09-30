@@ -16,6 +16,10 @@ public class Action_Restore {
 	
 	public static boolean restore(WebDriver driver, String message) throws InterruptedException
 	{
+		StackTraceElement stackTraceElement[] = Thread.currentThread().getStackTrace();
+		String callerMethodName = stackTraceElement[2].getMethodName();
+		logger.info("Action_Restore caller method name: "+callerMethodName);
+		
 		boolean flag = false;
 		try {
 			ruae = new ReUseAbleElement(driver);
