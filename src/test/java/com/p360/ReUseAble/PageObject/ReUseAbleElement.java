@@ -27,7 +27,7 @@ public class ReUseAbleElement {
 	public static final Logger logger = LogManager.getLogger(ReUseAbleElement.class);
 	public static WebDriverWait wait,waitAlert = null;
 	protected static Actions action;
-	public SoftAssert softAssert = new SoftAssert();
+	public static SoftAssert softAssert = new SoftAssert();
 	
 	//CREATE PAGE FACTORY METHODS WITH DRIVERS
 	public ReUseAbleElement(WebDriver driver)
@@ -235,7 +235,7 @@ public class ReUseAbleElement {
 	    //===========START=======ACTIVATE AND DEACTIVATE==================//
 	    
 		//ACTIVATE Action P360 => To use this first search list item so that it comes at first position
-		@FindBy(xpath = "//*[normalize-space(text()) = 'Activate']")
+		@FindBy(xpath = "//*[normalize-space(text())='Activate']")
 		@CacheLookup
 		public WebElement actionActivate;
 	    public void clickOnActivateAction_RU() throws InterruptedException {
@@ -261,7 +261,7 @@ public class ReUseAbleElement {
 	    }
 		
 		//DEACTIVATE Action P360 => To use this first search list item so that it comes at first position
-		@FindBy(xpath = "//*[normalize-space(text()) = 'Deactivate']")
+		@FindBy(xpath = "//*[normalize-space(text())='Deactivate']")
 		@CacheLookup
 		public WebElement actionDeactivate;
 	    public void clickOnDeactivateAction_RU() throws InterruptedException {
@@ -321,7 +321,7 @@ public class ReUseAbleElement {
 	    //===========START=======ARCHIVE AND RESTORE==================//
 	    
 	    //Archive Action, P360 => To use this first search list item so that it comes at first position
-  		@FindBy(xpath = "//*[normalize-space(text()) = 'Archive']")
+  		@FindBy(xpath = "//*[normalize-space(text())='Archive']")
   		@CacheLookup
   		public WebElement actionArchive;
   		// Action method to click the Archive action
@@ -349,7 +349,7 @@ public class ReUseAbleElement {
   	    }
   		
   		//Restore Action, P360 => To use this first search list item so that it comes at first position
-  		@FindBy(xpath = "//*[normalize-space(text()) = 'Restore']")
+  		@FindBy(xpath = "//*[normalize-space(text())='Restore']")
   		@CacheLookup
   		public WebElement actionRestore;
   		 // Action method to click the Restore action
@@ -501,7 +501,11 @@ public class ReUseAbleElement {
 		public boolean clickOnCheckBox_1_RU() throws InterruptedException{
 			boolean flag = false;
 			try {
-				checkBox_1_RU.click();
+				if(!checkBox_1_RU.isSelected()) {
+					checkBox_1_RU.click();
+				}else {
+					logger.info("Check box already selected");
+				}
 				Thread.sleep(400);
 				flag = true;
 			   logger.info("Clicked on the Checkbox 1");
@@ -588,15 +592,22 @@ public class ReUseAbleElement {
 		}
 				
 				
-		// Yes button before confirm the action, P360
-		@FindBy(xpath = "//span[normalize-space()='Yes']")
-		@CacheLookup
-		public WebElement btnYes_RU;
-		 // Action method to click the Yes button
-	    public boolean clickOnYesButton_RU() throws InterruptedException {
+		//TO CLICK ON YES BUTTON
+	    public static boolean clickOnBtnYes_RU(WebDriver driver) throws InterruptedException {
 	    	boolean flag = false;
-	    	if(btnYes_RU.isDisplayed()) {
-	    		btnYes_RU.click();
+	    	String btnYes_address;
+	    	WebElement btnYes = null;
+	    	try {
+	    		btnYes_address = "//*[normalize-space()='Yes']";
+				//logger.info("btnDeactivate_address:- "+btnDeactivate_address);
+	    		btnYes = driver.findElement(By.xpath(btnYes_address));
+			}catch(Exception e) {
+				logger.info("Exception from clickOnBtnYes: "+e.getMessage());
+				softAssert.assertTrue(false,"Action button Yes address not present");
+			}
+	    	
+	    	if(btnYes.isDisplayed() && btnYes.isEnabled()) {
+	    		btnYes.click();
 		        logger.info("Clicked on the Yes button");
 		        flag = true;
 	    	}else {
@@ -747,6 +758,41 @@ public class ReUseAbleElement {
 			Thread.sleep(300);
 		}
 	    
+	    //BACK BUTTON WITH * TAG, P360
+	    @FindBy(xpath = "//*[normalize-space()='Back']")
+		@CacheLookup
+		public WebElement btnBackStarTag_1_RU;
+	    public String address_BackStarTag_1_RU = "//*[normalize-space()='Back']";
+	    public void clickOnBtnBackStartTag_1_RU() throws InterruptedException {
+	    	btnBackStarTag_1_RU.click();
+	    	logger.info("Clicked on the  btnBackStarTag_1_RU");
+			Thread.sleep(300);
+		}
+	    
+	    //NEXT BUTTON WITH * TAG, P360
+	    @FindBy(xpath = "//*[normalize-space()='Next']")
+		@CacheLookup
+		public WebElement btnNextStarTag_1_RU;
+	    public String address_NextStarTag_1_RU = "//*[normalize-space()='Next']";
+	    public void clickOnBtnNextStartTag_1_RU() throws InterruptedException {
+	    	btnNextStarTag_1_RU.click();
+	    	logger.info("Clicked on the  btnNextStarTag_1_RU");
+			Thread.sleep(300);
+		}
+	    
+	    //MONTH BUTTON WITH * TAG, P360
+	    @FindBy(xpath = "//*[normalize-space()='Month']")
+		@CacheLookup
+		public WebElement btnMonthStarTag_1_RU;
+	    public String address_MonthStarTag_1_RU = "//*[normalize-space()='Month']";
+	    public void clickOnBtnMonthStartTag_1_RU() throws InterruptedException {
+	    	btnMonthStarTag_1_RU.click();
+	    	logger.info("Clicked on the  btnMonthStarTag_1_RU");
+			Thread.sleep(300);
+		}
+	    
+	    
+	    
 	    //NEXT BUTTON 1
 	    @FindBy(xpath = "//span[normalize-space()='Next']")
 		@CacheLookup
@@ -781,9 +827,6 @@ public class ReUseAbleElement {
 			return flag;
 		}
 	    
-	  
-	    
-	    		
 		
   		//DROPDOWN BOX ADDRESS 1, P360
   		@FindBy(xpath = "(//div[@role='button'])[1]")
@@ -1190,5 +1233,7 @@ public class ReUseAbleElement {
 			logger.info("Clicked on the radio button -2");
 			Thread.sleep(500);
 		}
+
+
 }
 

@@ -473,7 +473,7 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   			String callerMethodName = stackTraceElement[2].getMethodName();
   			
   			if(callerMethodName.equals("test_Main_UpdatePackageCategory")) {
-  				Action_Change.clickOnThreeDotActionBtnChange(driver);
+  				Action_Change.change(driver);
   			}else {
   				clickOnBtnPackagesCategory();
   				Thread.sleep(3000);
@@ -516,7 +516,7 @@ public class PO_Main_PackagesPage extends ReUseAbleElement {
   			String callerMethodName = stackTraceElement[2].getMethodName();
   			
   			if(callerMethodName.equals("test_Main_UpdatePackage")) {
-  				Action_Change.clickOnThreeDotActionBtnChange(driver);
+  				Action_Change.change(driver);
   			}else {
   				clickOnBtnAddPackages();
   			}

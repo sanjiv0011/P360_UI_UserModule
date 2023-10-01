@@ -2,7 +2,11 @@ package com.p360.Actions;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
@@ -14,7 +18,10 @@ public class Action_Activate {
 	public static final Logger logger = LogManager.getLogger(Action_Activate.class);
 	public static ReUseAbleElement ruae;
 	public static SoftAssert softAssert = new SoftAssert();
+	public static JavascriptExecutor jsExecutor;
+	public static Actions action;
 	
+	//TO ACTIVATE
 	public static boolean activate(WebDriver driver, String message) throws InterruptedException
 	{
 		StackTraceElement stackTraceElement[] = Thread.currentThread().getStackTrace();
@@ -24,8 +31,12 @@ public class Action_Activate {
 		boolean flag = false;
 		ruae = new ReUseAbleElement(driver);
 		try {
-			ruae.clickOnActivateAction_RU();
-			ruae.clickOnYesButton_RU();
+			boolean bol = clickOnActivateAction(driver);
+			if(bol) {
+				ReUseAbleElement.clickOnBtnYes_RU(driver);
+			}else {
+				logger.info("Not click on the Acitvate button");
+			}
 	    	
 	    	//CHECK THE ACTIVATE CONFIRMATIONS MESSAGES
 	    	String alretMsg = ruae.snakeAlertMessagesDisplayedContent_RU();
@@ -44,5 +55,56 @@ public class Action_Activate {
 		softAssert.assertAll();
     	return flag;
 	}
+	
+	//ACTIVATE Action P360 => To use this first search list item so that it comes at first position
+	public static boolean clickOnActivateAction(WebDriver driver) throws InterruptedException {
+    
+    	int rowListCount = 1;
+		jsExecutor  = (JavascriptExecutor)driver;
+		action = new Actions(driver);
+		String btnActivate_address = null;
+		WebElement btnActivate = null;
+		boolean flag = false;
+		int loopcount = 0;
+		
+    	while(true) 
+       {
+    		loopcount++;
+    		try {
+    			btnActivate_address = "(//*[normalize-space(text())='Activate'])["+rowListCount+"]";
+				//logger.info("btnDeactivate_address:- "+btnDeactivate_address);
+    			btnActivate = driver.findElement(By.xpath(btnActivate_address));
+			}catch(Exception e) {
+				if(loopcount>20) {
+					logger.info("Exception from clickOnActivateAction: "+e.getMessage());
+					logger.info("Activate action button not present");
+					softAssert.assertTrue(false,"You want to Activat, but activate button not present");
+					ruae.clickOnP360Logo_RU();
+					break;
+				}
+			}
+			
+  			
+		if(btnActivate.isDisplayed() && btnActivate.isEnabled()) {
+			logger.info("Is Activate button displayed and enabled: "+btnActivate.isDisplayed());
+			logger.info("btnActivate_address:- "+btnActivate_address);
+			logger.info("rowListCount: "+rowListCount);
+			action.moveToElement(btnActivate).build().perform();
+  			Thread.sleep(300);
+  			jsExecutor.executeScript("arguments[0].click();", btnActivate);
+  			//action.moveToElement(btnDeactivate).click().build().perform();
+	  	  		logger.info("Clicked on Activate action button present under three dot");
+	  			flag  = true;
+	  			Thread.sleep(1000);
+	  			break;
+			}else {
+				rowListCount++;
+			}
+
+       }
+    	return flag;
+    }
+		 
+		
 	
 }

@@ -96,7 +96,7 @@ public class TC_Main_Packages extends BaseClass{
 		}
 		
 		//TO DEACTIVATE PACKAGE
-		//@Test(priority = 5)
+		@Test(priority = 5)
 		public void test_Main_DeActivatePackage() throws InterruptedException {
 			test_Main_FindPackageFromListAndClickOnThreedotButton();
 			m_pp.deActivatePackage();
@@ -111,14 +111,14 @@ public class TC_Main_Packages extends BaseClass{
 			
 			
 		//TO ARCHIVE PACKAGE
-		//@Test(priority = 7)
+		@Test(priority = 7)
 		public void test_Main_ArchivePackage() throws InterruptedException {
 			test_Main_FindPackageFromListAndClickOnThreedotButton();
 			m_pp.archivePackage();
 		}
 	
 		//TO RESTORE PACKAGE
-		//@Test(priority = 8)
+		@Test(priority = 8)
 		public void test_Main_RestorePackage() throws InterruptedException {
 			test_Main_FindPackageFromListAndClickOnThreedotButton();
 			m_pp.restorePackage();
@@ -169,14 +169,14 @@ public class TC_Main_Packages extends BaseClass{
 			
 			
 		//TO ARCHIVE PACKAGE CATEGORY
-		@Test(priority = 15)
+		//@Test(priority = 15)
 		public void test_Main_ArchivePackageCategory() throws InterruptedException {
 			test_Main_FindPackageCategoryFromListAndClickOnThreedotButton();
 			m_pp.archivePackageCategory();
 		}
 		
 		//TO RESTORE PACKAGE CATEGORY
-		@Test(priority = 16)
+		//@Test(priority = 16)
 		public void test_Main_RestorePackageCategory() throws InterruptedException {
 			test_Main_FindPackageCategoryFromListAndClickOnThreedotButton();
 			m_pp.restorePackageCategory();

@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-skipped">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,31 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 3 failed,   </span>
+                    <span class="method-stats">1 method,  1 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
                     </span>
-                    <div class="method-list-content failed suite-Suite">
+                    <div class="method-list-content skipped suite-Suite">
                       <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.p360.Main.testCases.TC_Main_Packages" class="method navigator-link" hash-for-method="test_Main_ActivatePackage">test_Main_ActivatePackage</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.p360.Main.testCases.TC_Main_Classes" class="method navigator-link" hash-for-method="test_Main_ViewClassRegisteredUserDetails">test_Main_ViewClassRegisteredUserDetails</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.p360.Main.testCases.TC_Main_Packages" class="method navigator-link" hash-for-method="test_Main_ArchivePackageCategory">test_Main_ArchivePackageCategory</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.p360.Main.testCases.TC_Main_Packages" class="method navigator-link" hash-for-method="test_Main_RestorePackageCategory">test_Main_RestorePackageCategory</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -128,97 +118,41 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
+          <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.p360.Main.testCases.TC_Main_Packages</span>
+              <img src="skipped.png"/>
+              <span class="class-name">com.p360.Main.testCases.TC_Main_Classes</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test_Main_ActivatePackage">
-                  </a> <!-- test_Main_ActivatePackage -->
-                  <span class="method-name">test_Main_ActivatePackage</span>
-                  <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
-	You want Activate, but Activate button not present expected [true] but found [false]
-	at com.p360.Actions.Action_Activate.activate(Action_Activate.java:44)
-	at com.p360.Main.pageObject.PO_Main_PackagesPage.activatePackage(PO_Main_PackagesPage.java:646)
-	at com.p360.Main.testCases.TC_Main_Packages.test_Main_ActivatePackage(TC_Main_Packages.java:109)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+                  <a name="test_Main_ViewClassRegisteredUserDetails">
+                  </a> <!-- test_Main_ViewClassRegisteredUserDetails -->
+                  <span class="method-name">test_Main_ViewClassRegisteredUserDetails</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: disconnected: received Inspector.detached event
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=117.0.5938.132)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [99a44bc23f42ec68ce6fd3dc3b9fbdcb, get {url=https://p360dev.vercel.app/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62829}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62829/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 99a44bc23f42ec68ce6fd3dc3b9fbdcb
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:300)
+	at com.p360.testCases.BaseClass.Setup(BaseClass.java:100)
 ... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test_Main_ArchivePackageCategory">
-                  </a> <!-- test_Main_ArchivePackageCategory -->
-                  <span class="method-name">test_Main_ArchivePackageCategory</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;MuiList-root jss26 Cmt-nav-menu-item MuiList-padding&quot;&gt;...&lt;/div&gt; is not clickable at point (125, 185). Other element would receive the click: &lt;div aria-hidden=&quot;true&quot; style=&quot;z-index: -1; position: fixed; inset: 0px; background-color: transparent; -webkit-tap-highlight-color: transparent;&quot;&gt;&lt;/div&gt;
-  (Session info: chrome=117.0.5938.132)
-Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54fd560ba379c72d35c8b8c0d16c6b20, clickElement {id=ECEEBE1DBFD135060A6DEB43E8B45904_element_24}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (54fd560ba379c72d35c8b8c0d16c6b20)] -&gt; xpath: (//div[contains(@class,&quot;MuiList-root&quot;)][contains(.,&apos;Dashboard&apos;)])[2]]
-Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy36.click(Unknown Source)
-	at com.p360.Main.pageObject.PO_Main_HomePage.clickOntabDashboard(PO_Main_HomePage.java:138)
-	at com.p360.Main.testCases.TC_Main_Packages.callMeBeforePerformAnyAction(TC_Main_Packages.java:192)
-	at com.p360.Main.testCases.TC_Main_Packages.test_Main_FindPackageCategoryFromListAndClickOnThreedotButton(TC_Main_Packages.java:152)
-	at com.p360.Main.testCases.TC_Main_Packages.test_Main_ArchivePackageCategory(TC_Main_Packages.java:174)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 36 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test_Main_RestorePackageCategory">
-                  </a> <!-- test_Main_RestorePackageCategory -->
-                  <span class="method-name">test_Main_RestorePackageCategory</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;MuiList-root jss26 Cmt-nav-menu-item MuiList-padding&quot;&gt;...&lt;/div&gt; is not clickable at point (125, 185). Other element would receive the click: &lt;div aria-hidden=&quot;true&quot; style=&quot;z-index: -1; position: fixed; inset: 0px; background-color: transparent; -webkit-tap-highlight-color: transparent;&quot;&gt;&lt;/div&gt;
-  (Session info: chrome=117.0.5938.132)
-Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54fd560ba379c72d35c8b8c0d16c6b20, clickElement {id=ECEEBE1DBFD135060A6DEB43E8B45904_element_24}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (54fd560ba379c72d35c8b8c0d16c6b20)] -&gt; xpath: (//div[contains(@class,&quot;MuiList-root&quot;)][contains(.,&apos;Dashboard&apos;)])[2]]
-Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy36.click(Unknown Source)
-	at com.p360.Main.pageObject.PO_Main_HomePage.clickOntabDashboard(PO_Main_HomePage.java:138)
-	at com.p360.Main.testCases.TC_Main_Packages.callMeBeforePerformAnyAction(TC_Main_Packages.java:192)
-	at com.p360.Main.testCases.TC_Main_Packages.test_Main_FindPackageCategoryFromListAndClickOnThreedotButton(TC_Main_Packages.java:152)
-	at com.p360.Main.testCases.TC_Main_Packages.test_Main_RestorePackageCategory(TC_Main_Packages.java:181)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 36 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-skipped -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -236,7 +170,7 @@ Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;1&quot; name=&quot;P360_UI_USER_MODULE&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.p360.Main.testCases.TC_Main_Packages&quot;/&gt;
+      &lt;class name=&quot;com.p360.Main.testCases.TC_Main_Classes&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- P360_UI_USER_MODULE --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -276,24 +210,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test_Main_ActivatePackage')
-data.setCell(0, 2, 'com.p360.Main.testCases.TC_Main_Packages')
-data.setCell(0, 3, 32901);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'test_Main_ArchivePackageCategory')
-data.setCell(1, 2, 'com.p360.Main.testCases.TC_Main_Packages')
-data.setCell(1, 3, 1115);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'test_Main_RestorePackageCategory')
-data.setCell(2, 2, 'com.p360.Main.testCases.TC_Main_Packages')
-data.setCell(2, 3, 1070);
+data.setCell(0, 1, 'test_Main_ViewClassRegisteredUserDetails')
+data.setCell(0, 2, 'com.p360.Main.testCases.TC_Main_Classes')
+data.setCell(0, 3, 3);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 35 seconds</span>
+              <span class="suite-total-time">Total running time: 3 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -319,43 +245,13 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.p360.Main.testCases.TC_Main_Packages</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.p360.Main.testCases.TC_Main_Classes</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">Setup(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
-              <div class="configuration-class before">
-                <span class="method-name">Login(admin)</span>
-                <span class="method-start">3371 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">test_Main_ActivatePackage</span>
-                <span class="method-start">18221 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">test_Main_ArchivePackageCategory</span>
-                <span class="method-start">51301 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">test_Main_RestorePackageCategory</span>
-                <span class="method-start">52625 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">Logout(admin)</span>
-                <span class="method-start">53880 ms</span>
-              </div> <!-- configuration-class after -->
-              <div class="configuration-test after">
-                <span class="method-name">Teardown</span>
-                <span class="method-start">54944 ms</span>
-              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

@@ -23,7 +23,7 @@ public class Action_Delete {
     	if(!ruae.isSearchKeysNotFound_RU()){
     			ruae.clickOnActionButton_RU();
     			ruae.clickOnBtnDelete_RU();;
-    			ruae.clickOnYesButton_RU();
+    			ReUseAbleElement.clickOnBtnYes_RU(driver);
     	    	
     	    	//CHECK THE DELETED CONFIRMATIONS MESSAGES
     	    	String alretMsg = ruae.snakeAlertMessagesDisplayedContent_RU();

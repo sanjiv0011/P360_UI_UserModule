@@ -21,8 +21,13 @@ public class Action_Change {
 		public static Actions action;
 		
 		//TO CLICK ON Change ACTION BUTTON FROM THE LIST PRESENT UNDER THE THREE DOT BUTTON
-		public static boolean clickOnThreeDotActionBtnChange(WebDriver driver) throws InterruptedException 
+		public static boolean change(WebDriver driver) throws InterruptedException 
 		{
+			StackTraceElement stackTraceElement[] = Thread.currentThread().getStackTrace();
+			String callerMethodName = stackTraceElement[2].getMethodName();
+			logger.info("Action_Change caller method name: "+callerMethodName);
+		
+			
 			boolean flag = false;
 			Thread.sleep(500);
 			int rowListCount = 1;
@@ -30,16 +35,22 @@ public class Action_Change {
 			action = new Actions(driver);
 			String btnChange_address = null;
 			WebElement btnChange = null;
+			int loopcount = 0;
 			
 			while(true)
 			{
+				loopcount++;
 				try {
-					btnChange_address = "(//span[contains(text(),'Change')])["+rowListCount+"]";
+					btnChange_address = "(//*[normalize-space(text())='Change'])["+rowListCount+"]";
 		  			//logger.info("btnChange_address:- "+btnChange_address);
 		  			btnChange = driver.findElement(By.xpath(btnChange_address));
 				}catch(Exception e) {
-					logger.info("Exception from clickOnThreeDotActionBtnChange: "+e.getMessage());
-					softAssert.assertTrue(false,"Action button CHANGE address not present");
+					if(loopcount>20) {
+						logger.info("Exception from clickOnThreeDotActionBtnChange: "+e.getMessage());
+						softAssert.assertTrue(false,"Action button CHANGE address not present");
+						ruae.clickOnP360Logo_RU();
+						break;
+					}
 				}
 	  			
 	  			if(btnChange.isDisplayed() && btnChange.isEnabled())
@@ -60,7 +71,7 @@ public class Action_Change {
 	  			}
 			}
 			
-			
+			softAssert.assertAll();
 			return flag;
 			
 		}

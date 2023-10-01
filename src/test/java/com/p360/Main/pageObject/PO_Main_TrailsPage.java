@@ -20,6 +20,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.p360.Actions.Action_Activate;
 import com.p360.Actions.Action_Archive;
+import com.p360.Actions.Action_Change;
 import com.p360.Actions.Action_Deactivate;
 import com.p360.Actions.Action_Restore;
 import com.p360.ReUseAble.PageObject.ReUseAbleElement;
@@ -59,6 +60,7 @@ public class PO_Main_TrailsPage extends ReUseAbleElement {
 		public String alertMsgTemplateDeActivated = "Trial Template Deactivated Successfully.";
 		public String alertMsgTemplateArchived = "Trial Template Archived Successfully.";
 		public String alertMsgTemplateRestored = "Trial Template Restored Successfully.";
+		public String alertMsgTemplateUpdated = "Template updated successfully.";
 		
 		
 		//======START======PAGE OBJECT FOR TEMPLATE AND ACTOIN METHODS==========//
@@ -190,10 +192,21 @@ public class PO_Main_TrailsPage extends ReUseAbleElement {
   		//TO ADD TEMPLATE
   		public PO_Main_HomePage addTemplate(String temlateTypes,String templateTitle, String templateDescription, boolean wantToEnableGlobal,String templateLocation, String templateEmailSubject, String templateEmailDescription) throws InterruptedException
   		{
+  			StackTraceElement stackTraceElement[] = Thread.currentThread().getStackTrace();
+  			String callerMethodName = stackTraceElement[2].getMethodName();
+  			logger.info("caller method name: "+callerMethodName);
+  			
+  			
   			logger.info("Methods called: addTemplate");
   			boolean flag = false;
-  			clickOnBtnTemplate();
-  			clickOnBtnAddNewTemplate();
+  			
+  			if(callerMethodName.equals("changeTemplate")) {
+  				logger.info("Change changed methods called");
+  			}else {
+  				clickOnBtnTemplate();
+  	  			clickOnBtnAddNewTemplate();
+  			}
+  			
   			
   			//CONFIRM FIRST USER WANT TO CREATE TEMPLATE BY SMS OR EMAIL
   			if(temlateTypes.equals("SMS")) {
@@ -224,12 +237,17 @@ public class PO_Main_TrailsPage extends ReUseAbleElement {
   				if(alertMsg.equals(alertMsgTemplateCreatedSuccessfully)){
   					softAssert.assertEquals(alertMsg, alertMsgTemplateCreatedSuccessfully,"Template created successfully");
   					logger.info("Template created successfully");
+  				}else if(alertMsg.equals(alertMsgTemplateUpdated)) {
+  					softAssert.assertEquals(alertMsg, alertMsgTemplateUpdated,"Template updated successfully");
+  					logger.info("Template updated");
   				}else if(alertMsg.contains(alertMsgAddTitle)) {
   					softAssert.assertEquals(alertMsg, alertMsgAddTitle,"Add title alert displayed");
   					clickOnCancelButton_1_RU();
   					logger.info("Template not created");
   				}else {
+  					clickOnCancelButton_1_RU();
   					softAssert.assertTrue(false,"Template not added");
+  					
   				}
 	  		}else {
 	  			softAssert.assertTrue(false,"Template not added");
@@ -290,6 +308,18 @@ public class PO_Main_TrailsPage extends ReUseAbleElement {
 			Action_Restore.restore(driver, alertMsgTemplateRestored);
 			softAssert.assertAll();
 			return new PO_Main_HomePage(driver);
+		}
+		
+		//TO CHANGE THE TRAIL TEMPLATE
+		public PO_Main_HomePage changeTemplate(String temlateTypes,String templateTitle, String templateDescription, boolean wantToEnableGlobal,String templateLocation, String templateEmailSubject, String templateEmailDescription) throws InterruptedException
+		{
+			logger.info("Methods called: changeTemplate");
+			Action_Change.change(driver);
+			
+			addTemplate(temlateTypes,templateTitle, templateDescription, wantToEnableGlobal,templateLocation, templateEmailSubject, templateEmailDescription);
+			softAssert.assertAll();
+			return new PO_Main_HomePage(driver);
+			
 		}
   		
 }

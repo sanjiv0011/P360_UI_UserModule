@@ -623,7 +623,7 @@ public class PO_Main_Locations extends ReUseAbleElement {
   			boolean flag = isTextNoLocationMachesCurrentFilter();
   			if(!flag) {
   				findLocationFromRowListAndClickOnThreeDot(locationName,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
-  				isClickOnChangeBtn = Action_Change.clickOnThreeDotActionBtnChange(driver);
+  				isClickOnChangeBtn = Action_Change.change(driver);
   			}else {
   				clickOnP360Logo_RU();
   			}
@@ -642,7 +642,7 @@ public class PO_Main_Locations extends ReUseAbleElement {
   			boolean flag = isTextNoRegionMachesCurrentFilter();
   			if(!flag) {
   				findRegionFromRowListAndClickOnThreeDot(regionName,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
-  				isClickOnChangeBtn = Action_Change.clickOnThreeDotActionBtnChange(driver);
+  				isClickOnChangeBtn = Action_Change.change(driver);
   			}else {
   				clickOnP360Logo_RU();
   			}

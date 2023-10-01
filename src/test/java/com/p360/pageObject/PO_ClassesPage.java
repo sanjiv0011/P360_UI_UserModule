@@ -518,7 +518,7 @@ public class PO_ClassesPage extends ReUseAbleElement{
 					{	
 						boolean flag = clickOnBtnCancelClass_RU(driver,listRowCount);
 						if(flag) {
-							clickOnYesButton_RU();
+							clickOnBtnYes_RU(driver);
 							String alertMsg = snakeAlertMessagesDisplayedContent_RU();
 				  			if(alertMsg.equals(alertMsgClassCanceled)) {
 				  				softAssert.assertEquals(alertMsg,alertMsgClassCanceled,"Check class canceled successfully");

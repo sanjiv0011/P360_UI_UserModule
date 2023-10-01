@@ -106,9 +106,9 @@ public class FindThreeDotAndClick {
 											if(callerMethodName.equals("findPackageBuyersUserFromList")) {
 												yourUniqueValue = firstColumnText.toLowerCase().trim(); //formatText;
 											}else {
-												yourUniqueValue = formatText;
+												yourUniqueValue = formatText.toLowerCase().trim();
 											}
-											WebElement elementFindKey = driver.findElement(By.xpath("(//div[.='"+yourUniqueValue+"'])[2]"));
+											WebElement elementFindKey = driver.findElement(By.xpath("(//*[translate(normalize-space(),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')='"+yourUniqueValue+"'])[2]"));
 											logger.info("elementFindKey_address: "+elementFindKey);
 											action.moveToElement(elementFindKey).build().perform();
 											logger.info("Mouse moved to the find searck key element: "+elementFindKey.getText());//div[.='susan5 davis5']

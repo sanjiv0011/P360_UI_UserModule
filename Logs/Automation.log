@@ -1,196 +1,206 @@
-13:35:45.429 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Search Loop Count: 11
-13:35:45.449 [main] INFO  com.p360.Actions.Action_Activate - Exception from Action_Activate: no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='Yes']"}
+17:37:13.839 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findClassRegisteredUserFromRowListAndClickOnThreeDot
+17:37:13.850 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
+17:37:13.851 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToclickOnFindSearckKey: false
+17:37:14.426 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: SA
+17:37:14.448 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: SD
+17:37:14.448 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given confirmationGiverValue not matched: susan_2 adfsadf
+17:37:15.675 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Class Registered user matched list count: 2
+17:37:15.709 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Your button address: //div[contains(text(),'View Member Details')]
+17:37:15.738 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Your button address: //div[contains(text(),'View Member Details')]
+17:37:15.760 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[3]"}
   (Session info: chrome=117.0.5938.132)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a7193715bce9f05293a4a2b2c6b09ef7, findElement {using=xpath, value=//span[normalize-space()='Yes']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58225}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58225/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a7193715bce9f05293a4a2b2c6b09ef7
-13:35:48.216 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
-13:35:49.317 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Logout Exception: element click intercepted: Element <span class="jss28 Cmt-nav-text">...</span> is not clickable at point (146, 185). Other element would receive the click: <div aria-hidden="true" style="z-index: -1; position: fixed; inset: 0px; background-color: transparent; -webkit-tap-highlight-color: transparent;"></div>
-  (Session info: chrome=117.0.5938.132)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a7193715bce9f05293a4a2b2c6b09ef7, clickElement {id=47B6D53BDA5D8E08FE9FA7DF08823A5D_element_680}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58225}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58225/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (a7193715bce9f05293a4a2b2c6b09ef7)] -> xpath: //span[normalize-space()='Dashboard']]
-Session ID: a7193715bce9f05293a4a2b2c6b09ef7
-13:35:49.810 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Driver shutdown
-13:47:56.998 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Base class started...
-13:47:59.169 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Chrome driver selected
-13:48:00.185 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Login page started
-13:48:00.312 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Maximize the window
-13:48:00.425 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Login user Email: anup@hypertrends.com  and Password: Tester123!
-13:48:00.425 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login: AdminLogin
-13:48:00.520 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
-13:48:06.682 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
-13:48:07.329 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
-13:48:07.625 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
-13:48:15.131 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
-13:48:18.318 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
-13:48:21.435 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabPackages 
-13:48:29.132 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Westwood_Package_02
-13:48:34.060 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown box address 1 to open drop list
-13:48:35.069 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectPackageStatus
-13:48:35.070 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: ALL
-13:48:35.143 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: ALL
-13:48:35.803 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
-13:48:35.804 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package status Name: ALL
-13:48:36.420 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
-13:48:37.427 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectPackageLocation
-13:48:37.427 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: WESTWOOD
-13:48:40.281 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: WESTWOOD
-13:48:40.851 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
-13:48:40.851 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package location: WESTWOOD
-13:48:41.378 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Exception from isTextNoPackageMachesCurrentFilter: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='No packages Matches Current Filter']"}
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[3]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.772 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[4]"}
   (Session info: chrome=117.0.5938.132)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54fd560ba379c72d35c8b8c0d16c6b20, findElement {using=xpath, value=//span[.='No packages Matches Current Filter']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
-13:48:41.379 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package Matched to the Current Fiter
-13:48:43.397 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findPackageFromRowListAndClickOnThreeDot
-13:48:43.397 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
-13:48:43.398 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToclickOnFindSearckKey: true
-13:48:43.984 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: WESTWOOD_PACKAGE_02
-13:48:44.369 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given value matched with the list value: WESTWOOD_PACKAGE_02
-13:48:44.438 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
-13:48:45.869 [main] INFO  com.p360.Main.pageObject.PO_Main_PackagesPage - Package matched list count: 1
-13:48:47.884 [main] INFO  com.p360.Actions.Action_Activate - Action_Activate caller method name: activatePackage
-13:48:47.938 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - count: 1
-13:48:47.939 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from : no such element: Unable to locate element: {"method":"xpath","selector":"//*[normalize-space(text()) = 'Activate']"}
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[4]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.784 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[5]"}
   (Session info: chrome=117.0.5938.132)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54fd560ba379c72d35c8b8c0d16c6b20, findElement {using=xpath, value=//*[normalize-space(text()) = 'Activate']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
-13:48:47.958 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - count: 2
-13:48:47.959 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from : no such element: Unable to locate element: {"method":"xpath","selector":"//*[normalize-space(text()) = 'Activate']"}
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[5]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.796 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[6]"}
   (Session info: chrome=117.0.5938.132)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54fd560ba379c72d35c8b8c0d16c6b20, findElement {using=xpath, value=//*[normalize-space(text()) = 'Activate']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
-13:48:47.973 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - count: 3
-13:48:47.974 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from : no such element: Unable to locate element: {"method":"xpath","selector":"//*[normalize-space(text()) = 'Activate']"}
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[6]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.809 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[7]"}
   (Session info: chrome=117.0.5938.132)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54fd560ba379c72d35c8b8c0d16c6b20, findElement {using=xpath, value=//*[normalize-space(text()) = 'Activate']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
-13:48:47.982 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - count: 4
-13:48:47.982 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from : no such element: Unable to locate element: {"method":"xpath","selector":"//*[normalize-space(text()) = 'Activate']"}
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[7]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.821 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[8]"}
   (Session info: chrome=117.0.5938.132)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54fd560ba379c72d35c8b8c0d16c6b20, findElement {using=xpath, value=//*[normalize-space(text()) = 'Activate']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
-13:48:47.991 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - count: 5
-13:48:47.991 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from : no such element: Unable to locate element: {"method":"xpath","selector":"//*[normalize-space(text()) = 'Activate']"}
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[8]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.833 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[9]"}
   (Session info: chrome=117.0.5938.132)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54fd560ba379c72d35c8b8c0d16c6b20, findElement {using=xpath, value=//*[normalize-space(text()) = 'Activate']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
-13:48:48.001 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - count: 6
-13:48:48.001 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from : no such element: Unable to locate element: {"method":"xpath","selector":"//*[normalize-space(text()) = 'Activate']"}
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[9]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.844 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[10]"}
   (Session info: chrome=117.0.5938.132)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54fd560ba379c72d35c8b8c0d16c6b20, findElement {using=xpath, value=//*[normalize-space(text()) = 'Activate']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
-13:48:48.038 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - count: 7
-13:48:48.039 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from : no such element: Unable to locate element: {"method":"xpath","selector":"//*[normalize-space(text()) = 'Activate']"}
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[10]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.855 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[11]"}
   (Session info: chrome=117.0.5938.132)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54fd560ba379c72d35c8b8c0d16c6b20, findElement {using=xpath, value=//*[normalize-space(text()) = 'Activate']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
-13:48:48.048 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - count: 8
-13:48:48.049 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from : no such element: Unable to locate element: {"method":"xpath","selector":"//*[normalize-space(text()) = 'Activate']"}
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[11]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.867 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[12]"}
   (Session info: chrome=117.0.5938.132)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54fd560ba379c72d35c8b8c0d16c6b20, findElement {using=xpath, value=//*[normalize-space(text()) = 'Activate']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
-13:48:48.056 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - count: 9
-13:48:48.056 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from : no such element: Unable to locate element: {"method":"xpath","selector":"//*[normalize-space(text()) = 'Activate']"}
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[12]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.880 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[13]"}
   (Session info: chrome=117.0.5938.132)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54fd560ba379c72d35c8b8c0d16c6b20, findElement {using=xpath, value=//*[normalize-space(text()) = 'Activate']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
-13:48:48.064 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - count: 10
-13:48:48.065 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from : no such element: Unable to locate element: {"method":"xpath","selector":"//*[normalize-space(text()) = 'Activate']"}
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[13]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.892 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[14]"}
   (Session info: chrome=117.0.5938.132)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54fd560ba379c72d35c8b8c0d16c6b20, findElement {using=xpath, value=//*[normalize-space(text()) = 'Activate']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
-13:48:48.072 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - count: 11
-13:48:48.073 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Exception from : no such element: Unable to locate element: {"method":"xpath","selector":"//*[normalize-space(text()) = 'Activate']"}
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[14]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.904 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[15]"}
   (Session info: chrome=117.0.5938.132)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54fd560ba379c72d35c8b8c0d16c6b20, findElement {using=xpath, value=//*[normalize-space(text()) = 'Activate']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
-13:48:48.073 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Search Loop Count: 11
-13:48:48.084 [main] INFO  com.p360.Actions.Action_Activate - Exception from Action_Activate: no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='Yes']"}
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[15]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.916 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[16]"}
   (Session info: chrome=117.0.5938.132)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54fd560ba379c72d35c8b8c0d16c6b20, findElement {using=xpath, value=//span[normalize-space()='Yes']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
-13:48:50.849 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
-13:48:51.907 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Logout Exception: element click intercepted: Element <span class="jss28 Cmt-nav-text">...</span> is not clickable at point (146, 185). Other element would receive the click: <div aria-hidden="true" style="z-index: -1; position: fixed; inset: 0px; background-color: transparent; -webkit-tap-highlight-color: transparent;"></div>
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[16]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.929 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[17]"}
   (Session info: chrome=117.0.5938.132)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54fd560ba379c72d35c8b8c0d16c6b20, clickElement {id=ECEEBE1DBFD135060A6DEB43E8B45904_element_681}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58684}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58684/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (54fd560ba379c72d35c8b8c0d16c6b20)] -> xpath: //span[normalize-space()='Dashboard']]
-Session ID: 54fd560ba379c72d35c8b8c0d16c6b20
-13:48:52.236 [main] INFO  com.p360.Main.testCases.TC_Main_Packages - Driver shutdown
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[17]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.942 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[18]"}
+  (Session info: chrome=117.0.5938.132)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[18]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.955 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[19]"}
+  (Session info: chrome=117.0.5938.132)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[19]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.967 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[20]"}
+  (Session info: chrome=117.0.5938.132)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[20]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:15.980 [main] INFO  com.p360.Main.pageObject.PO_Main_ClassesPage - Exception from clickOnActionListButton :no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'View Member Details')])[21]"}
+  (Session info: chrome=117.0.5938.132)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e6d36848113acc025e84b7997910c7ad, findElement {using=xpath, value=(//div[contains(text(),'View Member Details')])[21]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49182}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49182/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d36848113acc025e84b7997910c7ad
+17:37:16.185 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
+17:37:19.330 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+17:37:19.955 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the User name text 
+17:37:25.205 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the Logout button 
+17:37:25.833 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - ... LOGOUT DONE ...
+17:37:26.352 [main] INFO  com.p360.Main.testCases.TC_Main_Classes - Driver shutdown
+19:56:39.479 [main] INFO  com.p360.Main.testCases.TC_Main_Classes - Base class started...
+19:56:42.646 [main] INFO  com.p360.Main.testCases.TC_Main_Classes - Chrome driver selected
+19:57:53.679 [main] INFO  com.p360.Main.testCases.TC_Main_Classes - Login page started
+19:57:53.820 [main] INFO  com.p360.Main.testCases.TC_Main_Classes - Maximize the window
+19:57:53.874 [main] INFO  com.p360.Main.testCases.TC_Main_Classes - Login user Email: anup@hypertrends.com  and Password: Tester123!
+19:57:53.874 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login: AdminLogin
+19:57:53.983 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+19:58:26.168 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
+19:58:26.186 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Logout Exception: no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='Dashboard']"}
+  (Session info: chrome=117.0.5938.132)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [86adf2a663c7f0205a8c4a7a435a7999, findElement {using=xpath, value=//span[normalize-space()='Dashboard']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62712}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62712/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 86adf2a663c7f0205a8c4a7a435a7999
+19:58:26.940 [main] INFO  com.p360.Main.testCases.TC_Main_Classes - Driver shutdown
+19:58:39.465 [main] INFO  com.p360.Main.testCases.TC_Main_Classes - Base class started...
+19:58:41.705 [main] INFO  com.p360.Main.testCases.TC_Main_Classes - Chrome driver selected

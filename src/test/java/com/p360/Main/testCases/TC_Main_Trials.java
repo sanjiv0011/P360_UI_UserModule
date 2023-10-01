@@ -44,16 +44,22 @@ public class TC_Main_Trials extends BaseClass{
 		m_hp = m_tp.addTemplate(temlateTypes, templateTitle, templateDescription, wantToEnableGlobal, templateLocation, templateEmailSubject, templateEmailDescription);
 	}
 	
+	//TO UPADATE TEMPLATE
+	@Test(priority = 6)
+	public void test_Main_UpdatedTemplate() throws InterruptedException {
+		test_Main_FindTempalteFromListAndClickOnThreedotButton();
+		m_hp = m_tp.changeTemplate(temlateTypes, templateTitle, templateDescription, wantToEnableGlobal, templateLocation, templateEmailSubject, templateEmailDescription);
+	}
 	
 	//TO DEACTIVATE TEMPLATE
-	@Test(priority = 2)
+	//@Test(priority = 2)
 	public void test_Main_DeActivateTemplate() throws InterruptedException {
 		test_Main_FindTempalteFromListAndClickOnThreedotButton();
 		m_tp.deActivateTemplate();
 	}
 	
 	//TO ACTIVATE TEMPLATE
-	@Test(priority = 3)
+	//@Test(priority = 3)
 	public void test_Main_ActivateTemplate() throws InterruptedException {
 		test_Main_FindTempalteFromListAndClickOnThreedotButton();
 		m_tp.activateTemplate();

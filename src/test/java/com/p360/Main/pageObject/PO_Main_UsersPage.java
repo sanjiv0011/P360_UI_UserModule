@@ -738,7 +738,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   				clickOnActionButton_1_RU();
   	  			boolean bol = selectThreeDotActionMenuItem("Resume Membership");
   	  			if(bol) {
-	  	  			boolean flag = clickOnYesButton_RU();
+	  	  			boolean flag = clickOnBtnYes_RU(driver);
 	  	  			if(flag) {
   	  				String alertContent = snakeAlertMessagesDisplayedContent_RU();
   	  				if(alertContent.equalsIgnoreCase(alertMsgMembershipResumedSuccessfully)) {
@@ -885,7 +885,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   	  			
   	  			boolean bol = selectThreeDotActionMenuItem("Suspend Account");
   	  			if(bol) {
-	  	  			if(clickOnYesButton_RU()) {
+	  	  			if(clickOnBtnYes_RU(driver)) {
 	  	  				String alertContent = snakeAlertMessagesDisplayedContent_RU();
 						if(alertContent.equalsIgnoreCase(alertMsgUserAccountSuspended)) {
 							logger.info("===>>> "+alertMsgUserAccountSuspended);
@@ -914,7 +914,7 @@ public class PO_Main_UsersPage extends ReUseAbleElement {
   	  			boolean bol = selectThreeDotActionMenuItem("Unlock Account");
   	  			
   	  			if(bol) {
-	  	  			if(clickOnYesButton_RU()) {
+	  	  			if(clickOnBtnYes_RU(driver)) {
 	  	  				String alertContent = snakeAlertMessagesDisplayedContent_RU();
 						if(alertContent.equalsIgnoreCase(alertMsgUserAccountUnlocked)) {
 							logger.info("===>>> "+alertMsgUserAccountUnlocked);
