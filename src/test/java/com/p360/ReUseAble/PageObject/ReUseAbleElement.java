@@ -928,8 +928,26 @@ public class ReUseAbleElement {
   				
   			}
   		}
-  		
+  			
 	   	
+		//REMOVE BUTTON 1, P360
+  		@FindBy(xpath = "(//span[normalize-space()='Remove'])[1]")
+  		@CacheLookup
+  		public WebElement btnRemove_1_RU;
+  		public boolean clickOnBtnRemove_1_RU() throws InterruptedException {
+  			boolean flag = false;
+  			try {
+  				btnRemove_1_RU.click();
+  	  			logger.info("Clicked on the btnRemove_1_RU");
+  	  			flag = true;
+  			}catch(Exception e) {
+  				logger.info("Exception from clickOnBtnRemove_1_RU: "+e.getMessage());
+  			}
+  			return flag;
+  		}
+	  		
+  		  		
+  		  		
   		//SAVE BUTTON 1, P360
   		@FindBy(xpath = "(//span[normalize-space()='Save'])[1]")
   		@CacheLookup
@@ -1130,9 +1148,9 @@ public class ReUseAbleElement {
 	  	}
 	  	
 	 	
-
+	  
   		//TEXT FIELD DESCRITPION,P360
-  		@FindBy(xpath = "//div[@class='ql-editor ql-blank']//p")
+  		@FindBy(xpath = "//div[contains(@class,'ql-editor')]//p")
   		@CacheLookup
   		public WebElement textArea_RU;
   		public void setDescription_RU(String description) throws InterruptedException {

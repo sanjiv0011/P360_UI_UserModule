@@ -12,8 +12,8 @@
         <methods>
           <include name="Setup"/>
           <include name="Login"/>
-          <include name="test_Main_ViewClassRegisteredUserDetails"/>
           <include name="Teardown"/>
+          <include name="test_Main_RemoveClassFromBlackout"/>
           <include name="Logout"/>
         </methods>
       </class> <!-- com.p360.Main.testCases.TC_Main_Classes -->

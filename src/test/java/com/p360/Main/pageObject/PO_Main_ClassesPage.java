@@ -62,7 +62,13 @@ public class PO_Main_ClassesPage extends ReUseAbleElement {
 		public String alertMsgClassRestored = "Class Restored Successfully";
 		public String alertMsgMemberAccountPaused = "member account is paused";
 		public String alertMsgUserAddedSuccessfully = "Users added successfully.";
-
+		public String alertMsgUserRemovedFromClass = "User removed successfully.";
+		public String alertMsgCancelClass = "Class Cancelled successfully";
+		public String alertMsgNoClassAvailabe = "There is no class for this date and time";
+		public String alertMsgClassBlackout = "Class Blackout successfully";
+		public String alertMsgClassRemovedFromBlackout = "Class Removed from Blackout";
+		public String alertMsgClassOverride = "Class Override successfully";
+		
 		
 		
 		//======START======PAGE OBJECT FOR ADD CLASS AND ACTOIN METHODS==========//
@@ -79,18 +85,19 @@ public class PO_Main_ClassesPage extends ReUseAbleElement {
   			Thread.sleep(1000);
   		}
 		
-  		//BUTTON ADD CLASS INSIDE CALENDAR
-  		@FindBy(xpath = "//span[normalize-space()='Add Class']")
+  		
+  		//THREE DOT ICON BUTTON
+  		@FindBy(xpath = "(//*[name()='svg'][@class='MuiSvgIcon-root'])[3]")
   		@CacheLookup
-  		public WebElement btnAddClassInCalendar;
-  		public void clickOnBtnAddClassInCalendar() throws InterruptedException {
+  		public WebElement btnIconThreeDot;
+  		public void clickOnBtnThreeDot() throws InterruptedException {
   			Thread.sleep(2000);
-  			if(btnAddClassInCalendar.isDisplayed()) {
-  				btnAddClassInCalendar.click();
-  	  			logger.info("Clicked on the btn btnAddClass");
+  			if(btnIconThreeDot.isDisplayed()) {
+  				btnIconThreeDot.click();
+  	  			logger.info("Clicked on the btn btnIconThreeDot");
   	  			Thread.sleep(1000);
   			}else {
-  				logger.info("Button add class inside calendar not present");
+  				logger.info("Three dot button not present");
   			}
   		}
   		
@@ -106,9 +113,133 @@ public class PO_Main_ClassesPage extends ReUseAbleElement {
   			
   		}
   		
+	  	//CANCEL CLASS ACTION BUTTON
+		@FindBy(xpath = "(//div[normalize-space()='Cancel Class'])[1]")
+		@CacheLookup
+		public WebElement btnCacelClass;
+		public void clickOnBtnCancelClass() throws InterruptedException {
+			Thread.sleep(2000);
+			btnCacelClass.click();
+			logger.info("Clicked on the btn btnCacelClass");
+			Thread.sleep(1000);
+			
+		}
+		
+	  	//INNER CANCEL CLASS ACTION BUTTON
+		@FindBy(xpath = "//span[@class='MuiButton-label'][normalize-space()='Cancel Class']")
+		@CacheLookup
+		public WebElement btnInnerCacelClass;
+		public void clickOnBtnInnerCancelClass() throws InterruptedException {
+			Thread.sleep(2000);
+			btnInnerCacelClass.click();
+			logger.info("Clicked on the btn btnInnerCacelClass");
+			Thread.sleep(1000);
+			
+		}
+		
+		//CANCEL CLASS REASON
+  		@FindBy(xpath = "//textarea[@placeholder='Reason']")
+  		@CacheLookup
+  		public WebElement textAreaCancelClassReason;
+  		public void setCancelClassReason(String cancelClassReason) throws InterruptedException {
+  			wait.until(ExpectedConditions.elementToBeClickable(textAreaCancelClassReason));
+  			textAreaCancelClassReason.sendKeys(Keys.CONTROL,"a");
+  			textAreaCancelClassReason.sendKeys(Keys.DELETE);
+  			textAreaCancelClassReason.sendKeys(cancelClassReason);
+  			logger.info("Entered the cancel class reason: "+cancelClassReason);
+  			Thread.sleep(300);
+  		}
   		
   		
-  		
+		//INNER BLACKOUT THE SCHEDULE CLASS ACTION BUTTON
+		@FindBy(xpath = "//span[@class='MuiButton-label'][normalize-space()='Blackout Class']")
+		@CacheLookup
+		public WebElement btnInnerBlackoutClass;
+		public void clickOnBtnInnerBlackoutClass() throws InterruptedException {
+			try {
+				Thread.sleep(2000);
+				btnInnerBlackoutClass.click();
+				logger.info("Clicked on the btnInnerBlackoutClass");
+				Thread.sleep(1000);
+			}catch(Exception e){
+				logger.info("Exception from : "+e.getMessage());
+				softAssert.assertTrue(false,"You want to blackout the class, but {blackout} button not present");
+			
+			}
+			
+		}
+			
+		
+	  	//BLACKOUT CLASS ACTION BUTTON
+		@FindBy(xpath = "(//div[normalize-space()='Blackout Class'])[1]")
+		@CacheLookup
+		public WebElement btnBlackoutClass;
+		public void clickOnBtnBlackoutClass() throws InterruptedException {
+			try {
+				Thread.sleep(2000);
+				btnBlackoutClass.click();
+				logger.info("Clicked on the btnBlackoutClass");
+				Thread.sleep(1000);
+			}catch(Exception e) {
+				logger.info("Exception from : "+e.getMessage());
+				softAssert.assertTrue(false,"You want to blackout the class, but {blackout} button not present");
+			
+			}
+			
+		}
+		
+		//REMOVED THE CLASS  FROM BLACKOUT ACTION BUTTON
+		@FindBy(xpath = "(//div[normalize-space()='Remove from Blackout'])[1]")
+		@CacheLookup
+		public WebElement btnRemoveClassFromBlackout;
+		public void clickOnBtnRemoveFromBlackout() throws InterruptedException {
+			try {
+				Thread.sleep(2000);
+				btnRemoveClassFromBlackout.click();
+				logger.info("Clicked on the btnRemoveClassFromBlackout");
+				Thread.sleep(1000);
+			} catch(Exception e) {
+				logger.info("Exception from : "+e.getMessage());
+				softAssert.assertTrue(false,"You want to remove a form the blackout, but {remove from blackout} button not present");
+			}
+			
+		}
+		
+		//INNER REMOVED THE CLASS  FROM BLACKOUT ACTION BUTTON
+		@FindBy(xpath = "(//span[normalize-space()='Remove from Blackout'])[1]")
+		@CacheLookup
+		public WebElement btnInnerRemoveFromBlackoutClass;
+		public void clickOnBtnInnerRemoveFromBlackoutClass() throws InterruptedException {
+			try {
+				Thread.sleep(2000);
+				btnInnerRemoveFromBlackoutClass.click();
+				logger.info("Clicked on the btnInnerRemoveFromBlackoutClass");
+				Thread.sleep(1000);
+			}catch(Exception e) {
+				logger.info("Exception from : "+e.getMessage());
+				softAssert.assertTrue(false,"You want to remove a form the blackout, but {remove from blackout} button not present");
+			}
+			
+		}
+			
+	  	//BUTTON OVER RIDE CLASS ACTION BUTTON
+		@FindBy(xpath = "(//div[normalize-space()='Override Class'])[1]")
+		@CacheLookup
+		public WebElement btnOverRideClass;
+		public void clickOnBtnOverrideClass() throws InterruptedException {
+			try {
+				Thread.sleep(2000);
+				btnOverRideClass.click();
+				logger.info("Clicked on the btnOverRideClass");
+				Thread.sleep(1000);
+			}catch(Exception e) {
+				logger.info("Exception from: "+e.getMessage());
+				softAssert.assertTrue(false,"You want to override a class, but {override class} button not present");
+			}
+			
+		}
+		
+		
   		//TEXT FIELD CLASS NAME
   		@FindBy(xpath = "//input[@placeholder='Enter Class Name']")
   		@CacheLookup
@@ -160,7 +291,17 @@ public class PO_Main_ClassesPage extends ReUseAbleElement {
   		//TO SELECT THE INITIAL COACH
   		public void selectCoach(String caochName) throws InterruptedException {
   			//ruae.clickOnDropdown_3_RU();
-  			driver.findElement(By.xpath("(//button[@title='Open']//*[name()='svg'])[4]")).click();
+  			
+  			StackTraceElement stackTraceElement[] = Thread.currentThread().getStackTrace();
+  			String callerMethodName = stackTraceElement[2].getMethodName();
+  			logger.info("FindDateInCalendar caller method name: "+callerMethodName);
+  			
+  			if(callerMethodName.equals("overrideClass")) {
+  				driver.findElement(By.xpath("(//button[@title='Open']//*[name()='svg'])[1]")).click();
+  			}else {
+  				driver.findElement(By.xpath("(//button[@title='Open']//*[name()='svg'])[4]")).click();
+  			}
+  			
   			//Will avoid the stale element reference
   			Thread.sleep(500);
   			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,ruae.listOptionAddress_RU,caochName);
@@ -191,7 +332,7 @@ public class PO_Main_ClassesPage extends ReUseAbleElement {
   			Thread.sleep(300);
   		}
   		
-  		//TEXT FIELD CANCELATION CUTOFF TIME
+  		//WAIT LIST
   		@FindBy(xpath = "//input[contains(@name,'waitListSpots')]")
   		@CacheLookup
   		public WebElement fieldWaitLisSpot;
@@ -277,7 +418,15 @@ public class PO_Main_ClassesPage extends ReUseAbleElement {
   		
   		
   	
-  		
+  		//BUTTON ADD CLASS INSIDE CALENDER
+  		@FindBy(xpath = "(//span[normalize-space()='Add Class'])[1]")
+  		@CacheLookup
+  		public WebElement btnAddClassInSideCalendar;
+  		public void clickOnBtnAddClassInCalendar() throws InterruptedException {
+  			btnAddClassInSideCalendar.click();
+  			logger.info("Clicked on the btnAddClassInSideCalendar");
+  			Thread.sleep(1000);
+  		}
   		
   		
   		//BUTTON ADD
@@ -570,6 +719,42 @@ public class PO_Main_ClassesPage extends ReUseAbleElement {
 			return new PO_Main_HomePage(driver);
 		}
 				
+			
+		//REMOVE USERS FORM REGISTRED CLASS
+		public PO_Main_HomePage removeUsersFromRegisteredClass(String searchKey_memberEmail,String dateValue, String eventKey,String SearchKey_ClassRegisteredUser, int searchKeyColumnIndex_ClassRegisteredUser, boolean wantToClickOnThreeDot_ClassRegisteredUser,boolean wantToclickOnFindSearckKey_ClassRegisteredUser) throws InterruptedException
+		{
+			
+			String calendarClass_address = "//div[contains(text(),'Calendar')]";
+			clickOnActionListButton(calendarClass_address);
+			boolean bol = FindDateInCalendar.findDateInCallendar(driver, dateValue, monthYearAddress,address_BackStarTag_1_RU,address_NextStarTag_1_RU, calendarDateList);
+			if(bol) {
+				selectEventFromCallender(eventKey);
+				Thread.sleep(1000);
+				int registeredUserRowListCount = findClassRegisteredUserFromRowListAndClickOnThreeDot(SearchKey_ClassRegisteredUser,searchKeyColumnIndex_ClassRegisteredUser,wantToClickOnThreeDot_ClassRegisteredUser,wantToclickOnFindSearckKey_ClassRegisteredUser);
+  	  			Thread.sleep(1000);
+  	  			logger.info("Class Registered user matched list count: "+registeredUserRowListCount);
+  	  			
+		  		String btnRemoveUsersFromRegisteredClass = "//div[contains(text(),'Remove')]";
+				clickOnActionListButton(btnRemoveUsersFromRegisteredClass);
+				boolean clickOnBtnRemove = clickOnBtnRemove_1_RU();
+				if(clickOnBtnRemove) {
+					String alertMsg = snakeAlertMessagesDisplayedContent_RU();
+	  				if(alertMsg.contains(alertMsgUserRemovedFromClass)) {
+	  					logger.info("Users removed from the registered class");
+	  				}else {
+	  					softAssert.assertTrue(false,"You want remove users from the registered class, but it not removed");
+	  					clickOnCancelButton_1_RU();
+	  				}
+				}
+			
+			}
+			
+			softAssert.assertAll();
+			return new PO_Main_HomePage(driver);
+		}
+				
+			
+				
 				
 		//METHODS TO CLICK ON THE ACTION BUTTON
 		public boolean clickOnActionListButton(String yourAddress)
@@ -581,10 +766,12 @@ public class PO_Main_ClassesPage extends ReUseAbleElement {
 				count++;
 				try {
 					WebElement btnYour = driver.findElement(By.xpath("("+btn_address+")["+count+"]"));
-					logger.info("Your button address: "+btn_address);
+					logger.info("Your button address: "+btnYour);
 					if(btnYour.isDisplayed() && btnYour.isEnabled()) {
-						btnYour.click();
 						logger.info("Clicked on your button address: "+btnYour.getText());
+						action.moveToElement(btnYour).build().perform();
+						Thread.sleep(500);
+						btnYour.click();
 						flag = true;
 						Thread.sleep(1000);
 						break;
@@ -598,6 +785,129 @@ public class PO_Main_ClassesPage extends ReUseAbleElement {
 			}
 			return flag;
 		}
-  			
+		
+		//FIND SCHEDULE CLASSES
+		public void findScheduleClasses(String dateValue, String eventKey) throws InterruptedException
+		{
+			
+			String calendarClass_address = "//div[contains(text(),'Calendar')]";
+			clickOnActionListButton(calendarClass_address);
+			boolean bol = FindDateInCalendar.findDateInCallendar(driver, dateValue, monthYearAddress,address_BackStarTag_1_RU,address_NextStarTag_1_RU, calendarDateList);
+			if(bol) {
+				selectEventFromCallender(eventKey);
+			}
+			softAssert.assertAll();
+		}
+		
+		//TO CANCEL THE SCHEDULED CLASS
+		public PO_Main_HomePage cancelScheduleClass(String dateValue, String eventKey, String cancelClassReason) throws InterruptedException
+		{
+			findScheduleClasses(dateValue, eventKey);
+			
+			//TAKE ACTION ON SCHEDULED CLASSES
+			clickOnBtnThreeDot();
+			clickOnBtnCancelClass();
+			setCancelClassReason(cancelClassReason);
+			clickOnBtnInnerCancelClass();
+			
+			String alertMsg = snakeAlertMessagesDisplayedContent_RU();
+			if(alertMsg.equals(alertMsgCancelClass)) {
+				logger.info("Class canceled");
+			}else {
+				softAssert.assertTrue(false,"You want add a member in the class but member not added");
+				clickOnCancelButton_1_RU();
+			}
+			softAssert.assertAll();
+			return new PO_Main_HomePage(driver);
+				
+		}
+		
+		//TO BLACKOUT THE SCHEDULE CLASS
+		public PO_Main_HomePage blackOutScheduleClass(String dateValue, String eventKey) throws InterruptedException
+		{
+			findScheduleClasses(dateValue, eventKey);
+			
+			//TAKE ACTION ON SCHEDULED CLASSES
+			clickOnBtnThreeDot();
+			clickOnBtnBlackoutClass();
+			clickOnBtnInnerBlackoutClass();
+			
+			String alertMsg = snakeAlertMessagesDisplayedContent_RU();
+			if(alertMsg.equals(alertMsgClassBlackout)) {
+				logger.info("Class blackout");
+			}else if(alertMsg.equals(alertMsgNoClassAvailabe)) {
+				logger.info("You cant blackout override class");
+				softAssert.assertTrue(false,"You can't blackout the override class ");
+			}else {
+				softAssert.assertTrue(false,"You want to blackout the class, but it wan't done");
+				clickOnCancelButton_1_RU();
+			}
+			softAssert.assertAll();
+			return new PO_Main_HomePage(driver);
+				
+		}
+		
+		//TO BLACKOUT THE SCHEDULE CLASS
+		public PO_Main_HomePage removeClassFromBlackout(String dateValue, String eventKey) throws InterruptedException
+		{
+			findScheduleClasses(dateValue, eventKey);
+			
+			//TAKE ACTION ON SCHEDULED CLASSES
+			clickOnBtnThreeDot();
+			clickOnBtnRemoveFromBlackout();
+			clickOnBtnInnerRemoveFromBlackoutClass();
+			
+			String alertMsg = snakeAlertMessagesDisplayedContent_RU();
+			if(alertMsg.equals(alertMsgClassRemovedFromBlackout)) {
+				logger.info("Class removed from blackout");
+			}else {
+				softAssert.assertTrue(false,"You want to remove the class from the blackout, but it wan't done");
+				clickOnCancelButton_1_RU();
+			}
+			softAssert.assertAll();
+			return new PO_Main_HomePage(driver);
+				
+		}
+		
+		
+
+		//TO BLACKOUT THE SCHEDULE CLASS
+		public PO_Main_HomePage overrideClass(String dateValue, String eventKey,String caochName,String classCapacity,String cancelationCutOffTime, String classDescription, String waitListSpot) throws InterruptedException
+		{
+			//TO FIND SCHEDULE CLASS
+			findScheduleClasses(dateValue, eventKey);
+			
+			//TAKE ACTION ON SCHEDULED CLASSES
+			clickOnBtnThreeDot();
+			clickOnBtnOverrideClass();
+			selectCoach(caochName);
+			setClassCapacity(classCapacity);
+			setCancelationCutoffTime(cancelationCutOffTime);
+			clickOnCheckBox_1_RU();
+			setWaitListSpot(waitListSpot);
+			clickOnCheckBox_2_RU();
+			setDescription_RU(classDescription);
+			boolean flag = clickOnBtnSave_1_RU();
+			
+			if(flag) {
+				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
+				if(alertMsg.equals(alertMsgClassOverride)) {
+					logger.info("Class Override successfully");
+				}else {
+					softAssert.assertTrue(false,"You want to override a class, but it wan't done");
+					clickOnCancelButton_1_RU();
+				}
+			}else {
+				clickOnCancelButton_1_RU();
+				softAssert.assertTrue(false,"You want to override a class, but it wan't done");
+			}
+			
+			softAssert.assertAll();
+			return new PO_Main_HomePage(driver);
+				
+		}
+		
+		
+		
   		
 }

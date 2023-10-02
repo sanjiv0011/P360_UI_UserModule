@@ -50,14 +50,21 @@ public class TC_Main_Classes extends BaseClass{
 	
 	//TO ADD MEMBER IN THE CLASS
 	String searchKey_memberEmail = "susan_2@yopmail.com";
-	String dateValue = "02 October 2023";
-	String  eventKey = "1:00 PM";
+	String dateValue = "03 October 2023";
+	String  eventKey = "3:00 PM";
 	
 	//VIEW CLASS REGISTERED USER DETAILS
 	String SearchKey_ClassRegisteredUser = "susan_2 adfsadf";
 	int searchKeyColumnIndex_ClassRegisteredUser = 2;
 	boolean wantToClickOnThreeDot_ClassRegisteredUser = true;
 	boolean wantToclickOnFindSearckKey_ClassRegisteredUser = false;
+	
+	//TO CANCEL CLASS REASON
+	String cancelClassReason = faker.lorem().paragraph();
+	
+	
+	
+	
 	
 	//TO ADD CLASS
 	//@Test(priority = 1)
@@ -110,19 +117,58 @@ public class TC_Main_Classes extends BaseClass{
 	}
 		
 	//TO VIEW CLASS REGISTERED USER DETAILS
-	@Test(priority = 8)
+	//@Test(priority = 8)
 	public void test_Main_ViewClassRegisteredUserDetails() throws InterruptedException {
 		test_Main_FindClassesFromListAndClickOnThreedotButton();
-		//m_cp.addMemberInClass(searchKey_memberEmail,dateValue, eventKey);
 		m_cp.veiwClassRegisteredMemberDetails(searchKey_memberEmail,dateValue, eventKey,SearchKey_ClassRegisteredUser, searchKeyColumnIndex_ClassRegisteredUser, wantToClickOnThreeDot_ClassRegisteredUser,wantToclickOnFindSearckKey_ClassRegisteredUser);
 
+	}
+		
+	//REOMVE USERS FROMS THE REGISTERED CLASS
+	//@Test(priority = 9)
+	public void test_Main_RemovedRegisteredUsersFromClass() throws InterruptedException {
+		test_Main_FindClassesFromListAndClickOnThreedotButton();
+		m_cp.removeUsersFromRegisteredClass(searchKey_memberEmail,dateValue, eventKey,SearchKey_ClassRegisteredUser, searchKeyColumnIndex_ClassRegisteredUser, wantToClickOnThreeDot_ClassRegisteredUser,wantToclickOnFindSearckKey_ClassRegisteredUser);
+
+	}	
+		
+	//CANCEL THE REGISTERED CLASS
+	//@Test(priority = 10)
+	public void test_Main_CancelScheduleClass() throws InterruptedException {
+		test_Main_FindClassesFromListAndClickOnThreedotButton();
+		m_cp.cancelScheduleClass(dateValue, eventKey, cancelClassReason);
+
+	}
+		
+	//BLACKOUT THE SCHEDULED CLASS
+	//@Test(priority = 11)
+	public void test_Main_BlackoutScheduleClass() throws InterruptedException {
+		test_Main_FindClassesFromListAndClickOnThreedotButton();
+		m_cp.blackOutScheduleClass(dateValue, eventKey);
+
+	}	
+	
+	//BLACKOUT THE SCHEDULED CLASS
+	//@Test(priority = 11)
+	public void test_Main_RemoveClassFromBlackout() throws InterruptedException {
+		test_Main_FindClassesFromListAndClickOnThreedotButton();
+		m_cp.removeClassFromBlackout(dateValue, eventKey);
+
+	}	
+	
+	//OVERRIDE A CLASS
+	@Test(priority = 12)
+	public void test_Main_OverrideClass() throws InterruptedException {
+		test_Main_FindClassesFromListAndClickOnThreedotButton();
+		m_cp.overrideClass(dateValue, eventKey,coachName,classCapacity,cancelationCutOffTime, description, waitListSpot);
 	}
 		
 		
 		
 	
+	
 	//TO FIND CLASSES AND CLICK ON THE THREE DOT BUTTON
-	//@Test(priority = 10)
+	//@Test(priority = 15)
 	public void test_Main_FindClassesFromListAndClickOnThreedotButton() throws InterruptedException {
 		m_cp = callMeBeforePerformAnyAction();
 		m_cp.findClassesAndClickOnThreeDot(SearchKey_Classes,searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey,coachName2, classLocation2);
