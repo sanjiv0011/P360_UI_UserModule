@@ -60,9 +60,8 @@ public class PO_Main_MovementsPage extends ReUseAbleElement {
 		public String alertMsgMovementActivated = "Status Changed Successfully.";
 		public String alertMsgMovementUpdated = "Movement Updated Successfully";
 		
-		public String alertMsgWorkoutAssigned = "Workout assigned";
-		public String alertMsgWorkoutAlreadyExist = "Workout already exists";
-		public String alertMsgWorkoutRemoved = "workout removed";
+		public String alertMsgMovementAssigned = "Movement assigned";
+		public String alertMsgMovementRemoved = "Movement removed";
 	
 		
 		//======START======PAGE OBJECT FOR MOVEMENT AND ACTOIN METHODS==========//
@@ -91,7 +90,7 @@ public class PO_Main_MovementsPage extends ReUseAbleElement {
   		@FindBy(xpath = "//input[@name='title']")
   		@CacheLookup
   		public WebElement fieldMovementName;
-  		public void setWorkoutName(String MovementName) throws InterruptedException {
+  		public void setMovementName(String MovementName) throws InterruptedException {
   			wait.until(ExpectedConditions.elementToBeClickable(fieldMovementName));
   			fieldMovementName.sendKeys(Keys.CONTROL,"a");
   			fieldMovementName.sendKeys(Keys.DELETE);
@@ -217,24 +216,22 @@ public class PO_Main_MovementsPage extends ReUseAbleElement {
   		//CALENDAR MONTH YAER ADDRESS
   		public String monthYearAddress = "//span[@class='rbc-toolbar-label']";
   		
-  		//TO SELECT THE WORKOUT
-  		public void selectWorkout(String workoutName) throws InterruptedException {
+  		//TO SELECT THE MOVEMENT
+  		public void selectMovement(String movementName) throws InterruptedException {
   			ruae.clickOnDropdown_1_RU(driver);
-  			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,ruae.listOptionAddress_RU,workoutName);
-  			logger.info("Selected workout from the list: "+workoutName);
+  			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,ruae.listOptionAddress_RU,movementName);
+  			logger.info("Selected Movement from the list: "+movementName);
   			Thread.sleep(500);
   		}
   		
-  		//ASSIGNED WORKOUT LIST ADDRESS AND ACTION BUTTON
+  		//ASSIGNED MOVEMENT LIST ADDRESS AND ACTION BUTTON
   		@FindBy(xpath = "//div[contains(@class,'flex flex-col mt-5 gap-3')]//div[contains(@class,'bg-red')]")
   		@CacheLookup
-  		public List <WebElement> assignedWorkoutList;
-  		public String assignedWorkoutListAddress = "//div[contains(@class,'flex flex-col mt-5 gap-3')]//div[contains(@class,'bg-red')]";
+  		public List <WebElement> assignedMovementList;
+  		public String assignedMovementListAddress = "//div[contains(@class,'flex flex-col mt-5 gap-3')]//div[contains(@class,'bg-red')]";
   		
   		//DELETE BOX ADDRESS
   		public String deleteBox_address = "//*[name()='svg'][@class='MuiSvgIcon-root cursor-pointer']";
-  		
-  	
   		
   		//======END======PAGE OBJECT FOR ADD MOVEMENT ACTOIN METHODS==========//
   				
@@ -247,7 +244,7 @@ public class PO_Main_MovementsPage extends ReUseAbleElement {
   			String callerMethodName = stackTraceElement[2].getMethodName();
   			logger.info("addOrChangeWorkout caller method name: "+callerMethodName);
   			
-  			if(callerMethodName.equals("test_Main_UpdateWorkout")) {
+  			if(callerMethodName.equals("test_Main_UpdateMovement")) {
   				Action_Change.change(driver);
   			}else {
   				clickOnBtnMovementListing();
@@ -255,7 +252,7 @@ public class PO_Main_MovementsPage extends ReUseAbleElement {
   	  			clickOnBtnAddMovement();
   	  			Thread.sleep(1000);
   	  			//NOT CHANGING MOVEMENT NAME WHILE UPDATE/CHANGE
-  	  			setWorkoutName(movementName);
+  	  			setMovementName(movementName);
   			}
   			
   			
@@ -271,7 +268,13 @@ public class PO_Main_MovementsPage extends ReUseAbleElement {
   				Thread.sleep(300);
   			}
   			
-  			boolean flag = clickOnBtnSaveAndClose();
+  			boolean flag = false;
+  			if(callerMethodName.equals("test_Main_UpdateMovement")) {
+  				flag = clickOnBtnSaveChangesSpan_RU();
+  			}else {
+  				flag = clickOnBtnSaveAndClose();
+  			}
+  			
   			if(flag) {
   				if(isRequiredOrInvalidMessageDisplayed_RU()) {
   					clickOnCancelButton_1_RU();
@@ -331,23 +334,21 @@ public class PO_Main_MovementsPage extends ReUseAbleElement {
   			return new PO_Main_HomePage(driver);
   		}
   		
-  		//TO ASSIGN WORKOUT TO DATE
-  		public PO_Main_HomePage assignWorkoutToDate(String dateValue,String wantToClickOnDateOrDateBox,String workoutName) throws InterruptedException 
+  		//TO ASSIGN MOVEMENT TO DATE
+  		public PO_Main_HomePage assignMovementToDate(String dateValue,String wantToClickOnDateOrDateBox,String movementName) throws InterruptedException 
   		{
   			boolean bol = FindDateInCalendar.findDateInCallendar(driver, dateValue, monthYearAddress,address_BackStarTag_1_RU,address_NextStarTag_1_RU, calendarDateList,wantToClickOnDateOrDateBox);
   			if(bol) 
   			{
-  				selectWorkout(workoutName);
+  				selectMovement(movementName);
   				if(clickOnAdd_RU())
   				{
   					String alertMsg = snakeAlertMessagesDisplayedContent_RU();
-  	  				if(alertMsg.equals(alertMsgWorkoutAssigned)) {
+  	  				if(alertMsg.equals(alertMsgMovementAssigned)) {
   	  					logger.info("Workout assigened");
-  	  					softAssert.assertEquals(alertMsg, alertMsgWorkoutAssigned,"Workout assigend successfully");
-  	  				}else if(alertMsg.equals(alertMsgWorkoutAlreadyExist)){
-  	  					softAssert.assertTrue(false,"Workout already assigned");
+  	  					softAssert.assertEquals(alertMsg, alertMsgMovementAssigned,"Movement assigend successfully");
   	  				}else {
-  	  					softAssert.assertTrue(false,"Workout not assigned");
+  	  					softAssert.assertTrue(false,"Movement not assigned");
   	  				}
   				}
   				clickOnBtnCross_1_RU();
@@ -358,21 +359,21 @@ public class PO_Main_MovementsPage extends ReUseAbleElement {
   		}
   		
   		
-  		//TO REMOVED ASSIGN WORKOUT FROM THE DATE
-  		public PO_Main_HomePage removeWorkoutFromDate(String dateValue,String wantToClickOnDateOrDateBox,String workoutName,String searchKey,int searchKeyColumnIndex, boolean wantToClickOnDeleteBox, boolean wantToclickOnFindSearckKey) throws InterruptedException 
+  		//TO REMOVED ASSIGN MOVEMENT FROM THE DATE
+  		public PO_Main_HomePage removeMovementFromDate(String dateValue,String wantToClickOnDateOrDateBox,String movementName,String searchKey,int searchKeyColumnIndex, boolean wantToClickOnDeleteBox, boolean wantToclickOnFindSearckKey) throws InterruptedException 
   		{
   			boolean bol = FindDateInCalendar.findDateInCallendar(driver,dateValue, monthYearAddress,address_BackStarTag_1_RU,address_NextStarTag_1_RU, calendarDateList,wantToClickOnDateOrDateBox);
   			if(bol) 
   			{
-  				FindDeleteBoxFromListAndClick.findDeleteBoxButtonAndClick(assignedWorkoutListAddress, assignedWorkoutList, driver, searchKey,searchKeyColumnIndex, wantToClickOnDeleteBox, wantToclickOnFindSearckKey);
+  				FindDeleteBoxFromListAndClick.findDeleteBoxButtonAndClick(assignedMovementListAddress, assignedMovementList, driver, searchKey,searchKeyColumnIndex, wantToClickOnDeleteBox, wantToclickOnFindSearckKey);
   				if(clickOnBtnYes_RU(driver))
   				{
   					String alertMsg = snakeAlertMessagesDisplayedContent_RU();
-  	  				if(alertMsg.equals(alertMsgWorkoutRemoved)) {
-  	  					logger.info("Workout assigened");
-  	  					softAssert.assertEquals(alertMsg, alertMsgWorkoutRemoved,"Workout removed from the assigned date successfully");
+  	  				if(alertMsg.equals(alertMsgMovementRemoved)) {
+  	  					logger.info("Movement assigened");
+  	  					softAssert.assertEquals(alertMsg, alertMsgMovementRemoved,"Movement removed from the assigned date successfully");
   	  				}else {
-  	  					softAssert.assertTrue(false,"Workout not removed from the assigned date successfully.");
+  	  					softAssert.assertTrue(false,"Movement not removed from the assigned date successfully.");
   	  				}
   				}
   				clickOnBtnCross_1_RU();

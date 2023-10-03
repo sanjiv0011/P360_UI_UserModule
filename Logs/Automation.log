@@ -126,3 +126,159 @@ Session ID: 7e2ef23f0f30f47a8d4f26c6524154a9
 17:11:32.280 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the Logout button 
 17:11:32.854 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - ... LOGOUT DONE ...
 17:11:33.309 [main] INFO  com.p360.Main.testCases.TC_Main_Movements - Driver shutdown
+17:19:49.879 [main] INFO  com.p360.Main.testCases.TC_Main_Movements - Base class started...
+17:19:52.328 [main] INFO  com.p360.Main.testCases.TC_Main_Movements - Chrome driver selected
+17:19:53.193 [main] INFO  com.p360.Main.testCases.TC_Main_Movements - Login page started
+17:19:53.325 [main] INFO  com.p360.Main.testCases.TC_Main_Movements - Maximize the window
+17:19:53.414 [main] INFO  com.p360.Main.testCases.TC_Main_Movements - Login user Email: anup@hypertrends.com  and Password: Tester123!
+17:19:53.414 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login: AdminLogin
+17:19:53.515 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+17:19:58.523 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+17:19:59.147 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+17:19:59.439 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+17:20:04.486 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+17:20:07.641 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+17:20:10.753 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabMovement 
+17:20:15.876 [main] INFO  com.p360.Main.pageObject.PO_Main_MovementsPage - Clicked on the btnMovementListing
+17:20:18.315 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: WESTWOOK MOVEMENT CONCEPCION
+17:20:27.379 [main] INFO  com.p360.Main.pageObject.PO_Main_MovementsPage - Searched Movement is matched with the applied fileter
+17:20:27.379 [main] INFO  com.p360.Main.pageObject.PO_Main_MovementsPage - Exception from : invalid selector: Unable to locate an element with the xpath expression //*[.='No Movements Matches Current Filter because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[.='No Movements Matches Current Filter' is not a valid XPath expression.
+  (Session info: chrome=117.0.5938.132)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7be40342ba9fd71abb657aa813400aba, findElement {using=xpath, value=//*[.='No Movements Matches Current Filter}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56321}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56321/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7be40342ba9fd71abb657aa813400aba
+17:20:29.404 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: findMovementFromRowListAndClickOnThreeDot
+17:20:29.404 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnThreeDot: true
+17:20:29.404 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToclickOnFindSearckKey: false
+17:20:29.997 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: WESTWOOK MOVEMENT CONCEPCION
+17:20:30.376 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given value matched with the list value: WESTWOOK MOVEMENT CONCEPCION
+17:20:30.437 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the three dot option button
+17:20:30.864 [main] INFO  com.p360.Main.pageObject.PO_Main_MovementsPage - addOrChangeWorkout caller method name: test_Main_UpdateMovement
+17:20:30.869 [main] INFO  com.p360.Actions.Action_Archive - Action_Change caller method name: addOrChangeMovement
+17:20:31.480 [main] INFO  com.p360.Actions.Action_Archive - Is change button displayed and enabled: true
+17:20:31.480 [main] INFO  com.p360.Actions.Action_Archive - btnChange_address:- (//*[contains(normalize-space(text()),'Change')])[1]
+17:20:31.608 [main] INFO  com.p360.Actions.Action_Archive - rowListCount: 1
+17:20:32.062 [main] INFO  com.p360.Actions.Action_Archive - Clicked on the Change action button present under three dots
+17:20:35.430 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Entered the  textArea_1_RU: movementDescription: Est placeat distinctio dolorum. Recusandae tempore iure. In voluptatem dolores a consequatur asperiores unde blanditiis. Optio culpa tempore et voluptatem quia.
+17:20:35.808 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Check box already selected
+17:20:36.217 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox 1
+17:20:36.751 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Check box already selected
+17:20:37.158 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 3
+17:20:37.221 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Check box already selected
+17:20:37.629 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 4
+17:20:37.676 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Check box already selected
+17:20:38.082 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 5
+17:20:38.162 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Check box already selected
+17:20:38.571 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 6
+17:20:38.632 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Check box already selected
+17:20:39.044 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 7
+17:20:39.101 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Check box already selected
+17:20:39.523 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 8
+17:20:39.559 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Check box already selected
+17:20:39.983 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 9
+17:20:40.046 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Check box already selected
+17:20:40.452 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 10
+17:20:41.003 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Check box already selected
+17:20:41.424 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox 2
+17:20:41.823 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the save changes(Span Tab) button
+17:20:42.567 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 21
+17:20:42.567 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:20:42.567 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Movement Updated Successfully
+17:20:43.082 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+  (Session info: chrome=117.0.5938.132)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7be40342ba9fd71abb657aa813400aba, findElement {using=xpath, value=//div[@role="alert"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56321}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56321/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7be40342ba9fd71abb657aa813400aba
+17:20:45.091 [main] INFO  com.p360.Main.pageObject.PO_Main_MovementsPage - Workout updated
+17:20:45.132 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
+17:20:48.285 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+17:20:48.869 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the User name text 
+17:20:53.438 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the Logout button 
+17:20:54.036 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - ... LOGOUT DONE ...
+17:20:54.412 [main] INFO  com.p360.Main.testCases.TC_Main_Movements - Driver shutdown
+17:38:48.731 [main] INFO  com.p360.Main.testCases.TC_Main_Movements - Base class started...
+17:38:50.877 [main] INFO  com.p360.Main.testCases.TC_Main_Movements - Chrome driver selected
+17:38:51.818 [main] INFO  com.p360.Main.testCases.TC_Main_Movements - Login page started
+17:38:51.951 [main] INFO  com.p360.Main.testCases.TC_Main_Movements - Maximize the window
+17:38:52.039 [main] INFO  com.p360.Main.testCases.TC_Main_Movements - Login user Email: anup@hypertrends.com  and Password: Tester123!
+17:38:52.039 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login: AdminLogin
+17:38:52.153 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+17:38:57.261 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+17:38:57.833 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+17:38:58.150 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+17:39:04.023 [main] INFO  com.p360.pageObject.PO_LoginPage - ...LOGIN DONE...
+17:39:07.177 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+17:39:10.292 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabMovement 
+17:39:15.309 [main] INFO  com.p360.projectUtility.FindDateInCalendar - FindDateInCalendar caller method name: assignMovementToDate
+17:39:15.310 [main] INFO  com.p360.projectUtility.FindDateInCalendar - inputMonthYear : October 2023
+17:39:15.365 [main] INFO  com.p360.projectUtility.FindDateInCalendar - Year matched: 2023
+17:39:15.365 [main] INFO  com.p360.projectUtility.FindDateInCalendar - Displayed month: October and year: 2023
+17:39:15.365 [main] INFO  com.p360.projectUtility.FindDateInCalendar - selected month name is: October
+17:39:15.768 [main] INFO  com.p360.projectUtility.FindDateInCalendar - Entered inside [if block], matched list value: 17
+17:39:17.494 [main] INFO  com.p360.projectUtility.FindDateInCalendar - Clicked on the date box
+17:39:19.673 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
+17:39:20.685 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Enter inside method selectOptionFromDropdown and caller method's name: selectMovement
+17:39:20.685 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Value that user want to select from the dropdown list: Westwook movement Concepcion
+17:39:24.949 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Entered inside [if block], matched list value: Westwook movement Concepcion
+17:39:25.589 [main] INFO  com.p360.projectUtility.Generic_Method_ToSelect_Bootstrap_Dropdown - Click on the element
+17:39:25.589 [main] INFO  com.p360.Main.pageObject.PO_Main_MovementsPage - Selected Movement from the list: Westwook movement Concepcion
+17:39:26.228 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Is Displeyed and Clicked on the button add : true
+17:39:26.889 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 74
+17:39:26.890 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:39:26.902 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Movement assigned
+17:39:27.402 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+  (Session info: chrome=117.0.5938.132)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [89c21988e79d15291b044778f2a2800a, findElement {using=xpath, value=//div[@role="alert"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57001}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57001/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 89c21988e79d15291b044778f2a2800a
+17:39:29.406 [main] INFO  com.p360.Main.pageObject.PO_Main_MovementsPage - Workout assigened
+17:39:29.513 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the cross button icon 1
+17:39:33.026 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabDashboard 
+17:39:36.213 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - clickOntabMovement 
+17:39:41.227 [main] INFO  com.p360.projectUtility.FindDateInCalendar - FindDateInCalendar caller method name: removeMovementFromDate
+17:39:41.227 [main] INFO  com.p360.projectUtility.FindDateInCalendar - inputMonthYear : October 2023
+17:39:41.269 [main] INFO  com.p360.projectUtility.FindDateInCalendar - Year matched: 2023
+17:39:41.269 [main] INFO  com.p360.projectUtility.FindDateInCalendar - Displayed month: October and year: 2023
+17:39:41.269 [main] INFO  com.p360.projectUtility.FindDateInCalendar - selected month name is: October
+17:39:41.621 [main] INFO  com.p360.projectUtility.FindDateInCalendar - Entered inside [if block], matched list value: 17
+17:39:43.362 [main] INFO  com.p360.projectUtility.FindDateInCalendar - Clicked on the date box
+17:39:45.379 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - findThreedActionButtonAndClick method called and Caller method name: removeMovementFromDate
+17:39:45.380 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToClickOnDeleteBox: true
+17:39:45.380 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - wantToclickOnFindSearckKey: false
+17:39:45.967 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - formatText: Westwook movement Concepcion
+17:39:46.327 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Given value matched with the list value: Westwook movement Concepcion
+17:39:46.377 [main] INFO  com.p360.projectUtility.FindThreeDotBasedOnSearchKeyAndClick - Clicked on the delete box button
+17:39:46.931 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+17:39:47.719 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 88
+17:39:47.720 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:39:47.733 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Movement removed
+17:39:48.249 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role="alert"]"}
+  (Session info: chrome=117.0.5938.132)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [89c21988e79d15291b044778f2a2800a, findElement {using=xpath, value=//div[@role="alert"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57001}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57001/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 89c21988e79d15291b044778f2a2800a
+17:39:50.250 [main] INFO  com.p360.Main.pageObject.PO_Main_MovementsPage - Movement assigened
+17:39:50.351 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the cross button icon 1
+17:39:50.667 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Method called: AdminLogout
+17:39:53.838 [main] INFO  com.p360.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Menu Dashboard
+17:39:54.434 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the User name text 
+17:39:59.487 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the Logout button 
+17:40:00.074 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - ... LOGOUT DONE ...
+17:40:00.476 [main] INFO  com.p360.Main.testCases.TC_Main_Movements - Driver shutdown

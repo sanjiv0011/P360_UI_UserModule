@@ -11,9 +11,9 @@ import com.p360.pageObject.PO_HomePage;
 import com.p360.pageObject.PO_LoginPage;
 import com.p360.testCases.BaseClass;
 
-public class TC_Main_Movements extends BaseClass{
+public class TC_Main_PromoCodes extends BaseClass{
 	//HOME PAGE CONSTRUCTOR
-	public TC_Main_Movements() {
+	public TC_Main_PromoCodes() {
 		super();
 	}
 	
