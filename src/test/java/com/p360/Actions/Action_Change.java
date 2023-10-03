@@ -41,7 +41,7 @@ public class Action_Change {
 			{
 				loopcount++;
 				try {
-					btnChange_address = "(//*[normalize-space(text())='Change'])["+rowListCount+"]";
+					btnChange_address = "(//*[contains(normalize-space(text()),'Change')])["+rowListCount+"]";
 		  			//logger.info("btnChange_address:- "+btnChange_address);
 		  			btnChange = driver.findElement(By.xpath(btnChange_address));
 				}catch(Exception e) {

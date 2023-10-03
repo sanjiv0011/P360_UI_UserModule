@@ -21,7 +21,7 @@ public class FindDateInCalendar {
 	public static JavascriptExecutor jsExecutor;
 
 	
-	 public static boolean findDateInCallendar(WebDriver driver, String dateValue, String monthYearAddress,String backButtonAddress,String nextButtonAddress, List<WebElement> path_DateList) throws InterruptedException 
+	 public static boolean findDateInCallendar(WebDriver driver, String dateValue, String monthYearAddress,String backButtonAddress,String nextButtonAddress, List<WebElement> path_DateList,String wantToClickOnDateOrDateBox) throws InterruptedException 
 	 {	
 		StackTraceElement stackTraceElement[] = Thread.currentThread().getStackTrace();
 		String callerMethodName = stackTraceElement[2].getMethodName();
@@ -119,10 +119,17 @@ public class FindDateInCalendar {
 					if (element.isEnabled() && element.isDisplayed())
 					{
 						Thread.sleep(300);
-						logger.info("Click on the element: "+element.getText());
 						action.moveToElement(element).build().perform();
 						Thread.sleep(1000);
-						element.click();
+						
+						if(wantToClickOnDateOrDateBox.equals("date")) {
+							element.click();
+							logger.info("Clicked on the given date");
+						}else if(wantToClickOnDateOrDateBox.equals("dateBox")){
+							action.moveToElement(element, 10, -10).click().build().perform();
+							logger.info("Clicked on the date box");
+						}
+						
 						Thread.sleep(2000);
 						flag = true;
 						break;
@@ -141,6 +148,37 @@ public class FindDateInCalendar {
         softAssert.assertAll();
         return flag;
 	   
-}
+      
+	 }
+	 
+	 public static boolean clickOnCalendarDateBox(WebDriver driver, String datebox_address, String dateOnly) 
+	{
+		boolean flag  = false;
+		List <WebElement> options = driver.findElements(By.xpath(datebox_address));
+		for (WebElement element : options)
+		{	logger.info("Calendar date box items: "+element.getText());
+			String calendarDate[] = element.getText().split(" ");
+			
+			if (calendarDate[0].equalsIgnoreCase(dateOnly) || calendarDate[0].contains(dateOnly.trim()))
+			{
+				logger.info("Entered inside [if block], matched list value: " + element.getText());
+				try
+				{
+					Thread.sleep(500);
+					action.moveToElement(element).click().build().perform();
+					Thread.sleep(500);
+					flag = true;
+					logger.info("Click on the element");
+				}
+				catch (Exception e){
+					logger.info("Exception While selecting list from the Calendar date: " + e.getMessage());
+				}
+				flag = true;
+				break;
+			}
+		}
+		
+		return flag;
+	}
 }
 	 

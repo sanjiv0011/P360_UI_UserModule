@@ -520,7 +520,7 @@ public class PO_Main_ClassesPage extends ReUseAbleElement {
   			if(clickOnCheckBox_1_RU()) {
   				setWaitListSpot(waitListSpot);
   			}
-  			setDescription_RU(description);
+  			setDescription_1_RU(description);
   			if(clickOnBtnNext_1_RU()) {
   				
   				if(isRequiredOrInvalidMessageDisplayed_RU()) {
@@ -655,7 +655,7 @@ public class PO_Main_ClassesPage extends ReUseAbleElement {
 			
 			String calendarClass_address = "//div[contains(text(),'Calendar')]";
 			clickOnActionListButton(calendarClass_address);
-			boolean bol = FindDateInCalendar.findDateInCallendar(driver, dateValue, monthYearAddress,address_BackStarTag_1_RU,address_NextStarTag_1_RU, calendarDateList);
+			boolean bol = FindDateInCalendar.findDateInCallendar(driver, dateValue, monthYearAddress,address_BackStarTag_1_RU,address_NextStarTag_1_RU, calendarDateList,"date");
 			if(bol) {
 				selectEventFromCallender(eventKey);
 			}else {
@@ -693,7 +693,7 @@ public class PO_Main_ClassesPage extends ReUseAbleElement {
 			
 			String calendarClass_address = "//div[contains(text(),'Calendar')]";
 			clickOnActionListButton(calendarClass_address);
-			boolean bol = FindDateInCalendar.findDateInCallendar(driver, dateValue, monthYearAddress,address_BackStarTag_1_RU,address_NextStarTag_1_RU, calendarDateList);
+			boolean bol = FindDateInCalendar.findDateInCallendar(driver, dateValue, monthYearAddress,address_BackStarTag_1_RU,address_NextStarTag_1_RU, calendarDateList,"date");
 			if(bol) {
 				selectEventFromCallender(eventKey);
 				Thread.sleep(1000);
@@ -726,7 +726,7 @@ public class PO_Main_ClassesPage extends ReUseAbleElement {
 			
 			String calendarClass_address = "//div[contains(text(),'Calendar')]";
 			clickOnActionListButton(calendarClass_address);
-			boolean bol = FindDateInCalendar.findDateInCallendar(driver, dateValue, monthYearAddress,address_BackStarTag_1_RU,address_NextStarTag_1_RU, calendarDateList);
+			boolean bol = FindDateInCalendar.findDateInCallendar(driver, dateValue, monthYearAddress,address_BackStarTag_1_RU,address_NextStarTag_1_RU, calendarDateList, "date");
 			if(bol) {
 				selectEventFromCallender(eventKey);
 				Thread.sleep(1000);
@@ -792,7 +792,7 @@ public class PO_Main_ClassesPage extends ReUseAbleElement {
 			
 			String calendarClass_address = "//div[contains(text(),'Calendar')]";
 			clickOnActionListButton(calendarClass_address);
-			boolean bol = FindDateInCalendar.findDateInCallendar(driver, dateValue, monthYearAddress,address_BackStarTag_1_RU,address_NextStarTag_1_RU, calendarDateList);
+			boolean bol = FindDateInCalendar.findDateInCallendar(driver, dateValue, monthYearAddress,address_BackStarTag_1_RU,address_NextStarTag_1_RU, calendarDateList, "date");
 			if(bol) {
 				selectEventFromCallender(eventKey);
 			}
@@ -886,7 +886,7 @@ public class PO_Main_ClassesPage extends ReUseAbleElement {
 			clickOnCheckBox_1_RU();
 			setWaitListSpot(waitListSpot);
 			clickOnCheckBox_2_RU();
-			setDescription_RU(classDescription);
+			setDescription_1_RU(classDescription);
 			boolean flag = clickOnBtnSave_1_RU();
 			
 			if(flag) {

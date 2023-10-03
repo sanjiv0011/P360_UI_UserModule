@@ -488,17 +488,24 @@ public class DatePicker{
 		                    System.out.println("dateCssValue: "+dateCssValue[0]);
 		                    
 		                    try {
-			                    if(dateCssValue[0].equals("animation")) {
-			                    	logger.info("User given date is not clickable: "+dt);
-			                    	softAssert.assertTrue(false,"User given date is not clickable: "+dt+" ==>>");
-			                    }else if(dateCssValue[0].equals("background") || dateCssValue[0].equals("baseline") || dateCssValue[0].equals("backface")|| dateCssValue[0].equals("app")){
+			                    if(dateCssValue[0].equals("background") || dateCssValue[0].equals("baseline") || dateCssValue[0].equals("backface")|| dateCssValue[0].equals("app")){
 			                    	Thread.sleep(500);
 			                    	dateElement.click();
 			                    	flag2 = true;
 			                    	logger.info("Clicked on the given date: "+dt);
 			                    	Thread.sleep(500);
 			                    	softAssert.assertTrue(true,"User given date is clickable: "+dt+" ==>>");
-			                    }
+			                    }else if(callerMethodName.equals("setWorkoutPublishDate") && dateCssValue[0].equals("animation")) {
+			                    	Thread.sleep(500);
+			                    	dateElement.click();
+			                    	flag2 = true;
+			                    	logger.info("Clicked on the given date: "+dt);
+			                    	Thread.sleep(500);
+			                    	softAssert.assertTrue(true,"User given date is clickable: "+dt+" ==>>");
+			                    }else if(dateCssValue[0].equals("animation")) {
+			                    	logger.info("User given date is not clickable: "+dt);
+			                    	softAssert.assertTrue(false,"User given date is not clickable: "+dt+" ==>>");
+			                    } 
 		                	}catch(AssertionError ae) {
 			                	logger.info("AssertionError while date selection: "+ae.getMessage());
 			                	softAssert.assertTrue(flag2,"AssertionError:- User given date is NOT clickable: "+dt+" ==>>");

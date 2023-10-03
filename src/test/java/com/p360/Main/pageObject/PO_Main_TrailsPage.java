@@ -223,7 +223,7 @@ public class PO_Main_TrailsPage extends ReUseAbleElement {
   			}else if(temlateTypes.equals("Email")) {
   				clickOnBtnEmail();
   				setEmailSubject(templateEmailSubject);
-  				setDescription_RU(templateEmailDescription);
+  				setDescription_1_RU(templateEmailDescription);
   				if(wantToEnableGlobal) {
   					clickOnCheckBox_1_RU();
   				}else {

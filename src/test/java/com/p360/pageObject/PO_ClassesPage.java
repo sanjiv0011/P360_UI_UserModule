@@ -349,7 +349,6 @@ public class PO_ClassesPage extends ReUseAbleElement{
 //		@CacheLookup
 //		public List <WebElement> listRegion;
 		public String listRegion = "//div[contains(@class,\"grid\")]//div";
-		
 	    public void selectRegion(String regionName) throws InterruptedException {
 			//wait.until(ExpectedConditions.invisibilityOfAllElements(listRegion));
 			Thread.sleep(2000);
@@ -361,7 +360,6 @@ public class PO_ClassesPage extends ReUseAbleElement{
 //		@FindBy(xpath = "//div[contains(@class,\"grid\")]//div")
 //		@CacheLookup
 //		public List <WebElement> listLocation;
-	    
 	    public String listLocation = "//div[contains(@class,\"grid\")]//div";
 		public void selectLocation(String locationName) throws InterruptedException {
 			Thread.sleep(2000);

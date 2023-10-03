@@ -227,6 +227,7 @@ public class PO_MembershipPage extends ReUseAbleElement{
 		logger.info("Clicked on the custome date selector icon");
 		Thread.sleep(500);
 	}
+	
 	//TO SELECT THE CUSTOME DATE
 	public void setNewSubsriptionDate(String Customdate) throws Throwable {
 		clickOnIconDateNewSubscription();

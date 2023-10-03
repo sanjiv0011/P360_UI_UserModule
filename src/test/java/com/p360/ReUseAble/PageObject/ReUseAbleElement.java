@@ -519,12 +519,72 @@ public class ReUseAbleElement {
 		@FindBy(xpath = "(//input[@type='checkbox'])[2]")
 		@CacheLookup
 		WebElement checkBox_2_RU;
-		public void clickOnCheckBox_2_RU() throws InterruptedException{
-			checkBox_2_RU.click();
-			Thread.sleep(400);
-		   logger.info("Clicked on the Checkbox 2");
+		public boolean clickOnCheckBox_2_RU() throws InterruptedException{
+			boolean flag = false;
+			try {
+				if(!checkBox_2_RU.isSelected()) {
+					checkBox_2_RU.click();
+				}else {
+					logger.info("Check box already selected");
+				}
+				Thread.sleep(400);
+				flag = true;
+			   logger.info("Clicked on the Checkbox 2");
+			}catch(Exception e) {
+				logger.info("Exception from clickOnCheckBox_2_RU : "+e.getMessage());
+			}
+			return flag;
+			
 		}
+		
+		//SELECT ANY CHECK BOX BY PASSING CHECKBOX NUMBER ,P360
+		public boolean selectCheckbox_RU(WebDriver driver, int checkboxNumber) throws InterruptedException{
+			boolean flag = false;
+			String checkbox_address = "(//input[@type='checkbox'])["+checkboxNumber+"]";
+			WebElement btnCheckbox_RU = driver.findElement(By.xpath(checkbox_address));
+			try {
+				if(!btnCheckbox_RU.isSelected()) {
+					btnCheckbox_RU.click();
+				}else {
+					logger.info("Check box already selected");
+				}
+				Thread.sleep(400);
+				flag = true;
+			   logger.info("Clicked on the Checkbox : "+checkboxNumber);
+			}catch(Exception e) {
+				logger.info("Exception from selectCheckbox_RU : "+e.getMessage());
+			}
+			return flag;
+			
+		}
+		
 
+		//BUTTON ADD , P360
+		@FindBy(xpath = "//span[contains(normalize-space(text()), 'ADD')]")
+  		@CacheLookup
+  		public WebElement btnAdd_RU;
+  		public boolean clickOnAdd_RU() throws InterruptedException {
+  			boolean flag = false;
+  			try {
+  				wait.until(ExpectedConditions.elementToBeClickable(btnAdd_RU));
+  				flag = btnAdd_RU.isDisplayed();
+  	  			if(flag) {
+  	  				btnAdd_RU.click();
+  	  			}
+	  	  		logger.info("Is Displeyed and Clicked on the button add : "+flag);
+	  
+  			}catch(Exception e) {
+  				logger.info("Exception from clickOnAdd_RU : "+e.getMessage());
+  			}
+  			if(flag == false) {
+  				logger.info("Not clicked on the ADD button");
+  			}
+  			return flag;
+  		}
+		  		
+		  		
+		  		
+		  		
 		//BUTTON ADD MEMBER, P360
 		@FindBy(xpath = "//span[normalize-space()='Add Member']")
   		@CacheLookup
@@ -533,11 +593,12 @@ public class ReUseAbleElement {
   			boolean flag = false;
   			try {
   				wait.until(ExpectedConditions.elementToBeClickable(btnAddMember_RU));
+  				flag = btnAddMember_RU.isDisplayed();
+  	  			btnAddMember_RU.click();
+  	  			logger.info("Is Displeyed and Clicked on the button add member: "+flag);
+  	  			Thread.sleep(1000);
   			}catch(Exception e) {}
-  			flag = btnAddMember_RU.isDisplayed();
-  			btnAddMember_RU.click();
-  			logger.info("Is Displeyed and Clicked on the button add member: "+flag);
-  			Thread.sleep(1000);
+  			
   		}
 		  		
   		//BUTTON ADD MEMBER, P360 , AVOID STALE ELEMENT REFERENCE
@@ -592,27 +653,29 @@ public class ReUseAbleElement {
 		}
 				
 				
-		//TO CLICK ON YES BUTTON
+		//TO CLICK ON YES BUTTON,P360
 	    public static boolean clickOnBtnYes_RU(WebDriver driver) throws InterruptedException {
 	    	boolean flag = false;
 	    	String btnYes_address;
 	    	WebElement btnYes = null;
 	    	try {
-	    		btnYes_address = "//*[normalize-space()='Yes']";
+	    		btnYes_address = "//span[normalize-space()='Yes']";
 				//logger.info("btnDeactivate_address:- "+btnDeactivate_address);
 	    		btnYes = driver.findElement(By.xpath(btnYes_address));
+	    		if(btnYes.isDisplayed() && btnYes.isEnabled()) {
+		    		btnYes.click();
+			        logger.info("Clicked on the Yes button");
+			        flag = true;
+		    	}else {
+		    		logger.info("Yes button not present");
+		    	}
+	    		
 			}catch(Exception e) {
 				logger.info("Exception from clickOnBtnYes: "+e.getMessage());
 				softAssert.assertTrue(false,"Action button Yes address not present");
 			}
 	    	
-	    	if(btnYes.isDisplayed() && btnYes.isEnabled()) {
-	    		btnYes.click();
-		        logger.info("Clicked on the Yes button");
-		        flag = true;
-	    	}else {
-	    		logger.info("Yes button not present");
-	    	}
+	    	
 	        return flag;
 	    }
 		
@@ -714,6 +777,22 @@ public class ReUseAbleElement {
 		}
 	    
 	    
+	    		
+		//CROSS BUTTON 1, P360
+	    @FindBy(xpath = "(//*[name()='svg'][@title='Close'])[1]")
+		@CacheLookup
+		public WebElement btnCross_1_RU;
+	    public void clickOnBtnCross_1_RU() throws InterruptedException {
+	    	try {
+	    		btnCross_1_RU.click();
+		    	logger.info("Clicked on the cross button icon 1");
+				Thread.sleep(300);
+	    	}catch(Exception e) {
+	    		logger.info("Exception from clickOnBtnCross_1_RU: "+e.getMessage());
+	    	}
+		}
+	    	    
+	    	    
 	    //CROSS BUTTON, P360
 	    @FindBy(xpath = "//button[@title='Close']")
 		@CacheLookup
@@ -1149,17 +1228,30 @@ public class ReUseAbleElement {
 	  	
 	 	
 	  
-  		//TEXT FIELD DESCRITPION,P360
-  		@FindBy(xpath = "//div[contains(@class,'ql-editor')]//p")
+  		//TEXT FIELD DESCRITPION 2,P360
+  		@FindBy(xpath = "(//div[contains(@class,'ql-editor')]//p)[1]")
   		@CacheLookup
-  		public WebElement textArea_RU;
-  		public void setDescription_RU(String description) throws InterruptedException {
-  			textArea_RU.sendKeys(Keys.CONTROL,"a");
-  			textArea_RU.sendKeys(Keys.DELETE);
-  			textArea_RU.sendKeys(description);;
+  		public WebElement textArea_1_RU;
+  		public void setDescription_1_RU(String description) throws InterruptedException {
+  			textArea_1_RU.sendKeys(Keys.CONTROL,"a");
+  			textArea_1_RU.sendKeys(Keys.DELETE);
+  			textArea_1_RU.sendKeys(description);;
+  			logger.info("Entered the  textArea_1_RU: "+description);
+  			Thread.sleep(300);
+  		}
+  		
+  		//TEXT FIELD DESCRITPION 2,P360
+  		@FindBy(xpath = "(//div[contains(@class,'ql-editor')]//p)[2]")
+  		@CacheLookup
+  		public WebElement textArea_2_RU;
+  		public void setDescription_2_RU(String description) throws InterruptedException {
+  			textArea_2_RU.sendKeys(Keys.CONTROL,"a");
+  			textArea_2_RU.sendKeys(Keys.DELETE);
+  			textArea_2_RU.sendKeys(description);;
   			logger.info("Entered the  textArea: "+description);
   			Thread.sleep(300);
   		}
+  		
   		
   		//FIELD/DROPDOWN FIELD BOX ADDRESS AND ACTION METHODS:- 1, P360
   		@FindBy(xpath = "(//div[contains(@class,'MuiInputBase-formControl')])[1]")
@@ -1250,6 +1342,44 @@ public class ReUseAbleElement {
 			btnRadio_2_RU.click();
 			logger.info("Clicked on the radio button -2");
 			Thread.sleep(500);
+		}
+		
+		
+		//METHODS TO CLICK ON THE ACTION BUTTON
+		public boolean clickOnActionListButton_RU(String yourAddressWithoutNumber)
+		{
+			String btn_address = yourAddressWithoutNumber;
+			int count =0;
+			boolean flag = false;
+			while(true) {
+				count++;
+				try {
+					WebElement btnYour = driver.findElement(By.xpath("("+btn_address+")["+count+"]"));
+					logger.info("Your button address: "+btnYour);
+					if(btnYour.isDisplayed() && btnYour.isEnabled()) {
+						logger.info("Clicked on your button address: "+btnYour.getText());
+						action.moveToElement(btnYour).build().perform();
+						Thread.sleep(500);
+						btnYour.click();
+						flag = true;
+						Thread.sleep(1000);
+						break;
+					}
+				}catch(Exception e) {
+					if(count == 20) {
+						logger.info("Exception from clickOnActionListButton :"+e.getMessage());
+					}
+				}
+				if(count>20) {
+					break;
+				}
+			}
+			if(count >= 20 && flag == false ) {
+				logger.info("Action button you want to click is not present");
+				softAssert.assertTrue(flag,"Action button you want to click is not present");
+			}
+			
+			return flag;
 		}
 
 
