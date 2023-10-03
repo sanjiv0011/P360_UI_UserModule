@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-03T17:38:48 IST" name="Suite" finished-at="2023-10-03T17:40:00 IST" duration-ms="71975">
+  <suite started-at="2023-10-03T22:44:30 IST" name="Suite" finished-at="2023-10-03T22:46:35 IST" duration-ms="124570">
     <groups>
     </groups>
-    <test started-at="2023-10-03T17:38:48 IST" name="P360_UI_USER_MODULE" finished-at="2023-10-03T17:40:00 IST" duration-ms="71975">
-      <class name="com.p360.Main.testCases.TC_Main_Movements">
-        <test-method is-config="true" signature="Setup(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_Movements@1200458e]" started-at="2023-10-03T17:38:48 IST" name="Setup" finished-at="2023-10-03T17:38:51 IST" duration-ms="3247" status="PASS">
+    <test started-at="2023-10-03T22:44:30 IST" name="P360_UI_USER_MODULE" finished-at="2023-10-03T22:46:35 IST" duration-ms="124570">
+      <class name="com.p360.Main.testCases.TC_Main_PromoCodes">
+        <test-method is-config="true" signature="Setup(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_PromoCodes@25748410]" started-at="2023-10-03T22:44:30 IST" name="Setup" finished-at="2023-10-03T22:44:33 IST" duration-ms="3107" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method is-config="true" signature="Login(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_Movements@1200458e]" started-at="2023-10-03T17:38:51 IST" name="Login" finished-at="2023-10-03T17:39:04 IST" duration-ms="12056" status="PASS">
+        <test-method is-config="true" signature="Login(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_PromoCodes@25748410]" started-at="2023-10-03T22:44:33 IST" name="Login" finished-at="2023-10-03T22:44:48 IST" duration-ms="14179" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,15 +29,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="test_Main_AssignMovementToDate()[pri:5, instance:com.p360.Main.testCases.TC_Main_Movements@1200458e]" started-at="2023-10-03T17:39:04 IST" name="test_Main_AssignMovementToDate" finished-at="2023-10-03T17:39:29 IST" duration-ms="25787" status="PASS">
+        <test-method signature="test_Main_AddMovement()[pri:1, instance:com.p360.Main.testCases.TC_Main_PromoCodes@25748410]" started-at="2023-10-03T22:44:48 IST" name="test_Main_AddMovement" finished-at="2023-10-03T22:45:24 IST" duration-ms="36544" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_Main_AssignMovementToDate -->
-        <test-method signature="test_Main_removedAssignedMovementFromDate()[pri:6, instance:com.p360.Main.testCases.TC_Main_Movements@1200458e]" started-at="2023-10-03T17:39:29 IST" name="test_Main_removedAssignedMovementFromDate" finished-at="2023-10-03T17:39:50 IST" duration-ms="20798" status="PASS">
+        </test-method> <!-- test_Main_AddMovement -->
+        <test-method signature="test_Main_DeactivatePromoCode()[pri:2, instance:com.p360.Main.testCases.TC_Main_PromoCodes@25748410]" started-at="2023-10-03T22:45:24 IST" name="test_Main_DeactivatePromoCode" finished-at="2023-10-03T22:45:55 IST" duration-ms="30541" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_Main_removedAssignedMovementFromDate -->
-        <test-method is-config="true" signature="Logout(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_Movements@1200458e]" started-at="2023-10-03T17:39:50 IST" name="Logout" finished-at="2023-10-03T17:40:00 IST" duration-ms="9408" status="PASS">
+        </test-method> <!-- test_Main_DeactivatePromoCode -->
+        <test-method signature="test_Main_ActivatePromoCode()[pri:3, instance:com.p360.Main.testCases.TC_Main_PromoCodes@25748410]" started-at="2023-10-03T22:45:55 IST" name="test_Main_ActivatePromoCode" finished-at="2023-10-03T22:46:25 IST" duration-ms="30396" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_Main_ActivatePromoCode -->
+        <test-method is-config="true" signature="Logout(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_PromoCodes@25748410]" started-at="2023-10-03T22:46:25 IST" name="Logout" finished-at="2023-10-03T22:46:34 IST" duration-ms="8981" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -48,11 +52,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Logout -->
-        <test-method is-config="true" signature="Teardown()[pri:0, instance:com.p360.Main.testCases.TC_Main_Movements@1200458e]" started-at="2023-10-03T17:40:00 IST" name="Teardown" finished-at="2023-10-03T17:40:00 IST" duration-ms="401" status="PASS">
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:com.p360.Main.testCases.TC_Main_PromoCodes@25748410]" started-at="2023-10-03T22:46:34 IST" name="Teardown" finished-at="2023-10-03T22:46:35 IST" duration-ms="488" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Teardown -->
-      </class> <!-- com.p360.Main.testCases.TC_Main_Movements -->
+      </class> <!-- com.p360.Main.testCases.TC_Main_PromoCodes -->
     </test> <!-- P360_UI_USER_MODULE -->
   </suite> <!-- Suite -->
 </testng-results>

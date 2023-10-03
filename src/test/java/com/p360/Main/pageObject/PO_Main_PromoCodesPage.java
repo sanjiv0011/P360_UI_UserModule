@@ -42,6 +42,7 @@ public class PO_Main_PromoCodesPage extends ReUseAbleElement {
 		public Actions action;
 		public SoftAssert softAssert = new SoftAssert();
 		
+		
 		//CONSTRUCTOR CREATION
 		public PO_Main_PromoCodesPage(WebDriver driver) {	
 			super(driver);
@@ -51,27 +52,21 @@ public class PO_Main_PromoCodesPage extends ReUseAbleElement {
 			wait = new WebDriverWait (driver, Duration.ofSeconds(30));
 			lp = new PO_LoginPage(driver);
 			action = new Actions(driver);
-
 		}
 		
 		//ALERT MESSAGES
-		public String alertMsgMovementAdded = "Movement Added successfully";
-		public String alertMsgMovementDeActivated = "Status Changed Successfully.";
-		public String alertMsgMovementActivated = "Status Changed Successfully.";
-		public String alertMsgMovementUpdated = "Movement Updated Successfully";
-		
-		public String alertMsgMovementAssigned = "Movement assigned";
-		public String alertMsgMovementRemoved = "Movement removed";
-	
+		public String alertMsgPromoCodeAdded = "Promocode Added Successfully";
+		public String alertMsgPromoCodeDeActivated = "Promo Code Deactivated Successfully.";
+		public String alertMsgPromoCodeActivated = "Promo Code Activated Successfully.";
 		
 		//======START======PAGE OBJECT FOR MOVEMENT AND ACTOIN METHODS==========//
 		//BUTTON MOVEMENT LISTING
   		@FindBy(xpath = "//span[contains(normalize-space(),'Add Promo code')]")
   		@CacheLookup
-  		public WebElement btnMovementListing;
-  		public void clickOnBtnMovementListing() throws InterruptedException {
-  			btnMovementListing.click();
-  			logger.info("Clicked on the btnMovementListing");
+  		public WebElement btnAddPromoCode;
+  		public void clickOnBtnAddPromoCodeListing() throws InterruptedException {
+  			btnAddPromoCode.click();
+  			logger.info("Clicked on the btnAddPromoCode");
   			Thread.sleep(1000);
   		}
   		
@@ -79,12 +74,12 @@ public class PO_Main_PromoCodesPage extends ReUseAbleElement {
   		@FindBy(xpath = "//input[@placeholder='Enter Code']")
   		@CacheLookup
   		public WebElement fieldCodeName;
-  		public void setMovementName(String codeName) throws InterruptedException {
+  		public void setPromoCodName(String codeName) throws InterruptedException {
   			wait.until(ExpectedConditions.elementToBeClickable(fieldCodeName));
   			fieldCodeName.sendKeys(Keys.CONTROL,"a");
   			fieldCodeName.sendKeys(Keys.DELETE);
   			fieldCodeName.sendKeys(codeName);
-  			logger.info("Entered the fieldFirstName: "+codeName);
+  			logger.info("Entered the fieldCodeName: "+codeName);
   			Thread.sleep(300);
   		}
   		
@@ -171,110 +166,52 @@ public class PO_Main_PromoCodesPage extends ReUseAbleElement {
   		
   		
   		
+  		//TEXT NO PROMO CODES MATCHED TO CURRENT APPLIED FILTER
+  		@FindBy(xpath = "//*[.='No Promo Code Matches Current Filter")
+  		@CacheLookup
+  		public WebElement noPromoCodeMatchedWithApplieddFilter;
+  		public boolean  isNoPromoCodeMatchedDisplayed() throws InterruptedException {
+  			boolean flag = false;
+  			try {
+  				if(noPromoCodeMatchedWithApplieddFilter.isDisplayed()) {
+  					flag = true;
+  					logger.info("Searched key not present");
+  					softAssert.assertTrue(flag,"PromoCode you are searching is not found");
+  					clickOnP360Logo_RU();
+  				}
+  			}catch(Exception e) {
+  				flag = false;
+  				logger.info("Searched PromoCode is matched with the applied fileter");
+  				logger.info("Exception from : "+e.getMessage());
+  			}
+  			softAssert.assertAll();
+  			return flag;
+  		}
   		
   		
+  		//PROMO CODES LIST 
+  		@FindBy(xpath = "(//div[contains(@class,'w-full flex')])[4]//div[contains(@class,'p-4 flex gap-2 flex-row')]")
+  		@CacheLookup
+  		List<WebElement> promoCodeList;
+  		//PROMO CODE ROW LIST ADDRESS AND ACTION METHODS
+  		public String promoCodeList_address = "(//div[contains(@class,'w-full flex')])[4]//div[contains(@class,'p-4 flex gap-2 flex-row')]";
+  		public int findPromoCodeFromRowListAndClickOnThreeDot(String promoCodeName, int searchKeyColumnIndex, boolean wantToClickOnThreeDot, boolean wantToclickOnFindSearckKey) throws InterruptedException {
+  			int listRowCount = 0; 
+			try {
+				Thread.sleep(2000);
+				listRowCount = FindThreeDotAndClick.findThreedActionButtonAndClick(promoCodeList_address,promoCodeList,driver, promoCodeName, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
+				
+			}catch(Exception e) {
+				logger.info("Exception from findPromoCodeFromRowListAndClickOnThreeDot: "+e.getMessage());
+				softAssert.assertTrue(false,"not click on the three dot action button");
+			}
+			return listRowCount;
+  		}
   		
   		
-  		
-  		
-  		
-  		
-  		
-  		
-//  		
-//  		//SAVE AND CLOSE BUTTON
-//  		@FindBy(xpath = "//span[normalize-space()='Save & close']")
-//  		@CacheLookup
-//  		public WebElement btnSaveAndClose;
-//  		public boolean clickOnBtnSaveAndClose() throws InterruptedException {
-//  			boolean flag = false;
-//  			try {
-//  				btnSaveAndClose.click();
-//  				flag = true;
-//  	  			logger.info("Clicked on the btnSaveAndClose");
-//  	  			Thread.sleep(1000);
-//  			}catch(Exception e) {
-//  				logger.info("Exception from: "+e.getMessage());
-//  			}
-//  			
-//  			return flag;
-//  		}
-//  	
-//  		
-//  		
-//  		
-//  		
-//  		//TEXT NO MOVEMENT MATCHED TO CURRENT APPLIED FILTER
-//  		@FindBy(xpath = "//*[.='No Movements Matches Current Filter")
-//  		@CacheLookup
-//  		public WebElement noMovementMatchedWithApplieddFilter;
-//  		public boolean  isNoMovementMatchedDisplayed() throws InterruptedException {
-//  			boolean flag = false;
-//  			try {
-//  				if(noMovementMatchedWithApplieddFilter.isDisplayed()) {
-//  					flag = true;
-//  					logger.info("Searched key not present");
-//  					softAssert.assertTrue(flag,"Movement you are searching is not found");
-//  					clickOnP360Logo_RU();
-//  				}
-//  			}catch(Exception e) {
-//  				flag = false;
-//  				logger.info("Searched Movement is matched with the applied fileter");
-//  				logger.info("Exception from : "+e.getMessage());
-//  			}
-//  			softAssert.assertAll();
-//  			return flag;
-//  		}
-//  		
-//  		
-//  		//MOVEMENT LIST 
-//  		@FindBy(xpath = "(//div[contains(@class,'w-full flex')])[4]//div[contains(@class,'p-4 flex gap-2 flex-row')]")
-//  		@CacheLookup
-//  		List<WebElement> movementList;
-//  		//MOVEMENT ROW LIST ADDRESS AND ACTION METHODS
-//  		public String movementList_address = "(//div[contains(@class,'w-full flex')])[4]//div[contains(@class,'p-4 flex gap-2 flex-row')]";
-//  		public int findMovementFromRowListAndClickOnThreeDot(String movementName, int searchKeyColumnIndex, boolean wantToClickOnThreeDot, boolean wantToclickOnFindSearckKey) throws InterruptedException {
-//  			int listRowCount = 0; 
-//			try {
-//				Thread.sleep(2000);
-//				listRowCount = FindThreeDotAndClick.findThreedActionButtonAndClick(movementList_address,movementList,driver, movementName, searchKeyColumnIndex,wantToClickOnThreeDot,wantToclickOnFindSearckKey);
-//				
-//			}catch(Exception e) {
-//				logger.info("Exception from findMovementFromRowListAndClickOnThreeDot: "+e.getMessage());
-//				softAssert.assertTrue(false,"not click on the three dot action button");
-//			}
-//			return listRowCount;
-//  		}
-//  		
-//  		
-//  		
-//  		//TO CLICK ON THE CALENDAR DATE BOX
-//  		@FindBy(xpath = "//div[@role='cell']//a")
-//  		@CacheLookup
-//  		public List <WebElement> calendarDateList;
-//  		//CALENDAR MONTH YAER ADDRESS
-//  		public String monthYearAddress = "//span[@class='rbc-toolbar-label']";
-//  		
-//  		//TO SELECT THE MOVEMENT
-//  		public void selectMovement(String movementName) throws InterruptedException {
-//  			ruae.clickOnDropdown_1_RU(driver);
-//  			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,ruae.listOptionAddress_RU,movementName);
-//  			logger.info("Selected Movement from the list: "+movementName);
-//  			Thread.sleep(500);
-//  		}
-//  		
-//  		//ASSIGNED MOVEMENT LIST ADDRESS AND ACTION BUTTON
-//  		@FindBy(xpath = "//div[contains(@class,'flex flex-col mt-5 gap-3')]//div[contains(@class,'bg-red')]")
-//  		@CacheLookup
-//  		public List <WebElement> assignedMovementList;
-//  		public String assignedMovementListAddress = "//div[contains(@class,'flex flex-col mt-5 gap-3')]//div[contains(@class,'bg-red')]";
-//  		
-//  		//DELETE BOX ADDRESS
-//  		public String deleteBox_address = "//*[name()='svg'][@class='MuiSvgIcon-root cursor-pointer']";
-//  		
-//  		//======END======PAGE OBJECT FOR ADD MOVEMENT ACTOIN METHODS==========//
-//  				
-//  				
+  		//======END======PAGE OBJECT FOR ADD PROMO CODES ACTOIN METHODS==========//
+  				
+  				
   				
   		//TO ADD PROMOCODES
   		public PO_Main_HomePage addOrChangePromoCodes(String promoCodeName,String discountTypes,String  discountValue, String promoCodeStartDate,String promoCodeEndDate,boolean wantToAllowForAllLocations,boolean wantToAllowForAllUsers,String locationName,String maxNumberOfUsers) throws Throwable
@@ -283,118 +220,89 @@ public class PO_Main_PromoCodesPage extends ReUseAbleElement {
   			String callerMethodName = stackTraceElement[2].getMethodName();
   			logger.info("addOrChangeWorkout caller method name: "+callerMethodName);
   			
+  			clickOnBtnAddPromoCodeListing();
+  			setPromoCodName(promoCodeName);
   			
+  			if(discountTypes.equals("percent")) {
+  				clickOnBtnDiscountInPercent();
+  			}else if(discountTypes.equals("dollar")) {
+  				clickOnBtnDiscountInDollar();
+  			}else {
+  				logger.info("Wrong discount types");
+  				softAssert.assertTrue(false,"You are selecting wrong discount types");
+  			}
   			
-//  			if(flag) {
-//  				if(isRequiredOrInvalidMessageDisplayed_RU()) {
-//  					clickOnCancelButton_1_RU();
-//  				}else {
-//  					Thread.sleep(100);
-//  	  				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
-//  	  				if(alertMsg.equals(alertMsgMovementAdded)) {
-//  	  					logger.info("Movement added");
-//  	  					softAssert.assertEquals(alertMsg, alertMsgMovementAdded,"movement added successfully");
-//  	  				}else if(alertMsg.equals(alertMsgMovementUpdated)){
-//  	  					logger.info("Workout updated");
-//  	  					softAssert.assertEquals(alertMsg, alertMsgMovementUpdated,"Movement updated successfully");
-//  	  				}else {
-//  	  					softAssert.assertTrue(false,"Movement neither added nor updated successfully.");
-//  	  				}
-//  				}
-//  			}else {
-//  				logger.info("Not clicked on the save button");
-//  				softAssert.assertTrue(false,"You want to add Movement or update, but not clicked on the save button");
-//  			}
+   			setDiscountValue(discountValue);
+   			setPromoCodeStartDate(promoCodeStartDate);
+  			setPromoCodeEndDate(promoCodeEndDate);
+  			
+  			if(wantToAllowForAllLocations) {
+  				checkboxAllowForAllLocations();
+  			}else {
+  				selectLocations(locationName);
+  			}
+  			
+  			if(wantToAllowForAllUsers) {
+  	  			checkboxAllowForAllUsers();
+  			}else {
+  				setMaxNumberOfUsers(maxNumberOfUsers);
+  			}
+  			
+  			boolean flag = clickOnBtnSave_1_RU();
+  					
+  			if(flag) {
+  				if(isRequiredOrInvalidMessageDisplayed_RU()) {
+  					clickOnCancelButton_1_RU();
+  				}else {
+  					Thread.sleep(100);
+  	  				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
+  	  				if(alertMsg.equals(alertMsgPromoCodeAdded)) {
+  	  					logger.info("Promo Code Added");
+  	  					softAssert.assertEquals(alertMsg, alertMsgPromoCodeAdded,"Promo Code Added Successfully");
+  	  				}else {
+  	  					softAssert.assertTrue(false,"Movement not added");
+  	  				}
+  				}
+  			}else {
+  				logger.info("Not clicked on the save button");
+  				softAssert.assertTrue(false,"You want to add Promo Code, but not clicked on the save button");
+  			}
 			
   			softAssert.assertAll();
   			return new PO_Main_HomePage(driver);
   		}
   		
-//  		//FIND MOVEMENT FROM THE LIST AND CLICK ON THE THREE DOT BUTTON
-//  		public void findMovementFromListAndClickOnThreeDotButton(String searchKey,String movementName,boolean wantToClickOnThreeDot,int searchKeyColumnIndex, boolean wantToClickOnSearchKey) throws InterruptedException
-//  		{
-//  			clickOnBtnMovementListing();
-//  			Thread.sleep(1000);
-//  			searchBox_1_RU(driver, searchKey);
-//  			Thread.sleep(5000);
-//  			boolean flag = isNoMovementMatchedDisplayed();
-//  			if(!flag) {
-//  	  			findMovementFromRowListAndClickOnThreeDot(movementName, searchKeyColumnIndex, wantToClickOnThreeDot, wantToClickOnSearchKey);
-//  	  		
-//  			}else {
-//  				softAssert.assertTrue(false,"Movement you are searching is not present");
-//  			}
-//  			softAssert.assertAll();
-//  		}
-//  		
-//  		
-//  		//TO ACTIVATE THE MOVEMENT
-//  		public PO_Main_HomePage activateMovement() throws InterruptedException
-//  		{
-//  			Action_Activate.activate(driver, alertMsgMovementActivated);
-//  			softAssert.assertAll();
-//  			return new PO_Main_HomePage(driver);
-//  		}
-//  		
-//  		//TO DEACTIVATE THE MOVEMENT
-//  		public PO_Main_HomePage deactivateMovement() throws InterruptedException
-//  		{
-//  			Action_Deactivate.deactivate(driver, alertMsgMovementDeActivated);
-//  			softAssert.assertAll();
-//  			return new PO_Main_HomePage(driver);
-//  		}
-//  		
-//  		//TO ASSIGN MOVEMENT TO DATE
-//  		public PO_Main_HomePage assignMovementToDate(String dateValue,String wantToClickOnDateOrDateBox,String movementName) throws InterruptedException 
-//  		{
-//  			boolean bol = FindDateInCalendar.findDateInCallendar(driver, dateValue, monthYearAddress,address_BackStarTag_1_RU,address_NextStarTag_1_RU, calendarDateList,wantToClickOnDateOrDateBox);
-//  			if(bol) 
-//  			{
-//  				selectMovement(movementName);
-//  				if(clickOnAdd_RU())
-//  				{
-//  					String alertMsg = snakeAlertMessagesDisplayedContent_RU();
-//  	  				if(alertMsg.equals(alertMsgMovementAssigned)) {
-//  	  					logger.info("Workout assigened");
-//  	  					softAssert.assertEquals(alertMsg, alertMsgMovementAssigned,"Movement assigend successfully");
-//  	  				}else {
-//  	  					softAssert.assertTrue(false,"Movement not assigned");
-//  	  				}
-//  				}
-//  				clickOnBtnCross_1_RU();
-//  			}
-//  			
-//  			softAssert.assertAll();
-//  			return new PO_Main_HomePage(driver);
-//  		}
-//  		
-//  		
-//  		//TO REMOVED ASSIGN MOVEMENT FROM THE DATE
-//  		public PO_Main_HomePage removeMovementFromDate(String dateValue,String wantToClickOnDateOrDateBox,String movementName,String searchKey,int searchKeyColumnIndex, boolean wantToClickOnDeleteBox, boolean wantToclickOnFindSearckKey) throws InterruptedException 
-//  		{
-//  			boolean bol = FindDateInCalendar.findDateInCallendar(driver,dateValue, monthYearAddress,address_BackStarTag_1_RU,address_NextStarTag_1_RU, calendarDateList,wantToClickOnDateOrDateBox);
-//  			if(bol) 
-//  			{
-//  				FindDeleteBoxFromListAndClick.findDeleteBoxButtonAndClick(assignedMovementListAddress, assignedMovementList, driver, searchKey,searchKeyColumnIndex, wantToClickOnDeleteBox, wantToclickOnFindSearckKey);
-//  				if(clickOnBtnYes_RU(driver))
-//  				{
-//  					String alertMsg = snakeAlertMessagesDisplayedContent_RU();
-//  	  				if(alertMsg.equals(alertMsgMovementRemoved)) {
-//  	  					logger.info("Movement assigened");
-//  	  					softAssert.assertEquals(alertMsg, alertMsgMovementRemoved,"Movement removed from the assigned date successfully");
-//  	  				}else {
-//  	  					softAssert.assertTrue(false,"Movement not removed from the assigned date successfully.");
-//  	  				}
-//  				}
-//  				clickOnBtnCross_1_RU();
-//  			}
-//  			
-//  			softAssert.assertAll();
-//  			return new PO_Main_HomePage(driver);
-//  		}
-//  		
-//  		
+  		//FIND PROMO CODES FROM THE LIST AND CLICK ON THE THREE DOT BUTTON
+  		public void findPromoCodesFromListAndClickOnThreeDotButton(String searchKey,String promoCodeName,boolean wantToClickOnThreeDot,int searchKeyColumnIndex, boolean wantToClickOnSearchKey) throws InterruptedException
+  		{
+  			Thread.sleep(1000);
+  			searchBox_1_RU(driver, searchKey);
+  			Thread.sleep(5000);
+  			boolean flag = isNoPromoCodeMatchedDisplayed();
+  			if(!flag) {
+  	  			findPromoCodeFromRowListAndClickOnThreeDot(promoCodeName, searchKeyColumnIndex, wantToClickOnThreeDot, wantToClickOnSearchKey);
+  	  		
+  			}else {
+  				softAssert.assertTrue(false,"Promo Codes you are searching is not present");
+  			}
+  			softAssert.assertAll();
+  		}
   		
-  	
-
+  		
+  		//TO ACTIVATE THE PROMO CODES
+  		public PO_Main_HomePage activatePromoCode() throws InterruptedException
+  		{
+  			Action_Activate.activate(driver, alertMsgPromoCodeActivated);
+  			softAssert.assertAll();
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
+  		//TO DEACTIVATE THE PROMO CODES
+  		public PO_Main_HomePage deactivatePromoCode() throws InterruptedException
+  		{
+  			Action_Deactivate.deactivate(driver, alertMsgPromoCodeDeActivated);
+  			softAssert.assertAll();
+  			return new PO_Main_HomePage(driver);
+  		}
+  		
 }

@@ -43,7 +43,9 @@
 	  	 	
 	  	 	<!--<class name="com.p360.Main.testCases.TC_Main_Workout"/>-->
 	  	 	
-	  	 	<class name="com.p360.Main.testCases.TC_Main_Movements"/>
+	  	 	<!--<class name="com.p360.Main.testCases.TC_Main_Movements"/>-->
+			     
+			<class name="com.p360.Main.testCases.TC_Main_PromoCodes"/>
 			     
 			     
 	    </classes>
