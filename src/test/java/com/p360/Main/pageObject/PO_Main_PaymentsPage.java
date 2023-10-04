@@ -44,11 +44,7 @@ public class PO_Main_PaymentsPage extends ReUseAbleElement {
 			lp = new PO_LoginPage(driver);
 			action = new Actions(driver);
 		}
-		
-		//ALERT MESSAGES
-		public String alertMsgPromoCodeAdded = "Promocode Added Successfully";
-		public String alertMsgPromoCodeDeActivated = "Promo Code Deactivated Successfully.";
-		public String alertMsgPromoCodeActivated = "Promo Code Activated Successfully.";
+
 		
 		//======START======PAGE OBJECT FOR PAYMENTS AND ACTOIN METHODS==========//
 		
@@ -57,21 +53,21 @@ public class PO_Main_PaymentsPage extends ReUseAbleElement {
   			ruae.clickOnDropdown_1_RU(driver);
   			Generic_Method_ToSelect_Bootstrap_Dropdown.selectOptionFromDropdown(driver,ruae.listOptionAddress_RU,locationName);
   			logger.info("Selected Locations from the list: "+locationName);
-  			Thread.sleep(500);
+  			Thread.sleep(1000);
   		}
   		
   		//TO SELECT THE PAYMETNS START DATE
   		public void setPaymentStartDate(String paymentStartDate) throws Throwable {
   			clickOnChangeDateIcon_1_RU();
   			DatePicker.DatePicker_GenericMethod_WhenDateGridOnlyPresent(driver,paymentStartDate);
-  		    Thread.sleep(500);
+  		    Thread.sleep(1000);
   		}
   		
   		//TO SELECT THE PAYMETNS END DATE
   		public void setPaymentEndDate(String paymentEndDate) throws Throwable {
   			clickOnChangeDateIcon_2_RU();
   			DatePicker.DatePicker_GenericMethod_WhenDateGridOnlyPresent(driver,paymentEndDate);
-  		    Thread.sleep(500);
+  		    Thread.sleep(1000);
   		}
   		
   		
@@ -154,5 +150,26 @@ public class PO_Main_PaymentsPage extends ReUseAbleElement {
   			softAssert.assertAll();
   		}
   		
+  		
+  		
+  		//TO CHECK THE PAYMENT USERS DETAILS FROM THE PAYMENT LIST
+  		public PO_Main_HomePage  checkPaymentUserDetails(String locationName,String paymentStartDate, String paymentEndDate, String searchKey,String paymentName,boolean wantToClickOnThreeDot,int searchKeyColumnIndex, boolean wantToClickOnSearchKey) throws Throwable 
+  		{
+  			selectLocations(locationName);
+  			setPaymentStartDate(paymentStartDate);
+  			setPaymentEndDate(paymentEndDate);
+  			searchBox_1_RU(driver, searchKey);
+  			isNoPaymentMatchedDisplayed();
+  			findPaymentFromListAndClickOnThreeDotButton(searchKey, paymentName, wantToClickOnThreeDot, searchKeyColumnIndex, wantToClickOnSearchKey);
+  			boolean flag = isMemberInsightsPresent();
+  			if(flag) {
+  				logger.info("Payment user details checked successfully");
+  			}else {
+  				logger.info("Payment users details not checked");
+  				softAssert.assertTrue(false,"Payment users details not checked");
+  			}
+  			softAssert.assertAll();
+  			return new PO_Main_HomePage(driver);
+  		}
   		 		
 }

@@ -223,3 +223,15 @@ Session ID: 7afabbc1e59972dc5b2a34930c9170d1
 22:46:34.053 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - Clicked on the Logout button 
 22:46:34.665 [main] INFO  com.p360.Main.pageObject.PO_Main_HomePage - ... LOGOUT DONE ...
 22:46:35.156 [main] INFO  com.p360.Main.testCases.TC_Main_PromoCodes - Driver shutdown
+22:07:50.230 [main] INFO  com.p360.Main.testCases.TC_Main_Payments - Base class started...
+22:07:54.191 [main] INFO  com.p360.Main.testCases.TC_Main_Payments - Chrome driver selected
+22:07:55.033 [main] INFO  com.p360.Main.testCases.TC_Main_Payments - Login page started
+22:07:55.166 [main] INFO  com.p360.Main.testCases.TC_Main_Payments - Maximize the window
+22:07:55.264 [main] INFO  com.p360.Main.testCases.TC_Main_Payments - Login user Email: anup@hypertrends.com  and Password: Tester123!
+22:07:55.265 [main] INFO  com.p360.pageObject.PO_LoginPage - Method called Login: AdminLogin
+22:07:55.435 [main] INFO  com.p360.pageObject.PO_LoginPage - clicked on Sign In button
+22:08:00.065 [main] INFO  com.p360.pageObject.PO_LoginPage - Enteterd email
+22:08:00.716 [main] INFO  com.p360.pageObject.PO_LoginPage - Entered password
+22:08:00.986 [main] INFO  com.p360.pageObject.PO_LoginPage - clicke on login submit button
+22:08:31.220 [main] INFO  com.p360.pageObject.PO_LoginPage - Login exception message: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: (//div[contains(@class,"MuiList-root")][contains(.,'Dashboard')])[2]' (tried for 30 second(s) with 500 milliseconds interval)
+22:08:31.763 [main] INFO  com.p360.Main.testCases.TC_Main_Payments - Driver shutdown

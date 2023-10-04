@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-03T22:44:30 IST" name="Suite" finished-at="2023-10-03T22:46:35 IST" duration-ms="124570">
+  <suite started-at="2023-10-04T22:07:49 IST" name="Suite" finished-at="2023-10-04T22:08:31 IST" duration-ms="41876">
     <groups>
     </groups>
-    <test started-at="2023-10-03T22:44:30 IST" name="P360_UI_USER_MODULE" finished-at="2023-10-03T22:46:35 IST" duration-ms="124570">
-      <class name="com.p360.Main.testCases.TC_Main_PromoCodes">
-        <test-method is-config="true" signature="Setup(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_PromoCodes@25748410]" started-at="2023-10-03T22:44:30 IST" name="Setup" finished-at="2023-10-03T22:44:33 IST" duration-ms="3107" status="PASS">
+    <test started-at="2023-10-04T22:07:49 IST" name="P360_UI_USER_MODULE" finished-at="2023-10-04T22:08:31 IST" duration-ms="41876">
+      <class name="com.p360.Main.testCases.TC_Main_Payments">
+        <test-method is-config="true" signature="Setup(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_Payments@73db4768]" started-at="2023-10-04T22:07:50 IST" name="Setup" finished-at="2023-10-04T22:07:55 IST" duration-ms="4956" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method is-config="true" signature="Login(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_PromoCodes@25748410]" started-at="2023-10-03T22:44:33 IST" name="Login" finished-at="2023-10-03T22:44:48 IST" duration-ms="14179" status="PASS">
+        <test-method is-config="true" signature="Login(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_Payments@73db4768]" started-at="2023-10-04T22:07:55 IST" name="Login" finished-at="2023-10-04T22:08:31 IST" duration-ms="36209" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -26,37 +26,104 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [To check the login] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [To check the login] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at com.p360.pageObject.PO_LoginPage.AdminLogin(PO_LoginPage.java:153)
+at com.p360.testCases.BaseClass.Login(BaseClass.java:118)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:180)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="test_Main_AddMovement()[pri:1, instance:com.p360.Main.testCases.TC_Main_PromoCodes@25748410]" started-at="2023-10-03T22:44:48 IST" name="test_Main_AddMovement" finished-at="2023-10-03T22:45:24 IST" duration-ms="36544" status="PASS">
+        <test-method signature="test_Main_CheckPaymentUserDetails()[pri:1, instance:com.p360.Main.testCases.TC_Main_Payments@73db4768]" started-at="2023-10-04T22:08:31 IST" name="test_Main_CheckPaymentUserDetails" finished-at="2023-10-04T22:08:31 IST" duration-ms="1" status="SKIP">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [To check the login] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [To check the login] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at com.p360.pageObject.PO_LoginPage.AdminLogin(PO_LoginPage.java:153)
+at com.p360.testCases.BaseClass.Login(BaseClass.java:118)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:180)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_Main_AddMovement -->
-        <test-method signature="test_Main_DeactivatePromoCode()[pri:2, instance:com.p360.Main.testCases.TC_Main_PromoCodes@25748410]" started-at="2023-10-03T22:45:24 IST" name="test_Main_DeactivatePromoCode" finished-at="2023-10-03T22:45:55 IST" duration-ms="30541" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_Main_DeactivatePromoCode -->
-        <test-method signature="test_Main_ActivatePromoCode()[pri:3, instance:com.p360.Main.testCases.TC_Main_PromoCodes@25748410]" started-at="2023-10-03T22:45:55 IST" name="test_Main_ActivatePromoCode" finished-at="2023-10-03T22:46:25 IST" duration-ms="30396" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_Main_ActivatePromoCode -->
-        <test-method is-config="true" signature="Logout(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_PromoCodes@25748410]" started-at="2023-10-03T22:46:25 IST" name="Logout" finished-at="2023-10-03T22:46:34 IST" duration-ms="8981" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- test_Main_CheckPaymentUserDetails -->
+        <test-method is-config="true" signature="Logout(java.lang.String)[pri:0, instance:com.p360.Main.testCases.TC_Main_Payments@73db4768]" started-at="2023-10-04T22:08:31 IST" name="Logout" finished-at="2023-10-04T22:08:31 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Logout -->
-        <test-method is-config="true" signature="Teardown()[pri:0, instance:com.p360.Main.testCases.TC_Main_PromoCodes@25748410]" started-at="2023-10-03T22:46:34 IST" name="Teardown" finished-at="2023-10-03T22:46:35 IST" duration-ms="488" status="PASS">
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:com.p360.Main.testCases.TC_Main_Payments@73db4768]" started-at="2023-10-04T22:08:31 IST" name="Teardown" finished-at="2023-10-04T22:08:31 IST" duration-ms="301" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Teardown -->
-      </class> <!-- com.p360.Main.testCases.TC_Main_PromoCodes -->
+      </class> <!-- com.p360.Main.testCases.TC_Main_Payments -->
     </test> <!-- P360_UI_USER_MODULE -->
   </suite> <!-- Suite -->
 </testng-results>

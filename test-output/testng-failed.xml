@@ -8,15 +8,15 @@
   </listeners>
   <test thread-count="1" name="P360_UI_USER_MODULE(failed)">
     <classes>
-      <class name="com.p360.Main.testCases.TC_Main_PromoCodes">
+      <class name="com.p360.Main.testCases.TC_Main_Payments">
         <methods>
           <include name="Setup"/>
           <include name="Login"/>
           <include name="Teardown"/>
-          <include name="test_Main_AddMovement"/>
+          <include name="test_Main_CheckPaymentUserDetails"/>
           <include name="Logout"/>
         </methods>
-      </class> <!-- com.p360.Main.testCases.TC_Main_PromoCodes -->
+      </class> <!-- com.p360.Main.testCases.TC_Main_Payments -->
     </classes>
   </test> <!-- P360_UI_USER_MODULE(failed) -->
 </suite> <!-- Failed suite [Suite] -->
