@@ -1,6 +1,5 @@
 package com.p360.Main.testCases;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;

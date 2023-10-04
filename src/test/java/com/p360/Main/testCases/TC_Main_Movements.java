@@ -3,10 +3,8 @@ package com.p360.Main.testCases;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
-import com.p360.Main.pageObject.PO_Main_CoachesPage;
 import com.p360.Main.pageObject.PO_Main_HomePage;
 import com.p360.Main.pageObject.PO_Main_MovementsPage;
-import com.p360.Main.pageObject.PO_Main_WorkoutsPage;
 import com.p360.pageObject.PO_HomePage;
 import com.p360.pageObject.PO_LoginPage;
 import com.p360.testCases.BaseClass;
